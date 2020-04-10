@@ -19,6 +19,7 @@ add_executable(borderlands3-save-editor
     main.cpp
     MainWindow.cpp
     Savegame.cpp
+    Constants.cpp
 
     OakProfile.pb.cc
     OakSave.pb.cc

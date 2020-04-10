@@ -45,6 +45,8 @@ static bool readString(QString *output, QIODevice *input)
 
 bool Savegame::load(const QString &filePath)
 {
+    header = {};
+
     QFile file(filePath);
     if (!file.open(QIODevice::ReadOnly)) {
         QMessageBox::warning(nullptr, "Failed to open file", file.errorString());
