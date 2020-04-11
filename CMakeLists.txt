@@ -13,7 +13,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
-find_package(Protobuf REQUIRED)
+if(MSVC)
+    find_package(protobuf CONFIG REQUIRED)
+else()
+    find_package(Protobuf REQUIRED)
+endif()
+
 
 add_executable(borderlands3-save-editor
     main.cpp
