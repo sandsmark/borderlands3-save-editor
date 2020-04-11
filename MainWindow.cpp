@@ -83,14 +83,21 @@ void MainWindow::onOpenFile()
 
 void MainWindow::onSaveFile()
 {
-    m_savegame->save(m_filePath + ".new");
-    // todo
+    if (!m_savegame->save(m_filePath)) {
+        return;
+    }
 
+    QSettings settings;
+    settings.setValue("lastopened", m_filePath);
 }
 
 void MainWindow::onSaveAs()
 {
-    // todo
+    QString newPath = QFileDialog::getSaveFileName(this, "Select a filename to save to", QString(), "Savefile (*.sav)");
+    if (newPath.isEmpty()) {
+        return;
+    }
 
+    m_filePath = newPath; // so we save to this next time the save button is clicked
 }
 
