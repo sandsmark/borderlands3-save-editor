@@ -14,7 +14,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
 if(MSVC)
-    find_package(protobuf CONFIG REQUIRED)
+    find_package(protobuf CONFIG REQUIRED VERSION "3.11.3.0")
 else()
     find_package(Protobuf REQUIRED)
 endif()
