@@ -25,6 +25,9 @@ private:
     QSpinBox *m_levelEdit;
     QSpinBox *m_xpEdit;
     Savegame *m_savegame;
+
+    QSpinBox *m_moneyEditor;
+    QSpinBox *m_eridiumEditor;
 };
 
 #endif // GENERALTAB_H

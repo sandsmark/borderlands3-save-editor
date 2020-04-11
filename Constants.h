@@ -57,6 +57,16 @@ public:
     static Slot slotFromObjectName(const std::string &objectName);
     static std::string objectNameFromSlot(const Slot slot);
 
+    enum class Currency {
+        Invalid = -1,
+        Money,
+        Eridium
+    };
+    Q_ENUM(Currency)
+    static const std::unordered_map<Currency, int> currencyHashes;
+    static Currency currencyByHash(const int hash);
+    static int hashByCurrency(const Currency currency);
+
     static constexpr int minLevel = 1;
     static constexpr int maxLevel = 57;
     static const QList<int> requiredXp;

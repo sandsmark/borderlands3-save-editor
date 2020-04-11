@@ -1,7 +1,5 @@
 #include "Savegame.h"
 
-#include "Constants.h"
-
 #include "OakSave.pb.h"
 
 #include <QFile>
@@ -154,6 +152,8 @@ bool Savegame::load(const QString &filePath)
     emit nameChanged(characterName());
     emit xpChanged(xp());
     emit levelChanged(level());
+    emit moneyChanged(money());
+    emit eridiumChanged(eridium());
     return true;
 }
 
@@ -217,4 +217,69 @@ void Savegame::setLevel(const int newLevel)
         m_character->set_experience_points(requiredXp);
         emit xpChanged(requiredXp);
     }
+}
+
+int Savegame::money() const
+{
+    return currencyAmount(Constants::Currency::Money);
+}
+
+void Savegame::setMoney(const int amount)
+{
+    if (amount == money()) {
+        return;
+    }
+
+    setCurrency(Constants::Currency::Money, amount);
+    emit moneyChanged(amount);
+}
+
+int Savegame::eridium() const
+{
+    return currencyAmount(Constants::Currency::Eridium);
+}
+
+void Savegame::setEridium(const int amount)
+{
+    if (amount == eridium()) {
+        return;
+    }
+
+    setCurrency(Constants::Currency::Eridium, amount);
+    emit eridiumChanged(amount);
+}
+
+int Savegame::currencyAmount(const Constants::Currency currency) const
+{
+    for (const OakSave::InventoryCategorySaveData &item : m_character->inventory_category_list()) {
+        if (Constants::currencyByHash(item.base_category_definition_hash()) != currency) {
+            continue;
+        }
+        return item.quantity();
+    }
+    qWarning() << "Failed to find category" << currency;
+
+    return 0;
+
+}
+
+void Savegame::setCurrency(const Constants::Currency currency, const int amount)
+{
+    for (OakSave::InventoryCategorySaveData &item : *m_character->mutable_inventory_category_list()) {
+        if (Constants::currencyByHash(item.base_category_definition_hash()) != currency) {
+            continue;
+        }
+        item.set_quantity(amount);
+    }
+
+    qDebug() << "Failed to find category, adding new";
+    int hash = Constants::hashByCurrency(currency);
+    if (hash == -1) {
+        qWarning() << "Failed to find hash for" << currency;
+        return;
+    }
+    OakSave::InventoryCategorySaveData newItem;
+    newItem.set_base_category_definition_hash(hash);
+    newItem.set_quantity(amount);
+    m_character->mutable_inventory_category_list()->Add(std::move(newItem));
 }

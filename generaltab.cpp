@@ -14,6 +14,7 @@ GeneralTab::GeneralTab(Savegame *savegame, QWidget *parent) :
 {
     setLayout(new QVBoxLayout);
 
+    //////////////////////////
     // Basic properties
     QGroupBox *basicsBox = new QGroupBox(tr("Basics"));
     QFormLayout *basicsLayout = new QFormLayout;
@@ -39,8 +40,29 @@ GeneralTab::GeneralTab(Savegame *savegame, QWidget *parent) :
     connect(savegame, &Savegame::xpChanged, m_xpEdit, &QSpinBox::setValue);
 
     connect(m_nameEdit, &QLineEdit::textEdited, savegame, &Savegame::setCharacterName);
-//    connect(m_levelEdit, &QSpinBox::editingFinished, savegame, [=]() { savegame->setLevel(m_levelEdit->value()); });
-//    connect(m_xpEdit, &QSpinBox::editingFinished, savegame, [=]() { savegame->setXp(m_xpEdit->value()); });
     connect(m_levelEdit, SIGNAL(valueChanged(int)), savegame, SLOT(setLevel(int))); // old style connect because fuck qOverload
     connect(m_xpEdit, SIGNAL(valueChanged(int)), savegame, SLOT(setXp(int))); // old style connect because fuck qOverload
+
+    //////////////////////////
+    // Economy
+    QGroupBox *economyBox = new QGroupBox(tr("Economy"));
+    QFormLayout *economyLayout = new QFormLayout;
+    economyLayout->setFieldGrowthPolicy(QFormLayout::FieldsStayAtSizeHint);
+    economyBox->setLayout(economyLayout);
+
+    m_moneyEditor = new QSpinBox;
+    m_moneyEditor->setRange(0, 99999999);
+    economyLayout->addRow(tr("Money"), m_moneyEditor);
+
+    m_eridiumEditor = new QSpinBox;
+    m_eridiumEditor->setRange(0, 99999999);
+    economyLayout->addRow(tr("Eridium"), m_eridiumEditor);
+
+    layout()->addWidget(economyBox);
+
+
+    connect(savegame, &Savegame::moneyChanged, m_moneyEditor, &QSpinBox::setValue);
+    connect(savegame, &Savegame::eridiumChanged, m_eridiumEditor, &QSpinBox::setValue);
+    connect(m_moneyEditor, SIGNAL(valueChanged(int)), savegame, SLOT(setMoney(int))); // old style connect because fuck qOverload
+    connect(m_eridiumEditor, SIGNAL(valueChanged(int)), savegame, SLOT(setEridium(int))); // old style connect because fuck qOverload
 }

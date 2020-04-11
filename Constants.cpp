@@ -3,6 +3,11 @@
 #include <unordered_map>
 #include <string>
 
+const std::unordered_map<Constants::Currency, int> Constants::currencyHashes = {
+    { Constants::Currency::Money, 618814354 },
+    { Constants::Currency::Eridium, 3679636065 },
+};
+
 const QList<int> Constants::requiredXp = {
     0,          // lvl 1
     358,        // lvl 2
@@ -86,11 +91,11 @@ const QList<int> Constants::requiredXp = {
     12787955,    // lvl 80
 };
 
-template<typename T>
-static std::unordered_map<T, std::string> reverseMapping(const std::unordered_map<std::string, T> &mapping)
+template<typename T, typename V>
+static std::unordered_map<T, V> reverseMapping(const std::unordered_map<V, T> &mapping)
 {
-    std::unordered_map<T, std::string> ret;
-    for (const std::pair<const std::string, T> &entry : mapping) {
+    std::unordered_map<T, V> ret;
+    for (const std::pair<const V, T> &entry : mapping) {
         ret[entry.second] = entry.first;
     }
 
@@ -187,4 +192,25 @@ Constants::Slot Constants::slotFromObjectName(const std::string &objectName)
 std::string Constants::objectNameFromSlot(const Constants::Slot slot)
 {
     return lookupString(slot, reverseMapping(slotNames));
+}
+
+Constants::Currency Constants::currencyByHash(const int hash)
+{
+    static const std::unordered_map<int, Currency> reverse = reverseMapping(currencyHashes);
+    std::unordered_map<int, Currency>::const_iterator it = reverse.find(hash);
+    if (it == reverse.end()) {
+        return Currency::Invalid;
+    }
+
+    return it->second;
+}
+
+int Constants::hashByCurrency(const Constants::Currency currency)
+{
+    std::unordered_map<Currency, int>::const_iterator it = currencyHashes.find(currency);
+    if (it == currencyHashes.end()) {
+        return -1;
+    }
+    return it->second;
+
 }

@@ -1,6 +1,8 @@
 #ifndef SAVEGAME_H
 #define SAVEGAME_H
 
+#include "Constants.h"
+
 #include <memory>
 #include <QString>
 #include <QVector>
@@ -58,13 +60,23 @@ public slots:
     int level() const;
     void setLevel(const int newLevel);
 
+    int money() const;
+    void setMoney(const int amount);
+
+    int eridium() const;
+    void setEridium(const int amount);
+
 signals:
     void nameChanged(const QString &newName);
     void xpChanged(const int xp);
     void levelChanged(const int level);
+    void moneyChanged(const int amount);
+    void eridiumChanged(const int amount);
 
 
 private:
+    int currencyAmount(const Constants::Currency currenct) const;
+    void setCurrency(const Constants::Currency currency, const int amount);
     std::unique_ptr<OakSave::Character> m_character;
 };
 
