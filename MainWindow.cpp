@@ -83,6 +83,7 @@ void MainWindow::onOpenFile()
 
 void MainWindow::onSaveFile()
 {
+    m_savegame->save(m_filePath + ".new");
     // todo
 
 }

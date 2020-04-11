@@ -2,6 +2,8 @@
 
 #include "OakSave.pb.h"
 
+#include "obfuscation.h"
+
 #include <QFile>
 #include <QMessageBox>
 #include <QtEndian>
@@ -22,10 +24,23 @@ template <typename T>
 static bool readInt(T *output, QIODevice *input)
 {
     char data[sizeof(T)];
-    if (input->read(data, sizeof(data)) < qint64(sizeof(data))) {
+    if (input->read(data, sizeof(data)) != qint64(sizeof(data))) {
         return false;
     }
     *output = qFromLittleEndian<T>(data);
+    return true;
+}
+
+template <typename T>
+static bool writeInt(const T input, QIODevice *output)
+{
+    char data[sizeof(T)];
+    qToLittleEndian(input, data);
+    const qint64 written = output->write(data, sizeof(data));
+    if (written != qint64(sizeof(data))) {
+        qWarning() << "short writE" << written << sizeof(data);
+        return false;
+    }
     return true;
 }
 
@@ -41,6 +56,19 @@ static bool readString(QString *output, QIODevice *input)
         return true;
     }
     *output = QString::fromUtf8(input->read(stringLength), stringLength - 1); // Supposed to be \0-terminated, but just in case
+    return true;
+}
+
+static bool writeString(const QString &input, QIODevice *output)
+{
+    const QByteArray utf8 = input.toUtf8() + '\0';
+    const int stringLength = utf8.length();
+    if (!writeInt(stringLength, output) || stringLength < 0) {
+        return false;
+    }
+
+    output->write(utf8);
+
     return true;
 }
 
@@ -116,28 +144,12 @@ bool Savegame::load(const QString &filePath)
         return false;
     }
 
-    const uint8_t prefixMask[] = {
-        0x71, 0x34, 0x36, 0xB3, 0x56, 0x63, 0x25, 0x5F,
-        0xEA, 0xE2, 0x83, 0x73, 0xF4, 0x98, 0xB8, 0x18,
-        0x2E, 0xE5, 0x42, 0x2E, 0x50, 0xA2, 0x0F, 0x49,
-        0x87, 0x24, 0xE6, 0x65, 0x9A, 0xF0, 0x7C, 0xD7
-    };
-    static_assert(sizeof(prefixMask) == ' ');
-
-    static uint8_t xorMask[] = {
-        0x7C, 0x07, 0x69, 0x83, 0x31, 0x7E, 0x0C, 0x82,
-        0x5F, 0x2E, 0x36, 0x7F, 0x76, 0xB4, 0xA2, 0x71,
-        0x38, 0x2B, 0x6E, 0x87, 0x39, 0x05, 0x02, 0xC6,
-        0xCD, 0xD8, 0xB1, 0xCC, 0xA1, 0x33, 0xF9, 0xB6,
-    };
-    static_assert(sizeof(xorMask) == ' ');
-
     char *dataRaw = data.data();
     for (int i=data.size() - 1; i >= 0; i--) {
         // I want a prize for ugly code
         // Premature optimization^Wobfuscation (it's probably not faster than doing it the pretty way)
-        dataRaw[i] ^= (i < int(sizeof(prefixMask)) ? prefixMask[i] : dataRaw[i - sizeof(prefixMask)])
-            ^ xorMask[i % sizeof(xorMask)];
+        dataRaw[i] ^= (i < int(sizeof(obfuscation::prefixMask)) ? obfuscation::prefixMask[i] : dataRaw[i - sizeof(obfuscation::prefixMask)])
+            ^ obfuscation::xorMask[i % sizeof(obfuscation::xorMask)];
     }
 
     if (!m_character->ParseFromArray(dataRaw, data.size())) {
@@ -154,6 +166,53 @@ bool Savegame::load(const QString &filePath)
     emit levelChanged(level());
     emit moneyChanged(money());
     emit eridiumChanged(eridium());
+    return true;
+}
+
+bool Savegame::save(const QString filePath) const
+{
+    QFile file(filePath);
+    if (!file.open(QIODevice::WriteOnly)) {
+        QMessageBox::warning(nullptr, "Failed to open file", file.errorString());
+        return false;
+    }
+    file.write("GVAS");
+    bool couldWriteHeader =
+            writeInt(m_header.savegameVersion, &file) &&
+            writeInt(m_header.packageVersion, &file) &&
+            writeInt(m_header.engineMajorVersion, &file) &&
+            writeInt(m_header.engineMinorVersion, &file) &&
+            writeInt(m_header.enginePatchVersion, &file) &&
+            writeInt(m_header.engineBuild, &file) &&
+            writeString(m_header.buildId, &file) &&
+            writeInt(m_header.customFormatVersion, &file) &&
+            writeInt(m_header.customFormatCount, &file);
+
+    if (!couldWriteHeader) {
+        QMessageBox::warning(nullptr, "Invalid header", "Failed to write header to file:\n" + file.errorString());
+        return false;
+    }
+
+    for (const Header::CustomFormat &format : m_header.customFormats) {
+        file.write(format.id.toRfc4122());
+        writeInt(format.entry, &file);
+    }
+    writeString(m_header.savegameType, &file);
+
+    QByteArray data = QByteArray::fromStdString(m_character->SerializeAsString());
+
+    char *dataRaw = data.data();
+    for (int i=0; i<data.size(); i++) {
+        // I want a prize for ugly code
+        // Premature optimization^Wobfuscation (it's probably not faster than doing it the pretty way)
+        dataRaw[i] ^= (i < int(sizeof(obfuscation::prefixMask)) ? obfuscation::prefixMask[i] : dataRaw[i - sizeof(obfuscation::prefixMask)])
+            ^ obfuscation::xorMask[i % sizeof(obfuscation::xorMask)];
+    }
+    qDebug() << file.pos();
+
+    writeInt(data.length(), &file);
+    file.write(data);
+
     return true;
 }
 

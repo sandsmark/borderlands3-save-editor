@@ -49,6 +49,7 @@ public:
     virtual ~Savegame();
 
     bool load(const QString &filePath);
+    bool save(const QString filePath) const;
 
 public slots:
     QString characterName() const;
