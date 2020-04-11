@@ -161,6 +161,10 @@ bool Savegame::load(const QString &filePath)
     if (!m_character->IsInitialized()) {
         return false;
     }
+    const QString backupFilename = file.fileName() + ".backup";
+    QFile::remove(backupFilename);
+    file.copy(backupFilename);
+
     emit nameChanged(characterName());
     emit xpChanged(xp());
     emit levelChanged(level());
