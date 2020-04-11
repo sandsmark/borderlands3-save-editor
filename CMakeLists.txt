@@ -21,15 +21,15 @@ endif()
 
 
 add_executable(borderlands3-save-editor
-    main.cpp
-    MainWindow.cpp
-    Savegame.cpp
-    Constants.cpp
-    generaltab.cpp
+    src/main.cpp
+    src/MainWindow.cpp
+    src/Savegame.cpp
+    src/Constants.cpp
+    src/generaltab.cpp
 
-    OakProfile.pb.cc
-    OakSave.pb.cc
-    OakShared.pb.cc
+    src/OakProfile.pb.cc
+    src/OakSave.pb.cc
+    src/OakShared.pb.cc
     )
 
 target_link_libraries(borderlands3-save-editor PRIVATE Qt5::Widgets protobuf::libprotobuf)
