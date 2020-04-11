@@ -1,5 +1,7 @@
 #include "Savegame.h"
 
+#include "Constants.h"
+
 #include "OakSave.pb.h"
 
 #include <QFile>
@@ -7,7 +9,8 @@
 #include <QtEndian>
 #include <QDebug>
 
-Savegame::Savegame()
+Savegame::Savegame(QObject *parent) :
+    QObject(parent)
 {
     m_character = std::make_unique<OakSave::Character>();
 }
@@ -21,7 +24,7 @@ template <typename T>
 static bool readInt(T *output, QIODevice *input)
 {
     char data[sizeof(T)];
-    if (input->read(data, sizeof(data)) < sizeof(data)) {
+    if (input->read(data, sizeof(data)) < qint64(sizeof(data))) {
         return false;
     }
     *output = qFromLittleEndian<T>(data);
@@ -45,7 +48,7 @@ static bool readString(QString *output, QIODevice *input)
 
 bool Savegame::load(const QString &filePath)
 {
-    header = {};
+    m_header = {};
 
     QFile file(filePath);
     if (!file.open(QIODevice::ReadOnly)) {
@@ -59,29 +62,29 @@ bool Savegame::load(const QString &filePath)
         return false;
     }
     bool couldReadHeader =
-            readInt(&header.savegameVersion, &file) &&
-            readInt(&header.packageVersion, &file) &&
-            readInt(&header.engineMajorVersion, &file) &&
-            readInt(&header.engineMinorVersion, &file) &&
-            readInt(&header.enginePatchVersion, &file) &&
-            readInt(&header.engineBuild, &file) &&
-            readString(&header.buildId, &file) &&
-            readInt(&header.customFormatVersion, &file) &&
-            readInt(&header.customFormatCount, &file);
+            readInt(&m_header.savegameVersion, &file) &&
+            readInt(&m_header.packageVersion, &file) &&
+            readInt(&m_header.engineMajorVersion, &file) &&
+            readInt(&m_header.engineMinorVersion, &file) &&
+            readInt(&m_header.enginePatchVersion, &file) &&
+            readInt(&m_header.engineBuild, &file) &&
+            readString(&m_header.buildId, &file) &&
+            readInt(&m_header.customFormatVersion, &file) &&
+            readInt(&m_header.customFormatCount, &file);
 
     if (!couldReadHeader) {
         QMessageBox::warning(nullptr, "Invalid header", "Invalid file, failed to read header.\n" + file.errorString());
         return false;
     }
-    if (header.customFormatCount > 1000) { // idk, just sanity
-        QMessageBox::warning(nullptr, "Invalid header", "Invalid file, too many custom formats: " + QString::number(header.customFormatCount));
+    if (m_header.customFormatCount > 1000) { // idk, just sanity
+        QMessageBox::warning(nullptr, "Invalid header", "Invalid file, too many custom formats: " + QString::number(m_header.customFormatCount));
         return false;
     }
-    qDebug() << "Custom formats" << header.customFormatCount;
+    qDebug() << "Custom formats" << m_header.customFormatCount;
 
-    header.customFormats.resize(header.customFormatCount);
+    m_header.customFormats.resize(m_header.customFormatCount);
 
-    for (Header::CustomFormat &format : header.customFormats) {
+    for (Header::CustomFormat &format : m_header.customFormats) {
         format.id = QUuid::fromRfc4122(file.read(16));
         if (format.id.isNull()) {
             QMessageBox::warning(nullptr, "Invalid header", "Invalid custom format description id");
@@ -93,25 +96,25 @@ bool Savegame::load(const QString &filePath)
         }
         qDebug() << "Format" << format.id << format.entry;
     }
-    if (!readString(&header.savegameType, &file)) {
+    if (!readString(&m_header.savegameType, &file)) {
         QMessageBox::warning(nullptr, "Invalid header", "Invalid file, failed to read savegame type.\n" + file.errorString());
         return false;
     }
-    if (!readInt(&header.dataLength, &file)) {
+    if (!readInt(&m_header.dataLength, &file)) {
             QMessageBox::warning(nullptr, "Invalid header", "Failed to read data length");
             return false;
     }
 
-    qDebug() << "Savegame version" << header.savegameType << header.savegameVersion;
-    qDebug() << "Package version" << header.packageVersion;
-    qDebug() << "Build id:" << header.buildId;
-    qDebug() << "Engine version" << header.engineMajorVersion << header.engineMinorVersion << header.enginePatchVersion << header.engineBuild;
-    qDebug() << "Custom format version" << header.customFormatVersion;
+    qDebug() << "Savegame version" << m_header.savegameType << m_header.savegameVersion;
+    qDebug() << "Package version" << m_header.packageVersion;
+    qDebug() << "Build id:" << m_header.buildId;
+    qDebug() << "Engine version" << m_header.engineMajorVersion << m_header.engineMinorVersion << m_header.enginePatchVersion << m_header.engineBuild;
+    qDebug() << "Custom format version" << m_header.customFormatVersion;
 
 
     QByteArray data = file.readAll();
-    if (data.size() != header.dataLength) { // yeah yeah, padding, but it needs to be significantly larger so whatever
-        QMessageBox::warning(nullptr, "Failed to read from file", "Wrong amount of data available, expected " + QString::number(header.dataLength) + ", but got " + QString::number(data.size()));
+    if (data.size() != m_header.dataLength) { // yeah yeah, padding, but it needs to be significantly larger so whatever
+        QMessageBox::warning(nullptr, "Failed to read from file", "Wrong amount of data available, expected " + QString::number(m_header.dataLength) + ", but got " + QString::number(data.size()));
         return false;
     }
 
@@ -135,7 +138,7 @@ bool Savegame::load(const QString &filePath)
     for (int i=data.size() - 1; i >= 0; i--) {
         // I want a prize for ugly code
         // Premature optimization^Wobfuscation (it's probably not faster than doing it the pretty way)
-        dataRaw[i] ^= (i < sizeof(prefixMask) ? prefixMask[i] : dataRaw[i - sizeof(prefixMask)])
+        dataRaw[i] ^= (i < int(sizeof(prefixMask)) ? prefixMask[i] : dataRaw[i - sizeof(prefixMask)])
             ^ xorMask[i % sizeof(xorMask)];
     }
 
@@ -145,7 +148,13 @@ bool Savegame::load(const QString &filePath)
         return false;
     }
 
-    return m_character->IsInitialized();
+    if (!m_character->IsInitialized()) {
+        return false;
+    }
+    emit nameChanged(characterName());
+    emit xpChanged(xp());
+    emit levelChanged(level());
+    return true;
 }
 
 QString Savegame::characterName() const
@@ -156,4 +165,56 @@ QString Savegame::characterName() const
 void Savegame::setCharacterName(const QString &name)
 {
     m_character->set_preferred_character_name(name.toStdString());
+}
+
+int Savegame::xp() const
+{
+    return m_character->experience_points();
+}
+
+void Savegame::setXp(const int newXp)
+{
+    if (newXp == xp()) {
+        return;
+    }
+    const int oldLevel = level();
+
+    m_character->set_experience_points(newXp);
+
+    if (oldLevel != level()) {
+        emit levelChanged(level());
+    }
+}
+
+int Savegame::level() const
+{
+    const int currentXp = xp();
+    int level = 0;
+    for (const int requiredXp : Constants::requiredXp) {
+        if (currentXp >= requiredXp) {
+            level++;
+        } else {
+            return level;
+        }
+    }
+
+    qWarning() << "Invalid amount of xp" << currentXp << ", can't get level";
+    return level;
+}
+
+void Savegame::setLevel(const int newLevel)
+{
+    if (newLevel > Constants::maxLevel) {
+        qWarning() << "Invalid new level" << newLevel;
+        return;
+    }
+
+    if (newLevel == level()) {
+        return;
+    }
+    const int requiredXp = Constants::requiredXp[newLevel-1];
+    if (requiredXp != xp()) {
+        m_character->set_experience_points(requiredXp);
+        emit xpChanged(requiredXp);
+    }
 }

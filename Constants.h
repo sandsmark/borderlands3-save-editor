@@ -24,7 +24,7 @@ public:
         Operative,
         Siren
     };
-    Q_ENUM(Class);
+    Q_ENUM(Class)
     static const std::unordered_map<std::string, Class> classObjectNames;
     static Class classFromObjectName(const std::string &key);
     static std::string objectNameFromClass(const Class characterClass);
@@ -35,7 +35,7 @@ public:
         Spiderant,
         Skag
     };
-    Q_ENUM(Pet);
+    Q_ENUM(Pet)
     static const std::unordered_map<std::string, Pet> petKeys;
     static Pet petFromKey(const std::string &key);
     static std::string keyFromPet(const Pet pet);
@@ -51,11 +51,15 @@ public:
         COM,
         Artifact
     };
-    Q_ENUM(Slot);
+    Q_ENUM(Slot)
     static const std::unordered_map<std::string, Slot> slotNames;
 
     static Slot slotFromObjectName(const std::string &objectName);
     static std::string objectNameFromSlot(const Slot slot);
+
+    static constexpr int minLevel = 1;
+    static constexpr int maxLevel = 57;
+    static const QList<int> requiredXp;
 };
 
 #endif // CONSTANTS_H

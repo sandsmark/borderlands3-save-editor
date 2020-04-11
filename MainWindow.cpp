@@ -1,77 +1,93 @@
 #include "MainWindow.h"
+
+#include "generaltab.h"
+#include "Savegame.h"
+
 #include <QDebug>
 #include <QFileDialog>
 #include <QHBoxLayout>
 #include <QVBoxLayout>
-#include <QLineEdit>
 #include <QSpacerItem>
 #include <QLabel>
 #include <QPushButton>
-#include <QSpinBox>
+#include <QToolBar>
+#include <QSettings>
 
-Widget::Widget(QWidget *parent)
-    : QWidget(parent)
+
+
+MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent),
+      m_savegame(new Savegame(this))
 {
     setWindowFlag(Qt::Dialog);
 
+    QToolBar *mainToolbar = addToolBar(tr("Main"));
+    mainToolbar->setToolButtonStyle(Qt::ToolButtonTextUnderIcon);
 
-    QHBoxLayout *basicsLayout = new QHBoxLayout;
+    mainToolbar->addAction(QIcon::fromTheme("document-open"), tr("Open..."), this, &MainWindow::onOpenFile);
+    mainToolbar->addAction(QIcon::fromTheme("document-save"), tr("Save"), this, &MainWindow::onSaveFile);
+    mainToolbar->addAction(QIcon::fromTheme("document-save-as"), tr("Save as..."), this, &MainWindow::onSaveAs);
 
-    m_nameEdit = new QLineEdit;
-    m_nameEdit->setEnabled(false);
-    basicsLayout->addWidget(new QLabel("Name:"));
-    basicsLayout->addWidget(m_nameEdit);
+    // Set up tabs
+    m_tabWidget = new QTabWidget;
+    setCentralWidget(m_tabWidget);
 
-    basicsLayout->addStretch();
-
-    m_levelEdit = new QSpinBox;
-    basicsLayout->addWidget(new QLabel("Level:"));
-    basicsLayout->addWidget(m_levelEdit);
-
-    QHBoxLayout *saveLoadLayout = new QHBoxLayout;
-    QPushButton *loadButton = new QPushButton("&Load");
-    saveLoadLayout->addWidget(loadButton);
-    basicsLayout->addStretch();
-    m_saveButton = new QPushButton("&Save");
-    m_saveButton->setEnabled(false);
-    saveLoadLayout->addWidget(m_saveButton);
-
-
-    QVBoxLayout *mainLayout = new QVBoxLayout;
-    mainLayout->addLayout(basicsLayout);
-
-    mainLayout->addStretch();
-    mainLayout->addLayout(saveLoadLayout);
-    setLayout(mainLayout);
-
-    connect(loadButton, &QPushButton::clicked, this, &Widget::openFile);
-    connect(m_saveButton, &QPushButton::clicked, this, &Widget::saveFile);
+    m_generalTab = new GeneralTab(m_savegame);
+    m_generalTab->setEnabled(false);
+    m_tabWidget->addTab(m_generalTab, tr("General"));
 
     resize(600, 500);
 
-    QMetaObject::invokeMethod(this, "openFile", Qt::QueuedConnection);
+    QSettings settings;
+    if (settings.contains("lastopened")) {
+        m_filePath = settings.value("lastopened").toString();
+
+        // Wait until mainloop started
+        QMetaObject::invokeMethod(this, "loadFile", Qt::QueuedConnection);
+    }
 }
 
-Widget::~Widget()
+MainWindow::~MainWindow()
 {
 }
 
-void Widget::openFile()
+void MainWindow::loadFile()
 {
-    QString path = QFileDialog::getOpenFileName(this, "Select a savegame", QString(), "Savefile (*.sav)");
-    if (path.isEmpty()) {
-        return;
-    }
-    if (!m_savegame.load(path)) {
-        return;
+    qDebug() << "Loading" << m_filePath;
+    m_generalTab->setEnabled(false);
+    if (m_filePath.isEmpty()) {
+        m_filePath = QFileDialog::getOpenFileName(this, "Select a savegame", QString(), "Savefile (*.sav)");
+        if (m_filePath.isEmpty()) {
+            return;
+        }
     }
 
-    m_nameEdit->setText(m_savegame.characterName());
-    m_saveButton->setEnabled(true);
-    m_nameEdit->setEnabled(true);
+    if (!m_savegame->load(m_filePath)) {
+        return;
+    }
+    QSettings settings;
+    settings.setValue("lastopened", m_filePath);
+    m_generalTab->setEnabled(true);
 }
 
-void Widget::saveFile()
+void MainWindow::onOpenFile()
+{
+    QString newPath = QFileDialog::getOpenFileName(this, "Select a savegame", QString(), "Savefile (*.sav)");
+    if (newPath.isEmpty()) {
+        return;
+    }
+    m_filePath = newPath;
+
+    loadFile();
+}
+
+void MainWindow::onSaveFile()
+{
+    // todo
+
+}
+
+void MainWindow::onSaveAs()
 {
     // todo
 

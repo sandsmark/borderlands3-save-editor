@@ -1,33 +1,35 @@
 #ifndef WIDGET_H
 #define WIDGET_H
 
-#include <QWidget>
+#include <QMainWindow>
 
-#include "Savegame.h"
+class GeneralTab;
+class Savegame;
 
-class QLineEdit;
 class QPushButton;
-class QSpinBox;
+class QTabWidget;
 
-class Widget : public QWidget
+class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
 public:
-    Widget(QWidget *parent = nullptr);
-    ~Widget();
+    MainWindow(QWidget *parent = nullptr);
+    ~MainWindow();
 
+    void setFilePath(const QString &path) { m_filePath = path; }
 
 private slots:
-    void openFile();
-    void saveFile();
+    void onOpenFile();
+    void onSaveFile();
+    void onSaveAs();
+
+    void loadFile();
 
 private:
-    Savegame m_savegame;
-    QLineEdit *m_nameEdit;
-    QSpinBox *m_levelEdit;
-    QPushButton *m_saveButton;
-
-//    std::unique_ptr
+    Savegame *m_savegame;
+    QString m_filePath;
+    QTabWidget *m_tabWidget;
+    GeneralTab *m_generalTab;
 };
 #endif // WIDGET_H
