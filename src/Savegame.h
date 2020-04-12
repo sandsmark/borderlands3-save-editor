@@ -52,6 +52,8 @@ public:
     bool save(const QString filePath) const;
 
 public slots:
+    //////////////////////////
+    // Character stuff
     QString characterName() const;
     void setCharacterName(const QString &name);
 
