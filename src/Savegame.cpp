@@ -4,10 +4,18 @@
 
 #include "obfuscation.h"
 
+#include <QBitArray>
 #include <QFile>
 #include <QMessageBox>
-#include <QtEndian>
+#include <QtEndian> // all the qFromLittleEndian is valid for the PC saves at least
 #include <QDebug>
+#include <deque>
+
+extern "C" {
+#include <zlib.h> // Because I need crc32, and everyone has zlib
+}
+
+#include <bitset> // More stuff that we want than QBitSet (like shifting)
 
 Savegame::Savegame(QObject *parent) :
     QObject(parent)
@@ -17,6 +25,53 @@ Savegame::Savegame(QObject *parent) :
 
 Savegame::~Savegame()
 { // can't be inline or default, because unique_ptr in gcc is short-bus special
+}
+
+static QByteArray decode(const QByteArray &input)
+{
+    if (input.size() < 6) {
+        qWarning() << "Invalid serial";
+        return {};
+    }
+    const char *indata = input.data();
+    if (input[0] != 3) {
+        qWarning() << "Invalid serial, doesn't start with 3";
+    }
+
+    const uint32_t seed = qFromBigEndian<uint32_t>(&indata[1]);
+
+//    std::vector<uint8_t> data(input.begin() + 5, input.end());
+    QByteArray data = input.mid(5);
+
+    if (seed != 0) {
+        uint32_t key = (seed >> 5);// & 0xFFFFFFFF;
+        for (char &c : data) {
+            key = (key * 0x10A860C1ul) % 0xFFFFFFFB;
+            c ^= key;
+        }
+        const int steps = (seed & 0x1f) % data.size();
+        std::rotate(data.rbegin(), data.rbegin() + steps, data.rend());
+    } else {
+        qWarning() << "0 seed?";
+    }
+
+    std::vector<uint8_t> toChecksum(input.begin(), input.begin() + 5);
+    toChecksum.push_back(0xff);
+    toChecksum.push_back(0xff);
+    toChecksum.insert(toChecksum.end(), data.begin() + 2, data.end());
+
+    // Use zlib's crc32 because fuck if I want another dependency
+    uLong crc = crc32(0L, Z_NULL, 0);
+    crc = crc32(crc, toChecksum.data(), toChecksum.size());
+    qDebug() << "crc" << crc;
+    const uint16_t computedChecksum = (crc >> 16) ^ crc;
+    const uint16_t checksum = qFromBigEndian<uint16_t>(data.data());
+    if (computedChecksum != checksum) {
+        qWarning() << "Checksum mismatch" << computedChecksum << "expected" << checksum;
+        return {};
+    }
+
+    return data.mid(2);//std::vector<uint8_t>(data.begin() + 2, data.end());
 }
 
 // could be simpler and more efficient and who uses powerpc these days, but meh
@@ -161,6 +216,31 @@ bool Savegame::load(const QString &filePath)
     if (!m_character->IsInitialized()) {
         return false;
     }
+
+    qDebug() << "Items:" << m_character->inventory_items_size();
+//    if (m_character->inventory_items_size() > 0) {
+    for (int i=0; i<m_character->inventory_items_size(); i++) {
+        const ::OakSave::OakInventoryItemSaveGameData& entry = m_character->inventory_items(i);
+        QByteArray serial = decode(QByteArray::fromStdString(entry.item_serial_number()));
+        if (serial.isEmpty()) {
+            qWarning() << "Couldn't parse item";
+            return false;
+        }
+
+
+        // It's ugly, pls forgive
+        std::string bitsString;
+        QBitArray bits = QBitArray::fromBits(serial.data(), serial.size() * 8);
+        for (int i=0; i < bits.size(); i++) {
+            bitsString.push_back(bits[i] ? '1' : '0');
+        }
+        qDebug() << QByteArray::fromStdString(bitsString) << bitsString.size();
+//        std::bitset bitset(bitsString);
+//        qDebug() << bits.size() << bits;
+//        qDebug() << serial.;
+    }
+
+
     const QString backupFilename = file.fileName() + ".backup";
     QFile::remove(backupFilename);
     file.copy(backupFilename);

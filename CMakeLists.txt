@@ -19,6 +19,7 @@ else()
     find_package(Protobuf REQUIRED)
 endif()
 
+find_package(ZLIB)
 
 add_executable(borderlands3-save-editor
     src/main.cpp
@@ -33,4 +34,4 @@ add_executable(borderlands3-save-editor
     src/OakShared.pb.cc
     )
 
-target_link_libraries(borderlands3-save-editor PRIVATE Qt5::Widgets protobuf::libprotobuf)
+target_link_libraries(borderlands3-save-editor PRIVATE Qt5::Widgets protobuf::libprotobuf ZLIB::ZLIB)
