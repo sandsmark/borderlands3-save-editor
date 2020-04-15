@@ -32,6 +32,8 @@ add_executable(borderlands3-save-editor
     src/OakProfile.pb.cc
     src/OakSave.pb.cc
     src/OakShared.pb.cc
+
+    data.qrc
     )
 
-target_link_libraries(borderlands3-save-editor PRIVATE Qt5::Widgets protobuf::libprotobuf ZLIB::ZLIB)
+target_link_libraries(borderlands3-save-editor PRIVATE Qt5::Widgets protobuf::libprotobuf)

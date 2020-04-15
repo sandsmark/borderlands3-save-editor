@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>inventoryserialdb.json.qcompress</file>
+    </qresource>
+</RCC>

@@ -9,11 +9,8 @@
 #include <QMessageBox>
 #include <QtEndian> // all the qFromLittleEndian is valid for the PC saves at least
 #include <QDebug>
+#include <QJsonDocument>
 #include <deque>
-
-extern "C" {
-#include <zlib.h> // Because I need crc32, and everyone has zlib
-}
 
 //#include <bitset> // More stuff that we want than QBitSet (like shifting) fuck std
 
@@ -49,6 +46,18 @@ Savegame::Savegame(QObject *parent) :
     QObject(parent)
 {
     m_character = std::make_unique<OakSave::Character>();
+
+    QFile dbFile(":/inventoryserialdb.json.qcompress");
+    dbFile.open(QIODevice::ReadOnly);
+    m_inventoryDb =  QJsonDocument::fromJson(qUncompress(dbFile.readAll())).object();
+
+#if 0
+    QFile infile("inventoryserialdb.json");
+    infile.open(QIODevice::ReadOnly);
+    QFile outFile("dump.compressed");
+    outFile.open(QIODevice::WriteOnly);
+    outFile.write(qCompress(infile.readAll(), 9));
+#endif
 }
 
 Savegame::~Savegame()
@@ -82,11 +91,18 @@ static QByteArray decode(const QByteArray &input)
         qWarning() << "0 seed?";
     }
 
-    QByteArray toChecksum = input.mid(0, 5) + "\xff\xff" + data.mid(2);
-    // Use zlib's crc32 because fuck if I want another dependency
-    uLong crc = crc32(0L, Z_NULL, 0);
-    crc = crc32(crc, (uint8_t*)toChecksum.data(), toChecksum.size());
-    const uint16_t computedChecksum = (crc >> 16) ^ crc;
+    const QByteArray toChecksum = input.mid(0, 5) + "\xff\xff" + data.mid(2);
+    uint32_t crc32 = 0xffffffff;
+    for (const char c : toChecksum) {
+        uint32_t val = (crc32 xor c) bitand 0xff;
+        for (int i=0; i<8; i++) {
+            val = (val bitand 1) ? (val >>1 ) xor 0xedb88320 : val >> 1;
+        }
+        crc32 = val xor (crc32 >> 8);
+    }
+    crc32 xor_eq 0xffffffff;
+
+    const uint16_t computedChecksum = (crc32 >> 16) ^ crc32;
     const uint16_t checksum = qFromBigEndian<uint16_t>(data.data());
     if (computedChecksum != checksum) {
         qWarning() << "Checksum mismatch" << computedChecksum << "expected" << checksum;
@@ -197,7 +213,7 @@ bool Savegame::load(const QString &filePath)
             QMessageBox::warning(nullptr, "Invalid header", "Invalid file, failed to read custom format entry index.\n" + file.errorString());
             return false;
         }
-        qDebug() << "Format" << format.id << format.entry;
+//        qDebug() << "Format" << format.id << format.entry;
     }
     if (!readString(&m_header.savegameType, &file)) {
         QMessageBox::warning(nullptr, "Invalid header", "Invalid file, failed to read savegame type.\n" + file.errorString());
@@ -256,7 +272,7 @@ bool Savegame::load(const QString &filePath)
             return false;
         }
         int version = bits.eat(7);
-        qDebug() << "Version" << version;
+//        qDebug() << "Version" << version;
     }
 //    qDebug() << "Max bits:" << maxBits;
 
