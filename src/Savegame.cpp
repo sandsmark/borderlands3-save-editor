@@ -15,7 +15,35 @@ extern "C" {
 #include <zlib.h> // Because I need crc32, and everyone has zlib
 }
 
-#include <bitset> // More stuff that we want than QBitSet (like shifting)
+//#include <bitset> // More stuff that we want than QBitSet (like shifting) fuck std
+
+// Idea stolen wholesale from CJ
+// I'm not in the mood to write a long switch-case-shift-bits-thing
+struct BitParser
+{
+    BitParser(const QByteArray &data)
+    {
+        QBitArray bits = QBitArray::fromBits(data.data(), data.size() * 8);
+        for (int i=0; i < bits.size(); i++) {
+            m_bits.append(bits[i] ? '1' : '0');
+        }
+    }
+
+    int eat(const int count) {
+        if (count <= 0) {
+            return 0;
+        }
+
+        QByteArray toEat = m_bits.mid(0, count);
+        m_bits = m_bits.mid(count);
+        std::reverse(toEat.begin(), toEat.end()); // idk lol I don't know computer
+
+        bool ok; // lol as if
+        return toEat.toInt(&ok, 2);
+    }
+private:
+    QByteArray m_bits;
+};
 
 Savegame::Savegame(QObject *parent) :
     QObject(parent)
@@ -33,20 +61,19 @@ static QByteArray decode(const QByteArray &input)
         qWarning() << "Invalid serial";
         return {};
     }
-    const char *indata = input.data();
     if (input[0] != 3) {
         qWarning() << "Invalid serial, doesn't start with 3";
+        return {};
     }
 
-    const uint32_t seed = qFromBigEndian<uint32_t>(&indata[1]);
+    const int32_t seed = qFromBigEndian<int32_t>(input.data() + 1);
 
-//    std::vector<uint8_t> data(input.begin() + 5, input.end());
-    QByteArray data = input.mid(5);
+    QByteArray data = input.mid(5); // 1 first byte is 3, 4 bytes is int seed
 
     if (seed != 0) {
-        uint32_t key = (seed >> 5);// & 0xFFFFFFFF;
+        uint32_t key = (seed >> 5) & 0xFFFFFFFF;
         for (char &c : data) {
-            key = (key * 0x10A860C1ul) % 0xFFFFFFFB;
+            key = (key * 0x10A860C1ull) % 0xFFFFFFFB;
             c ^= key;
         }
         const int steps = (seed & 0x1f) % data.size();
@@ -55,15 +82,10 @@ static QByteArray decode(const QByteArray &input)
         qWarning() << "0 seed?";
     }
 
-    std::vector<uint8_t> toChecksum(input.begin(), input.begin() + 5);
-    toChecksum.push_back(0xff);
-    toChecksum.push_back(0xff);
-    toChecksum.insert(toChecksum.end(), data.begin() + 2, data.end());
-
+    QByteArray toChecksum = input.mid(0, 5) + "\xff\xff" + data.mid(2);
     // Use zlib's crc32 because fuck if I want another dependency
     uLong crc = crc32(0L, Z_NULL, 0);
-    crc = crc32(crc, toChecksum.data(), toChecksum.size());
-    qDebug() << "crc" << crc;
+    crc = crc32(crc, (uint8_t*)toChecksum.data(), toChecksum.size());
     const uint16_t computedChecksum = (crc >> 16) ^ crc;
     const uint16_t checksum = qFromBigEndian<uint16_t>(data.data());
     if (computedChecksum != checksum) {
@@ -71,7 +93,7 @@ static QByteArray decode(const QByteArray &input)
         return {};
     }
 
-    return data.mid(2);//std::vector<uint8_t>(data.begin() + 2, data.end());
+    return data.mid(2);
 }
 
 // could be simpler and more efficient and who uses powerpc these days, but meh
@@ -218,6 +240,7 @@ bool Savegame::load(const QString &filePath)
     }
 
     qDebug() << "Items:" << m_character->inventory_items_size();
+//    int maxBits = 0;
 //    if (m_character->inventory_items_size() > 0) {
     for (int i=0; i<m_character->inventory_items_size(); i++) {
         const ::OakSave::OakInventoryItemSaveGameData& entry = m_character->inventory_items(i);
@@ -227,18 +250,15 @@ bool Savegame::load(const QString &filePath)
             return false;
         }
 
-
-        // It's ugly, pls forgive
-        std::string bitsString;
-        QBitArray bits = QBitArray::fromBits(serial.data(), serial.size() * 8);
-        for (int i=0; i < bits.size(); i++) {
-            bitsString.push_back(bits[i] ? '1' : '0');
+        BitParser bits(serial);
+        if (bits.eat(8) != 128) {
+            qWarning() << "Invalid start";
+            return false;
         }
-        qDebug() << QByteArray::fromStdString(bitsString) << bitsString.size();
-//        std::bitset bitset(bitsString);
-//        qDebug() << bits.size() << bits;
-//        qDebug() << serial.;
+        int version = bits.eat(7);
+        qDebug() << "Version" << version;
     }
+//    qDebug() << "Max bits:" << maxBits;
 
 
     const QString backupFilename = file.fileName() + ".backup";
