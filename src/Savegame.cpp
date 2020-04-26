@@ -114,13 +114,13 @@ static QByteArray decode(const QByteArray &input)
     const QByteArray toChecksum = input.mid(0, 5) + "\xff\xff" + data.mid(2);
     uint32_t crc32 = 0xffffffff;
     for (const char c : toChecksum) {
-        uint32_t val = (crc32 xor c) bitand 0xff;
+        uint32_t val = (crc32 ^ c) & 0xff;
         for (int i=0; i<8; i++) {
-            val = (val bitand 1) ? (val >>1 ) xor 0xedb88320 : val >> 1;
+            val = (val & 1) ? (val >>1 ) ^ 0xedb88320 : val >> 1;
         }
-        crc32 = val xor (crc32 >> 8);
+        crc32 = val ^ (crc32 >> 8);
     }
-    crc32 xor_eq 0xffffffff;
+    crc32 ^= 0xffffffff;
 
     const uint16_t computedChecksum = (crc32 >> 16) ^ crc32;
     const uint16_t checksum = qFromBigEndian<uint16_t>(data.data());
