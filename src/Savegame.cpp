@@ -10,6 +10,7 @@
 #include <QtEndian> // all the qFromLittleEndian is valid for the PC saves at least
 #include <QDebug>
 #include <QJsonDocument>
+#include <QJsonArray>
 #include <deque>
 
 //#include <bitset> // More stuff that we want than QBitSet (like shifting) fuck std
@@ -29,6 +30,10 @@ struct BitParser
     int eat(const int count) {
         if (count <= 0) {
             return 0;
+        }
+        if (count >= m_bits.size()) {
+            qWarning() << "Invalid amount of bits requested" << count << "only have" << m_bits.size();
+            return -1;
         }
 
         QByteArray toEat = m_bits.mid(0, count);
@@ -271,8 +276,23 @@ bool Savegame::load(const QString &filePath)
             qWarning() << "Invalid start";
             return false;
         }
-        int version = bits.eat(7);
-//        qDebug() << "Version" << version;
+
+        Item item;
+        item.version = bits.eat(7);
+        if (item.version > m_maxItemVersion) {
+            qWarning() << "Version" << item.version << "is above max supported" << m_maxItemVersion;
+            return false;
+        }
+        item.balance = getAspect("InventoryBalanceData", item.version, &bits);
+        item.invdata = getAspect("InventoryData", item.version, &bits);
+        item.manufacturer = getAspect("ManufacturerData", item.version, &bits);
+
+        if (i < 3) {
+            qDebug() << "Version" << item.version;
+            qDebug() << item.balance.val;
+            qDebug() << item.invdata.val;
+            qDebug() << item.manufacturer.val;
+        }
     }
 //    qDebug() << "Max bits:" << maxBits;
 
@@ -287,6 +307,84 @@ bool Savegame::load(const QString &filePath)
     emit moneyChanged(money());
     emit eridiumChanged(eridium());
     return true;
+}
+
+int Savegame::requiredBits(const QString &category, const int requiredVersion)
+{
+    if (!m_inventoryDb.contains(category)) {
+        qWarning() << "Invalid category" << category;
+        return -1;
+    }
+
+    const QJsonObject categoryObject = m_inventoryDb[category].toObject();
+    const QJsonArray versions = categoryObject["versions"].toArray();
+    if (versions.isEmpty()) {
+        qWarning() << "No versions for" << category;
+        return -1;
+    }
+    QJsonObject version = versions.first().toObject();
+
+    int bits = version["bits"].toInt();
+    for (const QJsonValue &val : versions) {
+        version = val.toObject();
+        if (!version.contains("bits") || !version.contains("version")) {
+            qWarning() << "Invalid version in" << category;
+            continue;
+        }
+        const int currentBits = version["bits"].toInt();
+        const int versionNumber = version["version"].toInt();
+        if (versionNumber > requiredVersion) {
+            return currentBits;
+        }
+
+        // I don't understand this, but CJ does so I just follow him blindly
+        // The logic seems either flipped or unnecessary
+        bits = currentBits;
+    }
+
+    return bits;
+}
+
+Savegame::Item::Aspect Savegame::getAspect(const QString &category, const int requiredVersion, BitParser *bits)
+{
+    Item::Aspect aspect;
+    aspect.bits = requiredBits(category, requiredVersion);
+    if (aspect.bits <= 0) {
+        qWarning() << "Invalid aspect";
+        return {};
+    }
+    aspect.index = bits->eat(aspect.bits);
+    if (aspect.index <= 0) {
+        qWarning() << "Invalid index";
+        return {};
+    }
+    aspect.val = getPart(category, aspect.index);
+    if (aspect.val.isEmpty()) {
+        qWarning() << "Can't find val for" << category << aspect.index;
+        return {};
+    }
+
+    return aspect;
+}
+
+QString Savegame::getPart(const QString &category, const int index)
+{
+    if (index < 1) {
+        qWarning() << "Invalid index" << index;
+        return {};
+    }
+    if (!m_inventoryDb.contains(category)) {
+        qWarning() << "Invalid category" << category;
+        return {};
+    }
+
+    const QJsonObject categoryObject = m_inventoryDb[category].toObject();
+    const QJsonArray assets = categoryObject["assets"].toArray();
+    if (index >= assets.count()) {
+        qWarning() << "Asset index" << index << "out of range, max:" << assets.count();
+        return {};
+    }
+    return assets[index].toString();
 }
 
 bool Savegame::save(const QString filePath) const

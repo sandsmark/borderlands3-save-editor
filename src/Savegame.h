@@ -15,6 +15,7 @@ class Character;
 }
 
 class QIODevice;
+struct BitParser;
 
 class Savegame : public QObject
 {
@@ -46,6 +47,30 @@ class Savegame : public QObject
     } m_header{};
 
 public:
+    struct Item {
+        enum Flag {
+            Seen = 1,
+            Favorite = 2,
+            Trash = 4
+        };
+
+        int version = -1;
+
+        struct Aspect {
+            int bits = -1;
+            int index = -1;
+            QString val;
+
+            bool isValid() const {
+                return bits > 0 && index > 0 && !val.isEmpty();
+            }
+        };
+
+        Aspect balance;
+        Aspect invdata;
+        Aspect manufacturer;
+    };
+
     Savegame(QObject *parent);
     virtual ~Savegame();
 
@@ -79,13 +104,17 @@ signals:
 
 
 private:
-    int requiredBits(const QString &category, const int version);
+    int requiredBits(const QString &category, const int requiredVersion);
+    Item::Aspect getAspect(const QString &category, const int requiredVersion, BitParser *bits);
+    QString getPart(const QString &category, const int index);
 
     int currencyAmount(const Constants::Currency currenct) const;
     void setCurrency(const Constants::Currency currency, const int amount);
     std::unique_ptr<OakSave::Character> m_character;
 
-    QJsonObject m_inventoryDb;
+    QJsonObject m_inventoryDb; // TODO: parse to in-memory struct, currently very inefficient
+    QVector<Item> m_items;
+    int m_maxItemVersion = 1000; // todo
 };
 
 #endif // SAVEGAME_H
