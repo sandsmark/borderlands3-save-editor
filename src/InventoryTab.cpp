@@ -47,6 +47,6 @@ void InventoryTab::load()
 {
     m_list->clear();
     for (const Savegame::Item &item : m_savegame->items()) {
-        m_list->addItem(item.name);
+        m_list->addItem(tr("%1 (level %2)").arg(item.name, QString::number(item.level)));
     }
 }
