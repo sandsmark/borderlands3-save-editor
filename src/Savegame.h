@@ -66,9 +66,15 @@ public:
             }
         };
 
+        QString name;
+
         Aspect balance;
-        Aspect invdata;
+        Aspect data;
         Aspect manufacturer;
+
+        int level = -1;
+
+        int numberOfParts = -1;
     };
 
     Savegame(QObject *parent);
@@ -76,6 +82,8 @@ public:
 
     bool load(const QString &filePath);
     bool save(const QString filePath) const;
+
+    const QVector<Item> &items() const { return m_items; }
 
 public slots:
     //////////////////////////
@@ -102,6 +110,8 @@ signals:
     void moneyChanged(const int amount);
     void eridiumChanged(const int amount);
 
+    void itemsChanged();
+
 
 private:
     int requiredBits(const QString &category, const int requiredVersion);
@@ -113,6 +123,7 @@ private:
     std::unique_ptr<OakSave::Character> m_character;
 
     QJsonObject m_inventoryDb; // TODO: parse to in-memory struct, currently very inefficient
+    QJsonObject m_englishNames;
     QVector<Item> m_items;
     int m_maxItemVersion = 1000; // todo
 };

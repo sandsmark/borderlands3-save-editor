@@ -13,13 +13,13 @@ public:
     explicit InventoryTab(Savegame *savegame, QWidget *parent = nullptr);
 
 private slots:
-    void onEdit();
-
-private:
+    void onSelected();
     void load();
 
+private:
     Savegame *m_savegame;
     QListWidget *m_list;
+    QListWidget *m_partsList;
 };
 
 #endif // INVENTORYTAB_H

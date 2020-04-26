@@ -9,34 +9,44 @@
 InventoryTab::InventoryTab(Savegame *savegame, QWidget *parent) : QWidget(parent),
   m_savegame(savegame)
 {
-    QVBoxLayout *mainLayout = new QVBoxLayout;
+    QHBoxLayout *mainLayout = new QHBoxLayout;
     setLayout(mainLayout);
 
     m_list = new QListWidget;
     layout()->addWidget(m_list);
 
-    QHBoxLayout *buttonsLayout = new QHBoxLayout;
-    buttonsLayout->setMargin(0);
-    mainLayout->addLayout(buttonsLayout);
+    m_partsList = new QListWidget;
+    layout()->addWidget(m_partsList);
 
-    QPushButton *editButton = new QPushButton(tr("Edit"));
-    buttonsLayout->addWidget(editButton);
-    buttonsLayout->addStretch();
+    connect(savegame, &Savegame::itemsChanged, this, &InventoryTab::load);
+    connect(m_list, &QListWidget::itemSelectionChanged, this, &InventoryTab::onSelected);
 }
 
-void InventoryTab::onEdit()
+void InventoryTab::onSelected()
 {
     QList<QListWidgetItem*> selected = m_list->selectedItems();
     if (selected.isEmpty()) {
         qDebug() << "No selected"; // todo disable button when none selected
         return;
     }
+    int index = m_list->row(selected.first());
+    if (index >= m_savegame->items().count()) {
+        qWarning() << "Out of bounds!";
+        return;
+    }
 
-    QString itemId = selected.first()->data(Qt::UserRole).toString();
+    const Savegame::Item &item = m_savegame->items()[index];
+    qDebug() << "Part count" << item.numberOfParts;
+    qDebug() << "Version" << item.version << "level" << item.level;
+    qDebug() << item.balance.val;
+    qDebug() << item.data.val;
+    qDebug() << item.manufacturer.val;
 }
 
 void InventoryTab::load()
 {
-//    m_saveGame->in
-
+    m_list->clear();
+    for (const Savegame::Item &item : m_savegame->items()) {
+        m_list->addItem(item.name);
+    }
 }

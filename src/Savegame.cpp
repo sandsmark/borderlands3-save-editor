@@ -27,6 +27,10 @@ struct BitParser
         }
     }
 
+    int bitsLeft() const {
+        return m_bits.count();
+    }
+
     int eat(const int count) {
         if (count <= 0) {
             return 0;
@@ -53,11 +57,22 @@ Savegame::Savegame(QObject *parent) :
     m_character = std::make_unique<OakSave::Character>();
 
     QFile dbFile(":/inventoryserialdb.json.qcompress");
-    dbFile.open(QIODevice::ReadOnly);
+    if (!dbFile.open(QIODevice::ReadOnly)) {
+        qWarning() << "Failed to open inventory seial database!" << dbFile.errorString();
+        return;
+    }
+
     m_inventoryDb =  QJsonDocument::fromJson(qUncompress(dbFile.readAll())).object();
 
+    QFile namesFile(":/data/english-names.json");
+    if (!namesFile.open(QIODevice::ReadOnly)) {
+        qWarning() << "Failed to open name database!" << namesFile.errorString();
+        return;
+    }
+    m_englishNames =  QJsonDocument::fromJson(namesFile.readAll()).object();
+
 #if 0
-    QFile infile("inventoryserialdb.json");
+    QFile infile("name.json");
     infile.open(QIODevice::ReadOnly);
     QFile outFile("dump.compressed");
     outFile.open(QIODevice::WriteOnly);
@@ -172,6 +187,10 @@ static bool writeString(const QString &input, QIODevice *output)
 
 bool Savegame::load(const QString &filePath)
 {
+    if (m_englishNames.isEmpty() || m_inventoryDb.isEmpty()) {
+        qWarning() << "Databases not loaded!";
+        return false;
+    }
     m_header = {};
 
     QFile file(filePath);
@@ -284,16 +303,35 @@ bool Savegame::load(const QString &filePath)
             return false;
         }
         item.balance = getAspect("InventoryBalanceData", item.version, &bits);
-        item.invdata = getAspect("InventoryData", item.version, &bits);
+        if (!item.balance.isValid()) {
+            qWarning() << "Invalid item balance";
+            continue;
+        }
+        item.data = getAspect("InventoryData", item.version, &bits);
+        if (!item.data.isValid()) {
+            qWarning() << "Invalid item data";
+            continue;
+        }
         item.manufacturer = getAspect("ManufacturerData", item.version, &bits);
+        if (!item.data.isValid()) {
+            qWarning() << "Invalid item manufacturer";
+            continue;
+        }
+        item.level = bits.eat(7);
+        item.numberOfParts = bits.eat(6);
+
+        item.name = item.balance.val.split('/', QString::SkipEmptyParts).last().split('.', QString::SkipEmptyParts).last();
+        if (m_englishNames.contains(item.name.toLower())) {
+            item.name = m_englishNames[item.name.toLower()].toString();
+        }
 
         if (i < 3) {
-            qDebug() << "Version" << item.version;
-            qDebug() << item.balance.val;
-            qDebug() << item.invdata.val;
-            qDebug() << item.manufacturer.val;
+            qDebug() << "Number of parts" << item.numberOfParts;
+            qDebug() << "Bits left" << bits.bitsLeft();
         }
+        m_items.append(item);
     }
+    emit itemsChanged();
 //    qDebug() << "Max bits:" << maxBits;
 
 

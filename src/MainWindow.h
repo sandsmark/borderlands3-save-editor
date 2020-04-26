@@ -4,6 +4,7 @@
 #include <QMainWindow>
 
 class GeneralTab;
+class InventoryTab;
 class Savegame;
 
 class QPushButton;
@@ -31,5 +32,6 @@ private:
     QString m_filePath;
     QTabWidget *m_tabWidget;
     GeneralTab *m_generalTab;
+    InventoryTab *m_inventoryTab;
 };
 #endif // WIDGET_H
