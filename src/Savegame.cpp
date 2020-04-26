@@ -344,6 +344,9 @@ bool Savegame::load(const QString &filePath)
     emit levelChanged(level());
     emit moneyChanged(money());
     emit eridiumChanged(eridium());
+
+    emit fileLoaded();
+
     return true;
 }
 
@@ -470,6 +473,37 @@ bool Savegame::save(const QString filePath) const
     file.write(data);
 
     return true;
+}
+
+int Savegame::ammoAmount(const QString &name) const
+{
+    // fuckings to protobuf
+    const std::string ammoId = ("/Game/GameData/Weapons/Ammo/Resource_Ammo_" + name + ".Resource_Ammo_" + name).toStdString();
+
+    for (const OakSave::ResourcePoolSavegameData &pool : m_character->resource_pools()) {
+        if (pool.resource_path() != ammoId) {
+            continue;
+        }
+        return pool.amount();
+    }
+    qWarning() << "FAiled to find" << name;
+    return -1;
+}
+
+void Savegame::setAmmoAmount(const QString &name, const int amount)
+{
+    // fuckings to protobuf
+    const std::string ammoId = ("/Game/GameData/Weapons/Ammo/Resource_Ammo_" + name + ".Resource_Ammo_" + name).toStdString();
+
+    for (OakSave::ResourcePoolSavegameData &pool : *m_character->mutable_resource_pools()) {
+        if (pool.resource_path() != ammoId) {
+            continue;
+        }
+        pool.set_amount(amount);
+        return;
+    }
+
+    qWarning() << "FAiled to find" << name;
 }
 
 QString Savegame::characterName() const

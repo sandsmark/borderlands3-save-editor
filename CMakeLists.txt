@@ -29,6 +29,7 @@ add_executable(borderlands3-save-editor
     src/generaltab.cpp
     src/InventoryTab.cpp
     src/GameSettingsTab.cpp
+    src/ConsumablesTab.cpp
 
     src/OakProfile.pb.cc
     src/OakSave.pb.cc

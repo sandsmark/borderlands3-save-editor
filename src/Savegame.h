@@ -85,6 +85,9 @@ public:
 
     const QVector<Item> &items() const { return m_items; }
 
+    int ammoAmount(const QString &name) const;
+    void setAmmoAmount(const QString &name, const int amount);
+
 public slots:
     //////////////////////////
     // Character stuff
@@ -111,6 +114,7 @@ signals:
     void eridiumChanged(const int amount);
 
     void itemsChanged();
+    void fileLoaded();
 
 
 private:

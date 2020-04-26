@@ -5,6 +5,7 @@
 
 class GeneralTab;
 class InventoryTab;
+class ConsumablesTab;
 class Savegame;
 
 class QPushButton;
@@ -33,5 +34,6 @@ private:
     QTabWidget *m_tabWidget;
     GeneralTab *m_generalTab;
     InventoryTab *m_inventoryTab;
+    ConsumablesTab *m_consumablesTab;
 };
 #endif // WIDGET_H
