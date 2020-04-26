@@ -88,6 +88,9 @@ public:
     int ammoAmount(const QString &name) const;
     void setAmmoAmount(const QString &name, const int amount);
 
+    int sduAmount(const QString &name) const;
+    void setSduAmount(const QString &name, const int amount);
+
 public slots:
     //////////////////////////
     // Character stuff

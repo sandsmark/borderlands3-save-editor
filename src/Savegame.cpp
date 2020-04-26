@@ -506,6 +506,37 @@ void Savegame::setAmmoAmount(const QString &name, const int amount)
     qWarning() << "FAiled to find" << name;
 }
 
+int Savegame::sduAmount(const QString &name) const
+{
+    // fuckings to protobuf
+    const std::string sduId = ("/Game/Pickups/SDU/SDU_" + name + ".SDU_" + name).toStdString();
+
+    for (const OakSave::OakSDUSaveGameData &sdu : m_character->sdu_list()) {
+        if (sdu.sdu_data_path() != sduId) {
+            continue;
+        }
+        return sdu.sdu_level();
+    }
+    qDebug() << "No SDU" << name;
+    return -1;
+}
+
+void Savegame::setSduAmount(const QString &name, const int amount)
+{
+    // fuckings to protobuf
+    const std::string sduId = ("/Game/Pickups/SDU/SDU_" + name + ".SDU_" + name).toStdString();
+
+    for (OakSave::OakSDUSaveGameData &sdu : *m_character->mutable_sdu_list()) {
+        if (sdu.sdu_data_path() != sduId) {
+            continue;
+        }
+        sdu.set_sdu_level(amount);
+        return;
+    }
+
+    qWarning() << "FAiled to find" << name;
+}
+
 QString Savegame::characterName() const
 {
     return QString::fromStdString(m_character->preferred_character_name());

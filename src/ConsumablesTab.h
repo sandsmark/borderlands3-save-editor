@@ -29,6 +29,15 @@ private:
     QSpinBox *m_smgAmmo;
     QSpinBox *m_shotgunAmmo;
     QSpinBox *m_sniperAmmo;
+
+    QSpinBox *m_rifleSdu;
+    QSpinBox *m_grenadeSdu;
+    QSpinBox *m_heavySdu;
+    QSpinBox *m_pistolSdu;
+    QSpinBox *m_smgSdu;
+    QSpinBox *m_shotgunSdu;
+    QSpinBox *m_sniperSdu;
+    QSpinBox *m_backpackSdu;
 };
 
 #endif // CONSUMABLESTAB_H
