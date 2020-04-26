@@ -84,14 +84,14 @@ Savegame::~Savegame()
 { // can't be inline or default, because unique_ptr in gcc is short-bus special
 }
 
-static QByteArray decode(const QByteArray &input)
+static QByteArray deobfuscateItem(const QByteArray &input)
 {
     if (input.size() < 6) {
-        qWarning() << "Invalid serial";
+        QMessageBox::warning(nullptr, "Invalid file", QObject::tr("Invalid item serial (too short: %1).").arg(input.size()));
         return {};
     }
     if (input[0] != 3) {
-        qWarning() << "Invalid serial, doesn't start with 3";
+        QMessageBox::warning(nullptr, "Invalid file", QObject::tr("Invalid item (item serial doesn't start with 3, got %1).").arg(int(input[0])));
         return {};
     }
 
@@ -102,7 +102,7 @@ static QByteArray decode(const QByteArray &input)
     if (seed != 0) {
         uint32_t key = (seed >> 5) & 0xFFFFFFFF;
         for (char &c : data) {
-            key = (key * 0x10A860C1ull) % 0xFFFFFFFB;
+            key = (key * obfuscation::itemKey) % obfuscation::itemMask;
             c ^= key;
         }
         const int steps = (seed & 0x1f) % data.size();
@@ -111,6 +111,7 @@ static QByteArray decode(const QByteArray &input)
         qWarning() << "0 seed?";
     }
 
+    // Normal crc32
     const QByteArray toChecksum = input.mid(0, 5) + "\xff\xff" + data.mid(2);
     uint32_t crc32 = 0xffffffff;
     for (const char c : toChecksum) {
@@ -125,6 +126,7 @@ static QByteArray decode(const QByteArray &input)
     const uint16_t computedChecksum = (crc32 >> 16) ^ crc32;
     const uint16_t checksum = qFromBigEndian<uint16_t>(data.data());
     if (computedChecksum != checksum) {
+        QMessageBox::warning(nullptr, "Invalid file", QObject::tr("Invalid item (checksum failed)."));
         qWarning() << "Checksum mismatch" << computedChecksum << "expected" << checksum;
         return {};
     }
@@ -223,7 +225,7 @@ bool Savegame::load(const QString &filePath)
         QMessageBox::warning(nullptr, "Invalid header", "Invalid file, too many custom formats: " + QString::number(m_header.customFormatCount));
         return false;
     }
-    qDebug() << "Custom formats" << m_header.customFormatCount;
+//    qDebug() << "Custom formats" << m_header.customFormatCount;
 
     m_header.customFormats.resize(m_header.customFormatCount);
 
@@ -271,11 +273,12 @@ bool Savegame::load(const QString &filePath)
 
     if (!m_character->ParseFromArray(dataRaw, data.size())) {
         // protobuf never gives us anything, but whatever
-        QMessageBox::warning(nullptr, "Invalid file", "Failed to parse file contents:\n" + QString::fromStdString(m_character->InitializationErrorString()));
+        QMessageBox::warning(nullptr, "Invalid file", "Failed to parse file contents (protobuf parse failed):\n" + QString::fromStdString(m_character->InitializationErrorString()));
         return false;
     }
 
     if (!m_character->IsInitialized()) {
+        QMessageBox::warning(nullptr, "Invalid file", "Failed to parse file contents (protobuf not initialized):\n" + QString::fromStdString(m_character->InitializationErrorString()));
         return false;
     }
 
@@ -284,38 +287,40 @@ bool Savegame::load(const QString &filePath)
 //    if (m_character->inventory_items_size() > 0) {
     for (int i=0; i<m_character->inventory_items_size(); i++) {
         const ::OakSave::OakInventoryItemSaveGameData& entry = m_character->inventory_items(i);
-        QByteArray serial = decode(QByteArray::fromStdString(entry.item_serial_number()));
+        QByteArray serial = deobfuscateItem(QByteArray::fromStdString(entry.item_serial_number()));
         if (serial.isEmpty()) {
-            qWarning() << "Couldn't parse item";
+            qWarning() << "Couldn't deobfuscate";
             return false;
         }
 
         BitParser bits(serial);
         if (bits.eat(8) != 128) {
             qWarning() << "Invalid start";
+            QMessageBox::warning(nullptr, "Invalid file", tr("Item data has wrong start."));
             return false;
         }
 
         Item item;
         item.version = bits.eat(7);
         if (item.version > m_maxItemVersion) {
-            qWarning() << "Version" << item.version << "is above max supported" << m_maxItemVersion;
+            QMessageBox::warning(nullptr, "Invalid file", tr("Item version is too high (%1, we only support %2").arg(item.version, m_maxItemVersion));
             return false;
         }
         item.balance = getAspect("InventoryBalanceData", item.version, &bits);
         if (!item.balance.isValid()) {
+            QMessageBox::warning(nullptr, "Invalid file", tr("Invalid item balance"));
             qWarning() << "Invalid item balance";
-            continue;
+            return false;
         }
         item.data = getAspect("InventoryData", item.version, &bits);
         if (!item.data.isValid()) {
-            qWarning() << "Invalid item data";
-            continue;
+            QMessageBox::warning(nullptr, "Invalid file", tr("Invalid item data"));
+            return false;
         }
         item.manufacturer = getAspect("ManufacturerData", item.version, &bits);
         if (!item.data.isValid()) {
-            qWarning() << "Invalid item manufacturer";
-            continue;
+            QMessageBox::warning(nullptr, "Invalid file", tr("Invalid item manufacturer"));
+            return false;
         }
         item.level = bits.eat(7);
         item.numberOfParts = bits.eat(6);
