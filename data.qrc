@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>inventoryserialdb.json.qcompress</file>
         <file>data/english-names.json</file>
+        <file>data/inventory-serials.json</file>
     </qresource>
 </RCC>

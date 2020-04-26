@@ -56,13 +56,13 @@ Savegame::Savegame(QObject *parent) :
 {
     m_character = std::make_unique<OakSave::Character>();
 
-    QFile dbFile(":/inventoryserialdb.json.qcompress");
+    QFile dbFile(":/data/inventory-serials.json");
     if (!dbFile.open(QIODevice::ReadOnly)) {
         qWarning() << "Failed to open inventory seial database!" << dbFile.errorString();
         return;
     }
 
-    m_inventoryDb =  QJsonDocument::fromJson(qUncompress(dbFile.readAll())).object();
+    m_inventoryDb =  QJsonDocument::fromJson(dbFile.readAll()).object();
 
     QFile namesFile(":/data/english-names.json");
     if (!namesFile.open(QIODevice::ReadOnly)) {
