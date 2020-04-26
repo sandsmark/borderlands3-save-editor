@@ -399,7 +399,7 @@ Savegame::Item::Aspect Savegame::getAspect(const QString &category, const int re
         qWarning() << "Invalid index";
         return {};
     }
-    aspect.val = getPart(category, aspect.index);
+    aspect.val = getItemAsset(category, aspect.index);
     if (aspect.val.isEmpty()) {
         qWarning() << "Can't find val for" << category << aspect.index;
         return {};
@@ -408,7 +408,7 @@ Savegame::Item::Aspect Savegame::getAspect(const QString &category, const int re
     return aspect;
 }
 
-QString Savegame::getPart(const QString &category, const int index)
+QString Savegame::getItemAsset(const QString &category, const int index)
 {
     if (index < 1) {
         qWarning() << "Invalid index" << index;

@@ -123,7 +123,7 @@ signals:
 private:
     int requiredBits(const QString &category, const int requiredVersion);
     Item::Aspect getAspect(const QString &category, const int requiredVersion, BitParser *bits);
-    QString getPart(const QString &category, const int index);
+    QString getItemAsset(const QString &category, const int index);
 
     int currencyAmount(const Constants::Currency currenct) const;
     void setCurrency(const Constants::Currency currency, const int amount);
