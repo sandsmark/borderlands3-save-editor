@@ -75,6 +75,7 @@ public:
         int level = -1;
 
         int numberOfParts = -1;
+        QVector<Aspect> parts;
     };
 
     Savegame(QObject *parent);
@@ -131,6 +132,7 @@ private:
 
     QJsonObject m_inventoryDb; // TODO: parse to in-memory struct, currently very inefficient
     QJsonObject m_englishNames;
+    QJsonObject m_itemPartCategories;
     QVector<Item> m_items;
     int m_maxItemVersion = 1000; // todo
 };

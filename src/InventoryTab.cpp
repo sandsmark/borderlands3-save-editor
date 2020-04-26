@@ -35,7 +35,11 @@ void InventoryTab::onSelected()
         return;
     }
 
+    m_partsList->clear();
     const Savegame::Item &item = m_savegame->items()[index];
+    for (const Savegame::Item::Aspect &part : item.parts) {
+        m_partsList->addItem(part.val.split('.').last());
+    }
     qDebug() << "Part count" << item.numberOfParts;
     qDebug() << "Version" << item.version << "level" << item.level;
     qDebug() << item.balance.val;

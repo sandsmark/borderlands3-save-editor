@@ -57,19 +57,17 @@ Savegame::Savegame(QObject *parent) :
     m_character = std::make_unique<OakSave::Character>();
 
     QFile dbFile(":/data/inventory-serials.json");
-    if (!dbFile.open(QIODevice::ReadOnly)) {
-        qWarning() << "Failed to open inventory seial database!" << dbFile.errorString();
-        return;
-    }
-
+    dbFile.open(QIODevice::ReadOnly);
     m_inventoryDb =  QJsonDocument::fromJson(dbFile.readAll()).object();
 
     QFile namesFile(":/data/english-names.json");
-    if (!namesFile.open(QIODevice::ReadOnly)) {
-        qWarning() << "Failed to open name database!" << namesFile.errorString();
-        return;
-    }
+    namesFile.open(QIODevice::ReadOnly);
     m_englishNames =  QJsonDocument::fromJson(namesFile.readAll()).object();
+
+    // From cfi2017
+    QFile itemPartCategoriesFile(":/data/balance_to_inv_key.json");
+    itemPartCategoriesFile.open(QIODevice::ReadOnly);
+    m_itemPartCategories = QJsonDocument::fromJson(itemPartCategoriesFile.readAll()).object();
 
 #if 0
     QFile infile("name.json");
@@ -189,7 +187,7 @@ static bool writeString(const QString &input, QIODevice *output)
 
 bool Savegame::load(const QString &filePath)
 {
-    if (m_englishNames.isEmpty() || m_inventoryDb.isEmpty()) {
+    if (m_englishNames.isEmpty() || m_inventoryDb.isEmpty() || m_itemPartCategories.isEmpty()) {
         qWarning() << "Databases not loaded!";
         return false;
     }
@@ -285,8 +283,8 @@ bool Savegame::load(const QString &filePath)
     qDebug() << "Items:" << m_character->inventory_items_size();
 //    int maxBits = 0;
 //    if (m_character->inventory_items_size() > 0) {
-    for (int i=0; i<m_character->inventory_items_size(); i++) {
-        const ::OakSave::OakInventoryItemSaveGameData& entry = m_character->inventory_items(i);
+    for (int itemIndex=0; itemIndex<m_character->inventory_items_size(); itemIndex++) {
+        const ::OakSave::OakInventoryItemSaveGameData& entry = m_character->inventory_items(itemIndex);
         QByteArray serial = deobfuscateItem(QByteArray::fromStdString(entry.item_serial_number()));
         if (serial.isEmpty()) {
             qWarning() << "Couldn't deobfuscate";
@@ -312,6 +310,12 @@ bool Savegame::load(const QString &filePath)
             qWarning() << "Invalid item balance";
             return false;
         }
+
+        item.name = item.balance.val.split('/', QString::SkipEmptyParts).last().split('.', QString::SkipEmptyParts).last();
+        if (m_englishNames.contains(item.name.toLower())) {
+            item.name = m_englishNames[item.name.toLower()].toString();
+        }
+
         item.data = getAspect("InventoryData", item.version, &bits);
         if (!item.data.isValid()) {
             QMessageBox::warning(nullptr, "Invalid file", tr("Invalid item data"));
@@ -325,12 +329,24 @@ bool Savegame::load(const QString &filePath)
         item.level = bits.eat(7);
         item.numberOfParts = bits.eat(6);
 
-        item.name = item.balance.val.split('/', QString::SkipEmptyParts).last().split('.', QString::SkipEmptyParts).last();
-        if (m_englishNames.contains(item.name.toLower())) {
-            item.name = m_englishNames[item.name.toLower()].toString();
+        if (!m_itemPartCategories.contains(item.balance.val.toLower())) {
+            QMessageBox::warning(nullptr, "Invalid file", tr("Failed to find item parts for %1").arg(item.name));
+            qWarning() << "Item not in parts database:" << item.balance.val;
+            continue;
+//            return false;
+        }
+        QString itemPartCategory = m_itemPartCategories[item.balance.val.toLower()].toString();
+
+        for (int partIndex = 0; partIndex < item.numberOfParts; partIndex++) {
+            Item::Aspect part = getAspect(itemPartCategory, item.version, &bits);
+            if (!part.isValid()) {
+                QMessageBox::warning(nullptr, "Invalid file", tr("Failed to get item part %1 for item %2.").arg(partIndex).arg(item.name));
+                return false;
+            }
+            item.parts.append(part);
         }
 
-        if (i < 3) {
+        if (itemIndex < 3) {
             qDebug() << "Number of parts" << item.numberOfParts;
             qDebug() << "Bits left" << bits.bitsLeft();
         }
