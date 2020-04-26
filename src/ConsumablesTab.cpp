@@ -61,13 +61,13 @@ ConsumablesTab::ConsumablesTab(Savegame *savegame) :
     m_smgSdu->setMaximum(8);
 
     m_heavySdu = new QSpinBox;
-    m_heavySdu->setMaximum(8);
+    m_heavySdu->setMaximum(13);
 
     m_pistolSdu = new QSpinBox;
     m_pistolSdu->setMaximum(8);
 
     m_sniperSdu = new QSpinBox;
-    m_sniperSdu->setMaximum(8);
+    m_sniperSdu->setMaximum(13);
 
     m_grenadeSdu = new QSpinBox;
     m_grenadeSdu->setMaximum(8);
@@ -76,7 +76,7 @@ ConsumablesTab::ConsumablesTab(Savegame *savegame) :
     m_shotgunSdu->setMaximum(8);
 
     m_backpackSdu = new QSpinBox;
-    m_backpackSdu->setMaximum(8);
+    m_backpackSdu->setMaximum(13);
 
     sduLayout->addRow(tr("Pistol"), m_pistolSdu);
     sduLayout->addRow(tr("SMG"), m_smgSdu);
