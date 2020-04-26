@@ -738,6 +738,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_OakProfile_2eproto::offsets[] 
   PROTOBUF_FIELD_OFFSET(::OakSave::Profile, moxxis_drink_event_bits_product_id_),
   PROTOBUF_FIELD_OFFSET(::OakSave::Profile, challenge_data_),
   PROTOBUF_FIELD_OFFSET(::OakSave::Profile, citizensciencelevelprogression_),
+  PROTOBUF_FIELD_OFFSET(::OakSave::Profile, default_dead_zone_inner_updated_),
   PROTOBUF_FIELD_OFFSET(::OakSave::Profile, disable_event_content_),
   PROTOBUF_FIELD_OFFSET(::OakSave::Profile, desired_friend_sync_state_),
   PROTOBUF_FIELD_OFFSET(::OakSave::Profile, needs_shift_first_boot_),
@@ -851,7 +852,7 @@ const char descriptor_table_protodef_OakProfile_2eproto[] PROTOBUF_SECTION_VARIA
   "_asset_path\030\002 \001(\t\"l\n\021RecentlyMetPlayer\022\027"
   "\n\017shift_player_id\030\001 \001(\t\022\035\n\025first_party_p"
   "layer_id\030\002 \001(\t\022\037\n\027show_shift_player_entr"
-  "y\030\003 \001(\010\"\3308\n\007Profile\022\031\n\021enable_aim_assist"
+  "y\030\003 \001(\010\"\2029\n\007Profile\022\031\n\021enable_aim_assist"
   "\030\001 \001(\010\022\033\n\023gamepad_invert_look\030\002 \001(\010\022\033\n\023g"
   "amepad_invert_turn\030\003 \001(\010\022\033\n\023gamepad_inve"
   "rt_move\030\004 \001(\010\022\035\n\025gamepad_invert_strafe\030\005"
@@ -1011,28 +1012,29 @@ const char descriptor_table_protodef_OakProfile_2eproto[] PROTOBUF_SECTION_VARIA
   "nabled\030\316\001 \001(\010\022+\n\"moxxis_drink_event_bits"
   "_product_id\030\317\001 \001(\005\0227\n\016challenge_data\030\320\001 "
   "\003(\0132\036.OakSave.ChallengeSaveGameData\022\'\n\036C"
-  "itizenScienceLevelProgression\030\321\001 \003(\005\022\036\n\025"
-  "disable_event_content\030\323\001 \001(\010\022\"\n\031desired_"
-  "friend_sync_state\030\324\001 \001(\r\022\037\n\026needs_shift_"
-  "first_boot\030\325\001 \001(\010\0229\n\024recently_met_player"
-  "s\030\326\001 \003(\0132\032.OakSave.RecentlyMetPlayer\022)\n "
-  "CitizenScienceActiveBoosterIndex\030\327\001 \001(\005\022"
-  "1\n(CitizenScienceActiveBoosterRemainingT"
-  "ime\030\330\001 \001(\002\022-\n$CitizenScienceActiveBooste"
-  "rTotalTime\030\331\001 \001(\002\022*\n!StreamerPrimaryActi"
-  "veBoosterIndex\030\332\001 \001(\005\0222\n)StreamerPrimary"
-  "ActiveBoosterRemainingTime\030\333\001 \001(\002\022.\n%Str"
-  "eamerPrimaryActiveBoosterTotalTime\030\334\001 \001("
-  "\002\022,\n#StreamerSecondaryActiveBoosterIndex"
-  "\030\335\001 \001(\005\0224\n+StreamerSecondaryActiveBooste"
-  "rRemainingTime\030\336\001 \001(\002\0220\n\'StreamerSeconda"
-  "ryActiveBoosterTotalTime\030\337\001 \001(\002\022\034\n\023Strea"
-  "merBoosterTier\030\340\001 \001(\005\022$\n\033CitizenScienceC"
-  "SBucksAmount\030\342\001 \001(\005\022)\n bCitizenScienceHa"
-  "sSeenIntroVideo\030\343\001 \001(\010\022$\n\033bCitizenScienc"
-  "eTutorialDone\030\344\001 \001(\010\032T\n\025FriendEncounters"
-  "Entry\022\013\n\003key\030\001 \001(\t\022.\n\005value\030\002 \001(\0132\037.OakS"
-  "ave.OakFriendEncounterDatab\006proto3"
+  "itizenScienceLevelProgression\030\321\001 \003(\005\022(\n\037"
+  "default_dead_zone_inner_updated\030\322\001 \001(\010\022\036"
+  "\n\025disable_event_content\030\323\001 \001(\010\022\"\n\031desire"
+  "d_friend_sync_state\030\324\001 \001(\r\022\037\n\026needs_shif"
+  "t_first_boot\030\325\001 \001(\010\0229\n\024recently_met_play"
+  "ers\030\326\001 \003(\0132\032.OakSave.RecentlyMetPlayer\022)"
+  "\n CitizenScienceActiveBoosterIndex\030\327\001 \001("
+  "\005\0221\n(CitizenScienceActiveBoosterRemainin"
+  "gTime\030\330\001 \001(\002\022-\n$CitizenScienceActiveBoos"
+  "terTotalTime\030\331\001 \001(\002\022*\n!StreamerPrimaryAc"
+  "tiveBoosterIndex\030\332\001 \001(\005\0222\n)StreamerPrima"
+  "ryActiveBoosterRemainingTime\030\333\001 \001(\002\022.\n%S"
+  "treamerPrimaryActiveBoosterTotalTime\030\334\001 "
+  "\001(\002\022,\n#StreamerSecondaryActiveBoosterInd"
+  "ex\030\335\001 \001(\005\0224\n+StreamerSecondaryActiveBoos"
+  "terRemainingTime\030\336\001 \001(\002\0220\n\'StreamerSecon"
+  "daryActiveBoosterTotalTime\030\337\001 \001(\002\022\034\n\023Str"
+  "eamerBoosterTier\030\340\001 \001(\005\022$\n\033CitizenScienc"
+  "eCSBucksAmount\030\342\001 \001(\005\022)\n bCitizenScience"
+  "HasSeenIntroVideo\030\343\001 \001(\010\022$\n\033bCitizenScie"
+  "nceTutorialDone\030\344\001 \001(\010\032T\n\025FriendEncounte"
+  "rsEntry\022\013\n\003key\030\001 \001(\t\022.\n\005value\030\002 \001(\0132\037.Oa"
+  "kSave.OakFriendEncounterDatab\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_OakProfile_2eproto_deps[1] = {
   &::descriptor_table_OakShared_2eproto,
@@ -1061,7 +1063,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Oak
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_OakProfile_2eproto_once;
 static bool descriptor_table_OakProfile_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_OakProfile_2eproto = {
-  &descriptor_table_OakProfile_2eproto_initialized, descriptor_table_protodef_OakProfile_2eproto, "OakProfile.proto", 9274,
+  &descriptor_table_OakProfile_2eproto_initialized, descriptor_table_protodef_OakProfile_2eproto, "OakProfile.proto", 9316,
   &descriptor_table_OakProfile_2eproto_once, descriptor_table_OakProfile_2eproto_sccs, descriptor_table_OakProfile_2eproto_deps, 19, 1,
   schemas, file_default_instances, TableStruct_OakProfile_2eproto::offsets,
   file_level_metadata_OakProfile_2eproto, 19, file_level_enum_descriptors_OakProfile_2eproto, file_level_service_descriptors_OakProfile_2eproto,
@@ -7241,6 +7243,13 @@ const char* Profile::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
+      // bool default_dead_zone_inner_updated = 210;
+      case 210:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 144)) {
+          default_dead_zone_inner_updated_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       // bool disable_event_content = 211;
       case 211:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 152)) {
@@ -8537,6 +8546,12 @@ failure:
     }
   }
 
+  // bool default_dead_zone_inner_updated = 210;
+  if (this->default_dead_zone_inner_updated() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(210, this->_internal_default_dead_zone_inner_updated(), target);
+  }
+
   // bool disable_event_content = 211;
   if (this->disable_event_content() != 0) {
     target = stream->EnsureSpace(target);
@@ -9684,6 +9699,11 @@ size_t Profile::ByteSizeLong() const {
     total_size += 2 + 1;
   }
 
+  // bool bCitizenScienceHasSeenIntroVideo = 227;
+  if (this->bcitizensciencehasseenintrovideo() != 0) {
+    total_size += 2 + 1;
+  }
+
   // bool bCitizenScienceTutorialDone = 228;
   if (this->bcitizensciencetutorialdone() != 0) {
     total_size += 2 + 1;
@@ -9735,15 +9755,13 @@ size_t Profile::ByteSizeLong() const {
         this->_internal_moxxis_drink_event_bits_product_id());
   }
 
-  // uint32 desired_friend_sync_state = 212;
-  if (this->desired_friend_sync_state() != 0) {
-    total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
-        this->_internal_desired_friend_sync_state());
-  }
-
   // bool moxxis_drink_event_enabled = 206;
   if (this->moxxis_drink_event_enabled() != 0) {
+    total_size += 2 + 1;
+  }
+
+  // bool default_dead_zone_inner_updated = 210;
+  if (this->default_dead_zone_inner_updated() != 0) {
     total_size += 2 + 1;
   }
 
@@ -9757,9 +9775,11 @@ size_t Profile::ByteSizeLong() const {
     total_size += 2 + 1;
   }
 
-  // bool bCitizenScienceHasSeenIntroVideo = 227;
-  if (this->bcitizensciencehasseenintrovideo() != 0) {
-    total_size += 2 + 1;
+  // uint32 desired_friend_sync_state = 212;
+  if (this->desired_friend_sync_state() != 0) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_desired_friend_sync_state());
   }
 
   // int32 CitizenScienceActiveBoosterIndex = 215;
@@ -10330,6 +10350,9 @@ void Profile::MergeFrom(const Profile& from) {
   if (from.increased_chance_for_subscribers() != 0) {
     _internal_set_increased_chance_for_subscribers(from._internal_increased_chance_for_subscribers());
   }
+  if (from.bcitizensciencehasseenintrovideo() != 0) {
+    _internal_set_bcitizensciencehasseenintrovideo(from._internal_bcitizensciencehasseenintrovideo());
+  }
   if (from.bcitizensciencetutorialdone() != 0) {
     _internal_set_bcitizensciencetutorialdone(from._internal_bcitizensciencetutorialdone());
   }
@@ -10357,11 +10380,11 @@ void Profile::MergeFrom(const Profile& from) {
   if (from.moxxis_drink_event_bits_product_id() != 0) {
     _internal_set_moxxis_drink_event_bits_product_id(from._internal_moxxis_drink_event_bits_product_id());
   }
-  if (from.desired_friend_sync_state() != 0) {
-    _internal_set_desired_friend_sync_state(from._internal_desired_friend_sync_state());
-  }
   if (from.moxxis_drink_event_enabled() != 0) {
     _internal_set_moxxis_drink_event_enabled(from._internal_moxxis_drink_event_enabled());
+  }
+  if (from.default_dead_zone_inner_updated() != 0) {
+    _internal_set_default_dead_zone_inner_updated(from._internal_default_dead_zone_inner_updated());
   }
   if (from.disable_event_content() != 0) {
     _internal_set_disable_event_content(from._internal_disable_event_content());
@@ -10369,8 +10392,8 @@ void Profile::MergeFrom(const Profile& from) {
   if (from.needs_shift_first_boot() != 0) {
     _internal_set_needs_shift_first_boot(from._internal_needs_shift_first_boot());
   }
-  if (from.bcitizensciencehasseenintrovideo() != 0) {
-    _internal_set_bcitizensciencehasseenintrovideo(from._internal_bcitizensciencehasseenintrovideo());
+  if (from.desired_friend_sync_state() != 0) {
+    _internal_set_desired_friend_sync_state(from._internal_desired_friend_sync_state());
   }
   if (from.citizenscienceactiveboosterindex() != 0) {
     _internal_set_citizenscienceactiveboosterindex(from._internal_citizenscienceactiveboosterindex());
@@ -10602,6 +10625,7 @@ void Profile::InternalSwap(Profile* other) {
   swap(use_mph_, other->use_mph_);
   swap(auto_centering_enabled_, other->auto_centering_enabled_);
   swap(increased_chance_for_subscribers_, other->increased_chance_for_subscribers_);
+  swap(bcitizensciencehasseenintrovideo_, other->bcitizensciencehasseenintrovideo_);
   swap(bcitizensciencetutorialdone_, other->bcitizensciencetutorialdone_);
   swap(rare_chest_event_enabled_, other->rare_chest_event_enabled_);
   swap(badass_event_enabled_, other->badass_event_enabled_);
@@ -10611,11 +10635,11 @@ void Profile::InternalSwap(Profile* other) {
   swap(hud_scale_multiplier_, other->hud_scale_multiplier_);
   swap(total_playtime_seconds_, other->total_playtime_seconds_);
   swap(moxxis_drink_event_bits_product_id_, other->moxxis_drink_event_bits_product_id_);
-  swap(desired_friend_sync_state_, other->desired_friend_sync_state_);
   swap(moxxis_drink_event_enabled_, other->moxxis_drink_event_enabled_);
+  swap(default_dead_zone_inner_updated_, other->default_dead_zone_inner_updated_);
   swap(disable_event_content_, other->disable_event_content_);
   swap(needs_shift_first_boot_, other->needs_shift_first_boot_);
-  swap(bcitizensciencehasseenintrovideo_, other->bcitizensciencehasseenintrovideo_);
+  swap(desired_friend_sync_state_, other->desired_friend_sync_state_);
   swap(citizenscienceactiveboosterindex_, other->citizenscienceactiveboosterindex_);
   swap(citizenscienceactiveboosterremainingtime_, other->citizenscienceactiveboosterremainingtime_);
   swap(citizenscienceactiveboostertotaltime_, other->citizenscienceactiveboostertotaltime_);

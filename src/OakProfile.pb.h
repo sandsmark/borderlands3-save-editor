@@ -3331,6 +3331,7 @@ class Profile :
     kUseMPHFieldNumber = 194,
     kAutoCenteringEnabledFieldNumber = 197,
     kIncreasedChanceForSubscribersFieldNumber = 198,
+    kBCitizenScienceHasSeenIntroVideoFieldNumber = 227,
     kBCitizenScienceTutorialDoneFieldNumber = 228,
     kRareChestEventEnabledFieldNumber = 199,
     kBadassEventEnabledFieldNumber = 200,
@@ -3340,11 +3341,11 @@ class Profile :
     kHudScaleMultiplierFieldNumber = 203,
     kTotalPlaytimeSecondsFieldNumber = 205,
     kMoxxisDrinkEventBitsProductIdFieldNumber = 207,
-    kDesiredFriendSyncStateFieldNumber = 212,
     kMoxxisDrinkEventEnabledFieldNumber = 206,
+    kDefaultDeadZoneInnerUpdatedFieldNumber = 210,
     kDisableEventContentFieldNumber = 211,
     kNeedsShiftFirstBootFieldNumber = 213,
-    kBCitizenScienceHasSeenIntroVideoFieldNumber = 227,
+    kDesiredFriendSyncStateFieldNumber = 212,
     kCitizenScienceActiveBoosterIndexFieldNumber = 215,
     kCitizenScienceActiveBoosterRemainingTimeFieldNumber = 216,
     kCitizenScienceActiveBoosterTotalTimeFieldNumber = 217,
@@ -5194,6 +5195,15 @@ class Profile :
   void _internal_set_increased_chance_for_subscribers(bool value);
   public:
 
+  // bool bCitizenScienceHasSeenIntroVideo = 227;
+  void clear_bcitizensciencehasseenintrovideo();
+  bool bcitizensciencehasseenintrovideo() const;
+  void set_bcitizensciencehasseenintrovideo(bool value);
+  private:
+  bool _internal_bcitizensciencehasseenintrovideo() const;
+  void _internal_set_bcitizensciencehasseenintrovideo(bool value);
+  public:
+
   // bool bCitizenScienceTutorialDone = 228;
   void clear_bcitizensciencetutorialdone();
   bool bcitizensciencetutorialdone() const;
@@ -5275,15 +5285,6 @@ class Profile :
   void _internal_set_moxxis_drink_event_bits_product_id(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
-  // uint32 desired_friend_sync_state = 212;
-  void clear_desired_friend_sync_state();
-  ::PROTOBUF_NAMESPACE_ID::uint32 desired_friend_sync_state() const;
-  void set_desired_friend_sync_state(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_desired_friend_sync_state() const;
-  void _internal_set_desired_friend_sync_state(::PROTOBUF_NAMESPACE_ID::uint32 value);
-  public:
-
   // bool moxxis_drink_event_enabled = 206;
   void clear_moxxis_drink_event_enabled();
   bool moxxis_drink_event_enabled() const;
@@ -5291,6 +5292,15 @@ class Profile :
   private:
   bool _internal_moxxis_drink_event_enabled() const;
   void _internal_set_moxxis_drink_event_enabled(bool value);
+  public:
+
+  // bool default_dead_zone_inner_updated = 210;
+  void clear_default_dead_zone_inner_updated();
+  bool default_dead_zone_inner_updated() const;
+  void set_default_dead_zone_inner_updated(bool value);
+  private:
+  bool _internal_default_dead_zone_inner_updated() const;
+  void _internal_set_default_dead_zone_inner_updated(bool value);
   public:
 
   // bool disable_event_content = 211;
@@ -5311,13 +5321,13 @@ class Profile :
   void _internal_set_needs_shift_first_boot(bool value);
   public:
 
-  // bool bCitizenScienceHasSeenIntroVideo = 227;
-  void clear_bcitizensciencehasseenintrovideo();
-  bool bcitizensciencehasseenintrovideo() const;
-  void set_bcitizensciencehasseenintrovideo(bool value);
+  // uint32 desired_friend_sync_state = 212;
+  void clear_desired_friend_sync_state();
+  ::PROTOBUF_NAMESPACE_ID::uint32 desired_friend_sync_state() const;
+  void set_desired_friend_sync_state(::PROTOBUF_NAMESPACE_ID::uint32 value);
   private:
-  bool _internal_bcitizensciencehasseenintrovideo() const;
-  void _internal_set_bcitizensciencehasseenintrovideo(bool value);
+  ::PROTOBUF_NAMESPACE_ID::uint32 _internal_desired_friend_sync_state() const;
+  void _internal_set_desired_friend_sync_state(::PROTOBUF_NAMESPACE_ID::uint32 value);
   public:
 
   // int32 CitizenScienceActiveBoosterIndex = 215;
@@ -5598,6 +5608,7 @@ class Profile :
   bool use_mph_;
   bool auto_centering_enabled_;
   bool increased_chance_for_subscribers_;
+  bool bcitizensciencehasseenintrovideo_;
   bool bcitizensciencetutorialdone_;
   bool rare_chest_event_enabled_;
   bool badass_event_enabled_;
@@ -5607,11 +5618,11 @@ class Profile :
   float hud_scale_multiplier_;
   ::PROTOBUF_NAMESPACE_ID::int32 total_playtime_seconds_;
   ::PROTOBUF_NAMESPACE_ID::int32 moxxis_drink_event_bits_product_id_;
-  ::PROTOBUF_NAMESPACE_ID::uint32 desired_friend_sync_state_;
   bool moxxis_drink_event_enabled_;
+  bool default_dead_zone_inner_updated_;
   bool disable_event_content_;
   bool needs_shift_first_boot_;
-  bool bcitizensciencehasseenintrovideo_;
+  ::PROTOBUF_NAMESPACE_ID::uint32 desired_friend_sync_state_;
   ::PROTOBUF_NAMESPACE_ID::int32 citizenscienceactiveboosterindex_;
   float citizenscienceactiveboosterremainingtime_;
   float citizenscienceactiveboostertotaltime_;
@@ -12328,6 +12339,26 @@ inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< ::PROTOBUF_NAMESPACE_ID::int32 >*
 Profile::mutable_citizensciencelevelprogression() {
   // @@protoc_insertion_point(field_mutable_list:OakSave.Profile.CitizenScienceLevelProgression)
   return _internal_mutable_citizensciencelevelprogression();
+}
+
+// bool default_dead_zone_inner_updated = 210;
+inline void Profile::clear_default_dead_zone_inner_updated() {
+  default_dead_zone_inner_updated_ = false;
+}
+inline bool Profile::_internal_default_dead_zone_inner_updated() const {
+  return default_dead_zone_inner_updated_;
+}
+inline bool Profile::default_dead_zone_inner_updated() const {
+  // @@protoc_insertion_point(field_get:OakSave.Profile.default_dead_zone_inner_updated)
+  return _internal_default_dead_zone_inner_updated();
+}
+inline void Profile::_internal_set_default_dead_zone_inner_updated(bool value) {
+  
+  default_dead_zone_inner_updated_ = value;
+}
+inline void Profile::set_default_dead_zone_inner_updated(bool value) {
+  _internal_set_default_dead_zone_inner_updated(value);
+  // @@protoc_insertion_point(field_set:OakSave.Profile.default_dead_zone_inner_updated)
 }
 
 // bool disable_event_content = 211;

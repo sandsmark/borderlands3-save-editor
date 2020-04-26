@@ -1212,6 +1212,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_OakSave_2eproto::offsets[] PRO
   ~0u,  // no _weak_field_map_
   PROTOBUF_FIELD_OFFSET(::OakSave::GameStateSaveData, last_traveled_map_id_),
   PROTOBUF_FIELD_OFFSET(::OakSave::GameStateSaveData, mayhem_level_),
+  PROTOBUF_FIELD_OFFSET(::OakSave::GameStateSaveData, mayhem_random_seed_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::OakSave::ChallengeCategoryProgressSaveData, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1394,18 +1395,18 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 259, -1, sizeof(::OakSave::EchoLogSaveGameData)},
   { 266, -1, sizeof(::OakSave::MapIDData)},
   { 273, -1, sizeof(::OakSave::GameStateSaveData)},
-  { 280, -1, sizeof(::OakSave::ChallengeCategoryProgressSaveData)},
-  { 286, -1, sizeof(::OakSave::OakPlayerCharacterAugmentSaveGameData)},
-  { 293, -1, sizeof(::OakSave::OakPlayerCharacterSlotSaveGameData)},
-  { 299, -1, sizeof(::OakSave::UITrackingSaveGameData)},
-  { 312, -1, sizeof(::OakSave::PlanetCycleInfo)},
-  { 320, -1, sizeof(::OakSave::TimeOfDaySaveGameData)},
-  { 327, -1, sizeof(::OakSave::LevelPersistence_Actor_SaveGameData)},
-  { 334, -1, sizeof(::OakSave::LevelPersistence_Level_SaveGameData)},
-  { 341, -1, sizeof(::OakSave::GbxZoneMapFODSavedLevelData)},
-  { 353, -1, sizeof(::OakSave::GbxZoneMapFODSaveGameData)},
-  { 359, -1, sizeof(::OakSave::Character_NicknameMappingsEntry)},
-  { 366, -1, sizeof(::OakSave::Character)},
+  { 281, -1, sizeof(::OakSave::ChallengeCategoryProgressSaveData)},
+  { 287, -1, sizeof(::OakSave::OakPlayerCharacterAugmentSaveGameData)},
+  { 294, -1, sizeof(::OakSave::OakPlayerCharacterSlotSaveGameData)},
+  { 300, -1, sizeof(::OakSave::UITrackingSaveGameData)},
+  { 313, -1, sizeof(::OakSave::PlanetCycleInfo)},
+  { 321, -1, sizeof(::OakSave::TimeOfDaySaveGameData)},
+  { 328, -1, sizeof(::OakSave::LevelPersistence_Actor_SaveGameData)},
+  { 335, -1, sizeof(::OakSave::LevelPersistence_Level_SaveGameData)},
+  { 342, -1, sizeof(::OakSave::GbxZoneMapFODSavedLevelData)},
+  { 354, -1, sizeof(::OakSave::GbxZoneMapFODSaveGameData)},
+  { 360, -1, sizeof(::OakSave::Character_NicknameMappingsEntry)},
+  { 367, -1, sizeof(::OakSave::Character)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -1577,119 +1578,120 @@ const char descriptor_table_protodef_OakSave_2eproto[] PROTOBUF_SECTION_VARIABLE
   "emSaveData\"J\n\023EchoLogSaveGameData\022\034\n\024has"
   "_been_seen_in_log\030\001 \001(\010\022\025\n\recho_log_path"
   "\030\002 \001(\t\"6\n\tMapIDData\022\024\n\014zone_name_id\030\001 \001("
-  "\r\022\023\n\013map_name_id\030\002 \001(\r\"[\n\021GameStateSaveD"
+  "\r\022\023\n\013map_name_id\030\002 \001(\r\"w\n\021GameStateSaveD"
   "ata\0220\n\024last_traveled_map_id\030\001 \001(\0132\022.OakS"
-  "ave.MapIDData\022\024\n\014mayhem_level\030\002 \001(\005\">\n!C"
-  "hallengeCategoryProgressSaveData\022\031\n\021cate"
-  "gory_progress\030\001 \001(\014\"\\\n%OakPlayerCharacte"
-  "rAugmentSaveGameData\022\027\n\017slot_asset_path\030"
-  "\001 \001(\t\022\032\n\022augment_asset_path\030\002 \001(\t\"o\n\"Oak"
-  "PlayerCharacterSlotSaveGameData\022I\n\021augme"
-  "nt_slot_list\030\001 \003(\0132..OakSave.OakPlayerCh"
-  "aracterAugmentSaveGameData\"\277\002\n\026UITrackin"
-  "gSaveGameData\022\"\n\032has_seen_skill_menu_unl"
-  "ock\030\001 \001(\010\022*\n\"has_seen_guardian_rank_menu"
-  "_unlock\030\002 \001(\010\022#\n\033has_seen_echo_boot_ammo"
-  "_bar\030\003 \001(\010\022%\n\035has_seen_echo_boot_shield_"
-  "bar\030\004 \001(\010\022#\n\033has_seen_echo_boot_grenades"
-  "\030\005 \001(\010\022$\n\034highest_thvm_breadcrumb_seen\030\006"
-  " \001(\005\022#\n\033inventory_slot_unlocks_seen\030\007 \003("
-  "\t\022\031\n\021saved_spin_offset\030\010 \001(\005\"V\n\017PlanetCy"
-  "cleInfo\022\023\n\013planet_name\030\001 \001(\t\022\024\n\014cycle_le"
-  "ngth\030\002 \001(\002\022\030\n\020last_cached_time\030\003 \001(\002\"b\n\025"
-  "TimeOfDaySaveGameData\0223\n\021planet_cycle_in"
-  "fo\030\001 \003(\0132\030.OakSave.PlanetCycleInfo\022\024\n\014pl"
-  "anet_cycle\030\002 \001(\t\"R\n#LevelPersistence_Act"
-  "or_SaveGameData\022\022\n\nactor_name\030\001 \001(\t\022\027\n\017t"
-  "imer_remaining\030\002 \001(\005\"}\n#LevelPersistence"
-  "_Level_SaveGameData\022\022\n\nlevel_name\030\001 \001(\t\022"
-  "B\n\014saved_actors\030\002 \003(\0132,.OakSave.LevelPer"
-  "sistence_Actor_SaveGameData\"\272\001\n\033GbxZoneM"
-  "apFODSavedLevelData\022\022\n\nlevel_name\030\001 \001(\t\022"
-  "\030\n\020fod_texture_size\030\002 \001(\r\022\022\n\nnum_chunks\030"
-  "\003 \001(\r\022\034\n\024discovery_percentage\030\004 \001(\002\022\022\n\nd"
-  "ata_state\030\005 \001(\r\022\025\n\rdata_revision\030\006 \001(\r\022\020"
-  "\n\010fod_data\030\007 \001(\014\"U\n\031GbxZoneMapFODSaveGam"
-  "eData\0228\n\nlevel_data\030\001 \003(\0132$.OakSave.GbxZ"
-  "oneMapFODSavedLevelData\"\241\030\n\tCharacter\022\024\n"
-  "\014save_game_id\030\001 \001(\r\022\033\n\023last_save_timesta"
-  "mp\030\002 \001(\003\022\033\n\023time_played_seconds\030\003 \001(\r\022;\n"
-  "\021player_class_data\030\004 \001(\0132 .OakSave.Playe"
-  "rClassSaveGameData\0229\n\016resource_pools\030\005 \003"
-  "(\0132!.OakSave.ResourcePoolSavegameData\0222\n"
-  "\rsaved_regions\030\006 \003(\0132\033.OakSave.RegionSav"
-  "eGameData\022\031\n\021experience_points\030\007 \001(\005\0226\n\017"
-  "game_stats_data\030\010 \003(\0132\035.OakSave.GameStat"
-  "SaveGameData\022C\n\027inventory_category_list\030"
-  "\t \003(\0132\".OakSave.InventoryCategorySaveDat"
-  "a\022>\n\017inventory_items\030\n \003(\0132%.OakSave.Oak"
-  "InventoryItemSaveGameData\022G\n\027equipped_in"
-  "ventory_list\030\013 \003(\0132&.OakSave.EquippedInv"
-  "entorySaveGameData\022\032\n\022active_weapon_list"
-  "\030\014 \003(\005\022;\n\014ability_data\030\r \001(\0132%.OakSave.O"
-  "akPlayerAbilitySaveGameData\022\037\n\027last_play"
-  "_through_index\030\016 \001(\005\022\036\n\026playthroughs_com"
-  "pleted\030\017 \001(\005\022)\n!show_new_playthrough_not"
-  "ification\030\020 \001(\010\022J\n\031mission_playthroughs_"
-  "data\030\021 \003(\0132\'.OakSave.MissionPlaythroughS"
-  "aveGameData\022\036\n\026active_travel_stations\030\025 "
-  "\003(\t\0222\n\016discovery_data\030\026 \001(\0132\032.OakSave.Di"
-  "scoverySaveData\022\"\n\032last_active_travel_st"
-  "ation\030\027 \001(\t\022D\n\026vehicles_unlocked_data\030\030 "
-  "\003(\0132$.OakSave.VehicleUnlockedSaveGameDat"
-  "a\022\036\n\026vehicle_parts_unlocked\030\031 \003(\t\022B\n\020veh"
-  "icle_loadouts\030\032 \003(\0132(.OakSave.OakCARMenu"
-  "VehicleConfigSaveData\022\"\n\032vehicle_last_lo"
-  "adout_index\030\033 \001(\005\0226\n\016challenge_data\030\034 \003("
-  "\0132\036.OakSave.ChallengeSaveGameData\022-\n\010sdu"
-  "_list\030\035 \003(\0132\033.OakSave.OakSDUSaveGameData"
-  "\022\037\n\027selected_customizations\030\036 \003(\t\022%\n\035equ"
-  "ipped_emote_customizations\030\037 \003(\005\022M\n\035sele"
-  "cted_color_customizations\030  \003(\0132&.OakSav"
-  "e.CustomPlayerColorSaveGameData\0228\n\rguard"
-  "ian_rank\030! \001(\0132!.OakSave.GuardianRankSav"
-  "eGameData\0229\n\022crew_quarters_room\030\" \001(\0132\035."
-  "OakSave.CrewQuartersSaveData\022D\n\026crew_qua"
-  "rters_gun_rack\030# \001(\0132$.OakSave.CrewQuart"
-  "ersGunRackSaveData\0228\n\022unlocked_echo_logs"
-  "\030$ \003(\0132\034.OakSave.EchoLogSaveGameData\0222\n*"
-  "has_played_special_echo_log_insert_alrea"
-  "dy\030% \001(\010\022C\n\021nickname_mappings\030& \003(\0132(.Oa"
-  "kSave.Character.NicknameMappingsEntry\0220\n"
-  "\024last_traveled_map_id\030\' \001(\0132\022.OakSave.Ma"
-  "pIDData\022V\n\"challenge_category_completion"
-  "_pcts\030( \001(\0132*.OakSave.ChallengeCategoryP"
-  "rogressSaveData\022R\n\035character_slot_save_g"
-  "ame_data\030) \001(\0132+.OakSave.OakPlayerCharac"
-  "terSlotSaveGameData\022C\n\032ui_tracking_save_"
-  "game_data\030* \001(\0132\037.OakSave.UITrackingSave"
-  "GameData\022 \n\030preferred_character_name\030+ \001"
-  "(\t\022\034\n\024name_character_limit\030, \001(\005\022\034\n\024pref"
-  "erred_group_mode\030- \001(\r\022B\n\032time_of_day_sa"
-  "ve_game_data\030. \001(\0132\036.OakSave.TimeOfDaySa"
-  "veGameData\022L\n\026level_persistence_data\030/ \003"
-  "(\0132,.OakSave.LevelPersistence_Level_Save"
-  "GameData\0229\n1accumulated_level_persistenc"
-  "e_reset_timer_seconds\0300 \001(\r\022\024\n\014mayhem_le"
-  "vel\0301 \001(\r\022K\n\037gbx_zone_map_fod_save_game_"
-  "data\0302 \001(\0132\".OakSave.GbxZoneMapFODSaveGa"
-  "meData\022P\n%active_or_blacklisted_travel_s"
-  "tations\0303 \003(\0132!.OakSave.ActiveFastTravel"
-  "SaveData\0222\n*last_active_travel_station_f"
-  "or_playthrough\0304 \003(\t\022H\n$game_state_save_"
-  "data_for_playthrough\0305 \003(\0132\032.OakSave.Gam"
-  "eStateSaveData\022Y\n$registered_downloadabl"
-  "e_entitlements\0306 \003(\0132+.OakSave.Registere"
-  "dDownloadableEntitlements\022\\\n&active_trav"
-  "el_stations_for_playthrough\0307 \003(\0132,.OakS"
-  "ave.PlaythroughActiveFastTravelSaveData\022"
-  "\026\n\016save_game_guid\0308 \001(\t\022P\n\034guardian_rank"
-  "_character_data\0309 \001(\0132*.OakSave.Guardian"
-  "RankCharacterSaveGameData\022/\n\'optional_ob"
-  "jective_reward_fixup_applied\030: \001(\010\022*\n\"ve"
-  "hicle_part_rewards_fixup_applied\030; \001(\010\0323"
-  "\n\025NicknameMappingsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005"
-  "value\030\002 \001(\tb\006proto3"
+  "ave.MapIDData\022\024\n\014mayhem_level\030\002 \001(\005\022\032\n\022m"
+  "ayhem_random_seed\030\003 \001(\005\">\n!ChallengeCate"
+  "goryProgressSaveData\022\031\n\021category_progres"
+  "s\030\001 \001(\014\"\\\n%OakPlayerCharacterAugmentSave"
+  "GameData\022\027\n\017slot_asset_path\030\001 \001(\t\022\032\n\022aug"
+  "ment_asset_path\030\002 \001(\t\"o\n\"OakPlayerCharac"
+  "terSlotSaveGameData\022I\n\021augment_slot_list"
+  "\030\001 \003(\0132..OakSave.OakPlayerCharacterAugme"
+  "ntSaveGameData\"\277\002\n\026UITrackingSaveGameDat"
+  "a\022\"\n\032has_seen_skill_menu_unlock\030\001 \001(\010\022*\n"
+  "\"has_seen_guardian_rank_menu_unlock\030\002 \001("
+  "\010\022#\n\033has_seen_echo_boot_ammo_bar\030\003 \001(\010\022%"
+  "\n\035has_seen_echo_boot_shield_bar\030\004 \001(\010\022#\n"
+  "\033has_seen_echo_boot_grenades\030\005 \001(\010\022$\n\034hi"
+  "ghest_thvm_breadcrumb_seen\030\006 \001(\005\022#\n\033inve"
+  "ntory_slot_unlocks_seen\030\007 \003(\t\022\031\n\021saved_s"
+  "pin_offset\030\010 \001(\005\"V\n\017PlanetCycleInfo\022\023\n\013p"
+  "lanet_name\030\001 \001(\t\022\024\n\014cycle_length\030\002 \001(\002\022\030"
+  "\n\020last_cached_time\030\003 \001(\002\"b\n\025TimeOfDaySav"
+  "eGameData\0223\n\021planet_cycle_info\030\001 \003(\0132\030.O"
+  "akSave.PlanetCycleInfo\022\024\n\014planet_cycle\030\002"
+  " \001(\t\"R\n#LevelPersistence_Actor_SaveGameD"
+  "ata\022\022\n\nactor_name\030\001 \001(\t\022\027\n\017timer_remaini"
+  "ng\030\002 \001(\005\"}\n#LevelPersistence_Level_SaveG"
+  "ameData\022\022\n\nlevel_name\030\001 \001(\t\022B\n\014saved_act"
+  "ors\030\002 \003(\0132,.OakSave.LevelPersistence_Act"
+  "or_SaveGameData\"\272\001\n\033GbxZoneMapFODSavedLe"
+  "velData\022\022\n\nlevel_name\030\001 \001(\t\022\030\n\020fod_textu"
+  "re_size\030\002 \001(\r\022\022\n\nnum_chunks\030\003 \001(\r\022\034\n\024dis"
+  "covery_percentage\030\004 \001(\002\022\022\n\ndata_state\030\005 "
+  "\001(\r\022\025\n\rdata_revision\030\006 \001(\r\022\020\n\010fod_data\030\007"
+  " \001(\014\"U\n\031GbxZoneMapFODSaveGameData\0228\n\nlev"
+  "el_data\030\001 \003(\0132$.OakSave.GbxZoneMapFODSav"
+  "edLevelData\"\241\030\n\tCharacter\022\024\n\014save_game_i"
+  "d\030\001 \001(\r\022\033\n\023last_save_timestamp\030\002 \001(\003\022\033\n\023"
+  "time_played_seconds\030\003 \001(\r\022;\n\021player_clas"
+  "s_data\030\004 \001(\0132 .OakSave.PlayerClassSaveGa"
+  "meData\0229\n\016resource_pools\030\005 \003(\0132!.OakSave"
+  ".ResourcePoolSavegameData\0222\n\rsaved_regio"
+  "ns\030\006 \003(\0132\033.OakSave.RegionSaveGameData\022\031\n"
+  "\021experience_points\030\007 \001(\005\0226\n\017game_stats_d"
+  "ata\030\010 \003(\0132\035.OakSave.GameStatSaveGameData"
+  "\022C\n\027inventory_category_list\030\t \003(\0132\".OakS"
+  "ave.InventoryCategorySaveData\022>\n\017invento"
+  "ry_items\030\n \003(\0132%.OakSave.OakInventoryIte"
+  "mSaveGameData\022G\n\027equipped_inventory_list"
+  "\030\013 \003(\0132&.OakSave.EquippedInventorySaveGa"
+  "meData\022\032\n\022active_weapon_list\030\014 \003(\005\022;\n\014ab"
+  "ility_data\030\r \001(\0132%.OakSave.OakPlayerAbil"
+  "itySaveGameData\022\037\n\027last_play_through_ind"
+  "ex\030\016 \001(\005\022\036\n\026playthroughs_completed\030\017 \001(\005"
+  "\022)\n!show_new_playthrough_notification\030\020 "
+  "\001(\010\022J\n\031mission_playthroughs_data\030\021 \003(\0132\'"
+  ".OakSave.MissionPlaythroughSaveGameData\022"
+  "\036\n\026active_travel_stations\030\025 \003(\t\0222\n\016disco"
+  "very_data\030\026 \001(\0132\032.OakSave.DiscoverySaveD"
+  "ata\022\"\n\032last_active_travel_station\030\027 \001(\t\022"
+  "D\n\026vehicles_unlocked_data\030\030 \003(\0132$.OakSav"
+  "e.VehicleUnlockedSaveGameData\022\036\n\026vehicle"
+  "_parts_unlocked\030\031 \003(\t\022B\n\020vehicle_loadout"
+  "s\030\032 \003(\0132(.OakSave.OakCARMenuVehicleConfi"
+  "gSaveData\022\"\n\032vehicle_last_loadout_index\030"
+  "\033 \001(\005\0226\n\016challenge_data\030\034 \003(\0132\036.OakSave."
+  "ChallengeSaveGameData\022-\n\010sdu_list\030\035 \003(\0132"
+  "\033.OakSave.OakSDUSaveGameData\022\037\n\027selected"
+  "_customizations\030\036 \003(\t\022%\n\035equipped_emote_"
+  "customizations\030\037 \003(\005\022M\n\035selected_color_c"
+  "ustomizations\030  \003(\0132&.OakSave.CustomPlay"
+  "erColorSaveGameData\0228\n\rguardian_rank\030! \001"
+  "(\0132!.OakSave.GuardianRankSaveGameData\0229\n"
+  "\022crew_quarters_room\030\" \001(\0132\035.OakSave.Crew"
+  "QuartersSaveData\022D\n\026crew_quarters_gun_ra"
+  "ck\030# \001(\0132$.OakSave.CrewQuartersGunRackSa"
+  "veData\0228\n\022unlocked_echo_logs\030$ \003(\0132\034.Oak"
+  "Save.EchoLogSaveGameData\0222\n*has_played_s"
+  "pecial_echo_log_insert_already\030% \001(\010\022C\n\021"
+  "nickname_mappings\030& \003(\0132(.OakSave.Charac"
+  "ter.NicknameMappingsEntry\0220\n\024last_travel"
+  "ed_map_id\030\' \001(\0132\022.OakSave.MapIDData\022V\n\"c"
+  "hallenge_category_completion_pcts\030( \001(\0132"
+  "*.OakSave.ChallengeCategoryProgressSaveD"
+  "ata\022R\n\035character_slot_save_game_data\030) \001"
+  "(\0132+.OakSave.OakPlayerCharacterSlotSaveG"
+  "ameData\022C\n\032ui_tracking_save_game_data\030* "
+  "\001(\0132\037.OakSave.UITrackingSaveGameData\022 \n\030"
+  "preferred_character_name\030+ \001(\t\022\034\n\024name_c"
+  "haracter_limit\030, \001(\005\022\034\n\024preferred_group_"
+  "mode\030- \001(\r\022B\n\032time_of_day_save_game_data"
+  "\030. \001(\0132\036.OakSave.TimeOfDaySaveGameData\022L"
+  "\n\026level_persistence_data\030/ \003(\0132,.OakSave"
+  ".LevelPersistence_Level_SaveGameData\0229\n1"
+  "accumulated_level_persistence_reset_time"
+  "r_seconds\0300 \001(\r\022\024\n\014mayhem_level\0301 \001(\r\022K\n"
+  "\037gbx_zone_map_fod_save_game_data\0302 \001(\0132\""
+  ".OakSave.GbxZoneMapFODSaveGameData\022P\n%ac"
+  "tive_or_blacklisted_travel_stations\0303 \003("
+  "\0132!.OakSave.ActiveFastTravelSaveData\0222\n*"
+  "last_active_travel_station_for_playthrou"
+  "gh\0304 \003(\t\022H\n$game_state_save_data_for_pla"
+  "ythrough\0305 \003(\0132\032.OakSave.GameStateSaveDa"
+  "ta\022Y\n$registered_downloadable_entitlemen"
+  "ts\0306 \003(\0132+.OakSave.RegisteredDownloadabl"
+  "eEntitlements\022\\\n&active_travel_stations_"
+  "for_playthrough\0307 \003(\0132,.OakSave.Playthro"
+  "ughActiveFastTravelSaveData\022\026\n\016save_game"
+  "_guid\0308 \001(\t\022P\n\034guardian_rank_character_d"
+  "ata\0309 \001(\0132*.OakSave.GuardianRankCharacte"
+  "rSaveGameData\022/\n\'optional_objective_rewa"
+  "rd_fixup_applied\030: \001(\010\022*\n\"vehicle_part_r"
+  "ewards_fixup_applied\030; \001(\010\0323\n\025NicknameMa"
+  "ppingsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\tb"
+  "\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_OakSave_2eproto_deps[1] = {
   &::descriptor_table_OakShared_2eproto,
@@ -1744,7 +1746,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Oak
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_OakSave_2eproto_once;
 static bool descriptor_table_OakSave_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_OakSave_2eproto = {
-  &descriptor_table_OakSave_2eproto_initialized, descriptor_table_protodef_OakSave_2eproto, "OakSave.proto", 9299,
+  &descriptor_table_OakSave_2eproto_initialized, descriptor_table_protodef_OakSave_2eproto, "OakSave.proto", 9327,
   &descriptor_table_OakSave_2eproto_once, descriptor_table_OakSave_2eproto_sccs, descriptor_table_OakSave_2eproto_deps, 45, 1,
   schemas, file_default_instances, TableStruct_OakSave_2eproto::offsets,
   file_level_metadata_OakSave_2eproto, 45, file_level_enum_descriptors_OakSave_2eproto, file_level_service_descriptors_OakSave_2eproto,
@@ -10672,15 +10674,17 @@ GameStateSaveData::GameStateSaveData(const GameStateSaveData& from)
   } else {
     last_traveled_map_id_ = nullptr;
   }
-  mayhem_level_ = from.mayhem_level_;
+  ::memcpy(&mayhem_level_, &from.mayhem_level_,
+    static_cast<size_t>(reinterpret_cast<char*>(&mayhem_random_seed_) -
+    reinterpret_cast<char*>(&mayhem_level_)) + sizeof(mayhem_random_seed_));
   // @@protoc_insertion_point(copy_constructor:OakSave.GameStateSaveData)
 }
 
 void GameStateSaveData::SharedCtor() {
   ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_GameStateSaveData_OakSave_2eproto.base);
   ::memset(&last_traveled_map_id_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&mayhem_level_) -
-      reinterpret_cast<char*>(&last_traveled_map_id_)) + sizeof(mayhem_level_));
+      reinterpret_cast<char*>(&mayhem_random_seed_) -
+      reinterpret_cast<char*>(&last_traveled_map_id_)) + sizeof(mayhem_random_seed_));
 }
 
 GameStateSaveData::~GameStateSaveData() {
@@ -10711,7 +10715,9 @@ void GameStateSaveData::Clear() {
     delete last_traveled_map_id_;
   }
   last_traveled_map_id_ = nullptr;
-  mayhem_level_ = 0;
+  ::memset(&mayhem_level_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&mayhem_random_seed_) -
+      reinterpret_cast<char*>(&mayhem_level_)) + sizeof(mayhem_random_seed_));
   _internal_metadata_.Clear();
 }
 
@@ -10733,6 +10739,13 @@ const char* GameStateSaveData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
           mayhem_level_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // int32 mayhem_random_seed = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          mayhem_random_seed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -10776,6 +10789,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(2, this->_internal_mayhem_level(), target);
   }
 
+  // int32 mayhem_random_seed = 3;
+  if (this->mayhem_random_seed() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteInt32ToArray(3, this->_internal_mayhem_random_seed(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields(), target, stream);
@@ -10804,6 +10823,13 @@ size_t GameStateSaveData::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
         this->_internal_mayhem_level());
+  }
+
+  // int32 mayhem_random_seed = 3;
+  if (this->mayhem_random_seed() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::Int32Size(
+        this->_internal_mayhem_random_seed());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -10843,6 +10869,9 @@ void GameStateSaveData::MergeFrom(const GameStateSaveData& from) {
   if (from.mayhem_level() != 0) {
     _internal_set_mayhem_level(from._internal_mayhem_level());
   }
+  if (from.mayhem_random_seed() != 0) {
+    _internal_set_mayhem_random_seed(from._internal_mayhem_random_seed());
+  }
 }
 
 void GameStateSaveData::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -10868,6 +10897,7 @@ void GameStateSaveData::InternalSwap(GameStateSaveData* other) {
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(last_traveled_map_id_, other->last_traveled_map_id_);
   swap(mayhem_level_, other->mayhem_level_);
+  swap(mayhem_random_seed_, other->mayhem_random_seed_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GameStateSaveData::GetMetadata() const {

@@ -5923,6 +5923,7 @@ class GameStateSaveData :
   enum : int {
     kLastTraveledMapIdFieldNumber = 1,
     kMayhemLevelFieldNumber = 2,
+    kMayhemRandomSeedFieldNumber = 3,
   };
   // .OakSave.MapIDData last_traveled_map_id = 1;
   bool has_last_traveled_map_id() const;
@@ -5948,6 +5949,15 @@ class GameStateSaveData :
   void _internal_set_mayhem_level(::PROTOBUF_NAMESPACE_ID::int32 value);
   public:
 
+  // int32 mayhem_random_seed = 3;
+  void clear_mayhem_random_seed();
+  ::PROTOBUF_NAMESPACE_ID::int32 mayhem_random_seed() const;
+  void set_mayhem_random_seed(::PROTOBUF_NAMESPACE_ID::int32 value);
+  private:
+  ::PROTOBUF_NAMESPACE_ID::int32 _internal_mayhem_random_seed() const;
+  void _internal_set_mayhem_random_seed(::PROTOBUF_NAMESPACE_ID::int32 value);
+  public:
+
   // @@protoc_insertion_point(class_scope:OakSave.GameStateSaveData)
  private:
   class _Internal;
@@ -5955,6 +5965,7 @@ class GameStateSaveData :
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::OakSave::MapIDData* last_traveled_map_id_;
   ::PROTOBUF_NAMESPACE_ID::int32 mayhem_level_;
+  ::PROTOBUF_NAMESPACE_ID::int32 mayhem_random_seed_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_OakSave_2eproto;
 };
@@ -13729,6 +13740,26 @@ inline void GameStateSaveData::_internal_set_mayhem_level(::PROTOBUF_NAMESPACE_I
 inline void GameStateSaveData::set_mayhem_level(::PROTOBUF_NAMESPACE_ID::int32 value) {
   _internal_set_mayhem_level(value);
   // @@protoc_insertion_point(field_set:OakSave.GameStateSaveData.mayhem_level)
+}
+
+// int32 mayhem_random_seed = 3;
+inline void GameStateSaveData::clear_mayhem_random_seed() {
+  mayhem_random_seed_ = 0;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 GameStateSaveData::_internal_mayhem_random_seed() const {
+  return mayhem_random_seed_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::int32 GameStateSaveData::mayhem_random_seed() const {
+  // @@protoc_insertion_point(field_get:OakSave.GameStateSaveData.mayhem_random_seed)
+  return _internal_mayhem_random_seed();
+}
+inline void GameStateSaveData::_internal_set_mayhem_random_seed(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  
+  mayhem_random_seed_ = value;
+}
+inline void GameStateSaveData::set_mayhem_random_seed(::PROTOBUF_NAMESPACE_ID::int32 value) {
+  _internal_set_mayhem_random_seed(value);
+  // @@protoc_insertion_point(field_set:OakSave.GameStateSaveData.mayhem_random_seed)
 }
 
 // -------------------------------------------------------------------
