@@ -26,7 +26,6 @@ void InventoryTab::onSelected()
 {
     QList<QListWidgetItem*> selected = m_list->selectedItems();
     if (selected.isEmpty()) {
-        qDebug() << "No selected"; // todo disable button when none selected
         return;
     }
     int index = m_list->row(selected.first());
@@ -51,6 +50,7 @@ void InventoryTab::load()
 {
     m_list->clear();
     for (const Savegame::Item &item : m_savegame->items()) {
-        m_list->addItem(tr("%1 (level %2)").arg(item.name, QString::number(item.level)));
+        QString rarity = item.objectShortName.split('_').last();
+        m_list->addItem(tr("%1%2 (level %3)").arg(rarity + " ", item.name, QString::number(item.level)));
     }
 }

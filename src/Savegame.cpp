@@ -311,12 +311,13 @@ bool Savegame::load(const QString &filePath)
             return false;
         }
 
-        item.name = item.balance.val.split('/', QString::SkipEmptyParts).last().split('.', QString::SkipEmptyParts).last();
+        item.objectShortName = item.balance.val.split('/', QString::SkipEmptyParts).last().split('.', QString::SkipEmptyParts).last();
+        item.name = item.objectShortName;
         if (m_englishNames.contains(item.name.toLower())) {
             item.name = m_englishNames[item.name.toLower()].toString();
         }
 
-        item.data = getAspect("InventoryData", item.version, &bits);
+        item.data = getAspect("InventoryData", item.version, &bits); // these seem wrong
         if (!item.data.isValid()) {
             QMessageBox::warning(nullptr, "Invalid file", tr("Invalid item data"));
             return false;
@@ -329,21 +330,18 @@ bool Savegame::load(const QString &filePath)
         item.level = bits.eat(7);
         item.numberOfParts = bits.eat(6);
 
-        if (!m_itemPartCategories.contains(item.balance.val.toLower())) {
-            QMessageBox::warning(nullptr, "Invalid file", tr("Failed to find item parts for %1").arg(item.name));
-            qWarning() << "Item not in parts database:" << item.balance.val;
-            continue;
-//            return false;
-        }
         QString itemPartCategory = m_itemPartCategories[item.balance.val.toLower()].toString();
-
-        for (int partIndex = 0; partIndex < item.numberOfParts; partIndex++) {
-            Item::Aspect part = getAspect(itemPartCategory, item.version, &bits);
-            if (!part.isValid()) {
-                QMessageBox::warning(nullptr, "Invalid file", tr("Failed to get item part %1 for item %2.").arg(partIndex).arg(item.name));
-                return false;
+        if (!itemPartCategory.isEmpty()) {
+            for (int partIndex = 0; partIndex < item.numberOfParts; partIndex++) {
+                Item::Aspect part = getAspect(itemPartCategory, item.version, &bits);
+                if (!part.isValid()) {
+                    QMessageBox::warning(nullptr, "Invalid file", tr("Failed to get item part %1 for item %2.").arg(partIndex).arg(item.name));
+                    return false;
+                }
+                item.parts.append(part);
             }
-            item.parts.append(part);
+        } else {
+            qWarning() << "Item not in parts database:" << item.balance.val;
         }
 
         if (itemIndex < 3) {
@@ -548,6 +546,7 @@ void Savegame::setSduAmount(const QString &name, const int amount)
     const std::string sduId = ("/Game/Pickups/SDU/SDU_" + name + ".SDU_" + name).toStdString();
 
     for (OakSave::OakSDUSaveGameData &sdu : *m_character->mutable_sdu_list()) {
+        qDebug() << "sdu path:" << QString::fromStdString(sdu.sdu_data_path());
         if (sdu.sdu_data_path() != sduId) {
             continue;
         }

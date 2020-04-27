@@ -67,6 +67,7 @@ public:
         };
 
         QString name;
+        QString objectShortName;
 
         Aspect balance;
         Aspect data;
