@@ -9,6 +9,7 @@
 #include <QMessageBox>
 #include <QtEndian> // all the qFromLittleEndian is valid for the PC saves at least
 #include <QDebug>
+#include <QtMath>
 #include <deque>
 
 //#include <bitset> // More stuff that we want than QBitSet (like shifting) fuck std
@@ -27,6 +28,26 @@ struct BitParser
 
     int bitsLeft() const {
         return m_bits.count();
+    }
+
+    void put(const uint64_t number, const int count) {
+        if (count >= sizeof(number)) {
+            qWarning() << "Trying to store invalid amount of bits";
+            return;
+        }
+        QBitArray bits = QBitArray::fromBits(reinterpret_cast<const char*>(&number), count);
+        for (int i=0; i < bits.size(); i++) {
+            m_bits.append(bits[i] ? '1' : '0');
+        }
+    }
+
+    QByteArray toBinaryData() const {
+        QBitArray bits(m_bits.count());
+        for (int i=0; i<m_bits.length(); i++) {
+            bits.setBit(i, m_bits[i] == '1');
+        }
+
+        return QByteArray(bits.bits(), qCeil(bits.size() / 8.));
     }
 
     int eat(const int count) {

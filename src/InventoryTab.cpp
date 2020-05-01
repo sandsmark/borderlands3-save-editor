@@ -33,6 +33,8 @@ void InventoryTab::onSelected()
         qWarning() << "Out of bounds!";
         return;
     }
+    // TODO actually modify
+    // Can't be arsed to find out exactly how
     // TODO: maybe list of dropdowns? idk
 
 
