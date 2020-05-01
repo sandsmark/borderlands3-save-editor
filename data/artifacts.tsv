@@ -1,0 +1,411 @@
+Type/Name	Rarity	Balance	Category	Min Parts	Max Parts	Weight	Part	Dependencies	Excluders
+Common	01/Common	InvBalD_Artifact_01_Common	RARITY	1	1	1	Artifact_Part_Rarity_Common		
+Common	01/Common	InvBalD_Artifact_01_Common	ABILITY	1	1	1	Artifact_Part_Ability_RearEnder		
+Common	01/Common	InvBalD_Artifact_01_Common	ABILITY	1	1	1	Artifact_Part_Ability_BloodFrenzy		
+Common	01/Common	InvBalD_Artifact_01_Common	ABILITY	1	1	1	Artifact_Part_Ability_ElectricSlide		
+Common	01/Common	InvBalD_Artifact_01_Common	ABILITY	1	1	1	Artifact_Part_Ability_ElementalOrigin		
+Common	01/Common	InvBalD_Artifact_01_Common	ABILITY	1	1	1	Artifact_Part_Ability_FleshMelter		
+Common	01/Common	InvBalD_Artifact_01_Common	ABILITY	1	1	1	Artifact_Part_Ability_IceSpiker		
+Common	01/Common	InvBalD_Artifact_01_Common	ABILITY	1	1	1	Artifact_Part_Ability_Cauterizer		
+Common	01/Common	InvBalD_Artifact_01_Common	ABILITY	1	1	1	Artifact_Part_Ability_LootExpander		Artifact_Part_Rarity_Common, Artifact_Part_Rarity_Uncommon
+Common	01/Common	InvBalD_Artifact_01_Common	ABILITY	1	1	1	Artifact_Part_Ability_ShatterRig		
+Common	01/Common	InvBalD_Artifact_01_Common	ABILITY	1	1	1	Artifact_Part_Ability_FastHands		
+Common	01/Common	InvBalD_Artifact_01_Common	ABILITY	1	1	1	Artifact_Part_Ability_LastStand		
+Common	01/Common	InvBalD_Artifact_01_Common	ABILITY	1	1	1	Artifact_Part_Ability_HotDrop		
+Common	01/Common	InvBalD_Artifact_01_Common	ABILITY	1	1	1	Artifact_Part_Ability_MindMelt		
+Common	01/Common	InvBalD_Artifact_01_Common	ABILITY	1	1	1	Artifact_Part_Ability_SparkPlug		
+Common	01/Common	InvBalD_Artifact_01_Common	ABILITY	1	1	1	Artifact_Part_Ability_ToxicRevenger		
+Common	01/Common	InvBalD_Artifact_01_Common	ABILITY	1	1	1	Artifact_Part_Ability_Radiodead		
+Common	01/Common	InvBalD_Artifact_01_Common	ABILITY	1	1	1	Artifact_Part_Ability_Snowdrift		
+Common	01/Common	InvBalD_Artifact_01_Common	ABILITY	1	1	1	Artifact_Part_Ability_CausticCoast		
+Common	01/Common	InvBalD_Artifact_01_Common	ABILITY	1	1	1	Artifact_Part_Ability_FireStone		
+Common	01/Common	InvBalD_Artifact_01_Common	ABILITY	1	1	1	Artifact_Part_Ability_CryoStone		
+Common	01/Common	InvBalD_Artifact_01_Common	ABILITY	1	1	1	Artifact_Part_Ability_CorrosiveStone		
+Common	01/Common	InvBalD_Artifact_01_Common	ABILITY	1	1	1	Artifact_Part_Ability_ShockStone		
+Common	01/Common	InvBalD_Artifact_01_Common	ABILITY	1	1	1	Artifact_Part_Ability_RadiationStone		
+Common	01/Common	InvBalD_Artifact_01_Common	ABILITY	1	1	1	Artifact_Part_Ability_KnifeDrain		
+Common	01/Common	InvBalD_Artifact_01_Common	ABILITY	1	1	1	Artifact_Part_Ability_AtomBalm		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	RARITY	1	1	1	Artifact_Part_Rarity_Uncommon		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	ABILITY	1	1	1	Artifact_Part_Ability_RearEnder		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	ABILITY	1	1	1	Artifact_Part_Ability_BloodFrenzy		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	ABILITY	1	1	1	Artifact_Part_Ability_ElectricSlide		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	ABILITY	1	1	1	Artifact_Part_Ability_ElementalOrigin		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	ABILITY	1	1	1	Artifact_Part_Ability_FleshMelter		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	ABILITY	1	1	1	Artifact_Part_Ability_IceSpiker		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	ABILITY	1	1	1	Artifact_Part_Ability_Cauterizer		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	ABILITY	1	1	1	Artifact_Part_Ability_LootExpander		Artifact_Part_Rarity_Common, Artifact_Part_Rarity_Uncommon
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	ABILITY	1	1	1	Artifact_Part_Ability_ShatterRig		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	ABILITY	1	1	1	Artifact_Part_Ability_FastHands		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	ABILITY	1	1	1	Artifact_Part_Ability_LastStand		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	ABILITY	1	1	1	Artifact_Part_Ability_HotDrop		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	ABILITY	1	1	1	Artifact_Part_Ability_MindMelt		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	ABILITY	1	1	1	Artifact_Part_Ability_SparkPlug		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	ABILITY	1	1	1	Artifact_Part_Ability_ToxicRevenger		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	ABILITY	1	1	1	Artifact_Part_Ability_Radiodead		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	ABILITY	1	1	1	Artifact_Part_Ability_Snowdrift		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	ABILITY	1	1	1	Artifact_Part_Ability_CausticCoast		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	ABILITY	1	1	1	Artifact_Part_Ability_FireStone		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	ABILITY	1	1	1	Artifact_Part_Ability_CryoStone		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	ABILITY	1	1	1	Artifact_Part_Ability_CorrosiveStone		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	ABILITY	1	1	1	Artifact_Part_Ability_ShockStone		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	ABILITY	1	1	1	Artifact_Part_Ability_RadiationStone		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	ABILITY	1	1	1	Artifact_Part_Ability_KnifeDrain		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	ABILITY	1	1	1	Artifact_Part_Ability_AtomBalm		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	PRIMARY	1	1	1	Artifact_Part_Stats_DeadEye		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	PRIMARY	1	1	1	Artifact_Part_Stats_Greasy		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	PRIMARY	1	1	1	Artifact_Part_Stats_Breaching		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	PRIMARY	1	1	1	Artifact_Part_Stats_HollowPoint		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	PRIMARY	1	1	1	Artifact_Part_Stats_LongRange		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	PRIMARY	1	1	1	Artifact_Part_Stats_Hulking		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	PRIMARY	1	1	1	Artifact_Part_Stats_Grenadier		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	PRIMARY	1	1	1	Artifact_Part_Stats_Precision		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	PRIMARY	1	1	1	Artifact_Part_Stats_Quickdraw		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	PRIMARY	1	1	1	Artifact_Part_Stats_Loaded		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	PRIMARY	1	1	1	Artifact_Part_Stats_Stalwart		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	PRIMARY	1	1	1	Artifact_Part_Stats_Vigorous		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	PRIMARY	1	1	1	Artifact_Part_Stats_Asbestos		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	PRIMARY	1	1	1	Artifact_Part_Stats_Grounded		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	PRIMARY	1	1	1	Artifact_Part_Stats_Durable		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	PRIMARY	1	1	1	Artifact_Part_Stats_Insulated		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	PRIMARY	1	1	1	Artifact_Part_Stats_LeadCoated		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	PRIMARY	1	1	1	Artifact_Part_Stats_Lustrous		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	PRIMARY	1	1	1	Artifact_Part_Stats_Brawler		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	PRIMARY	1	1	1	Artifact_Part_Stats_LongLasting		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	PRIMARY	1	1	1	Artifact_Part_Stats_Unyielding		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	PRIMARY	1	1	1	Artifact_Part_Stats_Lucky		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	PRIMARY	1	1	1	Artifact_Part_Stats_Ravaging		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	PRIMARY	1	1	1	Artifact_Part_Stats_Hasty		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	PRIMARY	1	1	1	Artifact_Part_Stats_Zappy		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	PRIMARY	1	1	1	Artifact_Part_Stats_Melty		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	PRIMARY	1	1	1	Artifact_Part_Stats_Spicy		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	PRIMARY	1	1	1	Artifact_Part_Stats_Frozen		
+Uncommon	02/Uncommon	InvBalD_Artifact_02_Uncommon	PRIMARY	1	1	1	Artifact_Part_Stats_Contaminated		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	RARITY	1	1	1	Artifact_Part_Rarity_Rare		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	ABILITY	1	1	1	Artifact_Part_Ability_RearEnder		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	ABILITY	1	1	1	Artifact_Part_Ability_BloodFrenzy		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	ABILITY	1	1	1	Artifact_Part_Ability_ElectricSlide		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	ABILITY	1	1	1	Artifact_Part_Ability_ElementalOrigin		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	ABILITY	1	1	1	Artifact_Part_Ability_FleshMelter		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	ABILITY	1	1	1	Artifact_Part_Ability_IceSpiker		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	ABILITY	1	1	1	Artifact_Part_Ability_Cauterizer		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	ABILITY	1	1	1	Artifact_Part_Ability_LootExpander		Artifact_Part_Rarity_Common, Artifact_Part_Rarity_Uncommon
+Rare	03/Rare	InvBalD_Artifact_03_Rare	ABILITY	1	1	1	Artifact_Part_Ability_ShatterRig		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	ABILITY	1	1	1	Artifact_Part_Ability_FastHands		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	ABILITY	1	1	1	Artifact_Part_Ability_LastStand		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	ABILITY	1	1	1	Artifact_Part_Ability_HotDrop		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	ABILITY	1	1	1	Artifact_Part_Ability_MindMelt		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	ABILITY	1	1	1	Artifact_Part_Ability_SparkPlug		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	ABILITY	1	1	1	Artifact_Part_Ability_ToxicRevenger		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	ABILITY	1	1	1	Artifact_Part_Ability_Radiodead		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	ABILITY	1	1	1	Artifact_Part_Ability_Snowdrift		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	ABILITY	1	1	1	Artifact_Part_Ability_CausticCoast		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	ABILITY	1	1	1	Artifact_Part_Ability_FireStone		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	ABILITY	1	1	1	Artifact_Part_Ability_CryoStone		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	ABILITY	1	1	1	Artifact_Part_Ability_CorrosiveStone		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	ABILITY	1	1	1	Artifact_Part_Ability_ShockStone		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	ABILITY	1	1	1	Artifact_Part_Ability_RadiationStone		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	ABILITY	1	1	1	Artifact_Part_Ability_KnifeDrain		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	ABILITY	1	1	1	Artifact_Part_Ability_AtomBalm		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	PRIMARY	1	1	1	Artifact_Part_Stats_DeadEye		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	PRIMARY	1	1	1	Artifact_Part_Stats_Greasy		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	PRIMARY	1	1	1	Artifact_Part_Stats_Breaching		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	PRIMARY	1	1	1	Artifact_Part_Stats_HollowPoint		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	PRIMARY	1	1	1	Artifact_Part_Stats_LongRange		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	PRIMARY	1	1	1	Artifact_Part_Stats_Hulking		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	PRIMARY	1	1	1	Artifact_Part_Stats_Grenadier		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	PRIMARY	1	1	1	Artifact_Part_Stats_Precision		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	PRIMARY	1	1	1	Artifact_Part_Stats_Quickdraw		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	PRIMARY	1	1	1	Artifact_Part_Stats_Loaded		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	PRIMARY	1	1	1	Artifact_Part_Stats_Stalwart		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	PRIMARY	1	1	1	Artifact_Part_Stats_Vigorous		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	PRIMARY	1	1	1	Artifact_Part_Stats_Asbestos		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	PRIMARY	1	1	1	Artifact_Part_Stats_Grounded		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	PRIMARY	1	1	1	Artifact_Part_Stats_Durable		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	PRIMARY	1	1	1	Artifact_Part_Stats_Insulated		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	PRIMARY	1	1	1	Artifact_Part_Stats_LeadCoated		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	PRIMARY	1	1	1	Artifact_Part_Stats_Lustrous		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	PRIMARY	1	1	1	Artifact_Part_Stats_Brawler		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	PRIMARY	1	1	1	Artifact_Part_Stats_LongLasting		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	PRIMARY	1	1	1	Artifact_Part_Stats_Unyielding		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	PRIMARY	1	1	1	Artifact_Part_Stats_Lucky		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	PRIMARY	1	1	1	Artifact_Part_Stats_Ravaging		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	PRIMARY	1	1	1	Artifact_Part_Stats_Hasty		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	PRIMARY	1	1	1	Artifact_Part_Stats_Zappy		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	PRIMARY	1	1	1	Artifact_Part_Stats_Melty		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	PRIMARY	1	1	1	Artifact_Part_Stats_Spicy		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	PRIMARY	1	1	1	Artifact_Part_Stats_Frozen		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	PRIMARY	1	1	1	Artifact_Part_Stats_Contaminated		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	SECONDARY	1	1	1	Artifact_Part_Stats_FireDamage		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	SECONDARY	1	1	1	Artifact_Part_Stats_ShockDamage		Artifact_Part_Stats_Zappy
+Rare	03/Rare	InvBalD_Artifact_03_Rare	SECONDARY	1	1	1	Artifact_Part_Stats_CorrosiveDamage		Artifact_Part_Stats_Melty
+Rare	03/Rare	InvBalD_Artifact_03_Rare	SECONDARY	1	1	1	Artifact_Part_Stats_CryoDamage		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	SECONDARY	1	1	1	Artifact_Part_Stats_RadiationDamage		Artifact_Part_Stats_Melty
+Rare	03/Rare	InvBalD_Artifact_03_Rare	SECONDARY	1	1	1	Artifact_Part_Stats_FireResist		Artifact_Part_Stats_Asbestos
+Rare	03/Rare	InvBalD_Artifact_03_Rare	SECONDARY	1	1	1	Artifact_Part_Stats_ShockResist		Artifact_Part_Stats_Grounded
+Rare	03/Rare	InvBalD_Artifact_03_Rare	SECONDARY	1	1	1	Artifact_Part_Stats_CorrosiveResist		Artifact_Part_Stats_Durable
+Rare	03/Rare	InvBalD_Artifact_03_Rare	SECONDARY	1	1	1	Artifact_Part_Stats_CryoResist		Artifact_Part_Stats_Insulated
+Rare	03/Rare	InvBalD_Artifact_03_Rare	SECONDARY	1	1	1	Artifact_Part_Stats_RadiationResist		Artifact_Part_Stats_LeadCoated
+Rare	03/Rare	InvBalD_Artifact_03_Rare	SECONDARY	1	1	1	Artifact_Part_Stats_FireDoTChance		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	SECONDARY	1	1	1	Artifact_Part_Stats_ShockDoTChance		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	SECONDARY	1	1	1	Artifact_Part_Stats_CorrosiveDoTChance		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	SECONDARY	1	1	1	Artifact_Part_Stats_CryoEfficiency		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	SECONDARY	1	1	1	Artifact_Part_Stats_RadiationDoTChance		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	SECONDARY	1	1	1	Artifact_Part_Stats_Accuracy		Artifact_Part_Stats_Precision
+Rare	03/Rare	InvBalD_Artifact_03_Rare	SECONDARY	1	1	1	Artifact_Part_Stats_ReloadSpeed		Artifact_Part_Stats_Quickdraw
+Rare	03/Rare	InvBalD_Artifact_03_Rare	SECONDARY	1	1	1	Artifact_Part_Stats_MagazineSize		Artifact_Part_Stats_ATLAS, Artifact_Part_Stats_Jakobs1, Artifact_Part_Stats_Loaded, Artifact_Part_Stats_Tediore, Artifact_Part_Stats_Vladof
+Rare	03/Rare	InvBalD_Artifact_03_Rare	SECONDARY	1	1	1	Artifact_Part_Stats_MaxShieldCapacity		Artifact_Part_Stats_Stalwart
+Rare	03/Rare	InvBalD_Artifact_03_Rare	SECONDARY	1	1	1	Artifact_Part_Stats_ShieldRechargeDelay		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	SECONDARY	1	1	1	Artifact_Part_Stats_ShieldRechargeRate		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	SECONDARY	1	1	1	Artifact_Part_Stats_MaxHealth		Artifact_Part_Stats_Vigorous
+Rare	03/Rare	InvBalD_Artifact_03_Rare	SECONDARY	1	1	1	Artifact_Part_Stats_HealthRegen		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	SECONDARY	1	1	1	Artifact_Part_Stats_Movespeed		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	SECONDARY	1	1	1	Artifact_Part_Stats_MeleeDamage		Artifact_Part_Stats_Ravaging
+Rare	03/Rare	InvBalD_Artifact_03_Rare	SECONDARY	1	1	1	Artifact_Part_Stats_BleedoutMoveSpeed		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	SECONDARY	1	1	1	Artifact_Part_Stats_BleedoutDuration		Artifact_Part_Stats_Unyielding
+Rare	03/Rare	InvBalD_Artifact_03_Rare	SECONDARY	1	1	1	Artifact_Part_Stats_XPMultiplier		
+Rare	03/Rare	InvBalD_Artifact_03_Rare	SECONDARY	1	1	1	Artifact_Part_Stats_AreaDamage		Artifact_Part_Stats_Ravaging
+Rare	03/Rare	InvBalD_Artifact_03_Rare	SECONDARY	1	1	1	Artifact_Part_Stats_ActionSkillCooldown		Artifact_Part_Stats_LongLasting
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	RARITY	1	1	1	Artifact_Part_Rarity_VeryRare		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	ABILITY	1	1	1	Artifact_Part_Ability_RearEnder		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	ABILITY	1	1	1	Artifact_Part_Ability_BloodFrenzy		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	ABILITY	1	1	1	Artifact_Part_Ability_ElectricSlide		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	ABILITY	1	1	1	Artifact_Part_Ability_ElementalOrigin		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	ABILITY	1	1	1	Artifact_Part_Ability_FleshMelter		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	ABILITY	1	1	1	Artifact_Part_Ability_IceSpiker		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	ABILITY	1	1	1	Artifact_Part_Ability_Cauterizer		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	ABILITY	1	1	1	Artifact_Part_Ability_LootExpander		Artifact_Part_Rarity_Common, Artifact_Part_Rarity_Uncommon
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	ABILITY	1	1	1	Artifact_Part_Ability_ShatterRig		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	ABILITY	1	1	1	Artifact_Part_Ability_FastHands		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	ABILITY	1	1	1	Artifact_Part_Ability_LastStand		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	ABILITY	1	1	1	Artifact_Part_Ability_HotDrop		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	ABILITY	1	1	1	Artifact_Part_Ability_MindMelt		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	ABILITY	1	1	1	Artifact_Part_Ability_SparkPlug		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	ABILITY	1	1	1	Artifact_Part_Ability_ToxicRevenger		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	ABILITY	1	1	1	Artifact_Part_Ability_Radiodead		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	ABILITY	1	1	1	Artifact_Part_Ability_Snowdrift		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	ABILITY	1	1	1	Artifact_Part_Ability_CausticCoast		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	ABILITY	1	1	1	Artifact_Part_Ability_FireStone		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	ABILITY	1	1	1	Artifact_Part_Ability_CryoStone		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	ABILITY	1	1	1	Artifact_Part_Ability_CorrosiveStone		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	ABILITY	1	1	1	Artifact_Part_Ability_ShockStone		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	ABILITY	1	1	1	Artifact_Part_Ability_RadiationStone		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	ABILITY	1	1	1	Artifact_Part_Ability_KnifeDrain		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	ABILITY	1	1	1	Artifact_Part_Ability_AtomBalm		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	PRIMARY	1	1	1	Artifact_Part_Stats_DeadEye		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	PRIMARY	1	1	1	Artifact_Part_Stats_Greasy		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	PRIMARY	1	1	1	Artifact_Part_Stats_Breaching		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	PRIMARY	1	1	1	Artifact_Part_Stats_HollowPoint		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	PRIMARY	1	1	1	Artifact_Part_Stats_LongRange		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	PRIMARY	1	1	1	Artifact_Part_Stats_Hulking		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	PRIMARY	1	1	1	Artifact_Part_Stats_Grenadier		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	PRIMARY	1	1	1	Artifact_Part_Stats_Precision		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	PRIMARY	1	1	1	Artifact_Part_Stats_Quickdraw		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	PRIMARY	1	1	1	Artifact_Part_Stats_Loaded		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	PRIMARY	1	1	1	Artifact_Part_Stats_Stalwart		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	PRIMARY	1	1	1	Artifact_Part_Stats_Vigorous		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	PRIMARY	1	1	1	Artifact_Part_Stats_Asbestos		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	PRIMARY	1	1	1	Artifact_Part_Stats_Grounded		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	PRIMARY	1	1	1	Artifact_Part_Stats_Durable		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	PRIMARY	1	1	1	Artifact_Part_Stats_Insulated		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	PRIMARY	1	1	1	Artifact_Part_Stats_LeadCoated		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	PRIMARY	1	1	1	Artifact_Part_Stats_Lustrous		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	PRIMARY	1	1	1	Artifact_Part_Stats_Brawler		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	PRIMARY	1	1	1	Artifact_Part_Stats_LongLasting		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	PRIMARY	1	1	1	Artifact_Part_Stats_Unyielding		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	PRIMARY	1	1	1	Artifact_Part_Stats_Lucky		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	PRIMARY	1	1	1	Artifact_Part_Stats_Ravaging		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	PRIMARY	1	1	1	Artifact_Part_Stats_Hasty		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	PRIMARY	1	1	1	Artifact_Part_Stats_Zappy		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	PRIMARY	1	1	1	Artifact_Part_Stats_Melty		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	PRIMARY	1	1	1	Artifact_Part_Stats_Spicy		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	PRIMARY	1	1	1	Artifact_Part_Stats_Frozen		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	PRIMARY	1	1	1	Artifact_Part_Stats_Contaminated		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	SECONDARY	2	2	1	Artifact_Part_Stats_FireDamage		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	SECONDARY	2	2	1	Artifact_Part_Stats_ShockDamage		Artifact_Part_Stats_Zappy
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	SECONDARY	2	2	1	Artifact_Part_Stats_CorrosiveDamage		Artifact_Part_Stats_Melty
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	SECONDARY	2	2	1	Artifact_Part_Stats_CryoDamage		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	SECONDARY	2	2	1	Artifact_Part_Stats_RadiationDamage		Artifact_Part_Stats_Melty
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	SECONDARY	2	2	1	Artifact_Part_Stats_FireResist		Artifact_Part_Stats_Asbestos
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	SECONDARY	2	2	1	Artifact_Part_Stats_ShockResist		Artifact_Part_Stats_Grounded
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	SECONDARY	2	2	1	Artifact_Part_Stats_CorrosiveResist		Artifact_Part_Stats_Durable
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	SECONDARY	2	2	1	Artifact_Part_Stats_CryoResist		Artifact_Part_Stats_Insulated
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	SECONDARY	2	2	1	Artifact_Part_Stats_RadiationResist		Artifact_Part_Stats_LeadCoated
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	SECONDARY	2	2	1	Artifact_Part_Stats_FireDoTChance		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	SECONDARY	2	2	1	Artifact_Part_Stats_ShockDoTChance		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	SECONDARY	2	2	1	Artifact_Part_Stats_CorrosiveDoTChance		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	SECONDARY	2	2	1	Artifact_Part_Stats_CryoEfficiency		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	SECONDARY	2	2	1	Artifact_Part_Stats_RadiationDoTChance		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	SECONDARY	2	2	1	Artifact_Part_Stats_Accuracy		Artifact_Part_Stats_Precision
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	SECONDARY	2	2	1	Artifact_Part_Stats_ReloadSpeed		Artifact_Part_Stats_Quickdraw
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	SECONDARY	2	2	1	Artifact_Part_Stats_MagazineSize		Artifact_Part_Stats_ATLAS, Artifact_Part_Stats_Jakobs1, Artifact_Part_Stats_Loaded, Artifact_Part_Stats_Tediore, Artifact_Part_Stats_Vladof
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	SECONDARY	2	2	1	Artifact_Part_Stats_MaxShieldCapacity		Artifact_Part_Stats_Stalwart
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	SECONDARY	2	2	1	Artifact_Part_Stats_ShieldRechargeDelay		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	SECONDARY	2	2	1	Artifact_Part_Stats_ShieldRechargeRate		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	SECONDARY	2	2	1	Artifact_Part_Stats_MaxHealth		Artifact_Part_Stats_Vigorous
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	SECONDARY	2	2	1	Artifact_Part_Stats_HealthRegen		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	SECONDARY	2	2	1	Artifact_Part_Stats_Movespeed		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	SECONDARY	2	2	1	Artifact_Part_Stats_MeleeDamage		Artifact_Part_Stats_Ravaging
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	SECONDARY	2	2	1	Artifact_Part_Stats_BleedoutMoveSpeed		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	SECONDARY	2	2	1	Artifact_Part_Stats_BleedoutDuration		Artifact_Part_Stats_Unyielding
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	SECONDARY	2	2	1	Artifact_Part_Stats_XPMultiplier		
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	SECONDARY	2	2	1	Artifact_Part_Stats_AreaDamage		Artifact_Part_Stats_Ravaging
+Very Rare	04/Very Rare	InvBalD_Artifact_04_VeryRare	SECONDARY	2	2	1	Artifact_Part_Stats_ActionSkillCooldown		Artifact_Part_Stats_LongLasting
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	RARITY	1	1	1	Artifact_Part_Rarity_Legendary		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	LEGENDARY ABILITY	1	1	1	Artifact_Part_Ability_SplatterGun		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	LEGENDARY ABILITY	1	1	1	Artifact_Part_Ability_MoxxisEndowment		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	LEGENDARY ABILITY	1	1	1	Artifact_Part_Ability_OttoIdol		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	LEGENDARY ABILITY	1	1	1	Artifact_Part_Ability_CommanderPlanetoid		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	LEGENDARY ABILITY	1	1	1	Artifact_Part_Ability_PullOutMethod		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	LEGENDARY ABILITY	1	1	1	Artifact_Part_Ability_StaticTouch		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	LEGENDARY ABILITY	1	1	1	Artifact_Part_Ability_LoadedDice		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	LEGENDARY ABILITY	1	1	1	Artifact_Part_Ability_WhiteElephant		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	LEGENDARY ABILITY	1	1	1	Artifact_Part_Ability_RocketBoots		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	LEGENDARY ABILITY	1	1	1	Artifact_Part_Ability_Deathless		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	LEGENDARY ABILITY	1	1	1	Artifact_Part_Ability_VictoryRush		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	LEGENDARY ABILITY	1	1	1	Artifact_Part_Ability_CosmicCrater		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	LEGENDARY ABILITY	1	1	1	Artifact_Part_Ability_Salvo		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	LEGENDARY ABILITY	1	1	1	Artifact_Part_Ability_Safegaurd		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	ABILITY	1	1	1	Artifact_Part_Ability_RearEnder		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	ABILITY	1	1	1	Artifact_Part_Ability_BloodFrenzy		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	ABILITY	1	1	1	Artifact_Part_Ability_ElectricSlide		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	ABILITY	1	1	1	Artifact_Part_Ability_ElementalOrigin		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	ABILITY	1	1	1	Artifact_Part_Ability_FleshMelter		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	ABILITY	1	1	1	Artifact_Part_Ability_IceSpiker		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	ABILITY	1	1	1	Artifact_Part_Ability_Cauterizer		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	ABILITY	1	1	1	Artifact_Part_Ability_LootExpander		Artifact_Part_Rarity_Common, Artifact_Part_Rarity_Uncommon
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	ABILITY	1	1	1	Artifact_Part_Ability_ShatterRig		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	ABILITY	1	1	1	Artifact_Part_Ability_FastHands		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	ABILITY	1	1	1	Artifact_Part_Ability_LastStand		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	ABILITY	1	1	1	Artifact_Part_Ability_HotDrop		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	ABILITY	1	1	1	Artifact_Part_Ability_MindMelt		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	ABILITY	1	1	1	Artifact_Part_Ability_SparkPlug		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	ABILITY	1	1	1	Artifact_Part_Ability_ToxicRevenger		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	ABILITY	1	1	1	Artifact_Part_Ability_Radiodead		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	ABILITY	1	1	1	Artifact_Part_Ability_Snowdrift		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	ABILITY	1	1	1	Artifact_Part_Ability_CausticCoast		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	ABILITY	1	1	1	Artifact_Part_Ability_FireStone		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	ABILITY	1	1	1	Artifact_Part_Ability_CryoStone		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	ABILITY	1	1	1	Artifact_Part_Ability_CorrosiveStone		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	ABILITY	1	1	1	Artifact_Part_Ability_ShockStone		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	ABILITY	1	1	1	Artifact_Part_Ability_RadiationStone		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	ABILITY	1	1	1	Artifact_Part_Ability_KnifeDrain		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	ABILITY	1	1	1	Artifact_Part_Ability_AtomBalm		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	PRIMARY	1	1	1	Artifact_Part_Stats_DeadEye		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	PRIMARY	1	1	1	Artifact_Part_Stats_Greasy		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	PRIMARY	1	1	1	Artifact_Part_Stats_Breaching		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	PRIMARY	1	1	1	Artifact_Part_Stats_HollowPoint		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	PRIMARY	1	1	1	Artifact_Part_Stats_LongRange		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	PRIMARY	1	1	1	Artifact_Part_Stats_Hulking		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	PRIMARY	1	1	1	Artifact_Part_Stats_Grenadier		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	PRIMARY	1	1	1	Artifact_Part_Stats_Precision		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	PRIMARY	1	1	1	Artifact_Part_Stats_Quickdraw		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	PRIMARY	1	1	1	Artifact_Part_Stats_Loaded		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	PRIMARY	1	1	1	Artifact_Part_Stats_Stalwart		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	PRIMARY	1	1	1	Artifact_Part_Stats_Vigorous		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	PRIMARY	1	1	1	Artifact_Part_Stats_Asbestos		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	PRIMARY	1	1	1	Artifact_Part_Stats_Grounded		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	PRIMARY	1	1	1	Artifact_Part_Stats_Durable		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	PRIMARY	1	1	1	Artifact_Part_Stats_Insulated		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	PRIMARY	1	1	1	Artifact_Part_Stats_LeadCoated		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	PRIMARY	1	1	1	Artifact_Part_Stats_Lustrous		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	PRIMARY	1	1	1	Artifact_Part_Stats_Brawler		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	PRIMARY	1	1	1	Artifact_Part_Stats_LongLasting		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	PRIMARY	1	1	1	Artifact_Part_Stats_Unyielding		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	PRIMARY	1	1	1	Artifact_Part_Stats_Lucky		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	PRIMARY	1	1	1	Artifact_Part_Stats_Ravaging		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	PRIMARY	1	1	1	Artifact_Part_Stats_Hasty		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	PRIMARY	1	1	1	Artifact_Part_Stats_Zappy		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	PRIMARY	1	1	1	Artifact_Part_Stats_Melty		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	PRIMARY	1	1	1	Artifact_Part_Stats_Spicy		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	PRIMARY	1	1	1	Artifact_Part_Stats_Frozen		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	PRIMARY	1	1	1	Artifact_Part_Stats_Contaminated		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	SECONDARY	2	2	1	Artifact_Part_Stats_FireDamage		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	SECONDARY	2	2	1	Artifact_Part_Stats_ShockDamage		Artifact_Part_Stats_Zappy
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	SECONDARY	2	2	1	Artifact_Part_Stats_CorrosiveDamage		Artifact_Part_Stats_Melty
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	SECONDARY	2	2	1	Artifact_Part_Stats_CryoDamage		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	SECONDARY	2	2	1	Artifact_Part_Stats_RadiationDamage		Artifact_Part_Stats_Melty
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	SECONDARY	2	2	1	Artifact_Part_Stats_FireResist		Artifact_Part_Stats_Asbestos
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	SECONDARY	2	2	1	Artifact_Part_Stats_ShockResist		Artifact_Part_Stats_Grounded
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	SECONDARY	2	2	1	Artifact_Part_Stats_CorrosiveResist		Artifact_Part_Stats_Durable
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	SECONDARY	2	2	1	Artifact_Part_Stats_CryoResist		Artifact_Part_Stats_Insulated
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	SECONDARY	2	2	1	Artifact_Part_Stats_RadiationResist		Artifact_Part_Stats_LeadCoated
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	SECONDARY	2	2	1	Artifact_Part_Stats_FireDoTChance		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	SECONDARY	2	2	1	Artifact_Part_Stats_ShockDoTChance		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	SECONDARY	2	2	1	Artifact_Part_Stats_CorrosiveDoTChance		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	SECONDARY	2	2	1	Artifact_Part_Stats_CryoEfficiency		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	SECONDARY	2	2	1	Artifact_Part_Stats_RadiationDoTChance		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	SECONDARY	2	2	1	Artifact_Part_Stats_Accuracy		Artifact_Part_Stats_Precision
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	SECONDARY	2	2	1	Artifact_Part_Stats_ReloadSpeed		Artifact_Part_Stats_Quickdraw
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	SECONDARY	2	2	1	Artifact_Part_Stats_MagazineSize		Artifact_Part_Stats_ATLAS, Artifact_Part_Stats_Jakobs1, Artifact_Part_Stats_Loaded, Artifact_Part_Stats_Tediore, Artifact_Part_Stats_Vladof
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	SECONDARY	2	2	1	Artifact_Part_Stats_MaxShieldCapacity		Artifact_Part_Stats_Stalwart
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	SECONDARY	2	2	1	Artifact_Part_Stats_ShieldRechargeDelay		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	SECONDARY	2	2	1	Artifact_Part_Stats_ShieldRechargeRate		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	SECONDARY	2	2	1	Artifact_Part_Stats_MaxHealth		Artifact_Part_Stats_Vigorous
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	SECONDARY	2	2	1	Artifact_Part_Stats_HealthRegen		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	SECONDARY	2	2	1	Artifact_Part_Stats_Movespeed		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	SECONDARY	2	2	1	Artifact_Part_Stats_MeleeDamage		Artifact_Part_Stats_Ravaging
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	SECONDARY	2	2	1	Artifact_Part_Stats_BleedoutMoveSpeed		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	SECONDARY	2	2	1	Artifact_Part_Stats_BleedoutDuration		Artifact_Part_Stats_Unyielding
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	SECONDARY	2	2	1	Artifact_Part_Stats_XPMultiplier		
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	SECONDARY	2	2	1	Artifact_Part_Stats_AreaDamage		Artifact_Part_Stats_Ravaging
+Legendary	05/Legendary	InvBalD_Artifact_05_Legendary	SECONDARY	2	2	1	Artifact_Part_Stats_ActionSkillCooldown		Artifact_Part_Stats_LongLasting
+Electric Banjo	05/Legendary	InvBalD_Artifact_ElectricBanjo	RARITY	1	1	1	Artifact_Part_Rarity_Legendary		
+Electric Banjo	05/Legendary	InvBalD_Artifact_ElectricBanjo	ABILITY	1	1	1	Artifact_Part_Ability_ElectricBanjo		
+Electric Banjo	05/Legendary	InvBalD_Artifact_ElectricBanjo	PRIMARY	1	1	1	Artifact_Part_Stat_ElectricBanjo		
+Electric Banjo	05/Legendary	InvBalD_Artifact_ElectricBanjo	SECONDARY	2	2	1	Artifact_Part_Stats_ShockDamage		Artifact_Part_Stats_Zappy
+Electric Banjo	05/Legendary	InvBalD_Artifact_ElectricBanjo	SECONDARY	2	2	1	Artifact_Part_Stats_ShockResist		Artifact_Part_Stats_Grounded
+Electric Banjo	05/Legendary	InvBalD_Artifact_ElectricBanjo	SECONDARY	2	2	1	Artifact_Part_Stats_ShockDoTChance		
+Grave	05/Legendary	InvBalD_Artifact_Grave	RARITY	1	1	1	Artifact_Part_Rarity_Legendary		
+Grave	05/Legendary	InvBalD_Artifact_Grave	ABILITY	1	1	1	Artifact_Part_Ability_Grave		
+Grave	05/Legendary	InvBalD_Artifact_Grave	PRIMARY	1	1	1	Artifact_Part_Stat_Grave		
+Grave	05/Legendary	InvBalD_Artifact_Grave	SECONDARY	2	2	1	Artifact_Part_Stats_MaxHealth		Artifact_Part_Stats_Vigorous
+Grave	05/Legendary	InvBalD_Artifact_Grave	SECONDARY	2	2	1	Artifact_Part_Stats_BleedoutDuration		Artifact_Part_Stats_Unyielding
+Grave	05/Legendary	InvBalD_Artifact_Grave	SECONDARY	2	2	1	Artifact_Part_Stats_BleedoutMoveSpeed		
+Grave	05/Legendary	InvBalD_Artifact_Grave	SECONDARY	2	2	1	Artifact_Part_Stats_ActionSkillCooldown		Artifact_Part_Stats_LongLasting
+Lunacy	05/Legendary	InvBalD_Artifact_Lunacy	RARITY	1	1	1	Artifact_Part_Rarity_Legendary		
+Lunacy	05/Legendary	InvBalD_Artifact_Lunacy	LEGENDARY ABILITY	1	1	1	Artifact_Part_Ability_Lunacy		
+Lunacy	05/Legendary	InvBalD_Artifact_Lunacy	PRIMARY	1	1	1	Artifact_Part_Stat_Lunacy		
+Lunacy	05/Legendary	InvBalD_Artifact_Lunacy	SECONDARY	2	2	1	Artifact_Part_Stats_ActionSkillCooldown		Artifact_Part_Stats_LongLasting
+Lunacy	05/Legendary	InvBalD_Artifact_Lunacy	SECONDARY	2	2	1	Artifact_Part_Stats_AreaDamage		Artifact_Part_Stats_Ravaging
+Lunacy	05/Legendary	InvBalD_Artifact_Lunacy	SECONDARY	2	2	1	Artifact_Part_Stats_HealthRegen		
+Lunacy	05/Legendary	InvBalD_Artifact_Lunacy	SECONDARY	2	2	1	Artifact_Part_Stats_Movespeed		
+Lunacy	05/Legendary	InvBalD_Artifact_Lunacy	SECONDARY	2	2	1	Artifact_Part_Stats_XPMultiplier		
+Lunacy	05/Legendary	InvBalD_Artifact_Lunacy	SECONDARY	2	2	1	Artifact_Part_Stats_CorrosiveResist		Artifact_Part_Stats_Durable
+Lunacy	05/Legendary	InvBalD_Artifact_Lunacy	SECONDARY	2	2	1	Artifact_Part_Stats_CryoResist		Artifact_Part_Stats_Insulated
+Lunacy	05/Legendary	InvBalD_Artifact_Lunacy	SECONDARY	2	2	1	Artifact_Part_Stats_FireResist		Artifact_Part_Stats_Asbestos
+Lunacy	05/Legendary	InvBalD_Artifact_Lunacy	SECONDARY	2	2	1	Artifact_Part_Stats_RadiationResist		Artifact_Part_Stats_LeadCoated
+Lunacy	05/Legendary	InvBalD_Artifact_Lunacy	SECONDARY	2	2	1	Artifact_Part_Stats_ShockResist		Artifact_Part_Stats_Grounded
+Pearl of Ineffable Knowledge	05/Legendary	InvBalD_Artifact_PUK	RARITY	1	1	1	Artifact_Part_Rarity_Legendary		
+Pearl of Ineffable Knowledge	05/Legendary	InvBalD_Artifact_PUK	ABILITY	1	1	1	Artifact_Part_Ability_PUK		
+Pearl of Ineffable Knowledge	05/Legendary	InvBalD_Artifact_PUK	PRIMARY	1	1	1	Artifact_Part_Stat_PUK		
+Pearl of Ineffable Knowledge	05/Legendary	InvBalD_Artifact_PUK	SECONDARY	2	2	0.3	Artifact_Part_Stats_MagazineSize		Artifact_Part_Stats_ATLAS, Artifact_Part_Stats_Jakobs1, Artifact_Part_Stats_Loaded, Artifact_Part_Stats_Tediore, Artifact_Part_Stats_Vladof
+Pearl of Ineffable Knowledge	05/Legendary	InvBalD_Artifact_PUK	SECONDARY	2	2	1	Artifact_Part_Stats_FireRate		Artifact_Part_Stats_Hairtrigger, Artifact_Part_Stats_Quickdraw
+Pearl of Ineffable Knowledge	05/Legendary	InvBalD_Artifact_PUK	SECONDARY	2	2	1	Artifact_Part_Stats_ReloadSpeed		Artifact_Part_Stats_Quickdraw
+Pearl of Ineffable Knowledge	05/Legendary	InvBalD_Artifact_PUK	SECONDARY	2	2	1	Artifact_Part_Stats_MaxHealth		Artifact_Part_Stats_Vigorous
+Pearl of Ineffable Knowledge	05/Legendary	InvBalD_Artifact_PUK	SECONDARY	2	2	0.5	Artifact_Part_Stats_HealthRegen		
+Pearl of Ineffable Knowledge	05/Legendary	InvBalD_Artifact_PUK	SECONDARY	2	2	0.3	Artifact_Part_Stats_XPMultiplier		
+Phoenix Tears	05/Legendary	InvBalD_Artifact_PhoenixTears	RARITY	1	1	1	Artifact_Part_Rarity_Legendary		
+Phoenix Tears	05/Legendary	InvBalD_Artifact_PhoenixTears	ABILITY	1	1	1	Artifact_Part_Ability_PhoenixTears		
+Phoenix Tears	05/Legendary	InvBalD_Artifact_PhoenixTears	PRIMARY	1	1	1	Artifact_Part_Stat_PhoenixTears		
+Phoenix Tears	05/Legendary	InvBalD_Artifact_PhoenixTears	SECONDARY	2	2	1	Artifact_Part_Stats_BleedoutDuration		Artifact_Part_Stats_Unyielding
+Phoenix Tears	05/Legendary	InvBalD_Artifact_PhoenixTears	SECONDARY	2	2	1	Artifact_Part_Stats_BleedoutMoveSpeed		
+Phoenix Tears	05/Legendary	InvBalD_Artifact_PhoenixTears	SECONDARY	2	2	1	Artifact_Part_Stats_MaxHealth		Artifact_Part_Stats_Vigorous
+Phoenix Tears	05/Legendary	InvBalD_Artifact_PhoenixTears	SECONDARY	2	2	1	Artifact_Part_Stats_FireResist		Artifact_Part_Stats_Asbestos
+Phoenix Tears	05/Legendary	InvBalD_Artifact_PhoenixTears	SECONDARY	2	2	1	Artifact_Part_Stats_FireDamage		
+Road Warrior	05/Legendary	InvBalD_Artifact_RoadWarrior	RARITY	1	1	1	Artifact_Part_Rarity_Legendary		
+Road Warrior	05/Legendary	InvBalD_Artifact_RoadWarrior	ABILITY	1	1	1	Artifact_Part_Ability_RoadWarrior		
+Road Warrior	05/Legendary	InvBalD_Artifact_RoadWarrior	PRIMARY	1	1	1	Artifact_Part_Stat_RoadWarrior		
+Road Warrior	05/Legendary	InvBalD_Artifact_RoadWarrior	SECONDARY	3	3	1	Artifact_Part_Stats_Movespeed		
+Road Warrior	05/Legendary	InvBalD_Artifact_RoadWarrior	SECONDARY	3	3	1	Artifact_Part_Stats_MeleeDamage		Artifact_Part_Stats_Ravaging
+Road Warrior	05/Legendary	InvBalD_Artifact_RoadWarrior	SECONDARY	3	3	1	Artifact_Part_Stats_RadiationResist		Artifact_Part_Stats_LeadCoated
+Unleash the Dragon	05/Legendary	InvBalD_Artifact_ElDragonJr	RARITY	1	1	1	Artifact_Part_Rarity_Legendary		
+Unleash the Dragon	05/Legendary	InvBalD_Artifact_ElDragonJr	ABILITY	1	1	1	Artifact_Part_Ability_ElDragonJr		
+Unleash the Dragon	05/Legendary	InvBalD_Artifact_ElDragonJr	PRIMARY	1	1	1	Artifact_Part_Stat_ElDragonJr		
+Unleash the Dragon	05/Legendary	InvBalD_Artifact_ElDragonJr	SECONDARY	2	2	1	Artifact_Part_Stats_FireResist		Artifact_Part_Stats_Asbestos
+Unleash the Dragon	05/Legendary	InvBalD_Artifact_ElDragonJr	SECONDARY	2	2	1	Artifact_Part_Stats_FireDamage		
+Unleash the Dragon	05/Legendary	InvBalD_Artifact_ElDragonJr	SECONDARY	2	2	1	Artifact_Part_Stats_MeleeDamage		Artifact_Part_Stats_Ravaging
+Vault Hunter's Relic	05/Legendary	InvBalD_Artifact_Relic	RARITY	1	1	1	Artifact_Part_Rarity_VeryRare		
+Vault Hunter's Relic	05/Legendary	InvBalD_Artifact_Relic	ABILITY	1	1	1	Artifact_Part_Ability_Relic		Artifact_Part_Rarity_Common, Artifact_Part_Rarity_Uncommon
+Vault Hunter's Relic	05/Legendary	InvBalD_Artifact_Relic	PRIMARY	1	1	1	Artifact_Part_Stat_Relic		
+Vault Hunter's Relic	05/Legendary	InvBalD_Artifact_Relic	SECONDARY	2	2	1	Artifact_Part_Stats_MaxHealth		Artifact_Part_Stats_Vigorous
+Vault Hunter's Relic	05/Legendary	InvBalD_Artifact_Relic	SECONDARY	2	2	1	Artifact_Part_Stats_MaxShieldCapacity		Artifact_Part_Stats_Stalwart
