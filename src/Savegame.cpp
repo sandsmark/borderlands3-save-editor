@@ -331,12 +331,16 @@ bool Savegame::load(const QString &filePath)
         item.numberOfParts = bits.eat(6);
 
         QString itemPartCategory = m_itemPartCategories[item.balance.val.toLower()].toString();
+        bool itemFailed = false;
         if (!itemPartCategory.isEmpty()) {
             for (int partIndex = 0; partIndex < item.numberOfParts; partIndex++) {
                 Item::Aspect part = getAspect(itemPartCategory, item.version, &bits);
                 if (!part.isValid()) {
+                    qWarning() << "Invalid" << item.balance.val << itemPartCategory;
                     QMessageBox::warning(nullptr, "Invalid file", tr("Failed to get item part %1 for item %2.").arg(partIndex).arg(item.name));
-                    return false;
+                    itemFailed = true;
+                    break;
+//                    return false;
                 }
                 item.parts.append(part);
             }
@@ -348,7 +352,9 @@ bool Savegame::load(const QString &filePath)
             qDebug() << "Number of parts" << item.numberOfParts;
             qDebug() << "Bits left" << bits.bitsLeft();
         }
-        m_items.append(item);
+        if (!itemFailed) {
+            m_items.append(item);
+        }
     }
     emit itemsChanged();
 //    qDebug() << "Max bits:" << maxBits;

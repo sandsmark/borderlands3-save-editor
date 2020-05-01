@@ -51,6 +51,7 @@ void InventoryTab::load()
     m_list->clear();
     for (const Savegame::Item &item : m_savegame->items()) {
         QString rarity = item.objectShortName.split('_').last();
-        m_list->addItem(tr("%1%2 (level %3)").arg(rarity + " ", item.name, QString::number(item.level)));
+        m_list->addItem(tr("%1 (level %2)").arg(item.name, QString::number(item.level)));
+//        m_list->addItem(tr("%1%2 (level %3)").arg(rarity + " ", item.name, QString::number(item.level)));
     }
 }
