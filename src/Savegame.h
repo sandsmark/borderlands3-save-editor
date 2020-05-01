@@ -2,6 +2,7 @@
 #define SAVEGAME_H
 
 #include "Constants.h"
+#include "ItemData.h"
 
 #include <memory>
 #include <QString>
@@ -123,17 +124,14 @@ signals:
 
 
 private:
-    int requiredBits(const QString &category, const int requiredVersion);
     Item::Aspect getAspect(const QString &category, const int requiredVersion, BitParser *bits);
-    QString getItemAsset(const QString &category, const int index);
 
     int currencyAmount(const Constants::Currency currenct) const;
     void setCurrency(const Constants::Currency currency, const int amount);
     std::unique_ptr<OakSave::Character> m_character;
 
-    QJsonObject m_inventoryDb; // TODO: parse to in-memory struct, currently very inefficient
-    QJsonObject m_englishNames;
-    QJsonObject m_itemPartCategories;
+    ItemData m_data;
+
     QVector<Item> m_items;
     int m_maxItemVersion = 1000; // todo
 };

@@ -9,8 +9,6 @@
 #include <QMessageBox>
 #include <QtEndian> // all the qFromLittleEndian is valid for the PC saves at least
 #include <QDebug>
-#include <QJsonDocument>
-#include <QJsonArray>
 #include <deque>
 
 //#include <bitset> // More stuff that we want than QBitSet (like shifting) fuck std
@@ -55,19 +53,6 @@ Savegame::Savegame(QObject *parent) :
     QObject(parent)
 {
     m_character = std::make_unique<OakSave::Character>();
-
-    QFile dbFile(":/data/inventory-serials.json");
-    dbFile.open(QIODevice::ReadOnly);
-    m_inventoryDb =  QJsonDocument::fromJson(dbFile.readAll()).object();
-
-    QFile namesFile(":/data/english-names.json");
-    namesFile.open(QIODevice::ReadOnly);
-    m_englishNames =  QJsonDocument::fromJson(namesFile.readAll()).object();
-
-    // From cfi2017
-    QFile itemPartCategoriesFile(":/data/balance_to_inv_key.json");
-    itemPartCategoriesFile.open(QIODevice::ReadOnly);
-    m_itemPartCategories = QJsonDocument::fromJson(itemPartCategoriesFile.readAll()).object();
 
 #if 0
     QFile infile("name.json");
@@ -187,7 +172,7 @@ static bool writeString(const QString &input, QIODevice *output)
 
 bool Savegame::load(const QString &filePath)
 {
-    if (m_englishNames.isEmpty() || m_inventoryDb.isEmpty() || m_itemPartCategories.isEmpty()) {
+    if (!m_data.isValid()) {
         qWarning() << "Databases not loaded!";
         return false;
     }
@@ -312,10 +297,7 @@ bool Savegame::load(const QString &filePath)
         }
 
         item.objectShortName = item.balance.val.split('/', QString::SkipEmptyParts).last().split('.', QString::SkipEmptyParts).last();
-        item.name = item.objectShortName;
-        if (m_englishNames.contains(item.name.toLower())) {
-            item.name = m_englishNames[item.name.toLower()].toString();
-        }
+        item.name = m_data.englishName(item.objectShortName);
 
         item.data = getAspect("InventoryData", item.version, &bits); // these seem wrong
         if (!item.data.isValid()) {
@@ -330,7 +312,7 @@ bool Savegame::load(const QString &filePath)
         item.level = bits.eat(7);
         item.numberOfParts = bits.eat(6);
 
-        QString itemPartCategory = m_itemPartCategories[item.balance.val.toLower()].toString();
+        QString itemPartCategory = m_data.partCategory(item.balance.val.toLower());
         bool itemFailed = false;
         if (!itemPartCategory.isEmpty()) {
             for (int partIndex = 0; partIndex < item.numberOfParts; partIndex++) {
@@ -375,46 +357,10 @@ bool Savegame::load(const QString &filePath)
     return true;
 }
 
-int Savegame::requiredBits(const QString &category, const int requiredVersion)
-{
-    if (!m_inventoryDb.contains(category)) {
-        qWarning() << "Invalid category" << category;
-        return -1;
-    }
-
-    const QJsonObject categoryObject = m_inventoryDb[category].toObject();
-    const QJsonArray versions = categoryObject["versions"].toArray();
-    if (versions.isEmpty()) {
-        qWarning() << "No versions for" << category;
-        return -1;
-    }
-    QJsonObject version = versions.first().toObject();
-
-    int bits = version["bits"].toInt();
-    for (const QJsonValue &val : versions) {
-        version = val.toObject();
-        if (!version.contains("bits") || !version.contains("version")) {
-            qWarning() << "Invalid version in" << category;
-            continue;
-        }
-        const int currentBits = version["bits"].toInt();
-        const int versionNumber = version["version"].toInt();
-        if (versionNumber > requiredVersion) {
-            return currentBits;
-        }
-
-        // I don't understand this, but CJ does so I just follow him blindly
-        // The logic seems either flipped or unnecessary
-        bits = currentBits;
-    }
-
-    return bits;
-}
-
 Savegame::Item::Aspect Savegame::getAspect(const QString &category, const int requiredVersion, BitParser *bits)
 {
     Item::Aspect aspect;
-    aspect.bits = requiredBits(category, requiredVersion);
+    aspect.bits = m_data.requiredBits(category, requiredVersion);
     if (aspect.bits <= 0) {
         qWarning() << "Invalid aspect";
         return {};
@@ -424,33 +370,13 @@ Savegame::Item::Aspect Savegame::getAspect(const QString &category, const int re
         qWarning() << "Invalid index";
         return {};
     }
-    aspect.val = getItemAsset(category, aspect.index);
+    aspect.val = m_data.getItemAsset(category, aspect.index);
     if (aspect.val.isEmpty()) {
         qWarning() << "Can't find val for" << category << aspect.index;
         return {};
     }
 
     return aspect;
-}
-
-QString Savegame::getItemAsset(const QString &category, const int index)
-{
-    if (index < 1) {
-        qWarning() << "Invalid index" << index;
-        return {};
-    }
-    if (!m_inventoryDb.contains(category)) {
-        qWarning() << "Invalid category" << category;
-        return {};
-    }
-
-    const QJsonObject categoryObject = m_inventoryDb[category].toObject();
-    const QJsonArray assets = categoryObject["assets"].toArray();
-    if (index >= assets.count()) {
-        qWarning() << "Asset index" << index << "out of range, max:" << assets.count();
-        return {};
-    }
-    return assets[index].toString();
 }
 
 bool Savegame::save(const QString filePath) const
