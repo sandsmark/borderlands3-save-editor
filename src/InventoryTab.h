@@ -5,6 +5,7 @@
 
 class QListWidget;
 class Savegame;
+class QVBoxLayout;
 
 class InventoryTab : public QWidget
 {

@@ -4,6 +4,8 @@
 #include <QJsonDocument>
 #include <QFile>
 
+const QVector<WeaponPart> ItemData::nullWeaponParts;
+
 ItemData::ItemData()
 {
     QFile dbFile(":/data/inventory-serials.json");
@@ -19,11 +21,40 @@ ItemData::ItemData()
     itemPartCategoriesFile.open(QIODevice::ReadOnly);
     m_itemPartCategories = QJsonDocument::fromJson(itemPartCategoriesFile.readAll()).object();
 
+    QFile weaponPartsFile(":/data/weapon-parts.tsv");
+    weaponPartsFile.open(QIODevice::ReadOnly);
+    weaponPartsFile.readLine(); // Skip header
+    while (!weaponPartsFile.atEnd()) {
+        QStringList line = QString::fromUtf8(weaponPartsFile.readLine()).split('\t');
+        if (line.length() != 11) {
+            qWarning() << "Invalid line in weapon parts file" << line;
+            return;
+        }
+        WeaponPart part;
+        part.manufacturer = line[0];
+        part.weaponType = line[1];
+        part.rarity = line[2];
+        part.balance = line[3];
+        part.category = line[4];
+        part.minParts = line[5].toInt();
+        part.maxParts = line[6].toInt();
+        part.weight = line[7].toFloat();
+        part.partId = line[8];
+        for (const QString &dep : line[9].split(',')) {
+            part.dependencies.append(dep.trimmed());
+        }
+        for (const QString &exc : line[10].split(',')) {
+            part.excluders.append(exc.trimmed());
+        }
+        m_weaponPartTypes[part.partId] = part.category;
+        m_weaponPartCategories.insert(part.balance, part.category);
+        m_weaponParts[part.balance].append(std::move(part));
+    }
 }
 
 bool ItemData::isValid() const
 {
-    return (!m_englishNames.isEmpty() && !m_inventoryDb.isEmpty() && !m_itemPartCategories.isEmpty());
+    return (!m_englishNames.isEmpty() && !m_inventoryDb.isEmpty() && !m_itemPartCategories.isEmpty() && !m_weaponParts.isEmpty());
 }
 
 QString ItemData::getItemAsset(const QString &category, const int index) const
@@ -96,4 +127,13 @@ QString ItemData::englishName(const QString &itemName) const
 QString ItemData::partCategory(const QString &objectName) const
 {
     return m_itemPartCategories[objectName.toLower()].toString();
+}
+
+const QVector<WeaponPart> &ItemData::weaponParts(const QString &balance)
+{
+    if (!m_weaponParts.contains(balance)) {
+        return nullWeaponParts;
+    }
+
+    return m_weaponParts[balance];
 }

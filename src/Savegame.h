@@ -94,6 +94,8 @@ public:
     int sduAmount(const QString &name) const;
     void setSduAmount(const QString &name, const int amount);
 
+    ItemData &itemData() { return m_data; }
+
 public slots:
     //////////////////////////
     // Character stuff

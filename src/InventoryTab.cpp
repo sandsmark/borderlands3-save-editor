@@ -33,17 +33,36 @@ void InventoryTab::onSelected()
         qWarning() << "Out of bounds!";
         return;
     }
+    // TODO: maybe list of dropdowns? idk
+
 
     m_partsList->clear();
     const Savegame::Item &item = m_savegame->items()[index];
-    for (const Savegame::Item::Aspect &part : item.parts) {
-        m_partsList->addItem(part.val.split('.').last());
+    QStringList parts;
+
+    QMap<QString, QString> partCategories;
+    for (const WeaponPart &part : m_savegame->itemData().weaponParts(item.objectShortName)) {
+        partCategories[part.partId] = part.category;
     }
-    qDebug() << "Part count" << item.numberOfParts;
-    qDebug() << "Version" << item.version << "level" << item.level;
-    qDebug() << item.balance.val;
-    qDebug() << item.data.val;
-    qDebug() << item.manufacturer.val;
+
+    for (const Savegame::Item::Aspect &part : item.parts) {
+        QString name = part.val.split('.').last();
+        if (partCategories.contains(name)) {
+            name = partCategories[name] + " " + name;
+        } else {
+            qWarning() << item.name << item.objectShortName << "has part" << name << "which is not in the usual list";
+            name = m_savegame->itemData().weaponPartType(name) + " " + name;
+        }
+        parts.append(name);
+//        m_partsList->addItem(part.val.split('.').last());
+    }
+    std::sort(parts.begin(), parts.end());
+    m_partsList->addItems(parts);
+//    qDebug() << "Part count" << item.numberOfParts;
+//    qDebug() << "Version" << item.version << "level" << item.level;
+//    qDebug() << item.balance.val;
+//    qDebug() << item.data.val;
+//    qDebug() << item.manufacturer.val;
 }
 
 void InventoryTab::load()

@@ -319,7 +319,7 @@ bool Savegame::load(const QString &filePath)
                 Item::Aspect part = getAspect(itemPartCategory, item.version, &bits);
                 if (!part.isValid()) {
                     qWarning() << "Invalid" << item.balance.val << itemPartCategory;
-                    QMessageBox::warning(nullptr, "Invalid file", tr("Failed to get item part %1 for item %2.").arg(partIndex).arg(item.name));
+//                    QMessageBox::warning(nullptr, "Invalid file", tr("Failed to get item part %1 for item %2.").arg(partIndex).arg(item.name));
                     itemFailed = true;
                     break;
 //                    return false;
