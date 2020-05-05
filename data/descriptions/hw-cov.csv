@@ -1,0 +1,58 @@
+# Object name	Positives	Negatives	Effects	Naming
+Part_HW_COV_Barrel_01.Part_HW_COV_Barrel_01	-			Chucka
+Part_HW_COV_Barrel_01_A.Part_HW_COV_Barrel_01_A	Dmg +10%			
+Part_HW_COV_Barrel_01_AI_UseONLY.Part_HW_COV_Barrel_01_AI_UseONLY	-			
+Part_HW_COV_Barrel_01_B.Part_HW_COV_Barrel_01_B	Dmg +10%			
+Part_HW_COV_Barrel_01_C.Part_HW_COV_Barrel_01_C	Heat per Shot -25%			
+Part_HW_COV_Barrel_02.Part_HW_COV_Barrel_02	Splash Dmg Radius +300			Zooka
+Part_HW_COV_Barrel_02_A.Part_HW_COV_Barrel_02_A	Splash Dmg Radius +20%			
+Part_HW_COV_Barrel_02_AI_UseONLY.Part_HW_COV_Barrel_02_AI_UseONLY	-			
+Part_HW_COV_Barrel_02_B.Part_HW_COV_Barrel_02_B	Dmg +10%, Melee Dmg +80%			
+Part_HW_COV_Barrel_02_C.Part_HW_COV_Barrel_02_C	Splash Dmg Radius +20%			
+Part_HW_COV_Barrel_03.Part_HW_COV_Barrel_03	Splash Dmg Radius +130			Shredda
+Part_HW_COV_Barrel_03_A.Part_HW_COV_Barrel_03_A	Proj per Shot +1			
+Part_HW_COV_Barrel_03_AI_UseONLY.Part_HW_COV_Barrel_03_AI_UseONLY	-			
+Part_HW_COV_Barrel_03_B.Part_HW_COV_Barrel_03_B	Acc -15%			
+Part_HW_COV_Barrel_03_C.Part_HW_COV_Barrel_03_C	Recoil Height -25%, Fire Rate +10%			
+Part_HW_COV_Barrel_ETech.Part_HW_COV_Barrel_ETech	Splash Dmg Radius +275			Bombanayshun
+Part_HW_COV_Barrel_ETech_A.Part_HW_COV_Barrel_ETech_A				
+Part_HW_COV_Barrel_HotDrop.Part_HW_COV_Barrel_HotDrop	Splash Dmg Radius +300, Acc -50%			
+Part_HW_COV_Barrel_PortaPooper.Part_HW_COV_Barrel_PortaPooper	Splash Dmg Radius +400, Dmg +45%			
+Part_HW_COV_Barrel_Terror.Part_HW_COV_Barrel_Terror	Splash Dmg Radius +420, Dmg +25%			
+Part_HW_COV_Body.Part_HW_COV_Body	DO NOT REMOVE			
+Part_HW_COV_Body_A.Part_HW_COV_Body_A	Heat per Shot -25%			
+Part_HW_COV_Body_B.Part_HW_COV_Body_B	Dmg +10%			
+Part_HW_COV_Body_C.Part_HW_COV_Body_C	Heat per Shot -25%			
+Part_HW_COV_Body_Hose.Part_HW_COV_Body_Hose				
+Part_HW_COV_Body_OilCan.Part_HW_COV_Body_OilCan				
+Part_HW_COV_Ele_Corr.Part_HW_COV_Ele_Corr				Kemik
+Part_HW_COV_Ele_Cryo.Part_HW_COV_Ele_Cryo				Brrr
+Part_HW_COV_Ele_Fire.Part_HW_COV_Ele_Fire				Hawt
+Part_HW_COV_Ele_Normal.Part_HW_COV_Ele_Normal				
+Part_HW_COV_Ele_Radiation.Part_HW_COV_Ele_Radiation				Melty
+Part_HW_COV_Ele_Shock.Part_HW_COV_Ele_Shock				Zappy
+Part_HW_COV_Engine_01.Part_HW_COV_Engine_01	Heat per Shot -15%			
+Part_HW_COV_Engine_02.Part_HW_COV_Engine_02	Fire Rate +5%			
+Part_HW_COV_Engine_03.Part_HW_COV_Engine_03	Dmg +5%			
+Part_HW_COV_Grip_01.Part_HW_COV_Grip_01	Acc -10%, Fire Rate +5%			
+Part_HW_COV_Grip_02.Part_HW_COV_Grip_02	Splash Dmg Radius +20%, Heat per Shot -15%			
+Part_HW_COV_Grip_03.Part_HW_COV_Grip_03	Dmg +5%			
+Part_HW_COV_Material_01_Common.Part_HW_COV_Material_01_Common			Weapon Skin	
+Part_HW_COV_Material_02_Uncommon.Part_HW_COV_Material_02_Uncommon			Weapon Skin	
+Part_HW_COV_Material_03_Rare.Part_HW_COV_Material_03_Rare			Weapon Skin	
+Part_HW_COV_Material_04_VeryRare.Part_HW_COV_Material_04_VeryRare			Weapon Skin	
+Part_HW_COV_Material_HotDrop.Part_HW_COV_Material_HotDrop			Weapon Skin	
+Part_HW_COV_Material_PortaPooper.Part_HW_COV_Material_PortaPooper			Weapon Skin	
+Part_HW_COV_Material_Terror.Part_HW_COV_Material_Terror			Weapon Skin	
+Part_HW_COV_Scope_01.Part_HW_COV_Scope_01				
+Part_HW_COV_Scope_02.Part_HW_COV_Scope_02				
+Part_HW_COV_Scope_03.Part_HW_COV_Scope_03				
+Part_HW_COV_Starter_01.Part_HW_COV_Starter_01	Fire Rate +10%			
+Part_HW_COV_Starter_02.Part_HW_COV_Starter_02	Heat per Shot -25%			
+Part_HW_COV_Starter_03.Part_HW_COV_Starter_03	Dmg +10%			
+Part_HW_COV_Tail_01.Part_HW_COV_Tail_01	Acc -20%			
+Part_HW_COV_Tail_02.Part_HW_COV_Tail_02	Recoil height -15%, Dmg +5%			
+Part_HW_COV_Tail_03.Part_HW_COV_Tail_03	Heat per Shot +75%			
+Part_HW_COV_Tail_04.Part_HW_COV_Tail_04	Fire Rate +5%			
+Part_HW_COV_Tail_05.Part_HW_COV_Tail_05	Splash Dmg Radius +20%, Heat per Shot -15%			
+Part_HW_COV_Tail_06.Part_HW_COV_Tail_06	Ele Dmg +10%, Ele Chance +10%			

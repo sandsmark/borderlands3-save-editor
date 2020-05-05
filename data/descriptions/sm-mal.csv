@@ -1,0 +1,81 @@
+# Object name	Positives	Negatives	Effects	Naming
+Part_SM_MAL_Barrel_01.Part_SM_MAL_Barrel_01	-			Pulsar
+Part_SM_MAL_Barrel_01_A.Part_SM_MAL_Barrel_01_A	Acc Bloom -25%			
+Part_SM_MAL_Barrel_01_B.Part_SM_MAL_Barrel_01_B	Fire Rate +10%			
+Part_SM_MAL_Barrel_01_C.Part_SM_MAL_Barrel_01_C	Fire Rate +10%			
+Part_SM_MAL_Barrel_02.Part_SM_MAL_Barrel_02	Splash Dmg Radius +75		Beam	Nebula
+Part_SM_MAL_Barrel_02_A.Part_SM_MAL_Barrel_02_A	Ele Dmg +10%			
+Part_SM_MAL_Barrel_02_B.Part_SM_MAL_Barrel_02_B	Ele Dmg +10%			
+Part_SM_MAL_Barrel_02_C.Part_SM_MAL_Barrel_02_C	Proj Speed +30%, Melee Dmg +60%			Eviscerating
+Part_SM_MAL_Barrel_03.Part_SM_MAL_Barrel_03	-			Quasar
+Part_SM_MAL_Barrel_03_A.Part_SM_MAL_Barrel_03_A	Dmg +10%			
+Part_SM_MAL_Barrel_03_B.Part_SM_MAL_Barrel_03_B	Dmg +10%			
+Part_SM_MAL_Barrel_03_C.Part_SM_MAL_Barrel_03_C	Mag Size +10%			
+Part_SM_MAL_Barrel_CloudKill.Part_SM_MAL_Barrel_CloudKill				
+Part_SM_MAL_Barrel_Crit.Part_SM_MAL_Barrel_Crit	Crit Dmg +150%, Dmg +25%			
+Part_SM_MAL_Barrel_Cutsman.Part_SM_MAL_Barrel_Cutsman	Splash Dmg Radius +5, Dmg +300%	Acc +60%		
+Part_SM_MAL_Barrel_DestructoSpin.Part_SM_MAL_Barrel_DestructoSpin				
+Part_SM_MAL_Barrel_Devoted.Part_SM_MAL_Barrel_Devoted	Mag Size +30	Acc +80%, Dmg -20%, Reload Time +50%		
+Part_SM_MAL_Barrel_ETech.Part_SM_MAL_Barrel_ETech	Mag Size +20%			Heliophage
+Part_SM_MAL_Barrel_ETech_A.Part_SM_MAL_Barrel_ETech_A	Proj Speed +20%, Recoil Width -25%, Recoil Height -25%			
+Part_SM_MAL_Barrel_Egon.Part_SM_MAL_Barrel_Egon	Dmg -25%			
+Part_SM_MAL_Barrel_Emporer.Part_SM_MAL_Barrel_Emporer				
+Part_SM_MAL_Barrel_Tsunami.Part_SM_MAL_Barrel_Tsunami	Ele Dmg +50%, Weapon Sway -20%, Ele Chance +50%, Acc Bloom -35%			
+Part_SM_MAL_Barrel_VibraPulse.Part_SM_MAL_Barrel_VibraPulse				
+Part_SM_MAL_Barrel_westergun.Part_SM_MAL_Barrel_westergun	Splash Dmg Radius +75			
+Part_SM_MAL_Barrel_KybsWorth.Part_SM_MAL_Barrel_KybsWorth	Splash Dmg Radius +75, Reload Time -10%, Ele Dmg +10%, Ele Chance +15%, Dmg +10%			
+Part_SM_MAL_Barrel_KybsWorth_Shield.Part_SM_MAL_Barrel_KybsWorth_Shield	Proj Speed +30%, Melee Dmg +60%			
+Part_SM_MAL_Barrel_IonLaser.Part_SM_MAL_Barrel_IonLaser	Melee Dmg +40%	Dmg -20%	ION LASER	
+Part_SM_MAL_Barrel_EmbersPurge.Part_SM_MAL_Barrel_EmbersPurge			Ember's Purge	
+Part_SM_MAL_Body.Part_SM_MAL_Body	DO NOT REMOVE			
+Part_SM_MAL_Body_A.Part_SM_MAL_Body_A	Charge Duration -20%			
+Part_SM_MAL_Body_B.Part_SM_MAL_Body_B	Proj Speed +30%, Acc -15%			
+Part_SM_MAL_Body_C.Part_SM_MAL_Body_C	Ele Dmg +10%			
+Part_SM_MAL_Grip_01.Part_SM_MAL_Grip_01	Acc Bloom -30%, Fire Rate +5%			
+Part_SM_MAL_Grip_02.Part_SM_MAL_Grip_02	Ele Dmg +10%, Weapon Sway -30%			
+Part_SM_MAL_Grip_03.Part_SM_MAL_Grip_03	Charge Duration -10%, Acc -10%			
+Part_SM_MAL_Grip_03_A.Part_SM_MAL_Grip_03_A	Proj per Shot +1, Mag Size +10%	Dmg -24%, Acc Bloom +20%, Acc +21%		
+Part_SM_MAL_Mag_01.Part_SM_MAL_Mag_01	34 Round			
+Part_SM_MAL_Mag_02.Part_SM_MAL_Mag_02	24 Round, Dmg +10%			
+Part_SM_MAL_Mag_03.Part_SM_MAL_Mag_03	44 Round, Dmg -10%			
+Part_SM_MAL_Mag_Cutsman.Part_SM_MAL_Mag_Cutsman	20 Round			
+Part_SM_MAL_Material_01_Common.Part_SM_MAL_Material_01_Common			Weapon Skin	
+Part_SM_MAL_Material_02_Uncommon.Part_SM_MAL_Material_02_Uncommon			Weapon Skin	
+Part_SM_MAL_Material_03_Rare.Part_SM_MAL_Material_03_Rare			Weapon Skin	
+Part_SM_MAL_Material_04_Epic.Part_SM_MAL_Material_04_Epic			Weapon Skin	
+Part_SM_MAL_Material_CloudKill.Part_SM_MAL_Material_CloudKill			Weapon Skin	
+Part_SM_MAL_Material_Crit.Part_SM_MAL_Material_Crit			Weapon Skin	
+Part_SM_MAL_Material_Cutsman.Part_SM_MAL_Material_Cutsman			Weapon Skin	
+Part_SM_MAL_Material_DestructoSpin.Part_SM_MAL_Material_DestructoSpin			Weapon Skin	
+Part_SM_MAL_Material_Devoted.Part_SM_MAL_Material_Devoted			Weapon Skin	
+Part_SM_MAL_Material_E3.Part_SM_MAL_Material_E3			Weapon Skin	
+Part_SM_MAL_Material_Egon.Part_SM_MAL_Material_Egon			Weapon Skin	
+Part_SM_MAL_Material_Emporer.Part_SM_MAL_Material_Emporer			Weapon Skin	
+Part_SM_MAL_Material_Kevins.Part_SM_MAL_Material_Kevins			Weapon Skin	
+Part_SM_MAL_Material_Maya.Part_SM_MAL_Material_Maya			Weapon Skin	
+Part_SM_MAL_Material_Tsunami.Part_SM_MAL_Material_Tsunami			Weapon Skin	
+Part_SM_MAL_Material_VibraPulse.Part_SM_MAL_Material_VibraPulse			Weapon Skin	
+Part_SM_MAL_Material_westergun.Part_SM_MAL_Material_westergun			Weapon Skin	
+Part_SM_MAL_Material_KybsWorth.Part_SM_MAL_Material_KybsWorth			Weapon Skin	
+Part_SM_MAL_Material_IonLaser.Part_SM_MAL_Material_IonLaser			Weapon Skin - ION LASER	
+Part_SM_MAL_Material_EmbersPurge.Part_SM_MAL_Material_EmbersPurge			Weapon Skin - Ember's Purge	
+Part_SM_MAL_Scope_01.Part_SM_MAL_Scope_01	Dmg +5%			
+Part_SM_MAL_Scope_02.Part_SM_MAL_Scope_02	Splash Dmg Radius +20%			
+Part_SM_MAL_Scope_03.Part_SM_MAL_Scope_03	2.9x, Proj Speed +15%			
+Part_SM_MAL_Scope_04.Part_SM_MAL_Scope_04	Reload Time -5%		Ironsights	
+Part_SM_MAL_Stock_01.Part_SM_MAL_Stock_01	Charge Duration -10%, Fire Rate +5%			
+Part_SM_MAL_Stock_02.Part_SM_MAL_Stock_02	Ele Dmg +10%, Weapon Sway -30%			
+Part_SM_MAL_Stock_03.Part_SM_MAL_Stock_03	Acc Bloom -20%, Dmg +5%			
+Part_SM_Mal_ElemPrimary_01_Fire.Part_SM_Mal_ElemPrimary_01_Fire				
+Part_SM_Mal_ElemPrimary_02_Cryo.Part_SM_Mal_ElemPrimary_02_Cryo				
+Part_SM_Mal_ElemPrimary_03_Shock.Part_SM_Mal_ElemPrimary_03_Shock				
+Part_SM_Mal_ElemPrimary_04_Radiation.Part_SM_Mal_ElemPrimary_04_Radiation				
+Part_SM_Mal_ElemPrimary_05_Corrosive.Part_SM_Mal_ElemPrimary_05_Corrosive				
+Part_SM_Mal_ElemSecondary_01_Fire.Part_SM_Mal_ElemSecondary_01_Fire				
+Part_SM_Mal_ElemSecondary_02_Cryo.Part_SM_Mal_ElemSecondary_02_Cryo				
+Part_SM_Mal_ElemSecondary_03_Shock.Part_SM_Mal_ElemSecondary_03_Shock				
+Part_SM_Mal_ElemSecondary_04_Radiation.Part_SM_Mal_ElemSecondary_04_Radiation				
+Part_SM_Mal_ElemSecondary_05_Corrosive.Part_SM_Mal_ElemSecondary_05_Corrosive				
+# Naming strategy	Name	Priority		
+# If MagSize is Greater Than 44	Bountiful	1002.0		
+# If Shot Cost = 2	Binary	1003.0		

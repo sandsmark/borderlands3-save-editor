@@ -1,0 +1,59 @@
+# Object name	Positives	Negatives	Effects	Naming
+Part_SG_TED_Barrel_01.Part_SG_TED_Barrel_01	-			Powerblast
+Part_SG_TED_Barrel_01_A.Part_SG_TED_Barrel_01_A	Dmg +10%			
+Part_SG_TED_Barrel_01_B.Part_SG_TED_Barrel_01_B	Proj per Shot +35%	Acc Bloom +15%, Acc +10%, Dmg -5%		
+Part_SG_TED_Barrel_01_C.Part_SG_TED_Barrel_01_C	Splash Dmg Radius +20%, Dmg +10%		When Thrown project a target that double explosion	
+Part_SG_TED_Barrel_02.Part_SG_TED_Barrel_02	-			Fastblast
+Part_SG_TED_Barrel_02_A.Part_SG_TED_Barrel_02_A	Acc -7.5%			
+Part_SG_TED_Barrel_02_B.Part_SG_TED_Barrel_02_B	Fire Rate +10%		When Thrown shoot wildy	
+Part_SG_TED_Barrel_02_C.Part_SG_TED_Barrel_02_C	Fire Rate +10%			
+Part_SG_TED_Barrel_03.Part_SG_TED_Barrel_03	Mag Size +2			Everblast
+Part_SG_TED_Barrel_03_A.Part_SG_TED_Barrel_03_A	Acc -7.5%			
+Part_SG_TED_Barrel_03_B.Part_SG_TED_Barrel_03_B	Proj per Shot +35%, Mag Size +2	Dmg -5%, Acc Bloom +15%, Acc +10%		
+Part_SG_TED_Barrel_03_C.Part_SG_TED_Barrel_03_C	Acc -7.5%		When Thrown spawn multiple child proj	
+Part_SG_TED_Barrel_ETECH.Part_SG_TED_Barrel_ETECH	Mag Size +4, Splash Dmg Radius +300			Elderblast
+Part_SG_TED_Barrel_ETECH_A.Part_SG_TED_Barrel_ETECH_A	Splash Dmg Radius +20%, Mag Size +10%			
+Part_SG_TED_Barrel_FriendZone.Part_SG_TED_Barrel_FriendZone	Ele Dmg +100%, Crit Dmg +40%, Dmg +15%			
+Part_SG_TED_Barrel_Horizon.Part_SG_TED_Barrel_Horizon	Dmg +110%			
+Part_SG_TED_Barrel_Polybius.Part_SG_TED_Barrel_Polybius	Recoil Height -85%, Recoil Width -85%, Dmg +15%	Acc +40%		
+Part_SG_TED_Barrel_Sludge.Part_SG_TED_Barrel_Sludge	Splash Dmg Radius +300, Mag Size +4	Dmg -20%		
+Part_SG_TED_Body.Part_SG_TED_Body	DO NOT REMOVE			
+Part_SG_TED_Body_A.Part_SG_TED_Body_A	Splash Dmg Radius +20%			
+Part_SG_TED_Body_B.Part_SG_TED_Body_B	Mag Size +10%, Dmg +5%	Acc +10%		
+Part_SG_TED_Body_C.Part_SG_TED_Body_C	Dmg +10%			
+Part_SG_TED_Ele_Corr.Part_SG_TED_Ele_Corr				Poison
+Part_SG_TED_Ele_Cryo.Part_SG_TED_Ele_Cryo				Frozen
+Part_SG_TED_Ele_Fire.Part_SG_TED_Ele_Fire				Firesale
+Part_SG_TED_Ele_Radiation.Part_SG_TED_Ele_Radiation				Rad
+Part_SG_TED_Ele_Shock.Part_SG_TED_Ele_Shock				Supercharged
+Part_SG_TED_ForeGrip_01.Part_SG_TED_Foregrip_01	Weapon Sway -30%, Fire Rate +5%			
+Part_SG_TED_Foregrip_02.Part_SG_TED_Foregrip_02	Recoil Height -85%, Acc -5%			
+Part_SG_TED_Foregrip_03.Part_SG_TED_Foregrip_03	Splash Dmg Radius +20%, Dmg +5%			
+Part_SG_TED_Foregrip_04.Part_SG_TED_Foregrip_04	Proj per Shot +50%, Dmg +5%	Acc +4.5%, Acc Bloom +25%		
+Part_SG_TED_Foregrip_05.Part_SG_TED_Foregrip_05	Recoil Width -15%, Mag Size +2	Dmg -5%, Acc +10%		
+Part_SG_TED_Grip_01.Part_SG_TED_Grip_01	Recoil Width -30%, Proj per SHot +15%	Acc +10%, Dmg -5%, Acc Bloom +15%		
+Part_SG_TED_Grip_02.Part_SG_TED_Grip_02	Fire Rate +5%		Add more child proj if weapon has MIRV	
+Part_SG_TED_Grip_03.Part_SG_TED_Grip_03	Recoil Height -15%, Mag Size +2	Dmg -5%, Acc +10%		
+Part_SG_TED_Grip_04.Part_SG_TED_Grip_04	Splash Dmg Radius +20%, Acc -20%			
+Part_SG_TED_Grip_05.Part_SG_TED_Grip_05	Weapon Sway -30%, Dmg +5%			
+Part_SG_TED_Material_01_Common.Part_SG_TED_Material_01_Common	Skin		Weapon Skin	
+Part_SG_TED_Material_02_Uncommon.Part_SG_TED_Material_02_Uncommon	Skin		Weapon Skin	
+Part_SG_TED_Material_03_Rare.Part_SG_TED_Material_03_Rare	Skin		Weapon Skin	
+Part_SG_TED_Material_04_VeryRare.Part_SG_TED_Material_04_VeryRare	Skin		Weapon Skin	
+Part_SG_TED_Material_FriendZone.Part_SG_TED_Material_FriendZone	Skin		Weapon Skin	
+Part_SG_TED_Material_Horizon.Part_SG_TED_Material_Horizon	Skin		Weapon Skin	
+Part_SG_TED_Material_Polybius.Part_SG_TED_Material_Polybius	Skin		Weapon Skin	
+Part_SG_TED_Material_Sludge.Part_SG_TED_Material_Sludge	Skin		Weapon Skin	
+Part_SG_TED_Scope_01.Part_SG_TED_Scope_01	2.2x			
+Part_SG_TED_Scope_02.Part_SG_TED_Scope_02	4.5x			
+Part_SG_TED_Scope_03.Part_SG_TED_Scope_03	1.5x			
+Part_SG_TED_Scope_04.Part_SG_TED_Scope_04	2.9x			
+Part_SG_TED_TypeMod_01.Part_SG_TED_TypeMod_01	When thrown detonate on impacting enemy			
+Part_SG_TED_TypeMod_02.Part_SG_TED_TypeMod_02	When thrown stick			
+Part_SG_TED_TypeMod_03.Part_SG_TED_TypeMod_03	When thrown Home in			
+Part_SG_TED_TypeMod_04.Part_SG_TED_TypeMod_04	When thrown Bounce			
+# Naming strategy	Name	Priority		
+# If MagSize is Greater Than 9 and MagSize is Less Than 12	+	2.5		
+# If MagSize is Greater Than 11 and MagSize is Less Than 14	++	2.5		
+# If MagSize is Greater Than 13	XL	2.5		
+# If Projectiles Per Shot = 2	Wholesale	1001.0		

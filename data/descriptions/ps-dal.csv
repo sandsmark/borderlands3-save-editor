@@ -1,0 +1,57 @@
+# Object name	Positives	Negatives	Effects	Naming
+Part_Dal_PS_Acc_01.Part_Dal_PS_Acc_01	Reload Time -10%, Crit Dmg +10%			
+Part_Dal_PS_Acc_02.Part_Dal_PS_Acc_02	Dmg +10%, Melee Dmg +40%			Bladed
+Part_Dal_PS_Acc_03.Part_Dal_PS_Acc_03	Weapon Sway -30%, Acc -10%			
+Part_Dal_PS_Acc_04.Part_Dal_PS_Acc_04	Fire Rate +10%			
+Part_Dal_PS_Acc_05.Part_Dal_PS_Acc_05	Recoil Width -25%, Acc Bloom -25%			
+Part_Dal_PS_Barrel_01.Part_Dal_PS_Barrel_01	-			Shrike
+Part_Dal_PS_Barrel_01_A.Part_Dal_PS_Barrel_01_A	Acc -15%			
+Part_Dal_PS_Barrel_01_B.Part_Dal_PS_Barrel_01_B	Acc -15%			
+Part_Dal_PS_Barrel_01_C.Part_Dal_PS_Barrel_01_C	Recoil Height -25%			
+Part_Dal_PS_Barrel_02.Part_Dal_PS_Barrel_02	-			Falcon
+Part_Dal_PS_Barrel_02_A.Part_Dal_PS_Barrel_02_A	Dmg +10%			
+Part_Dal_PS_Barrel_02_B.Part_Dal_PS_Barrel_02_B	Dmg +10%			
+Part_Dal_PS_Barrel_02_C.Part_Dal_PS_Barrel_02_C	Crit Dmg +10%			
+Part_Dal_PS_Barrel_03.Part_Dal_PS_Barrel_03	-			Raptor
+Part_Dal_PS_Barrel_03_A.Part_Dal_PS_Barrel_03_A	Fire Rate +10%			
+Part_Dal_PS_Barrel_03_B.Part_Dal_PS_Barrel_03_B	Acc Bloom -25%			
+Part_Dal_PS_Barrel_03_C.Part_Dal_PS_Barrel_03_C	Fire Rate +10%			
+Part_Dal_PS_Barrel_ETech.Part_Dal_PS_Barrel_ETech	Mag Size +20%, Melee Dmg +60%			Wyvern
+Part_Dal_PS_Barrel_ETech_A.Part_Dal_PS_Barrel_ETech_A	Proj Speed +30%, Reload Time -10%, Melee Dmg +60%			
+Part_Dal_PS_Barrel_Hornet.Part_Dal_PS_Barrel_Hornet	Splash Dmg Radius +85, Reload Time -5%, Ele Chance +15%	Acc +10%		
+Part_Dal_PS_Barrel_Nemesis.Part_Dal_PS_Barrel_Nemesis	Acc Bloom -30%			
+Part_Dal_PS_Barrel_Omniloader.Part_Dal_PS_Barrel_Omniloader	Acc +45%			
+Part_Dal_PS_Barrel_Rakkman.Part_Dal_PS_Barrel_Rakkman	Dmg +35%			
+Part_Dal_PS_Body.Part_Dal_PS_Body	DO NOT REMOVE			
+Part_Dal_PS_AAA.Part_Dal_PS_AAA				
+Part_Dal_PS_Ele_Corr.Part_Dal_PS_Ele_Corr				Venomous
+Part_Dal_PS_Ele_Cryo.Part_Dal_PS_Ele_Cryo				Arctic
+Part_Dal_PS_Ele_Fire.Part_Dal_PS_Ele_Fire				Searing
+Part_Dal_PS_Ele_Radiation.Part_Dal_PS_Ele_Radiation				Decaying
+Part_Dal_PS_Ele_Shock.Part_Dal_PS_Ele_Shock				Shocking
+Part_Dal_PS_FiringMode_Auto_Burst.Part_Dal_PS_FiringMode_Auto_Burst				
+Part_Dal_PS_FiringMode_Auto_Single.Part_Dal_PS_FiringMode_Auto_Single				
+Part_Dal_PS_FiringMode_Burst_Single.Part_Dal_PS_FiringMode_Burst_Single	3 Shot Burst or Semi-Auto			
+Part_Dal_PS_Grip_01.Part_Dal_PS_Grip_01	Recoil Height -15%, Acc Bloom -20%			
+Part_Dal_PS_Grip_02.Part_Dal_PS_Grip_02	Weapon Sway -30%, Fire Rate +5%			
+Part_Dal_PS_Grip_03.Part_Dal_PS_Grip_03	Reload Time -5%, Dmg +5%			
+Part_Dal_PS_Mag_01.Part_Dal_PS_Mag_01	12 Round	Dmg +10%		
+Part_Dal_PS_Mag_02.Part_Dal_PS_Mag_02	18 Round			
+Part_Dal_PS_Mag_03.Part_Dal_PS_Mag_03	24 Round	Dmg -10%		
+Part_Dal_PS_Mag_AAA.Part_Dal_PS_Mag_AAA	9 Round			
+Part_Dal_PS_Mat_01_Common.Part_Dal_PS_Mat_01_Common	Skin		Weapon Skin	
+Part_Dal_PS_Mat_02_UnCommon.Part_Dal_PS_Mat_02_UnCommon	Skin		Weapon Skin	
+Part_Dal_PS_Mat_03_Rare.Part_Dal_PS_Mat_03_Rare	Skin		Weapon Skin	
+Part_Dal_PS_Mat_04_VeryRare.Part_Dal_PS_Mat_04_VeryRare	Skin		Weapon Skin	
+Part_Dal_PS_Mat_AAA.Part_Dal_PS_Mat_AAA	Skin		Weapon Skin	
+Part_Dal_PS_Mat_Hornet.Part_Dal_PS_Mat_Hornet	Skin		Weapon Skin	
+Part_Dal_PS_Mat_Nemesis.Part_Dal_PS_Mat_Nemesis	Skin		Weapon Skin	
+Part_Dal_PS_Mat_Omniloader.Part_Dal_PS_Mat_Omniloader	Skin		Weapon Skin	
+Part_Dal_PS_Mat_Rakkman.Part_Dal_PS_Mat_Rakkman	Skin		Weapon Skin	
+Part_Dal_PS_Scope_01.Part_Dal_PS_Scope_01	2.2x, 4x			
+Part_Dal_PS_Scope_02.Part_Dal_PS_Scope_02	1.0x, 1x			
+Part_Dal_PS_Scope_03.Part_Dal_PS_Scope_03				
+Part_Dal_PS_Stock_01.Part_Dal_PS_Stock_01	Weapon Sway -30%, Acc -20%			
+Part_Dal_PS_Stock_02.Part_Dal_PS_Stock_02	Acc Bloom -20%, Mag Size +10%	Dmg -5%, Acc +10%		
+# Naming strategy	Name	Priority		
+# If MagSize is Greater Than 24	Extended	1001.0		

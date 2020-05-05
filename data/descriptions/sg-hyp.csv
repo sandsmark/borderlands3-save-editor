@@ -1,0 +1,62 @@
+# Object name	Positives	Negatives	Effects	Naming
+Part_SG_Hyp_Barrel_01.Part_SG_Hyp_Barrel_01	-			Collaborator
+Part_SG_Hyp_Barrel_01_A.Part_SG_Hyp_Barrel_01_A	Proj per Shot +35%	Acc Bloom +15%, Acc +10%, Dmg -5%		
+Part_SG_Hyp_Barrel_01_B.Part_SG_Hyp_Barrel_01_B	Fire Rate +10%			
+Part_SG_Hyp_Barrel_01_C.Part_SG_Hyp_Barrel_01_C	Fire Rate +10%			
+Part_SG_Hyp_Barrel_02.Part_SG_Hyp_Barrel_02	-			Downsizer
+Part_SG_Hyp_Barrel_02_A.Part_SG_Hyp_Barrel_02_A	Dmg +10%			
+Part_SG_Hyp_Barrel_02_B.Part_SG_Hyp_Barrel_02_B	Proj per Shot +35%	Acc Bloom +15%, Acc +10%, Dmg -5%		
+Part_SG_Hyp_Barrel_02_C.Part_SG_Hyp_Barrel_02_C	Dmg +10%, Melee Dmg +60%			Deep Dive
+Part_SG_Hyp_Barrel_03.Part_SG_Hyp_Barrel_03	-			Outsourcer
+Part_SG_Hyp_Barrel_03_A.Part_SG_Hyp_Barrel_03_A	Dmg +10%			
+Part_SG_Hyp_Barrel_03_B.Part_SG_Hyp_Barrel_03_B	Acc -7.5%			
+Part_SG_Hyp_Barrel_03_C.Part_SG_Hyp_Barrel_03_C	Acc -7.5%			
+Part_SG_Hyp_Barrel_Brick.Part_SG_Hyp_Barrel_Brick		Dmg -50%		
+Part_SG_Hyp_Barrel_ConferenceCall.Part_SG_Hyp_Barrel_ConferenceCall		Acc +25%		
+Part_SG_Hyp_Barrel_ETECH.Part_SG_Hyp_Barrel_ETECH	Splash Dmg Radius +300, Mag Size +20%			Host
+Part_SG_Hyp_Barrel_ETECH_A.Part_SG_Hyp_Barrel_ETECH_A	Splash Dmg Radius +20%, Reload Time -10%			
+Part_SG_Hyp_Barrel_Phebert.Part_SG_Hyp_Barrel_Phebert	Acc -75%, Dmg +600%, Mag Size +40%			
+Part_SG_Hyp_Barrel_Redistributor.Part_SG_Hyp_Barrel_Redistributor		Acc +35%, Recoil Height +10%		
+Part_SG_Hyp_Barrel_TheButcher.Part_SG_Hyp_Barrel_TheButcher	Recoil Height -60%, Acc -25%, Dmg +100%,	Acc Bloom +100%		
+Part_SG_Hyp_Barrel_ETECH_Fearmonger.Part_SG_Hyp_Barrel_ETECH_Fearmonger				
+Part_SG_Hyp_Barrel_ETECH_Fearmonger_A.Part_SG_Hyp_Barrel_ETECH_Fearmonger_A				
+Part_SG_Hyp_Body_01.Part_SG_Hyp_Body_01	DO NOT REMOVE			
+Part_SG_Hyp_Body_01_A.Part_SG_Hyp_Body_01_A	Weapon Shield Cap +25%, Crit Dmg +10%			
+Part_SG_Hyp_Body_01_B.Part_SG_Hyp_Body_01_B	Acc -7.5%			
+Part_SG_Hyp_Body_01_C.Part_SG_Hyp_Body_01_C	Reload Time -10%			
+Part_SG_Hyp_Ele_Corr.Part_SG_Hyp_Ele_Corr				Defrauding
+Part_SG_Hyp_Ele_Cryo.Part_SG_Hyp_Ele_Cryo				Auditing
+Part_SG_Hyp_Ele_Fire.Part_SG_Hyp_Ele_Fire				Hostile
+Part_SG_Hyp_Ele_Radiation.Part_SG_Hyp_Ele_Radiation				Undermining
+Part_SG_Hyp_Ele_Shock.Part_SG_Hyp_Ele_Shock				Cash-Infused
+Part_SG_Hyp_Foregrip_01.Part_SG_Hyp_Foregrip_01	Weapon Sway -30%, Dmg +5%			
+Part_SG_Hyp_Foregrip_02.Part_SG_Hyp_Foregrip_02	Fire Rate +5%, Mag Size +35%	Dmg -5%, Acc +10%		
+Part_SG_Hyp_Foregrip_03.Part_SG_Hyp_Foregrip_03	Weapon Shield Cap +15%, Dmg +5%			
+Part_SG_Hyp_Foregrip_04.Part_SG_Hyp_Foregrip_04	Recoil Height -30%, Acc -5%			
+Part_SG_Hyp_Grip_01.Part_SG_Hyp_Grip_01	Acc -1%, Proj per Shot +100%	Dmg -30%, Acc Bloom +25%, Proj Cost +1		Redundant
+Part_SG_Hyp_Grip_02.Part_SG_Hyp_Grip_02	Crit Dmg +10%, Dmg +5%			
+Part_SG_Hyp_Grip_03.Part_SG_Hyp_Grip_03	Recoil Height -15%, Reload Time -5%			
+Part_SG_Hyp_Grip_04.Part_SG_Hyp_Grip_04	Weapon Sway -30%, Fire Rate +5%			
+Part_SG_Hyp_Mag_01.Part_SG_Hyp_Mag_01	8 Round			
+Part_SG_Hyp_Mag_02.Part_SG_Hyp_Mag_02	10 Round	Dmg -10%		
+Part_SG_Hyp_Mag_03.Part_SG_Hyp_Mag_03	6 Round, Dmg +10%			
+Part_SG_Hyp_Material_01_Common.Part_SG_Hyp_Material_01_Common	Skin		Weapon Skin	
+Part_SG_Hyp_Material_02_UnCommon.Part_SG_Hyp_Material_02_UnCommon	Skin		Weapon Skin	
+Part_SG_Hyp_Material_03_Rare.Part_SG_Hyp_Material_03_Rare	Skin		Weapon Skin	
+Part_SG_Hyp_Material_04_Epic.Part_SG_Hyp_Material_04_Epic	Skin		Weapon Skin	
+Part_SG_Hyp_Material_Brick.Part_SG_Hyp_Material_Brick	Skin		Weapon Skin	
+Part_SG_Hyp_Material_ConferenceCall.Part_SG_Hyp_Material_ConferenceCall	Skin		Weapon Skin	
+Part_SG_Hyp_Material_Phebert.Part_SG_Hyp_Material_Phebert	Skin		Weapon Skin	
+Part_SG_Hyp_Material_Redistributor.Part_SG_Hyp_Material_Redistributor	Skin		Weapon Skin	
+Part_SG_Hyp_Material_TheButcher.Part_SG_Hyp_Material_TheButcher	Skin		Weapon Skin	
+Part_SG_Hyp_Material_Fearmonger.Part_SG_Hyp_Material_Fearmonger	Skin		Weapon Skin	
+Part_SG_Hyp_Scope_01.Part_SG_Hyp_Scope_01	2.7x			
+Part_SG_Hyp_Scope_02.Part_SG_Hyp_Scope_02	2.2x			
+Part_SG_Hyp_Scope_03.Part_SG_Hyp_Scope_03				
+Part_SG_Hyp_Shield_01.Part_SG_Hyp_Shield_01	Shield			
+Part_SG_Hyp_Shield_02.Part_SG_Hyp_Shield_02	Incoming Dmg converted into Ammo in Mag			
+Part_SG_Hyp_Shield_03.Part_SG_Hyp_Shield_03	Incoming Dmg converted into Weapon Dmg			
+Part_SG_Hyp_Shield_04.Part_SG_Hyp_Shield_04	Incoming Dmg reflected			
+# Naming strategy	Name	Priority		
+# If MagSize is Greater Than 10	Subsidized	1001.0		
+# If Shot Cost = 2	Redundant	1003.0		

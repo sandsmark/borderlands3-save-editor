@@ -1,0 +1,58 @@
+# Object name	Positives	Negatives	Effects	Naming
+Part_SM_TED_Barrel_01.Part_SM_TED_Barrel_01	-			Kill-O-Matic
+Part_SM_TED_Barrel_01_A.Part_SM_TED_Barrel_01_A	Dmg +10%			
+Part_SM_TED_Barrel_01_B.Part_SM_TED_Barrel_01_B	Fire Rate +10%		When thrown, project a target, if shot double explosion Dmg	
+Part_SM_TED_Barrel_01_C.Part_SM_TED_Barrel_01_C	Dmg +10%			
+Part_SM_TED_Barrel_02.Part_SM_TED_Barrel_02	-			Excellerator
+Part_SM_TED_Barrel_02_A.Part_SM_TED_Barrel_02_A	Fire Rate +10%			
+Part_SM_TED_Barrel_02_B.Part_SM_TED_Barrel_02_B	Mag Size +10%			
+Part_SM_TED_Barrel_02_C.Part_SM_TED_Barrel_02_C	Fire Rate +10%			
+Part_SM_TED_Barrel_03.Part_SM_TED_Barrel_03	-			Keenfire
+Part_SM_TED_Barrel_03_A.Part_SM_TED_Barrel_03_A	Acc -15%			
+Part_SM_TED_Barrel_03_B.Part_SM_TED_Barrel_03_B	Mag Size +10%		When thrown, Spawn Child Proj	
+Part_SM_TED_Barrel_03_C.Part_SM_TED_Barrel_03_C	Acc -15%			
+Part_SM_TED_Barrel_Beans.Part_SM_TED_Barrel_Beans	-			
+Part_SM_TED_Barrel_ETech.Part_SM_TED_Barrel_ETech	Mag Size +20%			Gibbergun
+Part_SM_TED_Barrel_ETech_A.Part_SM_TED_Barrel_ETech_A	Proj Speed +30%, Mag Size +10%			
+Part_SM_TED_Barrel_NotAFlamethrower.Part_SM_TED_Barrel_NotAFlamethrower	Mag Size +20%	Dmg -20%		
+Part_SM_TED_Barrel_SpiderMind.Part_SM_TED_Barrel_SpiderMind	Dmg +100%, Mag Size +40%			
+Part_SM_TED_Barrel_TenGallon.Part_SM_TED_Barrel_TenGallon	Acc -40%, Dmg +70%			
+Part_SM_TED_Body.Part_SM_TED_Body	DO NOT REMOVE			
+Part_SM_TED_Body_A.Part_SM_TED_Body_A	Splash Dmg Radius +20%			
+Part_SM_TED_Body_B.Part_SM_TED_Body_B	Mag Size +10%	Acc +10%, Dmg -5%		
+Part_SM_TED_Body_C.Part_SM_TED_Body_C	Fire Rate +10%			
+Part_SM_TED_Ele_Corr.Part_SM_TED_Ele_Corr				Poison
+Part_SM_TED_Ele_Cryo.Part_SM_TED_Ele_Cryo				Frozen
+Part_SM_TED_Ele_Fire.Part_SM_TED_Ele_Fire				Firesale
+Part_SM_TED_Ele_Radiation.Part_SM_TED_Ele_Radiation				Rad
+Part_SM_TED_Ele_Shock.Part_SM_TED_Ele_Shock				Supercharged
+Part_SM_TED_Foregrip_01.Part_SM_TED_Foregrip_01	Recoil Width -15%, Mag Size +10%	Dmg -5%, Acc +10%		
+Part_SM_TED_Foregrip_02.Part_SM_TED_Foregrip_02	Splash Dmg Radius +20%, Acc -10%			
+Part_SM_TED_Foregrip_03.Part_SM_TED_Foregrip_03	Recoil Height -30%, Dmg +5%			
+Part_SM_TED_Foregrip_04.Part_SM_TED_Foregrip_04	Fire Rate +5%, Dmg +5%			
+Part_SM_TED_Grip_01.Part_SM_TED_Grip_01	Recoil Width -30%, Fire Rate +5%			
+Part_SM_TED_Grip_02.Part_SM_TED_Grip_02	Acc -20%, Dmg +5%		When thrown, Rocket Booster	
+Part_SM_TED_Grip_03.Part_SM_TED_Grip_03	Weapon Sway -30%, Mag Size +10%	Dmg -5%, Acc +10%	When thrown, Adds Child Proj if MIRV	
+Part_SM_TED_Grip_04.Part_SM_TED_Grip_04	Splash Dmg Radius +20%, Proj per Shot +1	Acc +10%, Dmg -20%, Acc Bloom +20%		
+Part_SM_TED_Grip_05.Part_SM_TED_Grip_05	Recoil Height -15%, Acc -20%			
+Part_SM_TED_Material_01_Common.Part_SM_TED_Material_01_Common			Weapon Skin	
+Part_SM_TED_Material_02_UnCommon.Part_SM_TED_Material_02_UnCommon			Weapon Skin	
+Part_SM_TED_Material_03_Rare.Part_SM_TED_Material_03_Rare			Weapon Skin	
+Part_SM_TED_Material_04_VeryRare.Part_SM_TED_Material_04_VeryRare			Weapon Skin	
+Part_SM_TED_Material_Beans.Part_SM_TED_Material_Beans			Weapon Skin	
+Part_SM_TED_Material_NotAFlamethrower.Part_SM_TED_Material_NotAFlamethrower			Weapon Skin	
+Part_SM_TED_Material_SpiderMind.Part_SM_TED_Material_SpiderMind			Weapon Skin	
+Part_SM_TED_Material_TenGallon.Part_SM_TED_Material_TenGallon			Weapon Skin	
+Part_SM_TED_Scope_01.Part_SM_TED_Scope_01				
+Part_SM_TED_Scope_02.Part_SM_TED_Scope_02				
+Part_SM_TED_Scope_03.Part_SM_TED_Scope_03				
+Part_SM_TED_Scope_04.Part_SM_TED_Scope_04				
+Part_SM_TED_TypeMod_01.Part_SM_TED_TypeMod_01	When thrown, Home in			
+Part_SM_TED_TypeMod_02.Part_SM_TED_TypeMod_02	When thrown, Stick			
+Part_SM_TED_TypeMod_03.Part_SM_TED_TypeMod_03	Splash Dmg Radius +20%		When thrown, Detonate when impacting enemy	
+Part_SM_TED_TypeMod_04.Part_SM_TED_TypeMod_04	When thrown, Bounce			
+# Naming strategy	Name	Priority		
+# If MagSize is Greater Than 23 and MagSize is Less Than 26	+	2.5		
+# If MagSize is Greater Than 25 and MagSize is Less Than 28	++	2.5		
+# If MagSize is Greater Than 28	XL	2.5		
+# If Projectiles Per Shot = 2	Clearance	1003.0		

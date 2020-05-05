@@ -1,0 +1,62 @@
+# Object name	Positives	Negatives	Effects	Naming
+Part_SR_JAK_Barrel_01.Part_SR_JAK_Barrel_01	-			Cheechako
+Part_SR_JAK_Barrel_01_A.Part_SR_JAK_Barrel_01_A	Fire Rate +10%			
+Part_SR_JAK_Barrel_01_B.Part_SR_JAK_Barrel_01_B	Weapon Sway -20%, Recoil Width -25%, Recoil Height -25%			
+Part_SR_JAK_Barrel_01_C.Part_SR_JAK_Barrel_01_C	Fire Rate +10%			
+Part_SR_JAK_Barrel_02.Part_SR_JAK_Barrel_02	-			Callipeen
+Part_SR_JAK_Barrel_02_A.Part_SR_JAK_Barrel_02_A	Melee Dmg +10%, Melee Dmg +80%			Bowie
+Part_SR_JAK_Barrel_02_B.Part_SR_JAK_Barrel_02_B	Acc -15%			
+Part_SR_JAK_Barrel_02_C.Part_SR_JAK_Barrel_02_C	Weapon Sway -20%, Acc -15%			
+Part_SR_JAK_Barrel_03.Part_SR_JAK_Barrel_03	-			Muckamuck
+Part_SR_JAK_Barrel_03_A.Part_SR_JAK_Barrel_03_A	Dmg +10%			
+Part_SR_JAK_Barrel_03_B.Part_SR_JAK_Barrel_03_B	Crit Dmg +10%			
+Part_SR_JAK_Barrel_03_C.Part_SR_JAK_Barrel_03_C	Crit Dmg +10%			
+Part_SR_JAK_Barrel_Hunted.Part_SR_JAK_Barrel_Hunted		Dmg -20%, Fire Rate -20%		
+Part_SR_JAK_Barrel_Hunter.Part_SR_JAK_Barrel_Hunter		Fire Rate -20%		
+Part_SR_JAK_Barrel_Huntress.Part_SR_JAK_Barrel_Huntress		Dmg -20%, Fire Rate -20%		
+Part_SR_JAK_Barrel_Monocle.Part_SR_JAK_Barrel_Monocle	Acc -75%, Recoil Height -50%	Dmg -50%		
+Part_SR_JAK_Body.Part_SR_JAK_Body	DO NOT REMOVE			
+Part_SR_JAK_Body_A.Part_SR_JAK_Body_A	Dmg +10%			
+Part_SR_JAK_Body_B.Part_SR_JAK_Body_B	Reload Time -10%			
+Part_SR_JAK_Body_C.Part_SR_JAK_Body_C	Fire Rate +10%			
+Part_SR_JAK_Bolt_01.Part_SR_JAK_Bolt_01				
+Part_SR_JAK_Bolt_02.Part_SR_JAK_Bolt_02	Dmg +25%			
+Part_SR_JAK_Bolt_03.Part_SR_JAK_Bolt_03	Dmg +10%			
+Part_SR_JAK_Bolt_Headsplosion.Part_SR_JAK_Bolt_Headsplosion	Splash Dmg Radius +100	Dmg -6.2%, Crit Dmg -50%		
+Part_SR_JAK_Bolt_IceQueen.Part_SR_JAK_Bolt_IceQueen	Ele Dmg +50%, Dmg +25%			
+Part_SR_JAK_Foregrip_01.Part_SR_JAK_Foregrip_01	Recoil Height -30%, Acc -10%			
+Part_SR_JAK_Foregrip_02.Part_SR_JAK_Foregrip_02	Recoil Width -15%, Recoil Height -30%			
+Part_SR_JAK_Foregrip_03.Part_SR_JAK_Foregrip_03	Crit Dmg +10%			
+Part_SR_JAK_Foregrip_04.Part_SR_JAK_Foregrip_04	Weapon Sway -30%, Damage +5%			
+Part_SR_JAK_Foregrip_05.Part_SR_JAK_Foregrip_05	Reload Time -5%, Fire Rate +5%			
+Part_SR_JAK_IceQueen.Part_SR_JAK_IceQueen	Skin		Weapon Skin	
+Part_SR_JAK_MAT_Monocle.Part_SR_JAK_MAT_Monocle	Skin		Weapon Skin	
+Part_SR_JAK_MAterial_Hunter.Part_SR_JAK_MAterial_Hunter	Skin		Weapon Skin	
+Part_SR_JAK_Material_Hammerlock.Part_SR_JAK_Material_Hammerlock	Skin		Weapon Skin	
+Part_SR_JAK_Material_Headsplosion.Part_SR_JAK_Material_Headsplosion	Skin		Weapon Skin	
+Part_SR_JAK_01_Common.Part_SR_JAK_01_Common	Skin		Weapon Skin	
+Part_SR_JAK_02_Uncommon.Part_SR_JAK_02_Uncommon	Skin		Weapon Skin	
+Part_SR_JAK_03_Rare.Part_SR_JAK_03_Rare	Skin		Weapon Skin	
+Part_SR_JAK_04_VeryRare.Part_SR_JAK_04_VeryRare	Skin		Weapon Skin	
+Part_SR_JAK_Mag_01.Part_SR_JAK_Mag_01	8 Round	Dmg -10%		
+Part_SR_JAK_Mag_02.Part_SR_JAK_Mag_02	8 Round			
+Part_SR_JAK_Mag_03.Part_SR_JAK_Mag_03	8 Round, Dmg +10%			
+Part_SR_JAK_Scope_01.Part_SR_JAK_Scope_01				
+Part_SR_JAK_Scope_01_A.Part_SR_JAK_Scope_01_A	Acc -20%			
+Part_SR_JAK_Scope_01_B.Part_SR_JAK_Scope_01_B				
+Part_SR_JAK_Scope_02.Part_SR_JAK_Scope_02	Reload Time -5%, Acc -20%			
+Part_SR_JAK_Scope_02_A.Part_SR_JAK_Scope_02_A	Reload Time -5%			
+Part_SR_JAK_Scope_02_B.Part_SR_JAK_Scope_02_B	Crit Dmg +10%			
+Part_SR_JAK_Scope_03.Part_SR_JAK_Scope_03				
+Part_SR_JAK_Scope_03_A.Part_SR_JAK_Scope_03_A	Recoil Width -25%, Recoil Height -25%			
+Part_SR_JAK_Scope_03_B.Part_SR_JAK_Scope_03_B	Fire Rate +5%			
+Part_SR_JAK_Stock_01.Part_SR_JAK_Stock_01	Acc Bloom -20%, Crit Dmg +10%			
+Part_SR_JAK_Stock_01_A.Part_SR_JAK_Stock_01_A	Recoil Height -15%			
+Part_SR_JAK_Stock_02.Part_SR_JAK_Stock_02	Reload Time -5%, Acc -20%			
+Part_SR_JAK_Stock_02_A.Part_SR_JAK_Stock_02_A	Reload Time -5%			
+Part_SR_JAK_Stock_03.Part_SR_JAK_Stock_03	Recoil Width -30%, Dmg +5%			
+Part_SR_JAK_Stock_03_A.Part_SR_JAK_Stock_03_A	Dmg +5%			
+Part_SR_JAK_Stock_04.Part_SR_JAK_Stock_04	Weapon Sway -30%, Recoil Height -15%			
+Part_SR_JAK_Stock_04_A.Part_SR_JAK_Stock_04_A	Fire Rate +5%			
+Part_SR_JAK_Stock_05.Part_SR_JAK_Stock_05	Acc Bloom -20%, Mag Size +10%			
+Part_SR_JAK_Stock_05_A.Part_SR_JAK_Stock_05_A	Weapon Sway -30%			

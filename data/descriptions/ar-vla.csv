@@ -1,0 +1,89 @@
+# Object name	Positives	Negatives	Effects	Naming
+Part_AR_VLA_Barrel_01.Part_AR_VLA_Barrel_01	-			Shlaga
+Part_AR_VLA_Barrel_01_A.Part_AR_VLA_Barrel_01_A	Dmg +10%			
+Part_AR_VLA_Barrel_01_A_FS.Part_AR_VLA_Barrel_01_A_FS	Dmg +10%			
+Part_AR_VLA_Barrel_01_B.Part_AR_VLA_Barrel_01_B	Acc -15%			
+Part_AR_VLA_Barrel_01_C.Part_AR_VLA_Barrel_01_C	-			
+Part_AR_VLA_Barrel_01_FrontSight.Part_AR_VLA_Barrel_01_FrontSight	Dmg +10%			
+Part_AR_VLA_Barrel_01_FrontSight2.Part_AR_VLA_Barrel_01_FrontSight2	Fire Rate +10%			
+Part_AR_VLA_Barrel_02.Part_AR_VLA_Barrel_02	Acc -15%			Bezoomy
+Part_AR_VLA_Barrel_02_A.Part_AR_VLA_Barrel_02_A	-			
+Part_AR_VLA_Barrel_02_B.Part_AR_VLA_Barrel_02_B	Fire Rate +10%			
+Part_AR_VLA_Barrel_02_C.Part_AR_VLA_Barrel_02_C	Acc -15%			
+Part_AR_VLA_Barrel_03.Part_AR_VLA_Barrel_03	-			Maslo
+Part_AR_VLA_Barrel_03_A.Part_AR_VLA_Barrel_03_A	Fire Rate +10%			Nozh
+Part_AR_VLA_Barrel_03_B.Part_AR_VLA_Barrel_03_B	Acc Bloom -25%, Melee +60%		Melee Attachment	Nozh
+Part_AR_VLA_Barrel_03_C.Part_AR_VLA_Barrel_03_C	Dmg +10%			
+Part_AR_VLA_Barrel_04.Part_AR_VLA_Barrel_04	-			Oddy-knocky
+Part_AR_VLA_Barrel_04_A.Part_AR_VLA_Barrel_04_A	Acc Bloom -25%			
+Part_AR_VLA_Barrel_04_B.Part_AR_VLA_Barrel_04_B	Fire Rate +10%			
+Part_AR_VLA_Barrel_04_C.Part_AR_VLA_Barrel_04_C	Fire Rate +10%			
+Part_AR_VLA_Barrel_Damn.Part_AR_VLA_Barrel_Damn	-			
+Part_AR_VLA_Barrel_Dictator.Part_AR_VLA_Barrel_Dictator		Dmg -10%, Acc +125%	Maslo Barrel	
+Part_AR_VLA_Barrel_ETech.Part_AR_VLA_Barrel_ETech				Burzum
+Part_AR_VLA_Barrel_ETech_A.Part_AR_VLA_Barrel_ETech_A				
+Part_AR_VLA_Barrel_Faisor.Part_AR_VLA_Barrel_Faisor			Maslo Barrel	
+Part_AR_VLA_Barrel_LuciansCall.Part_AR_VLA_Barrel_LuciansCall	-			
+Part_AR_VLA_Barrel_Ogre.Part_AR_VLA_Barrel_Ogre			Bezoomy Barrel	
+Part_AR_VLA_Barrel_Shredifier.Part_AR_VLA_Barrel_Shredifier		Acc +220%		
+Part_AR_VLA_Body.Part_AR_VLA_Body	DO NOT REMOVE			
+Part_AR_VLA_Body_A.Part_AR_VLA_Body_A	Fire Rate +10%			
+Part_AR_VLA_Body_C.Part_AR_VLA_Body_C	Dmg +10%			
+Part_AR_VLA_Body_D.Part_AR_VLA_Body_D	Acc Bloom -25%			
+Part_AR_VLA_BoomSickle.Part_AR_VLA_BoomSickle	Splash Dmg Radius +150			
+Part_AR_VLA_Ele_Corr.Part_AR_VLA_Ele_Corr				Pestilent
+Part_AR_VLA_Ele_Cryo.Part_AR_VLA_Ele_Cryo				Negating
+Part_AR_VLA_Ele_Fire.Part_AR_VLA_Ele_Fire				Molten
+Part_AR_VLA_Ele_Radiation.Part_AR_VLA_Ele_Radiation				Nuclear
+Part_AR_VLA_Ele_Shock.Part_AR_VLA_Ele_Shock				Storming
+Part_AR_VLA_Foregrip_01.Part_AR_VLA_Foregrip_01	Recoil Width -15%, Acc Bloom -30%			
+Part_AR_VLA_Foregrip_02.Part_AR_VLA_Foregrip_02	Acc -10%, Fire Rate +5%			
+Part_AR_VLA_Foregrip_03.Part_AR_VLA_Foregrip_03	Recoil Height -30%, Dmg +5%			
+Part_AR_VLA_Grip_01.Part_AR_VLA_Grip_01	Recoil Width -30%, Dmg +5%			
+Part_AR_VLA_Grip_02.Part_AR_VLA_Grip_02	Recoil Height -15%, Acc Bloom -20%			
+Part_AR_VLA_Grip_03.Part_AR_VLA_Grip_03	Acc -12%, Mag Size +10%	Dmg -5%		
+Part_AR_VLA_Grip_03_A.Part_AR_VLA_Grip_03_A	Acc -20%			
+Part_AR_VLA_Grip_03_B.Part_AR_VLA_Grip_03_B	Fire Rate +5%			
+Part_AR_VLA_Grip_04.Part_AR_VLA_Grip_04	Reload Time -5%, +1 Proj	Acc Bloom +35%, Acc +10%, Dmg -30%		
+Part_AR_VLA_Grip_05.Part_AR_VLA_Grip_05	Weapon Sway -30%, Fire Rate +5%			
+Part_AR_VLA_Grip_06.Part_AR_VLA_Grip_06	Reload Time -5%, Mag Size +10%			
+Part_AR_VLA_Magazine_01.Part_AR_VLA_Magazine_01	40 Round, Dmg +10%			
+Part_AR_VLA_Magazine_02.Part_AR_VLA_Magazine_02	60 Round	Dmg -10%		
+Part_AR_VLA_Magazine_03.Part_AR_VLA_Magazine_03	60 Round	Dmg -10%		
+Part_AR_VLA_Magazine_Shredifier.Part_AR_VLA_Magazine_Shredifier	100 Round			
+Part_AR_VLA_Magazine_Sickle.Part_AR_VLA_Magazine_Sickle	12 Round			
+Part_AR_VLA_Material_01_Common.Part_AR_VLA_Material_01_Common	Skin		Weapon Skin	
+Part_AR_VLA_Material_02_UnCommon.Part_AR_VLA_Material_02_UnCommon	Skin		Weapon Skin	
+Part_AR_VLA_Material_03_Rare.Part_AR_VLA_Material_03_Rare	Skin		Weapon Skin	
+Part_AR_VLA_Material_04_Epic.Part_AR_VLA_Material_04_Epic	Skin		Weapon Skin	
+Part_AR_VLA_Material_BigSucc.Part_AR_VLA_Material_BigSucc	Skin		Weapon Skin	
+Part_AR_VLA_Material_Damn.Part_AR_VLA_Material_Damn	Skin		Weapon Skin	
+Part_AR_VLA_Material_Dictator.Part_AR_VLA_Material_Dictator	Skin		Weapon Skin	
+Part_AR_VLA_Material_Faisor.Part_AR_VLA_Material_Faisor	Skin		Weapon Skin	
+Part_AR_VLA_Material_Lorelei.Part_AR_VLA_Material_Lorelei	Skin		Weapon Skin	
+Part_AR_VLA_Material_LuciansCall.Part_AR_VLA_Material_LuciansCall	Skin		Weapon Skin	
+Part_AR_VLA_Material_Ogre.Part_AR_VLA_Material_Ogre	Skin		Weapon Skin	
+Part_AR_VLA_Material_Shredifier.Part_AR_VLA_Material_Shredifier	Skin		Weapon Skin	
+Part_AR_VLA_Material_Sickel.Part_AR_VLA_Material_Sickel	Skin		Weapon Skin	
+Part_AR_VLA_Rail_01.Part_AR_VLA_Rail_01	Acc -10%			
+Part_AR_VLA_Rail_02.Part_AR_VLA_Rail_02	Reload Time -5%			
+Part_AR_VLA_Rail_03.Part_AR_VLA_Rail_03	Iron Sights			
+Part_AR_VLA_Scope_01.Part_AR_VLA_Scope_01				
+Part_AR_VLA_Scope_02.Part_AR_VLA_Scope_02				
+Part_AR_VLA_Scope_03.Part_AR_VLA_Scope_03				
+Part_AR_VLA_UnderbarrelShield.Part_AR_VLA_UnderbarrelShield	Shield, Reflect			
+Part_AR_VLA_Underbarrel_01.Part_AR_VLA_Underbarrel_01	Bipod			
+Part_AR_VLA_Underbarrel_02.Part_AR_VLA_Underbarrel_02	Grenade Launcher, 2-shot			
+Part_AR_VLA_Underbarrel_02_A.Part_AR_VLA_Underbarrel_02_A	Twice Grenade Launcher Mag Size			
+Part_AR_VLA_Underbarrel_03.Part_AR_VLA_Underbarrel_03	Shotgun, 4- Shot Mag			
+Part_AR_VLA_Underbarrel_03_A.Part_AR_VLA_Underbarrel_03_A	Increase Shotgun Mag Size by 50%			
+Part_AR_VLA_Underbarrel_04.Part_AR_VLA_Underbarrel_04	Fire Rate +15%			Double-Bezoomy
+Part_AR_VLA_Underbarrel_04_A.Part_AR_VLA_Underbarrel_04_A	Fire Rate +5%			
+Part_AR_VLA_Underbarrel_04_B.Part_AR_VLA_Underbarrel_04_B	Accuracy -15%			
+Part_AR_VLA_Underbarrel_Dictator.Part_AR_VLA_Underbarrel_Dictator	Bipod			
+Part_AR_VLA_Underbarrel_DoubleShredifier.Part_AR_VLA_Underbarrel_DoubleShredifier	2 barrels, Fire Rate +15%			
+Part_AR_VLA_Underbarrel_Faisor.Part_AR_VLA_Underbarrel_Faisor	Shotgun, 4- Shot Mag			
+Part_AR_VLA_Underbarrel_Sickle.Part_AR_VLA_Underbarrel_Sickle	Dmg +50%	Acc Bloom +300%, Acc +700%		
+# Naming strategy	Name	Priority		
+# If Projectiles Per Shot = 2	Annexed	1001.0		
+# If MagSize is Greater Than 60 and MagSize is Less Than 100	Engulfing	1002.0		

@@ -1,0 +1,40 @@
+Object name	Positives	Negatives	Effects	Naming
+Part_PS_ATL_Barrel_01.Part_PS_ATL_Barrel_01	-			AX-19
+Part_PS_ATL_Barrel_01_A.Part_PS_ATL_Barrel_01_A	Fire Rate +10%			
+Part_PS_ATL_Barrel_01_B.Part_PS_ATL_Barrel_01_B	Fire Rate +10%			
+Part_PS_ATL_Barrel_01_C.Part_PS_ATL_Barrel_01_C	Acc -15%			
+Part_PS_ATL_Barrel_02.Part_PS_ATL_Barrel_02	-			AX-88
+Part_PS_ATL_Barrel_02_A.Part_PS_ATL_Barrel_02_A	Proj Speed +30%			
+Part_PS_ATL_Barrel_02_B.Part_PS_ATL_Barrel_02_B	Dmg +10%			
+Part_PS_ATL_Barrel_02_C.Part_PS_ATL_Barrel_02_C	Dmg +10%			
+Part_PS_ATL_Barrel_03.Part_PS_ATL_Barrel_03	-			AX-7
+Part_PS_ATL_Barrel_03_A.Part_PS_ATL_Barrel_03_A	Acc -15%			
+Part_PS_ATL_Barrel_03_B.Part_PS_ATL_Barrel_03_B	Acc -15%			
+Part_PS_ATL_Barrel_03_C.Part_PS_ATL_Barrel_03_C	Reload Time -10%			
+Part_PS_ATL_Barrel_Drill.Part_PS_ATL_Barrel_Drill	Mag Size +40, Reload Time +50%	Dmg -50%		
+Part_PS_ATL_Barrel_Warmonger.Part_PS_ATL_Barrel_Warmonger	Splash Dmg Radius +130	Acc +300%, Dmg -30%		
+Part_PS_ATL_Body.Part_PS_ATL_Body	DO NOT REMOVE			
+Part_PS_ATL_Body_A.Part_PS_ATL_Body_A	Fire Rate +10%			
+Part_PS_ATL_Body_B.Part_PS_ATL_Body_B	Acc -15%			
+Part_PS_ATL_Body_C.Part_PS_ATL_Body_C	Reload Time -10%			
+Part_PS_ATL_Grip_01.Part_PS_ATL_Grip_01	Reload Time -5%, Acc -20%			
+Part_PS_ATL_Grip_02.Part_PS_ATL_Grip_02	Dmg +5%			
+Part_PS_ATL_Grip_03.Part_PS_ATL_Grip_03	Weapon Sway -30%, Fire Rate +5%			
+Part_PS_ATL_Launcher_01.Part_PS_ATL_Launcher_01			Grenade Marker	
+Part_PS_ATL_Launcher_02.Part_PS_ATL_Launcher_02			Stick Puck	
+Part_PS_ATL_Launcher_03.Part_PS_ATL_Launcher_03			Stick Darts	
+BPInvPart_PS_ATL_C Part_PS_ATL_Mag_01.Part_PS_ATL_Mag_01	14 Round, Dmg +10%			
+Part_PS_ATL_Mag_02.Part_PS_ATL_Mag_02	18 Round			
+Part_PS_ATL_Mag_03.Part_PS_ATL_Mag_03	26 Round, Dmg -10%			
+Part_PS_ATL_Material_01_Common.Part_PS_ATL_Material_01_Common	Skin		Weapon Skin	
+Part_PS_ATL_Material_02_UnCommon.Part_PS_ATL_Material_02_UnCommon	Skin		Weapon Skin	
+Part_PS_ATL_Material_03_Rare.Part_PS_ATL_Material_03_Rare	Skin		Weapon Skin	
+Part_PS_ATL_Material_04_VeryRare.Part_PS_ATL_Material_04_VeryRare	Skin		Weapon Skin	
+Part_PS_ATL_Material_Drill.Part_PS_ATL_Material_Drill	Skin		Weapon Skin	
+Part_PS_ATL_Material_Warmonger.Part_PS_ATL_Material_Warmonger	Skin		Weapon Skin	
+Part_PS_ATL_Radar_01.Part_PS_ATL_Radar_01	Weapon Sway -30%, Recoil Height -30%, Acc -10%			
+Part_PS_ATL_Radar_02.Part_PS_ATL_Radar_02	Fire Rate +5%, Mag Size +10%			
+Part_PS_ATL_Radar_03.Part_PS_ATL_Radar_03	Reload Time -5%, Dmg +5%			
+# Naming strategy	Name	Priority		
+# If MagSize Greater Than 26	Laden	1001.0		
+# If Projectiles Per Shot = 2	Efficient	1003.0		

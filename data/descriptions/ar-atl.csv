@@ -1,0 +1,48 @@
+# Object name	Positives	Negatives	Effects	Naming
+Part_AR_ATL_Barrel_01.Part_AR_ATL_Barrel_01	-			N-System
+Part_AR_ATL_Barrel_01_A.Part_AR_ATL_Barrel_01_A	Mag Size +10%			
+Part_AR_ATL_Barrel_01_B.Part_AR_ATL_Barrel_01_B	Fire Rate +10%			
+Part_AR_ATL_Barrel_01_C.Part_AR_ATL_Barrel_01_C	Fire Rate +10%			
+Part_AR_ATL_Barrel_02.Part_AR_ATL_Barrel_02	-			Q-System
+Part_AR_ATL_Barrel_02_A.Part_AR_ATL_Barrel_02_A	Fire Rate +10%			
+Part_AR_ATL_Barrel_02_B.Part_AR_ATL_Barrel_02_B	Reload Time -10%, Dmg +10%			
+Part_AR_ATL_Barrel_02_C.Part_AR_ATL_Barrel_02_C	Dmg +10%			
+Part_AR_ATL_Barrel_03.Part_AR_ATL_Barrel_03	-			V-System
+Part_AR_ATL_Barrel_03_A.Part_AR_ATL_Barrel_03_A	Weapon Sway -20%, Acc Bloom -25%			
+Part_AR_ATL_Barrel_03_B.Part_AR_ATL_Barrel_03_B	Acc +15%			
+Part_AR_ATL_Barrel_03_C.Part_AR_ATL_Barrel_03_C	Acc +15%			
+Part_AR_ATL_Barrel_Carrier.Part_AR_ATL_Barrel_Carrier	Acc Bloom -15%	Dmg -50%		
+Part_AR_ATL_Barrel_Portals.Part_AR_ATL_Barrel_Portals				
+Part_AR_ATL_Barrel_RebelYell.Part_AR_ATL_Barrel_RebelYell	Recoil height -25%	Dmg -30%		
+Part_AR_ATL_Foregrip_01.Part_AR_ATL_Foregrip_01	Acc -10%, Dmg +5%			
+Part_AR_ATL_Foregrip_02.Part_AR_ATL_Foregrip_02	Weapon Sway -30%, Fire Rate +5%			
+Part_AR_ATL_Foregrip_03.Part_AR_ATL_Foregrip_03	Reload Time -5%, Acc Bloom -30%			
+Part_AR_ATL_Foregrip_04.Part_AR_ATL_Foregrip_04	Crit Dmg +10%			
+Part_AR_ATL_Grip_01.Part_AR_ATL_Grip_01	Acc Bloom -20%, Fire Rate +5%			
+Part_AR_ATL_Grip_02.Part_AR_ATL_Grip_02	Reload Time -5%, Acc -20%			
+Part_AR_ATL_Grip_03.Part_AR_ATL_Grip_03	Crit Dmg +10%, Dmg Size +10%	Dmg -5%, Acc +10%		
+Part_AR_ATL_Grip_04.Part_AR_ATL_Grip_04	Recoil height -15%, Dmg +5%			
+Part_AR_ATL_Mag_01.Part_AR_ATL_Mag_01	22 Round, Dmg +10%			
+Part_AR_ATL_Mag_02.Part_AR_ATL_Mag_02	28 Round			
+Part_AR_ATL_Mag_03.Part_AR_ATL_Mag_03	34 Round	Dmg -10%		
+Part_AR_ATL_Material_01_Common.Part_AR_ATL_Material_01_Common	Skin		Weapon Skin	
+Part_AR_ATL_Material_02_UnCommon.Part_AR_ATL_Material_02_UnCommon	Skin		Weapon Skin	
+Part_AR_ATL_Material_03_Rare.Part_AR_ATL_Material_03_Rare	Skin		Weapon Skin	
+Part_AR_ATL_Material_04_VeryRare.Part_AR_ATL_Material_04_VeryRare	Skin		Weapon Skin	
+Part_AR_ATL_Material_Carrier.Part_AR_ATL_Material_Carrier	Skin		Weapon Skin	
+Part_AR_ATL_Material_Portals.Part_AR_ATL_Material_Portals	Skin		Weapon Skin	
+Part_AR_ATL_Material_RebelYell.Part_AR_ATL_Material_RebelYell	Skin		Weapon Skin	
+Part_AR_ATL_Scope_01.Part_AR_ATL_Scope_01	1.5x			
+Part_AR_ATL_Scope_02.Part_AR_ATL_Scope_02				
+Part_AR_ATL_Scope_03.Part_AR_ATL_Scope_03				
+Part_AR_ATL_Tracker_01.Part_AR_ATL_Tracker_01	Stick Puck			
+Part_AR_ATL_Tracker_02.Part_AR_ATL_Tracker_02	Recoil Heught -25%		Grenade Tracker	
+Part_AR_ATL_Tracker_03.Part_AR_ATL_Tracker_03	Weapon Sway -20%		Stick Darts	
+Part_AR_ATL_Tracker_RebelYell.Part_AR_ATL_Tracker_RebelYell	Weapon Sway -20%		Stick Darts	
+Part_ATL_AR_Body.Part_ATL_AR_Body				
+Part_ATL_AR_Body_A.Part_ATL_AR_Body_A	Dmg +10%			
+Part_ATL_AR_Body_B.Part_ATL_AR_Body_B	Fire Rate +10%			
+Part_ATL_AR_Body_C.Part_ATL_AR_Body_C	Reload Time -10%, Acc -15%			
+# Naming strategy	Name	Priority		
+# If MagSize Greater Than 34	Overencumbered	1001.0		
+# If Projectiles Per Shot = 2	Cost-Effective	1003.0		

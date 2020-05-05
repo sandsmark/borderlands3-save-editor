@@ -1,0 +1,72 @@
+# Object name	Positives	Negatives	Effects	Naming
+Part_SG_JAK_Barrel_01.Part_SG_JAK_Barrel_01	Proj per Shot +7			Scattergun
+Part_SG_JAK_Barrel_01_A.Part_SG_JAK_Barrel_01_A	Proj per Shot +35%	Acc Bloom +15%, Acc +10%, Dmg -5%		
+Part_SG_JAK_Barrel_01_B.Part_SG_JAK_Barrel_01_B	-			
+Part_SG_JAK_Barrel_01_B_Stat.Part_SG_JAK_Barrel_01_B_Stat	Fire Rate +10%, Melee Dmg +60%			
+Part_SG_JAK_Barrel_01_C.Part_SG_JAK_Barrel_01_C	Fire Rate +10%, Melee Dmg +60%			Cuttin
+Part_SG_JAK_Barrel_02.Part_SG_JAK_Barrel_02	Proj per Shot +8			Stagecoach
+Part_SG_JAK_Barrel_02_A.Part_SG_JAK_Barrel_02_A	Reload Time -10%			
+Part_SG_JAK_Barrel_02_B.Part_SG_JAK_Barrel_02_B	Dmg +10%			
+Part_SG_JAK_Barrel_02_C.Part_SG_JAK_Barrel_02_C	Reload Time -10%, Proj per Shot +50%	Acc +10%, Dmg -20%, Acc Bloom +20%		
+Part_SG_JAK_Barrel_03.Part_SG_JAK_Barrel_03	Proj per Shot +7			Longrider
+Part_SG_JAK_Barrel_03_A.Part_SG_JAK_Barrel_03_A	Acc -7.5%			
+Part_SG_JAK_Barrel_03_B.Part_SG_JAK_Barrel_03_B	Dmg +10%, Melee Dmg +60%			Bowie
+Part_SG_JAK_Barrel_03_C.Part_SG_JAK_Barrel_03_C	Acc -7.5%			
+Part_SG_JAK_Barrel_Garcia.Part_SG_JAK_Barrel_Garcia	Proj per Shot +6			
+Part_SG_JAK_Barrel_Hellwalker.Part_SG_JAK_Barrel_Hellwalker	Proj per Shot +10, Reload Time -20%, Dmg +30%,	Acc Bloom +75%, Recoil Height +22%, Heat Per shot +900%		
+Part_SG_JAK_Barrel_JabberBeefcake.Part_SG_JAK_Barrel_JabberBeefcake	Acc -20%, Proj per Shot +4	Dmg -10%		
+Part_SG_JAK_Barrel_Mod_Sledge.Part_SG_JAK_Barrel_Mod_Sledge				
+Part_SG_JAK_Barrel_Nimble.Part_SG_JAK_Barrel_Nimble	Proj per Shot +7	Acc +30%		
+Part_SG_JAK_Barrel_OnePunch.Part_SG_JAK_Barrel_OnePunch	Reload Time -20%, Proj per Shot + 1, Acc -75%, Dmg +900%			
+Part_SG_JAK_Barrel_Sledge.Part_SG_JAK_Barrel_Sledge	Dmg +60%, Mag Size +12	Acc +75%, Recoil Height +22%		
+Part_SG_JAK_Barrel_TKWave.Part_SG_JAK_Barrel_TKWave	Crit Dmg 45%, Dmg +50%			
+Part_SG_JAK_Barrel_TidalWave.Part_SG_JAK_Barrel_TidalWave	Crit Dmg +65%, Dmg +30%			
+Part_SG_JAK_Body.Part_SG_JAK_Body				
+Part_SG_JAK_Bolt_01.Part_SG_JAK_Bolt_01	Reload Time -10%			
+Part_SG_JAK_Bolt_02.Part_SG_JAK_Bolt_02	Dmg +10%			
+Part_SG_JAK_Bolt_03.Part_SG_JAK_Bolt_03	Acc -7.5%			
+Part_SG_JAK_Bolt_04.Part_SG_JAK_Bolt_04	Crit Dmg +10%			
+Part_SG_JAK_Bolt_05.Part_SG_JAK_Bolt_05	Proj per Shot +35%	Acc Bloom +15%, Acc +10%, Dmg -5%		
+Part_SG_JAK_Foregrip_01.Part_SG_JAK_Foregrip_01	Weapon Sway -30%, Recoil Height -30%			
+Part_SG_JAK_Foregrip_02.Part_SG_JAK_Foregrip_02	Recoil Width -15%, Fire Rate +5%			
+Part_SG_JAK_Foregrip_03.Part_SG_JAK_Foregrip_03	Recoil Height -30%, Crit Dmg +10%			
+Part_SG_JAK_Foregrip_04.Part_SG_JAK_Foregrip_04	Proj per Shot +15%	Acc Bloom +15%, Acc +4.5%, Dmg -5%		
+Part_SG_JAK_Foregrip_05.Part_SG_JAK_Foregrip_05	Weapon Sway -30%, Dmg +5%			
+Part_SG_JAK_Mag_01.Part_SG_JAK_Mag_01	No mag			
+Part_SG_JAK_Mag_02.Part_SG_JAK_Mag_02	12 Round, Dmg -10%			
+Part_SG_JAK_Mag_03.Part_SG_JAK_Mag_03	8 Round			
+Part_SG_JAK_Mag_04.Part_SG_JAK_Mag_04	6 Round, Dmg +10%			
+Part_SG_JAK_Mag_HellWalker.Part_SG_JAK_Mag_HellWalker	Mag Size +3, Dmg +10%			
+Part_SG_JAK_Material_01_Common.Part_SG_JAK_Material_01_Common	Skin		Weapon Skin	
+Part_SG_JAK_Material_02_UnCommon.Part_SG_JAK_Material_02_UnCommon	Skin		Weapon Skin	
+Part_SG_JAK_Material_03_Rare.Part_SG_JAK_Material_03_Rare	Skin		Weapon Skin	
+Part_SG_JAK_Material_04_VeryRare.Part_SG_JAK_Material_04_VeryRare	Skin		Weapon Skin	
+Part_SG_JAK_Material_Fingerbiter.Part_SG_JAK_Material_Fingerbiter	Skin		Weapon Skin	
+Part_SG_JAK_Material_Garcia.Part_SG_JAK_Material_Garcia	Skin		Weapon Skin	
+Part_SG_JAK_Material_Hellwalker.Part_SG_JAK_Material_Hellwalker	Skin		Weapon Skin	
+Part_SG_JAK_Material_LGD_Sledge.Part_SG_JAK_Material_LGD_Sledge	Skin		Weapon Skin	
+Part_SG_JAK_Material_Nimble.Part_SG_JAK_Material_Nimble	Skin		Weapon Skin	
+Part_SG_JAK_Material_OnePunch.Part_SG_JAK_Material_OnePunch	Skin		Weapon Skin	
+Part_SG_JAK_Material_Typhon.Part_SG_JAK_Material_Typhon	Skin		Weapon Skin	
+Part_SG_JAK_Normal_Wave.Part_SG_JAK_Normal_Wave				
+Part_SG_JAK_Shock_Wave.Part_SG_JAK_Shock_Wave				
+Part_SG_JAK_Heat_Wave.Part_SG_JAK_Heat_Wave				
+Part_SG_JAK_IronSight.Part_SG_JAK_IronSight				
+Part_SG_JAK_Scope_01.Part_SG_JAK_Scope_01				
+Part_SG_JAK_Scope_02.Part_SG_JAK_Scope_02				
+Part_SG_JAK_Scope_03.Part_SG_JAK_Scope_03	3.5x			
+Part_SG_JAK_Stock_01.Part_SG_JAK_Stock_01	Weapon Sway-30%, Reload Time -5%			
+Part_SG_JAK_Stock_01_A.Part_SG_JAK_Stock_01_A	Acc -7.5%			
+Part_SG_JAK_Stock_02.Part_SG_JAK_Stock_02	Recoil Width -30%, Acc -10%			
+Part_SG_JAK_Stock_02_A.Part_SG_JAK_Stock_02_A	Recoil Height -25%			
+Part_SG_JAK_Stock_03.Part_SG_JAK_Stock_03	Recoil Width -30%, Recoil Height -15%			
+Part_SG_JAK_Stock_03_A.Part_SG_JAK_Stock_03_A	Reload Time -10%			
+Part_SG_JAK_Stock_04.Part_SG_JAK_Stock_04	Weapon Sway-30%, Dmg +5%			Loaded
+Part_SG_JAK_Stock_04_A.Part_SG_JAK_Stock_04_A	Proj per Shot +35%	Acc Bloom +15%, Acc +10%, Dmg -5%		
+Part_SG_JAK_Stock_05.Part_SG_JAK_Stock_05	Recoil -30%, Crit Damage +10%			
+Part_SG_JAK_Stock_05_A.Part_SG_JAK_Stock_05_A	Dmg +10%			
+Part_SG_JAK_Trigger_01.Part_SG_JAK_Trigger_01	Reload Time -10%			Gatlin
+Part_SG_JAK_Trigger_02.Part_SG_JAK_Trigger_02	Dmg +10%			
+Part_SG_JAK_Trigger_03.Part_SG_JAK_Trigger_03	Crit Dmg +10%			
+Part_SG_JAK_Trigger_Fingerbiter.Part_SG_JAK_Trigger_Fingerbiter	Reload Time -25%, Proj per Shot +50%, Dmg +43%	Acc +70%		
+Part_SG_JAK_Trigger_Hellwalker.Part_SG_JAK_Trigger_Hellwalker	Reload Time -10%			

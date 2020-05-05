@@ -1,0 +1,61 @@
+# Object name	Positives	Negatives	Effects	Naming
+Part_SG_Torgue_Barrel_01.Part_SG_Torgue_Barrel_01	-			Balogna Poney
+Part_SG_Torgue_Barrel_01_A.Part_SG_Torgue_Barrel_01_A	Fire Rate +10%			
+Part_SG_Torgue_Barrel_01_B.Part_SG_Torgue_Barrel_01_B	Splash Dmg Radius +20%			
+Part_SG_Torgue_Barrel_01_C.Part_SG_Torgue_Barrel_01_C	Splash Dmg Radius +20%			
+Part_SG_Torgue_Barrel_02.Part_SG_Torgue_Barrel_02	-			Bangstick
+Part_SG_Torgue_Barrel_02_A.Part_SG_Torgue_Barrel_02_A	Proj per Shot +35%	Acc Bloom +15%, Acc +10%, Dmg -5%		
+Part_SG_Torgue_Barrel_02_B.Part_SG_Torgue_Barrel_02_B	Dmg +10%			
+Part_SG_Torgue_Barrel_02_C.Part_SG_Torgue_Barrel_02_C	Dmg +10%			
+Part_SG_Torgue_Barrel_03.Part_SG_Torgue_Barrel_03	-			Kielbasa
+Part_SG_Torgue_Barrel_03_A.Part_SG_Torgue_Barrel_03_A	Proj Speed +30%			
+Part_SG_Torgue_Barrel_03_B.Part_SG_Torgue_Barrel_03_B	Proj Speed +30%			
+Part_SG_Torgue_Barrel_03_C.Part_SG_Torgue_Barrel_03_C	Acc -7.5%			
+Part_SG_Torgue_Barrel_Balrog.Part_SG_Torgue_Barrel_Balrog	Splash Dmg Radius +275, Dmg +40%			
+Part_SG_Torgue_Barrel_Brewha.Part_SG_Torgue_Barrel_Brewha	Splash Dmg Radius +300, Dmg +180%, Mag Size +8			
+Part_SG_Torgue_Barrel_ETech.Part_SG_Torgue_Barrel_ETech	Mag Size +5			Protuberance
+Part_SG_Torgue_Barrel_ETech_A.Part_SG_Torgue_Barrel_ETech_A	Splash Dmg Radius +20%, Reload Time -10%			
+Part_SG_Torgue_Barrel_ETech_TheLob.Part_SG_Torgue_Barrel_ETech_TheLob	Dmg -80%			
+Part_SG_Torgue_Barrel_Flakker.Part_SG_Torgue_Barrel_Flakker	Splash Dmg Radius +175, Dmg +200%	Acc +100%		
+Part_SG_Torgue_Barrel_Redline.Part_SG_Torgue_Barrel_Redline	Recoil Height -50%	Acc +65%		
+Part_SG_Torgue_Barrel_Thumper.Part_SG_Torgue_Barrel_Thumper	Mag Size +4	Acc +200%		
+Part_SG_TOR_Barrel_Boring.Part_SG_TOR_Barrel_Boring				
+Part_SG_Torgue_TiggsBoom.Part_SG_Torgue_TiggsBoom	Splash Dmg Radius +50	Dmg -25%, Acc +75%		
+Part_SG_Torgue_Body.Part_SG_Torgue_Body	DO NOT REMOVE			
+Part_SG_Torgue_Body_A.Part_SG_Torgue_Body_A	Proj per Shot +35%	Acc Bloom +15%, Acc +10%, Dmg -5%		
+Part_SG_Torgue_Body_B.Part_SG_Torgue_Body_B	Dmg +10%			
+Part_SG_Torgue_Ele_Corr.Part_SG_Torgue_Ele_Corr				Oozing
+Part_SG_Torgue_Ele_Cryo.Part_SG_Torgue_Ele_Cryo				Shrinking
+Part_SG_Torgue_Ele_Fire.Part_SG_Torgue_Ele_Fire				Burning
+Part_SG_Torgue_Ele_Radiation.Part_SG_Torgue_Ele_Radiation				Itchy
+Part_SG_Torgue_Ele_Shock.Part_SG_Torgue_Ele_Shock				Stimulating
+Part_SG_Torgue_Foregrip_01.Part_SG_Torgue_Foregrip_01	Recoil Height -30%, Fire Rate +5%			
+Part_SG_Torgue_Foregrip_02.Part_SG_Torgue_Foregrip_02	Mag Size +10%	Acc +10%, Dmg -0.3%		
+Part_SG_Torgue_Foregrip_03.Part_SG_Torgue_Foregrip_03	Splash Dmg Radius +20%, Acc -5%			
+Part_SG_Torgue_Grip_01.Part_SG_Torgue_Grip_01	Weapon Sway -30%	Dmg -30%, Acc +10%, Acc Bloom +25%		
+Part_SG_Torgue_Grip_02.Part_SG_Torgue_Grip_02	Splash Dmg Radius +20%			
+Part_SG_Torgue_Grip_03.Part_SG_Torgue_Grip_03	Acc -10%, Dmg +5%			
+Part_SG_Torgue_Magazine_01.Part_SG_Torgue_Magazine_01	3 Round, Proj per Shot +0%, Proj per Shot +1, Dmg +10%			
+Part_SG_Torgue_Magazine_02.Part_SG_Torgue_Magazine_02	4 Round, Proj per Shot +0%, Acc -50%, Splash Dmg Radius +300, Proj per Shot +1, Dmg +620%			Triple-Penetrating
+Part_SG_Torgue_Magazine_03.Part_SG_Torgue_Magazine_03	5 Round, Proj per Shot +1, Proj per Shot +0%	Dmg -10%		
+Part_SG_Torgue_Magazine_04.Part_SG_Torgue_Magazine_04	2 Round, Proj per Shot +1, Proj per Shot +0%	Dmg +20%		
+Part_SG_Torgue_Magazine_Flak.Part_SG_Torgue_Magazine_Flak	Proj per Shot +3			
+Part_SG_Torgue_Magazine_Redline.Part_SG_Torgue_Magazine_Redline	Proj per Shot +1, Proj per Shot +0%			
+Part_SG_Torgue_Material_01_Common.Part_SG_Torgue_Material_01_Common	Skin		Weapon Skin	
+Part_SG_Torgue_Material_02_UnCommon.Part_SG_Torgue_Material_02_UnCommon	Skin		Weapon Skin	
+Part_SG_Torgue_Material_03_Rare.Part_SG_Torgue_Material_03_Rare	Skin		Weapon Skin	
+Part_SG_Torgue_Material_04_VeryRare.Part_SG_Torgue_Material_04_VeryRare	Skin		Weapon Skin	
+Part_SG_Torgue_Material_Balrog.Part_SG_Torgue_Material_Balrog	Skin		Weapon Skin	
+Part_SG_Torgue_Material_Brewha.Part_SG_Torgue_Material_Brewha	Skin		Weapon Skin	
+Part_SG_Torgue_Material_Flakker.Part_SG_Torgue_Material_Flakker	Skin		Weapon Skin	
+Part_SG_Torgue_Material_Redline.Part_SG_Torgue_Material_Redline	Skin		Weapon Skin	
+Part_SG_Torgue_Material_Thumper.Part_SG_Torgue_Material_Thumper	Skin		Weapon Skin	
+Part_SG_TOR_Material_Boring.Part_SG_TOR_Material_Boring	Skin		Weapon Skin	
+Part_SG_TOR_Material_TheLob.Part_SG_TOR_Material_TheLob	Skin		Weapon Skin	
+Part_SG_Torgue_Material_TiggsBoom.Part_SG_Torgue_Material_TiggsBoom	Skin		Weapon Skin	
+Part_SG_Torgue_Scope_01.Part_SG_Torgue_Scope_01				
+Part_SG_Torgue_Scope_02.Part_SG_Torgue_Scope_02	2.6x			
+Part_SG_Torgue_Scope_03.Part_SG_Torgue_Scope_03	1.5x			
+# Naming strategy	Name	Priority		
+# If Shot Cost = 2	Double-Penetrating	1003.0		
+# If Shot Cost = 3	Triple-Penetrating	1004.0		

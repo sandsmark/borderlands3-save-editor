@@ -1,0 +1,48 @@
+# Class Mod Skill Perk Pool (Orange/Legendary)		
+Orange class mod	ClassMod_Part_Beastmaster_Unique_01_Friendbot.ClassMod_Part_Beastmaster_Unique_01_Friendbot	Psycho Head on a Stick / All my BFFs / Barbaric Yawp When FL4K kills an enemy, their pet gains second wind
+Orange class mod	ClassMod_Part_Beastmaster_Unique_02_CosmicStalker.ClassMod_Part_Beastmaster_Unique_02_CosmicStalker	Big Game / Interplanetary Stalker / Hunter's Eye FL4K's Hunt Skill Power is increased by 25%
+Orange class mod	ClassMod_Part_Beastmaster_Unique_03_BountyHunter.ClassMod_Part_Beastmaster_Unique_03_BountyHunter	Hunter's Eye / The Most Dangerous Game / Frenzy FL4K has a 3% chance to activate any purchased Hunt Kill Skill when dealing gun damage. Bosses are now treated as Humans, Beasts and Robotics for FL4K's Hunt Skills.
+Orange class mod	BPInvPart_ClassMod_C ClassMod_Part_Beastmaster_Unique_04_DE4DEYE.ClassMod_Part_Beastmaster_Unique_04_DE4DEYE	The Fast and the Furryous / Go for the Eyes! / Two F4ng FL4K and their pets deal 35% additional damage against enemies above 75% health.
+Orange class mod	ClassMod_Part_Beastmaster_Unique_05_RakkCommander.ClassMod_Part_Beastmaster_Unique_05_RakkCommander	He Bites! / Go for the Eyes! / Eager to Impress Rakk Attack gains 1 extra charge!
+Orange class mod	ClassMod_Part_Beastmaster_Unique_06_RedFang.ClassMod_Part_Beastmaster_Unique_06_RedFang	Eager to impress / Ferocity / He Bites! While Gamma Burst is active, FL4K's pet taunts all enemies.
+Orange class mod	ClassMod_Part_Beastmaster_Unique_07_BlueFang.ClassMod_Part_Beastmaster_Unique_07_BlueFang	Fade Away kills have a 33% chance to refund a Fade Away Charge and extend the duration of Fade Away by 3 seconds.
+Orange class mod	Part_CM_Beastmaster_Raid1.Part_CM_Beastmaster_Raid1	
+# Class Mod Skill Perk Pool (Purple/Very Rare)		Note to self, come back and change these to skill tree names:
+Purple class mod	ClassMod_Part_Mod_Beastmaster_01_QuickCharge.ClassMod_Part_Mod_Beastmaster_01_QuickCharge	Hunter's Eye / Two F4ng / Turn Tail and Run
+Purple class mod	ClassMod_Part_Mod_Beastmaster_02_Divergent.ClassMod_Part_Mod_Beastmaster_02_Divergent	Eager To Impress / Hive Mind / Who Rescued Who?
+Purple class mod	ClassMod_Part_Mod_Beastmaster_03_Bushmaster.ClassMod_Part_Mod_Beastmaster_03_Bushmaster	Ambush Predator / Leave No Trace / Turn Tail and Run
+Purple class mod	ClassMod_Part_Mod_Beastmaster_04_Whistleblower.ClassMod_Part_Mod_Beastmaster_04_Whistleblower	Sic Em' / Eager To Impress / Psycho Head on a Stick
+Purple class mod	ClassMod_Part_Mod_Beastmaster_05_DARPAW.ClassMod_Part_Mod_Beastmaster_05_DARPAW	Ferocity / Who Rescued Who? / Self-Repairing System
+Purple class mod	ClassMod_Part_Mod_Beastmaster_06_Overdriven.ClassMod_Part_Mod_Beastmaster_06_Overdriven	Rage and Recover / The Fast and the Furryous / Who Rescued Who?
+Purple class mod	ClassMod_Part_Mod_Beastmaster_07_Thrillbotting.ClassMod_Part_Mod_Beastmaster_07_Thrillbotting	The Most Dangerous Game / Big Game / Hidden Machine
+Purple class mod	ClassMod_Part_Mod_Beastmaster_08_TurboCharged.ClassMod_Part_Mod_Beastmaster_08_TurboCharged	Second Intention / Furious Attack / Overclocked
+Purple class mod	ClassMod_Part_Mod_Beastmaster_09_Headcase.ClassMod_Part_Mod_Beastmaster_09_Headcase	Ambush Predator / Leave No Trace / The Fast and the Furryous
+Purple class mod	ClassMod_Part_Mod_Beastmaster_10_Botmaster.ClassMod_Part_Mod_Beastmaster_10_Botmaster	Ferocity / He Bites! / Go for the Eyes!
+# Skill Tree Perks (1 component = +1 to that skill, 5 of the same component = +5 to that skill)		
+Skill tree perk	ClassMod_Part_Skill_BeastMaster_Bond11.ClassMod_Part_Skill_BeastMaster_Bond11	When FL4K's pet takes damage, the pet returns some of that damage to the attacker.
+Skill tree perk	ClassMod_Part_Skill_BeastMaster_Bond2.ClassMod_Part_Skill_BeastMaster_Bond2	Kill Skill. Whenever FL4K kills an enemy, Action Skill Cooldown Time is reduces.
+Skill tree perk	ClassMod_Part_Skill_BeastMaster_Bond3.ClassMod_Part_Skill_BeastMaster_Bond3	Whenever FL4K's Pet deals damage, FL4K regenerates health for a few seconds.
+Skill tree perk	ClassMod_Part_Skill_BeastMaster_Bond4.ClassMod_Part_Skill_BeastMaster_Bond4	When FL4K's pet attacks an enemy, the first melee attack is an automatic Critcal Hit that deals increased damage.
+Skill tree perk	ClassMod_Part_Skill_BeastMaster_Bond7.ClassMod_Part_Skill_BeastMaster_Bond7	FL4K's Pet deals increased damage.
+Skill tree perk	ClassMod_Part_Skill_BeastMaster_DangerousGame.ClassMod_Part_Skill_BeastMaster_DangerousGame	Hunter Kill Skill. Whenever FL4K kills a Badass or stronger enemy, they gain increased Critical Hit Damage, Gun Damage, and Handling for a long time.
+Skill tree perk	ClassMod_Part_Skill_BeastMaster_FastAndFurry.ClassMod_Part_Skill_BeastMaster_FastAndFurry	Turn Tail and Run: While moving, FL4K constantly regenerates health and gains Damage Reduction. While Still, FL4K gains Gun Damage and Fire Rate.
+Skill tree perk	ClassMod_Part_Skill_BeastMaster_Frenzy.ClassMod_Part_Skill_BeastMaster_Frenzy	Frenzy: Hunter Skill. When FL4K's pet deals damage, FL4K and their pet gain a stack of Frenzy. Each stack of Frenzy increases Damage. The stacks decay after a few seconds.
+Skill tree perk	ClassMod_Part_Skill_BeastMaster_FullTank.ClassMod_Part_Skill_BeastMaster_FullTank	Fast and the Furryous: While above half health, FL4K's Gun Damage and Movement Speed are increased.
+Skill tree perk	ClassMod_Part_Skill_BeastMaster_GeneticLink.ClassMod_Part_Skill_BeastMaster_GeneticLink	When FL4K takes damage, a portion of all damage they take is shared to their pet instead.
+Skill tree perk	ClassMod_Part_Skill_BeastMaster_GotThisForYou.ClassMod_Part_Skill_BeastMaster_GotThisForYou	Hunter Kill Skill. Whenever FL4K kills an enemy, their Pet gains increased Movement Speed and Damage for a few seconds.
+Skill tree perk	ClassMod_Part_Skill_BeastMaster_HeadCount.ClassMod_Part_Skill_BeastMaster_HeadCount	Whenever FL4K scores a Critical hit, there is a chance their Action Skill Cooldown is reduced.
+Skill tree perk	ClassMod_Part_Skill_BeastMaster_HR1.ClassMod_Part_Skill_BeastMaster_HR1	Hunter Skill. After shooting an enemy, FL4K gains a stack of Furious Attack.
+Skill tree perk	ClassMod_Part_Skill_BeastMaster_HR2.ClassMod_Part_Skill_BeastMaster_HR2	Attack Command has a lowered Cooldown and increased Damage.
+Skill tree perk	ClassMod_Part_Skill_BeastMaster_HR3.ClassMod_Part_Skill_BeastMaster_HR3	Kill Skill. After killing an enemy, FL4K and FL4K's pet regenerate health for a few seconds.
+Skill tree perk	ClassMod_Part_Skill_BeastMaster_HR4.ClassMod_Part_Skill_BeastMaster_HR4	FL4K's Maxium Health is increased, and they constantly regenerate health.
+Skill tree perk	ClassMod_Part_Skill_BeastMaster_HR7.ClassMod_Part_Skill_BeastMaster_HR7	Allies share a portion of FL4K's total Health Regeneration. FL4K's pet shares twice the amount of Health Regeneration.
+Skill tree perk	ClassMod_Part_Skill_BeastMaster_HR8.ClassMod_Part_Skill_BeastMaster_HR8	FL4K gains increased Fire Rate. FL4K gains even more Fire Rate after reloading.
+Skill tree perk	ClassMod_Part_Skill_BeastMaster_HR9.ClassMod_Part_Skill_BeastMaster_HR9	When an enemy has no target or is attacking a different target, FL4K deals increased damage against them.
+Skill tree perk	ClassMod_Part_Skill_BeastMaster_Hunt1.ClassMod_Part_Skill_BeastMaster_Hunt1	Leave No Trace: When FL4K scores a Critical Hit, there is a chance for 1 ammo to be added to their magazine.
+Skill tree perk	ClassMod_Part_Skill_BeastMaster_Hunt2.ClassMod_Part_Skill_BeastMaster_Hunt2	Second Intention: Hunter Kill Skill. Whenever FL4K kills an enemy, they gain increased Reload Speed.
+Skill tree perk	ClassMod_Part_Skill_BeastMaster_Hunt5.ClassMod_Part_Skill_BeastMaster_Hunt5	Ambush Predator: While there are no enemies nearby, FL4K's Weapon Handling and Critical Hit Damage are increased.
+Skill tree perk	ClassMod_Part_Skill_BeastMaster_HuntersEye.ClassMod_Part_Skill_BeastMaster_HuntersEye	FL4K gains bonuses when fighting different types of enemies.
+Skill tree perk	ClassMod_Part_Skill_BeastMaster_InterStalker.ClassMod_Part_Skill_BeastMaster_InterStalker	Hunter Kill Skill. Whenever FL4K kills an enemy, they gain a stack of Interplanetary Stalker. For each stack of Interplanetary Stalker, they gain a bonus to all damage dealth.
+Skill tree perk	ClassMod_Part_Skill_BeastMaster_LifeTraining.ClassMod_Part_Skill_BeastMaster_LifeTraining	Whenever FL4K's Pet deals damage, FL4K regenerates health for a few seconds.
+Skill tree perk	ClassMod_Part_Skill_BeastMaster_Symbiosis.ClassMod_Part_Skill_BeastMaster_Symbiosis	Increases the power of Pet Bonuses granted to FL4K.
+Skill tree perk	ClassMod_Part_Skill_BeastMaster_TwoFang.ClassMod_Part_Skill_BeastMaster_TwoFang	FL4K has a chance to fire an extra projectile per shot

@@ -1,0 +1,96 @@
+# General Anointments	
+# Note that splash anointments can only be applied on weapons that do splash damage, same goes with Elements	
+GPart_All_SkillEnd_AccuracyHandling.GPart_All_SkillEnd_AccuracyHandling	On Action Skill End, Weapon Accuracy(50%) and Handling(200%) are greatly increased for 12 seconds.
+GPart_All_SkillEnd_AddGrenade.GPart_All_SkillEnd_AddGrenade	On Action Skill Start, Regenerate 1 grenade.
+GPart_All_SkillEnd_CooldownRate.GPart_All_SkillEnd_CooldownRate	On Action Skill End, action skill cooldown rate is increased by 20% for 15 seconds.
+GPart_All_SkillEnd_CritDamage.GPart_All_SkillEnd_CritDamage	On Action Skill End, Critical Damage is increased by 25% for 15 seconds.
+GPart_All_SkillEnd_DamageReduction.GPart_All_SkillEnd_DamageReduction	On Action Skill End, damage taken is reduced by 15% for 12 seconds.
+GPart_All_SkillEnd_EleChanceDamage.GPart_All_SkillEnd_EleChanceDamage	On Action Skill End, Weapon Status Effect Damage is increased by 75% and Chance is increased by 40% for 12 seconds.
+GPart_All_SkillEnd_FireRateReload.GPart_All_SkillEnd_FireRateReload	On Action Skill End, fire rate is increased by 11%, and reload speed by 35% for 12 seconds.
+GPart_All_SkillEnd_HealthRegen.GPart_All_SkillEnd_HealthRegen	On Action Skill End, regenerate 1.25% max health per second for 12 seconds.
+GPart_All_SkillEnd_LifeSteal.GPart_All_SkillEnd_LifeSteal	On Action Skill End, gain 15% Life Steal for 12 seconds.
+GPart_All_SkillEnd_MeleeDamage.GPart_All_SkillEnd_MeleeDamage	On Action Skill End, Melee Damage is increased by 100% for 12 seconds.
+GPart_All_SkillEnd_MoveSpeed.GPart_All_SkillEnd_MoveSpeed	On Action Skill End, movement speed is increased by 5% for 12 seconds.
+GPart_All_SkillEnd_NextMagBonusDamageCorrosive.GPart_All_SkillEnd_NextMagBonusDamageCorrosive	On Action Skill End, the next 2 magazines will have 50% additional bonus corrosive damage.
+GPart_All_SkillEnd_NextMagBonusDamageCryo.GPart_All_SkillEnd_NextMagBonusDamageCryo	On Action Skill End, the next 2 magazines will have 50% additional bonus cryo damage.
+GPart_All_SkillEnd_NextMagBonusDamageFire.GPart_All_SkillEnd_NextMagBonusDamageFire	On Action Skill End, the next 2 magazines will have 50% additional bonus fire damage.
+GPart_All_SkillEnd_NextMagBonusDamageRadiation.GPart_All_SkillEnd_NextMagBonusDamageRadiation	On Action Skill End, the next 2 magazines will have 50% additional bonus radiation damage.
+GPart_All_SkillEnd_NextMagBonusDamageShock.GPart_All_SkillEnd_NextMagBonusDamageShock	On Action Skill End, the next 2 magazines will have 50% additional bonus shock damage.
+GPart_All_SkillEnd_ProjectileSpeed.GPart_All_SkillEnd_ProjectileSpeed	On Action Skill End, Projectile Speed is increased by 100% for 12 seconds.
+GPart_All_SkillEnd_SplashDamage.GPart_All_SkillEnd_SplashDamage*	On Action Skill End, Splash Damage is increased by 125% for 12 seconds.
+GPart_All_SkillEnd_UniqueEnemyDamage.GPart_All_SkillEnd_UniqueEnemyDamage	On Action Skill End, Deal 125% more Weapon Damage to Badass, Named, and Boss enemies for 15 seconds.
+GPart_All_SkillEnd_WeaponDamage.GPart_All_SkillEnd_WeaponDamage	On Action Skill End, Weapon Damage is increased by 100% for 12 seconds.
+GPart_All_Passive_GenerateTerror_Melee.GPart_All_Passive_GenerateTerror_Melee	Melee Attacks have a 25% chance to apply Terror to yourself.
+GPart_All_Passive_TerrorAmmoRegen.GPart_All_Passive_TerrorAmmoRegen	While Terrified, gain ammo regeneration. The more Terror you have, the higher the bonus. T1: 5%, T2: 10%, T3: 15%
+GPart_All_Passive_TerrorBonus_CryoDamage.GPart_All_Passive_TerrorBonus_CryoDamage	While Terrified, deal 50% bonus cryo damage.
+GPart_All_Passive_TerrorBulletReflect.GPart_All_Passive_TerrorBulletReflect	While Terrified, enemy bullets have a chance to reflect off of you. The more Terror you have, the higher the bonus. T1: 15%, T2: 30%, T3: 45%
+GPart_All_Passive_TerrorCritDamage.GPart_All_Passive_TerrorCritDamage	While Terrified, gain increased crit damage. The more Terror you have, the higher the bonus. T1: 50%, T2: 75%, T3: 100%
+GPart_All_Passive_TerrorDamageFireRate.GPart_All_Passive_TerrorDamageFireRate	While Terrified, gain increased damage and fire rate. The more Terror you have, the higher the bonus. Damage: T1: 5%, T2: 10%, T3: 15%, Fire Rate: T1: 10%, T2: 20%, T3: 30%
+GPart_All_Passive_TerrorDamageMitigation.GPart_All_Passive_TerrorDamageMitigation	While Terrified, reduce all incoming damage by a small amount. The more Terror you have, the higher the bonus. T1: 10%, T2: 20%, T3: 30%
+GPart_All_Passive_TerrorHealthRegen.GPart_All_Passive_TerrorHealthRegen	While Terrified, gain health regeneration. The more Terror you have, the higher the bonus. T1: 4%, T2: 6%, T3: 8%
+GPart_All_Passive_TerrorProjectilesPerShot.GPart_All_Passive_TerrorProjectilesPerShot	While Terrified, you have a chance to fire an extra projectile per shot. The more Terror you have, the higher the bonus. T1: 10%, T2: 20%, T3: 30%
+GPart_All_SkillEnd_GenerateTerror.GPart_All_SkillEnd_GenerateTerror	On Action Skill End, apply Terror to yourself every 5 seconds for the next 18 seconds. Generate Terror Rate: 3 ?
+GPart_All_SkillEnd_TerrorHeal.GPart_All_SkillEnd_TerrorHeal	While Terrified, gain health regeneration. The more Terror you have, the higher the bonus. Base Heal: 25%, Terror Stack Bonus: 15%
+GPart_EG_Generic_ConsecutiveHitsDmgStack.GPart_EG_Generic_ConsecutiveHitsDmgStack	Consecutive Hits increase Weapon Damage by 1% per hit, misses remove all bonuses. (Max: 200 stacks)
+GPart_EG_Generic_KillStackReloadDamage.GPart_EG_Generic_KillStackReloadDamage	Killing an enemy grants 5% Weapon Damage and 95% Reload Speed for 25 seconds, this effect stacks.
+GPart_EG_Generic_LowHealthExecutor.GPart_EG_Generic_LowHealthExecutor	While enemies are below 25% Health, gain 50% increased Weapon Damage.
+GPart_EG_GrenadeThrow_GlobalDamage.GPart_EG_GrenadeThrow_GlobalDamage	On Grenade Thrown, Weapon, Grenade, and Action Skill Damage are increased by 25% for 6 seconds.
+GPart_EG_SkillEndBonusEleDamage_Corrosive.GPart_EG_SkillEndBonusEleDamage_Corrosive	On Action Skill End, gain 50% bonus Corrosive Damage with Weapons for 10 seconds.
+GPart_EG_SkillEndBonusEleDamage_Cryo.GPart_EG_SkillEndBonusEleDamage_Cryo	On Action Skill End, gain 50% bonus Cryo Damage with Weapons for 10 seconds.
+GPart_EG_SkillEndBonusEleDamage_Fire.GPart_EG_SkillEndBonusEleDamage_Fire	On Action Skill End, gain 50% bonus Fire Damage with Weapons for 10 seconds.
+GPart_EG_SkillEndBonusEleDamage_Radiation.GPart_EG_SkillEndBonusEleDamage_Radiation	On Action Skill End, gain 50% bonus Radiation Damage with Weapons for 10 seconds.
+GPart_EG_SkillEndBonusEleDamage_Shock.GPart_EG_SkillEndBonusEleDamage_Shock	On Action Skill End, gain 50% bonus Shock Damage with Weapons for 10 seconds.
+GPart_EG_WhileAirborn_AccuracyHandling.GPart_EG_WhileAirborn_AccuracyHandling	While Airborne, Accuracy is increased by 25% and Handling by 10%.
+GPart_EG_WhileAirborn_CritDamage.GPart_EG_WhileAirborn_CritDamage	While Airborne, Critical Damage is increased by 125%.
+GPart_EG_WhileAirborn_Damage.GPart_EG_WhileAirborn_Damage	While Airborne, Damage is increased by 130%.
+GPart_EG_WhileAirborn_FireRate.GPart_EG_WhileAirborn_FireRate	While Airborne, Fire Rate is increased by 120%.
+GPart_EG_WhileSliding_AccuracyHandling.GPart_EG_WhileSliding_AccuracyHandling	While Sliding, Accuracy is increased by 50% and Handling by 10%.
+GPart_EG_WhileSliding_Damage.GPart_EG_WhileSliding_Damage	While Sliding, Damage is increased by 140%.
+GPart_EG_WhileSliding_FireRate.GPart_EG_WhileSliding_FireRate	While Sliding, Fire Rate is increased by 125%.
+# Beastmaster Anointments	
+GPart_Beast_AttackCmd_Lifesteal.GPart_Beast_AttackCmd_Lifesteal	After using Attack Command, gain 30% lifesteal for 8 seconds.
+GPart_Beast_AttackCmd_Movespeed.GPart_Beast_AttackCmd_Movespeed	After issuing an Attack Command, gain 8% Movespeed for 6 seconds.
+GPart_Beast_ExitStealthNova.GPart_Beast_ExitStealthNova	When exiting Fade Away, create a nova that deals 175% damage. Nova Radius: 500
+GPart_Beast_RakkCharge.GPart_Beast_RakkCharge	Grants an extra charge of Rakk Attack!
+GPart_Beast_RakkCrit.GPart_Beast_RakkCrit	After using Rakk Attack!, gain 25% critical hit damage for 8 seconds.
+GPart_Beast_RakkSlag.GPart_Beast_RakkSlag	Enemies damaged by Rakk Attack! take 50% increased damage for 10 seconds.
+GPart_Beast_Stealth_AccuracyHandling.GPart_Beast_Stealth_AccuracyHandling	While Fade Away is active, gain greatly increased Accuracy(200%) and Handling(perfect) for 20 seconds.
+GPart_BonusRadiationDamage.GPart_BonusRadiationDamage	While Gamma Burst is active, gain 65% bonus radiation damage.
+GPart_Beast_AttackCmd_TerrorFireDMG.GPart_Beast_AttackCmd_TerrorFireDMG	After using Attack Command, consume all Terror and Fl4K's pet gains 50% bonus fire damage for 15 seconds.
+# Gunner Anointments	
+GPart_Gunner_AutoBear_AmmoRegen.GPart_Gunner_AutoBear_AmmoRegen	While Auto Bear is active, constantly regenerate 7.5% of magazine size per second.
+GPart_Gunner_AutoBear_FireDamage.GPart_Gunner_AutoBear_FireDamage	While Auto Bear is active, deals 20% bonus Incendiary damage.
+GPart_Gunner_EnterExit_Nova.GPart_Gunner_EnterExit_Nova	When entering and exiting Iron Bear, create a nova that deals 175% damage. Radius: 900
+GPart_Gunner_IBGrenadeChance.GPart_Gunner_IBGrenadeChance	While Iron Bear is active, taking damage has a 20% chance to spawn a grenade each 8 seconds.
+GPart_Gunner_KillsLowerCooldown.GPart_Gunner_KillsLowerCooldown	After exiting Iron Bear, kills increase Iron Bear's cooldown rate by 30% for 30 seconds. Stack Duration: 10 seconds
+GPart_Gunner_NextMagFireDamage.GPart_Gunner_NextMagFireDamage	After exiting Iron Bear, the next 2 magazines will have 40% bonus Incendiary damage.
+GPart_Gunner_NextMagFirerateCrit.GPart_Gunner_NextMagFirerateCrit	After exiting Iron Bear, the next 2 magazines will have 10% increased fire rate and 20% critical damage.
+GPart_Gunner_NextMagReloadHandling.GPart_Gunner_NextMagReloadHandling	After exiting Iron Bear, the next 3 magazines will have 50% increased reload speed and 20% increased handling.
+GPart_Gunner_NoAmmoConsumption.GPart_Gunner_NoAmmoConsumption	After exiting Iron Bear, do not consume ammo for 5 seconds.
+GPart_Gunner_ShieldHealthMax.GPart_Gunner_ShieldHealthMax	After exiting Iron Bear, gain 75% increased shields and health for 25 seconds.
+GPart_Gunner_SplashDamageIncrease.GPart_Gunner_SplashDamageIncrease*	After exiting Iron Bear, gain 120% increased Splash damage for 18 seconds.
+GPart_Gunner_Reload_TerrorNova.GPart_Gunner_Reload_TerrorNova	After Reloading, consume all Terror and create a nova that deals cryo damage(175%). Radius: 400
+# Operative Anointments	
+GPart_CloneSwap_WeaponDamage.GPart_CloneSwap_WeaponDamage	After swapping places with your Digi-Clone, Weapon Damage is increased by 75% for 6 seconds.
+GPart_Operative_BarrierActive_AccuracyCrit.GPart_Operative_BarrierActive_AccuracyCrit	While Barrier is active, Accuracy is increased by 150%, and Critical Hit damage is increased by 30%.
+GPart_Operative_BarrierActive_StatusEffectChance.GPart_Operative_BarrierActive_StatusEffectChance*	While Barrier is active, Status Effect Chance is increased by 50%.
+GPart_Operative_BarrierDeploy_ShieldRecharge.GPart_Operative_BarrierDeploy_ShieldRecharge	When Barrier is Deployed, instantly start recharging your shields. Delay: 0.15 seconds
+GPart_Operative_CloneActive_AmmoRegen.GPart_Operative_CloneActive_AmmoRegen	While Digi-Clone is active, regenerate 12% of magazine ammo in mag per second for 30 seconds.
+GPart_Operative_CloneActive_HealthRegen.GPart_Operative_CloneActive_HealthRegen	While Digi-Clone is active, regenerate 3% max health per second of 30 seconds.
+GPart_Operative_CloneSwapInstaReload.GPart_Operative_CloneSwapInstaReload	After swapping places with your Digi-Clone, your weapon is reloaded.
+GPart_Operative_DroneActiveBonusDamage.GPart_Operative_DroneActiveBonusDamage	While SNTNL is active, gain 50% of damage as bonus Cryo damage.
+GPart_Operative_DroneActiveMovespeed.GPart_Operative_DroneActiveMovespeed	While SNTNL is active, movespeed is increased by 15%.
+GPart_Operative_DroneActive_FireRateReload.GPart_Operative_DroneActive_FireRateReload	While SNTNL is active, Fire Rate is increased by 9%, and Reload Speed by 30%.
+GPart_Operative_DroneActiveTerrorLifesteal.GPart_Operative_DroneActiveTerrorLifesteal	While SNTNL is active, SNTNL gains 100% lifesteal while you are affected by Terror.
+# Siren Anointments	
+GPart_Siren_Cast_ElementalChance.GPart_Siren_Cast_ElementalChance*	After using Phasecast, Status Effect Chance is increased by 50% for 8 seconds.
+GPart_Siren_Cast_WeaponDamage.GPart_Siren_Cast_WeaponDamage	After using Phasecast, Weapon Damage is increased by 250% for 12 seconds.
+GPart_Siren_Grasp_AccuracyCrit.GPart_Siren_Grasp_AccuracyCrit	After Phasegrasping an enemy, Weapon Accuracy(100%) and Handling(400%) are greatly increased for 20 seconds.
+GPart_Siren_Grasp_ChargeSpeed.GPart_Siren_Grasp_ChargeSpeed - Maliwan only	While Phasegrasp is active, Weapon charge time is decreased by 250% and Fire Rate increased by 12% for 20 seconds.
+GPart_Siren_Grasp_ConstantNova.GPart_Siren_Grasp_ConstantNova	While Phasegrasp is active, Amara constantly triggers novas that deal 50% damage for 15 seconds. Nova Frequency: 1.2 sec, Nova Radius: 500
+GPart_Siren_SkillEnd_AttunedSkillDamage.GPart_Siren_SkillEnd_AttunedSkillDamage	On Action Skill End, deal 40% bonus radiation damage for 8 seconds.
+GPart_Siren_Slam_DamageReduction.GPart_Siren_Slam_DamageReduction	After using Phaseslam, damage taken is reduced by 25% and movespeed is increased by 12% for 10 seconds.
+GPart_Siren_Slam_MeleeDamage.GPart_Siren_Slam_MeleeDamage	After using Phaseslam, Melee Damage is increased by 200% for 10 seconds.
+GPart_Siren_Slam_ReturnDamage.GPart_Siren_Slam_ReturnDamage	On Action Skill End, 30% of all damage taken is returned to the attacker for 12 seconds.
+GPart_Siren_Slam_WeaponDamage.GPart_Siren_Slam_WeaponDamage	After using Phaseslam, Weapon Damage is increased by 300% for 12 seconds.
+GPart_Siren_Grasp_TerrorSkulls.GPart_Siren_Grasp_TerrorSkulls	After Phasegrasping an enemy, Amara fires Terror skulls at the grasped target dealing 200% damage.

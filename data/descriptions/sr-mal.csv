@@ -1,0 +1,76 @@
+# Object name	Positives	Negatives	Effects	Naming
+Part_MAL_SR_Barrel_01.Part_MAL_SR_Barrel_01	-			Multiplex
+Part_MAL_SR_Barrel_01_A.Part_MAL_SR_Barrel_01_A	Fire Rate +10%			
+Part_MAL_SR_Barrel_01_B.Part_MAL_SR_Barrel_01_B	Fire Rate +10%			
+Part_MAL_SR_Barrel_01_C.Part_MAL_SR_Barrel_01_C	Charge Duration -20%, Melee Dmg +80%			
+Part_MAL_SR_Barrel_02.Part_MAL_SR_Barrel_02	-			Particle Rifle
+Part_MAL_SR_Barrel_02_A.Part_MAL_SR_Barrel_02_A	Dmg +10%			
+Part_MAL_SR_Barrel_02_B.Part_MAL_SR_Barrel_02_B	Dmg +10%			
+Part_MAL_SR_Barrel_02_C.Part_MAL_SR_Barrel_02_C	Charge Duration -20%			
+Part_MAL_SR_Barrel_03.Part_MAL_SR_Barrel_03	Splash Dmg Radius +80			Proton Rifle
+Part_MAL_SR_Barrel_03_A.Part_MAL_SR_Barrel_03_A	Ele Dmg +10%			
+Part_MAL_SR_Barrel_03_B.Part_MAL_SR_Barrel_03_B	Ele Chance +15%			
+Part_MAL_SR_Barrel_03_C.Part_MAL_SR_Barrel_03_C	Ele Dmg +10%			
+Part_MAL_SR_Barrel_ASMD.Part_MAL_SR_Barrel_ASMD	Acc -75%, Splash Dmg Radius +80	Dmg -30%		
+Part_MAL_SR_Barrel_ETech.Part_MAL_SR_Barrel_ETech	Mag Size +8			Antimatter Rifle
+Part_MAL_SR_Barrel_ETech_A.Part_MAL_SR_Barrel_ETech_A	Fire Rate +10%, Mag Size +10%			
+Part_MAL_SR_Barrel_FireStorm.Part_MAL_SR_Barrel_FireStorm	Splash Dmg Radius +300	Dmg -30%		
+Part_MAL_SR_Barrel_Krakatoa.Part_MAL_SR_Barrel_Krakatoa		Ele Chance -100%		
+Part_MAL_SR_Barrel_Soleki.Part_MAL_SR_Barrel_Soleki	Ele Chance +25%	Dmg -25%		
+Part_MAL_SR_Barrel_Storm.Part_MAL_SR_Barrel_Storm	Splash Dmg Radius +300, Dmg -30%			
+Part_MAL_SR_Body.Part_MAL_SR_Body	DO NOT REMOVE			
+Part_MAL_SR_Body_A.Part_MAL_SR_Body_A	Dmg +10%			
+Part_MAL_SR_Body_B.Part_MAL_SR_Body_B	Reload Time -10%			
+Part_MAL_SR_Body_C.Part_MAL_SR_Body_C	Ele Dmg +10%			
+Part_MAL_SR_Ele_Primary_Corr.Part_MAL_SR_Ele_Primary_Corr				
+Part_MAL_SR_Ele_Primary_Cryo.Part_MAL_SR_Ele_Primary_Cryo				
+Part_MAL_SR_Ele_Primary_Fire.Part_MAL_SR_Ele_Primary_Fire				
+Part_MAL_SR_Ele_Primary_Radiation.Part_MAL_SR_Ele_Primary_Radiation				
+Part_MAL_SR_Ele_Primary_Shock.Part_MAL_SR_Ele_Primary_Shock				
+Part_MAL_SR_Ele_Secondary_Corr.Part_MAL_SR_Ele_Secondary_Corr				
+Part_MAL_SR_Ele_Secondary_Cryo.Part_MAL_SR_Ele_Secondary_Cryo				
+Part_MAL_SR_Ele_Secondary_Fire.Part_MAL_SR_Ele_Secondary_Fire				
+Part_MAL_SR_Ele_Secondary_Radiation.Part_MAL_SR_Ele_Secondary_Radiation				
+Part_MAL_SR_Ele_Secondary_Shock.Part_MAL_SR_Ele_Secondary_Shock				
+Part_MAL_SR_Ele_Secondary_Shock_Storm.Part_MAL_SR_Ele_Secondary_Shock_Storm				
+Part_MAL_SR_Foregrip_01.Part_MAL_SR_Foregrip_01	Charge Duration -10%			
+Part_MAL_SR_Foregrip_02.Part_MAL_SR_Foregrip_02	Weapon Sway -30%			
+Part_MAL_SR_Foregrip_03.Part_MAL_SR_Foregrip_03	Ele Chance +10%			
+Part_MAL_SR_Foregrip_04.Part_MAL_SR_Foregrip_04	Mag Size +2	Acc +10%, Dmg -5%		
+Part_MAL_SR_Foregrip_05.Part_MAL_SR_Foregrip_05	Reload Time -5%			
+Part_MAL_SR_Foregrip_06.Part_MAL_SR_Foregrip_06	Recoil Width -15%			
+Part_MAL_SR_Grip_01.Part_MAL_SR_Grip_01	Weapon Sway -30%, Dmg +5%			
+Part_MAL_SR_Grip_02.Part_MAL_SR_Grip_02	Charge Duration -10%, Acc -20%			
+Part_MAL_SR_Grip_02_A.Part_MAL_SR_Grip_02_A	Acc Blom -20%			
+Part_MAL_SR_Grip_03.Part_MAL_SR_Grip_03	Weapon Sway -30%, Recoil Width -30%			
+Part_MAL_SR_Grip_03_A.Part_MAL_SR_Grip_03_A	Reload Time -5%			
+Part_MAL_SR_Grip_04.Part_MAL_SR_Grip_04	Ele Dmg +10%, Recoil Width -30%			
+Part_MAL_SR_Grip_05.Part_MAL_SR_Grip_05	Weapon Sway -30%, Acc -20%			
+Part_MAL_SR_Grip_05_A.Part_MAL_SR_Grip_05_A	Ele Chance +10%			
+Part_MAL_SR_Grip_06.Part_MAL_SR_Grip_06	Ele Chance +10%, Recoil Width -30%			
+Part_MAL_SR_Grip_07.Part_MAL_SR_Grip_07	Weapon Sway -30%, Reload Time -5%			
+Part_MAL_SR_Mag_01.Part_MAL_SR_Mag_01	6 Round, Dmg +10%			
+Part_MAL_SR_Mag_02.Part_MAL_SR_Mag_02	10 Round			
+Part_MAL_SR_Mag_03.Part_MAL_SR_Mag_03	14 Round	Dmg -10%		
+Part_MAL_SR_Material_01_Common.Part_MAL_SR_Material_01_Common	Skin		Weapon Skin	
+Part_MAL_SR_Material_02_UnCommon.Part_MAL_SR_Material_02_UnCommon	Skin		Weapon Skin	
+Part_MAL_SR_Material_03_Rare.Part_MAL_SR_Material_03_Rare	Skin		Weapon Skin	
+Part_MAL_SR_Material_04_VeryRare.Part_MAL_SR_Material_04_VeryRare	Skin		Weapon Skin	
+Part_MAL_SR_Material_ASMD.Part_MAL_SR_Material_ASMD	Skin		Weapon Skin	
+Part_MAL_SR_Material_Krakatoa.Part_MAL_SR_Material_Krakatoa	Skin		Weapon Skin	
+Part_MAL_SR_Material_LGD_FireStorm.Part_MAL_SR_Material_LGD_FireStorm	Skin		Weapon Skin	
+Part_MAL_SR_Material_LGD_Storm.Part_MAL_SR_Material_LGD_Storm	Skin		Weapon Skin	
+Part_MAL_SR_Material_Soleki.Part_MAL_SR_Material_Soleki	Skin		Weapon Skin	
+Part_MAL_SR_Scope_01.Part_MAL_SR_Scope_01	4.2x			
+Part_MAL_SR_Scope_01_A.Part_MAL_SR_Scope_01_A				
+Part_MAL_SR_Scope_01_B.Part_MAL_SR_Scope_01_B				
+Part_MAL_SR_Scope_02.Part_MAL_SR_Scope_02				
+Part_MAL_SR_Scope_02_A.Part_MAL_SR_Scope_02_A				
+Part_MAL_SR_Scope_02_B.Part_MAL_SR_Scope_02_B				
+Part_MAL_SR_Scope_03.Part_MAL_SR_Scope_03	7.7x			
+Part_MAL_SR_Scope_03_A.Part_MAL_SR_Scope_03_A				
+Part_MAL_SR_Scope_03_B.Part_MAL_SR_Scope_03_B				
+Part_MAL_SR_Scope_Soleki.Part_MAL_SR_Scope_Soleki				
+# Naming strategy	Name	Priority		
+# If MagSize is Greater Than 14	Adundant	1002.0		
+# If Shot Cost = 2	Binary	1003.0		

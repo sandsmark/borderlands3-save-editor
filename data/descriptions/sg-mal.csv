@@ -1,0 +1,65 @@
+# Object name	Positives	Negatives	Effects	Naming
+Part_SG_MAL_Barrel_01.Part_SG_MAL_Barrel_01	-			Terminator
+Part_SG_MAL_Barrel_01_A.Part_SG_MAL_Barrel_01_A	Acc -7.5%			
+Part_SG_MAL_Barrel_01_B.Part_SG_MAL_Barrel_01_B	Ele Dmg +10%			
+Part_SG_MAL_Barrel_01_C.Part_SG_MAL_Barrel_01_C	Charge Duration -20%			
+Part_SG_MAL_Barrel_02.Part_SG_MAL_Barrel_02	Weapon Sway -20%			Shockwave
+Part_SG_MAL_Barrel_02_A.Part_SG_MAL_Barrel_02_A	Proj Speed +30%			
+Part_SG_MAL_Barrel_02_B.Part_SG_MAL_Barrel_02_B	Dmg +10%			
+Part_SG_MAL_Barrel_02_C.Part_SG_MAL_Barrel_02_C	Dmg +10%			
+Part_SG_MAL_Barrel_03.Part_SG_MAL_Barrel_03	-			Cyclotron
+Part_SG_MAL_Barrel_03_A.Part_SG_MAL_Barrel_03_A	Ele Dmg +10%			
+Part_SG_MAL_Barrel_03_B.Part_SG_MAL_Barrel_03_B	Ele Dmg +10%			
+Part_SG_MAL_Barrel_03_C.Part_SG_MAL_Barrel_03_C	Acc -7.5%			
+Part_SG_MAL_Barrel_ETech.Part_SG_MAL_Barrel_ETech	Splash Dmg Radius +210, Mag Size +50%			Interloper
+Part_SG_MAL_Barrel_ETech_A.Part_SG_MAL_Barrel_ETech_A	Proj Speed +30%, Ele Chance +15%			
+Part_SG_MAL_Barrel_Mouthpiece2.Part_SG_MAL_Barrel_Mouthpiece2	Weapon Sway -20%, Dmg +17%			
+Part_SG_MAL_Barrel_Recursion.Part_SG_MAL_Barrel_Recursion	Acc -75%, Dmg +500%, Mag Size +20%			
+Part_SG_MAL_Barrel_Shriek.Part_SG_MAL_Barrel_Shriek	Dmg +800%			
+Part_SG_MAL_Barrel_Trev.Part_SG_MAL_Barrel_Trev	Splash Dmg Radius +75, Dmg +110%, Mag Size +3			
+Part_SG_MAL_Barrel_Wisp.Part_SG_MAL_Barrel_Wisp	Dmg +700%			
+Part_SG_MAL_Barrel_DeathGrip.Part_SG_MAL_Barrel_DeathGrip	Mag Size +6, Dmg +150%			
+Part_SG_MAL_Body.Part_SG_MAL_Body	DO NOT REMOVE			
+Part_SG_MAL_Body_A.Part_SG_MAL_Body_A				
+Part_SG_MAL_Body_B.Part_SG_MAL_Body_B				
+Part_SG_MAL_Body_C.Part_SG_MAL_Body_C				
+Part_SG_MAL_Elemental_Primary_Corr.Part_SG_MAL_Elemental_Primary_Corr				
+Part_SG_MAL_Elemental_Primary_Cryo.Part_SG_MAL_Elemental_Primary_Cryo				
+Part_SG_MAL_Elemental_Primary_Fire.Part_SG_MAL_Elemental_Primary_Fire				
+Part_SG_MAL_Elemental_Primary_Radiation.Part_SG_MAL_Elemental_Primary_Radiation				
+Part_SG_MAL_Elemental_Primary_Shock.Part_SG_MAL_Elemental_Primary_Shock				
+Part_SG_MAL_Elemental_Secondary_Corr.Part_SG_MAL_Elemental_Secondary_Corr				
+Part_SG_MAL_Elemental_Secondary_Cryo.Part_SG_MAL_Elemental_Secondary_Cryo				
+Part_SG_MAL_Elemental_Secondary_Fire.Part_SG_MAL_Elemental_Secondary_Fire				
+Part_SG_MAL_Elemental_Secondary_Radiation.Part_SG_MAL_Elemental_Secondary_Radiation				
+Part_SG_MAL_Elemental_Secondary_Shock.Part_SG_MAL_Elemental_Secondary_Shock				
+Part_SG_MAL_Grip_01.Part_SG_MAL_Grip_01	Charge Duration -10%, Acc -10%			
+Part_SG_MAL_Grip_02.Part_SG_MAL_Grip_02	Reload Time -5%	Acc Bloom +25%, Acc +10%, Dmg -30%	Spooling x2	
+Part_SG_MAL_Grip_03.Part_SG_MAL_Grip_03	Proj Speed +15%, Dmg +5%			
+Part_SG_MAL_Grip_04.Part_SG_MAL_Grip_04	Weapon Sway -30%, Fire Rate +5%			
+Part_SG_MAL_Grip_05.Part_SG_MAL_Grip_05	Recoil Height -30%, Proj per Shot +15%	Acc +10%, Dmg -5%, Acc Bloom +15%		
+Part_SG_MAL_Magazine_01.Part_SG_MAL_Magazine_01	6 Round, Dmg +10%			
+Part_SG_MAL_Magazine_02.Part_SG_MAL_Magazine_02	12 Round	Dmg -10%		
+Part_SG_MAL_Magazine_03.Part_SG_MAL_Magazine_03	9 Round			
+Part_SG_MAL_Magazine_Deathgrip.Part_SG_MAL_Magazine_Deathgrip	9 Round			
+Part_SG_MAL_Material_01_Common.Part_SG_MAL_Material_01_Common	Skin		Weapon Skin	
+Part_SG_MAL_Material_02_UnCommon.Part_SG_MAL_Material_02_UnCommon	Skin		Weapon Skin	
+Part_SG_MAL_Material_03_Rare.Part_SG_MAL_Material_03_Rare	Skin		Weapon Skin	
+Part_SG_MAL_Material_04_VeryRare.Part_SG_MAL_Material_04_VeryRare	Skin		Weapon Skin	
+Part_SG_MAL_Material_Mouthpiece2.Part_SG_MAL_Material_Mouthpiece2	Skin		Weapon Skin	
+Part_SG_MAL_Material_Recursion.Part_SG_MAL_Material_Recursion	Skin		Weapon Skin	
+Part_SG_MAL_Material_Shriek.Part_SG_MAL_Material_Shriek	Skin		Weapon Skin	
+Part_SG_MAL_Material_Trev.Part_SG_MAL_Material_Trev	Skin		Weapon Skin	
+Part_SG_MAL_Material_Wisp.Part_SG_MAL_Material_Wisp	Skin		Weapon Skin	
+Part_SG_MAL_Material_DeathGrip.Part_SG_MAL_Material_DeathGrip	Skin		Weapon Skin	
+Part_SG_MAL_Scope_01.Part_SG_MAL_Scope_01				
+Part_SG_MAL_Scope_02.Part_SG_MAL_Scope_02				
+Part_SG_MAL_Scope_03.Part_SG_MAL_Scope_03				
+Part_SG_MAL_Scope_04.Part_SG_MAL_Scope_04	2.2x			
+Part_SG_MAL_Stock_01.Part_SG_MAL_Stock_01	Reload Time -5%, Mag Size +2	Dmg -5%, Acc +10%		
+Part_SG_MAL_Stock_02.Part_SG_MAL_Stock_02	Weapon Sway -30%, Acc -10%			
+Part_SG_MAL_Stock_03.Part_SG_MAL_Stock_03	Recoil Width -30%, Fire Rate +5%			
+Part_SG_MAL_Stock_04.Part_SG_MAL_Stock_04	Ele Dmg +10%, Charge Duration -10%			
+# Naming strategy	Name	Priority		
+# If MagSize is Greater Than 12	Abundant	1002.0		
+# If Shot Cost = 2	Binary	1003.0		

@@ -1,0 +1,65 @@
+# Object name	Positives	Negatives	Effects	Naming
+Part_PS_MAL_Barrel_01.Part_PS_MAL_Barrel_01	-			Atomizer
+Part_PS_MAL_Barrel_01_A.Part_PS_MAL_Barrel_01_A	Fire rate +10%			
+Part_PS_MAL_Barrel_01_B.Part_PS_MAL_Barrel_01_B	Mag Size +10%			
+Part_PS_MAL_Barrel_01_C.Part_PS_MAL_Barrel_01_C	Acc Bloom -25%, Acc -15%			
+Part_PS_MAL_Barrel_02.Part_PS_MAL_Barrel_02	Splash Dmg Radius +60			Melter
+Part_PS_MAL_Barrel_02_A.Part_PS_MAL_Barrel_02_A	Charge Duration -20%			
+Part_PS_MAL_Barrel_02_B.Part_PS_MAL_Barrel_02_B	Dmg +10%			
+Part_PS_MAL_Barrel_02_C.Part_PS_MAL_Barrel_02_C	Dmg +10%			
+Part_PS_MAL_Barrel_03.Part_PS_MAL_Barrel_03	-			Blaster
+Part_PS_MAL_Barrel_03_A.Part_PS_MAL_Barrel_03_A	Ele Chance +15%			
+Part_PS_MAL_Barrel_03_B.Part_PS_MAL_Barrel_03_B	Weapon Sway -20%, Charge Duration -20%			
+Part_PS_MAL_Barrel_03_C.Part_PS_MAL_Barrel_03_C	Ele Dmg +10%	Dmg -15%		
+Part_PS_MAL_Barrel_AI_TrooperBadass.Part_PS_MAL_Barrel_AI_TrooperBadass	Mag Size +5			
+Part_PS_MAL_Barrel_ETech.Part_PS_MAL_Barrel_ETech				Devourer
+Part_PS_MAL_Barrel_ETech_A.Part_PS_MAL_Barrel_ETech_A	Ele Chance +15%, Mag Size +10%, Melee Dmg +60%			
+Part_PS_MAL_Barrel_HellShock.Part_PS_MAL_Barrel_HellShock	Mag Size +20	Dmg -15%		
+Part_PS_MAL_Barrel_HyperHydrator.Part_PS_MAL_Barrel_HyperHydrator	Splash Dmg Radius +60			
+Part_PS_MAL_Barrel_Plumber.Part_PS_MAL_Barrel_Plumber	Splash Dmg Radius +100, Dmg +50%			
+Part_PS_MAL_Barrel_Starkiller.Part_PS_MAL_Barrel_Starkiller	Mag Size +7	Dmg -70%		
+Part_PS_MAL_Barrel_SuckerPunch.Part_PS_MAL_Barrel_SuckerPunch	Ele Chance +75%, Splash Dmg Radius +100	Acc +125%, Dmg -40%, Acc Bloom +300%		
+Part_PS_MAL_Barrel_ThunderballFists.Part_PS_MAL_Barrel_ThunderballFists	Dmg +25%			
+Part_PS_MAL_Body.Part_PS_MAL_Body	DO NOT REMOVE			
+Part_PS_MAL_Body_01.Part_PS_MAL_Body_01				
+Part_PS_MAL_Body_02.Part_PS_MAL_Body_02				
+Part_PS_MAL_Body_03.Part_PS_MAL_Body_03				
+Part_PS_MAL_Elemental_Primary_Corr.Part_PS_MAL_Elemental_Primary_Corr				
+Part_PS_MAL_Elemental_Primary_Cryo.Part_PS_MAL_Elemental_Primary_Cryo				
+Part_PS_MAL_Elemental_Primary_Fire.Part_PS_MAL_Elemental_Primary_Fire				
+Part_PS_MAL_Elemental_Primary_Radiation.Part_PS_MAL_Elemental_Primary_Radiation				
+Part_PS_MAL_Elemental_Primary_Shock.Part_PS_MAL_Elemental_Primary_Shock				
+Part_PS_MAL_Elemental_Secondary_Corr.Part_PS_MAL_Elemental_Secondary_Corr				
+Part_PS_MAL_Elemental_Secondary_Cryo.Part_PS_MAL_Elemental_Secondary_Cryo				
+Part_PS_MAL_Elemental_Secondary_Fire.Part_PS_MAL_Elemental_Secondary_Fire				
+Part_PS_MAL_Elemental_Secondary_Radiation.Part_PS_MAL_Elemental_Secondary_Radiation				
+Part_PS_MAL_Elemental_Secondary_Shock.Part_PS_MAL_Elemental_Secondary_Shock				
+Part_PS_MAL_Grip_01.Part_PS_MAL_Grip_01	Charge Duration -10%, Acc Bloom -20%			
+Part_PS_MAL_Grip_02.Part_PS_MAL_Grip_02	Weapon Sway -30%, Mag Size +10%	Dmg -5%, Acc +10%		
+Part_PS_MAL_Grip_03.Part_PS_MAL_Grip_03	Weapon Sway -30%, Dmg +5%			
+Part_PS_MAL_Grip_04.Part_PS_MAL_Grip_04	Weapon Sway -30%, Dmg +5%			
+Part_PS_MAL_Grip_05.Part_PS_MAL_Grip_05	Acc -20%, Fire Rate +5%			
+Part_PS_MAL_Hammer_01.Part_PS_MAL_Hammer_01	Fire Rate +10%			
+Part_PS_MAL_Hammer_02.Part_PS_MAL_Hammer_02	Dmg +10%			
+Part_PS_MAL_Hammer_03.Part_PS_MAL_Hammer_03	Splash Dmg Radius +20%, Acc -15%			
+Part_PS_MAL_Hammer_04.Part_PS_MAL_Hammer_04	Ele Dmg +10%, Ele Chance +15%			
+Part_PS_MAL_Hammer_05.Part_PS_MAL_Hammer_05		Dmg -30%, Acc Bloom +25%, Acc +10%		
+Part_PS_MAL_Mag_01.Part_PS_MAL_Mag_01	10 round, Dmg +10%			
+Part_PS_MAL_Mag_01_A.Part_PS_MAL_Mag_01_A	Recoil Height -25%			
+Part_PS_MAL_Mag_02.Part_PS_MAL_Mag_02	14 round			
+Part_PS_MAL_Mag_02_A.Part_PS_MAL_Mag_02_A	Ele Dmg +10%			
+Part_PS_MAL_Mag_03.Part_PS_MAL_Mag_03	20 Round, Dmg -10%			
+Part_PS_MAL_Mag_03_A.Part_PS_MAL_Mag_03_A	Reload Time -10%			
+Part_PS_MAL_Material_01_Common.Part_PS_MAL_Material_01_Common	Skin		Weapon Skin	
+Part_PS_MAL_Material_02_UnCommon.Part_PS_MAL_Material_02_UnCommon	Skin		Weapon Skin	
+Part_PS_MAL_Material_03_Rare.Part_PS_MAL_Material_03_Rare	Skin		Weapon Skin	
+Part_PS_MAL_Material_04_VeryRare.Part_PS_MAL_Material_04_VeryRare	Skin		Weapon Skin	
+Part_PS_MAL_Material_Hellshock.Part_PS_MAL_Material_Hellshock	Skin		Weapon Skin	
+Part_PS_MAL_Material_HyperHydrator.Part_PS_MAL_Material_HyperHydrator	Skin		Weapon Skin	
+Part_PS_MAL_Material_Plumber.Part_PS_MAL_Material_Plumber	Skin		Weapon Skin	
+Part_PS_MAL_Material_Starkiller.Part_PS_MAL_Material_Starkiller	Skin		Weapon Skin	
+Part_PS_MAL_Material_SuckerPunch.Part_PS_MAL_Material_SuckerPunch	Skin		Weapon Skin	
+Part_PS_MAL_Material_ThunderballFists.Part_PS_MAL_Material_ThunderballFists	Skin		Weapon Skin	
+Part_PS_MAL_Scope_01.Part_PS_MAL_Scope_01	1.5x			
+Part_PS_MAL_Scope_02.Part_PS_MAL_Scope_02	2.9x			
+Part_PS_MAL_Scope_03.Part_PS_MAL_Scope_03	2.2x			

@@ -1,0 +1,69 @@
+# Object name	Positives	Negatives	Effects	Naming
+Part_SM_HYP_Barrel_01.Part_SM_HYP_Barrel_01	-			
+Part_SM_HYP_Barrel_01_A.Part_SM_HYP_Barrel_01_A	Dmg +10%			
+Part_SM_HYP_Barrel_01_B.Part_SM_HYP_Barrel_01_B	Acc -15%			
+Part_SM_HYP_Barrel_01_C.Part_SM_HYP_Barrel_01_C	Dmg +10%			
+Part_SM_HYP_Barrel_02.Part_SM_HYP_Barrel_02	-			Powerplay
+Part_SM_HYP_Barrel_02_A.Part_SM_HYP_Barrel_02_A	Acc -15%			
+Part_SM_HYP_Barrel_02_B.Part_SM_HYP_Barrel_02_B	Crit Dmg +10%			
+Part_SM_HYP_Barrel_02_C.Part_SM_HYP_Barrel_02_C	Acc -15%			
+Part_SM_HYP_Barrel_03.Part_SM_HYP_Barrel_03	-			Boardroom
+Part_SM_HYP_Barrel_03_A.Part_SM_HYP_Barrel_03_A	Fire Rate +10%, Melee Dmg +60%			Bleeding Edge
+Part_SM_HYP_Barrel_03_B.Part_SM_HYP_Barrel_03_B	Fire Rate +10%			
+Part_SM_HYP_Barrel_03_C.Part_SM_HYP_Barrel_03_C	Acc -15%			
+Part_SM_HYP_Barrel_Bitch.Part_SM_HYP_Barrel_Bitch	Crit Dmg +50%, Mag Size +5, Melee Dmg +60%	Dmg -35%, Acc Bloom +150%,	Melee Attachment	
+Part_SM_HYP_Barrel_Crossroad.Part_SM_HYP_Barrel_Crossroad	Proj per Shot +4	Acc Bloom +15%, Acc +70%, Dmg -20%		
+Part_SM_HYP_Barrel_ETech.Part_SM_HYP_Barrel_ETech	Mag Size +25%			Hivemind
+Part_SM_HYP_Barrel_ETech_A.Part_SM_HYP_Barrel_ETech_A	Weapon Shield Cap +25%, Proj Speed +30%			
+Part_SM_HYP_Barrel_Fork.Part_SM_HYP_Barrel_Fork	Dmg -20%			
+Part_SM_HYP_Barrel_Handsome.Part_SM_HYP_Barrel_Handsome	Reload Time -50%	Acc +100%		
+Part_SM_HYP_Barrel_L0V3M4CH1N3.Part_SM_HYP_Barrel_L0V3M4CH1N3	Recoil Height -75%, Dmg +25%, Mag Size +25%			
+Part_SM_HYP_Barrel_PredatoryLending.Part_SM_HYP_Barrel_PredatoryLending		Dmg -20%, Acc +50%		
+Part_SM_HYP_Barrel_XZ.Part_SM_HYP_Barrel_XZ		Dmg -20%		
+Part_SM_HYP_Barrel_Fork2.Part_SM_HYP_Barrel_Fork2			Redistributor	
+Part_SM_HYP_Barrel_JustCaustic.Part_SM_HYP_Barrel_JustCaustic	Mag Size +12, Elemental Dmg +100%, Elemental Chance +100%	Acc +100%	Just Kaus	
+Part_SM_HYP_Body.Part_SM_HYP_Body	DO NOT REMOVE			
+Part_SM_HYP_Body_A.Part_SM_HYP_Body_A	Dmg +10%			
+Part_SM_HYP_Body_B.Part_SM_HYP_Body_B	Weapon Shield Cap +25%			
+Part_SM_HYP_Body_C.Part_SM_HYP_Body_C	Crit Dmg +10%			
+Part_SM_HYP_Elemental_Corr.Part_SM_HYP_Elemental_Corr				Defrauding
+Part_SM_HYP_Elemental_Cryo.Part_SM_HYP_Elemental_Cryo				Auditing
+Part_SM_HYP_Elemental_Fire.Part_SM_HYP_Elemental_Fire				Hostile
+Part_SM_HYP_Elemental_Radiation.Part_SM_HYP_Elemental_Radiation				Undermining
+Part_SM_HYP_Elemental_Shock.Part_SM_HYP_Elemental_Shock				Cash-Infused
+Part_SM_HYP_Grip_01.Part_SM_HYP_Grip_01	Reload Time -5%, Fire Rate +5%			
+Part_SM_HYP_Grip_02.Part_SM_HYP_Grip_02	Recoil Height -30%, Acc -10%			
+Part_SM_HYP_Grip_03.Part_SM_HYP_Grip_03	Crit Dmg +10%, Dmg +5%			
+Part_SM_HYP_Mag_01.Part_SM_HYP_Mag_01	25 Round, Dmg +10%			
+Part_SM_HYP_Mag_02.Part_SM_HYP_Mag_02	45 Round, Dmg -10%			
+Part_SM_HYP_Mag_03.Part_SM_HYP_Mag_03	35 Round			
+Part_SM_HYP_Material_01_Common.Part_SM_HYP_Material_01_Common	Skin		Weapon Skin	
+Part_SM_HYP_Material_02_UnCommon.Part_SM_HYP_Material_02_UnCommon	Skin		Weapon Skin	
+Part_SM_HYP_Material_03_Rare.Part_SM_HYP_Material_03_Rare	Skin		Weapon Skin	
+Part_SM_HYP_Material_04_VeryRare.Part_SM_HYP_Material_04_VeryRare	Skin		Weapon Skin	
+Part_SM_HYP_Material_Bitch.Part_SM_HYP_Material_Bitch	Skin		Weapon Skin	
+Part_SM_HYP_Material_Crossroad.Part_SM_HYP_Material_Crossroad	Skin		Weapon Skin	
+Part_SM_HYP_Material_Fork.Part_SM_HYP_Material_Fork	Skin		Weapon Skin	
+Part_SM_HYP_Material_Handsome.Part_SM_HYP_Material_Handsome	Skin		Weapon Skin	
+Part_SM_HYP_Material_L0V3M4CH1N3.Part_SM_HYP_Material_L0V3M4CH1N3	Skin		Weapon Skin	
+Part_SM_HYP_Material_Lilith.Part_SM_HYP_Material_Lilith	Skin		Weapon Skin	
+Part_SM_HYP_Material_PredatoryLending.Part_SM_HYP_Material_PredatoryLending	Skin		Weapon Skin	
+Part_SM_HYP_Material_XZ.Part_SM_HYP_Material_XZ	Skin		Weapon Skin	
+Part_SM_HYP_Material_Fork2.Part_SM_HYP_Material_Fork2	Skin		Weapon Skin - Redistributor	
+Part_SM_HYP_Material_JustCaustic.Part_SM_HYP_Material_JustCaustic	Skin		Weapon Skin - Just Kaus	
+Part_SM_HYP_Rail_01.Part_SM_HYP_Rail_01	Weapon Shield Cap +15%			
+Part_SM_HYP_Rail_02.Part_SM_HYP_Rail_02	Reload Time -5%			
+Part_SM_HYP_Rail_03.Part_SM_HYP_Rail_03	Mag Size +10%	Acc +10%, Dmg -5%		
+Part_SM_HYP_Scope_01.Part_SM_HYP_Scope_01	2.6x			
+Part_SM_HYP_Scope_02.Part_SM_HYP_Scope_02				
+Part_SM_HYP_Scope_03.Part_SM_HYP_Scope_03				
+Part_SM_HYP_Shield_01.Part_SM_HYP_Shield_01	Weapon Shield Cap +15%, Reload Time -5%		Shield	
+Part_SM_HYP_Shield_02.Part_SM_HYP_Shield_02	Acc -10%, Fire Rate +5%		Shield convert Dmg in Mag Ammo	
+Part_SM_HYP_Shield_03.Part_SM_HYP_Shield_03	Weapon Sway -30%, Dmg +5%		Shield convert Dmg in Weapon Dmg	
+Part_SM_HYP_Shield_04.Part_SM_HYP_Shield_04	Recoil Height -30%, Acc -10%		Shield Reflect	
+Part_SM_HYP_Stock_01.Part_SM_HYP_Stock_01	Recoil Width -30%, Fire Rate +5%			
+Part_SM_HYP_Stock_02.Part_SM_HYP_Stock_02	Acc -20%			
+Part_SM_HYP_Stock_03.Part_SM_HYP_Stock_03	Recoil Height -15%, Dmg +5%			
+# Naming strategy	Name	Priority		
+# If MagSize is Greater Than 55	Bankrolled	1001.0		
+# If Shot Cost = 3	Value Add	1003.0		

@@ -1,0 +1,71 @@
+# Object name	Positives	Negatives	Effects	Naming
+Part_PS_VLA_Barrel_01.Part_PS_VLA_Barrel_01	Acc -30%			Creech
+Part_PS_VLA_Barrel_01_A.Part_PS_VLA_Barrel_01_A	Dmg +10%			
+Part_PS_VLA_Barrel_01_B.Part_PS_VLA_Barrel_01_B	Dmg +10%			
+Part_PS_VLA_Barrel_01_C.Part_PS_VLA_Barrel_01_C	Acc Bloom -25%			
+Part_PS_VLA_Barrel_02.Part_PS_VLA_Barrel_02	Acc +20%			Kot
+Part_PS_VLA_Barrel_02_A.Part_PS_VLA_Barrel_02_A	Fire Rate +10%			
+Part_PS_VLA_Barrel_02_B.Part_PS_VLA_Barrel_02_B	Acc Bloom -25%			
+Part_PS_VLA_Barrel_02_C.Part_PS_VLA_Barrel_02_C	Fire Rate +10%			
+Part_PS_VLA_Barrel_03.Part_PS_VLA_Barrel_03	-			Moloko
+Part_PS_VLA_Barrel_03_A.Part_PS_VLA_Barrel_03_A	Acc Blom -25%			
+Part_PS_VLA_Barrel_03_B.Part_PS_VLA_Barrel_03_B	Dmg +10%			
+Part_PS_VLA_Barrel_03_C.Part_PS_VLA_Barrel_03_C	Fire Rate +10%			
+Part_PS_VLA_Barrel_BoneShredder.Part_PS_VLA_Barrel_BoneShredder	Proj per shot +4, Mag Size +40	Dmg -50%, Acc Blom +35%, Acc +400%		
+Part_PS_VLA_Barrel_ETech.Part_PS_VLA_Barrel_ETech	Reload Time -20%			Pushdug
+Part_PS_VLA_Barrel_ETech_A.Part_PS_VLA_Barrel_ETech_A	Fire Rate +10%, Mag Size +10%, Mele Dmg +80%			
+Part_PS_VLA_Barrel_Infiniti.Part_PS_VLA_Barrel_Infiniti	Weapon Sway -100%, Acc Bloom -100%, Recoil height -100%, Recoil Width -100%,	Dmg -50%, Acc Blom +35%, Acc +400%		
+Part_PS_VLA_Barrel_Magnificent.Part_PS_VLA_Barrel_Magnificent		Dmg -60%, Recoil Height +25%, Acc +250%, Recoil Width +25%		
+Part_PS_VLA_Body.Part_PS_VLA_Body	DO NOT REMOVE			
+Part_PS_VLA_Ele_Corr.Part_PS_VLA_Ele_Corr				Pestilent
+Part_PS_VLA_Ele_Cryo.Part_PS_VLA_Ele_Cryo				Negating
+Part_PS_VLA_Ele_Fire.Part_PS_VLA_Ele_Fire				Molten
+Part_PS_VLA_Ele_Radiation.Part_PS_VLA_Ele_Radiation				Nuclear
+Part_PS_VLA_Ele_Shock.Part_PS_VLA_Ele_Shock				Storming
+Part_PS_VLA_GripMod_A.Part_PS_VLA_GripMod_A				
+Part_PS_VLA_Grip_01.Part_PS_VLA_Grip_01	Weapon Sway -30%, Mag Size +10%			
+Part_PS_VLA_Grip_02.Part_PS_VLA_Grip_02	Acc Bloom -30%, Dmg +5%			
+Part_PS_VLA_Grip_03.Part_PS_VLA_Grip_03	Recoil Width -30%, Fire Rate +5%			
+Part_PS_VLA_MagType_01.Part_PS_VLA_MagType_01	Dmg +10%			
+Part_PS_VLA_MagType_02.Part_PS_VLA_MagType_02	Acc Bloom -25%			
+Part_PS_VLA_MagType_03.Part_PS_VLA_MagType_03	Recoil Width -25%			
+Part_PS_VLA_Mag_01_A.Part_PS_VLA_Mag_01_A	15 round, Dmg +10%			
+Part_PS_VLA_Mag_01_B.Part_PS_VLA_Mag_01_B	18 Round			
+Part_PS_VLA_Mag_02_A.Part_PS_VLA_Mag_02_A	18 Round			
+Part_PS_VLA_Mag_02_A_Infiniti.Part_PS_VLA_Mag_02_A_Infiniti	Inf Mag			
+Part_PS_VLA_Mag_02_B.Part_PS_VLA_Mag_02_B	18 Round			
+Part_PS_VLA_Mag_03_A.Part_PS_VLA_Mag_03_A	Dmg -10%			
+Part_PS_VLA_Mag_03_B.Part_PS_VLA_Mag_03_B	35 round	Dmg -20%, Recoil Height +25%, Acc Bloom +15%, Recoil Width +20%		
+Part_PS_VLA_Mag_Magnificent.Part_PS_VLA_Mag_Magnificent				
+Part_PS_VLA_Material_01_Common.Part_PS_VLA_Material_01_Common	Skin		Weapon Skin	
+Part_PS_VLA_Material_02_Uncommon.Part_PS_VLA_Material_02_Uncommon	Skin		Weapon Skin	
+Part_PS_VLA_Material_03_Rare.Part_PS_VLA_Material_03_Rare	Skin		Weapon Skin	
+Part_PS_VLA_Material_04_VeryRare.Part_PS_VLA_Material_04_VeryRare	Skin		Weapon Skin	
+Part_PS_VLA_Material_BoneShredder.Part_PS_VLA_Material_BoneShredder	Skin		Weapon Skin	
+Part_PS_VLA_Material_Infiniti.Part_PS_VLA_Material_Infiniti	Skin		Weapon Skin	
+Part_PS_VLA_Material_Magnificent.Part_PS_VLA_Material_Magnificent	Skin		Weapon Skin	
+Part_PS_VLA_Material_TheLeech.Part_PS_VLA_Material_TheLeech	Skin		Weapon Skin	
+Part_PS_VLA_Rail_01.Part_PS_VLA_Rail_01	Acc Bloom -25%			
+Part_PS_VLA_Rail_02.Part_PS_VLA_Rail_02	Fire Rate +10%			
+Part_PS_VLA_Rail_03.Part_PS_VLA_Rail_03	Acc -15%			
+Part_PS_VLA_Rail_04.Part_PS_VLA_Rail_04	Proj per Shot +1	Acc Bloom +20%, Acc +10%, Dmg -20%		
+Part_PS_VLA_Scope_01.Part_PS_VLA_Scope_01	Iron sights			
+Part_PS_VLA_Scope_02.Part_PS_VLA_Scope_02	1.5x			
+Part_PS_VLA_Scope_03.Part_PS_VLA_Scope_03				
+Part_PS_VLA_Scope_04.Part_PS_VLA_Scope_04	4.0x			
+Part_PS_VLA_SlideCap_01.Part_PS_VLA_SlideCap_01				
+Part_PS_VLA_SlideCap_03.Part_PS_VLA_SlideCap_03				
+Part_PS_VLA_Slide_01.Part_PS_VLA_Slide_01	Dmg +10%			
+Part_PS_VLA_Slide_02.Part_PS_VLA_Slide_02	Fire Rate +10%			
+Part_PS_VLA_Slide_03.Part_PS_VLA_Slide_03	Mag Size +10%	Acc +10%, Dmg -5%		
+Part_PS_VLA_Underbarrel_01.Part_PS_VLA_Underbarrel_01	Dmg +5%, Extra fire rate +25%			
+Part_PS_VLA_Underbarrel_01_A.Part_PS_VLA_Underbarrel_01_A	Fire Rate +10%			
+Part_PS_VLA_Underbarrel_02.Part_PS_VLA_Underbarrel_02	Fire Rate +5%		Zip-Rocket	
+Part_PS_VLA_Underbarrel_02_A.Part_PS_VLA_Underbarrel_02_A			5-Shot Zip-Rocket Mag	
+Part_PS_VLA_Underbarrel_02_B.Part_PS_VLA_Underbarrel_02_B			10-Shot Zip-Rocket Mag	
+Part_PS_VLA_Underbarrel_03.Part_PS_VLA_Underbarrel_03	Mag Size +10%		Taser, up to 2 enemies	
+Part_PS_VLA_Underbarrel_TheLeech.Part_PS_VLA_Underbarrel_TheLeech	Mag Size +10%		Taser, up to 4 enemies	
+# Naming strategy	Name	Priority		
+# If Projectiles Per Shot = 2	Annexed	1001.0		
+# If MagSize is Greater Than 35 and MagSize is Less Than 43	Engulfing	1002.0		
+# If MagSize is Greater Than 42 and MagSize is Less Than 500	Unending	1002.0		

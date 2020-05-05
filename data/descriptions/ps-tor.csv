@@ -1,0 +1,72 @@
+# Object name	Positives	Negatives	Effects	Naming
+Part_PS_TOR_Barrel_01.Part_PS_TOR_Barrel_01	-			Magnum
+Part_PS_TOR_Barrel_01_A.Part_PS_TOR_Barrel_01_A	Fire Rate +10%			
+Part_PS_TOR_Barrel_01_B.Part_PS_TOR_Barrel_01_B	Proj Speed +30%			
+Part_PS_TOR_Barrel_01_B_Sight.Part_PS_TOR_Barrel_01_B_Sight				
+Part_PS_TOR_Barrel_01_C.Part_PS_TOR_Barrel_01_C	Proj Speed +30%			
+Part_PS_TOR_Barrel_02.Part_PS_TOR_Barrel_02	-			Pocket Rocket
+Part_PS_TOR_Barrel_02_A.Part_PS_TOR_Barrel_02_A	Dmg +10%			
+Part_PS_TOR_Barrel_02_B.Part_PS_TOR_Barrel_02_B	Proj Speed +30%			
+Part_PS_TOR_Barrel_02_C.Part_PS_TOR_Barrel_02_C	Dmg +10%			
+Part_PS_TOR_Barrel_03.Part_PS_TOR_Barrel_03	-			Duke
+Part_PS_TOR_Barrel_03_A.Part_PS_TOR_Barrel_03_A	Dmg +10%			
+Part_PS_TOR_Barrel_03_B.Part_PS_TOR_Barrel_03_B	Splash Dmg Radius +20%			
+Part_PS_TOR_Barrel_03_C.Part_PS_TOR_Barrel_03_C	Splash Dmg Radius +20%			
+Part_PS_TOR_Barrel_4SUM.Part_PS_TOR_Barrel_4SUM	Splash Dmg Radius +200, Dmg +32.5%			
+Part_PS_TOR_Barrel_Devestator.Part_PS_TOR_Barrel_Devestator	Recoil Height -55%, Recoil Width -55%	Acc +450%		
+Part_PS_TOR_Barrel_ETech.Part_PS_TOR_Barrel_ETech	Reload Time -40%, Proj per Shot +8	Acc +600%		Carbuncle
+Part_PS_TOR_Barrel_ETech_A.Part_PS_TOR_Barrel_ETech_A	Proj Speed +30%, Reload Time -10%, Melee Dmg +60%			
+Part_PS_TOR_Barrel_Echo.Part_PS_TOR_Barrel_Echo		Dmg -25%		
+Part_PS_TOR_Barrel_Heckle.Part_PS_TOR_Barrel_Heckle		Dmg -25%, Acc +50%		
+Part_PS_TOR_Barrel_Hyde.Part_PS_TOR_Barrel_Hyde		Dmg -25%, Acc +50%		
+Part_PS_TOR_Barrel_Mod_Breeder.Part_PS_TOR_Barrel_Mod_Breeder				
+Part_PS_TOR_Barrel_Nurf.Part_PS_TOR_Barrel_Nurf	Recoil Height -90%, Mag Size +5	Dmg -70%		
+Part_PS_TOR_Barrel_RoisensThorns.Part_PS_TOR_Barrel_RoisensThorns	Recoil Height -50%	Proj Speed -75%		
+Part_PS_TOR_Barrel_Sight_4SUM.Part_PS_TOR_Barrel_Sight_4SUM				
+Part_PS_TOR_Barrel_Troy.Part_PS_TOR_Barrel_Troy		Dmg -20%, Acc +450%		
+Part_PS_TOR_Barrel_HandCannon.Part_PS_TOR_Barrel_HandCannon			Moonfire	
+Part_PS_TOR_Barrel_Scoville.Part_PS_TOR_Barrel_Scoville	Mag Size +2, Damage +175%, Splash Dmg Radius +350, Reload Time – 30%			Scoville
+Part_PS_TOR_Body.Part_PS_TOR_Body	DO NOT REMOVE			
+Part_PS_TOR_Body_A.Part_PS_TOR_Body_A	Dmg +10%			
+Part_PS_TOR_Body_B.Part_PS_TOR_Body_B	Dmg +10%			
+Part_PS_TOR_Body_C.Part_PS_TOR_Body_C	Splash Dmg Radius +20%			
+Part_PS_TOR_Body_D.Part_PS_TOR_Body_D	Reload Time -10%			
+Part_PS_TOR_Body_SpeedLoader.Part_PS_TOR_Body_SpeedLoader				
+Part_PS_TOR_Ele_Corrosive.Part_PS_TOR_Ele_Corrosive				Oozing
+Part_PS_TOR_Ele_Cryo.Part_PS_TOR_Ele_Cryo				Shrinking
+Part_PS_TOR_Ele_Fire.Part_PS_TOR_Ele_Fire				Burning
+Part_PS_TOR_Ele_Radiation.Part_PS_TOR_Ele_Radiation				Itchy
+Part_PS_TOR_Ele_Shock.Part_PS_TOR_Ele_Shock				Stimulating
+Part_PS_TOR_Grip_01.Part_PS_TOR_Grip_01	Recoil Height -15%, Fire Rate +5%			
+Part_PS_TOR_Grip_02.Part_PS_TOR_Grip_02	Recoil Width -30%, Dmg +5%			
+Part_PS_TOR_Grip_03.Part_PS_TOR_Grip_03	Proj Speed +15%, Splash Dmg Radius +20%			
+Part_PS_TOR_Hammer_01.Part_PS_TOR_Hammer_01	Acc -15%			
+Part_PS_TOR_Hammer_02.Part_PS_TOR_Hammer_02	Fire Rate +10%			
+Part_PS_TOR_Hammer_03.Part_PS_TOR_Hammer_03	Dmg +10%			
+Part_PS_TOR_Mag_01.Part_PS_TOR_Mag_01	8 Round			
+Part_PS_TOR_Mag_02.Part_PS_TOR_Mag_02	6 Round			
+Part_PS_TOR_Mag_03.Part_PS_TOR_Mag_03	5 Round, Splash Dmg Radius +20%			
+Part_PS_TOR_Material_01_Common.Part_PS_TOR_Material_01_Common	Skin		Weapon Skin	
+Part_PS_TOR_Material_02_Uncommon.Part_PS_TOR_Material_02_Uncommon	Skin		Weapon Skin	
+Part_PS_TOR_Material_03_Rare.Part_PS_TOR_Material_03_Rare	Skin		Weapon Skin	
+Part_PS_TOR_Material_04_VeryRare.Part_PS_TOR_Material_04_VeryRare	Skin		Weapon Skin	
+Part_PS_TOR_Material_4SUM.Part_PS_TOR_Material_4SUM	Skin		Weapon Skin	
+Part_PS_TOR_Material_Devestator.Part_PS_TOR_Material_Devestator	Skin		Weapon Skin	
+Part_PS_TOR_Material_Echo.Part_PS_TOR_Material_Echo	Skin		Weapon Skin	
+Part_PS_TOR_Material_Heckle.Part_PS_TOR_Material_Heckle	Skin		Weapon Skin	
+Part_PS_TOR_Material_Hyde.Part_PS_TOR_Material_Hyde	Skin		Weapon Skin	
+Part_PS_TOR_Material_Nurf.Part_PS_TOR_Material_Nurf	Skin		Weapon Skin	
+Part_PS_TOR_Material_RoisensThorns.Part_PS_TOR_Material_RoisensThorns	Skin		Weapon Skin	
+Part_PS_TOR_Material_Troy.Part_PS_TOR_Material_Troy	Skin		Weapon Skin	
+Part_PS_TOR_TinyTina_Material.Part_PS_TOR_TinyTina_Material	Skin		Weapon Skin	
+Part_PS_TOR_Material_HandCannon.Part_PS_TOR_Material_HandCannon	Skin		Weapon Skin – Moonfire	
+Part_PS_TOR_Material_Scoville.Part_PS_TOR_Material_Scoville	Skin		Weapon Skin - Scoville	
+Part_PS_TOR_IronSight.Part_PS_TOR_IronSight				
+Part_PS_TOR_Scope_01.Part_PS_TOR_Scope_01	2.2x			
+Part_PS_TOR_Scope_02.Part_PS_TOR_Scope_02				
+Part_PS_TOR_Scope_03.Part_PS_TOR_Scope_03				
+Part_PS_TOR_Stock_01.Part_PS_TOR_Stock_01	Proj per Shot +1	Acc Bloom +20%, Acc +120%, Dmg -20%		
+Part_PS_TOR_Stock_02.Part_PS_TOR_Stock_02	Splash Dmg Radius +20%			
+# Naming strategy	Name	Priority		
+# If MagSize is Greater Than 8	Packin'	1001.0		
+# If Shot Cost = 2	Double-Penetrating	1003.0		

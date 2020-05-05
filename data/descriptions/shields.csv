@@ -1,0 +1,116 @@
+# Body		
+Shield_Part_Body_01_Anshin.Shield_Part_Body_01_Anshin		
+Shield_Part_Body_02_Pangolin.Shield_Part_Body_02_Pangolin		
+Shield_Part_Body_03_Hyperion.Shield_Part_Body_03_Hyperion		
+# Rarity		
+Shield_Part_Rarity_Anshin_01_Common.Shield_Part_Rarity_Anshin_01_Common		
+Shield_Part_Rarity_Anshin_02_Uncommon.Shield_Part_Rarity_Anshin_02_Uncommon		
+Shield_Part_Rarity_Anshin_03_Rare.Shield_Part_Rarity_Anshin_03_Rare		
+Shield_Part_Rarity_Anshin_04_VeryRare.Shield_Part_Rarity_Anshin_04_VeryRare		
+Shield_Part_Rarity_Anshin_05_Legendary.Shield_Part_Rarity_Anshin_05_Legendary		
+Shield_Part_Rarity_Hyperion_01_Common.Shield_Part_Rarity_Hyperion_01_Common		
+Shield_Part_Rarity_Hyperion_02_Uncommon.Shield_Part_Rarity_Hyperion_02_Uncommon		
+Shield_Part_Rarity_Hyperion_03_Rare.Shield_Part_Rarity_Hyperion_03_Rare		
+Shield_Part_Rarity_Hyperion_04_VeryRare.Shield_Part_Rarity_Hyperion_04_VeryRare		
+Shield_Part_Rarity_Hyperion_05_Legendary.Shield_Part_Rarity_Hyperion_05_Legendary		
+Shield_Part_Rarity_Pangolin_01_Common.Shield_Part_Rarity_Pangolin_01_Common		
+Shield_Part_Rarity_Pangolin_02_Uncommon.Shield_Part_Rarity_Pangolin_02_Uncommon		
+Shield_Part_Rarity_Pangolin_03_Rare.Shield_Part_Rarity_Pangolin_03_Rare		
+Shield_Part_Rarity_Pangolin_04_VeryRare.Shield_Part_Rarity_Pangolin_04_VeryRare		
+Shield_Part_Rarity_Pangolin_05_Legendary.Shield_Part_Rarity_Pangolin_05_Legendary		
+### Main perk (these parts should have a matching material.		
+## Legendary		
+# Anshin		
+Part_Shield_Aug_ANS__LGD_Aurelia.Part_Shield_Aug_ANS__LGD_Aurelia	When depleted, releases a large Cryo nova dealing 11154 damage and freezing enemies. 30% of Nova damage is returned as health	Boss: Aurelia
+Part_Shield_Aug_BackHam.Part_Shield_Aug_BackHam	Damage taken from behind is reduced by 56%	
+Part_Shield_Aug_ANS_LGD_Breakup.Part_Shield_Aug_ANS_LGD_Breakup	You are accompanied by a small drone that will fire at enemies, dealing damage per shot. When your shield breaks, a temporary drone will come to your aid.	
+Part_Shield_Aug_ANS_LGD_NovaBurner.Part_Shield_Aug_ANS_LGD_NovaBurner	22,307 Incendiary Damage on shield break and fill	
+Part_Shield_Aug_ANS_LGD_ReRouter.Part_Shield_Aug_ANS_LGD_ReRouter	When fully charged, the next shot Drain 50% shield to deal 120% bonus Amp Damage and return it as health	
+Part_Shield_ANS_Aug_LGD_RoughRider.Part_Shield_ANS_Aug_LGD_RoughRider	Reduces incoming damage by 23% and grants +35% Max health	
+Part_Shield_Aug_ANS_LGD_SlideKick.Part_Shield_Aug_ANS_LGD_SlideKick	Sliding into enemies drains all shields and deals up to 5205 bonus damage based on current shield strength	
+Part_Shield_Aug_ANS_LGD_WTF.Part_Shield_Aug_ANS_LGD_WTF	25% Chance to drop IEDs when damaged that deal 3718 damage	
+Part_Shield_Aug_ScreamOfTerror.Part_Shield_Aug_ScreamOfTerror	14872 nova damage on shield break	
+Part_Shield_Aug_ANS_LGD_VersionOmNom.Part_Shield_Aug_ANS_LGD_VersionOmNom		
+Part_Shield_Aug_SlideKick_FrozenHeart.Part_Shield_Aug_SlideKick_FrozenHeart		
+# Hyperian		
+Part_Shield_Aug_HYP_LGD_FrontLoader.Part_Shield_Aug_HYP_LGD_FrontLoader	Reserves 60% of your Max Health and returns it as Shield Cpaacity.	
+Part_Shield_Aug_HYP_LGD_ReCharger.Part_Shield_Aug_HYP_LGD_ReCharger	Instantly begins recharging when borken. Cooldown: 20s	
+Part_Shield_Aug_HYP_LGD_Rectifier1.Part_Shield_Aug_HYP_LGD_Rectifier1	While depleted, electrocutes nearby enemies dealing 279 Shock Damage per second	
+Part_Shield_Aug_HYP_LGD_StopGap.Part_Shield_Aug_HYP_LGD_StopGap	On Shield Break, become immune to any damage taken for 5 seconds.	
+Shield_Part_Aug_HYP_LGD_Transformer.Shield_Part_Aug_HYP_LGD_Transformer	Converts 100% of Shock Damage into shields. 40% Chance to absorb bullets, adding them to your ammo count.	
+Part_Shield_Aug_Ward.Part_Shield_Aug_Ward	+25% Weapon Dmaage while shield is depleted. +2% Max Health per second while shields are active. This effect doubles while shields are depleted.	Boss: Graveward
+# Pangolin		
+Part_Shield_Aug_PAN_LGD_BigBoomBlaster.Part_Shield_Aug_PAN_LGD_BigBoomBlaster	Has a 60% chance to drop a booster that restores 60% shields, a grenade, and Heavy ammo	
+Part_Shield_Aug_PAN_LGD_BlackHole.Part_Shield_Aug_PAN_LGD_BlackHole	Suck enemies towards you on shield break	
+Part_Shield_Aug_PAN_Cyttorak.Part_Shield_Aug_PAN_Cyttorak	+22% Weapon Damage while shield is depleted. +25% Max Health	
+Part_Shield_Aug_PAN_LGD_Impaler.Part_Shield_Aug_PAN_LGD_Impaler	Fires homing spikes to attackers when taking bullet damage	
+Part_Shield_Aug_PAN_LGD_Radiate.Part_Shield_Aug_PAN_LGD_Radiate	Deals Radiation damage per second to nearby enemies and grants immunity to Radiation damage.	
+Part_Shield_Aug_PAN_LGD_Revengenader.Part_Shield_Aug_PAN_LGD_Revengenader	Throws a free grenade when shield is depleted. This effect has a short cooldown	
+Part_Shield_Aug_PAN_LGD_ShootingStar.Part_Shield_Aug_PAN_LGD_ShootingStar	While depleted, successful melees summon a projectile that deals damage.	
+## Unique		
+# Anshin		
+Part_Shield_Aug_MoxxisEmbrace.Part_Shield_Aug_MoxxisEmbrace	Healgasm all over yourself and allies to heal them for 2231 on shield break	
+Part_Shield_Aug_XPLootBooster.Part_Shield_Aug_XPLootBooster	Experience Gain: +10%. Loot Rarity boost. XP and Loot effects work through Level 10.	Deluxe Version
+# Hyperian		
+Part_Shield_Aug_HYP_BuriedAlive.Part_Shield_Aug_HYP_BuriedAlive	+5% Max Health per second while shields are full.	
+Part_Shield_Aug_HYP_LGD_Dispensary.Part_Shield_Aug_HYP_LGD_Dispensary	On taking dmage, has a 35% chance to drop an Upper or Downer pill. These pills provide buffs, but can have some bad side effects...	Quest reward: Healer and Dealers
+Part_Shield_Aug_LoopOf4N631.Part_Shield_Aug_LoopOf4N631	Reduces action skill cooldown duration when depleted	Quest reward: Childhood's End
+# Pangolin		
+Part_Shield_Aug_GoldenTouch.Part_Shield_Aug_GoldenTouch	Provides: Brimming, Fleet and Roid	Quest reward: Golden Calves
+Part_Shield_Aug_MrCaffeine.Part_Shield_Aug_MrCaffeine	+50% Reload Speed and 15% Fire Rate while shield is full. When depleted, Fire Rate and Reload Speed are severely penalised.	Quest reward: Rise and Grind
+Part_Shield_Aug_PAN_LGD_Unpaler.Part_Shield_Aug_PAN_LGD_Unpaler	* Unknown	Quest reward: On the Blood Path
+# Secondary Stats (white text stats) Most flat stat bonuses stack up to 3, though the bonus is not linear, ie 1xRoid = 80, 2xRoid = 180, 3x Roid = 300		
+Part_Shield_Aug_Absorb.Part_Shield_Aug_Absorb	+15% chance to absorb bullets as ammo	
+Part_Shield_Aug_Adaptive.Part_Shield_Aug_Adaptive	+8% health and 17% resistance to the last damage type received for 3 seconds.	
+Part_Shield_Aug_Adrenaline.Part_Shield_Aug_Adrenaline	+23% Reload Speed while shield is depleted	
+Part_Shield_Aug_Amp.Part_Shield_Aug_Amp	While Full, Shots Drain 30% Shields for +20% Weapon Damage	
+Part_Shield_Aug_Brimming.Part_Shield_Aug_Brimming	+5% Max health per second while shields are full.	
+Part_Shield_Aug_Capacity.Part_Shield_Aug_Capacity	+25% Max Capacity	
+Part_Shield_Aug_Fleet.Part_Shield_Aug_Fleet	+10% Movement Speed while shield is depleted	
+Part_Shield_Aug_FortifyCharge.Part_Shield_Aug_FortifyCharge	When damaged, has a 15% chance to drop a Forify Charge that grants 10% Damage Reduction	
+Part_Shield_Aug_HealthCharge.Part_Shield_Aug_HealthCharge	When damaged, has a 15% chance to drop a Health Charge that restores 15% of Max health	
+Part_Shield_Aug_Healthy.Part_Shield_Aug_Healthy	+10 / 25 / 50% Max Health	
+Part_Shield_Aug_Knockback.Part_Shield_Aug_Knockback	Deals area-knockback on shield break	
+Part_Shield_Aug_Nova.Part_Shield_Aug_Nova	Deals area-knockback and damage based on shields resistance type on shield break	
+Part_Shield_Aug_PowerCharge.Part_Shield_Aug_PowerCharge	When damaged, has a 15% chance to drop a Power Charge that increases weapon damage by 10%	
+Part_Shield_Aug_Projected.Part_Shield_Aug_Projected	Crouching projects your shield forward, gaining +20% damage reduction.	
+Part_Shield_Aug_RechargeDelay.Part_Shield_Aug_RechargeDelay	-25% Recharge Delay	
+Part_Shield_Aug_RechargeRate.Part_Shield_Aug_RechargeRate	+15% Recharge Rate	
+Part_Shield_Aug_Reflect.Part_Shield_Aug_Reflect	15% chance to Reflect projectiles while shielded	
+Part_Shield_Aug_Resistance.Part_Shield_Aug_Resistance	* Unknown	
+Part_Shield_Aug_Roid.Part_Shield_Aug_Roid	+80 / 180 / 300% Melee Damage while shield is depleted	
+Part_Shield_Aug_ShieldCharge.Part_Shield_Aug_ShieldCharge	When damaged, has a 15% chance to drop a Booster that restores 8% shields.	
+Part_Shield_Aug_Spike.Part_Shield_Aug_Spike	Returns 1487 damage if melee'd while shielded	
+Part_Shield_Aug_TriggerHappy.Part_Shield_Aug_TriggerHappy	+10% Fire Rate while shield is depleted	
+Part_Shield_Aug_Turtle.Part_Shield_Aug_Turtle	+40% Capacity, -10% Max Health	
+Part_Shield_Aug_Vagabond.Part_Shield_Aug_Vagabond	+10% Movement Speed while shields are full.	
+Shield_Part_Aug_00_None.Shield_Part_Aug_00_None	* Unknown	
+# Material		
+Part_Shield_Mat_BackHam.Part_Shield_Mat_BackHam	Skin	
+Part_Shield_Mat_PAN_LGD_BigBoomBlaster.Part_Shield_Mat_PAN_LGD_BigBoomBlaster	Skin	
+Part_Shield_Mat_PAN_LGD_BlackHole.Part_Shield_Mat_PAN_LGD_BlackHole	Skin	
+Part_Shield_Mat_HYP_LGD_FrontLoader.Part_Shield_Mat_HYP_LGD_FrontLoader	Skin	
+Part_Shield_Mat_PAN_LGD_Impaler.Part_Shield_Mat_PAN_LGD_Impaler	Skin	
+Part_Shield_Mat_ANS_LGD_NovaBurner.Part_Shield_Mat_ANS_LGD_NovaBurner	Skin	
+Part_Shield_Mat_HYP_LGD_ReCharger.Part_Shield_Mat_HYP_LGD_ReCharger	Skin	
+Part_Shield_Mat_HYP_LGD_Rectifier1.Part_Shield_Mat_HYP_LGD_Rectifier1	Skin	
+Part_Shield_Mat_PAN_LGD_Revengenader.Part_Shield_Mat_PAN_LGD_Revengenader	Skin	
+Part_Shield_Mat_ANS_LGD_SlideKick.Part_Shield_Mat_ANS_LGD_SlideKick	Skin	
+Part_Shield_Mat_HYP_LGD_StopGap.Part_Shield_Mat_HYP_LGD_StopGap	Skin	
+Part_Shield_Mat_ANS_LGD_ReRouter.Part_Shield_Mat_ANS_LGD_ReRouter	Skin	
+Part_Shield_Mat_ANS_LGD_WTF.Part_Shield_Mat_ANS_LGD_WTF	Skin	
+Part_Shield_Mat_ANS_LGD_Aurelia.Part_Shield_Mat_ANS_LGD_Aurelia	Skin	
+Part_Shield_Mat_HYP_BuriedAlive.Part_Shield_Mat_HYP_BuriedAlive	Skin	
+Part_Shield_Mat_PAN_Cyttorak.Part_Shield_Mat_PAN_Cyttorak	Skin	
+Part_Shield_Mat_HYP_LGD_Dispensary.Part_Shield_Mat_HYP_LGD_Dispensary	Skin	
+Part_Shield_Mat_GoldenTouch.Part_Shield_Mat_GoldenTouch	Skin	
+Part_Shield_Mat_ANS_LGD_Breakup.Part_Shield_Mat_ANS_LGD_Breakup	Skin	
+Part_Shield_Mat_MoxxisEmbrace.Part_Shield_Mat_MoxxisEmbrace	Skin	
+Part_Shield_Mat_PAN_LGD_Radiate.Part_Shield_Mat_PAN_LGD_Radiate	Skin	
+Part_Shield_Mat_PAN_LGD_ShootingStar.Part_Shield_Mat_PAN_LGD_ShootingStar	Skin	
+Part_Shield_Mat_PAN_LGD_Unpaler.Part_Shield_Mat_PAN_LGD_Unpaler	Skin	
+Part_Shield_Mat_Ward.Part_Shield_Mat_Ward	Skin	
+Part_Shield_Mat_XPLootBooster.Part_Shield_Mat_XPLootBooster	Skin	
+Part_Shield_Mat_ScreamOfTerror.Part_Shield_Mat_ScreamOfTerror	Skin	
+Part_Shield_Mat_ANS_LGD_VersionOmNom.Part_Shield_Mat_ANS_LGD_VersionOmNom	Skin	
+Part_Shield_Mat_ANS_LGD_SlideKick.Part_Shield_Mat_ANS_LGD_SlideKick	Skin	

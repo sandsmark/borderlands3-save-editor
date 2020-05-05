@@ -1,0 +1,59 @@
+# Object name	Positives	Negatives	Effects	Naming
+Part_AR_COV_Barrel_01.Part_AR_COV_Barrel_01	-			BizZurker
+Part_AR_COV_Barrel_01_A.Part_AR_COV_Barrel_01_A	Fire Rate +10%			
+Part_AR_COV_Barrel_01_B.Part_AR_COV_Barrel_01_B	Heat per Shot -25%			
+Part_AR_COV_Barrel_01_C.Part_AR_COV_Barrel_01_C	Dmg +10%			
+Part_AR_COV_Barrel_02.Part_AR_COV_Barrel_02	-			Ratatater
+Part_AR_COV_Barrel_02_A.Part_AR_COV_Barrel_02_A	Acc -15%			
+Part_AR_COV_Barrel_02_B.Part_AR_COV_Barrel_02_B	Recoil Height -25%, Melee Dmg +80%			
+Part_AR_COV_Barrel_02_C.Part_AR_COV_Barrel_02_C	Fire Rate +10%			
+Part_AR_COV_Barrel_02_D.Part_AR_COV_Barrel_02_D	Fire Rate +10%			
+Part_AR_COV_Barrel_03.Part_AR_COV_Barrel_03	-			Purferater
+Part_AR_COV_Barrel_03_A.Part_AR_COV_Barrel_03_A	Dmg +10%			
+Part_AR_COV_Barrel_03_B.Part_AR_COV_Barrel_03_B	Dmg +10%			
+Part_AR_COV_Barrel_03_C.Part_AR_COV_Barrel_03_C	Acc Bloom -25%			
+Part_AR_COV_Barrel_ETech.Part_AR_COV_Barrel_ETech	Heat per Shot +100%			Wizzperer
+Part_AR_COV_Barrel_ETech_A.Part_AR_COV_Barrel_ETech_A	Heat per Shot -25%			
+Part_AR_COV_Barrel_HeatDamage.Part_AR_COV_Barrel_HeatDamage		Dmg -20%		
+Part_AR_COV_Barrel_HeatFirerate.Part_AR_COV_Barrel_HeatFirerate		Acc +35%		
+Part_AR_COV_Barrel_Sawbar.Part_AR_COV_Barrel_Sawbar		Dmg -40%		
+Part_AR_COV_Barrel_Zheitsev.Part_AR_COV_Barrel_Zheitsev	Dmg +15%		"""Zheitsev"""	
+Part_AR_COV_Barrel_Zheitsev_A.Part_AR_COV_Barrel_Zheitsev_A	Heat per Shot -25%			
+Part_AR_COV_Barrel_Zheitsev_B.Part_AR_COV_Barrel_Zheitsev_B	Dmg +10%			
+Part_AR_COV_Barrel_Zheitsev_C.Part_AR_COV_Barrel_Zheitsev_C				
+Part_AR_COV_Body.Part_AR_COV_Body	DO NOT REMOVE			
+Part_AR_COV_Body_A.Part_AR_COV_Body_A	Heat per Shot -25%	Dmg -5%, Acc +10%		
+Part_AR_COV_Body_B.Part_AR_COV_Body_B	Heat per Shot -25%	Dmg -5%, Acc +10%		
+Part_AR_COV_Body_C.Part_AR_COV_Body_C	Dmg +10%			
+Part_AR_COV_BulletForge.Part_AR_COV_BulletForge				
+Part_AR_COV_Ele_Corr.Part_AR_COV_Ele_Corr				Kemik
+Part_AR_COV_Ele_Cryo.Part_AR_COV_Ele_Cryo				Brrr
+Part_AR_COV_Ele_Fire.Part_AR_COV_Ele_Fire				Hawt
+Part_AR_COV_Ele_Radiation.Part_AR_COV_Ele_Radiation				Melty
+Part_AR_COV_Ele_Shock.Part_AR_COV_Ele_Shock				Zappy
+Part_AR_COV_Foregrip_01.Part_AR_COV_Foregrip_01	Weapon Sway -30%, Dmg +5%			
+Part_AR_COV_Foregrip_02.Part_AR_COV_Foregrip_02	Weapon Sway -30%, Recoil Height -30%			
+Part_AR_COV_Foregrip_03.Part_AR_COV_Foregrip_03	Proj per Shot +1, Recoil Width -15%	Acc +10%, Heat per Shot +40%, Acc Bloom +20%, Dmg -20%		
+Part_AR_COV_Foregrip_04.Part_AR_COV_Foregrip_04	Recoil Height -30%, Fire Rate +5%			
+Part_AR_COV_Grip_01.Part_AR_COV_Grip_01	Weapon Sway -30%, Fire Rate +5%			
+Part_AR_COV_Grip_02.Part_AR_COV_Grip_02	Recoil Height -15%, Dmg +5%			
+Part_AR_COV_Grip_03.Part_AR_COV_Grip_03	Heat per Shot -15%, Acc Bloom -20%			
+Part_AR_COV_Grip_04.Part_AR_COV_Grip_04	Recoil Width -30%, Proj per Shot +1	Acc +10%, Dmg -20%, Acc Bloom +20%		
+Part_AR_COV_Material_01_Common.Part_AR_COV_Material_01_Common	Skin		Weapon Skin	
+Part_AR_COV_Material_02_UnCommon.Part_AR_COV_Material_02_UnCommon	Skin		Weapon Skin	
+Part_AR_COV_Material_03_rare.Part_AR_COV_Material_03_Rare	Skin		Weapon Skin	
+Part_AR_COV_Material_04_VeryRare.Part_AR_COV_Material_04_VeryRare	Skin		Weapon Skin	
+Part_AR_COV_Material_KriegAR.Part_AR_COV_Material_KriegAR	Skin		Weapon Skin	
+Part_AR_COV_Material_Sawbar.Part_AR_COV_Material_Sawbar	Skin		Weapon Skin	
+Part_AR_COV_Material_Zheitsev.Part_AR_COV_Material_Zheitsev	Skin		Weapon Skin - Zheitsev	
+Part_AR_COV_Bottle.Part_AR_COV_Bottle	Bottle Scope			
+Part_AR_COV_ScopeMount.Part_AR_COV_ScopeMount				
+Part_AR_COV_Scope_01.Part_AR_COV_Scope_01	3.3x			
+Part_AR_COV_Scope_02.Part_AR_COV_Scope_02				
+Part_AR_COV_Scope_03.Part_AR_COV_Scope_03				
+Part_AR_COV_Starter_01.Part_AR_COV_Starter_01	Heat per Shot -25%	Dmg -5%, Acc +10%		
+Part_AR_COV_Starter_02.Part_AR_COV_Starter_02	Fire Rate +10%			
+Part_AR_COV_Starter_03.Part_AR_COV_Starter_03	Dmg +10%			
+# Naming strategy	Name	Priority		
+# If Shot Cost = 2	Moar	1002.0		
+# If Shot Cost = 3	MOARR	1002.0		

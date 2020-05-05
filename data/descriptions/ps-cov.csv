@@ -1,0 +1,59 @@
+# Object name	Positives	Negatives	Effects	Naming
+Part_PS_COV_Body_A.Part_PS_COV_Body_A				
+Part_PS_COV_Body_B.Part_PS_COV_Body_B	Fire rate +10%			
+Part_PS_COV_Body_C.Part_PS_COV_Body_C	Heat per shot -25%	Dmg -5%, Acc +10%		
+Part_PS_COV_Barrel_Legion.Part_PS_COV_Barrel_Legion	-	Dmg -12%, Reload time +10%, Acc +300%		
+Part_PS_COV_Barrel_01.Part_PS_COV_Barrel_01	-			Preecher
+Part_PS_COV_Barrel_01_A.Part_PS_COV_Barrel_01_A	Acc bloom -30%, Melee dmg +40%		Melee Attachment	Pointy
+Part_PS_COV_Barrel_01_B.Part_PS_COV_Barrel_01_B	Dmg +10%			
+Part_PS_COV_Barrel_01_C.Part_PS_COV_Barrel_01_C	Fire Rate +10%			
+Part_PS_COV_Barrel_02.Part_PS_COV_Barrel_02	-			Splainer
+Part_PS_COV_Barrel_02_A.Part_PS_COV_Barrel_02_A	Dmg +10%			
+Part_PS_COV_Barrel_02_B.Part_PS_COV_Barrel_02_B	Heat per shot -25%	Dmg -5%, Acc +10%		
+Part_PS_COV_Barrel_02_C.Part_PS_COV_Barrel_02_C	Dmg +10%			
+Part_PS_COV_Barrel_03.Part_PS_COV_Barrel_03	-			Holey-Man
+Part_PS_COV_Barrel_03_A.Part_PS_COV_Barrel_03_A	Fire Rate +10%			
+Part_PS_COV_Barrel_03_B.Part_PS_COV_Barrel_03_B	Fire Rate +10%			
+Part_PS_COV_Barrel_03_C.Part_PS_COV_Barrel_03_C	Heat per shot -25%, Charge duration -20%			
+Part_PS_COV_Barrel_Chad.Part_PS_COV_Barrel_Chad	-	Dmg -30%, Acc Bloom +100%, Acc +50%		
+Part_PS_COV_Barrel_Contagion.Part_PS_COV_Barrel_Contagion	Dmg -10%, Reload +50%	Acc +20%		
+Part_PS_COV_Barrel_ETech.Part_PS_COV_Barrel_ETech	-	Heat per shot +100%, Proj Speed -50%		Blastphemy
+Part_PS_COV_Barrel_ETech_A.Part_PS_COV_Barrel_ETech_A	Ele Dmg +10%, Heat per Shot -25%, Melee Dmg +60%			
+Part_PS_COV_Barrel_Mouthpiece.Part_PS_COV_Barrel_Mouthpiece	Acc. Bloom -50%, Dmg +40%	Acc +20%, Heat per Shot +100%		
+Part_PS_COV_Barrel_PsychoStabber.Part_PS_COV_Barrel_PsychoStabber	Dmg +25%			
+Part_PS_COV_Barrel_Skeksis.Part_PS_COV_Barrel_Skeksis	-			
+Part_PS_COV_Starter_01.Part_PS_COV_Starter_01				
+Part_PS_COV_Starter_02.Part_PS_COV_Starter_02				
+Part_PS_COV_Starter_03.Part_PS_COV_Starter_03				
+Part_PS_COV_Accessory_01.Part_PS_COV_Accessory_01	Crit Dmg +10%			
+Part_PS_COV_Accessory_02.Part_PS_COV_Accessory_02	Fire Rate +5%			
+Part_PS_COV_Accessory_03.Part_PS_COV_Accessory_03	Proj. per shot +1, Acc. Bloom -16%	Acc. +10%, Dmg. -20%		
+Part_PS_COV_Accessory_04.Part_PS_COV_Accessory_04	Dmg. +5%, Melee Dmg. +80%			Stabby
+Part_PS_COV_Accessory_05.Part_PS_COV_Accessory_05				Stabby
+Part_PS_COV_Grip_01.Part_PS_COV_Grip_01	Recoil Width -30%, Fire rate +5%			
+Part_PS_COV_Grip_02.Part_PS_COV_Grip_02	Acc Bloom -20%, Crit Dmg +10%			
+Part_PS_COV_Grip_03.Part_PS_COV_Grip_03	Acc -12%, Heat per Shot -15%	Dmg -5%		
+Part_PS_COV_Material_01_Common.Part_PS_COV_Material_01_Common	Skin		Weapon Skin	
+Part_PS_COV_Material_02_Uncommon.Part_PS_COV_Material_02_Uncommon	Skin		Weapon Skin	
+Part_PS_COV_Material_03_Rare.Part_PS_COV_Material_03_Rare	Skin		Weapon Skin	
+Part_PS_COV_Material_04_VeryRare.Part_PS_COV_Material_04_VeryRare	Skin		Weapon Skin	
+Part_PS_COV_Material_Chad.Part_PS_COV_Material_Chad	Skin		Weapon Skin	
+Part_PS_COV_Material_Contagion.Part_PS_COV_Material_Contagion	Skin		Weapon Skin	
+Part_PS_COV_Material_Legion.Part_PS_COV_Material_Legion	Skin		Weapon Skin	
+Part_PS_COV_Material_Mouthpiece.Part_PS_COV_Material_Mouthpiece	Skin		Weapon Skin	
+Part_PS_COV_Material_PsychoStabber.Part_PS_COV_Material_PsychoStabber	Skin		Weapon Skin	
+Part_PS_COV_Material_Skeksis.Part_PS_COV_Material_Skeksis	Skin		Weapon Skin	
+Part_PS_COV_Scope_01.Part_PS_COV_Scope_01	Iron sights			
+Part_PS_COV_Scope_02.Part_PS_COV_Scope_02	Iron sights 2, 1.8x			
+Part_PS_COV_Scope_03.Part_PS_COV_Scope_03	Small scope, 2.5x			
+Part_PS_COV_Scope_04.Part_PS_COV_Scope_04	Scope, 5.3x			
+Part_PS_COV_Ele_Corr.Part_PS_COV_Ele_Corr	Converts Dmg to Corrosive			Kemik
+Part_PS_COV_Ele_Cryo.Part_PS_COV_Ele_Cryo	Converts Dmg to Cryo			Brrr
+Part_PS_COV_Ele_Fire.Part_PS_COV_Ele_Fire	Converts Dmg to Fire			Hawt
+Part_PS_COV_Ele_Radiation.Part_PS_COV_Ele_Radiation	Converts Dmg to Radiation			Melty
+Part_PS_COV_Ele_Shock.Part_PS_COV_Ele_Shock	Converts Dmg to Shock			Zappy
+Part_PS_COV_Stock_01.Part_PS_COV_Stock_01	Weapon sway -30%			
+Part_PS_COV_Stock_02.Part_PS_COV_Stock_02	Recoil Height -15%, Proj per Shot +1	Acc +10%, Dmg -20%, Acc Bloom +20%		
+# Naming strategy	Name	Priority		
+# If Shot Cost = 2	Moar	1002.0		
+# If Shot Cost = 3	MOARR	1002.0		

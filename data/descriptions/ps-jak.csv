@@ -1,0 +1,74 @@
+# Object name	Positives	Negatives	Effects	Naming
+Part_PS_JAK_Barrel_01.Part_PS_JAK_Barrel_01	-			Ranger
+Part_PS_JAK_Barrel_01_A.Part_PS_JAK_Barrel_01_A	Dmg +10%			
+Part_PS_JAK_Barrel_01_B.Part_PS_JAK_Barrel_01_B	Crit Dmg +10%			
+Part_PS_JAK_Barrel_01_C.Part_PS_JAK_Barrel_01_C	Recoil Height -25%, Melee Dmg +60%			Bowie
+Part_PS_JAK_Barrel_01_D.Part_PS_JAK_Barrel_01_D	Dmg +10%			
+Part_PS_JAK_Barrel_02.Part_PS_JAK_Barrel_02	-			Peacekeeper
+Part_PS_JAK_Barrel_02_A.Part_PS_JAK_Barrel_02_A	Acc -15%			
+Part_PS_JAK_Barrel_02_B.Part_PS_JAK_Barrel_02_B	Dmg +10%			
+Part_PS_JAK_Barrel_02_C.Part_PS_JAK_Barrel_02_C	Reload Time -10%, Melee Dmg +40%			Cuttin
+Part_PS_JAK_Barrel_03.Part_PS_JAK_Barrel_03	-			Marshal
+Part_PS_JAK_Barrel_03_A.Part_PS_JAK_Barrel_03_A	Acc -15%			
+Part_PS_JAK_Barrel_03_B.Part_PS_JAK_Barrel_03_B	Weapon Sway -20%			
+Part_PS_JAK_Barrel_03_C.Part_PS_JAK_Barrel_03_C	Acc -15%			
+Part_PS_JAK_Barrel_03_D.Part_PS_JAK_Barrel_03_D	Reload Time -10%			
+Part_PS_JAK_Barrel_AmazingGrace.Part_PS_JAK_Barrel_AmazingGrace	Recoil Width -60%, Recoil Height -25%, Dmg +30%			
+Part_PS_JAK_Barrel_AureliaPistol.Part_PS_JAK_Barrel_AureliaPistol				
+Part_PS_JAK_Barrel_Buttplug.Part_PS_JAK_Barrel_Buttplug	Melee Dmg +50%	Dmg -90%, Acc +110%	Melee Attachment	
+Part_PS_JAK_Barrel_Doc.Part_PS_JAK_Barrel_Doc	Mag Size +3	Acc +200%, Dmg -10%		
+Part_PS_JAK_Barrel_GodMother.Part_PS_JAK_Barrel_GodMother	Acc -50%, Ele Chance +100%	Dmg -35%, Recoil height +50%, Reload Time +20%		
+Part_PS_JAK_Barrel_JabberWeaponBase.Part_PS_JAK_Barrel_JabberWeaponBase	Dmg +40%			
+Part_PS_JAK_Barrel_Maggie.Part_PS_JAK_Barrel_Maggie	Mag Size +4	Acc +250%, Dmg -85%		
+Part_PS_JAK_Barrel_Malevolent.Part_PS_JAK_Barrel_Malevolent				
+Part_PS_JAK_Barrel_MelsCompanion.Part_PS_JAK_Barrel_MelsCompanion	Mag Size +10	Acc +35%, Dmg -25%, Ele Chance -100%		
+Part_PS_JAK_Barrel_SpyRevolver.Part_PS_JAK_Barrel_SpyRevolver	Recoil Height -50%, Mag Size +8	Dmg -30%		
+Part_PS_JAK_Barrel_TheDuc.Part_PS_JAK_Barrel_TheDuc	Splash Dmg Radius +100, Dmg +20%			
+Part_PS_JAK_Barrel_Unforgiven.Part_PS_JAK_Barrel_Unforgiven	Crit Dmg +300%	Dmg -40%, Acc Bloom +200%		
+Part_PS_JAK_Barrel_WagonWheel.Part_PS_JAK_Barrel_WagonWheel	Recoil Height -50%	Acc Bloom +200%		
+Part_PS_JAK_Barrel_RoboMasher.Part_PS_JAK_Barrel_RoboMasher				Robot-Melter Masher
+Part_PS_JAK_Body.Part_PS_JAK_Body	DO NOT REMOVE			
+Part_PS_JAK_Body_A.Part_PS_JAK_Body_A	Dmg +10%			
+Part_PS_JAK_Body_B.Part_PS_JAK_Body_B	Reload Time -10%			
+Part_PS_JAK_Body_C.Part_PS_JAK_Body_C	Dmg +10%			
+Part_PS_JAK_Ele_GodMother_Corrosive.Part_PS_JAK_Ele_GodMother_Corrosive				
+Part_PS_JAK_Ele_GodMother_Cryo.Part_PS_JAK_Ele_GodMother_Cryo				
+Part_PS_JAK_Ele_GodMother_Fire.Part_PS_JAK_Ele_GodMother_Fire				
+Part_PS_JAK_Ele_GodMother_Radiation.Part_PS_JAK_Ele_GodMother_Radiation				
+Part_PS_JAK_Ele_GodMother_Shock.Part_PS_JAK_Ele_GodMother_Shock				
+Part_PS_JAK_Grip_01.Part_PS_JAK_Grip_01	Reload Time -5%, Crit Dmg +10%			
+Part_PS_JAK_Grip_02.Part_PS_JAK_Grip_02	Recoil Width -15%, Dmg +5%			
+Part_PS_JAK_Grip_03.Part_PS_JAK_Grip_03	Weapon Sway -30%, Acc -20%			
+Part_PS_JAK_Grip_04.Part_PS_JAK_Grip_04	Proj per Shot +4	Dmg -68.5%, Acc +87%, Recoil Height +40%, Acc Bloom +25%		Masher
+Part_PS_JAK_Grip_RoboMelt.Part_PS_JAK_Grip_RoboMelt	Proj per Shot +4	Dmg -68.5%, Acc +87%, Recoil Height +40%, Acc Bloom +25%		Robot-Melter Masher
+Part_PS_JAK_Hammer_01.Part_PS_JAK_Hammer_01	Reload Time -5%, Acc -10%			
+Part_PS_JAK_Hammer_02.Part_PS_JAK_Hammer_02	Weapon Sway -30%, Crit Dmg +10%			
+Part_PS_JAK_Hammer_03.Part_PS_JAK_Hammer_03	Recoil Height -30%			
+Part_PS_JAK_Mag_01.Part_PS_JAK_Mag_01	6 Round			
+Part_PS_JAK_Mag_02.Part_PS_JAK_Mag_02	6 Round			
+Part_PS_JAK_Mag_03.Part_PS_JAK_Mag_03	4 Round. Dmg +10%			
+Part_PS_JAK_Material_01_Common.Part_PS_JAK_Material_01_Common	Skin		Weapon Skin	
+Part_PS_JAK_Material_02_UnCommon.Part_PS_JAK_Material_02_UnCommon	Skin		Weapon Skin	
+Part_PS_JAK_Material_03_Rare.Part_PS_JAK_Material_03_Rare	Skin		Weapon Skin	
+Part_PS_JAK_Material_04_Epic.Part_PS_JAK_Material_04_Epic	Skin		Weapon Skin	
+Part_PS_JAK_Material_AmazingGrace.Part_PS_JAK_Material_AmazingGrace	Skin		Weapon Skin	
+Part_PS_JAK_Material_Buttplug.Part_PS_JAK_Material_Buttplug	Skin		Weapon Skin	
+Part_PS_JAK_Material_Clay.Part_PS_JAK_Material_Clay	Skin		Weapon Skin	
+Part_PS_JAK_Material_Doc.Part_PS_JAK_Material_Doc	Skin		Weapon Skin	
+Part_PS_JAK_Material_FirstGunB.Part_PS_JAK_Material_FirstGunB	Skin		Weapon Skin	
+Part_PS_JAK_Material_GodMother.Part_PS_JAK_Material_GodMother	Skin		Weapon Skin	
+Part_PS_JAK_Material_Maggie.Part_PS_JAK_Material_Maggie	Skin		Weapon Skin	
+Part_PS_JAK_Material_Malevolent.Part_PS_JAK_Material_Malevolent	Skin		Weapon Skin	
+Part_PS_JAK_Material_MelsCompanion.Part_PS_JAK_Material_MelsCompanion	Skin		Weapon Skin	
+Part_PS_JAK_Material_SpyRevolver.Part_PS_JAK_Material_SpyRevolver	Skin		Weapon Skin	
+Part_PS_JAK_Material_TheDuc.Part_PS_JAK_Material_TheDuc	Skin		Weapon Skin	
+Part_PS_JAK_Material_Unforgiven.Part_PS_JAK_Material_Unforgiven	Skin		Weapon Skin	
+Part_PS_JAK_Material_WagonWheel.Part_PS_JAK_Material_WagonWheel	Skin		Weapon Skin	
+Part_PS_JAK_Material_RoboMasher.Part_PS_JAK_Material_RoboMasher	Skin		Weapon Skin	
+Part_PS_JAK_Rail_01.Part_PS_JAK_Rail_01	Visual Only			
+Part_PS_JAK_NoScope.Part_PS_JAK_NoScope	Dmg +35%			
+Part_PS_JAK_Scope_01.Part_PS_JAK_Scope_01				
+Part_PS_JAK_Scope_02.Part_PS_JAK_Scope_02	Tear drop scope 5x			
+Part_PS_JAK_Scope_03.Part_PS_JAK_Scope_03	2.2x			
+Part_PS_JAK_Scope_SpyRevolver.Part_PS_JAK_Scope_SpyRevolver				
+Part_PS_JAK_Speedloader.Part_PS_JAK_Speedloader	Basic required piece			

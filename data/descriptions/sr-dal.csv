@@ -1,0 +1,72 @@
+# Object name	Positives	Negatives	Effects	Naming
+Part_SR_DAL_Auto_Burst.Part_SR_DAL_Auto_Burst			Fire Mode Toggle Auto/Burst	
+Part_SR_DAL_Auto_Single.Part_SR_DAL_Auto_Single			Fire Mode Toggle Auto/Single	
+Part_SR_DAL_Burst_Single.Part_SR_DAL_Burst_Single			Fire Mode Toggle Burst/Single	
+Part_SR_DAL_Barrel_01.Part_SR_DAL_Barrel_01	-			Asp
+Part_SR_DAL_Barrel_01_A.Part_SR_DAL_Barrel_01_A	Acc Bloom -25%			
+Part_SR_DAL_Barrel_01_B.Part_SR_DAL_Barrel_01_B	Acc -15%			
+Part_SR_DAL_Barrel_01_C.Part_SR_DAL_Barrel_01_C	Acc -15%			
+Part_SR_DAL_Barrel_02.Part_SR_DAL_Barrel_02	-			Diamondback
+Part_SR_DAL_Barrel_02_A.Part_SR_DAL_Barrel_02_A	Recoil Height -25%			Suppressed
+Part_SR_DAL_Barrel_02_B.Part_SR_DAL_Barrel_02_B	Dmg +10%			
+Part_SR_DAL_Barrel_02_C.Part_SR_DAL_Barrel_02_C	Dmg +10%			
+Part_SR_DAL_Barrel_03.Part_SR_DAL_Barrel_03	-			Rattler
+Part_SR_DAL_Barrel_03_A.Part_SR_DAL_Barrel_03_A	Fire Rate +10%			
+Part_SR_DAL_Barrel_03_B.Part_SR_DAL_Barrel_03_B	Weapon Sway -20%, Recoild Width -25%			
+Part_SR_DAL_Barrel_03_C.Part_SR_DAL_Barrel_03_C	Fire Rate +10%			
+Part_SR_DAL_Barrel_BrashisDedication.Part_SR_DAL_Barrel_BrashisDedication	Recoil Height -50%	Dmg -50%		
+Part_SR_DAL_Barrel_ETech.Part_SR_DAL_Barrel_ETech	Mag Size +5			Wyrm
+Part_SR_DAL_Barrel_ETech_A.Part_SR_DAL_Barrel_ETech_A	Proj Speed +30%, Reload Time -10%			
+Part_SR_DAL_Barrel_ETech_MalaksBane.Part_SR_DAL_Barrel_ETech_MalaksBane	Mag Size +5			
+Part_SR_DAL_Barrel_WorldDestroyer.Part_SR_DAL_Barrel_WorldDestroyer	Dmg -15%			
+Part_SR_DAL_Barrel_FBolt.Part_SR_DAL_Barrel_FBolt	Mag Size +5, Elemental Dmg +70%		"""Stalker"""	
+Part_SR_DAL_Body.Part_SR_DAL_Body	DO NOT REMOVE			
+Part_SR_DAL_Body_A.Part_SR_DAL_Body_A	Reload Time -10%			
+Part_SR_DAL_Body_B.Part_SR_DAL_Body_B	Acc -15%			
+Part_SR_DAL_Body_C.Part_SR_DAL_Body_C	Acc -15%			
+Part_SR_DAL_Bolt_A.Part_SR_DAL_Bolt_A	Reload Time -5%			
+Part_SR_DAL_Bolt_B.Part_SR_DAL_Bolt_B	Weapon Sway -20%			
+Part_SR_DAL_Ele_Corr.Part_SR_DAL_Ele_Corr				Venomous
+Part_SR_DAL_Ele_Cryo.Part_SR_DAL_Ele_Cryo				Arctic
+Part_SR_DAL_Ele_Fire.Part_SR_DAL_Ele_Fire				Searing
+Part_SR_DAL_Ele_Radiation.Part_SR_DAL_Ele_Radiation				Decaying
+Part_SR_DAL_Ele_Shock.Part_SR_DAL_Ele_Shock				Shocking
+Part_SR_DAL_FiringMode_BrashisDedication.Part_SR_DAL_FiringMode_BrashisDedication				
+Part_SR_DAL_FiringMode_MalaksBane.Part_SR_DAL_FiringMode_MalaksBane				
+Part_SR_DAL_Foregrip_01.Part_SR_DAL_Foregrip_01	Recoil Height -30%, Mag Size +10	Dmg -5%, Acc +10%		
+Part_SR_DAL_Foregrip_02.Part_SR_DAL_Foregrip_02	Recoil Width -15%, Acc Bloom -30%			
+Part_SR_DAL_Foregrip_03.Part_SR_DAL_Foregrip_03	Weapon Sway -30%, Dmg +5%			
+Part_SR_DAL_Foregrip_04.Part_SR_DAL_Foregrip_04	Acc -10%, Fire Rate +5%			
+Part_SR_DAL_Foregrip_05.Part_SR_DAL_Foregrip_05	Reload Time -5%, Crit Dmg +10%			
+Part_SR_DAL_Grip_01.Part_SR_DAL_Grip_01	Recoil Width -15%, Recoil Height -15%			
+Part_SR_DAL_Grip_02.Part_SR_DAL_Grip_02	Reload Time -5%, Acc -20%			
+Part_SR_DAL_Grip_03.Part_SR_DAL_Grip_03	Recoil Width -30%, Dmg +5%			
+Part_SR_DAL_Grip_03_A.Part_SR_DAL_Grip_03_A	Crit Dmg +10%			
+Part_SR_DAL_Grip_04.Part_SR_DAL_Grip_04	Weapon Sway -30%, Fire Rate +5%			
+Part_SR_DAL_Grip_05.Part_SR_DAL_Grip_05	Weapon Sway -30%, Recoil Width -30%			
+Part_SR_DAL_Mag_01.Part_SR_DAL_Mag_01	10 Round, Dmg +10%			
+Part_SR_DAL_Mag_02.Part_SR_DAL_Mag_02	14 Round			
+Part_SR_DAL_Mag_03.Part_SR_DAL_Mag_03	18 Round	Dmg -10%		
+Part_SR_DAL_Material_BrashisDedication.Part_SR_DAL_Material_BrashisDedication	Skin		Weapon Skin	
+Part_SR_DAL_Material_MalaksBane.Part_SR_DAL_Material_MalaksBane	Skin		Weapon Skin	
+Part_SR_DAL_WorldDestroyer.Part_SR_DAL_WorldDestroyer	Skin		Weapon Skin	
+Part_SR_DAL_01_Common.Part_SR_DAL_01_Common	Skin		Weapon Skin	
+Part_SR_DAL_02_Uncommon.Part_SR_DAL_02_Uncommon	Skin		Weapon Skin	
+Part_SR_DAL_03_Rare.Part_SR_DAL_03_Rare	Skin		Weapon Skin	
+Part_SR_DAL_04_VeryRare.Part_SR_DAL_04_VeryRare	Skin		Weapon Skin	
+Part_SR_DAL_Mat_Fbolt.Part_SR_DAL_Mat_Fbolt	Skin		Weapon Skin - Stalker	
+Part_SR_DAL_Rail_01.Part_SR_DAL_Rail_01				
+Part_SR_DAL_Rail_02.Part_SR_DAL_Rail_02				
+Part_SR_DAL_Rail_03.Part_SR_DAL_Rail_03				
+Part_SR_DAL_Scope_01.Part_SR_DAL_Scope_01	7.4x,16x			
+Part_SR_DAL_Scope_01_A.Part_SR_DAL_Scope_01_A	Weapon Sway -30%			
+Part_SR_DAL_Scope_01_B.Part_SR_DAL_Scope_01_B				
+Part_SR_DAL_Scope_02.Part_SR_DAL_Scope_02				
+Part_SR_DAL_Scope_02_A.Part_SR_DAL_Scope_02_A				
+Part_SR_DAL_Scope_02_B.Part_SR_DAL_Scope_02_B				
+Part_SR_DAL_Scope_03.Part_SR_DAL_Scope_03				
+Part_SR_DAL_Scope_03_A.Part_SR_DAL_Scope_03_A				
+Part_SR_DAL_Scope_03_B.Part_SR_DAL_Scope_03_B				
+Part_SR_DAL_Scope_MalaksBane.Part_SR_DAL_Scope_MalaksBane				
+# Naming strategy	Name	Priority		
+# If MagSize is Greater Than 18	High Capacity	1001.0		

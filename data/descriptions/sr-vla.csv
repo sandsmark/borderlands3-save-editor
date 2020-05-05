@@ -1,0 +1,68 @@
+# Object name	Positives	Negatives	Effects	Naming
+Part_SR_VLA_Barrel_01.Part_SR_VLA_Barrel_01	-			Droog
+Part_SR_VLA_Barrel_01_A.Part_SR_VLA_Barrel_01_A	Acc Bloom -25%			
+Part_SR_VLA_Barrel_01_B.Part_SR_VLA_Barrel_01_B	Fire Rate +10%			
+Part_SR_VLA_Barrel_01_C.Part_SR_VLA_Barrel_01_C	Fire Rate +10%			
+Part_SR_VLA_Barrel_02.Part_SR_VLA_Barrel_02	-			Pooshka
+Part_SR_VLA_Barrel_02_A.Part_SR_VLA_Barrel_02_A	Reload Time -10%, Acc Bloom -25%			
+Part_SR_VLA_Barrel_02_B.Part_SR_VLA_Barrel_02_B	Acc Bloom -25%, Mag Size +10%			
+Part_SR_VLA_Barrel_02_C.Part_SR_VLA_Barrel_02_C	Acc -15%			
+Part_SR_VLA_Barrel_03.Part_SR_VLA_Barrel_03	-			Bratchny
+Part_SR_VLA_Barrel_03_A.Part_SR_VLA_Barrel_03_A	Dmg +10%			
+Part_SR_VLA_Barrel_03_B.Part_SR_VLA_Barrel_03_B	Fire Rate +10%			
+Part_SR_VLA_Barrel_03_C.Part_SR_VLA_Barrel_03_C	Dmg +10%			
+Part_SR_VLA_Barrel_ETech.Part_SR_VLA_Barrel_ETech	Mag Size +12			Ghaash
+Part_SR_VLA_Barrel_ETech_A.Part_SR_VLA_Barrel_ETech_A	-			
+Part_SR_VLA_Barrel_Lyuda.Part_SR_VLA_Barrel_Lyuda	Crit Dmg +40%	Dmg -20%		
+Part_SR_VLA_Barrel_Prison.Part_SR_VLA_Barrel_Prison	Ele Dmg +20%, Dmg +20%			
+Part_SR_VLA_Body.Part_SR_VLA_Body	DO NOT REMOVE			
+Part_SR_VLA_Body_A.Part_SR_VLA_Body_A	Dmg +10%			
+Part_SR_VLA_Body_B.Part_SR_VLA_Body_B	Acc Bloom -25%			
+Part_SR_VLA_Body_C.Part_SR_VLA_Body_C	Fire Rate +10%			
+Part_SR_VLA_Elemental_Corr.Part_SR_VLA_Elemental_Corr				Pestilent
+Part_SR_VLA_Elemental_Cryo.Part_SR_VLA_Elemental_Cryo				Negating
+Part_SR_VLA_Elemental_Fire.Part_SR_VLA_Elemental_Fire				Molten
+Part_SR_VLA_Elemental_Radiation.Part_SR_VLA_Elemental_Radiation				Nuclear
+Part_SR_VLA_Elemental_Shock.Part_SR_VLA_Elemental_Shock				Storming
+Part_SR_VLA_Foregrip_01.Part_SR_VLA_Foregrip_01	Reload Time -5%, Acc Bloom -30%			
+Part_SR_VLA_Foregrip_02.Part_SR_VLA_Foregrip_02	Recoil Height -30%, Mag Size +10%			
+Part_SR_VLA_Foregrip_03.Part_SR_VLA_Foregrip_03	Recoil Width -15%, Dmg +5%			
+Part_SR_VLA_Foregrip_04.Part_SR_VLA_Foregrip_04	Weapon Sway -30%, Recoil Width -15%			
+Part_SR_VLA_Foregrip_05.Part_SR_VLA_Foregrip_05	Acc -10%, Fire Rate +5%			
+Part_SR_VLA_Grip_01.Part_SR_VLA_Grip_01	Weapon Sway -30%, Recoil Width -30%			
+Part_SR_VLA_Grip_02.Part_SR_VLA_Grip_02	Recoil Height -15%, Acc -20%			
+Part_SR_VLA_Grip_03.Part_SR_VLA_Grip_03	Weapon Sway -30%, Fire Rate +5%			
+Part_SR_VLA_Grip_04.Part_SR_VLA_Grip_04	Acc Bloom -20%, Dmg +5%			
+Part_SR_VLA_Grip_05.Part_SR_VLA_Grip_05	Proj per Shot +1, Mag Size +10%	Dmg -24%, Acc Bloom +20%, Acc +21%		
+Part_SR_VLA_Mag_01.Part_SR_VLA_Mag_01	15 Round, Dmg +5%			
+Part_SR_VLA_Mag_02.Part_SR_VLA_Mag_02	20 Round	Dmg -10%		
+Part_SR_VLA_Mag_03.Part_SR_VLA_Mag_03	10 Round, Dmg +26.5%			
+Part_SR_VLA_Material_01_Common.Part_SR_VLA_Material_01_Common			Weapon Skin	
+Part_SR_VLA_Material_02_Uncommon.Part_SR_VLA_Material_02_Uncommon			Weapon Skin	
+Part_SR_VLA_Material_03_Rare.Part_SR_VLA_Material_03_Rare			Weapon Skin	
+Part_SR_VLA_Material_04_VeryRare.Part_SR_VLA_Material_04_VeryRare			Weapon Skin	
+Part_SR_VLA_Material_Lyuda.Part_SR_VLA_Material_Lyuda			Weapon Skin	
+Part_SR_VLA_Material_Prison.Part_SR_VLA_Material_Prison			Weapon Skin	
+Part_SR_VLA_Mordecai_Material.Part_SR_VLA_Mordecai_Material			Weapon Skin	
+Part_SR_VLA_Scope_01.Part_SR_VLA_Scope_01	7,7x			
+Part_SR_VLA_Scope_01_A.Part_SR_VLA_Scope_01_A	Weapon Sway -30%			
+Part_SR_VLA_Scope_01_B.Part_SR_VLA_Scope_01_B				
+Part_SR_VLA_Scope_02.Part_SR_VLA_Scope_02	5.0X			
+Part_SR_VLA_Scope_02_A.Part_SR_VLA_Scope_02_A	Dmg +5%			
+Part_SR_VLA_Scope_02_B.Part_SR_VLA_Scope_02_B	Dmg +5%			
+Part_SR_VLA_Scope_03.Part_SR_VLA_Scope_03	8.2x			
+Part_SR_VLA_Scope_03_A.Part_SR_VLA_Scope_03_A	Mag Size +10%			
+Part_SR_VLA_Scope_03_B.Part_SR_VLA_Scope_03_B	Fire Rate +5%			
+Part_SR_VLA_Underbarrel_01.Part_SR_VLA_Underbarrel_01	Uberbarrel Shotgun , 4 round			
+Part_SR_VLA_Underbarrel_01_A.Part_SR_VLA_Underbarrel_01_A	Uberbarrel Shotgun Mag Size +50%			
+Part_SR_VLA_Underbarrel_02.Part_SR_VLA_Underbarrel_02				
+Part_SR_VLA_Underbarrel_02_Double.Part_SR_VLA_Underbarrel_02_Double	2 X Underbarrel RPG			
+Part_SR_VLA_Underbarrel_02_Single.Part_SR_VLA_Underbarrel_02_Single	Underbarrel RPG			
+Part_SR_VLA_Underbarrel_03.Part_SR_VLA_Underbarrel_03	Bipod			
+Part_SR_VLA_Underbarrel_04.Part_SR_VLA_Underbarrel_04	Extra Barrels, Fire Rate +35%			
+Part_SR_VLA_Underbarrel_04_A.Part_SR_VLA_Underbarrel_04_A	Fire Rate +5%			
+Part_SR_VLA_Underbarrel_04_B.Part_SR_VLA_Underbarrel_04_B	Charge Duration -20%			
+Part_SR_VLA_Underbarrel_04_C.Part_SR_VLA_Underbarrel_04_C	Fire Rate +5%			
+# Naming strategy	Name	Priority		
+# If Projectiles Per Shot = 2	Annexed	1001.0		
+# If MagSize is Greater Than 35 and MagSize is Less Than 100	Unending	1002.0		

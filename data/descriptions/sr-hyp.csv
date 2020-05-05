@@ -1,0 +1,70 @@
+# Object name	Positives	Negatives	Effects	Naming
+Part_SR_HYP_Barrel_01.Part_SR_HYP_Barrel_01	-			Mogul
+Part_SR_HYP_Barrel_01_A.Part_SR_HYP_Barrel_01_A	Acc -15%			
+Part_SR_HYP_Barrel_01_B.Part_SR_HYP_Barrel_01_B	Acc -15%			
+Part_SR_HYP_Barrel_01_C.Part_SR_HYP_Barrel_01_C	Crit Dmg +10%	Acc Bloom +20%		
+Part_SR_HYP_Barrel_02.Part_SR_HYP_Barrel_02	-			Entrepeneur
+Part_SR_HYP_Barrel_02_A.Part_SR_HYP_Barrel_02_A	Dmg +10%			
+Part_SR_HYP_Barrel_02_B.Part_SR_HYP_Barrel_02_B	Dmg +10%			
+Part_SR_HYP_Barrel_02_C.Part_SR_HYP_Barrel_02_C	Crit Dmg +10%, Melee Dmg +80%			
+Part_SR_HYP_Barrel_02_TwoTime.Part_SR_HYP_Barrel_02_TwoTime	Recoil Height -50%, Weapon Shield Cap +50%	Dmg -25%		
+Part_SR_HYP_Barrel_03.Part_SR_HYP_Barrel_03	-			Techspert
+Part_SR_HYP_Barrel_03_A.Part_SR_HYP_Barrel_03_A	Fire Rate +10%			
+Part_SR_HYP_Barrel_03_B.Part_SR_HYP_Barrel_03_B	Fire Rate +10%			
+Part_SR_HYP_Barrel_03_C.Part_SR_HYP_Barrel_03_C	Acc -15%			
+Part_SR_HYP_Barrel_ETech.Part_SR_HYP_Barrel_ETech	Mag Size +8			Broodmother
+Part_SR_HYP_Barrel_ETech_A.Part_SR_HYP_Barrel_ETech_A	Weapon Shield Cap +25%, Crit Dmg +10%			
+Part_SR_HYP_Barrel_Masterwork.Part_SR_HYP_Barrel_Masterwork	Acc -50%, Crit Dmg +50%, Reload Time -50%, Dmg +250%			
+Part_SR_HYP_Barrel_Woodblocks.Part_SR_HYP_Barrel_Woodblocks	Mag Size +10	Dmg -20%		
+Part_SR_HYP_Barrel_Tankman.Part_SR_HYP_Barrel_Tankman	Mag Size +4			
+Part_SR_HYP_Body.Part_SR_HYP_Body	DO NOT REMOVE			
+Part_SR_HYP_Body_A.Part_SR_HYP_Body_A	Reload Time -10%			
+Part_SR_HYP_Body_B.Part_SR_HYP_Body_B	Weapon Shield Cap +25%			
+Part_SR_HYP_Body_C.Part_SR_HYP_Body_C	Dmg +10%			
+Part_SR_HYP_Ele_Corr.Part_SR_HYP_Ele_Corr				Defrauding
+Part_SR_HYP_Ele_Cryo.Part_SR_HYP_Ele_Cryo				Auditing
+Part_SR_HYP_Ele_Fire.Part_SR_HYP_Ele_Fire				Hostile
+Part_SR_HYP_Ele_Radiation.Part_SR_HYP_Ele_Radiation				Undermining
+Part_SR_HYP_Ele_Shock.Part_SR_HYP_Ele_Shock				Cash-Infused
+Part_SR_HYP_Grip_01.Part_SR_HYP_Grip_01	Recoil Height -30%			
+Part_SR_HYP_Grip_02.Part_SR_HYP_Grip_02	Dmg +5%			
+Part_SR_HYP_Grip_03.Part_SR_HYP_Grip_03	Acc -20%			
+Part_SR_HYP_Grip_04.Part_SR_HYP_Grip_04	Mag Size +3	Acc +10%, Dmg -5%		
+Part_SR_HYP_Mag_01.Part_SR_HYP_Mag_01	10 Round			
+Part_SR_HYP_Mag_02.Part_SR_HYP_Mag_02	7 Round, Dmg +10%			
+Part_SR_HYP_Mag_03.Part_SR_HYP_Mag_03	14 Round	Dmg -10%		
+Part_SR_HYP_Mag_MasterworkCrossbow.Part_SR_HYP_Mag_MasterworkCrossbow	1 Round	Dmg -10%		
+Part_SR_HYP_Masterwork.Part_SR_HYP_Masterwork	Skin		Weapon Skin	
+Part_SR_HYP_Mat_TwoTime.Part_SR_HYP_Mat_TwoTime	Skin		Weapon Skin	
+Part_SR_HYP_Woodblocks.Part_SR_HYP_Woodblocks	Skin		Weapon Skin	
+Part_SR_HYP_Zero.Part_SR_HYP_Zero	Skin		Weapon Skin	
+Part_SR_HYP_ZeroForPlayer.Part_SR_HYP_ZeroForPlayer	Skin		Weapon Skin	
+Part_SR_HYP_01_Common.Part_SR_HYP_01_Common	Skin		Weapon Skin	
+Part_SR_HYP_02_Uncommon.Part_SR_HYP_02_Uncommon	Skin		Weapon Skin	
+Part_SR_HYP_03_Rare.Part_SR_HYP_03_Rare	Skin		Weapon Skin	
+Part_SR_HYP_04_VeryRare.Part_SR_HYP_04_VeryRare	Skin		Weapon Skin	
+Part_SR_HYP_Tankman.Part_SR_HYP_Tankman	Skin		Weapon Skin	
+Part_SR_HYP_Rail_01.Part_SR_HYP_Rail_01				
+Part_SR_HYP_Rail_02.Part_SR_HYP_Rail_02	Weapon Shield Cap +15%			
+Part_SR_HYP_Rail_03.Part_SR_HYP_Rail_03				
+Part_SR_HYP_Scope_01.Part_SR_HYP_Scope_01				
+Part_SR_HYP_Scope_01_A.Part_SR_HYP_Scope_01_A				
+Part_SR_HYP_Scope_01_B.Part_SR_HYP_Scope_01_B				
+Part_SR_HYP_Scope_01_TwoTime.Part_SR_HYP_Scope_01_TwoTime				
+Part_SR_HYP_Scope_02.Part_SR_HYP_Scope_02				
+Part_SR_HYP_Scope_02_A.Part_SR_HYP_Scope_02_A				
+Part_SR_HYP_Scope_02_B.Part_SR_HYP_Scope_02_B				
+Part_SR_HYP_Scope_03.Part_SR_HYP_Scope_03	6.6x			
+Part_SR_HYP_Scope_03_A.Part_SR_HYP_Scope_03_A	Crit Dmg +10%			
+Part_SR_HYP_Scope_03_B.Part_SR_HYP_Scope_03_B				
+Part_SR_HYP_Shield_01.Part_SR_HYP_Shield_01	Fire Rate +5%, Shield			
+Part_SR_HYP_Shield_02.Part_SR_HYP_Shield_02	Recoil Height -30%		Shield incoming Dmg converted in Weapon Dmg	
+Part_SR_HYP_Shield_03.Part_SR_HYP_Shield_03	Crit Dmg +10%		Shield reflects	
+Part_SR_HYP_Shield_04.Part_SR_HYP_Shield_04	Acc -10%		Shield incoming Dmg converted into Mag Ammo	
+Part_SR_HYP_Stock_01.Part_SR_HYP_Stock_01	Acc -20%, Dmg +5%			
+Part_SR_HYP_Stock_02.Part_SR_HYP_Stock_02	Weapon Sway -20%			
+Part_SR_HYP_Stock_03.Part_SR_HYP_Stock_03	Recoil Height -30%, Crit Dmg +10%			
+Part_SR_HYP_Stock_04.Part_SR_HYP_Stock_04	Reload Time -5%, Fire Rate +5%			
+# Naming strategy	Name	Priority		
+# If MagSize is Greater Than 22	Subsidized	1001.0		
+# If Shot Cost Greater Than 2	Value Add	1003.0		

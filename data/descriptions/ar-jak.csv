@@ -1,0 +1,64 @@
+# Object name	Positives	Negatives	Effects	Naming
+Part_AR_JAK_Barrel_01.Part_AR_JAK_Barrel_01	-			Carbine
+Part_AR_JAK_Barrel_01_A.Part_AR_JAK_Barrel_01_A	Dmg +10%			
+Part_AR_JAK_Barrel_01_B.Part_AR_JAK_Barrel_01_B	Dmg +10%			
+Part_AR_JAK_Barrel_01_C.Part_AR_JAK_Barrel_01_C	Acc -15%			
+Part_AR_JAK_Barrel_02.Part_AR_JAK_Barrel_02	-			Clipper
+Part_AR_JAK_Barrel_02_A.Part_AR_JAK_Barrel_02_A	Fire Rate +10			
+Part_AR_JAK_Barrel_02_B.Part_AR_JAK_Barrel_02_B	Acc Bloom -25%, Melee Dmg +60%			Bowie
+Part_AR_JAK_Barrel_02_C.Part_AR_JAK_Barrel_02_C	Fire Rate +10			
+Part_AR_JAK_Barrel_03.Part_AR_JAK_Barrel_03	-			Repeater
+Part_AR_JAK_Barrel_03_A.Part_AR_JAK_Barrel_03_A	Acc -15%			
+Part_AR_JAK_Barrel_03_B.Part_AR_JAK_Barrel_03_B	Crit Dmg +10%, Melee Dmg +60%			Cuttin
+Part_AR_JAK_Barrel_03_C.Part_AR_JAK_Barrel_03_C	Acc -15%			
+Part_AR_JAK_Barrel_Bekah.Part_AR_JAK_Barrel_Bekah		Recoil Height +45%		
+Part_AR_JAK_Barrel_GatlingGun.Part_AR_JAK_Barrel_GatlingGun	Recoil Height -25%, Mag Size +25, Acc Bloom -15%, Recoild Width -25%	Acc +150%		
+Part_AR_JAK_Barrel_HandOfGlory.Part_AR_JAK_Barrel_HandOfGlory	Mag Size +4, Dmg -10%			
+Part_AR_JAK_Barrel_LeadSprinkler.Part_AR_JAK_Barrel_LeadSprinkler	Recoil Height -25%, Heat per Shot -90%, Acc Bloom -15%	Crit Cmg -25%, Acc +50%, Dmg -25%		
+Part_AR_JAK_Barrel_PasRifle.Part_AR_JAK_Barrel_PasRifle	Mag Size +6			
+Part_AR_JAK_Barrel_RowansCall.Part_AR_JAK_Barrel_RowansCall	Recoil Height -30%	Acc +25%		
+Part_AR_JAK_Barrel_TraitorsDeath.Part_AR_JAK_Barrel_TraitorsDeath	Acc Bloom -75%			
+Part_AR_JAK_Body.Part_AR_JAK_Body	DO NOT REMOVE			
+Part_AR_JAK_Bolt_01.Part_AR_JAK_Bolt_01	Crit Dmg +10%			
+Part_AR_JAK_Bolt_02.Part_AR_JAK_Bolt_02	Fire Rate +10			
+Part_AR_JAK_Bolt_03.Part_AR_JAK_Bolt_03	Reload Time -10%			
+Part_AR_JAK_Foregrip_01.Part_AR_JAK_Foregrip_01	Weapon Sway -30%, Recoil Height -30%			
+Part_AR_JAK_Foregrip_02.Part_AR_JAK_Foregrip_02	Acc -10%, Crit Dmg +10%			
+Part_AR_JAK_Foregrip_03.Part_AR_JAK_Foregrip_03	Weapon Sway -30%, Acc Bloom -30%			
+Part_AR_JAK_Foregrip_04.Part_AR_JAK_Foregrip_04	Recoil Height -30%, Dmg +5%			
+Part_AR_JAK_Mag_01.Part_AR_JAK_Mag_01	8 Round, Dmg +20%			
+Part_AR_JAK_Mag_02.Part_AR_JAK_Mag_02	10 Round, Dmg +10%			
+Part_AR_JAK_Mag_03.Part_AR_JAK_Mag_03	20 Round	Dmg -10%		
+Part_AR_JAK_Mag_04.Part_AR_JAK_Mag_04	14 Round			
+Part_AR_JAK_Material_01_Common.Part_AR_JAK_Material_01_Common			Weapon Skin	
+Part_AR_JAK_Material_02_UnCommon.Part_AR_JAK_Material_02_UnCommon			Weapon Skin	
+Part_AR_JAK_Material_03_Rare.Part_AR_JAK_Material_03_Rare			Weapon Skin	
+Part_AR_JAK_Material_04_VeryRare.Part_AR_JAK_Material_04_VeryRare			Weapon Skin	
+Part_AR_JAK_Material_Bekah.Part_AR_JAK_Material_Bekah			Weapon Skin	
+Part_AR_JAK_Material_GatlingGun.Part_AR_JAK_Material_GatlingGun			Weapon Skin	
+Part_AR_JAK_Material_HandOfGlory.Part_AR_JAK_Material_HandOfGlory			Weapon Skin	
+Part_AR_JAK_Material_LeadSprinkler.Part_AR_JAK_Material_LeadSprinkler			Weapon Skin	
+Part_AR_JAK_Material_PasRifle.Part_AR_JAK_Material_PasRifle			Weapon Skin	
+Part_AR_JAK_Material_RowansCall.Part_AR_JAK_Material_RowansCall			Weapon Skin	
+Part_AR_JAK_Material_TraitorsDeath.Part_AR_JAK_Material_TraitorsDeath			Weapon Skin	
+Part_AR_JAK_Rowan_Ele_Fire.Part_AR_JAK_Rowan_Ele_Fire				
+Part_AR_JAK_Rowan_Ele_Radiation.Part_AR_JAK_Rowan_Ele_Radiation				
+Part_AR_JAK_Rowan_Ele_Shock.Part_AR_JAK_Rowan_Ele_Shock				
+Part_AR_JAK_Scope_01.Part_AR_JAK_Scope_01	1.7x			
+Part_AR_JAK_Scope_02.Part_AR_JAK_Scope_02				
+Part_AR_JAK_Scope_03.Part_AR_JAK_Scope_03				
+Part_AR_JAK_StockMod_01.Part_AR_JAK_StockMod_01	Crit Dmg +10%			
+Part_AR_JAK_StockMod_02.Part_AR_JAK_StockMod_02	Reload Time -10%			
+Part_AR_JAK_StockMod_03.Part_AR_JAK_StockMod_03	Acc -15%			
+Part_AR_JAK_StockMod_04.Part_AR_JAK_StockMod_04	Mag Size +4	Acc +10%, Dmg -5%		Loaded
+Part_AR_JAK_StockMod_05.Part_AR_JAK_StockMod_05	Weapon Sway -20%			
+Part_AR_JAK_Stock_01.Part_AR_JAK_Stock_01	Weapon Sway -30%, Acc -20%			
+Part_AR_JAK_Stock_02.Part_AR_JAK_Stock_02	Reload Time -5%, Fire Rate +5%			
+Part_AR_JAK_Stock_03.Part_AR_JAK_Stock_03	Acc Bloom -20%, Dmg +5%			
+Part_AR_JAK_Stock_04.Part_AR_JAK_Stock_04	Weapon Sway -30%, Reload Time -5%			
+Part_AR_JAK_Stock_05.Part_AR_JAK_Stock_05	Recoil Width -30%, Recoil Height -15%			
+Part_AR_JAK_Trigger_01.Part_AR_JAK_Trigger_01	Fire Rate +10%			Gatlin
+Part_AR_JAK_Trigger_02.Part_AR_JAK_Trigger_02	Dmg +10%			
+Part_AR_JAK_Trigger_03.Part_AR_JAK_Trigger_03	Acc -15%			
+Part_AR_JAK_Trigger_04.Part_AR_JAK_Trigger_04	Proj per Shot +3	Acc Bloom +25%, Fire Rate -30%, Dmg -58%, Acc +120%, Recoil Hight +55%		
+				Masher

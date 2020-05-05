@@ -1,0 +1,49 @@
+# Class perk	
+ClassMod_Part_Siren_Unique_01_Storm.ClassMod_Part_Siren_Unique_01_Storm	Whenever Amarea first damages an enemy with her Action Skill, she creates a damaging cloud of her Action Skill Element at that Location. Cloud Dmaage: +25/s
+# Natural Skill Perks	Tempest, Conflux, Violent Tapestry
+ClassMod_Part_Siren_Unique_02_Dragon.ClassMod_Part_Siren_Unique_02_Dragon	Whenever Amara kills an enemy with a melee attack, her Action Skill Augment is triggered.
+# Natural Skill Perks	Anima, Conflux, Clarity
+ClassMod_Part_Siren_Unique_03_Bruiser.ClassMod_Part_Siren_Unique_03_Bruiser	Amara gains Damage Reduction. This bonus is based on the distance to the enemry. The close the enemy, the greater the bonus. Dmaage Reduction: Up to 29%
+# Natural Skill Perks	Personal Space, Find Your Center, Jab Cross
+ClassMod_Part_Siren_Unique_04_Phasezerker.ClassMod_Part_Siren_Unique_04_Phasezerker	On Action Skill Used, Amara gains her Max Rush Stack count, but they decay over time. Amara gains 3% Weapon Damage and 10% Action Skill Cooldown Rate based on the number of Rush Stacks. Max Rush Stacks: +5
+# Natural Skill Perks	Clarity, Anima, Conflux
+ClassMod_Part_Siren_Unique_05_Siren.ClassMod_Part_Siren_Unique_05_Siren	Whenever Amara Phasegraps an enemry, her Action Skill Element is applied to all nearby enemies.
+# Natural Skill Perks	Violent Tapestry, Infusion, Wildfire
+Part_CM_Siren_Raid1.Part_CM_Siren_Raid1	Whenever Amara activates her action skill, she applies her action skill element to herself. Amara's Gun Damage is increased while moving. The quicker she moves, the greater the Gun Damage bonus.
+Part_CM_Siren_DLC1.Part_CM_Siren_DLC1	Whenever an enemy damages Amara, she gains increased Action Skill Cooldown Rate (5%) for a 8 seconds. This effect stacks.
+# Skill Tree Perks (1 component = +1 to that skill, 5 of the same component = +5 to that skill)	
+ClassMod_Part_Skill_Siren_Alacrity.ClassMod_Part_Skill_Siren_Alacrity	
+ClassMod_Part_Skill_Siren_Anima.ClassMod_Part_Skill_Siren_Anima	
+ClassMod_Part_Skill_Siren_ArmsDeal.ClassMod_Part_Skill_Siren_ArmsDeal	
+ClassMod_Part_Skill_Siren_BareKnuckle.ClassMod_Part_Skill_Siren_BareKnuckle	
+ClassMod_Part_Skill_Siren_Clarity.ClassMod_Part_Skill_Siren_Clarity	
+ClassMod_Part_Skill_Siren_Conflux.ClassMod_Part_Skill_Siren_Conflux	
+ClassMod_Part_Skill_Siren_DeepWell.ClassMod_Part_Skill_Siren_DeepWell	
+ClassMod_Part_Skill_Siren_DoHarm.ClassMod_Part_Skill_Siren_DoHarm	
+ClassMod_Part_Skill_Siren_Dread.ClassMod_Part_Skill_Siren_Dread	
+ClassMod_Part_Skill_Siren_Empowered.ClassMod_Part_Skill_Siren_Empowered	
+ClassMod_Part_Skill_Siren_FastHands.ClassMod_Part_Skill_Siren_FastHands	
+ClassMod_Part_Skill_Siren_FearPassThroughMe.ClassMod_Part_Skill_Siren_FearPassThroughMe	
+ClassMod_Part_Skill_Siren_FindYourCenter.ClassMod_Part_Skill_Siren_FindYourCenter	
+ClassMod_Part_Skill_Siren_FromRest.ClassMod_Part_Skill_Siren_FromRest	
+ClassMod_Part_Skill_Siren_IlluminatedFist.ClassMod_Part_Skill_Siren_IlluminatedFist	
+ClassMod_Part_Skill_Siren_Infusion.ClassMod_Part_Skill_Siren_Infusion	
+ClassMod_Part_Skill_Siren_Mindfulness.ClassMod_Part_Skill_Siren_Mindfulness	
+ClassMod_Part_Skill_Siren_OneWithNature.ClassMod_Part_Skill_Siren_OneWithNature	
+ClassMod_Part_Skill_Siren_PersonalSpace.ClassMod_Part_Skill_Siren_PersonalSpace	
+ClassMod_Part_Skill_Siren_Remnant.ClassMod_Part_Skill_Siren_Remnant	
+ClassMod_Part_Skill_Siren_Restless.ClassMod_Part_Skill_Siren_Restless	
+ClassMod_Part_Skill_Siren_Samsara.ClassMod_Part_Skill_Siren_Samsara	
+ClassMod_Part_Skill_Siren_SteadyHands.ClassMod_Part_Skill_Siren_SteadyHands	
+ClassMod_Part_Skill_Siren_Tempest.ClassMod_Part_Skill_Siren_Tempest	
+ClassMod_Part_Skill_Siren_Transcend.ClassMod_Part_Skill_Siren_Transcend	
+ClassMod_Part_Skill_Siren_Vigor.ClassMod_Part_Skill_Siren_Vigor	
+ClassMod_Part_Skill_Siren_ViolentTapestry.ClassMod_Part_Skill_Siren_ViolentTapestry	
+ClassMod_Part_Skill_Siren_WildFire.ClassMod_Part_Skill_Siren_WildFire	
+ClassMod_Part_Skill_Siren_Wrath.ClassMod_Part_Skill_Siren_Wrath	
+CM_Part_Skill_Siren_Mindfulness_Raid1.CM_Part_Skill_Siren_Mindfulness_Raid1	
+CM_Part_Skill_Siren_HelpingHands_Raid1.CM_Part_Skill_Siren_HelpingHands_Raid1	
+CM_Part_Skill_Siren_Clarity_Raid1.CM_Part_Skill_Siren_Clarity_Raid1	
+ClassMod_Part_Skill_Siren_Mindfulness_dlc1.ClassMod_Part_Skill_Siren_Mindfulness_dlc1	
+ClassMod_Part_Skill_Siren_LaidBare.ClassMod_Part_Skill_Siren_LaidBare	
+ClassMod_Part_Skill_Siren_HelpingHands.ClassMod_Part_Skill_Siren_HelpingHands	

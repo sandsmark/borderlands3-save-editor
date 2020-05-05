@@ -1,0 +1,120 @@
+# Artifact Main Ability	
+Artifact_Part_Ability_AtomBalm.Artifact_Part_Ability_AtomBalm	Aura Damage +50%, Aura Burst Damage +18%, Aura Burst Radius +18% "Enhances the Radiation status effect aura, making it larget and more deadly"
+Artifact_Part_Ability_BloodFrenzy.Artifact_Part_Ability_BloodFrenzy	Melee Enemies to Trigger Enrage, Sprint Speed +13%, Fire Rate +9%, Duration 10s "Enrage increases your Sprint Speed and Fire Rate"
+Artifact_Part_Ability_CausticCoast.Artifact_Part_Ability_CausticCoast	Imbue Slide with Corrosive, Bonus Damage 50%, Shard Fire Rate 10.0/s "Slide kicks up Corrosive shards that explode on impact"
+Artifact_Part_Ability_Cauterizer.Artifact_Part_Ability_Cauterizer	Imbue Slide with Incendiary, Bonus Damage 73%, Puddle Cooldown 10s "Slide deals bonus Incendiary Damage, creating a magma puddle upon impact"
+Artifact_Part_Ability_CorrosiveStone.Artifact_Part_Ability_CorrosiveStone	Imbue Melee with Corrosive, Bonus Damage +80% "Adds Corrosive damage to all Melee attacks"
+Artifact_Part_Ability_CryoStone.Artifact_Part_Ability_CryoStone	Imbue Melee with Cryo, Bonus Damage +80% "Adds Cryo damage to all Melee attacks"
+Artifact_Part_Ability_ElectricSlide.Artifact_Part_Ability_ElectricSlide	Imbue Slide with Shock, Bonus Damage 73%, Arc Targets "Slide arcs beams of Shock to nearby enemies, which can arc to other nearby enemies"
+Artifact_Part_Ability_ElementalOrigin.Artifact_Part_Ability_ElementalOrigin	Elemental Damage Boost, Damage Boost +183% "While suffering an elemental effect, increase your damage with that same element"
+Artifact_Part_Ability_FastHands.Artifact_Part_Ability_FastHands	Melee Enemies to Steal Ammo, Ammo Refill +8%, Ammo Returned to Allies +8% "Dealing Melee damage replenishes ammo"
+Artifact_Part_Ability_FireStone.Artifact_Part_Ability_FireStone	Imbue Melee with Incendiary, Bonus Damage +80% "Adds Incendiary damage to all Melee attacks"
+Artifact_Part_Ability_FleshMelter.Artifact_Part_Ability_FleshMelter	Corrosive Damage Boost, Bonus Damage +25%, Max Stacks 5, Duration 8.8s "Killing an enemy with Corrosive increases your damage with Corrosive for a short duration"
+Artifact_Part_Ability_Grave.Artifact_Part_Ability_Grave	Weakness is in the mind, Melee Damage +100%, Weapon Damage +20%, Splash Damage +15% "Increase Melee damage when below 50% HP, Increase Weapon damage when below 20% HP, Increase Splash Damage when below 5% HP"
+Artifact_Part_Ability_HotDrop.Artifact_Part_Ability_HotDrop	Imbue Slam with Incendiary, Slam Bonus Damage 88%, Slam Radius +28%, Fireballs 5 "Slam launches Incendiary projectiles that spawn Magma Puddles"
+Artifact_Part_Ability_IceSpiker.Artifact_Part_Ability_IceSpiker	Imbue Slam with Cryo, Slam Bonus Damage 88%, Slam Radius +28% "Fires 3 Cryo projectiles that damage and pass through enemies"
+Artifact_Part_Ability_KnifeDrain.Artifact_Part_Ability_KnifeDrain	Imbue Melee with Lifesteal, Melee Lifesteal +75% "All Melee attacks return a portion of the damage dealt as Health"
+Artifact_Part_Ability_LastStand.Artifact_Part_Ability_LastStand	Temporary Invulnerability, Duration 5s, Cooldown 40s "Temporary Invulnerability when Health drops below 50%"
+Artifact_Part_Ability_LootExpander.Artifact_Part_Ability_LootExpander	Enhanced Pickups, Cash +119%, Ammo +25%, Health +43% "Increases the amount of cash, health and ammo you recieve from pickups"
+Artifact_Part_Ability_MindMelt.Artifact_Part_Ability_MindMelt	Imbue Slam with Radiation, Slam Bonus Damage 88%, Slam Radius +28%, Aura Duration 8s "Slam triggers a Radiation aura that follows you and damages nearby enemies"
+Artifact_Part_Ability_RadiationStone.Artifact_Part_Ability_RadiationStone	Imbue Melee with Radiation, Bonus Damage +80% "Adds Radiation damage to all Melee attacks"
+Artifact_Part_Ability_Radiodead.Artifact_Part_Ability_Radiodead	Imbue Slide With Radiation, Bonus Damage 73%, Duration 5sec "Slide deals additonal Radiation damage creating a toxic puddle on impact"
+Artifact_Part_Ability_Relic.Artifact_Part_Ability_Relic	Find Better Loot, Luck +38.00% "Increases the chance to find rare loot"
+Artifact_Part_Ability_ShatterRig.Artifact_Part_Ability_ShatterRig	Vs. Frozen, Bonus Damage +35%, Cryo Efficiency +50% "Increase damage against Frozen targets"
+Artifact_Part_Ability_ShockStone.Artifact_Part_Ability_ShockStone	Imbue Melee with Shock, Bonus Damage +80% "Adds Shock damage to all Melee attacks"
+Artifact_Part_Ability_Snowdrift.Snowdrift.Artifact_Part_Ability_Snowdrift	Imbue Slide with Cryo, Bonus Damage 73%, Slide Speed +102%, Cooldown 5s "Slide launches a snowbal that does Cryo damage"
+Artifact_Part_Ability_SparkPlug.Artifact_Part_Ability_SparkPlug	Imbue Slam with Shock, Slam Bonus Damage 88%, Slam Radius +28%, Duration 8s "Slam plants an electrified coil that does Shock damage to nearby enemies"
+Artifact_Part_Ability_ToxicRevenger.Artifact_Part_Ability_ToxicRevenger	Imbue Slam with Corrosive, Slam Bonus Damage 88%, Slam Radius +28%, Puddle Duration 5s "Slam creates a large Corrosive puddle on impact"
+# Artifact Secondary Ability	
+Artifact_Part_Ability_CommanderPlanetoid.Artifact_Part_Ability_CommanderPlanetoid	Deal 69% bonus elemental damage whenever you Melee an enemy. Elemental type changes ever 5 seconds
+Artifact_Part_Ability_CosmicCrater.Artifact_Part_Ability_CosmicCrater	Slam creates a random puddle that lasts for 5 seconds
+Artifact_Part_Ability_Deathless.Artifact_Part_Ability_Deathless	Reserves all but 1 Health, +100% Shield Capacity, +25% Shield Recharge Rate, -20% Shield Recharge Delay
+Artifact_Part_Ability_ElDragonJr.Artifact_Part_Ability_ElDragonJr	Unlease The Power of El Dragon, Melee Ignite Chance 100%, Slide Ignite Chance 100%, Ground Slam Ignite Chance 100%
+Artifact_Part_Ability_ElectricBanjo.Artifact_Part_Ability_ElectricBanjo	Star Power, Bullet Proce Chance +20%
+Artifact_Part_Ability_LoadedDice.Artifact_Part_Ability_LoadedDice	-75% Max Health, Substantially increases your Luck
+Artifact_Part_Ability_MoxxisEndowment.Artifact_Part_Ability_MoxxisEndowment	+8% Combat XP
+Artifact_Part_Ability_OttoIdol.Artifact_Part_Ability_OttoIdol	Restore 18% health on kill
+Artifact_Part_Ability_PhoenixTears.Artifact_Part_Ability_PhoenixTears	Rise Up!, Health on Second Wind 100%
+Artifact_Part_Ability_PullOutMethod.Artifact_Part_Ability_PullOutMethod	Slam generates a singularity effect, pulling enemies toward you
+Artifact_Part_Ability_RearEnder.Artifact_Part_Ability_RearEnder	Improved Slam, Slam Damage +59%, Slam Radius +28%, Slam Knockback +53%
+Artifact_Part_Ability_RoadWarrior.Artifact_Part_Ability_RoadWarrior	Slide Release Agnoziing Pain, Buzzsaws 3.0/s, Buzzsaw Damage 1
+Artifact_Part_Ability_RocketBoots.Artifact_Part_Ability_RocketBoots	Slide launches homing rockets that deal Incendiary Damage
+Artifact_Part_Ability_Safegaurd.Artifact_Part_Ability_Safegaurd	Slam triggers a shield that reduces incoming damage by +57% and lasts for 5 seconds
+Artifact_Part_Ability_Salvo.Artifact_Part_Ability_Salvo	Slam launches a barrage of homing rockets
+Artifact_Part_Ability_SplatterGun.Artifact_Part_Ability_SplatterGun	+50% Shotgun Damage while sliding
+Artifact_Part_Ability_StaticTouch.Artifact_Part_Ability_StaticTouch	Slide builds a static charge, causing your next Melee attack to do a 50% bonus Shock damage that chains to nearby enemies
+Artifact_Part_Ability_VictoryRush.Artifact_Part_Ability_VictoryRush	Kill a Badass to trigger Victory Rush, +18% Movement Speed and Damage for 60 second duration
+Artifact_Part_Ability_WhiteElephant.Artifact_Part_Ability_WhiteElephant	Melee attacks have a 30% chance to attack a sticky bomb
+# These Main Ability white stats must be added if their main ability by the same name is present, meaning you only get the choice of 2 other white stats from section B.	
+Artifact_Part_Stat_ElDragonJr.Artifact_Part_Stat_ElDragonJr	
+Artifact_Part_Stat_ElectricBanjo.Artifact_Part_Stat_ElectricBanjo	
+Artifact_Part_Stat_Grave.Artifact_Part_Stat_Grave	
+Artifact_Part_Stat_PhoenixTears.Artifact_Part_Stat_PhoenixTears	
+Artifact_Part_Stat_Relic.Artifact_Part_Stat_Relic	+10% Experience Gained from Combat
+Artifact_Part_Stat_RoadWarrior.Artifact_Part_Stat_RoadWarrior	
+# Artifact Stats (white text numbers)- Legit items will have ONE from section A and TWO from section B.	
+# section A Mutually exclusive with the Main Ability white stats from above, cannot have both a stat linked to Main Ability white stats AND a section A	
+Artifact_Part_Stats_Asbestos.Artifact_Part_Stats_Asbestos	+29% Incendiary Resistance
+Artifact_Part_Stats_Brawler.Artifact_Part_Stats_Brawler	+25% Melee Damage
+Artifact_Part_Stats_Breaching.Artifact_Part_Stats_Breaching	+17% Shotgun Damage
+Artifact_Part_Stats_Contaminated.Artifact_Part_Stats_Contaminated	+16% Radiation Damage
+Artifact_Part_Stats_DeadEye.Artifact_Part_Stats_DeadEye	+16% Pistol Damage
+Artifact_Part_Stats_Durable.Artifact_Part_Stats_Durable	+29% Corrosive Resistance
+Artifact_Part_Stats_Frozen.Artifact_Part_Stats_Frozen	+16% Cryo Damage
+Artifact_Part_Stats_Greasy.Artifact_Part_Stats_Greasy	+16% SMG Damage
+Artifact_Part_Stats_Grenadier.Artifact_Part_Stats_Grenadier	+30% Grenade Damage
+Artifact_Part_Stats_Grounded.Artifact_Part_Stats_Grounded	+29% Shock Resistance
+Artifact_Part_Stats_Hasty.Artifact_Part_Stats_Hasty	+8% Movement Speed
+Artifact_Part_Stats_HollowPoint.Artifact_Part_Stats_HollowPoint	+16% Assault Rifle Damage
+Artifact_Part_Stats_Hulking.Artifact_Part_Stats_Hulking	+17% Heavy Damage
+Artifact_Part_Stats_Insulated.Artifact_Part_Stats_Insulated	+29% Cryo Resistance
+Artifact_Part_Stats_LeadCoated.Artifact_Part_Stats_LeadCoated	+29% Radiation Resistance
+Artifact_Part_Stats_Loaded.Artifact_Part_Stats_Loaded	+40% Magazine Size
+Artifact_Part_Stats_LongLasting.Artifact_Part_Stats_LongLasting	+21% Action Skill Cooldown Rate
+Artifact_Part_Stats_LongRange.Artifact_Part_Stats_LongRange	+17% Sniper Damage
+Artifact_Part_Stats_Lucky.Artifact_Part_Stats_Lucky	+12.67 Luck
+Artifact_Part_Stats_Lustrous.Artifact_Part_Stats_Lustrous	+23% Elemental Resistance
+Artifact_Part_Stats_Melty.Artifact_Part_Stats_Melty	+16% Corrosive Damage
+Artifact_Part_Stats_Precision.Artifact_Part_Stats_Precision	+26% Weapon Accuracy
+Artifact_Part_Stats_Quickdraw.Artifact_Part_Stats_Quickdraw	+14% Weapon Reload Speed
+Artifact_Part_Stats_Ravaging.Artifact_Part_Stats_Ravaging	+33% Splash Damage
+Artifact_Part_Stats_Spicy.Artifact_Part_Stats_Spicy	+16% Incendiary Damage
+Artifact_Part_Stats_Stalwart.Artifact_Part_Stats_Stalwart	+1666 Max Shield
+Artifact_Part_Stats_Unyielding.Artifact_Part_Stats_Unyielding	+40% FFYL Downed Time
+Artifact_Part_Stats_Vigorous.Artifact_Part_Stats_Vigorous	+1487 Max Health
+Artifact_Part_Stats_Zappy.Artifact_Part_Stats_Zappy	+16% Shock Damage
+# section B	
+Artifact_Part_Stats_Accuracy.Artifact_Part_Stats_Accuracy	+26% Accuracy
+Artifact_Part_Stats_ActionSkillCooldown.Artifact_Part_Stats_ActionSkillCooldown	+21% Action Skill Cooldown Rate
+Artifact_Part_Stats_AreaDamage.Artifact_Part_Stats_AreaDamage	+33% Splash Damage
+Artifact_Part_Stats_ATLAS.Artifact_Part_Stats_ATLAS	+20% ATLAS Weapon Fire Rate, +83% ATLAS Weapon Magazine Size
+Artifact_Part_Stats_BleedoutDuration.Artifact_Part_Stats_BleedoutDuration	+40% Fight for your life duration
+Artifact_Part_Stats_BleedoutMoveSpeed.Artifact_Part_Stats_BleedoutMoveSpeed	+37% Fight for your life Movement Speed
+Artifact_Part_Stats_CorrosiveDamage.Artifact_Part_Stats_CorrosiveDamage	+16% Corrosive Damage
+Artifact_Part_Stats_CorrosiveDoTChance.Artifact_Part_Stats_CorrosiveDoTChance	+26% Corrosive Chance
+Artifact_Part_Stats_CorrosiveResist.Artifact_Part_Stats_CorrosiveResist	+29% Corrosive Resistance
+Artifact_Part_Stats_CryoDamage_3.Artifact_Part_Stats_CryoDamage_3	+16% Cryo Damage
+Artifact_Part_Stats_CryoEfficiency.Artifact_Part_Stats_CryoEfficiency	+27% Cryo Efficiency
+Artifact_Part_Stats_CryoResist.Artifact_Part_Stats_CryoResist	+29% Cryo Resistance
+Artifact_Part_Stats_FireDamage_3.Artifact_Part_Stats_FireDamage_3	+16% Fire Damage
+Artifact_Part_Stats_FireDoTChance.Artifact_Part_Stats_FireDoTChance	+26% Incendiary Chance
+Artifact_Part_Stats_FireResist.Artifact_Part_Stats_FireResist	+29% Incendiary Resistance
+Artifact_Part_Stats_HealthRegen.Artifact_Part_Stats_HealthRegen	Regenerates +149 Health/sec
+Artifact_Part_Stats_Jakobs1.Artifact_Part_Stats_Jakobs1	+43% Jakobs Weapon Magazine Size, +17% Jakobs WEapon Reload Speed
+Artifact_Part_Stats_MagazineSize.Artifact_Part_Stats_MagazineSize	+40% Magazine Size
+Artifact_Part_Stats_MaxHealth.Artifact_Part_Stats_MaxHealth	+1487 Max health
+Artifact_Part_Stats_MaxShieldCapacity.Artifact_Part_Stats_MaxShieldCapacity	+30% Shield Recharge Rate
+Artifact_Part_Stats_MeleeDamage.Artifact_Part_Stats_MeleeDamage	+25% Melee Damage
+Artifact_Part_Stats_Movespeed.Artifact_Part_Stats_Movespeed	+8% Movement Speed
+Artifact_Part_Stats_RadiationDamage.Artifact_Part_Stats_RadiationDamage	+16% Radiation Damage
+Artifact_Part_Stats_RadiationDoTChance.Artifact_Part_Stats_RadiationDoTChance	+27% Irradiate Chance
+Artifact_Part_Stats_RadiationResist.Artifact_Part_Stats_RadiationResist	+29% Radiation Resistance
+Artifact_Part_Stats_ReloadSpeed.Artifact_Part_Stats_ReloadSpeed	+14% Weapon Reload Speed
+Artifact_Part_Stats_ShieldRechargeDelay.Artifact_Part_Stats_ShieldRechargeDelay	-30% Shield Recharge Delay
+Artifact_Part_Stats_ShieldRechargeRate.Artifact_Part_Stats_ShieldRechargeRate	+30% Shield Recharge Rate
+Artifact_Part_Stats_ShockDamage.Artifact_Part_Stats_ShockDamage	+16% Shock Damage
+Artifact_Part_Stats_ShockDoTChance.Artifact_Part_Stats_ShockDoTChance	+26% Shock Chance
+Artifact_Part_Stats_ShockResist.Artifact_Part_Stats_ShockResist	+29% Shock Resistance
+Artifact_Part_Stats_Tediore.Artifact_Part_Stats_Tediore	+35% Tediore Weapon Accuracy, +138% Tediore Weapon Magazine Size
+Artifact_Part_Stats_Vladof.Artifact_Part_Stats_Vladof	+10% Vladof Weapon Fire Rate, +67% Vladof Weapon Magazine Size
+Artifact_Part_Stats_XPMultiplier.Artifact_Part_Stats_XPMultiplier	+7% Experience Gained From Combat

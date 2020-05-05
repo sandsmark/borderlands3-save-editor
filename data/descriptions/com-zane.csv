@@ -1,0 +1,37 @@
+# Class perk	
+ClassMod_Part_Operative_Unique_01_Infiltrator.ClassMod_Part_Operative_Unique_01_Infiltrator	Zane's Weapon Damage and Movement Speed are increased. The lower his shield, the greater the bonus. Whenever Zane activates an action skill he breaks his shield.
+ClassMod_Part_Operative_Unique_02_Executor.ClassMod_Part_Operative_Unique_02_Executor	Kill Skill. Whenever Zane kills an enemy, he gains increased Accuracy, Handling, Critical Hit Damage, Status Effect Damage, and Status Effect Chance.
+ClassMod_Part_Operative_Unique_03_Expert.ClassMod_Part_Operative_Unique_03_Expert	Kill Skill. +5% Chance on kill to recharge SNTL Cooldown and Duration.
+ClassMod_Part_Operative_Unique_04_Firebrand.ClassMod_Part_Operative_Unique_04_Firebrand	Grants Zane's Digit-Clone the Binary System Augment. Whenever Zane's Clone receives melee damage, it creates a Shock Nova around it.
+ClassMod_Part_Operative_Unique_05_Operative.ClassMod_Part_Operative_Unique_05_Operative	Whenever Zane freezes an enemy, a random Status Effect is applied to them instantly.
+Part_CM_Operative_Raid1.Part_CM_Operative_Raid1	While Sliding or Airborne, Zane gains +40% Weapon Damage and +20% Damage Reduction. While Slowed, Zane gains +25% Movement Speed
+# Skill Tree Perks (1 component = +1 to that skill, 5 of the same component = +5 to that skill)	
+ClassMod_Part_Skill_Operative_Adrenaline.ClassMod_Part_Skill_Operative_Adrenaline	Zane gains increased Action Skill Cooldown Rate. This bonus is based on the amount of shield he has. The more percent full, the greater the bonus.
+ClassMod_Part_Skill_Operative_BorrowedTime.ClassMod_Part_Skill_Operative_BorrowedTime	Zane gains increased Action Skill Duration for every active Action Skill.
+ClassMod_Part_Skill_Operative_Chancer.ClassMod_Part_Skill_Operative_Chancer	Zane gains Health Regeneration. The lower his shield is, the higher the bonus.
+ClassMod_Part_Skill_Operative_ColdBore.ClassMod_Part_Skill_Operative_ColdBore	Zane gains increased Weapon Swap Speed. The next shot fired after swapping weapons deals Bonus Cryo Damage.
+ClassMod_Part_Skill_Operative_CoolerHeads.ClassMod_Part_Skill_Operative_CoolerHeads	Whenever Zane scores a Critical Hit on an enemy, theres a chance they will be Slowed. This effect stacks until the target is Frozen.
+ClassMod_Part_Skill_Operative_CoolHand.ClassMod_Part_Skill_Operative_CoolHand	Zane gains increased Reload Speed. Kill Skill. After killing an enemy, Zanes Reload Speed is increasted for a few seconds. Duration 15sec
+ClassMod_Part_Skill_Operative_Donnybrook.ClassMod_Part_Skill_Operative_Donnybrook	Kill Skill. Whenever Zane kills an enemy, he and his Digi-Clone receieve increased Gun Damage and gain Health Regeneration for a few seconds. Duration, 15sec
+ClassMod_Part_Skill_Operative_DroneDelivery.ClassMod_Part_Skill_Operative_DroneDelivery	"SNTL will occasionally drop a free grenade based on Zane's current grenade mod while attacking enemies. ""Cooldown 15sec"""
+ClassMod_Part_Skill_Operative_DuctTape.ClassMod_Part_Skill_Operative_DuctTape	The first shot fired from Zane's gun has a chance to also fire a grenade. Cooldown Time 8sec
+ClassMod_Part_Skill_Operative_ExtraParts.ClassMod_Part_Skill_Operative_ExtraParts	Zane gains Increased Mazimum Shield Capacity.
+ClassMod_Part_Skill_Operative_GoodMisfortune.ClassMod_Part_Skill_Operative_GoodMisfortune	Kill Skill. Killing an enemy increased Zane's Action Skill Duration.
+ClassMod_Part_Skill_Operative_LikeAGhost.ClassMod_Part_Skill_Operative_LikeAGhost	Zane and his Digi-Clone gain a chance to ignore bullets. This chance is increased for a few seconds after activating an Action skill. This effect stacks. Duration 8sec
+ClassMod_Part_Skill_Operative_MultiTasker.ClassMod_Part_Skill_Operative_MultiTasker	Whenever one or more of Zane's action skills are active, he gains increased Gun Damage for each active action skill.
+ClassMod_Part_Skill_Operative_Ordnance.ClassMod_Part_Skill_Operative_Ordnance	Kill Skill. Whenever Zane kills an enemy, they create a Cryo Nova, dealing damage to all nearby enemies. Cooldown 2sec
+ClassMod_Part_Skill_Operative_PlayingDirty.ClassMod_Part_Skill_Operative_PlayingDirty	Kill Skill. After killing an enemy, Zane's next five shots all have a chance to fire an additional projectile.
+ClassMod_Part_Skill_Operative_PocketFullOfGrenades.ClassMod_Part_Skill_Operative_PocketFullOfGrenades	Kill Skill. After killing an enemy, Zane gains Grenade Regeneration for a few seconds. Duration 15sec
+ClassMod_Part_Skill_Operative_Praemunitus.ClassMod_Part_Skill_Operative_Praemunitus	Zane and his Digi-Clone gain increased Magazine Size.
+ClassMod_Part_Skill_Operative_ReadyForAction.ClassMod_Part_Skill_Operative_ReadyForAction	Zane gains improved Shield Recharge Rate and Shield Recharge Delay.
+ClassMod_Part_Skill_Operative_ReallyExpensiveJacket.ClassMod_Part_Skill_Operative_ReallyExpensiveJacket	Elemental Status Effects applied to Zane have a reduced duration.
+ClassMod_Part_Skill_Operative_Refreshment.ClassMod_Part_Skill_Operative_Refreshment	Whenever Zane damages a frozen enemy with his weapon, he gains some of that damage back as health.
+ClassMod_Part_Skill_Operative_SupersonicMan.ClassMod_Part_Skill_Operative_SupersonicMan	Whenever one or more of Zane's Action Skills are active, he gains increased Movement Speed for each active Action Skill.
+ClassMod_Part_Skill_Operative_Teamwork.ClassMod_Part_Skill_Operative_Teamwork	Zane deals Bonus Shock Damage to enemies that arent targeting him.
+ClassMod_Part_Skill_Operative_TheWantVsNeed.ClassMod_Part_Skill_Operative_TheWantVsNeed	Kill Skill. After killing an enemy, Zane's weapons gain Life Steal for a few seconds. Duration 15sec
+ClassMod_Part_Skill_Operative_Violent_Momentum.ClassMod_Part_Skill_Operative_Violent_Momentum	Zane's Gun Damage is increased while moving. The quicker he moves, the greater the Gun Damage.
+ClassMod_Part_Skill_Operative_Violent_Speed.ClassMod_Part_Skill_Operative_Violent_Speed	Kill Skill. After killing an enemy, Zane gains increased Movement Speed for a few seconds. Duration 15sec
+ClassMod_Part_Skill_Operative_ViolentViolence.ClassMod_Part_Skill_Operative_ViolentViolence	Kill Skill. After killing an enemy, Zane gains increased Fire Rate for a few seconds. Duration 15sec
+CM_Part_Skill_Operative_ViolentSpeed_Raid1.CM_Part_Skill_Operative_ViolentSpeed_Raid1	
+CM_Part_Skill_Operative_ViolentMomentum_Raid1.CM_Part_Skill_Operative_ViolentMomentum_Raid1	
+CM_Part_Skill_Operative_Supersonic_Raid1.CM_Part_Skill_Operative_Supersonic_Raid1	

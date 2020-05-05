@@ -1,0 +1,66 @@
+# Object name	Positives	Negatives	Effects	Naming
+Part_AR_TOR_Barrel_01.Part_AR_TOR_Barrel_01	-			Polisher
+Part_AR_TOR_Barrel_01_A.Part_AR_TOR_Barrel_01_A	Proj Speed +30%			
+Part_AR_TOR_Barrel_01_B.Part_AR_TOR_Barrel_01_B	Splash Dmg Radius +20%			
+Part_AR_TOR_Barrel_01_C.Part_AR_TOR_Barrel_01_C	Proj Speed +30%			
+Part_AR_TOR_Barrel_02.Part_AR_TOR_Barrel_02	-			Stranger
+Part_AR_TOR_Barrel_02_A.Part_AR_TOR_Barrel_02_A	Dmg +10%			
+Part_AR_TOR_Barrel_02_AmberManagement.Part_AR_TOR_Barrel_02_AmberManagement				
+Part_AR_TOR_Barrel_02_B.Part_AR_TOR_Barrel_02_B	Fire Rate +10%			
+Part_AR_TOR_Barrel_02_C.Part_AR_TOR_Barrel_02_C	Dmg +10%			
+Part_AR_TOR_Barrel_03.Part_AR_TOR_Barrel_03	-			Flogger
+Part_AR_TOR_Barrel_03_A.Part_AR_TOR_Barrel_03_A	Acc Bloom -25%			
+Part_AR_TOR_Barrel_03_B.Part_AR_TOR_Barrel_03_B	Fire Rate +10%			
+Part_AR_TOR_Barrel_03_C.Part_AR_TOR_Barrel_03_C	Fire Rate +10%			
+Part_AR_TOR_Barrel_Alchemist.Part_AR_TOR_Barrel_Alchemist	Dmg -20%			
+Part_AR_TOR_Barrel_Bearcat.Part_AR_TOR_Barrel_Bearcat	Reload Time -25%	Acc +200%		
+Part_AR_TOR_Barrel_ETech.Part_AR_TOR_Barrel_ETech	Mag Size +25%			Blister
+Part_AR_TOR_Barrel_ETech_A.Part_AR_TOR_Barrel_ETech_A	Ele Dmg +10%			
+Part_AR_TOR_Barrel_LaserSploder.Part_AR_TOR_Barrel_LaserSploder				
+Part_AR_TOR_Barrel_TryBolt.Part_AR_TOR_Barrel_TryBolt	Dmg +60%			
+Part_AR_TOR_Barrel_Warden.Part_AR_TOR_Barrel_Warden	Acc +800%			
+Part_AR_TOR_Barrel_Juliet.Part_AR_TOR_Barrel_Juliet	Recoil Width -50%, Recoil Height -50%, Splash Dmg Radius +50, Dmg +30%			Juliet
+Part_AR_TOR_Barrel_Varlope.Part_AR_TOR_Barrel_Varlope	Splash Dmg Radius +30%, Dmg +10%, Mag Size +4		La Varlope	
+Part_AR_TOR_Body.Part_AR_TOR_Body	DO NOT REMOVE			
+Part_AR_TOR_Body_A.Part_AR_TOR_Body_A	Reload Time -10%			
+Part_AR_TOR_Body_B.Part_AR_TOR_Body_B	Dmg +10%			
+Part_AR_TOR_Body_C.Part_AR_TOR_Body_C	Splash Dmg Radius +20%			
+Part_AR_TOR_Ele_Corr.Part_AR_TOR_Ele_Corr				Oozing
+Part_AR_TOR_Ele_Cryo.Part_AR_TOR_Ele_Cryo				Shrinking
+Part_AR_TOR_Ele_Fire.Part_AR_TOR_Ele_Fire				Burning
+Part_AR_TOR_Ele_Radiation.Part_AR_TOR_Ele_Radiation				Itchy
+Part_AR_TOR_Ele_Shock.Part_AR_TOR_Ele_Shock				Stimulating
+Part_AR_TOR_Exhaust_01.Part_AR_TOR_Exhaust_01	Dmg +10%			
+Part_AR_TOR_Exhaust_02.Part_AR_TOR_Exhaust_02	Proj Speed +30%			
+Part_AR_TOR_Exhaust_03.Part_AR_TOR_Exhaust_03	Splash Dmg Radius +20%			
+Part_AR_TOR_ForeGrip_01.Part_AR_TOR_ForeGrip_01	Acc Bloom -30%, Fire Rate +5%			
+Part_AR_TOR_ForeGrip_02.Part_AR_TOR_ForeGrip_02	Proj Speed +15%, Acc -10%			
+Part_AR_TOR_ForeGrip_03.Part_AR_TOR_ForeGrip_03	Splash Dmg Radius +20%, Recoil Width -15%			
+Part_AR_TOR_ForeGrip_04.Part_AR_TOR_ForeGrip_04	Weapon Sway -30%, Recoil Height -30%			
+Part_AR_TOR_ForeGrip_05.Part_AR_TOR_ForeGrip_05	Acc -10%, Dmg +5%			
+Part_AR_TOR_Grip_01.Part_AR_TOR_Grip_01	Proj Speed +15%, Acc -20%			
+Part_AR_TOR_Grip_02.Part_AR_TOR_Grip_02	Splash Dmg Radius +20%, Weapon Sway -30%			
+Part_AR_TOR_Grip_03.Part_AR_TOR_Grip_03	Reload Time -5%, Mag Size +10%	Dmg -5%, Acc +10%		
+Part_AR_TOR_Grip_04.Part_AR_TOR_Grip_04	Acc Bloom -20%, Dmg +5%			
+Part_AR_TOR_Grip_05.Part_AR_TOR_Grip_05	Recoil Width -30%	Acc Bloom +25%, Acc +10%, Dmg -30%		
+Part_AR_TOR_Magazine_01.Part_AR_TOR_Magazine_01	22 Round			
+Part_AR_TOR_Magazine_02.Part_AR_TOR_Magazine_02	16 Round, Dmg +10%			
+Part_AR_TOR_Magazine_03.Part_AR_TOR_Magazine_03	28 Round	Dmg -10%		
+Part_AR_TOR_Magazine_03_AmberManagement.Part_AR_TOR_Magazine_03_AmberManagement	28 Round	Dmg -10%		
+Part_AR_TOR_Magazine_BearCat.Part_AR_TOR_Magazine_BearCat	48 Round	Dmg -10%		
+Part_AR_TOR_Material_01_Common.Part_AR_TOR_Material_01_Common	Skin		Weapon Skin	
+Part_AR_TOR_Material_02_UnCommon.Part_AR_TOR_Material_02_UnCommon	Skin		Weapon Skin	
+Part_AR_TOR_Material_03_Rare.Part_AR_TOR_Material_03_Rare	Skin		Weapon Skin	
+Part_AR_TOR_Material_04_VeryRare.Part_AR_TOR_Material_04_VeryRare	Skin		Weapon Skin	
+Part_AR_TOR_Material_Alchemist.Part_AR_TOR_Material_Alchemist	Skin		Weapon Skin	
+Part_AR_TOR_Material_AmberManagement.Part_AR_TOR_Material_AmberManagement	Skin		Weapon Skin	
+Part_AR_TOR_Material_Bearcat.Part_AR_TOR_Material_Bearcat	Skin		Weapon Skin	
+Part_AR_TOR_Material_LaserSploder.Part_AR_TOR_Material_LaserSploder	Skin		Weapon Skin	
+Part_AR_TOR_Material_TryBolt.Part_AR_TOR_Material_TryBolt	Skin		Weapon Skin	
+Part_AR_TOR_Material_Juliet.Part_AR_TOR_Material_Juliet	Skin		Weapon Skin - Juliet	
+Part_AR_TOR_Material_Varlope.Part_AR_TOR_Material_Varlope	Skin		Weapon Skin - La Varlope	
+Part_AR_TOR_Scope_01.Part_AR_TOR_Scope_01				
+Part_AR_TOR_Scope_02.Part_AR_TOR_Scope_02				
+Part_AR_TOR_Scope_03.Part_AR_TOR_Scope_03	3.3x			
+# Naming strategy	Name	Priority		
+# If Shot Cost = 2	Double-Penetrating	1003.0		

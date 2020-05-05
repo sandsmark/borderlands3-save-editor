@@ -1,0 +1,59 @@
+# Object name	Positives	Negatives	Effects	Naming
+Part_HW_VLA_Barrel_01.Part_HW_VLA_Barrel_01	Splash Dmg Radius +143			Strack
+Part_HW_VLA_Barrel_01_A.Part_HW_VLA_Barrel_01_A	Proj Speed +30%			
+Part_HW_VLA_Barrel_01_AI_UseONLY.Part_HW_VLA_Barrel_01_AI_UseONLY	-			
+Part_HW_VLA_Barrel_01_B.Part_HW_VLA_Barrel_01_B	Dmg +10%			
+Part_HW_VLA_Barrel_01_C.Part_HW_VLA_Barrel_01_C	Dmg +10%			
+Part_HW_VLA_Barrel_02.Part_HW_VLA_Barrel_02	-			Gruppa
+Part_HW_VLA_Barrel_02_A.Part_HW_VLA_Barrel_02_A	Fire Rate +10%			
+Part_HW_VLA_Barrel_02_AI_UseONLY.Part_HW_VLA_Barrel_02_AI_UseONLY	-			
+Part_HW_VLA_Barrel_02_B.Part_HW_VLA_Barrel_02_B	Reload Time -10%			
+Part_HW_VLA_Barrel_02_C.Part_HW_VLA_Barrel_02_C	Fire Rate +10%			
+Part_HW_VLA_Barrel_03.Part_HW_VLA_Barrel_03	Splash Dmg Radius +195			Vred
+Part_HW_VLA_Barrel_03_A.Part_HW_VLA_Barrel_03_A	Splash Dmg Radius +20%			
+Part_HW_VLA_Barrel_03_AI_UseONLY.Part_HW_VLA_Barrel_03_AI_UseONLY	-			
+Part_HW_VLA_Barrel_03_B.Part_HW_VLA_Barrel_03_B	Splash Dmg Radius +20%			
+Part_HW_VLA_Barrel_03_C.Part_HW_VLA_Barrel_03_C	Acc -15%			
+Part_HW_VLA_Barrel_CloudBurst.Part_HW_VLA_Barrel_CloudBurst	Mag Size +8, Splash Dmg Radius +300, Ele Chance +30%	Dmg -50%		
+Part_HW_VLA_Barrel_ETech.Part_HW_VLA_Barrel_ETech	-			Bagronk
+Part_HW_VLA_Barrel_ETech_A.Part_HW_VLA_Barrel_ETech_A	Ele Chance +15%, Mag Size +10%			
+Part_HW_VLA_Barrel_Mongol.Part_HW_VLA_Barrel_Mongol	Splash Dmg Radius +175, Mag Size +8	Dmg -40%, Recoil Height +45%		
+Part_HW_VLA_Body.Part_HW_VLA_Body	DO NOT REMOVE			
+Part_HW_VLA_Body_A.Part_HW_VLA_Body_A	Splash Dmg Radius +20%			
+Part_HW_VLA_Body_B.Part_HW_VLA_Body_B	Dmg +10%			
+Part_HW_VLA_Body_C.Part_HW_VLA_Body_C	Fire Rate +10%			
+Part_HW_VLA_Elemental_Corr.Part_HW_VLA_Elemental_Corr				Pestilent
+Part_HW_VLA_Elemental_Cryo.Part_HW_VLA_Elemental_Cryo				Negating
+Part_HW_VLA_Elemental_Fire.Part_HW_VLA_Elemental_Fire				Molten
+Part_HW_VLA_Elemental_Radiation.Part_HW_VLA_Elemental_Radiation				Nuclear
+Part_HW_VLA_Elemental_Shock.Part_HW_VLA_Elemental_Shock				Storming
+Part_HW_VLA_Grip_01.Part_HW_VLA_Grip_01	Reload Time -5%, +1 Proj			
+Part_HW_VLA_Grip_02.Part_HW_VLA_Grip_02	Proj Speed +15%, Fire Rate +5%			
+Part_HW_VLA_Grip_03.Part_HW_VLA_Grip_03	Acc -10%, Dmg +5%			
+Part_HW_VLA_Mag_01.Part_HW_VLA_Mag_01	6 Round, Dmg +10%			
+Part_HW_VLA_Mag_02.Part_HW_VLA_Mag_02	10 Round			
+Part_HW_VLA_Mag_03.Part_HW_VLA_Mag_03	16 Round	Dmg -10%		
+Part_HW_VLA_Material_01_Common.Part_HW_VLA_Material_01_Common	Skin		Weapon Skin	
+Part_HW_VLA_Material_02_Uncommon.Part_HW_VLA_Material_02_Uncommon	Skin		Weapon Skin	
+Part_HW_VLA_Material_03_Rare.Part_HW_VLA_Material_03_Rare	Skin		Weapon Skin	
+Part_HW_VLA_Material_04_VeryRare.Part_HW_VLA_Material_04_VeryRare	Skin		Weapon Skin	
+Part_HW_VLA_Material_CloudBurst.Part_HW_VLA_Material_CloudBurst	Skin		Weapon Skin	
+Part_HW_VLA_Material_Mongol.Part_HW_VLA_Material_Mongol	Skin		Weapon Skin	
+Part_HW_VLA_Scope_01.Part_HW_VLA_Scope_01				
+Part_HW_VLA_Scope_02.Part_HW_VLA_Scope_02				
+Part_HW_VLA_Scope_03.Part_HW_VLA_Scope_03				
+Part_HW_VLA_Shoulder_01.Part_HW_VLA_Shoulder_01	Mag Size +2, Proj Speed +15%			
+Part_HW_VLA_Shoulder_02.Part_HW_VLA_Shoulder_02	Reload Time -5%, Fire Rate +5%			
+Part_HW_VLA_Shoulder_03.Part_HW_VLA_Shoulder_03	Splash Dmg Radius +20%, Acc -20%			
+Part_HW_VLA_Tail_01.Part_HW_VLA_Tail_01	Mag Size +2, Fire Rate +5%			
+Part_HW_VLA_Tail_02.Part_HW_VLA_Tail_02	Proj Speed +15%, Reload Time -5%			
+Part_HW_VLA_Tail_03.Part_HW_VLA_Tail_03	Acc -20%, Dmg +5%			
+Part_HW_VLA_Tail_04.Part_HW_VLA_Tail_04	Splash Dmg Radius +20%, Recoil Height -30%			
+Part_HW_VLA_Underbarrel_01.Part_HW_VLA_Underbarrel_01	Rocket Salvo, 2 rocket at a time			
+Part_HW_VLA_Underbarrel_02.Part_HW_VLA_Underbarrel_02	Rocket, Big boy			
+Part_HW_VLA_Underbarrel_03.Part_HW_VLA_Underbarrel_03	Mortar, 4 short burst			
+Part_HW_VLA_Underbarrel_CloudBurst.Part_HW_VLA_Underbarrel_CloudBurst				
+# Naming strategy	Name	Priority		
+# If Projectiles Per Shot = 2	Annexed	1001.0		
+# If MagSize is Greater Than 16 and MagSize is Less Than 20	Engulfing	1002.0		
+# If MagSize is Greater Than 18 and MagSize is Less Than 30	Expansive	1002.0		

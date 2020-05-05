@@ -1,0 +1,48 @@
+# Object name	Positives	Negatives	Effects	Naming
+Part_ATL_Barrel_01.Part_ATL_Barrel_01	Splash Dmg Radius +202			Pattern [NULL]
+Part_ATL_Barrel_01_A.Part_ATL_Barrel_01_A	Fire Rate +10%			
+Part_ATL_Barrel_01_B.Part_ATL_Barrel_01_B	Fire Rate +10%			
+Part_ATL_Barrel_01_C.Part_ATL_Barrel_01_C	Dmg +10%			
+Part_ATL_Barrel_02.Part_ATL_Barrel_02	Splash Dmg Radius +163			Pattern Black
+Part_ATL_Barrel_02_A.Part_ATL_Barrel_02_A	Proj per Shot +1, Acc -15%			
+Part_ATL_Barrel_02_B.Part_ATL_Barrel_02_B	Reload Time -10%			
+Part_ATL_Barrel_02_C.Part_ATL_Barrel_02_C	Proj per Shot +1			
+Part_ATL_Barrel_03.Part_ATL_Barrel_03	Splash Dmg Radius +176			Pattern Red
+Part_ATL_Barrel_03_A.Part_ATL_Barrel_03_A	Splash Dmg Radius +20%, Recoil Height -25%			
+Part_ATL_Barrel_03_B.Part_ATL_Barrel_03_B	Dmg +10%			
+Part_ATL_Barrel_03_C.Part_ATL_Barrel_03_C	Mag Size +2, Dmg +10%			
+Part_ATL_Barrel_Freeman.Part_ATL_Barrel_Freeman	Splash Dmg Radius +176, Dmg +70%	Acc +50%		
+Part_ATL_Barrel_RubysWrath.Part_ATL_Barrel_RubysWrath	Splash Dmg Radius +163, Mag Size +7	Reload Time +50%		
+Part_ATL_Body.Part_ATL_Body	DO NOT REMOVE			
+Part_ATL_Body_A.Part_ATL_Body_A	Dmg +10%			
+Part_ATL_Body_B.Part_ATL_Body_B	Splash Dmg Radius +20%			
+Part_ATL_Body_C.Part_ATL_Body_C	Reload Time -10%			
+Part_ATL_Foregrip_01.Part_ATL_Foregrip_01	Fire Rate +5%			
+Part_ATL_Foregrip_02.Part_ATL_Foregrip_02	Dmg +5%			
+Part_ATL_Foregrip_03.Part_ATL_Foregrip_03	Splash Dmg Radius +20%, Reload Time -5%			
+Part_ATL_Grip_01.Part_ATL_Grip_01	Splash Dmg Radius +20%, Recoil Height -15%			
+Part_ATL_Grip_02.Part_ATL_Grip_02	Weapon Sway -30%, Fire Rate +5%			
+Part_ATL_Grip_03.Part_ATL_Grip_03	Acc -20%, Dmg +5%			
+Part_ATL_Mag_Pod_01.Part_ATL_Mag_Pod_01	8 Round	Dmg -10%		
+Part_ATL_Mag_Pod_02.Part_ATL_Mag_Pod_02	3 Round, Dmg +10%			
+Part_ATL_Mag_Pod_03.Part_ATL_Mag_Pod_03	6 Round			
+Part_ATL_Marker_01.Part_ATL_Marker_01	Marker Grenade			
+Part_ATL_Marker_02.Part_ATL_Marker_02	Sticky Puck			
+Part_ATL_Marker_03.Part_ATL_Marker_03	Sticky Darts			
+Part_ATL_Marker_Freeman.Part_ATL_Marker_Freeman	Sticky Darts			
+Part_ATL_Marker_RubysWrath.Part_ATL_Marker_RubysWrath	Marker Grenade			
+Part_ATL_Material_01_Common.Part_ATL_Material_01_Common	Skin		Weapon Skin	
+Part_ATL_Material_02_Uncommon.Part_ATL_Material_02_Uncommon	Skin		Weapon Skin	
+Part_ATL_Material_03_Rare.Part_ATL_Material_03_Rare	Skin		Weapon Skin	
+Part_ATL_Material_04_VeryRare.Part_ATL_Material_04_VeryRare	Skin		Weapon Skin	
+Part_ATL_Material_Freeman.Part_ATL_Material_Freeman	Skin		Weapon Skin	
+Part_ATL_Material_RubysWrath.Part_ATL_Material_RubysWrath	Skin		Weapon Skin	
+Part_ATL_Scope_01.Part_ATL_Scope_01	2.2x			
+Part_ATL_Scope_02.Part_ATL_Scope_02				
+Part_ATL_Scope_03.Part_ATL_Scope_03				
+Part_ATL_Wire_01.Part_ATL_Wire_01	Mag Size +10%			
+Part_ATL_Wire_02.Part_ATL_Wire_02	Splash Dmg Radius +20%			
+Part_ATL_Wire_03.Part_ATL_Wire_03	Acc Bloom -25%, Acc -15%			
+# Naming strategy	Name	Priority		
+# If MagSize Greater Than 8	Laden	1001.0		
+# If Projectiles Per Shot = 2	Efficient	1003.0		

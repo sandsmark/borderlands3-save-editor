@@ -1,0 +1,56 @@
+# Object name	Positives	Negatives	Effects	Naming
+Part_PS_TED_Barrel_01.Part_PS_TED_Barrel_01	-			Deadshot
+Part_PS_TED_Barrel_01_A.Part_PS_TED_Barrel_01_A	Dmg +10%			
+Part_PS_TED_Barrel_01_B.Part_PS_TED_Barrel_01_B	Splash Dmg Radius +20%, Dmg +10%		When thrown, shoot target for to 2x dmg	
+Part_PS_TED_Barrel_01_C.Part_PS_TED_Barrel_01_C	Fire Rate +10%, Mag Size +10%	Dmg -5%, Acc +10%		
+Part_PS_TED_Barrel_02.Part_PS_TED_Barrel_02	-			Quickshot
+Part_PS_TED_Barrel_02_A.Part_PS_TED_Barrel_02_A	Recoil Height -25%, Fire Rate +10%			
+Part_PS_TED_Barrel_02_B.Part_PS_TED_Barrel_02_B	Fire Rate +10%		When thrown, shoot until OoA	
+Part_PS_TED_Barrel_02_C.Part_PS_TED_Barrel_02_C	Acc -15%			
+Part_PS_TED_Barrel_03.Part_PS_TED_Barrel_03	-			Sureshot
+Part_PS_TED_Barrel_03_A.Part_PS_TED_Barrel_03_A	Acc -15%			
+Part_PS_TED_Barrel_03_B.Part_PS_TED_Barrel_03_B	Mag Size +7, Dmg +4.5%	Acc +10%	When thrown, small explosion	
+Part_PS_TED_Barrel_03_C.Part_PS_TED_Barrel_03_C	Acc -15%			
+Part_PS_TED_Barrel_BabyMaker.Part_PS_TED_Barrel_BabyMaker	Dmg +20%			
+Part_PS_TED_Barrel_ETech.Part_PS_TED_Barrel_ETech	Mag Size +10%			Lurkshot
+Part_PS_TED_Barrel_ETech_A.Part_PS_TED_Barrel_ETech_A	Reload Time -10%, Mag Size +10%, Melee Dmg +60%			
+Part_PS_TED_Barrel_Gunerang.Part_PS_TED_Barrel_Gunerang	Mag Size +18, Reload Time -17.5%			
+Part_PS_TED_Barrel_Sabre.Part_PS_TED_Barrel_Sabre	Mag Size +30	Acc +25%, Dmg -50%		
+Part_PS_TED_Barrel_Execute.Part_PS_TED_Barrel_Execute	Mag Size +2, Reload Time -35%			
+Part_PS_TED_Body.Part_PS_TED_Body	DO NOT REMOVE			
+Part_PS_TED_Body_A.Part_PS_TED_Body_A	Mag Size +10%	Acc +10%, Dmg -5%		
+Part_PS_TED_Body_B.Part_PS_TED_Body_B	Splash Dmg Radius +20%			
+Part_PS_TED_Body_C.Part_PS_TED_Body_C	Dmg +10%			
+Part_PS_TED_Elemental_Corrosive.Part_PS_TED_Elemental_Corrosive				Poison
+Part_PS_TED_Elemental_Cryo.Part_PS_TED_Elemental_Cryo				Frozen
+Part_PS_TED_Elemental_Fire.Part_PS_TED_Elemental_Fire				Firesale
+Part_PS_TED_Elemental_Radiation.Part_PS_TED_Elemental_Radiation				Rad
+Part_PS_TED_Elemental_Shock.Part_PS_TED_Elemental_Shock				Supercharged
+Part_PS_TED_Grip_01.Part_PS_TED_Grip_01	Weapon Sway -30%, Dmg +5%			
+Part_PS_TED_Grip_02.Part_PS_TED_Grip_02	Acc -12%, Mag Size +3	Dmg -5%		
+Part_PS_TED_Grip_03.Part_PS_TED_Grip_03	Splash Dmg Radius +20%, Recoil Width -30%			
+Part_PS_TED_Grip_04.Part_PS_TED_Grip_04	Recoil Height -15%, Fire Rate +5			
+Part_PS_TED_Grip_05.Part_PS_TED_Grip_05	Proj per Shot +1	Acc Bloom +25%, Acc +10%, Dmg -30%		
+Part_PS_TED_Material_01_Common.Part_PS_TED_Material_01_Common	Skin		Weapon Skin	
+Part_PS_TED_Material_02_UnCommon.Part_PS_TED_Material_02_UnCommon	Skin		Weapon Skin	
+Part_PS_TED_Material_03_Rare.Part_PS_TED_Material_03_Rare	Skin		Weapon Skin	
+Part_PS_TED_Material_04_Epic.Part_PS_TED_Material_04_Epic	Skin		Weapon Skin	
+Part_PS_TED_Material_Ava.Part_PS_TED_Material_Ava	Skin		Weapon Skin	
+Part_PS_TED_Material_BabyMaker.Part_PS_TED_Material_BabyMaker	Skin		Weapon Skin	
+Part_PS_TED_Material_Bangerang.Part_PS_TED_Material_Bangerang	Skin		Weapon Skin	
+Part_PS_TED_Material_Gunerang.Part_PS_TED_Material_Gunerang	Skin		Weapon Skin	
+Part_PS_TED_Material_Sabre.Part_PS_TED_Material_Sabre	Skin		Weapon Skin	
+Part_PS_TED_Material_Execute.Part_PS_TED_Material_Execute	Skin		Weapon Skin	
+Part_PS_TED_Scope_01.Part_PS_TED_Scope_01	1.5x			
+Part_PS_TED_Scope_02.Part_PS_TED_Scope_02	Small Scope, 2.2x			
+Part_PS_TED_Scope_03.Part_PS_TED_Scope_03	4.5x			
+Part_PS_TED_TypeMod_01.Part_PS_TED_TypeMod_01	Splash Dmg Radius +20%		When thrown, detonate on enemy impact	
+Part_PS_TED_TypeMod_02.Part_PS_TED_TypeMod_02	Acc Bloom -30%, Dmg +5%		When thrown, homing	
+Part_PS_TED_TypeMod_03.Part_PS_TED_TypeMod_03	Recoil Height -30%, Fire Rate +5%		When thrown, Turret	
+Part_PS_TED_TypeMod_04.Part_PS_TED_TypeMod_04	Weapon Sway -30%, Acc -5%		When thrown, bounce	
+Part_PS_TED_TypeMod_BabyMaker_Homing.Part_PS_TED_TypeMod_BabyMaker_Homing	Acc Bloom -30%, Dmg +5%			
+Part_PS_TED_TypeMod_BabyMaker_Spider.Part_PS_TED_TypeMod_BabyMaker_Spider	Recoil Height -30%, Fire Rate +5%		When thrown, Turret	
+# Naming strategy	Name	Priority		
+# If MagSize is Greater Than 12 and MagSize is Less Than 16	+	02.05.2020		
+# If MagSize is Greater Than 16 and MagSize is Less Than 20	++	02.05.2020		
+# If MagSize is Greater Than 20	XL	02.05.2020		
