@@ -105,17 +105,11 @@ static QByteArray deobfuscateItem(const QByteArray &input)
 
     if (seed != 0) {
         uint32_t key = (seed >> 5) & 0xFFFFFFFF;
-        int i=0;
         for (char &c : data) {
-            qDebug() << " before" << key << int(c);
             key = (key * obfuscation::itemKey) % obfuscation::itemMask;
             c ^= key;
-            qDebug() << key << int(c);
-            i++;
         }
-        qDebug() << "-----" << i;
         const int steps = (seed & 0x1f) % data.size();
-        qDebug() << "ROtating" << steps;
         std::rotate(data.rbegin(), data.rbegin() + steps, data.rend());
     } else {
         qWarning() << "0 seed?";
@@ -138,11 +132,8 @@ static QByteArray deobfuscateItem(const QByteArray &input)
     if (computedChecksum != checksum) {
         QMessageBox::warning(nullptr, "Invalid file", QObject::tr("Invalid item (checksum failed)."));
         qWarning() << "Checksum mismatch" << computedChecksum << "expected" << checksum;
-//        return {};
+        return {};
     }
-    QByteArray checksumBytes(sizeof(computedChecksum), 0);
-    qToBigEndian(computedChecksum, checksumBytes.data());
-    qDebug() << "checksum" << checksumBytes.toHex();
 
     return data.mid(2);
 }
@@ -150,11 +141,11 @@ static QByteArray deobfuscateItem(const QByteArray &input)
 // extremely inefficient, but can't be bothered to think
 static QByteArray obfuscateItem(QByteArray input, const int seed)
 {
-    qDebug() << "OBfuscating =================================";
     if (input.isEmpty()) {
         qWarning() << "Can't obfuscate empty string";
         return {};
     }
+
     QByteArray ret(5, 0);
     ret[0] = 3;
     qToBigEndian(seed, ret.data() + 1);
@@ -174,49 +165,18 @@ static QByteArray obfuscateItem(QByteArray input, const int seed)
 
     QByteArray checksumBytes(sizeof(computedChecksum), 0);
     qToBigEndian(computedChecksum, checksumBytes.data());
-    qDebug() << "checksum" << checksumBytes.toHex();
     input.prepend(checksumBytes);
-//    ret.append(checksumBytes);
-//    ret.append(input);
 
     if (seed != 0) {
         const int steps = (seed & 0x1f) % input.size();
-        qDebug() << "ROtating" << steps;
         std::rotate(input.begin(), input.begin() + steps, input.end());
-//        const int steps = input.size() - ((seed & 0x1f) % input.size());
         uint32_t key = (seed >> 5) & 0xFFFFFFFF;
-//            key = (key * obfuscation::itemKey) % obfuscation::itemMask;
-//            key = (key * obfuscation::itemKey) % obfuscation::itemMask;
-        int i=0;
         for (char &c : input) {
-//        for (int i=input.length()-1; i>= 0; i-- ){
-            qDebug() << " before" << key << int(c);
             key = (key * obfuscation::itemKey) % obfuscation::itemMask;
             c ^= key;
-            qDebug() << key << int(c);
-            i++;
-//            input[i] = input[i] ^ key;
         }
-//        qDebug() << "-----" << i;
     }
 
-    // Normal crc32
-//    const QByteArray toChecksum = ret.mid(0, 5) + "\xff\xff";// + input.mid(2);
-//    uint32_t crc32 = 0xffffffff;
-//    for (const char c : toChecksum) {
-//        uint32_t val = (crc32 ^ c) & 0xff;
-//        for (int i=0; i<8; i++) {
-//            val = (val & 1) ? (val >>1 ) ^ 0xedb88320 : val >> 1;
-//        }
-//        crc32 = val ^ (crc32 >> 8);
-//    }
-//    crc32 ^= 0xffffffff;
-
-//    const uint16_t computedChecksum = (crc32 >> 16) ^ crc32;
-
-//    QByteArray checksumBytes(sizeof(computedChecksum), 0);
-//    qToBigEndian(computedChecksum, checksumBytes.data());
-//    ret.append(checksumBytes);
     ret.append(input);
 
     return ret;
@@ -377,7 +337,8 @@ bool Savegame::load(const QString &filePath)
         const ::OakSave::OakInventoryItemSaveGameData& entry = m_character->inventory_items(itemIndex);
         QByteArray deobfuscated = deobfuscateItem(QByteArray::fromStdString(entry.item_serial_number()));
         QByteArray obfuscated = obfuscateItem(deobfuscated, qFromBigEndian<int32_t>(entry.item_serial_number().data() + 1));
-        if (deobfuscated != obfuscated) {
+
+        if (entry.item_serial_number() != obfuscated.toStdString()) {
             qWarning() << "OBfuscation failed" << deobfuscated.toHex(' ');
             qDebug() << obfuscated.toHex(' ');
             qDebug() << QByteArray::fromStdString(entry.item_serial_number()).toHex(' ');
