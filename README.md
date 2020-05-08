@@ -21,6 +21,9 @@ Download the zip from here:
 
 https://ci.appveyor.com/project/sandsmark/borderlands3-save-editor/build/artifacts
 
+NB: I don't run windows nor do I have a windows machine to test on, but when I
+set up appveyor I tested it in Wine (on Linux) and it worked.
+
 ## Credits
 
 Thanks to https://github.com/apocalyptech and https://github.com/gibbed for the
