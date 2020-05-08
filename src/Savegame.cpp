@@ -57,7 +57,7 @@ struct BitParser
         if (count <= 0) {
             return 0;
         }
-        if (count >= m_bits.size()) {
+        if (count > m_bits.size()) {
             qWarning() << "Invalid amount of bits requested" << count << "only have" << m_bits.size();
             return -1;
         }
@@ -352,7 +352,7 @@ bool Savegame::load(const QString &filePath)
             if (entry.item_serial_number() == reEncoded){
                 item.writable = true;
             } else {
-                qWarning() << "Re-encoding failed";
+                qWarning() << "Re-encoding failed" << item.objectShortName;
                 qDebug() << "Encoded: " << QByteArray::fromStdString(reEncoded).toHex(' ');
                 qDebug() << "Original:" << deobfuscated.toHex(' ');
             }
@@ -401,13 +401,15 @@ Savegame::Item Savegame::parseItem(const std::string &obfuscatedSerial)
     item.seed = qFromBigEndian<int32_t>(obfuscatedSerial.data() + 1);
     if (item.version > m_maxItemVersion) {
         QMessageBox::warning(nullptr, "Invalid file", tr("Item version is too high (%1, we only support %2").arg(item.version, m_maxItemVersion));
-        return {};
+        item.remainingBits = bits.m_bits;
+        return item;
     }
     item.balance = getAspect("InventoryBalanceData", item.version, &bits);
     if (!item.balance.isValid()) {
         QMessageBox::warning(nullptr, "Invalid file", tr("Invalid item balance"));
         qWarning() << "Invalid item balance";
-        return {};
+        item.remainingBits = bits.m_bits;
+        return item;
     }
 
     item.objectShortName = item.balance.val.split('/', QString::SkipEmptyParts).last().split('.', QString::SkipEmptyParts).last();
@@ -416,12 +418,14 @@ Savegame::Item Savegame::parseItem(const std::string &obfuscatedSerial)
     item.data = getAspect("InventoryData", item.version, &bits); // these seem wrong
     if (!item.data.isValid()) {
         QMessageBox::warning(nullptr, "Invalid file", tr("Invalid item data"));
-        return {};
+        item.remainingBits = bits.m_bits;
+        return item;
     }
     item.manufacturer = getAspect("ManufacturerData", item.version, &bits);
-    if (!item.data.isValid()) {
+    if (!item.manufacturer.isValid()) {
         QMessageBox::warning(nullptr, "Invalid file", tr("Invalid item manufacturer"));
-        return {};
+        item.remainingBits = bits.m_bits;
+        return item;
     }
     item.level = bits.eat(7);
     item.numberOfParts = bits.eat(6);
@@ -442,10 +446,41 @@ Savegame::Item Savegame::parseItem(const std::string &obfuscatedSerial)
         }
     } else {
         qWarning() << "Item not in parts database:" << item.balance.val;
+        itemFailed = true;
+    }
+
+    if (!itemFailed) {
+        const int genericPartsCount = bits.eat(4);
+        for (int partIndex = 0; partIndex < genericPartsCount; partIndex++) {
+            Item::Aspect genericPart = getAspect("InventoryGenericPartData", item.version, &bits);
+            if (!genericPart.isValid()) {
+                qWarning() << "Invalid generic item part number" << partIndex;
+                itemFailed = true;
+                break;
+            }
+            item.genericParts.append(genericPart);
+            qDebug() << "Got generic part" << genericPart.index;
+        }
+    }
+
+    if (!itemFailed) {
+        const int itemWearCount = bits.eat(8);
+        for (int index = 0; index<itemWearCount; index++) {
+            item.itemWearMaybe.append(bits.eat(8));
+        }
+        item.numCustom = bits.eat(4);
+        if (item.numCustom > 0) {
+            qWarning() << "We don't know what num custom is, we have" << item.numCustom;
+        }
+    }
+
+    if (!itemFailed) {
+        if (bits.m_bits.count() > 7 || bits.m_bits.count('1') > 0) {
+            qWarning() << "There should be only zero padding left, we have" << bits.m_bits;
+        }
     }
 
     item.remainingBits = bits.m_bits;
-
 
     return item;
 }
@@ -459,12 +494,23 @@ std::string Savegame::serializeItem(const Savegame::Item &item)
     putAspect(item.data,"InventoryData", item.version, &bits);
     putAspect(item.manufacturer,"ManufacturerData", item.version, &bits);
     bits.put(item.level, 7);
-    bits.put(item.numberOfParts, 6);
+    bits.put(item.parts.count(), 6);
 
     QString itemPartCategory = m_data.partCategory(item.balance.val.toLower());
     for (const Item::Aspect &part : item.parts) {
         putAspect(part, itemPartCategory, item.version, &bits);
     }
+
+    bits.put(item.genericParts.count(), 4);
+    for (const Item::Aspect &genericPart : item.genericParts) {
+        putAspect(genericPart, itemPartCategory, item.version, &bits);
+    }
+
+    bits.put(item.itemWearMaybe.count(), 8);
+    for (const uint8_t itemWear : item.itemWearMaybe) {
+        bits.put(itemWear, 8);
+    }
+
     bits.m_bits.append(item.remainingBits);
     return obfuscateItem(bits.toBinaryData(), item.seed).toStdString();
 }

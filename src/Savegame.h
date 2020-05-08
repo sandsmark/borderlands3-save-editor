@@ -66,7 +66,10 @@ public:
                 manufacturer.isValid() &&
                 level != -1 &&
                 numberOfParts != -1 &&
-                !parts.isEmpty();
+                !parts.isEmpty() &&
+                numCustom == 0 // TODO
+
+                    ;
         }
 
         int version = -1;
@@ -92,7 +95,12 @@ public:
 
         int numberOfParts = -1;
         QVector<Aspect> parts;
+        QVector<Aspect> genericParts;
         int seed = 0;
+
+        QVector<uint8_t> itemWearMaybe;
+
+        int numCustom = -1;
 
         QByteArray remainingBits; // TODO
     };
