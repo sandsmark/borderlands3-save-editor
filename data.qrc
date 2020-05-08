@@ -7,5 +7,6 @@
         <file>data/grenade-parts.tsv</file>
         <file>data/shield-parts.tsv</file>
         <file>data/classmod-parts.tsv</file>
+        <file>data/artifact-parts.tsv</file>
     </qresource>
 </RCC>

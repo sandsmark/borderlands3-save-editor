@@ -54,6 +54,7 @@ ItemData::ItemData()
     loadPartsForOther("Grenade");
     loadPartsForOther("Shield");
     loadPartsForOther("ClassMod");
+    loadPartsForOther("Artifact");
 }
 
 bool ItemData::isValid() const
