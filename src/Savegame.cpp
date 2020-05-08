@@ -524,11 +524,15 @@ Savegame::Item::Aspect Savegame::getAspect(const QString &category, const int re
         return {};
     }
     aspect.index = bits->eat(aspect.bits);
-    if (aspect.index <= 0) {
-        qWarning() << "Invalid index";
+    if (aspect.index < 0) {
+        qWarning() << "Invalid index" << aspect.index;
         return {};
     }
-    aspect.val = m_data.getItemAsset(category, aspect.index);
+    if (aspect.index == 0) { // it is for some weird reason 1-indexed
+        qWarning() << "Zero index for" << category;
+        return {};
+    }
+    aspect.val = m_data.getItemAsset(category, aspect.index - 1);
     if (aspect.val.isEmpty()) {
         qWarning() << "Can't find val for" << category << aspect.index;
         return {};
