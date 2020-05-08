@@ -139,6 +139,7 @@ signals:
 
 private:
     Item parseItem(const std::string &obfuscatedSerial);
+    std::string serializeItem(const Item &item);
 
     Item::Aspect getAspect(const QString &category, const int requiredVersion, BitParser *bits);
 
