@@ -80,6 +80,8 @@ void InventoryTab::onItemSelected()
         partCategories[part.partId] = part.category;
     }
 
+    QStringList nameText, effectsText, negativesText, positivesText;
+
     for (const Savegame::Item::Aspect &part : item.parts) {
         QString name = part.val.split('.').last();
         if (partCategories.contains(name)) {
@@ -91,7 +93,29 @@ void InventoryTab::onItemSelected()
         QListWidgetItem *listItem = new QListWidgetItem(name);
         listItem->setData(Qt::UserRole, part.val.split('.').last());
         m_partsList->addItem(listItem);
+
+        const ItemDescription description = m_savegame->itemData().itemDescription(part.val.split('.').last());
+        if (!description.naming.isEmpty()) {
+            nameText.append(" • " + description.naming);
+        }
+        if (!description.effects.isEmpty()) {
+            effectsText.append(" • " + description.effects);
+        }
+        if (!description.negatives.isEmpty()) {
+            negativesText.append("• " + description.negatives);
+        }
+        if (!description.positives.isEmpty()) {
+            positivesText.append("• " + description.positives);
+        }
     }
+    positivesText.removeAll("• DO NOT REMOVE"); // I'm very, very lazy
+    positivesText.removeAll("• -");
+
+    m_partName->setText(nameText.join('\n'));
+    m_partEffects->setText(effectsText.join('\n'));
+    m_partNegatives->setText(negativesText.join('\n'));
+    m_partPositives->setText(positivesText.join('\n'));
+
 //    qDebug() << "Part count" << item.numberOfParts;
 //    qDebug() << "Version" << item.version << "level" << item.level;
 //    qDebug() << item.balance.val;
