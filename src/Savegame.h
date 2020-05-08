@@ -55,6 +55,8 @@ public:
             Trash = 4
         };
 
+        bool writable = false;
+
         bool isValid() const {
             return version != -1 &&
                 !name.isEmpty() &&
@@ -90,6 +92,9 @@ public:
 
         int numberOfParts = -1;
         QVector<Aspect> parts;
+        int seed = 0;
+
+        QByteArray remainingBits; // TODO
     };
 
     Savegame(QObject *parent);
@@ -142,6 +147,7 @@ private:
     std::string serializeItem(const Item &item);
 
     Item::Aspect getAspect(const QString &category, const int requiredVersion, BitParser *bits);
+    void putAspect(const Item::Aspect &aspect, const QString &category, const int requiredVersion, BitParser *bits);
 
     int currencyAmount(const Constants::Currency currenct) const;
     void setCurrency(const Constants::Currency currency, const int amount);

@@ -18,6 +18,8 @@
 // I'm not in the mood to write a long switch-case-shift-bits-thing
 struct BitParser
 {
+    BitParser() = default;
+
     BitParser(const QByteArray &data)
     {
         QBitArray bits = QBitArray::fromBits(data.data(), data.size() * 8);
@@ -31,13 +33,13 @@ struct BitParser
     }
 
     void put(const uint64_t number, const uint64_t count) {
-        if (count >= sizeof(number)) {
-            qWarning() << "Trying to store invalid amount of bits";
+        if (count >= sizeof(number) * 8) {
+            qWarning() << "Trying to store invalid amount of bits" << count;
             return;
         }
         QBitArray bits = QBitArray::fromBits(reinterpret_cast<const char*>(&number), count);
         for (int i=0; i < bits.size(); i++) {
-            m_bits.prepend(bits[i] ? '1' : '0');
+            m_bits.append(bits[i] ? '1' : '0');
         }
     }
 
@@ -49,6 +51,7 @@ struct BitParser
 
         return QByteArray(bits.bits(), qCeil(bits.size() / 8.));
     }
+    QByteArray asOnesAndZeros();
 
     int eat(const int count) {
         if (count <= 0) {
@@ -66,8 +69,8 @@ struct BitParser
         bool ok; // lol as if
         return toEat.toInt(&ok, 2);
     }
-private:
     QByteArray m_bits;
+private:
 };
 
 Savegame::Savegame(QObject *parent) :
@@ -342,16 +345,22 @@ bool Savegame::load(const QString &filePath)
             qWarning() << "OBfuscation failed" << deobfuscated.toHex(' ');
             qDebug() << obfuscated.toHex(' ');
             qDebug() << QByteArray::fromStdString(entry.item_serial_number()).toHex(' ');
-            return false;
         }
-        const Item item = parseItem(entry.item_serial_number());
+        Item item = parseItem(entry.item_serial_number());
         if (item.isValid()) {
+            const std::string reEncoded = serializeItem(item);
+            if (entry.item_serial_number() == reEncoded){
+                item.writable = true;
+            } else {
+                qWarning() << "Re-encoding failed";
+                qDebug() << "Encoded: " << QByteArray::fromStdString(reEncoded).toHex(' ');
+                qDebug() << "Original:" << deobfuscated.toHex(' ');
+            }
+
             m_items.append(item);
         } else {
             qWarning() << "Invalid item:" << itemIndex;
         }
-
-//        const int32_t seed = qFromBigEndian<int32_t>(input.data() + 1);
     }
     emit itemsChanged();
 //    qDebug() << "Max bits:" << maxBits;
@@ -389,6 +398,7 @@ Savegame::Item Savegame::parseItem(const std::string &obfuscatedSerial)
 
     Item item;
     item.version = bits.eat(7);
+    item.seed = qFromBigEndian<int32_t>(obfuscatedSerial.data() + 1);
     if (item.version > m_maxItemVersion) {
         QMessageBox::warning(nullptr, "Invalid file", tr("Item version is too high (%1, we only support %2").arg(item.version, m_maxItemVersion));
         return {};
@@ -434,13 +444,29 @@ Savegame::Item Savegame::parseItem(const std::string &obfuscatedSerial)
         qWarning() << "Item not in parts database:" << item.balance.val;
     }
 
+    item.remainingBits = bits.m_bits;
 
-    return item;}
+
+    return item;
+}
 
 std::string Savegame::serializeItem(const Savegame::Item &item)
 {
+    BitParser bits;
+    bits.put(128, 8);
+    bits.put(item.version, 7);
+    putAspect(item.balance,"InventoryBalanceData", item.version, &bits);
+    putAspect(item.data,"InventoryData", item.version, &bits);
+    putAspect(item.manufacturer,"ManufacturerData", item.version, &bits);
+    bits.put(item.level, 7);
+    bits.put(item.numberOfParts, 6);
 
-    return {};
+    QString itemPartCategory = m_data.partCategory(item.balance.val.toLower());
+    for (const Item::Aspect &part : item.parts) {
+        putAspect(part, itemPartCategory, item.version, &bits);
+    }
+    bits.m_bits.append(item.remainingBits);
+    return obfuscateItem(bits.toBinaryData(), item.seed).toStdString();
 }
 
 Savegame::Item::Aspect Savegame::getAspect(const QString &category, const int requiredVersion, BitParser *bits)
@@ -463,6 +489,12 @@ Savegame::Item::Aspect Savegame::getAspect(const QString &category, const int re
     }
 
     return aspect;
+}
+
+void Savegame::putAspect(const Savegame::Item::Aspect &aspect, const QString &category, const int requiredVersion, BitParser *bits)
+{
+    bits->put(aspect.index, m_data.requiredBits(category, requiredVersion));
+
 }
 
 bool Savegame::save(const QString filePath) const
