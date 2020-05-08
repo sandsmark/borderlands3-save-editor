@@ -12,7 +12,8 @@ I have only tested that it writes an identical file when you set the same
 values, but I haven't tested that it doesn't fuck up if you set funny values.
 
 If you want a more complete editor and you are okay with using a command line,
-try https://github.com/apocalyptech/bl3-cli-saveedit
+try https://github.com/apocalyptech/bl3-cli-saveedit instead. Almost everything
+here is just based on his discoveries anyways.
 
 ## Windows builds
 
@@ -23,7 +24,7 @@ https://ci.appveyor.com/project/sandsmark/borderlands3-save-editor/build/artifac
 ## Credits
 
 Thanks to https://github.com/apocalyptech and https://github.com/gibbed for the
-protobufs and the obfuscation method.
+protobufs, the obfuscation methods, data, etc.
 
 If you want to pay someone for this Gibbed would probably appreciate it:
 https://www.patreon.com/gibbed
