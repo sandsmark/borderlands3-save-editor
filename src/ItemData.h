@@ -49,7 +49,10 @@ public:
 
 private:
     void loadPartsForOther(const QString &type);
-    void loadPartsData(const QString &filename);
+    void loadWeaponPartDescriptions(const QString &filename);
+    void loadShieldPartDescriptions();
+    void loadGrenadePartDescriptions();
+    void loadClassModDescriptions(const QString &characterClass);
 
     static const QVector<ItemPart> nullWeaponParts; // so we always can return references
 

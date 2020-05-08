@@ -58,8 +58,14 @@ ItemData::ItemData()
     loadPartsForOther("Artifact");
 
     for (const QFileInfo &file : QDir(":/data/descriptions/weapons/").entryInfoList({"*.tsv"})) {
-        loadPartsData(file.filePath());
+        loadWeaponPartDescriptions(file.filePath());
     }
+
+    loadShieldPartDescriptions();
+    loadGrenadePartDescriptions();
+    loadClassModDescriptions("fl4k");
+    loadClassModDescriptions("amara");
+    loadClassModDescriptions("zane");
 }
 
 bool ItemData::isValid() const
@@ -181,7 +187,7 @@ void ItemData::loadPartsForOther(const QString &type)
     }
 }
 
-void ItemData::loadPartsData(const QString &filename)
+void ItemData::loadWeaponPartDescriptions(const QString &filename)
 {
     QFile file(filename);
     file.open(QIODevice::ReadOnly);
@@ -207,6 +213,96 @@ void ItemData::loadPartsData(const QString &filename)
         description.negatives = values[2];
         description.effects = values[3];
         description.naming = values[4];
+        m_itemDescriptions[id] = std::move(description);
+    }
+}
+
+void ItemData::loadShieldPartDescriptions()
+{
+    QFile file(":/data/descriptions/shields.tsv");
+    file.open(QIODevice::ReadOnly);
+    for (const QByteArray &line : file.readAll().split('\n')) {
+        if (line.isEmpty() || line.startsWith('#')) {
+            continue;
+        }
+        const QList<QByteArray> values = line.split('\t');
+        if (values.count() != 3) {
+            qWarning() << "Invalid number of values in shields desc file";
+            return;
+        }
+        const QString id = values[0].split('.').last();
+        if (m_itemDescriptions.contains(id)) {
+            qWarning() << "Duplicate description for" << id;
+            continue;
+        }
+        if (!m_weaponPartTypes.contains(id)) {
+            qWarning() << "Unknown part" << id;
+        }
+        ItemDescription description;
+        description.effects = values[1];
+        description.naming = values[2]; // meh, close enough
+        m_itemDescriptions[id] = std::move(description);
+    }
+}
+
+void ItemData::loadGrenadePartDescriptions()
+{
+    QFile file(":/data/descriptions/grenades.tsv");
+    if (!file.open(QIODevice::ReadOnly)) {
+        qWarning() << "Failed to load grenades file";
+        return;
+    }
+    for (const QByteArray &line : file.readAll().split('\n')) {
+        if (line.isEmpty() || line.startsWith('#')) {
+            continue;
+        }
+        const QList<QByteArray> values = line.split('\t');
+        if (values.count() != 3) {
+            qWarning() << "Invalid number of values in grenades desc file";
+            return;
+        }
+        const QString id = values[1].split('.').last();
+        if (m_itemDescriptions.contains(id)) {
+            qWarning() << "Duplicate description for" << id;
+            continue;
+        }
+        if (!m_weaponPartTypes.contains(id)) {
+            qWarning() << "Unknown part" << id;
+        }
+        ItemDescription description;
+        description.effects = values[2];
+        description.naming = values[0]; // meh, close enough
+        m_itemDescriptions[id] = std::move(description);
+    }
+}
+
+void ItemData::loadClassModDescriptions(const QString &characterClass)
+{
+    QFile file(":/data/descriptions/com-" + characterClass + ".tsv");
+    if (!file.open(QIODevice::ReadOnly)) {
+        qWarning() << "Failed to open" + characterClass + "com file";
+        return;
+    }
+    for (const QByteArray &line : file.readAll().split('\n')) {
+        if (line.isEmpty() || line.startsWith('#')) {
+            continue;
+        }
+        const QList<QByteArray> values = line.split('\t');
+        if (values.count() != 3) {
+            qWarning() << "Invalid number of values in" + characterClass + "com desc file";
+            return;
+        }
+        const QString id = values[1].split('.').last();
+        if (m_itemDescriptions.contains(id)) {
+            qWarning() << "Duplicate description for" << id;
+            continue;
+        }
+        if (!m_weaponPartTypes.contains(id)) {
+            qWarning() << "Unknown part" << id;
+        }
+        ItemDescription description;
+        description.effects = values[2];
+        description.naming = values[0]; // meh, close enough
         m_itemDescriptions[id] = std::move(description);
     }
 }

@@ -30,7 +30,6 @@ InventoryTab::InventoryTab(Savegame *savegame, QWidget *parent) : QWidget(parent
 
     QVBoxLayout *partInfoLayout = new QVBoxLayout;
     partInfoLayout->addWidget(new QLabel(tr("<h3>Item part details</h3>")));
-    partInfoLayout->addWidget(new QLabel(tr("<b>Naming</b>")));
     partInfoLayout->addWidget(m_partName);
     partInfoLayout->addWidget(new QLabel(tr("<b>Description</b>")));
     partInfoLayout->addWidget(m_partEffects);
