@@ -43,7 +43,7 @@ void InventoryTab::onSelected()
     QStringList parts;
 
     QMap<QString, QString> partCategories;
-    for (const WeaponPart &part : m_savegame->itemData().weaponParts(item.objectShortName)) {
+    for (const ItemPart &part : m_savegame->itemData().weaponParts(item.objectShortName)) {
         partCategories[part.partId] = part.category;
     }
 

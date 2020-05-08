@@ -4,7 +4,7 @@
 #include <QJsonDocument>
 #include <QFile>
 
-const QVector<WeaponPart> ItemData::nullWeaponParts;
+const QVector<ItemPart> ItemData::nullWeaponParts;
 
 ItemData::ItemData()
 {
@@ -30,9 +30,9 @@ ItemData::ItemData()
             qWarning() << "Invalid line in weapon parts file" << line;
             return;
         }
-        WeaponPart part;
+        ItemPart part;
         part.manufacturer = line[0];
-        part.weaponType = line[1];
+        part.itemType = line[1];
         part.rarity = line[2];
         part.balance = line[3];
         part.category = line[4];
@@ -51,7 +51,8 @@ ItemData::ItemData()
         m_weaponParts[part.balance].append(std::move(part));
     }
 
-    loadGrenadeMods();
+    loadPartsForOther("Grenade");
+    loadPartsForOther("Shield");
 }
 
 bool ItemData::isValid() const
@@ -131,7 +132,7 @@ QString ItemData::partCategory(const QString &objectName) const
     return m_itemPartCategories[objectName.toLower()].toString();
 }
 
-const QVector<WeaponPart> &ItemData::weaponParts(const QString &balance)
+const QVector<ItemPart> &ItemData::weaponParts(const QString &balance)
 {
     if (!m_weaponParts.contains(balance)) {
         return nullWeaponParts;
@@ -140,9 +141,9 @@ const QVector<WeaponPart> &ItemData::weaponParts(const QString &balance)
     return m_weaponParts[balance];
 }
 
-void ItemData::loadGrenadeMods()
+void ItemData::loadPartsForOther(const QString &type)
 {
-    QFile grenadeModsFile(":/data/grenade-mods.tsv");
+    QFile grenadeModsFile(":/data/" + type.toLower() + "-parts.tsv");
     grenadeModsFile.open(QIODevice::ReadOnly);
     grenadeModsFile.readLine(); // Skip header
     while (!grenadeModsFile.atEnd()) {
@@ -151,9 +152,9 @@ void ItemData::loadGrenadeMods()
             qWarning() << "Invalid line in grenade mods file" << line;
             return;
         }
-        WeaponPart part;
+        ItemPart part;
         part.manufacturer = line[0];
-        part.weaponType = QLatin1String("GRENADE");
+        part.itemType = type;
         part.rarity = line[1];
         part.balance = line[2];
         part.category = line[3];

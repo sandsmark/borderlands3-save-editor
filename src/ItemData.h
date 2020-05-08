@@ -7,9 +7,9 @@
 #include <QHash>
 
 // Could use an enum, but memory is cheap and I'm lazy
-struct WeaponPart {
+struct ItemPart {
     QString manufacturer;
-    QString weaponType;
+    QString itemType;
     QString rarity;
     QString balance;
     QString category;
@@ -34,19 +34,19 @@ public:
     QString englishName(const QString &itemName) const;
     QString partCategory(const QString &objectName) const;
 
-    const QVector<WeaponPart> &weaponParts(const QString &balance);
+    const QVector<ItemPart> &weaponParts(const QString &balance);
     QStringList categoriesForWeapon(const QString &balance) const { return m_weaponPartCategories.values(balance); }
     QString weaponPartType(const QString &id) const { return m_weaponPartTypes[id]; }
 
 private:
-    void loadGrenadeMods();
+    void loadPartsForOther(const QString &type);
 
-    static const QVector<WeaponPart> nullWeaponParts; // so we always can return references
+    static const QVector<ItemPart> nullWeaponParts; // so we always can return references
 
     QJsonObject m_inventoryDb; // TODO: parse to in-memory struct, currently very inefficient
     QJsonObject m_englishNames;
     QJsonObject m_itemPartCategories;
-    QHash<QString, QVector<WeaponPart>> m_weaponParts;
+    QHash<QString, QVector<ItemPart>> m_weaponParts;
     QHash<QString, QString> m_weaponPartTypes;
     QMultiMap<QString, QString> m_weaponPartCategories;
 };
