@@ -4,5 +4,6 @@
         <file>data/inventory-serials.json</file>
         <file>data/balance_to_inv_key.json</file>
         <file>data/weapon-parts.tsv</file>
+        <file>data/grenade-mods.tsv</file>
     </qresource>
 </RCC>

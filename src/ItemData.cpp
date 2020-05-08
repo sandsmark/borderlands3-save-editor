@@ -50,6 +50,8 @@ ItemData::ItemData()
         m_weaponPartCategories.insert(part.balance, part.category);
         m_weaponParts[part.balance].append(std::move(part));
     }
+
+    loadGrenadeMods();
 }
 
 bool ItemData::isValid() const
@@ -136,4 +138,37 @@ const QVector<WeaponPart> &ItemData::weaponParts(const QString &balance)
     }
 
     return m_weaponParts[balance];
+}
+
+void ItemData::loadGrenadeMods()
+{
+    QFile grenadeModsFile(":/data/grenade-mods.tsv");
+    grenadeModsFile.open(QIODevice::ReadOnly);
+    grenadeModsFile.readLine(); // Skip header
+    while (!grenadeModsFile.atEnd()) {
+        QStringList line = QString::fromUtf8(grenadeModsFile.readLine()).split('\t');
+        if (line.length() != 10) {
+            qWarning() << "Invalid line in grenade mods file" << line;
+            return;
+        }
+        WeaponPart part;
+        part.manufacturer = line[0];
+        part.weaponType = QLatin1String("GRENADE");
+        part.rarity = line[1];
+        part.balance = line[2];
+        part.category = line[3];
+        part.minParts = line[4].toInt();
+        part.maxParts = line[5].toInt();
+        part.weight = line[6].toFloat();
+        part.partId = line[7];
+        for (const QString &dep : line[8].split(',')) {
+            part.dependencies.append(dep.trimmed());
+        }
+        for (const QString &exc : line[9].split(',')) {
+            part.excluders.append(exc.trimmed());
+        }
+        m_weaponPartTypes[part.partId] = part.category;
+        m_weaponPartCategories.insert(part.balance, part.category);
+        m_weaponParts[part.balance].append(std::move(part));
+    }
 }

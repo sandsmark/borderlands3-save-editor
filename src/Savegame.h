@@ -68,7 +68,6 @@ public:
                 numberOfParts != -1 &&
                 !parts.isEmpty() &&
                 numCustom == 0 // TODO
-
                     ;
         }
 

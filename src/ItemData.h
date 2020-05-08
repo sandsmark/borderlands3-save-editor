@@ -4,6 +4,7 @@
 #include <QJsonObject>
 #include <QStringList>
 #include <QMap>
+#include <QHash>
 
 // Could use an enum, but memory is cheap and I'm lazy
 struct WeaponPart {
@@ -38,13 +39,15 @@ public:
     QString weaponPartType(const QString &id) const { return m_weaponPartTypes[id]; }
 
 private:
+    void loadGrenadeMods();
+
     static const QVector<WeaponPart> nullWeaponParts; // so we always can return references
 
     QJsonObject m_inventoryDb; // TODO: parse to in-memory struct, currently very inefficient
     QJsonObject m_englishNames;
     QJsonObject m_itemPartCategories;
-    QMap<QString, QVector<WeaponPart>> m_weaponParts;
-    QMap<QString, QString> m_weaponPartTypes;
+    QHash<QString, QVector<WeaponPart>> m_weaponParts;
+    QHash<QString, QString> m_weaponPartTypes;
     QMultiMap<QString, QString> m_weaponPartCategories;
 };
 
