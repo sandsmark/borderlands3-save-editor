@@ -70,7 +70,7 @@ GeneralTab::GeneralTab(Savegame *savegame, QWidget *parent) :
     advancedBox->setLayout(advancedLayout);
     m_saveSlot = new QSpinBox;
     m_saveSlot->setMinimum(1);
-    m_saveSlot->setMinimum(10); // lolidk
+    m_saveSlot->setMaximum(10); // lolidk
     advancedLayout->addRow(tr("Save slot"), m_saveSlot);
     m_uuid = new QLabel("UUID");
     m_uuid->setFont(QFontDatabase::systemFont(QFontDatabase::FixedFont));
@@ -82,8 +82,10 @@ GeneralTab::GeneralTab(Savegame *savegame, QWidget *parent) :
 
     connect(savegame, &Savegame::moneyChanged, m_moneyEditor, &QSpinBox::setValue);
     connect(savegame, &Savegame::eridiumChanged, m_eridiumEditor, &QSpinBox::setValue);
+    connect(savegame, &Savegame::saveSlotChanged, m_saveSlot, &QSpinBox::setValue);
     connect(savegame, &Savegame::uuidChanged, m_uuid, &QLabel::setText);
     connect(m_moneyEditor, SIGNAL(valueChanged(int)), savegame, SLOT(setMoney(int))); // old style connect because fuck qOverload
     connect(m_eridiumEditor, SIGNAL(valueChanged(int)), savegame, SLOT(setEridium(int))); // old style connect because fuck qOverload
+    connect(m_saveSlot, SIGNAL(valueChanged(int)), savegame, SLOT(setSaveSlot(int))); // old style connect because fuck qOverload
     connect(generateUuidButton, &QPushButton::clicked, savegame, &Savegame::regenerateUuid);
 }

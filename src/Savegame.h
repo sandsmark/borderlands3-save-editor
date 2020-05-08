@@ -140,6 +140,8 @@ public slots:
 
     void regenerateUuid();
 
+    void setSaveSlot(const int slotId);
+
 signals:
     void nameChanged(const QString &newName);
     void xpChanged(const int xp);
@@ -151,6 +153,8 @@ signals:
     void fileLoaded();
 
     void uuidChanged(const QString &uuid);
+
+    void saveSlotChanged(const int slotId);
 
 
 private:
