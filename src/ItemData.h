@@ -21,6 +21,13 @@ struct ItemPart {
     QStringList excluders;
 };
 
+struct ItemDescription {
+    QString positives;
+    QString negatives;
+    QString effects;
+    QString naming;
+};
+
 class ItemData
 {
 public:
@@ -38,8 +45,11 @@ public:
     QStringList categoriesForWeapon(const QString &balance) const { return m_weaponPartCategories.values(balance); }
     QString weaponPartType(const QString &id) const { return m_weaponPartTypes[id]; }
 
+    const ItemDescription &itemDescription(const QString &id) { return m_itemDescriptions[id]; }
+
 private:
     void loadPartsForOther(const QString &type);
+    void loadPartsData(const QString &filename);
 
     static const QVector<ItemPart> nullWeaponParts; // so we always can return references
 
@@ -49,6 +59,7 @@ private:
     QHash<QString, QVector<ItemPart>> m_weaponParts;
     QHash<QString, QString> m_weaponPartTypes;
     QMultiMap<QString, QString> m_weaponPartCategories;
+    QHash<QString, ItemDescription> m_itemDescriptions;
 };
 
 #endif // ITEMDATA_H

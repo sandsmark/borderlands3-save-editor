@@ -8,5 +8,44 @@
         <file>data/shield-parts.tsv</file>
         <file>data/classmod-parts.tsv</file>
         <file>data/artifact-parts.tsv</file>
+        <file>data/descriptions/anointments.tsv</file>
+        <file>data/descriptions/artifacts.tsv</file>
+        <file>data/descriptions/com-amara.tsv</file>
+        <file>data/descriptions/com-fl4k.tsv</file>
+        <file>data/descriptions/com-zane.tsv</file>
+        <file>data/descriptions/grenades.tsv</file>
+        <file>data/descriptions/shields.tsv</file>
+        <file>data/descriptions/weapons/ar-atl.tsv</file>
+        <file>data/descriptions/weapons/ar-cov.tsv</file>
+        <file>data/descriptions/weapons/ar-dal.tsv</file>
+        <file>data/descriptions/weapons/ar-jak.tsv</file>
+        <file>data/descriptions/weapons/ar-tor.tsv</file>
+        <file>data/descriptions/weapons/ar-vla.tsv</file>
+        <file>data/descriptions/weapons/hw-atl.tsv</file>
+        <file>data/descriptions/weapons/hw-cov.tsv</file>
+        <file>data/descriptions/weapons/hw-tor.tsv</file>
+        <file>data/descriptions/weapons/hw-vla.tsv</file>
+        <file>data/descriptions/weapons/ps-atl.tsv</file>
+        <file>data/descriptions/weapons/ps-cov.tsv</file>
+        <file>data/descriptions/weapons/ps-dal.tsv</file>
+        <file>data/descriptions/weapons/ps-jak.tsv</file>
+        <file>data/descriptions/weapons/ps-mal.tsv</file>
+        <file>data/descriptions/weapons/ps-ted.tsv</file>
+        <file>data/descriptions/weapons/ps-tor.tsv</file>
+        <file>data/descriptions/weapons/ps-vla.tsv</file>
+        <file>data/descriptions/weapons/sg-hyp.tsv</file>
+        <file>data/descriptions/weapons/sg-jak.tsv</file>
+        <file>data/descriptions/weapons/sg-mal.tsv</file>
+        <file>data/descriptions/weapons/sg-ted.tsv</file>
+        <file>data/descriptions/weapons/sg-tor.tsv</file>
+        <file>data/descriptions/weapons/sm-dal.tsv</file>
+        <file>data/descriptions/weapons/sm-hyp.tsv</file>
+        <file>data/descriptions/weapons/sm-mal.tsv</file>
+        <file>data/descriptions/weapons/sm-ted.tsv</file>
+        <file>data/descriptions/weapons/sr-dal.tsv</file>
+        <file>data/descriptions/weapons/sr-hyp.tsv</file>
+        <file>data/descriptions/weapons/sr-jak.tsv</file>
+        <file>data/descriptions/weapons/sr-mal.tsv</file>
+        <file>data/descriptions/weapons/sr-vla.tsv</file>
     </qresource>
 </RCC>

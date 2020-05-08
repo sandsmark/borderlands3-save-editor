@@ -5,6 +5,7 @@
 #include <QHBoxLayout>
 #include <QPushButton>
 #include <QDebug>
+#include <QLabel>
 
 InventoryTab::InventoryTab(Savegame *savegame, QWidget *parent) : QWidget(parent),
   m_savegame(savegame)
@@ -18,12 +19,41 @@ InventoryTab::InventoryTab(Savegame *savegame, QWidget *parent) : QWidget(parent
     m_partsList = new QListWidget;
     layout()->addWidget(m_partsList);
 
+    m_partName = new QLabel;
+    m_partName->setWordWrap(true);
+    m_partEffects = new QLabel;
+    m_partEffects->setWordWrap(true);
+    m_partNegatives = new QLabel;
+    m_partNegatives->setWordWrap(true);
+    m_partPositives = new QLabel;
+    m_partPositives->setWordWrap(true);
+
+    QVBoxLayout *partInfoLayout = new QVBoxLayout;
+    partInfoLayout->addWidget(new QLabel(tr("<h3>Item part details</h3>")));
+    partInfoLayout->addWidget(new QLabel(tr("<b>Naming</b>")));
+    partInfoLayout->addWidget(m_partName);
+    partInfoLayout->addWidget(new QLabel(tr("<b>Description</b>")));
+    partInfoLayout->addWidget(m_partEffects);
+    partInfoLayout->addWidget(new QLabel(tr("<b>Negatives</b>")));
+    partInfoLayout->addWidget(m_partNegatives);
+    partInfoLayout->addWidget(new QLabel(tr("<b>Positives</b>")));
+    partInfoLayout->addWidget(m_partPositives);
+    partInfoLayout->addStretch();
+
+    mainLayout->addLayout(partInfoLayout);
+
     connect(savegame, &Savegame::itemsChanged, this, &InventoryTab::load);
-    connect(m_list, &QListWidget::itemSelectionChanged, this, &InventoryTab::onSelected);
+    connect(m_list, &QListWidget::itemSelectionChanged, this, &InventoryTab::onItemSelected);
+    connect(m_partsList, &QListWidget::itemSelectionChanged, this, &InventoryTab::onPartSelected);
 }
 
-void InventoryTab::onSelected()
+void InventoryTab::onItemSelected()
 {
+    m_partName->setText({});
+    m_partEffects->setText({});
+    m_partNegatives->setText({});
+    m_partPositives->setText({});
+
     QList<QListWidgetItem*> selected = m_list->selectedItems();
     if (selected.isEmpty()) {
         return;
@@ -55,16 +85,33 @@ void InventoryTab::onSelected()
             qWarning() << item.name << item.objectShortName << "has part" << name << "which is not in the usual list";
             name = m_savegame->itemData().weaponPartType(name) + " " + name;
         }
-        parts.append(name);
-//        m_partsList->addItem(part.val.split('.').last());
+        QListWidgetItem *listItem = new QListWidgetItem(name);
+        listItem->setData(Qt::UserRole, part.val.split('.').last());
+        m_partsList->addItem(listItem);
     }
-    std::sort(parts.begin(), parts.end());
-    m_partsList->addItems(parts);
 //    qDebug() << "Part count" << item.numberOfParts;
 //    qDebug() << "Version" << item.version << "level" << item.level;
 //    qDebug() << item.balance.val;
 //    qDebug() << item.data.val;
-//    qDebug() << item.manufacturer.val;
+    //    qDebug() << item.manufacturer.val;
+}
+
+void InventoryTab::onPartSelected()
+{
+    QList<QListWidgetItem*> selected = m_partsList->selectedItems();
+    if (selected.isEmpty()) {
+        return;
+    }
+    QString itemId = selected.first()->data(Qt::UserRole).toString();
+    if (itemId.isEmpty()) {
+        return;
+    }
+    const ItemDescription description = m_savegame->itemData().itemDescription(itemId);
+    m_partName->setText(description.naming);
+    m_partEffects->setText(description.effects);
+    m_partNegatives->setText(description.negatives);
+    m_partPositives->setText(description.positives);
+
 }
 
 void InventoryTab::load()

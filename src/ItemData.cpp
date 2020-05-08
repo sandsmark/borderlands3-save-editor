@@ -3,6 +3,7 @@
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QFile>
+#include <QDir>
 
 const QVector<ItemPart> ItemData::nullWeaponParts;
 
@@ -55,6 +56,10 @@ ItemData::ItemData()
     loadPartsForOther("Shield");
     loadPartsForOther("ClassMod");
     loadPartsForOther("Artifact");
+
+    for (const QFileInfo &file : QDir(":/data/descriptions/weapons/").entryInfoList({"*.tsv"})) {
+        loadPartsData(file.filePath());
+    }
 }
 
 bool ItemData::isValid() const
@@ -173,5 +178,35 @@ void ItemData::loadPartsForOther(const QString &type)
         m_weaponPartTypes[part.partId] = part.category;
         m_weaponPartCategories.insert(part.balance, part.category);
         m_weaponParts[part.balance].append(std::move(part));
+    }
+}
+
+void ItemData::loadPartsData(const QString &filename)
+{
+    QFile file(filename);
+    file.open(QIODevice::ReadOnly);
+    for (const QByteArray &line : file.readAll().split('\n')) {
+        if (line.isEmpty() || line.startsWith('#')) {
+            continue;
+        }
+        const QList<QByteArray> values = line.split('\t');
+        if (values.count() != 5) {
+            qWarning() << "Invalid number of values in" << filename;
+            return;
+        }
+        const QString id = values[0].split('.').last();
+        if (m_itemDescriptions.contains(id)) {
+            qWarning() << "Duplicate description for" << id;
+            continue;
+        }
+        if (!m_weaponPartTypes.contains(id)) {
+            qWarning() << "Unknown part" << id;
+        }
+        ItemDescription description;
+        description.positives = values[1];
+        description.negatives = values[2];
+        description.effects = values[3];
+        description.naming = values[4];
+        m_itemDescriptions[id] = std::move(description);
     }
 }
