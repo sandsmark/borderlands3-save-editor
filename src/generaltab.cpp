@@ -8,6 +8,9 @@
 #include <QFormLayout>
 #include <QLineEdit>
 #include <QVBoxLayout>
+#include <QLabel>
+#include <QPushButton>
+#include <QFontDatabase>
 
 GeneralTab::GeneralTab(Savegame *savegame, QWidget *parent) :
     QWidget(parent)
@@ -60,9 +63,27 @@ GeneralTab::GeneralTab(Savegame *savegame, QWidget *parent) :
 
     layout()->addWidget(economyBox);
 
+    // Advanced shit
+    QGroupBox *advancedBox = new QGroupBox(tr("Advanced"));
+    QFormLayout *advancedLayout = new QFormLayout;
+    advancedLayout->setFieldGrowthPolicy(QFormLayout::FieldsStayAtSizeHint);
+    advancedBox->setLayout(advancedLayout);
+    m_saveSlot = new QSpinBox;
+    m_saveSlot->setMinimum(1);
+    m_saveSlot->setMinimum(10); // lolidk
+    advancedLayout->addRow(tr("Save slot"), m_saveSlot);
+    m_uuid = new QLabel("UUID");
+    m_uuid->setFont(QFontDatabase::systemFont(QFontDatabase::FixedFont));
+    advancedLayout->addRow(tr("UUID"), m_uuid);
+    QPushButton *generateUuidButton = new QPushButton(tr("Generate random UUID"));
+    advancedLayout->addWidget(generateUuidButton);
+
+    layout()->addWidget(advancedBox);
 
     connect(savegame, &Savegame::moneyChanged, m_moneyEditor, &QSpinBox::setValue);
     connect(savegame, &Savegame::eridiumChanged, m_eridiumEditor, &QSpinBox::setValue);
+    connect(savegame, &Savegame::uuidChanged, m_uuid, &QLabel::setText);
     connect(m_moneyEditor, SIGNAL(valueChanged(int)), savegame, SLOT(setMoney(int))); // old style connect because fuck qOverload
     connect(m_eridiumEditor, SIGNAL(valueChanged(int)), savegame, SLOT(setEridium(int))); // old style connect because fuck qOverload
+    connect(generateUuidButton, &QPushButton::clicked, savegame, &Savegame::regenerateUuid);
 }

@@ -46,7 +46,7 @@ MainWindow::MainWindow(QWidget *parent)
     m_consumablesTab->setEnabled(false);
     m_tabWidget->addTab(m_consumablesTab, "Consumables");
 
-    resize(600, 500);
+    resize(900, 500);
 
     QSettings settings;
     if (settings.contains("lastopened")) {

@@ -9,6 +9,7 @@ class Savegame;
 
 class QLineEdit;
 class QSpinBox;
+class QLabel;
 
 class GeneralTab : public QWidget
 {
@@ -19,7 +20,6 @@ public:
 
 signals:
 
-
 private:
     QLineEdit *m_nameEdit;
     QSpinBox *m_levelEdit;
@@ -28,6 +28,9 @@ private:
 
     QSpinBox *m_moneyEditor;
     QSpinBox *m_eridiumEditor;
+
+    QSpinBox *m_saveSlot;
+    QLabel *m_uuid;
 };
 
 #endif // GENERALTAB_H

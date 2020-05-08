@@ -138,6 +138,8 @@ public slots:
     int eridium() const;
     void setEridium(const int amount);
 
+    void regenerateUuid();
+
 signals:
     void nameChanged(const QString &newName);
     void xpChanged(const int xp);
@@ -147,6 +149,8 @@ signals:
 
     void itemsChanged();
     void fileLoaded();
+
+    void uuidChanged(const QString &uuid);
 
 
 private:

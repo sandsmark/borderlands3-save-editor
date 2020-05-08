@@ -376,6 +376,8 @@ bool Savegame::load(const QString &filePath)
     emit moneyChanged(money());
     emit eridiumChanged(eridium());
 
+    emit uuidChanged(QString::fromStdString(m_character->save_game_guid()));
+
     emit fileLoaded();
 
     return true;
@@ -747,6 +749,12 @@ void Savegame::setEridium(const int amount)
 
     setCurrency(Constants::Currency::Eridium, amount);
     emit eridiumChanged(amount);
+}
+
+void Savegame::regenerateUuid()
+{
+    m_character->set_save_game_guid(QUuid::createUuid().toString(QUuid::Id128).toUpper().toStdString());
+    emit uuidChanged(QString::fromStdString(m_character->save_game_guid()));
 }
 
 int Savegame::currencyAmount(const Constants::Currency currency) const

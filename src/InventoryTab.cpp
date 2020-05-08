@@ -39,6 +39,10 @@ InventoryTab::InventoryTab(Savegame *savegame, QWidget *parent) : QWidget(parent
     partInfoLayout->addWidget(m_partPositives);
     partInfoLayout->addStretch();
 
+    QLabel *docsLink = new QLabel("<a href=https://docs.google.com/spreadsheets/d/16b7bGPFKIrNg_cJm_WCMO6cKahexBs7BiJ6ja0RlD04/edit>Data source</a>");
+    docsLink->setOpenExternalLinks(true);
+    partInfoLayout->addWidget(docsLink);
+
     mainLayout->addLayout(partInfoLayout);
 
     connect(savegame, &Savegame::itemsChanged, this, &InventoryTab::load);
