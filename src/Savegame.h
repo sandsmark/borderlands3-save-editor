@@ -55,6 +55,18 @@ public:
             Trash = 4
         };
 
+        bool isValid() const {
+            return version != -1 &&
+                !name.isEmpty() &&
+                !objectShortName.isEmpty() &&
+                balance.isValid() &&
+                data.isValid() &&
+                manufacturer.isValid() &&
+                level != -1 &&
+                numberOfParts != -1 &&
+                !parts.isEmpty();
+        }
+
         int version = -1;
 
         struct Aspect {
@@ -126,6 +138,8 @@ signals:
 
 
 private:
+    Item parseItem(const std::string &obfuscatedSerial);
+
     Item::Aspect getAspect(const QString &category, const int requiredVersion, BitParser *bits);
 
     int currencyAmount(const Constants::Currency currenct) const;
@@ -137,5 +151,6 @@ private:
     QVector<Item> m_items;
     int m_maxItemVersion = 1000; // todo
 };
+
 
 #endif // SAVEGAME_H

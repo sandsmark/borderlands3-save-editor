@@ -30,14 +30,14 @@ struct BitParser
         return m_bits.count();
     }
 
-    void put(const uint64_t number, const int count) {
+    void put(const uint64_t number, const uint64_t count) {
         if (count >= sizeof(number)) {
             qWarning() << "Trying to store invalid amount of bits";
             return;
         }
         QBitArray bits = QBitArray::fromBits(reinterpret_cast<const char*>(&number), count);
         for (int i=0; i < bits.size(); i++) {
-            m_bits.append(bits[i] ? '1' : '0');
+            m_bits.prepend(bits[i] ? '1' : '0');
         }
     }
 
@@ -291,71 +291,8 @@ bool Savegame::load(const QString &filePath)
 //    if (m_character->inventory_items_size() > 0) {
     for (int itemIndex=0; itemIndex<m_character->inventory_items_size(); itemIndex++) {
         const ::OakSave::OakInventoryItemSaveGameData& entry = m_character->inventory_items(itemIndex);
-        QByteArray serial = deobfuscateItem(QByteArray::fromStdString(entry.item_serial_number()));
-        if (serial.isEmpty()) {
-            qWarning() << "Couldn't deobfuscate";
-            return false;
-        }
-
-        BitParser bits(serial);
-        if (bits.eat(8) != 128) {
-            qWarning() << "Invalid start";
-            QMessageBox::warning(nullptr, "Invalid file", tr("Item data has wrong start."));
-            return false;
-        }
-
-        Item item;
-        item.version = bits.eat(7);
-        if (item.version > m_maxItemVersion) {
-            QMessageBox::warning(nullptr, "Invalid file", tr("Item version is too high (%1, we only support %2").arg(item.version, m_maxItemVersion));
-            return false;
-        }
-        item.balance = getAspect("InventoryBalanceData", item.version, &bits);
-        if (!item.balance.isValid()) {
-            QMessageBox::warning(nullptr, "Invalid file", tr("Invalid item balance"));
-            qWarning() << "Invalid item balance";
-            return false;
-        }
-
-        item.objectShortName = item.balance.val.split('/', QString::SkipEmptyParts).last().split('.', QString::SkipEmptyParts).last();
-        item.name = m_data.englishName(item.objectShortName);
-
-        item.data = getAspect("InventoryData", item.version, &bits); // these seem wrong
-        if (!item.data.isValid()) {
-            QMessageBox::warning(nullptr, "Invalid file", tr("Invalid item data"));
-            return false;
-        }
-        item.manufacturer = getAspect("ManufacturerData", item.version, &bits);
-        if (!item.data.isValid()) {
-            QMessageBox::warning(nullptr, "Invalid file", tr("Invalid item manufacturer"));
-            return false;
-        }
-        item.level = bits.eat(7);
-        item.numberOfParts = bits.eat(6);
-
-        QString itemPartCategory = m_data.partCategory(item.balance.val.toLower());
-        bool itemFailed = false;
-        if (!itemPartCategory.isEmpty()) {
-            for (int partIndex = 0; partIndex < item.numberOfParts; partIndex++) {
-                Item::Aspect part = getAspect(itemPartCategory, item.version, &bits);
-                if (!part.isValid()) {
-                    qWarning() << "Invalid" << item.balance.val << itemPartCategory;
-//                    QMessageBox::warning(nullptr, "Invalid file", tr("Failed to get item part %1 for item %2.").arg(partIndex).arg(item.name));
-                    itemFailed = true;
-                    break;
-//                    return false;
-                }
-                item.parts.append(part);
-            }
-        } else {
-            qWarning() << "Item not in parts database:" << item.balance.val;
-        }
-
-        if (itemIndex < 3) {
-            qDebug() << "Number of parts" << item.numberOfParts;
-            qDebug() << "Bits left" << bits.bitsLeft();
-        }
-        if (!itemFailed) {
+        const Item item = parseItem(entry.item_serial_number());
+        if (item.isValid()) {
             m_items.append(item);
         }
     }
@@ -376,6 +313,77 @@ bool Savegame::load(const QString &filePath)
     emit fileLoaded();
 
     return true;
+}
+
+Savegame::Item Savegame::parseItem(const std::string &obfuscatedSerial)
+{
+    QByteArray serial = deobfuscateItem(QByteArray::fromStdString(obfuscatedSerial));
+    if (serial.isEmpty()) {
+        qWarning() << "Couldn't deobfuscate";
+        return {};
+    }
+
+    BitParser bits(serial);
+    if (bits.eat(8) != 128) {
+        qWarning() << "Invalid start";
+        QMessageBox::warning(nullptr, "Invalid file", tr("Item data has wrong start."));
+        return {};
+    }
+
+    Item item;
+    item.version = bits.eat(7);
+    if (item.version > m_maxItemVersion) {
+        QMessageBox::warning(nullptr, "Invalid file", tr("Item version is too high (%1, we only support %2").arg(item.version, m_maxItemVersion));
+        return {};
+    }
+    item.balance = getAspect("InventoryBalanceData", item.version, &bits);
+    if (!item.balance.isValid()) {
+        QMessageBox::warning(nullptr, "Invalid file", tr("Invalid item balance"));
+        qWarning() << "Invalid item balance";
+        return {};
+    }
+
+    item.objectShortName = item.balance.val.split('/', QString::SkipEmptyParts).last().split('.', QString::SkipEmptyParts).last();
+    item.name = m_data.englishName(item.objectShortName);
+
+    item.data = getAspect("InventoryData", item.version, &bits); // these seem wrong
+    if (!item.data.isValid()) {
+        QMessageBox::warning(nullptr, "Invalid file", tr("Invalid item data"));
+        return {};
+    }
+    item.manufacturer = getAspect("ManufacturerData", item.version, &bits);
+    if (!item.data.isValid()) {
+        QMessageBox::warning(nullptr, "Invalid file", tr("Invalid item manufacturer"));
+        return {};
+    }
+    item.level = bits.eat(7);
+    item.numberOfParts = bits.eat(6);
+
+    QString itemPartCategory = m_data.partCategory(item.balance.val.toLower());
+    bool itemFailed = false;
+    if (!itemPartCategory.isEmpty()) {
+        for (int partIndex = 0; partIndex < item.numberOfParts; partIndex++) {
+            Item::Aspect part = getAspect(itemPartCategory, item.version, &bits);
+            if (!part.isValid()) {
+                qWarning() << "Invalid" << item.balance.val << itemPartCategory;
+                //                    QMessageBox::warning(nullptr, "Invalid file", tr("Failed to get item part %1 for item %2.").arg(partIndex).arg(item.name));
+                itemFailed = true;
+                break;
+                //                    return false;
+            }
+            item.parts.append(part);
+        }
+    } else {
+        qWarning() << "Item not in parts database:" << item.balance.val;
+    }
+
+
+    return item;
+
+//        if (itemIndex < 3) {
+//            qDebug() << "Number of parts" << item.numberOfParts;
+//            qDebug() << "Bits left" << bits.bitsLeft();
+//        }
 }
 
 Savegame::Item::Aspect Savegame::getAspect(const QString &category, const int requiredVersion, BitParser *bits)
