@@ -1,4 +1,4 @@
-What	Object name	Description
+# What	Object name	Description
 Behaviours	GM_Part_Behavior_01_Large.GM_Part_Behavior_01_Large	Increases radius by 20/40/60%
 Behaviours	GM_Part_Behavior_03_Bouncy.GM_Part_Behavior_03_Bouncy	Grenade bounces forward 3/5/7 times, exploding when hitting an enemy. Keeps bouncing after.
 Behaviours	GM_Part_Behavior_04_Sticky.GM_Part_Behavior_04_Sticky	Sticks on impact. Deals 25/100/200% bonus damage if stuck directly to an enemy
