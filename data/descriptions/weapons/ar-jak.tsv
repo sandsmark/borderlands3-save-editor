@@ -60,5 +60,4 @@ Part_AR_JAK_Stock_05.Part_AR_JAK_Stock_05	Recoil Width -30%, Recoil Height -15%
 Part_AR_JAK_Trigger_01.Part_AR_JAK_Trigger_01	Fire Rate +10%			Gatlin
 Part_AR_JAK_Trigger_02.Part_AR_JAK_Trigger_02	Dmg +10%			
 Part_AR_JAK_Trigger_03.Part_AR_JAK_Trigger_03	Acc -15%			
-Part_AR_JAK_Trigger_04.Part_AR_JAK_Trigger_04	Proj per Shot +3	Acc Bloom +25%, Fire Rate -30%, Dmg -58%, Acc +120%, Recoil Hight +55%		
-				Masher
+Part_AR_JAK_Trigger_04.Part_AR_JAK_Trigger_04	Proj per Shot +3	Acc Bloom +25%, Fire Rate -30%, Dmg -58%, Acc +120%, Recoil Hight +55%		Masher

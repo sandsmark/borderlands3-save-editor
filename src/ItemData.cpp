@@ -66,6 +66,7 @@ ItemData::ItemData()
     loadClassModDescriptions("fl4k");
     loadClassModDescriptions("amara");
     loadClassModDescriptions("zane");
+    loadItemInfos();
 }
 
 bool ItemData::isValid() const
@@ -75,8 +76,8 @@ bool ItemData::isValid() const
 
 QString ItemData::getItemAsset(const QString &category, const int index) const
 {
-    if (index < 1) {
-        qWarning() << "Invalid index" << index;
+    if (index < 0) {
+        qWarning() << "Invalid item index" << index;
         return {};
     }
     if (!m_inventoryDb.contains(category)) {
@@ -205,8 +206,12 @@ void ItemData::loadWeaponPartDescriptions(const QString &filename)
             qWarning() << "Duplicate description for" << id;
             continue;
         }
+        if (id.isEmpty()) {
+            qWarning() << "Empty id" << values << "in" << filename;
+            continue;
+        }
         if (!m_weaponPartTypes.contains(id)) {
-            qWarning() << "Unknown part" << id;
+//            qWarning() << "Unknown part" << id;
         }
         ItemDescription description;
         description.positives = values[1];
@@ -287,12 +292,14 @@ void ItemData::loadClassModDescriptions(const QString &characterClass)
         if (line.isEmpty() || line.startsWith('#')) {
             continue;
         }
-        const QList<QByteArray> values = line.split('\t');
-        if (values.count() != 3) {
-            qWarning() << "Invalid number of values in" + characterClass + "com desc file";
-            return;
+        QList<QByteArray> values = line.split('\t');
+        if (values.count() > 2) {
+            values.takeFirst(); // meh, can't be bothered to fix the files
+//            qWarning() << "Invalid number of values in" << characterClass << "com desc file";
+//            qDebug() << values;
+//            return;
         }
-        const QString id = values[1].split('.').last();
+        const QString id = values[0].split('.').last();
         if (m_itemDescriptions.contains(id)) {
             qWarning() << "Duplicate description for" << id;
             continue;
@@ -301,8 +308,53 @@ void ItemData::loadClassModDescriptions(const QString &characterClass)
             qWarning() << "Unknown part" << id;
         }
         ItemDescription description;
-        description.effects = values[2];
-        description.naming = values[0]; // meh, close enough
+        description.effects = values[1];
+//        description.naming = values[0]; // meh, close enough
         m_itemDescriptions[id] = std::move(description);
     }
+}
+
+void ItemData::loadItemInfos()
+{
+    QFile namesFile(":/data/item-data.json");
+    namesFile.open(QIODevice::ReadOnly);
+    const QJsonObject rootObject =  QJsonDocument::fromJson(namesFile.readAll()).object();
+
+    for (const QJsonValue &val : rootObject) {
+        const QJsonObject obj = val.toObject();
+        const QString assetName = obj["AssetName"].toString();
+        if (assetName.isEmpty()) {
+            qWarning() << "Invalid object" << obj;
+            continue;
+        }
+
+        ItemInfo info;
+
+        info.inventoryName = obj["InventoryName"].toString();
+        info.inventoryNameLocationKey = obj["InventoryName_LocKey"].toString();
+
+        info.inventoryCategoryHash = obj["InventoryCategoryHash"].toInt();
+
+        info.inventorySize = obj["SizeInInventory"].toDouble();
+        info.usesInventoryScore = obj["UsesInventoryScore"].toBool();
+
+
+        info.monetaryValue = obj["MonetaryValue"].toInt();
+        info.baseMonetaryValueModifier = obj["BaseMonetaryValueModifier"].toDouble();
+
+        const QString droppability = obj["Droppability"].toString();
+        if (droppability == QLatin1String("EPD_CanDropAndSell")) {
+            info.canDropOrSell = true;
+        } else if (droppability == QLatin1String("EPD_NoDropOrSell")) {
+            info.canDropOrSell = true;
+        } else {
+            qWarning() << "Unknown droppability" << droppability;
+        }
+
+
+//        qDebug() << "Adding" << assetName << info.inventoryName;
+        m_itemInfos[assetName] = std::move(info); // compilers probably figure it out themselves, but meh
+    }
+    qDebug() << "Loaded" << m_itemInfos.count() << "item infos";
+
 }

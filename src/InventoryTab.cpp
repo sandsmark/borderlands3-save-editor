@@ -82,6 +82,29 @@ void InventoryTab::onItemSelected()
 
     QStringList nameText, effectsText, negativesText, positivesText;
 
+    const QString assetId = item.data.val.split('.').last();
+    if (m_savegame->itemData().hasItemInfo(assetId)) {
+        const ItemInfo &info = m_savegame->itemData().itemInfo(assetId);
+        if (!info.inventoryName.isEmpty()) {
+            nameText.append(info.inventoryName);
+            qDebug() << "Inventory name" << info.inventoryName;
+        }
+        if (!info.canDropOrSell) {
+            effectsText.append(" • Can't be dropped or sold");
+        }
+        if (info.inventorySize > 1) {
+            effectsText.append(QString::fromUtf8(" • Inventory size %1").arg(info.inventorySize));
+        } else if (info.inventorySize == 0) {
+            effectsText.append(" • Takes no space in inventory");
+        }
+        if (info.monetaryValue > 1) {
+            effectsText.append(QString::fromUtf8(" • Monetary value %1").arg(info.monetaryValue));
+        }
+    } else {
+        qWarning() << "Missing info for asset" << assetId;
+    }
+
+
     for (const Savegame::Item::Aspect &part : item.parts) {
         QString name = part.val.split('.').last();
         if (partCategories.contains(name)) {
@@ -92,6 +115,7 @@ void InventoryTab::onItemSelected()
         }
         QListWidgetItem *listItem = new QListWidgetItem(name);
         listItem->setData(Qt::UserRole, part.val.split('.').last());
+//        qDebug() << part.val;
         m_partsList->addItem(listItem);
 
         const ItemDescription description = m_savegame->itemData().itemDescription(part.val.split('.').last());
@@ -120,7 +144,9 @@ void InventoryTab::onItemSelected()
 //    qDebug() << "Version" << item.version << "level" << item.level;
 //    qDebug() << item.balance.val;
 //    qDebug() << item.data.val;
-    //    qDebug() << item.manufacturer.val;
+//    qDebug() << item.manufacturer.val;
+//    qDebug() << item.data.val;
+//    qDebug() << item.balance.val;
 }
 
 void InventoryTab::onPartSelected()

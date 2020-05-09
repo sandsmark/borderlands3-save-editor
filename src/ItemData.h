@@ -28,6 +28,21 @@ struct ItemDescription {
     QString naming;
 };
 
+struct ItemInfo {
+    QString inventoryName;
+    QString inventoryNameLocationKey;
+
+    int inventoryCategoryHash;
+
+    float inventorySize = 0.f;
+    bool usesInventoryScore = false;
+
+    int monetaryValue = 0.f;
+    float baseMonetaryValueModifier = 0.f;
+
+    bool canDropOrSell = false;
+};
+
 class ItemData
 {
 public:
@@ -46,6 +61,8 @@ public:
     QString weaponPartType(const QString &id) const { return m_weaponPartTypes[id]; }
 
     const ItemDescription &itemDescription(const QString &id) { return m_itemDescriptions[id]; }
+    const ItemInfo &itemInfo(const QString &id) { return m_itemInfos[id]; }
+    bool hasItemInfo(const QString &id) { return m_itemInfos.contains(id); } // inefficient lol
 
 private:
     void loadPartsForOther(const QString &type);
@@ -53,6 +70,7 @@ private:
     void loadShieldPartDescriptions();
     void loadGrenadePartDescriptions();
     void loadClassModDescriptions(const QString &characterClass);
+    void loadItemInfos();
 
     static const QVector<ItemPart> nullWeaponParts; // so we always can return references
 
@@ -63,6 +81,7 @@ private:
     QHash<QString, QString> m_weaponPartTypes;
     QMultiMap<QString, QString> m_weaponPartCategories;
     QHash<QString, ItemDescription> m_itemDescriptions;
+    QHash<QString, ItemInfo> m_itemInfos;
 };
 
 #endif // ITEMDATA_H
