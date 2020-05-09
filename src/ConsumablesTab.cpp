@@ -52,6 +52,7 @@ ConsumablesTab::ConsumablesTab(Savegame *savegame) :
     QGroupBox *sduBox = new QGroupBox(tr("SDU"));
     layout()->addWidget(sduBox);
     QFormLayout *sduLayout = new QFormLayout;
+    sduLayout->setFieldGrowthPolicy(QFormLayout::FieldsStayAtSizeHint);
     sduBox->setLayout(sduLayout);
 
     m_rifleSdu = new QSpinBox;

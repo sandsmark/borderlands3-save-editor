@@ -107,11 +107,36 @@ void InventoryTab::onItemSelected()
 
     for (const Savegame::Item::Aspect &part : item.parts) {
         QString name = part.val.split('.').last();
+
+        QString displayName = name;
+        displayName.replace("_AR_", "_Assault Rifle_");
+        displayName.replace("_SR_", "_Sniper Rifle_");
+        displayName.replace("_SM_", "_SMG_");
+        displayName.replace("_SG_", "_Shotgun_");
+        displayName.replace("_GM_", "_Grenade Mod_");
+        displayName.replace("_MAL_", "_Maliwan_");
+        displayName.replace("_DAL_", "_Dahl_");
+        displayName.replace("_Hyp_", "_Hyperion_");
+        displayName.replace("_HYP_", "_Hyperion_");
+        displayName.replace("_TED_", "_Tediore_");
+        displayName.replace("_VLA_", "_Vladof_");
+        QStringList nameParts = displayName.split('_');
+        if (nameParts.count() >= 3) {
+//            displayName = nameParts.mid(1).join(' ');
+            if (nameParts.first() == "Part") {
+                nameParts.takeFirst();
+            }
+            nameParts.replaceInStrings("SR", "Sniper Rifle");
+        } else {
+            qWarning() << "Weird name" << name;
+        }
+        displayName = nameParts.join(' ');
+
         if (partCategories.contains(name)) {
-            name = partCategories[name] + " " + name;
+            name = partCategories[name] + ": " + displayName;
         } else {
             qWarning() << item.name << item.objectShortName << "has part" << name << "which is not in the usual list";
-            name = m_savegame->itemData().weaponPartType(name) + " " + name;
+            name = m_savegame->itemData().weaponPartType(name) + ": " + displayName;
         }
         QListWidgetItem *listItem = new QListWidgetItem(name);
         listItem->setData(Qt::UserRole, part.val.split('.').last());

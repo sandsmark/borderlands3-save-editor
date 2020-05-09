@@ -34,3 +34,6 @@ protobufs, the obfuscation methods, data, etc.
 If you want to pay someone for this Gibbed would probably appreciate it:
 https://www.patreon.com/gibbed
 
+# Some more screenshots
+![screenshot](/doc/screenshot-inventory.png)
+![screenshot](/doc/screenshot-consumables.png)
