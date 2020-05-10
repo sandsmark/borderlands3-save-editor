@@ -7,8 +7,11 @@ Borderlands 3 Savegame Editor
 Work in progress.
 
 Can edit what's exposed in the GUI (so what's in the screenshot). And a bit
-more. And you can view the inventory (it can technically edit items as well,
-just haven't bothered to implement the UI yet, not sure of the best UX for it).
+more. And you can view the inventory.
+
+It can technically edit items as well, but that hasn't been tested at all, so
+you're on your own if it breaks. Though it should warn you if it is sure you're
+breaking something.
 
 I have only tested that it writes an identical file when you set the same
 values, but I haven't tested that it doesn't fuck up if you set funny values.
