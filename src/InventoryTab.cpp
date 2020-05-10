@@ -96,8 +96,8 @@ void InventoryTab::onItemSelected()
     if (selected.isEmpty()) {
         return;
     }
-    int index = m_list->row(selected.first());
-    if (index >= m_savegame->items().count()) {
+    m_selectedInventoryItem = m_list->row(selected.first());
+    if (m_selectedInventoryItem >= m_savegame->items().count()) {
         qWarning() << "Out of bounds!";
         return;
     }
@@ -107,12 +107,12 @@ void InventoryTab::onItemSelected()
 
 
     m_partsList->clear();
-    const InventoryItem &inventoryItem = m_savegame->items()[index];
+    InventoryItem &currentInventoryItem = m_savegame->items()[m_selectedInventoryItem];
     QStringList parts;
 
     QMap<QString, QString> partCategories;
     QSet<QString> categories;
-    for (const ItemPart &part : m_savegame->itemData().weaponParts(inventoryItem.objectShortName)) {
+    for (const ItemPart &part : m_savegame->itemData().weaponParts(currentInventoryItem.objectShortName)) {
         partCategories[part.partId] = part.category;
         categories.insert(part.category);
     }
@@ -127,7 +127,7 @@ void InventoryTab::onItemSelected()
 
     QStringList nameText, effectsText, negativesText, positivesText;
 
-    const QString assetId = inventoryItem.data.val.split('.').last();
+    const QString assetId = currentInventoryItem.data.val.split('.').last();
     if (m_savegame->itemData().hasItemInfo(assetId)) {
         const ItemInfo &info = m_savegame->itemData().itemInfo(assetId);
         if (!info.inventoryName.isEmpty()) {
@@ -151,9 +151,8 @@ void InventoryTab::onItemSelected()
 
 
     QSet<QString> enabledParts;
-//    for (const Savegame::Item::Aspect &part : inventoryItem.parts) {
-    for (int partIndex = 0; partIndex < inventoryItem.parts.count(); partIndex++) {
-        const InventoryItem::Aspect &part = inventoryItem.parts[partIndex];
+    for (int partIndex = 0; partIndex < currentInventoryItem.parts.count(); partIndex++) {
+        const InventoryItem::Aspect &part = currentInventoryItem.parts[partIndex];
 
         const QString name = part.val.split('.').last();
         enabledParts.insert(name);
@@ -175,7 +174,7 @@ void InventoryTab::onItemSelected()
                 m_partsList->addTopLevelItem(categoryItems[category]);
             }
 
-            qWarning() << inventoryItem.name << inventoryItem.objectShortName << "has part" << name << "which is not in the list of parts for" << inventoryItem.name;
+            qWarning() << currentInventoryItem.name << currentInventoryItem.objectShortName << "has part" << name << "which is not in the list of parts for" << currentInventoryItem.name;
         }
         QTreeWidgetItem *listItem = new QTreeWidgetItem(categoryItems[category], {makeNamePretty(name)});
         listItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
@@ -262,7 +261,6 @@ void InventoryTab::onPartChanged(QTreeWidgetItem *item, int column)
         return;
     }
     const bool enabled = item->checkState(0) == Qt::Checked;
-    const int existingPartPosition = item->data(0, Qt::UserRole + 1).toInt();
 
     const QString itemPartCategory = m_savegame->itemData().partCategory(itemId);
     if (itemPartCategory.isEmpty()) {
@@ -271,14 +269,21 @@ void InventoryTab::onPartChanged(QTreeWidgetItem *item, int column)
         return;
     }
 
+    InventoryItem &currentInventoryItem = m_savegame->items()[m_selectedInventoryItem];
     qDebug() << itemId << "Part category" << itemPartCategory;
-    const int partPosition = m_savegame->itemData().partIndex(itemPartCategory, itemId);
-    if (partPosition <= 0) {
+    InventoryItem::Aspect part = m_savegame->itemData().createInventoryItemPart(currentInventoryItem, itemId);
+    if (part.index <= 0) {
         QMessageBox::warning(nullptr, "Invalid item", tr("Failed to find %1\nin list of parts for item.").arg(itemId));
         item->setCheckState(0, enabled ? Qt::Unchecked : Qt::Checked); // reverse
         return;
     }
-    qDebug() << "existing index" << existingPartPosition << "new index" << partPosition;
+    const int existingPartPosition = item->data(0, Qt::UserRole + 1).toInt();
+    if (existingPartPosition < 0 || existingPartPosition >= currentInventoryItem.parts.count()) {
+        currentInventoryItem.parts.append(part);
+    } else {
+        currentInventoryItem.parts[existingPartPosition] = part;
+    }
+    qDebug() << "existing index" << existingPartPosition << "new part name" << part.val;
 }
 
 void InventoryTab::load()

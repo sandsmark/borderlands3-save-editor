@@ -158,6 +158,20 @@ int ItemData::partIndex(const QString &category, const QString &id)
     return m_categoryObjects[category].indexOf(id);
 }
 
+InventoryItem::Aspect ItemData::createInventoryItemPart(const InventoryItem &inventoryItem, const QString &objectName)
+{
+    InventoryItem::Aspect part;
+    part.index = partIndex(inventoryItem.partsCategory, objectName);
+    if (part.index <= 0) {
+        qWarning() << "Invalid object name" << objectName;
+        return {};
+    }
+    part.bits = requiredBits(inventoryItem.partsCategory, inventoryItem.version);
+    part.val = getItemAsset(inventoryItem.partsCategory, part.index - 1);
+
+    return part;
+}
+
 void ItemData::loadPartsForOther(const QString &type)
 {
     QFile grenadeModsFile(":/data/" + type.toLower() + "-parts.tsv");

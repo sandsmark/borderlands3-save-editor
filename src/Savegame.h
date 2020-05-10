@@ -55,7 +55,7 @@ public:
     bool load(const QString &filePath);
     bool save(const QString filePath) const;
 
-    const QVector<InventoryItem> &items() const { return m_items; }
+    QVector<InventoryItem> &items() { return m_items; }
 
     int ammoAmount(const QString &name) const;
     void setAmmoAmount(const QString &name, const int amount);

@@ -31,6 +31,7 @@ private:
     QLabel *m_partEffects;
     QLabel *m_partPositives;
     QLabel *m_partNegatives;
+    int m_selectedInventoryItem = -1;
 };
 
 #endif // INVENTORYTAB_H

@@ -1,6 +1,8 @@
 #ifndef ITEMDATA_H
 #define ITEMDATA_H
 
+#include "InventoryItem.h"
+
 #include <QJsonObject>
 #include <QStringList>
 #include <QMap>
@@ -69,6 +71,8 @@ public:
     bool hasItemInfo(const QString &id) { return m_itemInfos.contains(id); } // inefficient lol
 
     const QString &objectForShortName(const QString &shortName) { return m_shortNameToObject[shortName]; }
+
+    InventoryItem::Aspect createInventoryItemPart(const InventoryItem &inventoryItem, const QString &objectName);
 
 private:
     void loadPartsForOther(const QString &type);
