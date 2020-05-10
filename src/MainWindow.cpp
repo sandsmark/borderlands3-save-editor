@@ -14,6 +14,7 @@
 #include <QPushButton>
 #include <QToolBar>
 #include <QSettings>
+#include <QMessageBox>
 
 
 
@@ -63,6 +64,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::loadFile()
 {
+    QMessageBox::warning(this, tr("Untested warning"), tr("This isn't really well tested. Especially the item editing is completely untested and will probably fuck up something.\nMake backups before using."));
     qDebug() << "Loading" << m_filePath;
     m_generalTab->setEnabled(false);
     m_inventoryTab->setEnabled(false);
@@ -113,5 +115,9 @@ void MainWindow::onSaveAs()
     }
 
     m_filePath = newPath; // so we save to this next time the save button is clicked
+    if (!m_savegame->save(m_filePath)) {
+        qWarning() << "Failed to save";
+        return;
+    }
 }
 
