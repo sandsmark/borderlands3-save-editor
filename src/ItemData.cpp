@@ -67,6 +67,12 @@ ItemData::ItemData()
     loadItemInfos();
 }
 
+ItemData *ItemData::instance()
+{
+    static ItemData inst;
+    return &inst;
+}
+
 bool ItemData::isValid() const
 {
     return (!m_englishNames.isEmpty() &&

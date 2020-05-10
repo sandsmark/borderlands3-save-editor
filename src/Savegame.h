@@ -63,8 +63,6 @@ public:
     int sduAmount(const QString &name) const;
     void setSduAmount(const QString &name, const int amount);
 
-    ItemData &itemData() { return m_data; }
-
 public slots:
     //////////////////////////
     // Character stuff
@@ -112,8 +110,6 @@ private:
     int currencyAmount(const Constants::Currency currenct) const;
     void setCurrency(const Constants::Currency currency, const int amount);
     std::unique_ptr<OakSave::Character> m_character;
-
-    ItemData m_data;
 
     QVector<InventoryItem> m_items;
     int m_maxItemVersion = 1000; // todo

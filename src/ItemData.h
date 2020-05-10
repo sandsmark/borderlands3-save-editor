@@ -50,7 +50,7 @@ struct ItemInfo {
 class ItemData
 {
 public:
-    ItemData();
+    static ItemData *instance();
 
     bool isValid() const;
 
@@ -75,6 +75,8 @@ public:
     InventoryItem::Aspect createInventoryItemPart(const InventoryItem &inventoryItem, const QString &objectName);
 
 private:
+    ItemData();
+
     void loadPartsForOther(const QString &type);
     void loadWeaponPartDescriptions(const QString &filename);
     void loadShieldPartDescriptions();

@@ -112,7 +112,7 @@ void InventoryTab::onItemSelected()
 
     QMap<QString, QString> partCategories;
     QSet<QString> categories;
-    for (const ItemPart &part : m_savegame->itemData().weaponParts(currentInventoryItem.objectShortName)) {
+    for (const ItemPart &part : ItemData::instance()->weaponParts(currentInventoryItem.objectShortName)) {
         partCategories[part.partId] = part.category;
         categories.insert(part.category);
     }
@@ -128,8 +128,8 @@ void InventoryTab::onItemSelected()
     QStringList nameText, effectsText, negativesText, positivesText;
 
     const QString assetId = currentInventoryItem.data.val.split('.').last();
-    if (m_savegame->itemData().hasItemInfo(assetId)) {
-        const ItemInfo &info = m_savegame->itemData().itemInfo(assetId);
+    if (ItemData::instance()->hasItemInfo(assetId)) {
+        const ItemInfo &info = ItemData::instance()->itemInfo(assetId);
         if (!info.inventoryName.isEmpty()) {
             nameText.append(info.inventoryName);
             qDebug() << "Inventory name" << info.inventoryName;
@@ -164,7 +164,7 @@ void InventoryTab::onItemSelected()
             category = partCategories[name];
 //            parentItem = categoryItems[];
         } else {
-            category = m_savegame->itemData().weaponPartType(name);
+            category = ItemData::instance()->weaponPartType(name);
             if (category.isEmpty()) {
                 qWarning() << "Unknown category for" << name;
                 category = "Unknown type";
@@ -183,7 +183,7 @@ void InventoryTab::onItemSelected()
         listItem->setData(0, Qt::UserRole + 1, partIndex);
 
 
-        const ItemDescription description = m_savegame->itemData().itemDescription(name);
+        const ItemDescription description = ItemData::instance()->itemDescription(name);
         if (!description.naming.isEmpty()) {
             nameText.append(" • " + description.naming);
         }
@@ -240,7 +240,7 @@ void InventoryTab::onPartSelected()
     if (itemId.isEmpty()) {
         return;
     }
-    const ItemDescription description = m_savegame->itemData().itemDescription(itemId);
+    const ItemDescription description = ItemData::instance()->itemDescription(itemId);
     m_partName->setText(description.naming);
     m_partEffects->setText(description.effects);
     m_partNegatives->setText(description.negatives);
@@ -255,14 +255,14 @@ void InventoryTab::onPartChanged(QTreeWidgetItem *item, int column)
     if (column != 0) {
         qWarning() << "Unexpected column" << column;
     }
-    const QString itemId = m_savegame->itemData().objectForShortName(item->data(0, Qt::UserRole).toString());
+    const QString itemId = ItemData::instance()->objectForShortName(item->data(0, Qt::UserRole).toString());
     if (itemId.isEmpty()) {
         qWarning() << "Empty part id" << item->text(0) << item;
         return;
     }
     const bool enabled = item->checkState(0) == Qt::Checked;
 
-    const QString itemPartCategory = m_savegame->itemData().partCategory(itemId);
+    const QString itemPartCategory = ItemData::instance()->partCategory(itemId);
     if (itemPartCategory.isEmpty()) {
         QMessageBox::warning(nullptr, "Invalid item", tr("Failed to find %1\nin list of items with parts.").arg(itemId));
         item->setCheckState(0, enabled ? Qt::Unchecked : Qt::Checked); // reverse
@@ -271,7 +271,7 @@ void InventoryTab::onPartChanged(QTreeWidgetItem *item, int column)
 
     InventoryItem &currentInventoryItem = m_savegame->items()[m_selectedInventoryItem];
     qDebug() << itemId << "Part category" << itemPartCategory;
-    InventoryItem::Aspect part = m_savegame->itemData().createInventoryItemPart(currentInventoryItem, itemId);
+    InventoryItem::Aspect part = ItemData::instance()->createInventoryItemPart(currentInventoryItem, itemId);
     if (part.index <= 0) {
         QMessageBox::warning(nullptr, "Invalid item", tr("Failed to find %1\nin list of parts for item.").arg(itemId));
         item->setCheckState(0, enabled ? Qt::Unchecked : Qt::Checked); // reverse
