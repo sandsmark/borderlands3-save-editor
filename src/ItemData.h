@@ -52,27 +52,27 @@ class ItemData
 public:
     static ItemData *instance();
 
-    bool isValid() const;
+    static bool isValid();
 
-    QString getItemAsset(const QString &category, const int index) const;
-    int requiredBits(const QString &category, const int requiredVersion) const;
+    static QString getItemAsset(const QString &category, const int index);
+    static int requiredBits(const QString &category, const int requiredVersion);
 
-    QString englishName(const QString &itemName) const;
-    QString partCategory(const QString &objectName) const;
+    static QString englishName(const QString &itemName);
+    static QString partCategory(const QString &objectName);
 
-    const QVector<ItemPart> &weaponParts(const QString &balance);
-    QStringList categoriesForWeapon(const QString &balance) const { return m_weaponPartCategories.values(balance); }
-    QString weaponPartType(const QString &id) const { return m_weaponPartTypes[id]; }
+    static const QVector<ItemPart> &weaponParts(const QString &balance);
+    static QStringList categoriesForWeapon(const QString &balance) { return instance()->m_weaponPartCategories.values(balance); }
+    static QString weaponPartType(const QString &id) { return instance()->m_weaponPartTypes[id]; }
 
-    int partIndex(const QString &category, const QString &id);
+    static int partIndex(const QString &category, const QString &id);
 
-    const ItemDescription &itemDescription(const QString &id) { return m_itemDescriptions[id]; }
-    const ItemInfo &itemInfo(const QString &id) { return m_itemInfos[id]; }
-    bool hasItemInfo(const QString &id) { return m_itemInfos.contains(id); } // inefficient lol
+    static const ItemDescription &itemDescription(const QString &id) { return instance()->m_itemDescriptions[id]; }
+    static const ItemInfo &itemInfo(const QString &id) { return instance()->m_itemInfos[id]; }
+    static bool hasItemInfo(const QString &id) { return instance()->m_itemInfos.contains(id); } // inefficient lol
 
-    const QString &objectForShortName(const QString &shortName) { return m_shortNameToObject[shortName]; }
+    static const QString &objectForShortName(const QString &shortName) { return instance()->m_shortNameToObject[shortName]; }
 
-    InventoryItem::Aspect createInventoryItemPart(const InventoryItem &inventoryItem, const QString &objectName);
+    static InventoryItem::Aspect createInventoryItemPart(const InventoryItem &inventoryItem, const QString &objectName);
 
 private:
     ItemData();

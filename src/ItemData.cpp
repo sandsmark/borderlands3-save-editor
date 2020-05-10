@@ -73,42 +73,45 @@ ItemData *ItemData::instance()
     return &inst;
 }
 
-bool ItemData::isValid() const
+bool ItemData::isValid()
 {
-    return (!m_englishNames.isEmpty() &&
-            !m_categoryObjects.isEmpty() &&
-            !m_categoryRequiredBits.isEmpty() &&
-            !m_itemPartCategories.isEmpty() &&
-            !m_weaponParts.isEmpty());
+    ItemData *me = instance();
+    return (!me->m_englishNames.isEmpty() &&
+            !me->m_categoryObjects.isEmpty() &&
+            !me->m_categoryRequiredBits.isEmpty() &&
+            !me->m_itemPartCategories.isEmpty() &&
+            !me->m_weaponParts.isEmpty());
 }
 
-QString ItemData::getItemAsset(const QString &category, const int index) const
+QString ItemData::getItemAsset(const QString &category, const int index)
 {
+    ItemData *me = instance();
     if (index < 0) {
         qWarning() << "Invalid item index" << index;
         return {};
     }
-    if (!m_categoryObjects.contains(category)) {
+    if (!me->m_categoryObjects.contains(category)) {
         qWarning() << "Invalid category" << category;
         return {};
     }
 
-    if (index >= m_categoryObjects[category].count()) {
-        qWarning() << "Asset index" << index << "out of range, max:" << m_categoryObjects[category].count();
+    if (index >= me->m_categoryObjects[category].count()) {
+        qWarning() << "Asset index" << index << "out of range, max:" << me->m_categoryObjects[category].count();
         return {};
     }
-    return m_categoryObjects[category][index];
+    return me->m_categoryObjects[category][index];
 
 }
 
-int ItemData::requiredBits(const QString &category, const int requiredVersion) const
+int ItemData::requiredBits(const QString &category, const int requiredVersion)
 {
-    if (!m_categoryRequiredBits.contains(category)) {
+    ItemData *me = instance();
+    if (!me->m_categoryRequiredBits.contains(category)) {
         qWarning() << "Invalid category" << category;
         return -1;
     }
 
-    const QVector<QPair<int, int>> &versions = m_categoryRequiredBits[category];
+    const QVector<QPair<int, int>> &versions = me->m_categoryRequiredBits[category];
 
     int bits = versions.first().second;
     for (const QPair<int, int> &version : versions) {
@@ -127,47 +130,52 @@ int ItemData::requiredBits(const QString &category, const int requiredVersion) c
 
 }
 
-QString ItemData::englishName(const QString &itemName) const
+QString ItemData::englishName(const QString &itemName)
 {
+    ItemData *me = instance();
     const QString lowerCase = itemName.toLower();
-    if (!m_englishNames.contains(lowerCase)) {
+    if (!me->m_englishNames.contains(lowerCase)) {
         return itemName;
     }
-    return m_englishNames[lowerCase].toString();
+    return me->m_englishNames[lowerCase].toString();
 }
 
-QString ItemData::partCategory(const QString &objectName) const
+QString ItemData::partCategory(const QString &objectName)
 {
+    ItemData *me = instance();
     const QString lowerCase = objectName.toLower();
-    if (!m_itemPartCategories.contains(lowerCase)) {
+    if (!me->m_itemPartCategories.contains(lowerCase)) {
         qWarning() << objectName << "not in part category db";
     }
-    return m_itemPartCategories[lowerCase].toString();
+    return me->m_itemPartCategories[lowerCase].toString();
 }
 
 const QVector<ItemPart> &ItemData::weaponParts(const QString &balance)
 {
-    if (!m_weaponParts.contains(balance)) {
+    ItemData *me = instance();
+    if (!me->m_weaponParts.contains(balance)) {
         return nullWeaponParts;
     }
 
-    return m_weaponParts[balance];
+    return me->m_weaponParts[balance];
 }
 
 int ItemData::partIndex(const QString &category, const QString &id)
 {
-    if (!m_categoryObjects.contains(category)) {
+    ItemData *me = instance();
+    if (!me->m_categoryObjects.contains(category)) {
         qWarning() << "Invalid category requested" << category << "for" << id;
         return -1;
     }
 
-    return m_categoryObjects[category].indexOf(id);
+    return me->m_categoryObjects[category].indexOf(id);
 }
 
 InventoryItem::Aspect ItemData::createInventoryItemPart(const InventoryItem &inventoryItem, const QString &objectName)
 {
+    ItemData *me = instance();
     InventoryItem::Aspect part;
-    part.index = partIndex(inventoryItem.partsCategory, objectName);
+    part.index = me->partIndex(inventoryItem.partsCategory, objectName);
     if (part.index <= 0) {
         qWarning() << "Invalid object name" << objectName;
         return {};

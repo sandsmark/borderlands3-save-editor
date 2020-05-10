@@ -240,7 +240,7 @@ static bool writeString(const QString &input, QIODevice *output)
 
 bool Savegame::load(const QString &filePath)
 {
-    if (!ItemData::instance()->isValid()) {
+    if (!ItemData::isValid()) {
         qWarning() << "Databases not loaded!";
         return false;
     }
@@ -416,7 +416,7 @@ InventoryItem Savegame::parseItem(const std::string &obfuscatedSerial)
     }
 
     item.objectShortName = item.balance.val.split('/', QString::SkipEmptyParts).last().split('.', QString::SkipEmptyParts).last();
-    item.name = ItemData::instance()->englishName(item.objectShortName);
+    item.name = ItemData::englishName(item.objectShortName);
 
     item.data = getAspect("InventoryData", item.version, &bits); // these seem wrong
     if (!item.data.isValid()) {
@@ -433,7 +433,7 @@ InventoryItem Savegame::parseItem(const std::string &obfuscatedSerial)
     item.level = bits.eat(7);
     item.numberOfParts = bits.eat(6);
 
-    item.partsCategory = ItemData::instance()->partCategory(item.balance.val.toLower());
+    item.partsCategory = ItemData::partCategory(item.balance.val.toLower());
     bool itemFailed = false;
     if (!item.partsCategory.isEmpty()) {
         for (int partIndex = 0; partIndex < item.numberOfParts; partIndex++) {
@@ -499,7 +499,7 @@ std::string Savegame::serializeItem(const InventoryItem &item)
     bits.put(item.level, 7);
     bits.put(item.parts.count(), 6);
 
-    QString itemPartCategory = ItemData::instance()->partCategory(item.balance.val.toLower());
+    QString itemPartCategory = ItemData::partCategory(item.balance.val.toLower());
     for (const InventoryItem::Aspect &part : item.parts) {
         putAspect(part, itemPartCategory, item.version, &bits);
     }
@@ -521,7 +521,7 @@ std::string Savegame::serializeItem(const InventoryItem &item)
 InventoryItem::Aspect Savegame::getAspect(const QString &category, const int requiredVersion, BitParser *bits)
 {
     InventoryItem::Aspect aspect;
-    aspect.bits = ItemData::instance()->requiredBits(category, requiredVersion);
+    aspect.bits = ItemData::requiredBits(category, requiredVersion);
     if (aspect.bits <= 0) {
         qWarning() << "Invalid aspect";
         return {};
@@ -535,7 +535,7 @@ InventoryItem::Aspect Savegame::getAspect(const QString &category, const int req
         qWarning() << "Zero index for" << category;
         return {};
     }
-    aspect.val = ItemData::instance()->getItemAsset(category, aspect.index - 1);
+    aspect.val = ItemData::getItemAsset(category, aspect.index - 1);
     if (aspect.val.isEmpty()) {
         qWarning() << "Can't find val for" << category << aspect.index;
         return {};
@@ -546,7 +546,7 @@ InventoryItem::Aspect Savegame::getAspect(const QString &category, const int req
 
 void Savegame::putAspect(const InventoryItem::Aspect &aspect, const QString &category, const int requiredVersion, BitParser *bits)
 {
-    bits->put(aspect.index, ItemData::instance()->requiredBits(category, requiredVersion));
+    bits->put(aspect.index, ItemData::requiredBits(category, requiredVersion));
 }
 
 bool Savegame::save(const QString filePath) const
