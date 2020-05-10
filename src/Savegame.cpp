@@ -596,6 +596,26 @@ bool Savegame::save(const QString filePath) const
     return true;
 }
 
+void Savegame::addInventoryItemPart(const int index, const InventoryItem::Aspect &part)
+{
+    m_items[index].parts.append(part);
+    m_character->mutable_inventory_items(index)->set_item_serial_number(serializeItem(m_items[index]));
+}
+
+void Savegame::removeInventoryItemPart(const int index, const int partIndex)
+{
+    m_items[index].parts.remove(partIndex);
+    m_character->mutable_inventory_items(index)->set_item_serial_number(serializeItem(m_items[index]));
+}
+
+void Savegame::replaceInventoryItemPart(const int index, const int partIndex, const InventoryItem::Aspect &part)
+{
+    qDebug() << QByteArray::fromStdString(serializeItem(m_items[index])).toHex();
+    m_items[index].parts[partIndex] = part;
+    m_character->mutable_inventory_items(index)->set_item_serial_number(serializeItem(m_items[index]));
+    qDebug() << QByteArray::fromStdString(serializeItem(m_items[index])).toHex();
+}
+
 int Savegame::ammoAmount(const QString &name) const
 {
     // fuckings to protobuf
