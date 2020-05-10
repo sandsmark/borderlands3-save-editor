@@ -24,7 +24,7 @@ private slots:
     void load();
 
 private:
-    void checkBounds();
+    void checkValidity();
 
     Savegame *m_savegame;
     QListWidget *m_list;

@@ -39,11 +39,19 @@ ItemData::ItemData()
         part.maxParts = line[6].toInt();
         part.weight = line[7].toFloat();
         part.partId = line[8];
-        for (const QString &dep : line[9].split(',')) {
-            part.dependencies.append(dep.trimmed());
+        for (QString dep : line[9].split(',', QString::SkipEmptyParts)) {
+            dep = dep.trimmed();
+            if (dep.isEmpty()) {
+                continue;
+            }
+            part.dependencies.append(dep);
         }
-        for (const QString &exc : line[10].split(',')) {
-            part.excluders.append(exc.trimmed());
+        for (QString exc : line[10].split(',', QString::SkipEmptyParts)) {
+            exc = exc.trimmed();
+            if (exc.isEmpty()) {
+                continue;
+            }
+            part.excluders.append(exc);
         }
         m_weaponPartTypes[part.partId] = part.category;
         m_weaponPartCategories.insert(part.balance, part.category);
@@ -207,11 +215,19 @@ void ItemData::loadPartsForOther(const QString &type)
         part.maxParts = line[5].toInt();
         part.weight = line[6].toFloat();
         part.partId = line[7];
-        for (const QString &dep : line[8].split(',')) {
-            part.dependencies.append(dep.trimmed());
+        for (QString dep : line[8].split(',')) {
+            dep = dep.trimmed();
+            if (dep.isEmpty()) {
+                continue;
+            }
+            part.dependencies.append(dep);
         }
-        for (const QString &exc : line[9].split(',')) {
-            part.excluders.append(exc.trimmed());
+        for (QString exc : line[9].split(',')) {
+            exc = exc.trimmed();
+            if (exc.isEmpty()) {
+                continue;
+            }
+            part.excluders.append(exc);
         }
         m_weaponPartTypes[part.partId] = part.category;
         m_weaponPartCategories.insert(part.balance, part.category);

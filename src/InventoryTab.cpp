@@ -12,15 +12,16 @@
 InventoryTab::InventoryTab(Savegame *savegame, QWidget *parent) : QWidget(parent),
   m_savegame(savegame)
 {
+    QVBoxLayout *tabLayout = new QVBoxLayout(this);
     QHBoxLayout *mainLayout = new QHBoxLayout;
-    setLayout(mainLayout);
+    tabLayout->addLayout(mainLayout);
 
     m_list = new QListWidget;
-    layout()->addWidget(m_list);
+    mainLayout->addWidget(m_list);
 
     m_partsList = new QTreeWidget;
     m_partsList->setHeaderHidden(true);
-    layout()->addWidget(m_partsList);
+    mainLayout->addWidget(m_partsList);
 
     m_partName = new QLabel;
     m_partName->setWordWrap(true);
@@ -34,7 +35,8 @@ InventoryTab::InventoryTab(Savegame *savegame, QWidget *parent) : QWidget(parent
     QWidget *infoWidget = new QWidget;
     QVBoxLayout *partInfoLayout = new QVBoxLayout(infoWidget);
     m_warningText = new QLabel;
-    partInfoLayout->addWidget(m_warningText);
+    m_warningText->setStyleSheet("background-color:yellow;");
+    tabLayout->addWidget(m_warningText);
 
     partInfoLayout->addWidget(new QLabel(tr("<h3>Item part details</h3>")));
     partInfoLayout->addWidget(m_partName);
@@ -225,6 +227,8 @@ void InventoryTab::onItemSelected()
     m_partNegatives->setText(negativesText.join('\n'));
     m_partPositives->setText(positivesText.join('\n'));
 
+    checkValidity();
+
 //    qDebug() << "Part count" << item.numberOfParts;
 //    qDebug() << "Version" << item.version << "level" << item.level;
 //    qDebug() << item.balance.val;
@@ -282,6 +286,7 @@ void InventoryTab::onPartChanged(QTreeWidgetItem *item, int column)
         m_savegame->removeInventoryItemPart(m_selectedInventoryItem, existingPartPosition);
         item->setData(0, Qt::UserRole + 1, -1);
         m_enabledParts.remove(item->data(0, Qt::UserRole).toString());
+        checkValidity();
         return;
     }
 
@@ -303,6 +308,7 @@ void InventoryTab::onPartChanged(QTreeWidgetItem *item, int column)
     }
     m_enabledParts.insert(item->data(0, Qt::UserRole).toString(), item->data(0, Qt::UserRole + 1).toInt());
     qDebug() << "existing index" << existingPartPosition << "new part name" << part.val;
+    checkValidity();
 }
 
 void InventoryTab::load()
@@ -311,31 +317,87 @@ void InventoryTab::load()
     for (const InventoryItem &item : m_savegame->items()) {
         QString rarity = item.objectShortName.split('_').last();
         m_list->addItem(tr("%1 (level %2)").arg(item.name, QString::number(item.level)));
-//        m_list->addItem(tr("%1%2 (level %3)").arg(rarity + " ", item.name, QString::number(item.level)));
     }
+    checkValidity();
 }
 
-void InventoryTab::checkBounds()
+void InventoryTab::checkValidity()
 {
+    m_warningText->clear();
+    m_warningText->hide();
+
     QString warningText;
 
     QHash<QString, int> maxInCategories;
     QHash<QString, int> minInCategories;
     QHash<QString, int> enabledInCategories;
-    for (const QString &partId : m_enabledParts.keys()) {
-        if (!ItemData::hasItemInfo(partId)) {
-            warningText += tr("Unknown item %1\n").arg(partId);
-            continue;
-        }
-        QString category = ItemData::weaponPartType(partId);
-        if (category.isEmpty()) {
-            warningText += tr("Unknown category for %1\n").arg(partId);
-            continue;
-        }
-//        const ItemPart &itemInfo = ItemData::itemp(partId);
-//        if (!maxInCategories.contains(category)) {
-//            maxInCategories[category] = itemInfo.
-//        }
+
+    if (m_selectedInventoryItem <= 0) {
+        return;
     }
-    m_warningText->setText(warningText);
+    const InventoryItem &currentInventoryItem = m_savegame->inventoryItem(m_selectedInventoryItem);
+    if (!currentInventoryItem.isValid()) {
+        qWarning() << "Current invalid";
+        return;
+    }
+
+    QHash<QString, int> partsToProcess = m_enabledParts;
+    for (const ItemPart &part : ItemData::weaponParts(currentInventoryItem.objectShortName)) {
+        if (!partsToProcess.contains(part.partId)) {
+            continue;
+        }
+        partsToProcess.remove(part.partId);
+        if (!maxInCategories.contains(part.category)) {
+            maxInCategories[part.category] = part.maxParts;
+        } else {
+            maxInCategories[part.category] = qMax(part.maxParts, maxInCategories[part.category]);
+        }
+
+        if (!minInCategories.contains(part.category)) {
+            minInCategories[part.category] = part.minParts;
+        } else {
+            minInCategories[part.category] = qMin(part.minParts, minInCategories[part.category]);
+        }
+
+        bool hasRequired = part.dependencies.isEmpty();
+        for (const QString &required : part.dependencies) {
+            if (required.isEmpty()) {
+                qWarning() << "Empty dependency for" << part.partId;
+                continue;
+            }
+            if (m_enabledParts.contains(required)) {
+                hasRequired = true;
+            }
+        }
+        if (!hasRequired) {
+            warningText += tr("%1 requires one of %2\n").arg(makeNamePretty(part.partId), makeNamePretty(part.dependencies.join(", ")));
+        }
+        for (const QString &excluder : part.excluders) {
+            if (excluder.isEmpty()) {
+                qWarning() << "Empty excluder for" << part.partId;
+                continue;
+            }
+            if (m_enabledParts.contains(excluder)) {
+                warningText += tr("%1 can't be combined with %2\n").arg(makeNamePretty(part.partId), makeNamePretty(excluder));
+            }
+        }
+        enabledInCategories[part.category]++;
+    }
+    if (!partsToProcess.isEmpty()) {
+        warningText += tr("%1 unknown parts for current item\n").arg(partsToProcess.count());
+        qDebug() << partsToProcess;
+    }
+    for (const QString &category : enabledInCategories.keys()) {
+        const int count = enabledInCategories[category];
+        if (count < minInCategories[category]) {
+            warningText += tr("Category %1 requires at least %2 parts, only has %3\n").arg(category).arg(minInCategories[category]).arg(count);
+        }
+        if (count > maxInCategories[category]) {
+            warningText += tr("Category %1 can only have %2 parts, has %3\n").arg(category).arg(maxInCategories[category]).arg(count);
+        }
+    }
+    if (!warningText.isEmpty()) {
+        m_warningText->setText(warningText);
+        m_warningText->show();
+    }
 }
