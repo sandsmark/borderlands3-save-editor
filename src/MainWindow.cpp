@@ -1,6 +1,6 @@
 #include "MainWindow.h"
 
-#include "generaltab.h"
+#include "GeneralTab.h"
 #include "Savegame.h"
 #include "InventoryTab.h"
 #include "ConsumablesTab.h"

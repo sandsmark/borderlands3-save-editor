@@ -1,4 +1,4 @@
-#include "generaltab.h"
+#include "GeneralTab.h"
 
 #include "Savegame.h"
 #include "Constants.h"
