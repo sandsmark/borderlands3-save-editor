@@ -9,9 +9,7 @@ const QVector<ItemPart> ItemData::nullWeaponParts;
 
 ItemData::ItemData()
 {
-    QFile dbFile(":/data/inventory-serials.json");
-    dbFile.open(QIODevice::ReadOnly);
-    m_inventoryDb =  QJsonDocument::fromJson(dbFile.readAll()).object();
+    loadInventorySerials();
 
     QFile namesFile(":/data/english-names.json");
     namesFile.open(QIODevice::ReadOnly);
@@ -71,7 +69,11 @@ ItemData::ItemData()
 
 bool ItemData::isValid() const
 {
-    return (!m_englishNames.isEmpty() && !m_inventoryDb.isEmpty() && !m_itemPartCategories.isEmpty() && !m_weaponParts.isEmpty());
+    return (!m_englishNames.isEmpty() &&
+            !m_categoryObjects.isEmpty() &&
+            !m_categoryRequiredBits.isEmpty() &&
+            !m_itemPartCategories.isEmpty() &&
+            !m_weaponParts.isEmpty());
 }
 
 QString ItemData::getItemAsset(const QString &category, const int index) const
@@ -80,45 +82,32 @@ QString ItemData::getItemAsset(const QString &category, const int index) const
         qWarning() << "Invalid item index" << index;
         return {};
     }
-    if (!m_inventoryDb.contains(category)) {
+    if (!m_categoryObjects.contains(category)) {
         qWarning() << "Invalid category" << category;
         return {};
     }
 
-    const QJsonObject categoryObject = m_inventoryDb[category].toObject();
-    const QJsonArray assets = categoryObject["assets"].toArray();
-    if (index >= assets.count()) {
-        qWarning() << "Asset index" << index << "out of range, max:" << assets.count();
+    if (index >= m_categoryObjects[category].count()) {
+        qWarning() << "Asset index" << index << "out of range, max:" << m_categoryObjects[category].count();
         return {};
     }
-    return assets[index].toString();
+    return m_categoryObjects[category][index];
 
 }
 
 int ItemData::requiredBits(const QString &category, const int requiredVersion) const
 {
-    if (!m_inventoryDb.contains(category)) {
+    if (!m_categoryRequiredBits.contains(category)) {
         qWarning() << "Invalid category" << category;
         return -1;
     }
 
-    const QJsonObject categoryObject = m_inventoryDb[category].toObject();
-    const QJsonArray versions = categoryObject["versions"].toArray();
-    if (versions.isEmpty()) {
-        qWarning() << "No versions for" << category;
-        return -1;
-    }
-    QJsonObject version = versions.first().toObject();
+    const QVector<QPair<int, int>> &versions = m_categoryRequiredBits[category];
 
-    int bits = version["bits"].toInt();
-    for (const QJsonValue &val : versions) {
-        version = val.toObject();
-        if (!version.contains("bits") || !version.contains("version")) {
-            qWarning() << "Invalid version in" << category;
-            continue;
-        }
-        const int currentBits = version["bits"].toInt();
-        const int versionNumber = version["version"].toInt();
+    int bits = versions.first().second;
+    for (const QPair<int, int> &version : versions) {
+        const int versionNumber = version.first;
+        const int currentBits = version.second;
         if (versionNumber > requiredVersion) {
             return currentBits;
         }
@@ -357,4 +346,34 @@ void ItemData::loadItemInfos()
     }
     qDebug() << "Loaded" << m_itemInfos.count() << "item infos";
 
+}
+
+void ItemData::loadInventorySerials()
+{
+    QFile dbFile(":/data/inventory-serials.json");
+    dbFile.open(QIODevice::ReadOnly);
+    const QJsonObject serialsDb = QJsonDocument::fromJson(dbFile.readAll()).object();
+    for (const QString &category : serialsDb.keys()) {
+        const QJsonObject &categoryObject = serialsDb[category].toObject();
+        const QJsonArray assets = categoryObject["assets"].toArray();
+        for (const QJsonValue val : assets) {
+            m_categoryObjects[category].append(val.toString());
+        }
+
+        const QJsonArray versions = categoryObject["versions"].toArray();
+
+        QVector<QPair<int, int>> versionsVector;
+        for (const QJsonValue &val : versions) {
+            QJsonObject version = val.toObject();
+            if (!version.contains("bits") || !version.contains("version")) {
+                qWarning() << "Invalid version in" << category;
+                continue;
+            }
+            const int bits = version["bits"].toInt();
+            const int versionNumber = version["version"].toInt();
+            versionsVector.append({versionNumber, bits});
+        }
+
+        m_categoryRequiredBits[category] = std::move(versionsVector);
+    }
 }

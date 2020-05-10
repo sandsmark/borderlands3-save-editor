@@ -5,6 +5,8 @@
 #include <QStringList>
 #include <QMap>
 #include <QHash>
+#include <QVector>
+#include <QPair>
 
 // Could use an enum, but memory is cheap and I'm lazy
 struct ItemPart {
@@ -60,6 +62,8 @@ public:
     QStringList categoriesForWeapon(const QString &balance) const { return m_weaponPartCategories.values(balance); }
     QString weaponPartType(const QString &id) const { return m_weaponPartTypes[id]; }
 
+    int partIndex(const QString &id);
+
     const ItemDescription &itemDescription(const QString &id) { return m_itemDescriptions[id]; }
     const ItemInfo &itemInfo(const QString &id) { return m_itemInfos[id]; }
     bool hasItemInfo(const QString &id) { return m_itemInfos.contains(id); } // inefficient lol
@@ -71,10 +75,10 @@ private:
     void loadGrenadePartDescriptions();
     void loadClassModDescriptions(const QString &characterClass);
     void loadItemInfos();
+    void loadInventorySerials();
 
     static const QVector<ItemPart> nullWeaponParts; // so we always can return references
 
-    QJsonObject m_inventoryDb; // TODO: parse to in-memory struct, currently very inefficient
     QJsonObject m_englishNames;
     QJsonObject m_itemPartCategories;
     QHash<QString, QVector<ItemPart>> m_weaponParts;
@@ -82,6 +86,9 @@ private:
     QMultiMap<QString, QString> m_weaponPartCategories;
     QHash<QString, ItemDescription> m_itemDescriptions;
     QHash<QString, ItemInfo> m_itemInfos;
+
+    QHash<QString, QStringList> m_categoryObjects;
+    QHash<QString, QVector<QPair<int, int>>> m_categoryRequiredBits;
 };
 
 #endif // ITEMDATA_H
