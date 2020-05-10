@@ -2,6 +2,7 @@
 #define INVENTORYTAB_H
 
 #include <QWidget>
+#include <QHash>
 
 class QListWidget;
 class QTreeWidget;
@@ -23,14 +24,18 @@ private slots:
     void load();
 
 private:
+    void checkBounds();
+
     Savegame *m_savegame;
     QListWidget *m_list;
     QTreeWidget *m_partsList;
+    QHash<QString, int> m_enabledParts;
 
     QLabel *m_partName;
     QLabel *m_partEffects;
     QLabel *m_partPositives;
     QLabel *m_partNegatives;
+    QLabel *m_warningText;
     int m_selectedInventoryItem = -1;
 };
 

@@ -74,6 +74,8 @@ public:
 
     static InventoryItem::Aspect createInventoryItemPart(const InventoryItem &inventoryItem, const QString &objectName);
 
+//    static bool hasItemPart(const QString &id) { return instance()->m_}
+
 private:
     ItemData();
 

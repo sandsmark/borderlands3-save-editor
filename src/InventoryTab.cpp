@@ -33,6 +33,9 @@ InventoryTab::InventoryTab(Savegame *savegame, QWidget *parent) : QWidget(parent
 
     QWidget *infoWidget = new QWidget;
     QVBoxLayout *partInfoLayout = new QVBoxLayout(infoWidget);
+    m_warningText = new QLabel;
+    partInfoLayout->addWidget(m_warningText);
+
     partInfoLayout->addWidget(new QLabel(tr("<h3>Item part details</h3>")));
     partInfoLayout->addWidget(m_partName);
     partInfoLayout->addWidget(new QLabel(tr("<b>Description</b>")));
@@ -90,6 +93,7 @@ void InventoryTab::onItemSelected()
 {
     QSignalBlocker listSignalBlocker(m_partsList);
     m_partsList->clear();
+    m_enabledParts.clear();
 
     m_partName->setText({});
     m_partEffects->setText({});
@@ -101,7 +105,7 @@ void InventoryTab::onItemSelected()
         return;
     }
     m_selectedInventoryItem = m_list->row(selected.first());
-    if (m_selectedInventoryItem >= m_savegame->inventoryItemsConut()) {
+    if (m_selectedInventoryItem >= m_savegame->inventoryItemsCount()) {
         qWarning() << "Out of bounds!";
         return;
     }
@@ -153,12 +157,11 @@ void InventoryTab::onItemSelected()
     }
 
 
-    QHash<QString, int> enabledParts;
     for (int partIndex = 0; partIndex < currentInventoryItem.parts.count(); partIndex++) {
         const InventoryItem::Aspect &part = currentInventoryItem.parts[partIndex];
 
         const QString name = part.val.split('.').last();
-        enabledParts.insert(name, partIndex);
+        m_enabledParts.insert(name, partIndex);
 
 
         QString category;
@@ -203,9 +206,9 @@ void InventoryTab::onItemSelected()
         QTreeWidgetItem *listItem = new QTreeWidgetItem(categoryItems[partCategories[partId]], {makeNamePretty(partId)});
         listItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
         listItem->setData(0, Qt::UserRole, partId);
-        if (enabledParts.contains(partId)) {
+        if (m_enabledParts.contains(partId)) {
             listItem->setCheckState(0, Qt::Checked);
-            listItem->setData(0, Qt::UserRole + 1, enabledParts[partId]);
+            listItem->setData(0, Qt::UserRole + 1, m_enabledParts[partId]);
         } else {
             listItem->setCheckState(0, Qt::Unchecked);
             listItem->setData(0, Qt::UserRole + 1, -1);
@@ -278,7 +281,7 @@ void InventoryTab::onPartChanged(QTreeWidgetItem *item, int column)
         }
         m_savegame->removeInventoryItemPart(m_selectedInventoryItem, existingPartPosition);
         item->setData(0, Qt::UserRole + 1, -1);
-//        onItemSelected(); // I'm lazy
+        m_enabledParts.remove(item->data(0, Qt::UserRole).toString());
         return;
     }
 
@@ -291,12 +294,14 @@ void InventoryTab::onPartChanged(QTreeWidgetItem *item, int column)
         return;
     }
     if (existingPartPosition < 0 || existingPartPosition >= currentInventoryItem.parts.count()) {
+        item->setData(0, Qt::UserRole + 1, m_savegame->inventoryItemsCount());
         m_savegame->addInventoryItemPart(m_selectedInventoryItem, part);
 //        currentInventoryItem.parts.append(part);
     } else {
         m_savegame->replaceInventoryItemPart(m_selectedInventoryItem, existingPartPosition, part);
 //        currentInventoryItem.parts[existingPartPosition] = part;
     }
+    m_enabledParts.insert(item->data(0, Qt::UserRole).toString(), item->data(0, Qt::UserRole + 1).toInt());
     qDebug() << "existing index" << existingPartPosition << "new part name" << part.val;
 }
 
@@ -308,4 +313,29 @@ void InventoryTab::load()
         m_list->addItem(tr("%1 (level %2)").arg(item.name, QString::number(item.level)));
 //        m_list->addItem(tr("%1%2 (level %3)").arg(rarity + " ", item.name, QString::number(item.level)));
     }
+}
+
+void InventoryTab::checkBounds()
+{
+    QString warningText;
+
+    QHash<QString, int> maxInCategories;
+    QHash<QString, int> minInCategories;
+    QHash<QString, int> enabledInCategories;
+    for (const QString &partId : m_enabledParts.keys()) {
+        if (!ItemData::hasItemInfo(partId)) {
+            warningText += tr("Unknown item %1\n").arg(partId);
+            continue;
+        }
+        QString category = ItemData::weaponPartType(partId);
+        if (category.isEmpty()) {
+            warningText += tr("Unknown category for %1\n").arg(partId);
+            continue;
+        }
+//        const ItemPart &itemInfo = ItemData::itemp(partId);
+//        if (!maxInCategories.contains(category)) {
+//            maxInCategories[category] = itemInfo.
+//        }
+    }
+    m_warningText->setText(warningText);
 }

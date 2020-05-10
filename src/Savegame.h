@@ -56,7 +56,7 @@ public:
     bool save(const QString filePath) const;
 
     const QVector<InventoryItem> &items() { return m_items; }
-    int inventoryItemsConut() const { return m_items.count(); }
+    int inventoryItemsCount() const { return m_items.count(); }
     const InventoryItem &inventoryItem(const int index) { return m_items[index]; }
     void addInventoryItemPart(const int index, const InventoryItem::Aspect &part);
     void removeInventoryItemPart(const int index, const int partIndex);
