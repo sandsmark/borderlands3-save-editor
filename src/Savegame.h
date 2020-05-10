@@ -3,6 +3,7 @@
 
 #include "Constants.h"
 #include "ItemData.h"
+#include "InventoryItem.h"
 
 #include <memory>
 #include <QString>
@@ -48,70 +49,13 @@ class Savegame : public QObject
     } m_header{};
 
 public:
-    struct Item {
-        enum Flag {
-            Seen = 1,
-            Favorite = 2,
-            Trash = 4
-        };
-
-        bool writable = false;
-
-        bool isValid() const {
-            return version != -1 &&
-                !name.isEmpty() &&
-                !objectShortName.isEmpty() &&
-                balance.isValid() &&
-                data.isValid() &&
-                manufacturer.isValid() &&
-                level != -1 &&
-                numberOfParts != -1 &&
-                !parts.isEmpty() &&
-                numCustom == 0 // TODO
-                    ;
-        }
-
-        int version = -1;
-
-        QString partsCategory;
-        struct Aspect {
-            int bits = -1;
-            int index = -1;
-            QString val;
-
-            bool isValid() const {
-                return bits > 0 && index > 0 && !val.isEmpty();
-            }
-        };
-
-        QString name;
-        QString objectShortName;
-
-        Aspect balance;
-        Aspect data;
-        Aspect manufacturer;
-
-        int level = -1;
-
-        int numberOfParts = -1;
-        QVector<Aspect> parts;
-        QVector<Aspect> genericParts;
-        int seed = 0;
-
-        QVector<uint8_t> itemWearMaybe;
-
-        int numCustom = -1;
-
-        QByteArray remainingBits; // TODO
-    };
-
     Savegame(QObject *parent);
     virtual ~Savegame();
 
     bool load(const QString &filePath);
     bool save(const QString filePath) const;
 
-    const QVector<Item> &items() const { return m_items; }
+    const QVector<InventoryItem> &items() const { return m_items; }
 
     int ammoAmount(const QString &name) const;
     void setAmmoAmount(const QString &name, const int amount);
@@ -159,11 +103,11 @@ signals:
 
 
 private:
-    Item parseItem(const std::string &obfuscatedSerial);
-    std::string serializeItem(const Item &item);
+    InventoryItem parseItem(const std::string &obfuscatedSerial);
+    std::string serializeItem(const InventoryItem &item);
 
-    Item::Aspect getAspect(const QString &category, const int requiredVersion, BitParser *bits);
-    void putAspect(const Item::Aspect &aspect, const QString &category, const int requiredVersion, BitParser *bits);
+    InventoryItem::Aspect getAspect(const QString &category, const int requiredVersion, BitParser *bits);
+    void putAspect(const InventoryItem::Aspect &aspect, const QString &category, const int requiredVersion, BitParser *bits);
 
     int currencyAmount(const Constants::Currency currenct) const;
     void setCurrency(const Constants::Currency currency, const int amount);
@@ -171,7 +115,7 @@ private:
 
     ItemData m_data;
 
-    QVector<Item> m_items;
+    QVector<InventoryItem> m_items;
     int m_maxItemVersion = 1000; // todo
 };
 

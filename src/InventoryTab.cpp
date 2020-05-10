@@ -107,7 +107,7 @@ void InventoryTab::onItemSelected()
 
 
     m_partsList->clear();
-    const Savegame::Item &inventoryItem = m_savegame->items()[index];
+    const InventoryItem &inventoryItem = m_savegame->items()[index];
     QStringList parts;
 
     QMap<QString, QString> partCategories;
@@ -153,7 +153,7 @@ void InventoryTab::onItemSelected()
     QSet<QString> enabledParts;
 //    for (const Savegame::Item::Aspect &part : inventoryItem.parts) {
     for (int partIndex = 0; partIndex < inventoryItem.parts.count(); partIndex++) {
-        const Savegame::Item::Aspect &part = inventoryItem.parts[partIndex];
+        const InventoryItem::Aspect &part = inventoryItem.parts[partIndex];
 
         const QString name = part.val.split('.').last();
         enabledParts.insert(name);
@@ -284,7 +284,7 @@ void InventoryTab::onPartChanged(QTreeWidgetItem *item, int column)
 void InventoryTab::load()
 {
     m_list->clear();
-    for (const Savegame::Item &item : m_savegame->items()) {
+    for (const InventoryItem &item : m_savegame->items()) {
         QString rarity = item.objectShortName.split('_').last();
         m_list->addItem(tr("%1 (level %2)").arg(item.name, QString::number(item.level)));
 //        m_list->addItem(tr("%1%2 (level %3)").arg(rarity + " ", item.name, QString::number(item.level)));

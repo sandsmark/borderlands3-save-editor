@@ -346,7 +346,7 @@ bool Savegame::load(const QString &filePath)
             qDebug() << obfuscated.toHex(' ');
             qDebug() << QByteArray::fromStdString(entry.item_serial_number()).toHex(' ');
         }
-        Item item = parseItem(entry.item_serial_number());
+        InventoryItem item = parseItem(entry.item_serial_number());
         if (item.isValid()) {
             const std::string reEncoded = serializeItem(item);
             if (entry.item_serial_number() == reEncoded){
@@ -384,7 +384,7 @@ bool Savegame::load(const QString &filePath)
     return true;
 }
 
-Savegame::Item Savegame::parseItem(const std::string &obfuscatedSerial)
+InventoryItem Savegame::parseItem(const std::string &obfuscatedSerial)
 {
     QByteArray serial = deobfuscateItem(QByteArray::fromStdString(obfuscatedSerial));
     if (serial.isEmpty()) {
@@ -399,7 +399,7 @@ Savegame::Item Savegame::parseItem(const std::string &obfuscatedSerial)
         return {};
     }
 
-    Item item;
+    InventoryItem item;
     item.version = bits.eat(7);
     item.seed = qFromBigEndian<int32_t>(obfuscatedSerial.data() + 1);
     if (item.version > m_maxItemVersion) {
@@ -437,7 +437,7 @@ Savegame::Item Savegame::parseItem(const std::string &obfuscatedSerial)
     bool itemFailed = false;
     if (!item.partsCategory.isEmpty()) {
         for (int partIndex = 0; partIndex < item.numberOfParts; partIndex++) {
-            Item::Aspect part = getAspect(item.partsCategory, item.version, &bits);
+            InventoryItem::Aspect part = getAspect(item.partsCategory, item.version, &bits);
             if (!part.isValid()) {
                 qWarning() << "Invalid" << item.balance.val << item.partsCategory;
                 //                    QMessageBox::warning(nullptr, "Invalid file", tr("Failed to get item part %1 for item %2.").arg(partIndex).arg(item.name));
@@ -455,7 +455,7 @@ Savegame::Item Savegame::parseItem(const std::string &obfuscatedSerial)
     if (!itemFailed) {
         const int genericPartsCount = bits.eat(4);
         for (int partIndex = 0; partIndex < genericPartsCount; partIndex++) {
-            Item::Aspect genericPart = getAspect("InventoryGenericPartData", item.version, &bits);
+            InventoryItem::Aspect genericPart = getAspect("InventoryGenericPartData", item.version, &bits);
             if (!genericPart.isValid()) {
                 qWarning() << "Invalid generic item part number" << partIndex;
                 itemFailed = true;
@@ -488,7 +488,7 @@ Savegame::Item Savegame::parseItem(const std::string &obfuscatedSerial)
     return item;
 }
 
-std::string Savegame::serializeItem(const Savegame::Item &item)
+std::string Savegame::serializeItem(const InventoryItem &item)
 {
     BitParser bits;
     bits.put(128, 8);
@@ -500,12 +500,12 @@ std::string Savegame::serializeItem(const Savegame::Item &item)
     bits.put(item.parts.count(), 6);
 
     QString itemPartCategory = m_data.partCategory(item.balance.val.toLower());
-    for (const Item::Aspect &part : item.parts) {
+    for (const InventoryItem::Aspect &part : item.parts) {
         putAspect(part, itemPartCategory, item.version, &bits);
     }
 
     bits.put(item.genericParts.count(), 4);
-    for (const Item::Aspect &genericPart : item.genericParts) {
+    for (const InventoryItem::Aspect &genericPart : item.genericParts) {
         putAspect(genericPart, itemPartCategory, item.version, &bits);
     }
 
@@ -518,9 +518,9 @@ std::string Savegame::serializeItem(const Savegame::Item &item)
     return obfuscateItem(bits.toBinaryData(), item.seed).toStdString();
 }
 
-Savegame::Item::Aspect Savegame::getAspect(const QString &category, const int requiredVersion, BitParser *bits)
+InventoryItem::Aspect Savegame::getAspect(const QString &category, const int requiredVersion, BitParser *bits)
 {
-    Item::Aspect aspect;
+    InventoryItem::Aspect aspect;
     aspect.bits = m_data.requiredBits(category, requiredVersion);
     if (aspect.bits <= 0) {
         qWarning() << "Invalid aspect";
@@ -544,10 +544,9 @@ Savegame::Item::Aspect Savegame::getAspect(const QString &category, const int re
     return aspect;
 }
 
-void Savegame::putAspect(const Savegame::Item::Aspect &aspect, const QString &category, const int requiredVersion, BitParser *bits)
+void Savegame::putAspect(const InventoryItem::Aspect &aspect, const QString &category, const int requiredVersion, BitParser *bits)
 {
     bits->put(aspect.index, m_data.requiredBits(category, requiredVersion));
-
 }
 
 bool Savegame::save(const QString filePath) const
