@@ -132,7 +132,11 @@ QString ItemData::englishName(const QString &itemName) const
 
 QString ItemData::partCategory(const QString &objectName) const
 {
-    return m_itemPartCategories[objectName.toLower()].toString();
+    const QString lowerCase = objectName.toLower();
+    if (!m_itemPartCategories.contains(lowerCase)) {
+        qWarning() << objectName << "not in part category db";
+    }
+    return m_itemPartCategories[lowerCase].toString();
 }
 
 const QVector<ItemPart> &ItemData::weaponParts(const QString &balance)
@@ -142,6 +146,16 @@ const QVector<ItemPart> &ItemData::weaponParts(const QString &balance)
     }
 
     return m_weaponParts[balance];
+}
+
+int ItemData::partIndex(const QString &category, const QString &id)
+{
+    if (!m_categoryObjects.contains(category)) {
+        qWarning() << "Invalid category requested" << category << "for" << id;
+        return -1;
+    }
+
+    return m_categoryObjects[category].indexOf(id);
 }
 
 void ItemData::loadPartsForOther(const QString &type)
@@ -357,7 +371,9 @@ void ItemData::loadInventorySerials()
         const QJsonObject &categoryObject = serialsDb[category].toObject();
         const QJsonArray assets = categoryObject["assets"].toArray();
         for (const QJsonValue val : assets) {
-            m_categoryObjects[category].append(val.toString());
+            const QString objectName = val.toString();
+            m_categoryObjects[category].append(objectName);
+            m_shortNameToObject[objectName.split('.').last()] = objectName;
         }
 
         const QJsonArray versions = categoryObject["versions"].toArray();

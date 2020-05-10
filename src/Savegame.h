@@ -73,6 +73,7 @@ public:
 
         int version = -1;
 
+        QString partsCategory;
         struct Aspect {
             int bits = -1;
             int index = -1;

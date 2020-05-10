@@ -62,11 +62,13 @@ public:
     QStringList categoriesForWeapon(const QString &balance) const { return m_weaponPartCategories.values(balance); }
     QString weaponPartType(const QString &id) const { return m_weaponPartTypes[id]; }
 
-    int partIndex(const QString &id);
+    int partIndex(const QString &category, const QString &id);
 
     const ItemDescription &itemDescription(const QString &id) { return m_itemDescriptions[id]; }
     const ItemInfo &itemInfo(const QString &id) { return m_itemInfos[id]; }
     bool hasItemInfo(const QString &id) { return m_itemInfos.contains(id); } // inefficient lol
+
+    const QString &objectForShortName(const QString &shortName) { return m_shortNameToObject[shortName]; }
 
 private:
     void loadPartsForOther(const QString &type);
@@ -89,6 +91,7 @@ private:
 
     QHash<QString, QStringList> m_categoryObjects;
     QHash<QString, QVector<QPair<int, int>>> m_categoryRequiredBits;
+    QHash<QString, QString> m_shortNameToObject;
 };
 
 #endif // ITEMDATA_H

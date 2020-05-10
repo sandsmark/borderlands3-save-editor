@@ -433,13 +433,13 @@ Savegame::Item Savegame::parseItem(const std::string &obfuscatedSerial)
     item.level = bits.eat(7);
     item.numberOfParts = bits.eat(6);
 
-    QString itemPartCategory = m_data.partCategory(item.balance.val.toLower());
+    item.partsCategory = m_data.partCategory(item.balance.val.toLower());
     bool itemFailed = false;
-    if (!itemPartCategory.isEmpty()) {
+    if (!item.partsCategory.isEmpty()) {
         for (int partIndex = 0; partIndex < item.numberOfParts; partIndex++) {
-            Item::Aspect part = getAspect(itemPartCategory, item.version, &bits);
+            Item::Aspect part = getAspect(item.partsCategory, item.version, &bits);
             if (!part.isValid()) {
-                qWarning() << "Invalid" << item.balance.val << itemPartCategory;
+                qWarning() << "Invalid" << item.balance.val << item.partsCategory;
                 //                    QMessageBox::warning(nullptr, "Invalid file", tr("Failed to get item part %1 for item %2.").arg(partIndex).arg(item.name));
                 itemFailed = true;
                 break;

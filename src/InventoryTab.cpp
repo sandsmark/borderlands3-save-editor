@@ -7,6 +7,7 @@
 #include <QPushButton>
 #include <QDebug>
 #include <QLabel>
+#include <QMessageBox>
 
 InventoryTab::InventoryTab(Savegame *savegame, QWidget *parent) : QWidget(parent),
   m_savegame(savegame)
@@ -50,11 +51,12 @@ InventoryTab::InventoryTab(Savegame *savegame, QWidget *parent) : QWidget(parent
     connect(savegame, &Savegame::itemsChanged, this, &InventoryTab::load);
     connect(m_list, &QListWidget::itemSelectionChanged, this, &InventoryTab::onItemSelected);
     connect(m_partsList, &QTreeWidget::itemSelectionChanged, this, &InventoryTab::onPartSelected);
+    connect(m_partsList, &QTreeWidget::itemChanged, this, &InventoryTab::onPartChanged);
 }
 
 static QString makeNamePretty(const QString &name)
 {
-    QString displayName = name;
+    QString displayName = name.split('.').last();
     displayName.replace("_AR_", "_Assault Rifle_");
     displayName.replace("_SR_", "_Sniper Rifle_");
     displayName.replace("_SM_", "_SMG_");
@@ -83,6 +85,8 @@ static QString makeNamePretty(const QString &name)
 
 void InventoryTab::onItemSelected()
 {
+    QSignalBlocker listSignalBlocker(m_partsList);
+
     m_partName->setText({});
     m_partEffects->setText({});
     m_partNegatives->setText({});
@@ -147,7 +151,10 @@ void InventoryTab::onItemSelected()
 
 
     QSet<QString> enabledParts;
-    for (const Savegame::Item::Aspect &part : inventoryItem.parts) {
+//    for (const Savegame::Item::Aspect &part : inventoryItem.parts) {
+    for (int partIndex = 0; partIndex < inventoryItem.parts.count(); partIndex++) {
+        const Savegame::Item::Aspect &part = inventoryItem.parts[partIndex];
+
         const QString name = part.val.split('.').last();
         enabledParts.insert(name);
 
@@ -171,12 +178,13 @@ void InventoryTab::onItemSelected()
             qWarning() << inventoryItem.name << inventoryItem.objectShortName << "has part" << name << "which is not in the list of parts for" << inventoryItem.name;
         }
         QTreeWidgetItem *listItem = new QTreeWidgetItem(categoryItems[category], {makeNamePretty(name)});
-        listItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+        listItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
         listItem->setCheckState(0, Qt::Checked);
-        listItem->setData(0, Qt::UserRole, part.val.split('.').last());
+        listItem->setData(0, Qt::UserRole, name);
+        listItem->setData(0, Qt::UserRole + 1, partIndex);
 
 
-        const ItemDescription description = m_savegame->itemData().itemDescription(part.val.split('.').last());
+        const ItemDescription description = m_savegame->itemData().itemDescription(name);
         if (!description.naming.isEmpty()) {
             nameText.append(" • " + description.naming);
         }
@@ -198,9 +206,10 @@ void InventoryTab::onItemSelected()
 
 
         QTreeWidgetItem *listItem = new QTreeWidgetItem(categoryItems[partCategories[partId]], {makeNamePretty(partId)});
-        listItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+        listItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled | Qt::ItemIsUserCheckable);
         listItem->setCheckState(0, Qt::Unchecked);
         listItem->setData(0, Qt::UserRole, partId);
+        listItem->setData(0, Qt::UserRole + 1, -1);
     }
     for (QTreeWidgetItem *categoryItem : categoryItems.values()) {
         categoryItem->setExpanded(true);
@@ -238,6 +247,38 @@ void InventoryTab::onPartSelected()
     m_partNegatives->setText(description.negatives);
     m_partPositives->setText(description.positives);
 
+}
+
+void InventoryTab::onPartChanged(QTreeWidgetItem *item, int column)
+{
+    QSignalBlocker listSignalBlocker(m_partsList);
+
+    if (column != 0) {
+        qWarning() << "Unexpected column" << column;
+    }
+    const QString itemId = m_savegame->itemData().objectForShortName(item->data(0, Qt::UserRole).toString());
+    if (itemId.isEmpty()) {
+        qWarning() << "Empty part id" << item->text(0) << item;
+        return;
+    }
+    const bool enabled = item->checkState(0) == Qt::Checked;
+    const int existingPartPosition = item->data(0, Qt::UserRole + 1).toInt();
+
+    const QString itemPartCategory = m_savegame->itemData().partCategory(itemId);
+    if (itemPartCategory.isEmpty()) {
+        QMessageBox::warning(nullptr, "Invalid item", tr("Failed to find %1\nin list of items with parts.").arg(itemId));
+        item->setCheckState(0, enabled ? Qt::Unchecked : Qt::Checked); // reverse
+        return;
+    }
+
+    qDebug() << itemId << "Part category" << itemPartCategory;
+    const int partPosition = m_savegame->itemData().partIndex(itemPartCategory, itemId);
+    if (partPosition <= 0) {
+        QMessageBox::warning(nullptr, "Invalid item", tr("Failed to find %1\nin list of parts for item.").arg(itemId));
+        item->setCheckState(0, enabled ? Qt::Unchecked : Qt::Checked); // reverse
+        return;
+    }
+    qDebug() << "existing index" << existingPartPosition << "new index" << partPosition;
 }
 
 void InventoryTab::load()

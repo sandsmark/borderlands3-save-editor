@@ -5,6 +5,7 @@
 
 class QListWidget;
 class QTreeWidget;
+class QTreeWidgetItem;
 class Savegame;
 class QVBoxLayout;
 class QLabel;
@@ -18,6 +19,7 @@ public:
 private slots:
     void onItemSelected();
     void onPartSelected();
+    void onPartChanged(QTreeWidgetItem *item, int column);
     void load();
 
 private:
