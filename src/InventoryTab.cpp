@@ -35,6 +35,7 @@ InventoryTab::InventoryTab(Savegame *savegame, QWidget *parent) : QWidget(parent
     QWidget *infoWidget = new QWidget;
     QVBoxLayout *partInfoLayout = new QVBoxLayout(infoWidget);
     m_warningText = new QLabel;
+    m_warningText->setWordWrap(true);
     m_warningText->setStyleSheet("background-color:yellow;");
     tabLayout->addWidget(m_warningText);
 
@@ -360,17 +361,19 @@ void InventoryTab::checkValidity()
         }
 
         bool hasRequired = part.dependencies.isEmpty();
+        QStringList requiredPrettyNames;
         for (const QString &required : part.dependencies) {
             if (required.isEmpty()) {
                 qWarning() << "Empty dependency for" << part.partId;
                 continue;
             }
+            requiredPrettyNames.append(makeNamePretty(required));
             if (m_enabledParts.contains(required)) {
                 hasRequired = true;
             }
         }
         if (!hasRequired) {
-            warningText += tr("%1 requires one of %2\n").arg(makeNamePretty(part.partId), makeNamePretty(part.dependencies.join(", ")));
+            warningText += tr("%1 requires one of: %2\n").arg(makeNamePretty(part.partId), makeNamePretty(requiredPrettyNames.join(", ")));
         }
         for (const QString &excluder : part.excluders) {
             if (excluder.isEmpty()) {
