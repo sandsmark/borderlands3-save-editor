@@ -4,6 +4,7 @@
 #include <QWidget>
 
 class QListWidget;
+class QTreeWidget;
 class Savegame;
 class QVBoxLayout;
 class QLabel;
@@ -22,7 +23,7 @@ private slots:
 private:
     Savegame *m_savegame;
     QListWidget *m_list;
-    QListWidget *m_partsList;
+    QTreeWidget *m_partsList;
 
     QLabel *m_partName;
     QLabel *m_partEffects;

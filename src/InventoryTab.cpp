@@ -1,6 +1,7 @@
 #include "InventoryTab.h"
 #include "Savegame.h"
 #include <QListWidget>
+#include <QTreeWidget>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QPushButton>
@@ -16,7 +17,8 @@ InventoryTab::InventoryTab(Savegame *savegame, QWidget *parent) : QWidget(parent
     m_list = new QListWidget;
     layout()->addWidget(m_list);
 
-    m_partsList = new QListWidget;
+    m_partsList = new QTreeWidget;
+    m_partsList->setHeaderHidden(true);
     layout()->addWidget(m_partsList);
 
     m_partName = new QLabel;
@@ -47,7 +49,36 @@ InventoryTab::InventoryTab(Savegame *savegame, QWidget *parent) : QWidget(parent
 
     connect(savegame, &Savegame::itemsChanged, this, &InventoryTab::load);
     connect(m_list, &QListWidget::itemSelectionChanged, this, &InventoryTab::onItemSelected);
-    connect(m_partsList, &QListWidget::itemSelectionChanged, this, &InventoryTab::onPartSelected);
+    connect(m_partsList, &QTreeWidget::itemSelectionChanged, this, &InventoryTab::onPartSelected);
+}
+
+static QString makeNamePretty(const QString &name)
+{
+    QString displayName = name;
+    displayName.replace("_AR_", "_Assault Rifle_");
+    displayName.replace("_SR_", "_Sniper Rifle_");
+    displayName.replace("_SM_", "_SMG_");
+    displayName.replace("_SG_", "_Shotgun_");
+    displayName.replace("_GM_", "_Grenade Mod_");
+    displayName.replace("_MAL_", "_Maliwan_");
+    displayName.replace("_DAL_", "_Dahl_");
+    displayName.replace("_Hyp_", "_Hyperion_");
+    displayName.replace("_HYP_", "_Hyperion_");
+    displayName.replace("_TED_", "_Tediore_");
+    displayName.replace("_VLA_", "_Vladof_");
+    QStringList nameParts = displayName.split('_');
+    if (nameParts.count() >= 3) {
+        //            displayName = nameParts.mid(1).join(' ');
+        if (nameParts.first() == "Part") {
+            nameParts.takeFirst();
+        }
+        nameParts.replaceInStrings("SR", "Sniper Rifle");
+    } else {
+        qWarning() << "Weird name" << name;
+    }
+    displayName = nameParts.join(' ');
+
+    return displayName;
 }
 
 void InventoryTab::onItemSelected()
@@ -72,17 +103,27 @@ void InventoryTab::onItemSelected()
 
 
     m_partsList->clear();
-    const Savegame::Item &item = m_savegame->items()[index];
+    const Savegame::Item &inventoryItem = m_savegame->items()[index];
     QStringList parts;
 
     QMap<QString, QString> partCategories;
-    for (const ItemPart &part : m_savegame->itemData().weaponParts(item.objectShortName)) {
+    QSet<QString> categories;
+    for (const ItemPart &part : m_savegame->itemData().weaponParts(inventoryItem.objectShortName)) {
         partCategories[part.partId] = part.category;
+        categories.insert(part.category);
+    }
+
+
+    QHash<QString, QTreeWidgetItem*> categoryItems;
+    for (const QString &category : categories) {
+        QTreeWidgetItem *item = new QTreeWidgetItem({category});
+        m_partsList->addTopLevelItem(item);
+        categoryItems[category] = item;
     }
 
     QStringList nameText, effectsText, negativesText, positivesText;
 
-    const QString assetId = item.data.val.split('.').last();
+    const QString assetId = inventoryItem.data.val.split('.').last();
     if (m_savegame->itemData().hasItemInfo(assetId)) {
         const ItemInfo &info = m_savegame->itemData().itemInfo(assetId);
         if (!info.inventoryName.isEmpty()) {
@@ -105,43 +146,35 @@ void InventoryTab::onItemSelected()
     }
 
 
-    for (const Savegame::Item::Aspect &part : item.parts) {
-        QString name = part.val.split('.').last();
+    QSet<QString> enabledParts;
+    for (const Savegame::Item::Aspect &part : inventoryItem.parts) {
+        const QString name = part.val.split('.').last();
+        enabledParts.insert(name);
 
-        QString displayName = name;
-        displayName.replace("_AR_", "_Assault Rifle_");
-        displayName.replace("_SR_", "_Sniper Rifle_");
-        displayName.replace("_SM_", "_SMG_");
-        displayName.replace("_SG_", "_Shotgun_");
-        displayName.replace("_GM_", "_Grenade Mod_");
-        displayName.replace("_MAL_", "_Maliwan_");
-        displayName.replace("_DAL_", "_Dahl_");
-        displayName.replace("_Hyp_", "_Hyperion_");
-        displayName.replace("_HYP_", "_Hyperion_");
-        displayName.replace("_TED_", "_Tediore_");
-        displayName.replace("_VLA_", "_Vladof_");
-        QStringList nameParts = displayName.split('_');
-        if (nameParts.count() >= 3) {
-//            displayName = nameParts.mid(1).join(' ');
-            if (nameParts.first() == "Part") {
-                nameParts.takeFirst();
-            }
-            nameParts.replaceInStrings("SR", "Sniper Rifle");
-        } else {
-            qWarning() << "Weird name" << name;
-        }
-        displayName = nameParts.join(' ');
+
+        QString category;
 
         if (partCategories.contains(name)) {
-            name = partCategories[name] + ": " + displayName;
+            category = partCategories[name];
+//            parentItem = categoryItems[];
         } else {
-            qWarning() << item.name << item.objectShortName << "has part" << name << "which is not in the usual list";
-            name = m_savegame->itemData().weaponPartType(name) + ": " + displayName;
+            category = m_savegame->itemData().weaponPartType(name);
+            if (category.isEmpty()) {
+                qWarning() << "Unknown category for" << name;
+                category = "Unknown type";
+            }
+            if (!categoryItems.contains(category)) {
+                categoryItems[category] = new QTreeWidgetItem({category});
+                m_partsList->addTopLevelItem(categoryItems[category]);
+            }
+
+            qWarning() << inventoryItem.name << inventoryItem.objectShortName << "has part" << name << "which is not in the list of parts for" << inventoryItem.name;
         }
-        QListWidgetItem *listItem = new QListWidgetItem(name);
-        listItem->setData(Qt::UserRole, part.val.split('.').last());
-//        qDebug() << part.val;
-        m_partsList->addItem(listItem);
+        QTreeWidgetItem *listItem = new QTreeWidgetItem(categoryItems[category], {makeNamePretty(name)});
+        listItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+        listItem->setCheckState(0, Qt::Checked);
+        listItem->setData(0, Qt::UserRole, part.val.split('.').last());
+
 
         const ItemDescription description = m_savegame->itemData().itemDescription(part.val.split('.').last());
         if (!description.naming.isEmpty()) {
@@ -156,6 +189,21 @@ void InventoryTab::onItemSelected()
         if (!description.positives.isEmpty()) {
             positivesText.append("• " + description.positives);
         }
+    }
+
+    for (const QString &partId : partCategories.keys()) {
+        if (enabledParts.contains(partId)) {
+            continue;
+        }
+
+
+        QTreeWidgetItem *listItem = new QTreeWidgetItem(categoryItems[partCategories[partId]], {makeNamePretty(partId)});
+        listItem->setFlags(Qt::ItemIsSelectable | Qt::ItemIsEnabled);
+        listItem->setCheckState(0, Qt::Unchecked);
+        listItem->setData(0, Qt::UserRole, partId);
+    }
+    for (QTreeWidgetItem *categoryItem : categoryItems.values()) {
+        categoryItem->setExpanded(true);
     }
     positivesText.removeAll("• DO NOT REMOVE"); // I'm very, very lazy
     positivesText.removeAll("• -");
@@ -176,11 +224,11 @@ void InventoryTab::onItemSelected()
 
 void InventoryTab::onPartSelected()
 {
-    QList<QListWidgetItem*> selected = m_partsList->selectedItems();
+    QList<QTreeWidgetItem*> selected = m_partsList->selectedItems();
     if (selected.isEmpty()) {
         return;
     }
-    QString itemId = selected.first()->data(Qt::UserRole).toString();
+    QString itemId = selected.first()->data(0, Qt::UserRole).toString();
     if (itemId.isEmpty()) {
         return;
     }
