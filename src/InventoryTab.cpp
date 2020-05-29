@@ -121,10 +121,6 @@ void InventoryTab::onItemSelected()
         qWarning() << "Out of bounds!";
         return;
     }
-    // TODO actually modify
-    // Can't be arsed to find out exactly how
-    // TODO: maybe list of dropdowns? idk
-
 
     const InventoryItem &currentInventoryItem = m_savegame->inventoryItem(m_selectedInventoryItem);
     QStringList parts;
