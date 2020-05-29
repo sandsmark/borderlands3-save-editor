@@ -8,6 +8,7 @@
 #include <QDebug>
 #include <QLabel>
 #include <QMessageBox>
+#include <QSpinBox>
 
 InventoryTab::InventoryTab(Savegame *savegame, QWidget *parent) : QWidget(parent),
   m_savegame(savegame)
@@ -48,6 +49,11 @@ InventoryTab::InventoryTab(Savegame *savegame, QWidget *parent) : QWidget(parent
     partInfoLayout->addWidget(new QLabel(tr("<b>Positives</b>")));
     partInfoLayout->addWidget(m_partPositives);
     partInfoLayout->addStretch();
+    m_itemLevel = new QSpinBox;
+    m_itemLevel->setMinimum(Constants::minLevel);
+    m_itemLevel->setMaximum(Constants::maxLevel);
+    partInfoLayout->addWidget(m_itemLevel);
+
 //    infoWidget->setSizePolicy(QSizePolicy::Maximum, QSizePolicy::Expanding);
     infoWidget->setFixedWidth(300);
 
@@ -61,6 +67,7 @@ InventoryTab::InventoryTab(Savegame *savegame, QWidget *parent) : QWidget(parent
     connect(m_list, &QListWidget::itemSelectionChanged, this, &InventoryTab::onItemSelected);
     connect(m_partsList, &QTreeWidget::itemSelectionChanged, this, &InventoryTab::onPartSelected);
     connect(m_partsList, &QTreeWidget::itemChanged, this, &InventoryTab::onPartChanged);
+    connect(m_itemLevel, &QSpinBox::textChanged, this, &InventoryTab::onItemLevelChanged);
 }
 
 static QString makeNamePretty(const QString &name)
@@ -95,6 +102,8 @@ static QString makeNamePretty(const QString &name)
 void InventoryTab::onItemSelected()
 {
     QSignalBlocker listSignalBlocker(m_partsList);
+    QSignalBlocker itemLevelBlocker(m_itemLevel);
+
     m_partsList->clear();
     m_enabledParts.clear();
 
@@ -119,6 +128,8 @@ void InventoryTab::onItemSelected()
 
     const InventoryItem &currentInventoryItem = m_savegame->inventoryItem(m_selectedInventoryItem);
     QStringList parts;
+
+    m_itemLevel->setValue(currentInventoryItem.level);
 
     QMap<QString, QString> partCategories;
     QSet<QString> categories;
@@ -305,6 +316,11 @@ void InventoryTab::load()
         m_list->addItem(tr("%1 (level %2)").arg(item.name, QString::number(item.level)));
     }
     checkValidity();
+}
+
+void InventoryTab::onItemLevelChanged()
+{
+    m_savegame->setItemLevel(m_selectedInventoryItem, m_itemLevel->value());
 }
 
 void InventoryTab::checkValidity()

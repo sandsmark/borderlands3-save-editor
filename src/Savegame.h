@@ -60,7 +60,7 @@ public:
     const InventoryItem &inventoryItem(const int index) { return m_items[index]; }
     void addInventoryItemPart(const int index, const InventoryItem::Aspect &part);
     void removeInventoryItemPart(const int index, const QString partId);
-    void replaceInventoryItemPart(const int index, const int partIndex, const InventoryItem::Aspect &part);
+    void setItemLevel(const int index, const int newLevel);
 
     int ammoAmount(const QString &name) const;
     void setAmmoAmount(const QString &name, const int amount);

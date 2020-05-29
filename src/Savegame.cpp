@@ -617,12 +617,18 @@ void Savegame::removeInventoryItemPart(const int index, const QString partId)
     m_character->mutable_inventory_items(index)->set_item_serial_number(serializeItem(m_items[index]));
 }
 
-void Savegame::replaceInventoryItemPart(const int index, const int partIndex, const InventoryItem::Aspect &part)
+void Savegame::setItemLevel(const int index, const int newLevel)
 {
-    qDebug() << QByteArray::fromStdString(serializeItem(m_items[index])).toHex();
-    m_items[index].parts[partIndex] = part;
+    if (index < 0 || index >= m_items.count()) {
+        qWarning() << "item index out of range" << index;
+        return;
+    }
+    if (newLevel < Constants::minLevel || newLevel > Constants::maxLevel) {
+        qWarning() << "Level out of range" << newLevel;
+        return;
+    }
+    m_items[index].level = newLevel;
     m_character->mutable_inventory_items(index)->set_item_serial_number(serializeItem(m_items[index]));
-    qDebug() << QByteArray::fromStdString(serializeItem(m_items[index])).toHex();
 }
 
 int Savegame::ammoAmount(const QString &name) const

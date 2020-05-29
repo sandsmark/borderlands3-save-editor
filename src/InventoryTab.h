@@ -7,6 +7,7 @@
 class QListWidget;
 class QTreeWidget;
 class QTreeWidgetItem;
+class QSpinBox;
 class Savegame;
 class QVBoxLayout;
 class QLabel;
@@ -22,6 +23,7 @@ private slots:
     void onPartSelected();
     void onPartChanged(QTreeWidgetItem *item, int column);
     void load();
+    void onItemLevelChanged();
 
 private:
     void checkValidity();
@@ -36,6 +38,7 @@ private:
     QLabel *m_partPositives;
     QLabel *m_partNegatives;
     QLabel *m_warningText;
+    QSpinBox *m_itemLevel;
     int m_selectedInventoryItem = -1;
 };
 
