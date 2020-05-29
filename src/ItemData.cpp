@@ -188,6 +188,7 @@ InventoryItem::Aspect ItemData::createInventoryItemPart(const InventoryItem &inv
         qWarning() << "Invalid object name" << objectName;
         return {};
     }
+    part.index++; // it is 1-indexed
     part.bits = requiredBits(inventoryItem.partsCategory, inventoryItem.version);
     part.val = getItemAsset(inventoryItem.partsCategory, part.index - 1);
 
