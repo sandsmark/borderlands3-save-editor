@@ -59,7 +59,7 @@ public:
     int inventoryItemsCount() const { return m_items.count(); }
     const InventoryItem &inventoryItem(const int index) { return m_items[index]; }
     void addInventoryItemPart(const int index, const InventoryItem::Aspect &part);
-    void removeInventoryItemPart(const int index, const int partIndex);
+    void removeInventoryItemPart(const int index, const QString partId);
     void replaceInventoryItemPart(const int index, const int partIndex, const InventoryItem::Aspect &part);
 
     int ammoAmount(const QString &name) const;

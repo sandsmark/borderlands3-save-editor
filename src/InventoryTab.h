@@ -2,7 +2,7 @@
 #define INVENTORYTAB_H
 
 #include <QWidget>
-#include <QHash>
+#include <QSet>
 
 class QListWidget;
 class QTreeWidget;
@@ -29,7 +29,7 @@ private:
     Savegame *m_savegame;
     QListWidget *m_list;
     QTreeWidget *m_partsList;
-    QHash<QString, int> m_enabledParts;
+    QSet<QString> m_enabledParts;
 
     QLabel *m_partName;
     QLabel *m_partEffects;

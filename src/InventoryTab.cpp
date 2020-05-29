@@ -164,7 +164,7 @@ void InventoryTab::onItemSelected()
         const InventoryItem::Aspect &part = currentInventoryItem.parts[partIndex];
 
         const QString name = part.val.split('.').last();
-        m_enabledParts.insert(name, partIndex);
+        m_enabledParts.insert(name);
 
 
         QString category;
@@ -211,10 +211,8 @@ void InventoryTab::onItemSelected()
         listItem->setData(0, Qt::UserRole, partId);
         if (m_enabledParts.contains(partId)) {
             listItem->setCheckState(0, Qt::Checked);
-            listItem->setData(0, Qt::UserRole + 1, m_enabledParts[partId]);
         } else {
             listItem->setCheckState(0, Qt::Unchecked);
-            listItem->setData(0, Qt::UserRole + 1, -1);
         }
     }
     for (QTreeWidgetItem *categoryItem : categoryItems.values()) {
@@ -278,14 +276,8 @@ void InventoryTab::onPartChanged(QTreeWidgetItem *item, int column)
         return;
     }
 
-    const int existingPartPosition = item->data(0, Qt::UserRole + 1).toInt();
     if (!enabled) {
-        if (existingPartPosition < 0) {
-            qWarning() << "Failed to find" << itemId;
-            return;
-        }
-        m_savegame->removeInventoryItemPart(m_selectedInventoryItem, existingPartPosition);
-        item->setData(0, Qt::UserRole + 1, -1);
+        m_savegame->removeInventoryItemPart(m_selectedInventoryItem, item->data(0, Qt::UserRole).toString());
         m_enabledParts.remove(item->data(0, Qt::UserRole).toString());
         checkValidity();
         return;
@@ -299,16 +291,9 @@ void InventoryTab::onPartChanged(QTreeWidgetItem *item, int column)
         item->setCheckState(0, enabled ? Qt::Unchecked : Qt::Checked); // reverse
         return;
     }
-    if (existingPartPosition < 0 || existingPartPosition >= currentInventoryItem.parts.count()) {
-        item->setData(0, Qt::UserRole + 1, m_savegame->inventoryItemsCount());
-        m_savegame->addInventoryItemPart(m_selectedInventoryItem, part);
-//        currentInventoryItem.parts.append(part);
-    } else {
-        m_savegame->replaceInventoryItemPart(m_selectedInventoryItem, existingPartPosition, part);
-//        currentInventoryItem.parts[existingPartPosition] = part;
-    }
-    m_enabledParts.insert(item->data(0, Qt::UserRole).toString(), item->data(0, Qt::UserRole + 1).toInt());
-    qDebug() << "existing index" << existingPartPosition << "new part name" << part.val;
+    m_savegame->addInventoryItemPart(m_selectedInventoryItem, part);
+    m_enabledParts.insert(item->data(0, Qt::UserRole).toString());
+//    qDebug() << "existing index" << existingPartPosition << "new part name" << part.val;
     checkValidity();
 }
 
@@ -342,7 +327,7 @@ void InventoryTab::checkValidity()
         return;
     }
 
-    QHash<QString, int> partsToProcess = m_enabledParts;
+    QSet<QString> partsToProcess = m_enabledParts;
     for (const ItemPart &part : ItemData::weaponParts(currentInventoryItem.objectShortName)) {
         if (!partsToProcess.contains(part.partId)) {
             continue;

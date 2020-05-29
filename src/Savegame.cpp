@@ -598,13 +598,22 @@ bool Savegame::save(const QString filePath) const
 
 void Savegame::addInventoryItemPart(const int index, const InventoryItem::Aspect &part)
 {
+    qDebug() << "Adding" << part.val;
     m_items[index].parts.append(part);
     m_character->mutable_inventory_items(index)->set_item_serial_number(serializeItem(m_items[index]));
 }
 
-void Savegame::removeInventoryItemPart(const int index, const int partIndex)
+void Savegame::removeInventoryItemPart(const int index, const QString partId)
 {
-    m_items[index].parts.remove(partIndex);
+    qDebug() << "Trying to find" << partId;
+    QMutableVectorIterator<InventoryItem::Aspect> it(m_items[index].parts);
+    while(it.hasNext()) {
+        if (it.next().val.endsWith(partId)) {
+            qDebug() << " >>>>>>>>>>>>>>>>>>> Removing" << it.value().val;
+            it.remove();
+        }
+    }
+//    m_items[index].parts.remove(partIndex);
     m_character->mutable_inventory_items(index)->set_item_serial_number(serializeItem(m_items[index]));
 }
 
