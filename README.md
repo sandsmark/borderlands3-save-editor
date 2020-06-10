@@ -4,21 +4,14 @@ Borderlands 3 Savegame Editor
 ![screenshot](/doc/screenshot.png)
 
 
-Work in progress.
+Work in progress, whenever I encounter a game-breaking bug and need to get past
+it. Because they don't provide a console in game.
 
-Can edit what's exposed in the GUI (so what's in the screenshot). And a bit
-more. And you can view the inventory.
-
-It can technically edit items as well, but that hasn't been tested at all, so
-you're on your own if it breaks. Though it should warn you if it is sure you're
-breaking something.
-
-I have only tested that it writes an identical file when you set the same
-values, but I haven't tested that it doesn't fuck up if you set funny values.
-
-If you want a more complete editor and you are okay with using a command line,
-try https://github.com/apocalyptech/bl3-cli-saveedit instead. Almost everything
+If you want a more complete, better written and more tested editor and you are
+okay with using a command line, try
+https://github.com/apocalyptech/bl3-cli-saveedit instead. Almost everything
 here is just based on his discoveries anyways.
+
 
 ## Windows builds
 
@@ -28,6 +21,21 @@ https://ci.appveyor.com/project/sandsmark/borderlands3-save-editor/build/artifac
 
 NB: I don't run windows nor do I have a windows machine to test on, but when I
 set up appveyor I tested it in Wine (on Linux) and it worked.
+
+
+## Functionality
+
+I. e. what it can edit. And will probably break.
+
+ - Name
+ - Level
+ - Experience points
+ - Edit items/weapons in the inventory, also tries to validate your changes (can't create new from scratch yet though)
+ - Amount of ammo, SDUs, eridium and money
+ - View active missions and progress (have everything for editing, but can't be bothered to do the last 5% of the work)
+ - UUID (not very interesting, but we can generate valid ones)
+ - Save slot ID (not very interesting either)
+
 
 ## Credits
 
