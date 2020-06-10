@@ -4,6 +4,7 @@
 #include "Savegame.h"
 #include "InventoryTab.h"
 #include "ConsumablesTab.h"
+#include "MissionsTab.h"
 
 #include <QDebug>
 #include <QFileDialog>
@@ -47,6 +48,10 @@ MainWindow::MainWindow(QWidget *parent)
     m_consumablesTab->setEnabled(false);
     m_tabWidget->addTab(m_consumablesTab, "Consumables");
 
+    m_missionsTab = new MissionsTab(m_savegame);
+    m_missionsTab->setEnabled(false);
+    m_tabWidget->addTab(m_missionsTab, tr("Missions"));
+
     resize(900, 500);
 
     QSettings settings;
@@ -69,6 +74,7 @@ void MainWindow::loadFile()
     m_generalTab->setEnabled(false);
     m_inventoryTab->setEnabled(false);
     m_consumablesTab->setEnabled(false);
+    m_missionsTab->setEnabled(false);
     if (m_filePath.isEmpty()) {
         m_filePath = QFileDialog::getOpenFileName(this, "Select a savegame", QString(), "Savefile (*.sav)");
         if (m_filePath.isEmpty()) {
@@ -84,6 +90,7 @@ void MainWindow::loadFile()
     m_generalTab->setEnabled(true);
     m_inventoryTab->setEnabled(true);
     m_consumablesTab->setEnabled(true);
+    m_missionsTab->setEnabled(true);
 }
 
 void MainWindow::onOpenFile()

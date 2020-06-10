@@ -696,6 +696,55 @@ void Savegame::setSduAmount(const QString &name, const int amount)
     qWarning() << "FAiled to find" << name;
 }
 
+QStringList Savegame::activeMissions() const
+{
+    QStringList ret;
+
+    for (const OakSave::MissionPlaythroughSaveGameData &playthrough : m_character->mission_playthroughs_data()) {
+        for (const OakSave::MissionStatusPlayerSaveGameData &mission : playthrough.mission_list()) {
+            if (mission.status() != OakSave::MissionStatusPlayerSaveGameData_MissionState_MS_Active) {
+                continue;
+            }
+            ret.append(QString::fromStdString(mission.mission_class_path()));
+        }
+    }
+
+    return ret;
+}
+
+// not horribly efficient, but I don't want to expose the rest to the crappy protobuf API, it's bad enough as it is
+QVector<bool> Savegame::objectivesCompleted(const QString &missionID)
+{
+    const std::string protobufSucks = missionID.toStdString();
+
+    QVector<bool> ret;
+
+    for (const OakSave::MissionPlaythroughSaveGameData &playthrough : m_character->mission_playthroughs_data()) {
+        for (const OakSave::MissionStatusPlayerSaveGameData &mission : playthrough.mission_list()) {
+            if (mission.mission_class_path() != protobufSucks) {
+                continue;
+            }
+
+            for (const int32_t objectiveState : mission.objectives_progress()) {
+                switch(objectiveState) {
+                case 0:
+                    ret.append(false);
+                    break;
+                case 1:
+                    ret.append(true);
+                    break;
+                default:
+                    qWarning() << "Unknown objective state" << objectiveState << "for mission" << missionID;
+                    break;
+                }
+
+            }
+        }
+    }
+
+    return ret;
+}
+
 QString Savegame::characterName() const
 {
     return QString::fromStdString(m_character->preferred_character_name());

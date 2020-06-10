@@ -68,6 +68,9 @@ public:
     int sduAmount(const QString &name) const;
     void setSduAmount(const QString &name, const int amount);
 
+    QStringList activeMissions() const;
+    QVector<bool> objectivesCompleted(const QString &missionName);
+
 public slots:
     //////////////////////////
     // Character stuff
