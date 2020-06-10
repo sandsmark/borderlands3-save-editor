@@ -1744,16 +1744,15 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Oak
   &scc_info_VehicleUnlockedSaveGameData_OakSave_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_OakSave_2eproto_once;
-static bool descriptor_table_OakSave_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_OakSave_2eproto = {
-  &descriptor_table_OakSave_2eproto_initialized, descriptor_table_protodef_OakSave_2eproto, "OakSave.proto", 9327,
+  false, false, descriptor_table_protodef_OakSave_2eproto, "OakSave.proto", 9327,
   &descriptor_table_OakSave_2eproto_once, descriptor_table_OakSave_2eproto_sccs, descriptor_table_OakSave_2eproto_deps, 45, 1,
   schemas, file_default_instances, TableStruct_OakSave_2eproto::offsets,
   file_level_metadata_OakSave_2eproto, 45, file_level_enum_descriptors_OakSave_2eproto, file_level_service_descriptors_OakSave_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_OakSave_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_OakSave_2eproto), true);
+static bool dynamic_init_dummy_OakSave_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_OakSave_2eproto)), true);
 namespace OakSave {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* MissionStatusPlayerSaveGameData_MissionState_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_OakSave_2eproto);
@@ -1791,18 +1790,19 @@ class PlayerClassSaveGameData::_Internal {
  public:
 };
 
-PlayerClassSaveGameData::PlayerClassSaveGameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+PlayerClassSaveGameData::PlayerClassSaveGameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.PlayerClassSaveGameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.PlayerClassSaveGameData)
 }
 PlayerClassSaveGameData::PlayerClassSaveGameData(const PlayerClassSaveGameData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   player_class_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_player_class_path().empty()) {
-    player_class_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.player_class_path_);
+    player_class_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_player_class_path(),
+      GetArena());
   }
   dlc_package_id_ = from.dlc_package_id_;
   // @@protoc_insertion_point(copy_constructor:OakSave.PlayerClassSaveGameData)
@@ -1817,12 +1817,20 @@ void PlayerClassSaveGameData::SharedCtor() {
 PlayerClassSaveGameData::~PlayerClassSaveGameData() {
   // @@protoc_insertion_point(destructor:OakSave.PlayerClassSaveGameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void PlayerClassSaveGameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   player_class_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void PlayerClassSaveGameData::ArenaDtor(void* object) {
+  PlayerClassSaveGameData* _this = reinterpret_cast< PlayerClassSaveGameData* >(object);
+  (void)_this;
+}
+void PlayerClassSaveGameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void PlayerClassSaveGameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -1838,13 +1846,14 @@ void PlayerClassSaveGameData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  player_class_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  player_class_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   dlc_package_id_ = 0u;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* PlayerClassSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -1862,7 +1871,7 @@ const char* PlayerClassSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_
       // uint32 dlc_package_id = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          dlc_package_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          dlc_package_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1872,7 +1881,9 @@ const char* PlayerClassSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -1910,7 +1921,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.PlayerClassSaveGameData)
   return target;
@@ -1965,13 +1976,12 @@ void PlayerClassSaveGameData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& 
 void PlayerClassSaveGameData::MergeFrom(const PlayerClassSaveGameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.PlayerClassSaveGameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.player_class_path().size() > 0) {
-
-    player_class_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.player_class_path_);
+    _internal_set_player_class_path(from._internal_player_class_path());
   }
   if (from.dlc_package_id() != 0) {
     _internal_set_dlc_package_id(from._internal_dlc_package_id());
@@ -1998,9 +2008,8 @@ bool PlayerClassSaveGameData::IsInitialized() const {
 
 void PlayerClassSaveGameData::InternalSwap(PlayerClassSaveGameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  player_class_path_.Swap(&other->player_class_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  player_class_path_.Swap(&other->player_class_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(dlc_package_id_, other->dlc_package_id_);
 }
 
@@ -2017,18 +2026,19 @@ class ResourcePoolSavegameData::_Internal {
  public:
 };
 
-ResourcePoolSavegameData::ResourcePoolSavegameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+ResourcePoolSavegameData::ResourcePoolSavegameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.ResourcePoolSavegameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.ResourcePoolSavegameData)
 }
 ResourcePoolSavegameData::ResourcePoolSavegameData(const ResourcePoolSavegameData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   resource_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_resource_path().empty()) {
-    resource_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.resource_path_);
+    resource_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_resource_path(),
+      GetArena());
   }
   amount_ = from.amount_;
   // @@protoc_insertion_point(copy_constructor:OakSave.ResourcePoolSavegameData)
@@ -2043,12 +2053,20 @@ void ResourcePoolSavegameData::SharedCtor() {
 ResourcePoolSavegameData::~ResourcePoolSavegameData() {
   // @@protoc_insertion_point(destructor:OakSave.ResourcePoolSavegameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void ResourcePoolSavegameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   resource_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void ResourcePoolSavegameData::ArenaDtor(void* object) {
+  ResourcePoolSavegameData* _this = reinterpret_cast< ResourcePoolSavegameData* >(object);
+  (void)_this;
+}
+void ResourcePoolSavegameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ResourcePoolSavegameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -2064,13 +2082,14 @@ void ResourcePoolSavegameData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  resource_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  resource_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   amount_ = 0;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* ResourcePoolSavegameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -2098,7 +2117,9 @@ const char* ResourcePoolSavegameData::_InternalParse(const char* ptr, ::PROTOBUF
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -2136,7 +2157,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.ResourcePoolSavegameData)
   return target;
@@ -2189,13 +2210,12 @@ void ResourcePoolSavegameData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message&
 void ResourcePoolSavegameData::MergeFrom(const ResourcePoolSavegameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.ResourcePoolSavegameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.resource_path().size() > 0) {
-
-    resource_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.resource_path_);
+    _internal_set_resource_path(from._internal_resource_path());
   }
   if (!(from.amount() <= 0 && from.amount() >= 0)) {
     _internal_set_amount(from._internal_amount());
@@ -2222,9 +2242,8 @@ bool ResourcePoolSavegameData::IsInitialized() const {
 
 void ResourcePoolSavegameData::InternalSwap(ResourcePoolSavegameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  resource_path_.Swap(&other->resource_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  resource_path_.Swap(&other->resource_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(amount_, other->amount_);
 }
 
@@ -2241,18 +2260,19 @@ class RegionSaveGameData::_Internal {
  public:
 };
 
-RegionSaveGameData::RegionSaveGameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+RegionSaveGameData::RegionSaveGameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.RegionSaveGameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.RegionSaveGameData)
 }
 RegionSaveGameData::RegionSaveGameData(const RegionSaveGameData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   region_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_region_path().empty()) {
-    region_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.region_path_);
+    region_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_region_path(),
+      GetArena());
   }
   ::memcpy(&game_stage_, &from.game_stage_,
     static_cast<size_t>(reinterpret_cast<char*>(&dlc_package_id_) -
@@ -2271,12 +2291,20 @@ void RegionSaveGameData::SharedCtor() {
 RegionSaveGameData::~RegionSaveGameData() {
   // @@protoc_insertion_point(destructor:OakSave.RegionSaveGameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void RegionSaveGameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   region_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void RegionSaveGameData::ArenaDtor(void* object) {
+  RegionSaveGameData* _this = reinterpret_cast< RegionSaveGameData* >(object);
+  (void)_this;
+}
+void RegionSaveGameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void RegionSaveGameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -2292,15 +2320,16 @@ void RegionSaveGameData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  region_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  region_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::memset(&game_stage_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&dlc_package_id_) -
       reinterpret_cast<char*>(&game_stage_)) + sizeof(dlc_package_id_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* RegionSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -2309,14 +2338,14 @@ const char* RegionSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
       // int32 game_stage = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          game_stage_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          game_stage_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // int32 play_through_idx = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          play_through_idx_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          play_through_idx_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2332,7 +2361,7 @@ const char* RegionSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
       // uint32 dlc_package_id = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          dlc_package_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          dlc_package_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2342,7 +2371,9 @@ const char* RegionSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -2392,7 +2423,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.RegionSaveGameData)
   return target;
@@ -2461,13 +2492,12 @@ void RegionSaveGameData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from)
 void RegionSaveGameData::MergeFrom(const RegionSaveGameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.RegionSaveGameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.region_path().size() > 0) {
-
-    region_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.region_path_);
+    _internal_set_region_path(from._internal_region_path());
   }
   if (from.game_stage() != 0) {
     _internal_set_game_stage(from._internal_game_stage());
@@ -2500,12 +2530,14 @@ bool RegionSaveGameData::IsInitialized() const {
 
 void RegionSaveGameData::InternalSwap(RegionSaveGameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  region_path_.Swap(&other->region_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(game_stage_, other->game_stage_);
-  swap(play_through_idx_, other->play_through_idx_);
-  swap(dlc_package_id_, other->dlc_package_id_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  region_path_.Swap(&other->region_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(RegionSaveGameData, dlc_package_id_)
+      + sizeof(RegionSaveGameData::dlc_package_id_)
+      - PROTOBUF_FIELD_OFFSET(RegionSaveGameData, game_stage_)>(
+          reinterpret_cast<char*>(&game_stage_),
+          reinterpret_cast<char*>(&other->game_stage_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RegionSaveGameData::GetMetadata() const {
@@ -2521,33 +2553,40 @@ class InventoryBalanceStateInitializationData::_Internal {
  public:
 };
 
-InventoryBalanceStateInitializationData::InventoryBalanceStateInitializationData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+InventoryBalanceStateInitializationData::InventoryBalanceStateInitializationData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  part_list_(arena),
+  generic_part_list_(arena),
+  customization_part_list_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.InventoryBalanceStateInitializationData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.InventoryBalanceStateInitializationData)
 }
 InventoryBalanceStateInitializationData::InventoryBalanceStateInitializationData(const InventoryBalanceStateInitializationData& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       part_list_(from.part_list_),
       generic_part_list_(from.generic_part_list_),
       customization_part_list_(from.customization_part_list_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   inventory_data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_inventory_data().empty()) {
-    inventory_data_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.inventory_data_);
+    inventory_data_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_inventory_data(),
+      GetArena());
   }
   inventory_balance_data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_inventory_balance_data().empty()) {
-    inventory_balance_data_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.inventory_balance_data_);
+    inventory_balance_data_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_inventory_balance_data(),
+      GetArena());
   }
   manufacturer_data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_manufacturer_data().empty()) {
-    manufacturer_data_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.manufacturer_data_);
+    manufacturer_data_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_manufacturer_data(),
+      GetArena());
   }
   additional_data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_additional_data().empty()) {
-    additional_data_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.additional_data_);
+    additional_data_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_additional_data(),
+      GetArena());
   }
   game_stage_ = from.game_stage_;
   // @@protoc_insertion_point(copy_constructor:OakSave.InventoryBalanceStateInitializationData)
@@ -2565,15 +2604,23 @@ void InventoryBalanceStateInitializationData::SharedCtor() {
 InventoryBalanceStateInitializationData::~InventoryBalanceStateInitializationData() {
   // @@protoc_insertion_point(destructor:OakSave.InventoryBalanceStateInitializationData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void InventoryBalanceStateInitializationData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   inventory_data_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   inventory_balance_data_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   manufacturer_data_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   additional_data_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void InventoryBalanceStateInitializationData::ArenaDtor(void* object) {
+  InventoryBalanceStateInitializationData* _this = reinterpret_cast< InventoryBalanceStateInitializationData* >(object);
+  (void)_this;
+}
+void InventoryBalanceStateInitializationData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void InventoryBalanceStateInitializationData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -2592,16 +2639,17 @@ void InventoryBalanceStateInitializationData::Clear() {
   part_list_.Clear();
   generic_part_list_.Clear();
   customization_part_list_.Clear();
-  inventory_data_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  inventory_balance_data_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  manufacturer_data_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  additional_data_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  inventory_data_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  inventory_balance_data_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  manufacturer_data_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  additional_data_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   game_stage_ = 0;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* InventoryBalanceStateInitializationData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -2610,7 +2658,7 @@ const char* InventoryBalanceStateInitializationData::_InternalParse(const char* 
       // int32 game_stage = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          game_stage_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          game_stage_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2697,7 +2745,9 @@ const char* InventoryBalanceStateInitializationData::_InternalParse(const char* 
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -2791,7 +2841,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.InventoryBalanceStateInitializationData)
   return target;
@@ -2891,7 +2941,7 @@ void InventoryBalanceStateInitializationData::MergeFrom(const ::PROTOBUF_NAMESPA
 void InventoryBalanceStateInitializationData::MergeFrom(const InventoryBalanceStateInitializationData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.InventoryBalanceStateInitializationData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2899,20 +2949,16 @@ void InventoryBalanceStateInitializationData::MergeFrom(const InventoryBalanceSt
   generic_part_list_.MergeFrom(from.generic_part_list_);
   customization_part_list_.MergeFrom(from.customization_part_list_);
   if (from.inventory_data().size() > 0) {
-
-    inventory_data_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.inventory_data_);
+    _internal_set_inventory_data(from._internal_inventory_data());
   }
   if (from.inventory_balance_data().size() > 0) {
-
-    inventory_balance_data_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.inventory_balance_data_);
+    _internal_set_inventory_balance_data(from._internal_inventory_balance_data());
   }
   if (from.manufacturer_data().size() > 0) {
-
-    manufacturer_data_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.manufacturer_data_);
+    _internal_set_manufacturer_data(from._internal_manufacturer_data());
   }
   if (from.additional_data().size() > 0) {
-
-    additional_data_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.additional_data_);
+    _internal_set_additional_data(from._internal_additional_data());
   }
   if (from.game_stage() != 0) {
     _internal_set_game_stage(from._internal_game_stage());
@@ -2939,18 +2985,14 @@ bool InventoryBalanceStateInitializationData::IsInitialized() const {
 
 void InventoryBalanceStateInitializationData::InternalSwap(InventoryBalanceStateInitializationData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   part_list_.InternalSwap(&other->part_list_);
   generic_part_list_.InternalSwap(&other->generic_part_list_);
   customization_part_list_.InternalSwap(&other->customization_part_list_);
-  inventory_data_.Swap(&other->inventory_data_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  inventory_balance_data_.Swap(&other->inventory_balance_data_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  manufacturer_data_.Swap(&other->manufacturer_data_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  additional_data_.Swap(&other->additional_data_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  inventory_data_.Swap(&other->inventory_data_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  inventory_balance_data_.Swap(&other->inventory_balance_data_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  manufacturer_data_.Swap(&other->manufacturer_data_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  additional_data_.Swap(&other->additional_data_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(game_stage_, other->game_stage_);
 }
 
@@ -2974,22 +3016,24 @@ const ::OakSave::InventoryBalanceStateInitializationData&
 OakInventoryItemSaveGameData::_Internal::development_save_data(const OakInventoryItemSaveGameData* msg) {
   return *msg->development_save_data_;
 }
-OakInventoryItemSaveGameData::OakInventoryItemSaveGameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+OakInventoryItemSaveGameData::OakInventoryItemSaveGameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.OakInventoryItemSaveGameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.OakInventoryItemSaveGameData)
 }
 OakInventoryItemSaveGameData::OakInventoryItemSaveGameData(const OakInventoryItemSaveGameData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   item_serial_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_item_serial_number().empty()) {
-    item_serial_number_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.item_serial_number_);
+    item_serial_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_item_serial_number(),
+      GetArena());
   }
   weapon_skin_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_weapon_skin_path().empty()) {
-    weapon_skin_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.weapon_skin_path_);
+    weapon_skin_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_weapon_skin_path(),
+      GetArena());
   }
   if (from._internal_has_development_save_data()) {
     development_save_data_ = new ::OakSave::InventoryBalanceStateInitializationData(*from.development_save_data_);
@@ -3014,14 +3058,22 @@ void OakInventoryItemSaveGameData::SharedCtor() {
 OakInventoryItemSaveGameData::~OakInventoryItemSaveGameData() {
   // @@protoc_insertion_point(destructor:OakSave.OakInventoryItemSaveGameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void OakInventoryItemSaveGameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   item_serial_number_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   weapon_skin_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete development_save_data_;
 }
 
+void OakInventoryItemSaveGameData::ArenaDtor(void* object) {
+  OakInventoryItemSaveGameData* _this = reinterpret_cast< OakInventoryItemSaveGameData* >(object);
+  (void)_this;
+}
+void OakInventoryItemSaveGameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void OakInventoryItemSaveGameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -3037,20 +3089,21 @@ void OakInventoryItemSaveGameData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  item_serial_number_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  weapon_skin_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == nullptr && development_save_data_ != nullptr) {
+  item_serial_number_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  weapon_skin_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  if (GetArena() == nullptr && development_save_data_ != nullptr) {
     delete development_save_data_;
   }
   development_save_data_ = nullptr;
   ::memset(&pickup_order_index_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&flags_) -
       reinterpret_cast<char*>(&pickup_order_index_)) + sizeof(flags_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* OakInventoryItemSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -3067,14 +3120,14 @@ const char* OakInventoryItemSaveGameData::_InternalParse(const char* ptr, ::PROT
       // int32 pickup_order_index = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          pickup_order_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          pickup_order_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // int32 flags = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          flags_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          flags_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3100,7 +3153,9 @@ const char* OakInventoryItemSaveGameData::_InternalParse(const char* ptr, ::PROT
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -3158,7 +3213,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.OakInventoryItemSaveGameData)
   return target;
@@ -3234,17 +3289,15 @@ void OakInventoryItemSaveGameData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Mess
 void OakInventoryItemSaveGameData::MergeFrom(const OakInventoryItemSaveGameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.OakInventoryItemSaveGameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.item_serial_number().size() > 0) {
-
-    item_serial_number_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.item_serial_number_);
+    _internal_set_item_serial_number(from._internal_item_serial_number());
   }
   if (from.weapon_skin_path().size() > 0) {
-
-    weapon_skin_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.weapon_skin_path_);
+    _internal_set_weapon_skin_path(from._internal_weapon_skin_path());
   }
   if (from.has_development_save_data()) {
     _internal_mutable_development_save_data()->::OakSave::InventoryBalanceStateInitializationData::MergeFrom(from._internal_development_save_data());
@@ -3277,14 +3330,15 @@ bool OakInventoryItemSaveGameData::IsInitialized() const {
 
 void OakInventoryItemSaveGameData::InternalSwap(OakInventoryItemSaveGameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  item_serial_number_.Swap(&other->item_serial_number_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  weapon_skin_path_.Swap(&other->weapon_skin_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(development_save_data_, other->development_save_data_);
-  swap(pickup_order_index_, other->pickup_order_index_);
-  swap(flags_, other->flags_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  item_serial_number_.Swap(&other->item_serial_number_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  weapon_skin_path_.Swap(&other->weapon_skin_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(OakInventoryItemSaveGameData, flags_)
+      + sizeof(OakInventoryItemSaveGameData::flags_)
+      - PROTOBUF_FIELD_OFFSET(OakInventoryItemSaveGameData, development_save_data_)>(
+          reinterpret_cast<char*>(&development_save_data_),
+          reinterpret_cast<char*>(&other->development_save_data_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata OakInventoryItemSaveGameData::GetMetadata() const {
@@ -3300,22 +3354,24 @@ class EquippedInventorySaveGameData::_Internal {
  public:
 };
 
-EquippedInventorySaveGameData::EquippedInventorySaveGameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+EquippedInventorySaveGameData::EquippedInventorySaveGameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.EquippedInventorySaveGameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.EquippedInventorySaveGameData)
 }
 EquippedInventorySaveGameData::EquippedInventorySaveGameData(const EquippedInventorySaveGameData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   slot_data_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_slot_data_path().empty()) {
-    slot_data_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.slot_data_path_);
+    slot_data_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_slot_data_path(),
+      GetArena());
   }
   trinket_data_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_trinket_data_path().empty()) {
-    trinket_data_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.trinket_data_path_);
+    trinket_data_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_trinket_data_path(),
+      GetArena());
   }
   ::memcpy(&inventory_list_index_, &from.inventory_list_index_,
     static_cast<size_t>(reinterpret_cast<char*>(&enabled_) -
@@ -3335,13 +3391,21 @@ void EquippedInventorySaveGameData::SharedCtor() {
 EquippedInventorySaveGameData::~EquippedInventorySaveGameData() {
   // @@protoc_insertion_point(destructor:OakSave.EquippedInventorySaveGameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void EquippedInventorySaveGameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   slot_data_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   trinket_data_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void EquippedInventorySaveGameData::ArenaDtor(void* object) {
+  EquippedInventorySaveGameData* _this = reinterpret_cast< EquippedInventorySaveGameData* >(object);
+  (void)_this;
+}
+void EquippedInventorySaveGameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void EquippedInventorySaveGameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -3357,16 +3421,17 @@ void EquippedInventorySaveGameData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  slot_data_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  trinket_data_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  slot_data_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  trinket_data_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::memset(&inventory_list_index_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&enabled_) -
       reinterpret_cast<char*>(&inventory_list_index_)) + sizeof(enabled_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* EquippedInventorySaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -3375,14 +3440,14 @@ const char* EquippedInventorySaveGameData::_InternalParse(const char* ptr, ::PRO
       // int32 inventory_list_index = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          inventory_list_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          inventory_list_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // bool enabled = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          enabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          enabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3410,7 +3475,9 @@ const char* EquippedInventorySaveGameData::_InternalParse(const char* ptr, ::PRO
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -3464,7 +3531,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.EquippedInventorySaveGameData)
   return target;
@@ -3531,17 +3598,15 @@ void EquippedInventorySaveGameData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Mes
 void EquippedInventorySaveGameData::MergeFrom(const EquippedInventorySaveGameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.EquippedInventorySaveGameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.slot_data_path().size() > 0) {
-
-    slot_data_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.slot_data_path_);
+    _internal_set_slot_data_path(from._internal_slot_data_path());
   }
   if (from.trinket_data_path().size() > 0) {
-
-    trinket_data_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.trinket_data_path_);
+    _internal_set_trinket_data_path(from._internal_trinket_data_path());
   }
   if (from.inventory_list_index() != 0) {
     _internal_set_inventory_list_index(from._internal_inventory_list_index());
@@ -3571,13 +3636,15 @@ bool EquippedInventorySaveGameData::IsInitialized() const {
 
 void EquippedInventorySaveGameData::InternalSwap(EquippedInventorySaveGameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  slot_data_path_.Swap(&other->slot_data_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  trinket_data_path_.Swap(&other->trinket_data_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(inventory_list_index_, other->inventory_list_index_);
-  swap(enabled_, other->enabled_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  slot_data_path_.Swap(&other->slot_data_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  trinket_data_path_.Swap(&other->trinket_data_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(EquippedInventorySaveGameData, enabled_)
+      + sizeof(EquippedInventorySaveGameData::enabled_)
+      - PROTOBUF_FIELD_OFFSET(EquippedInventorySaveGameData, inventory_list_index_)>(
+          reinterpret_cast<char*>(&inventory_list_index_),
+          reinterpret_cast<char*>(&other->inventory_list_index_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata EquippedInventorySaveGameData::GetMetadata() const {
@@ -3593,18 +3660,19 @@ class OakAbilityTreeItemSaveGameData::_Internal {
  public:
 };
 
-OakAbilityTreeItemSaveGameData::OakAbilityTreeItemSaveGameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+OakAbilityTreeItemSaveGameData::OakAbilityTreeItemSaveGameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.OakAbilityTreeItemSaveGameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.OakAbilityTreeItemSaveGameData)
 }
 OakAbilityTreeItemSaveGameData::OakAbilityTreeItemSaveGameData(const OakAbilityTreeItemSaveGameData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   item_asset_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_item_asset_path().empty()) {
-    item_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.item_asset_path_);
+    item_asset_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_item_asset_path(),
+      GetArena());
   }
   ::memcpy(&points_, &from.points_,
     static_cast<size_t>(reinterpret_cast<char*>(&tree_identifier_) -
@@ -3623,12 +3691,20 @@ void OakAbilityTreeItemSaveGameData::SharedCtor() {
 OakAbilityTreeItemSaveGameData::~OakAbilityTreeItemSaveGameData() {
   // @@protoc_insertion_point(destructor:OakSave.OakAbilityTreeItemSaveGameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void OakAbilityTreeItemSaveGameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   item_asset_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void OakAbilityTreeItemSaveGameData::ArenaDtor(void* object) {
+  OakAbilityTreeItemSaveGameData* _this = reinterpret_cast< OakAbilityTreeItemSaveGameData* >(object);
+  (void)_this;
+}
+void OakAbilityTreeItemSaveGameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void OakAbilityTreeItemSaveGameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -3644,15 +3720,16 @@ void OakAbilityTreeItemSaveGameData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  item_asset_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  item_asset_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::memset(&points_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&tree_identifier_) -
       reinterpret_cast<char*>(&points_)) + sizeof(tree_identifier_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* OakAbilityTreeItemSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -3670,21 +3747,21 @@ const char* OakAbilityTreeItemSaveGameData::_InternalParse(const char* ptr, ::PR
       // int32 points = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          points_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          points_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // int32 max_points = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          max_points_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          max_points_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // int32 tree_identifier = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          tree_identifier_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          tree_identifier_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -3694,7 +3771,9 @@ const char* OakAbilityTreeItemSaveGameData::_InternalParse(const char* ptr, ::PR
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -3744,7 +3823,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.OakAbilityTreeItemSaveGameData)
   return target;
@@ -3813,13 +3892,12 @@ void OakAbilityTreeItemSaveGameData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Me
 void OakAbilityTreeItemSaveGameData::MergeFrom(const OakAbilityTreeItemSaveGameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.OakAbilityTreeItemSaveGameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.item_asset_path().size() > 0) {
-
-    item_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.item_asset_path_);
+    _internal_set_item_asset_path(from._internal_item_asset_path());
   }
   if (from.points() != 0) {
     _internal_set_points(from._internal_points());
@@ -3852,12 +3930,14 @@ bool OakAbilityTreeItemSaveGameData::IsInitialized() const {
 
 void OakAbilityTreeItemSaveGameData::InternalSwap(OakAbilityTreeItemSaveGameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  item_asset_path_.Swap(&other->item_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(points_, other->points_);
-  swap(max_points_, other->max_points_);
-  swap(tree_identifier_, other->tree_identifier_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  item_asset_path_.Swap(&other->item_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(OakAbilityTreeItemSaveGameData, tree_identifier_)
+      + sizeof(OakAbilityTreeItemSaveGameData::tree_identifier_)
+      - PROTOBUF_FIELD_OFFSET(OakAbilityTreeItemSaveGameData, points_)>(
+          reinterpret_cast<char*>(&points_),
+          reinterpret_cast<char*>(&other->points_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata OakAbilityTreeItemSaveGameData::GetMetadata() const {
@@ -3873,22 +3953,24 @@ class OakAbilitySlotSaveGameData::_Internal {
  public:
 };
 
-OakAbilitySlotSaveGameData::OakAbilitySlotSaveGameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+OakAbilitySlotSaveGameData::OakAbilitySlotSaveGameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.OakAbilitySlotSaveGameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.OakAbilitySlotSaveGameData)
 }
 OakAbilitySlotSaveGameData::OakAbilitySlotSaveGameData(const OakAbilitySlotSaveGameData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ability_class_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_ability_class_path().empty()) {
-    ability_class_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.ability_class_path_);
+    ability_class_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_ability_class_path(),
+      GetArena());
   }
   slot_asset_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_slot_asset_path().empty()) {
-    slot_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.slot_asset_path_);
+    slot_asset_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_slot_asset_path(),
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:OakSave.OakAbilitySlotSaveGameData)
 }
@@ -3902,13 +3984,21 @@ void OakAbilitySlotSaveGameData::SharedCtor() {
 OakAbilitySlotSaveGameData::~OakAbilitySlotSaveGameData() {
   // @@protoc_insertion_point(destructor:OakSave.OakAbilitySlotSaveGameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void OakAbilitySlotSaveGameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   ability_class_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   slot_asset_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void OakAbilitySlotSaveGameData::ArenaDtor(void* object) {
+  OakAbilitySlotSaveGameData* _this = reinterpret_cast< OakAbilitySlotSaveGameData* >(object);
+  (void)_this;
+}
+void OakAbilitySlotSaveGameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void OakAbilitySlotSaveGameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -3924,13 +4014,14 @@ void OakAbilitySlotSaveGameData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ability_class_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  slot_asset_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  _internal_metadata_.Clear();
+  ability_class_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  slot_asset_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* OakAbilitySlotSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -3960,7 +4051,9 @@ const char* OakAbilitySlotSaveGameData::_InternalParse(const char* ptr, ::PROTOB
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -4002,7 +4095,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.OakAbilitySlotSaveGameData)
   return target;
@@ -4057,17 +4150,15 @@ void OakAbilitySlotSaveGameData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Messag
 void OakAbilitySlotSaveGameData::MergeFrom(const OakAbilitySlotSaveGameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.OakAbilitySlotSaveGameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.ability_class_path().size() > 0) {
-
-    ability_class_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.ability_class_path_);
+    _internal_set_ability_class_path(from._internal_ability_class_path());
   }
   if (from.slot_asset_path().size() > 0) {
-
-    slot_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.slot_asset_path_);
+    _internal_set_slot_asset_path(from._internal_slot_asset_path());
   }
 }
 
@@ -4091,11 +4182,9 @@ bool OakAbilitySlotSaveGameData::IsInitialized() const {
 
 void OakAbilitySlotSaveGameData::InternalSwap(OakAbilitySlotSaveGameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  ability_class_path_.Swap(&other->ability_class_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  slot_asset_path_.Swap(&other->slot_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ability_class_path_.Swap(&other->ability_class_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  slot_asset_path_.Swap(&other->slot_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata OakAbilitySlotSaveGameData::GetMetadata() const {
@@ -4111,26 +4200,29 @@ class OakActionAbilityAugmentSaveGameData::_Internal {
  public:
 };
 
-OakActionAbilityAugmentSaveGameData::OakActionAbilityAugmentSaveGameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+OakActionAbilityAugmentSaveGameData::OakActionAbilityAugmentSaveGameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.OakActionAbilityAugmentSaveGameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.OakActionAbilityAugmentSaveGameData)
 }
 OakActionAbilityAugmentSaveGameData::OakActionAbilityAugmentSaveGameData(const OakActionAbilityAugmentSaveGameData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   action_ability_class_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_action_ability_class_path().empty()) {
-    action_ability_class_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.action_ability_class_path_);
+    action_ability_class_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_action_ability_class_path(),
+      GetArena());
   }
   slot_asset_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_slot_asset_path().empty()) {
-    slot_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.slot_asset_path_);
+    slot_asset_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_slot_asset_path(),
+      GetArena());
   }
   augment_asset_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_augment_asset_path().empty()) {
-    augment_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.augment_asset_path_);
+    augment_asset_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_augment_asset_path(),
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:OakSave.OakActionAbilityAugmentSaveGameData)
 }
@@ -4145,14 +4237,22 @@ void OakActionAbilityAugmentSaveGameData::SharedCtor() {
 OakActionAbilityAugmentSaveGameData::~OakActionAbilityAugmentSaveGameData() {
   // @@protoc_insertion_point(destructor:OakSave.OakActionAbilityAugmentSaveGameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void OakActionAbilityAugmentSaveGameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   action_ability_class_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   slot_asset_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   augment_asset_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void OakActionAbilityAugmentSaveGameData::ArenaDtor(void* object) {
+  OakActionAbilityAugmentSaveGameData* _this = reinterpret_cast< OakActionAbilityAugmentSaveGameData* >(object);
+  (void)_this;
+}
+void OakActionAbilityAugmentSaveGameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void OakActionAbilityAugmentSaveGameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -4168,14 +4268,15 @@ void OakActionAbilityAugmentSaveGameData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  action_ability_class_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  slot_asset_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  augment_asset_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  _internal_metadata_.Clear();
+  action_ability_class_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  slot_asset_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  augment_asset_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* OakActionAbilityAugmentSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -4214,7 +4315,9 @@ const char* OakActionAbilityAugmentSaveGameData::_InternalParse(const char* ptr,
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -4266,7 +4369,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.OakActionAbilityAugmentSaveGameData)
   return target;
@@ -4328,21 +4431,18 @@ void OakActionAbilityAugmentSaveGameData::MergeFrom(const ::PROTOBUF_NAMESPACE_I
 void OakActionAbilityAugmentSaveGameData::MergeFrom(const OakActionAbilityAugmentSaveGameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.OakActionAbilityAugmentSaveGameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.action_ability_class_path().size() > 0) {
-
-    action_ability_class_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.action_ability_class_path_);
+    _internal_set_action_ability_class_path(from._internal_action_ability_class_path());
   }
   if (from.slot_asset_path().size() > 0) {
-
-    slot_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.slot_asset_path_);
+    _internal_set_slot_asset_path(from._internal_slot_asset_path());
   }
   if (from.augment_asset_path().size() > 0) {
-
-    augment_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.augment_asset_path_);
+    _internal_set_augment_asset_path(from._internal_augment_asset_path());
   }
 }
 
@@ -4366,13 +4466,10 @@ bool OakActionAbilityAugmentSaveGameData::IsInitialized() const {
 
 void OakActionAbilityAugmentSaveGameData::InternalSwap(OakActionAbilityAugmentSaveGameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  action_ability_class_path_.Swap(&other->action_ability_class_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  slot_asset_path_.Swap(&other->slot_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  augment_asset_path_.Swap(&other->augment_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  action_ability_class_path_.Swap(&other->action_ability_class_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  slot_asset_path_.Swap(&other->slot_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  augment_asset_path_.Swap(&other->augment_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata OakActionAbilityAugmentSaveGameData::GetMetadata() const {
@@ -4388,30 +4485,34 @@ class OakActionAbilityAugmentConfigurationSaveGameData::_Internal {
  public:
 };
 
-OakActionAbilityAugmentConfigurationSaveGameData::OakActionAbilityAugmentConfigurationSaveGameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+OakActionAbilityAugmentConfigurationSaveGameData::OakActionAbilityAugmentConfigurationSaveGameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.OakActionAbilityAugmentConfigurationSaveGameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.OakActionAbilityAugmentConfigurationSaveGameData)
 }
 OakActionAbilityAugmentConfigurationSaveGameData::OakActionAbilityAugmentConfigurationSaveGameData(const OakActionAbilityAugmentConfigurationSaveGameData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ability_class_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_ability_class_path().empty()) {
-    ability_class_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.ability_class_path_);
+    ability_class_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_ability_class_path(),
+      GetArena());
   }
   augment_asset_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_augment_asset_path().empty()) {
-    augment_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.augment_asset_path_);
+    augment_asset_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_augment_asset_path(),
+      GetArena());
   }
   mod_slot_asset_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_mod_slot_asset_path().empty()) {
-    mod_slot_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.mod_slot_asset_path_);
+    mod_slot_asset_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_mod_slot_asset_path(),
+      GetArena());
   }
   mod_asset_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_mod_asset_path().empty()) {
-    mod_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.mod_asset_path_);
+    mod_asset_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_mod_asset_path(),
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:OakSave.OakActionAbilityAugmentConfigurationSaveGameData)
 }
@@ -4427,15 +4528,23 @@ void OakActionAbilityAugmentConfigurationSaveGameData::SharedCtor() {
 OakActionAbilityAugmentConfigurationSaveGameData::~OakActionAbilityAugmentConfigurationSaveGameData() {
   // @@protoc_insertion_point(destructor:OakSave.OakActionAbilityAugmentConfigurationSaveGameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void OakActionAbilityAugmentConfigurationSaveGameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   ability_class_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   augment_asset_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   mod_slot_asset_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   mod_asset_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void OakActionAbilityAugmentConfigurationSaveGameData::ArenaDtor(void* object) {
+  OakActionAbilityAugmentConfigurationSaveGameData* _this = reinterpret_cast< OakActionAbilityAugmentConfigurationSaveGameData* >(object);
+  (void)_this;
+}
+void OakActionAbilityAugmentConfigurationSaveGameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void OakActionAbilityAugmentConfigurationSaveGameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -4451,15 +4560,16 @@ void OakActionAbilityAugmentConfigurationSaveGameData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ability_class_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  augment_asset_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  mod_slot_asset_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  mod_asset_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  _internal_metadata_.Clear();
+  ability_class_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  augment_asset_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  mod_slot_asset_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  mod_asset_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* OakActionAbilityAugmentConfigurationSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -4507,7 +4617,9 @@ const char* OakActionAbilityAugmentConfigurationSaveGameData::_InternalParse(con
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -4569,7 +4681,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.OakActionAbilityAugmentConfigurationSaveGameData)
   return target;
@@ -4638,25 +4750,21 @@ void OakActionAbilityAugmentConfigurationSaveGameData::MergeFrom(const ::PROTOBU
 void OakActionAbilityAugmentConfigurationSaveGameData::MergeFrom(const OakActionAbilityAugmentConfigurationSaveGameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.OakActionAbilityAugmentConfigurationSaveGameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.ability_class_path().size() > 0) {
-
-    ability_class_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.ability_class_path_);
+    _internal_set_ability_class_path(from._internal_ability_class_path());
   }
   if (from.augment_asset_path().size() > 0) {
-
-    augment_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.augment_asset_path_);
+    _internal_set_augment_asset_path(from._internal_augment_asset_path());
   }
   if (from.mod_slot_asset_path().size() > 0) {
-
-    mod_slot_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.mod_slot_asset_path_);
+    _internal_set_mod_slot_asset_path(from._internal_mod_slot_asset_path());
   }
   if (from.mod_asset_path().size() > 0) {
-
-    mod_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.mod_asset_path_);
+    _internal_set_mod_asset_path(from._internal_mod_asset_path());
   }
 }
 
@@ -4680,15 +4788,11 @@ bool OakActionAbilityAugmentConfigurationSaveGameData::IsInitialized() const {
 
 void OakActionAbilityAugmentConfigurationSaveGameData::InternalSwap(OakActionAbilityAugmentConfigurationSaveGameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  ability_class_path_.Swap(&other->ability_class_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  augment_asset_path_.Swap(&other->augment_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  mod_slot_asset_path_.Swap(&other->mod_slot_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  mod_asset_path_.Swap(&other->mod_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ability_class_path_.Swap(&other->ability_class_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  augment_asset_path_.Swap(&other->augment_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  mod_slot_asset_path_.Swap(&other->mod_slot_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  mod_asset_path_.Swap(&other->mod_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata OakActionAbilityAugmentConfigurationSaveGameData::GetMetadata() const {
@@ -4704,19 +4808,23 @@ class OakPlayerAbilitySaveGameData::_Internal {
  public:
 };
 
-OakPlayerAbilitySaveGameData::OakPlayerAbilitySaveGameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+OakPlayerAbilitySaveGameData::OakPlayerAbilitySaveGameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  tree_item_list_(arena),
+  ability_slot_list_(arena),
+  augment_slot_list_(arena),
+  augment_configuration_list_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.OakPlayerAbilitySaveGameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.OakPlayerAbilitySaveGameData)
 }
 OakPlayerAbilitySaveGameData::OakPlayerAbilitySaveGameData(const OakPlayerAbilitySaveGameData& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       tree_item_list_(from.tree_item_list_),
       ability_slot_list_(from.ability_slot_list_),
       augment_slot_list_(from.augment_slot_list_),
       augment_configuration_list_(from.augment_configuration_list_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&ability_points_, &from.ability_points_,
     static_cast<size_t>(reinterpret_cast<char*>(&tree_grade_) -
     reinterpret_cast<char*>(&ability_points_)) + sizeof(tree_grade_));
@@ -4733,11 +4841,19 @@ void OakPlayerAbilitySaveGameData::SharedCtor() {
 OakPlayerAbilitySaveGameData::~OakPlayerAbilitySaveGameData() {
   // @@protoc_insertion_point(destructor:OakSave.OakPlayerAbilitySaveGameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void OakPlayerAbilitySaveGameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void OakPlayerAbilitySaveGameData::ArenaDtor(void* object) {
+  OakPlayerAbilitySaveGameData* _this = reinterpret_cast< OakPlayerAbilitySaveGameData* >(object);
+  (void)_this;
+}
+void OakPlayerAbilitySaveGameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void OakPlayerAbilitySaveGameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -4760,11 +4876,12 @@ void OakPlayerAbilitySaveGameData::Clear() {
   ::memset(&ability_points_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&tree_grade_) -
       reinterpret_cast<char*>(&ability_points_)) + sizeof(tree_grade_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* OakPlayerAbilitySaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -4773,7 +4890,7 @@ const char* OakPlayerAbilitySaveGameData::_InternalParse(const char* ptr, ::PROT
       // int32 ability_points = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ability_points_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          ability_points_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4828,7 +4945,7 @@ const char* OakPlayerAbilitySaveGameData::_InternalParse(const char* ptr, ::PROT
       // int32 tree_grade = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
-          tree_grade_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          tree_grade_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -4838,7 +4955,9 @@ const char* OakPlayerAbilitySaveGameData::_InternalParse(const char* ptr, ::PROT
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -4904,7 +5023,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.OakPlayerAbilitySaveGameData)
   return target;
@@ -4987,7 +5106,7 @@ void OakPlayerAbilitySaveGameData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Mess
 void OakPlayerAbilitySaveGameData::MergeFrom(const OakPlayerAbilitySaveGameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.OakPlayerAbilitySaveGameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -5023,13 +5142,17 @@ bool OakPlayerAbilitySaveGameData::IsInitialized() const {
 
 void OakPlayerAbilitySaveGameData::InternalSwap(OakPlayerAbilitySaveGameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   tree_item_list_.InternalSwap(&other->tree_item_list_);
   ability_slot_list_.InternalSwap(&other->ability_slot_list_);
   augment_slot_list_.InternalSwap(&other->augment_slot_list_);
   augment_configuration_list_.InternalSwap(&other->augment_configuration_list_);
-  swap(ability_points_, other->ability_points_);
-  swap(tree_grade_, other->tree_grade_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(OakPlayerAbilitySaveGameData, tree_grade_)
+      + sizeof(OakPlayerAbilitySaveGameData::tree_grade_)
+      - PROTOBUF_FIELD_OFFSET(OakPlayerAbilitySaveGameData, ability_points_)>(
+          reinterpret_cast<char*>(&ability_points_),
+          reinterpret_cast<char*>(&other->ability_points_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata OakPlayerAbilitySaveGameData::GetMetadata() const {
@@ -5045,23 +5168,26 @@ class MissionStatusPlayerSaveGameData::_Internal {
  public:
 };
 
-MissionStatusPlayerSaveGameData::MissionStatusPlayerSaveGameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+MissionStatusPlayerSaveGameData::MissionStatusPlayerSaveGameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  objectives_progress_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.MissionStatusPlayerSaveGameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.MissionStatusPlayerSaveGameData)
 }
 MissionStatusPlayerSaveGameData::MissionStatusPlayerSaveGameData(const MissionStatusPlayerSaveGameData& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       objectives_progress_(from.objectives_progress_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   mission_class_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_mission_class_path().empty()) {
-    mission_class_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.mission_class_path_);
+    mission_class_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_mission_class_path(),
+      GetArena());
   }
   active_objective_set_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_active_objective_set_path().empty()) {
-    active_objective_set_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.active_objective_set_path_);
+    active_objective_set_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_active_objective_set_path(),
+      GetArena());
   }
   ::memcpy(&status_, &from.status_,
     static_cast<size_t>(reinterpret_cast<char*>(&league_instance_) -
@@ -5081,13 +5207,21 @@ void MissionStatusPlayerSaveGameData::SharedCtor() {
 MissionStatusPlayerSaveGameData::~MissionStatusPlayerSaveGameData() {
   // @@protoc_insertion_point(destructor:OakSave.MissionStatusPlayerSaveGameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void MissionStatusPlayerSaveGameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   mission_class_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   active_objective_set_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void MissionStatusPlayerSaveGameData::ArenaDtor(void* object) {
+  MissionStatusPlayerSaveGameData* _this = reinterpret_cast< MissionStatusPlayerSaveGameData* >(object);
+  (void)_this;
+}
+void MissionStatusPlayerSaveGameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void MissionStatusPlayerSaveGameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -5104,16 +5238,17 @@ void MissionStatusPlayerSaveGameData::Clear() {
   (void) cached_has_bits;
 
   objectives_progress_.Clear();
-  mission_class_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  active_objective_set_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  mission_class_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  active_objective_set_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::memset(&status_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&league_instance_) -
       reinterpret_cast<char*>(&status_)) + sizeof(league_instance_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* MissionStatusPlayerSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -5122,7 +5257,7 @@ const char* MissionStatusPlayerSaveGameData::_InternalParse(const char* ptr, ::P
       // .OakSave.MissionStatusPlayerSaveGameData.MissionState status = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          ::PROTOBUF_NAMESPACE_ID::uint64 val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           _internal_set_status(static_cast<::OakSave::MissionStatusPlayerSaveGameData_MissionState>(val));
         } else goto handle_unusual;
@@ -5130,7 +5265,7 @@ const char* MissionStatusPlayerSaveGameData::_InternalParse(const char* ptr, ::P
       // bool has_been_viewed_in_log = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          has_been_viewed_in_log_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          has_been_viewed_in_log_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5140,7 +5275,7 @@ const char* MissionStatusPlayerSaveGameData::_InternalParse(const char* ptr, ::P
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_objectives_progress(), ptr, ctx);
           CHK_(ptr);
         } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24) {
-          _internal_add_objectives_progress(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr));
+          _internal_add_objectives_progress(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5165,21 +5300,21 @@ const char* MissionStatusPlayerSaveGameData::_InternalParse(const char* ptr, ::P
       // uint32 dlc_package_id = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
-          dlc_package_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          dlc_package_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // bool kickoff_played = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
-          kickoff_played_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          kickoff_played_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // uint32 league_instance = 8;
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
-          league_instance_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          league_instance_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5189,7 +5324,9 @@ const char* MissionStatusPlayerSaveGameData::_InternalParse(const char* ptr, ::P
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -5271,7 +5408,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.MissionStatusPlayerSaveGameData)
   return target;
@@ -5371,18 +5508,16 @@ void MissionStatusPlayerSaveGameData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::M
 void MissionStatusPlayerSaveGameData::MergeFrom(const MissionStatusPlayerSaveGameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.MissionStatusPlayerSaveGameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   objectives_progress_.MergeFrom(from.objectives_progress_);
   if (from.mission_class_path().size() > 0) {
-
-    mission_class_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.mission_class_path_);
+    _internal_set_mission_class_path(from._internal_mission_class_path());
   }
   if (from.active_objective_set_path().size() > 0) {
-
-    active_objective_set_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.active_objective_set_path_);
+    _internal_set_active_objective_set_path(from._internal_active_objective_set_path());
   }
   if (from.status() != 0) {
     _internal_set_status(from._internal_status());
@@ -5421,17 +5556,16 @@ bool MissionStatusPlayerSaveGameData::IsInitialized() const {
 
 void MissionStatusPlayerSaveGameData::InternalSwap(MissionStatusPlayerSaveGameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   objectives_progress_.InternalSwap(&other->objectives_progress_);
-  mission_class_path_.Swap(&other->mission_class_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  active_objective_set_path_.Swap(&other->active_objective_set_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(status_, other->status_);
-  swap(has_been_viewed_in_log_, other->has_been_viewed_in_log_);
-  swap(kickoff_played_, other->kickoff_played_);
-  swap(dlc_package_id_, other->dlc_package_id_);
-  swap(league_instance_, other->league_instance_);
+  mission_class_path_.Swap(&other->mission_class_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  active_objective_set_path_.Swap(&other->active_objective_set_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(MissionStatusPlayerSaveGameData, league_instance_)
+      + sizeof(MissionStatusPlayerSaveGameData::league_instance_)
+      - PROTOBUF_FIELD_OFFSET(MissionStatusPlayerSaveGameData, status_)>(
+          reinterpret_cast<char*>(&status_),
+          reinterpret_cast<char*>(&other->status_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata MissionStatusPlayerSaveGameData::GetMetadata() const {
@@ -5447,19 +5581,21 @@ class MissionPlaythroughSaveGameData::_Internal {
  public:
 };
 
-MissionPlaythroughSaveGameData::MissionPlaythroughSaveGameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+MissionPlaythroughSaveGameData::MissionPlaythroughSaveGameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  mission_list_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.MissionPlaythroughSaveGameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.MissionPlaythroughSaveGameData)
 }
 MissionPlaythroughSaveGameData::MissionPlaythroughSaveGameData(const MissionPlaythroughSaveGameData& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       mission_list_(from.mission_list_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   tracked_mission_class_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_tracked_mission_class_path().empty()) {
-    tracked_mission_class_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.tracked_mission_class_path_);
+    tracked_mission_class_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_tracked_mission_class_path(),
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:OakSave.MissionPlaythroughSaveGameData)
 }
@@ -5472,12 +5608,20 @@ void MissionPlaythroughSaveGameData::SharedCtor() {
 MissionPlaythroughSaveGameData::~MissionPlaythroughSaveGameData() {
   // @@protoc_insertion_point(destructor:OakSave.MissionPlaythroughSaveGameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void MissionPlaythroughSaveGameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   tracked_mission_class_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void MissionPlaythroughSaveGameData::ArenaDtor(void* object) {
+  MissionPlaythroughSaveGameData* _this = reinterpret_cast< MissionPlaythroughSaveGameData* >(object);
+  (void)_this;
+}
+void MissionPlaythroughSaveGameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void MissionPlaythroughSaveGameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -5494,12 +5638,13 @@ void MissionPlaythroughSaveGameData::Clear() {
   (void) cached_has_bits;
 
   mission_list_.Clear();
-  tracked_mission_class_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  _internal_metadata_.Clear();
+  tracked_mission_class_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* MissionPlaythroughSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -5532,7 +5677,9 @@ const char* MissionPlaythroughSaveGameData::_InternalParse(const char* ptr, ::PR
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -5572,7 +5719,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.MissionPlaythroughSaveGameData)
   return target;
@@ -5627,14 +5774,13 @@ void MissionPlaythroughSaveGameData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Me
 void MissionPlaythroughSaveGameData::MergeFrom(const MissionPlaythroughSaveGameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.MissionPlaythroughSaveGameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   mission_list_.MergeFrom(from.mission_list_);
   if (from.tracked_mission_class_path().size() > 0) {
-
-    tracked_mission_class_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.tracked_mission_class_path_);
+    _internal_set_tracked_mission_class_path(from._internal_tracked_mission_class_path());
   }
 }
 
@@ -5658,10 +5804,9 @@ bool MissionPlaythroughSaveGameData::IsInitialized() const {
 
 void MissionPlaythroughSaveGameData::InternalSwap(MissionPlaythroughSaveGameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   mission_list_.InternalSwap(&other->mission_list_);
-  tracked_mission_class_path_.Swap(&other->tracked_mission_class_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  tracked_mission_class_path_.Swap(&other->tracked_mission_class_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata MissionPlaythroughSaveGameData::GetMetadata() const {
@@ -5677,18 +5822,19 @@ class ActiveFastTravelSaveData::_Internal {
  public:
 };
 
-ActiveFastTravelSaveData::ActiveFastTravelSaveData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+ActiveFastTravelSaveData::ActiveFastTravelSaveData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.ActiveFastTravelSaveData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.ActiveFastTravelSaveData)
 }
 ActiveFastTravelSaveData::ActiveFastTravelSaveData(const ActiveFastTravelSaveData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   active_travel_station_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_active_travel_station_name().empty()) {
-    active_travel_station_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.active_travel_station_name_);
+    active_travel_station_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_active_travel_station_name(),
+      GetArena());
   }
   blacklisted_ = from.blacklisted_;
   // @@protoc_insertion_point(copy_constructor:OakSave.ActiveFastTravelSaveData)
@@ -5703,12 +5849,20 @@ void ActiveFastTravelSaveData::SharedCtor() {
 ActiveFastTravelSaveData::~ActiveFastTravelSaveData() {
   // @@protoc_insertion_point(destructor:OakSave.ActiveFastTravelSaveData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void ActiveFastTravelSaveData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   active_travel_station_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void ActiveFastTravelSaveData::ArenaDtor(void* object) {
+  ActiveFastTravelSaveData* _this = reinterpret_cast< ActiveFastTravelSaveData* >(object);
+  (void)_this;
+}
+void ActiveFastTravelSaveData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ActiveFastTravelSaveData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -5724,13 +5878,14 @@ void ActiveFastTravelSaveData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  active_travel_station_name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  active_travel_station_name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   blacklisted_ = false;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* ActiveFastTravelSaveData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -5748,7 +5903,7 @@ const char* ActiveFastTravelSaveData::_InternalParse(const char* ptr, ::PROTOBUF
       // bool blacklisted = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          blacklisted_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          blacklisted_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -5758,7 +5913,9 @@ const char* ActiveFastTravelSaveData::_InternalParse(const char* ptr, ::PROTOBUF
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -5796,7 +5953,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.ActiveFastTravelSaveData)
   return target;
@@ -5849,13 +6006,12 @@ void ActiveFastTravelSaveData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message&
 void ActiveFastTravelSaveData::MergeFrom(const ActiveFastTravelSaveData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.ActiveFastTravelSaveData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.active_travel_station_name().size() > 0) {
-
-    active_travel_station_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.active_travel_station_name_);
+    _internal_set_active_travel_station_name(from._internal_active_travel_station_name());
   }
   if (from.blacklisted() != 0) {
     _internal_set_blacklisted(from._internal_blacklisted());
@@ -5882,9 +6038,8 @@ bool ActiveFastTravelSaveData::IsInitialized() const {
 
 void ActiveFastTravelSaveData::InternalSwap(ActiveFastTravelSaveData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  active_travel_station_name_.Swap(&other->active_travel_station_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  active_travel_station_name_.Swap(&other->active_travel_station_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(blacklisted_, other->blacklisted_);
 }
 
@@ -5901,16 +6056,17 @@ class PlaythroughActiveFastTravelSaveData::_Internal {
  public:
 };
 
-PlaythroughActiveFastTravelSaveData::PlaythroughActiveFastTravelSaveData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+PlaythroughActiveFastTravelSaveData::PlaythroughActiveFastTravelSaveData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  active_travel_stations_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.PlaythroughActiveFastTravelSaveData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.PlaythroughActiveFastTravelSaveData)
 }
 PlaythroughActiveFastTravelSaveData::PlaythroughActiveFastTravelSaveData(const PlaythroughActiveFastTravelSaveData& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       active_travel_stations_(from.active_travel_stations_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:OakSave.PlaythroughActiveFastTravelSaveData)
 }
 
@@ -5921,11 +6077,19 @@ void PlaythroughActiveFastTravelSaveData::SharedCtor() {
 PlaythroughActiveFastTravelSaveData::~PlaythroughActiveFastTravelSaveData() {
   // @@protoc_insertion_point(destructor:OakSave.PlaythroughActiveFastTravelSaveData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void PlaythroughActiveFastTravelSaveData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void PlaythroughActiveFastTravelSaveData::ArenaDtor(void* object) {
+  PlaythroughActiveFastTravelSaveData* _this = reinterpret_cast< PlaythroughActiveFastTravelSaveData* >(object);
+  (void)_this;
+}
+void PlaythroughActiveFastTravelSaveData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void PlaythroughActiveFastTravelSaveData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -5942,11 +6106,12 @@ void PlaythroughActiveFastTravelSaveData::Clear() {
   (void) cached_has_bits;
 
   active_travel_stations_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* PlaythroughActiveFastTravelSaveData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -5970,7 +6135,9 @@ const char* PlaythroughActiveFastTravelSaveData::_InternalParse(const char* ptr,
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -6000,7 +6167,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.PlaythroughActiveFastTravelSaveData)
   return target;
@@ -6048,7 +6215,7 @@ void PlaythroughActiveFastTravelSaveData::MergeFrom(const ::PROTOBUF_NAMESPACE_I
 void PlaythroughActiveFastTravelSaveData::MergeFrom(const PlaythroughActiveFastTravelSaveData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.PlaythroughActiveFastTravelSaveData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -6075,7 +6242,7 @@ bool PlaythroughActiveFastTravelSaveData::IsInitialized() const {
 
 void PlaythroughActiveFastTravelSaveData::InternalSwap(PlaythroughActiveFastTravelSaveData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   active_travel_stations_.InternalSwap(&other->active_travel_stations_);
 }
 
@@ -6092,18 +6259,19 @@ class DiscoveredAreaInfo::_Internal {
  public:
 };
 
-DiscoveredAreaInfo::DiscoveredAreaInfo()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+DiscoveredAreaInfo::DiscoveredAreaInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.DiscoveredAreaInfo)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.DiscoveredAreaInfo)
 }
 DiscoveredAreaInfo::DiscoveredAreaInfo(const DiscoveredAreaInfo& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   discovered_area_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_discovered_area_name().empty()) {
-    discovered_area_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.discovered_area_name_);
+    discovered_area_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_discovered_area_name(),
+      GetArena());
   }
   discovered_playthroughs_ = from.discovered_playthroughs_;
   // @@protoc_insertion_point(copy_constructor:OakSave.DiscoveredAreaInfo)
@@ -6118,12 +6286,20 @@ void DiscoveredAreaInfo::SharedCtor() {
 DiscoveredAreaInfo::~DiscoveredAreaInfo() {
   // @@protoc_insertion_point(destructor:OakSave.DiscoveredAreaInfo)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void DiscoveredAreaInfo::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   discovered_area_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void DiscoveredAreaInfo::ArenaDtor(void* object) {
+  DiscoveredAreaInfo* _this = reinterpret_cast< DiscoveredAreaInfo* >(object);
+  (void)_this;
+}
+void DiscoveredAreaInfo::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void DiscoveredAreaInfo::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -6139,13 +6315,14 @@ void DiscoveredAreaInfo::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  discovered_area_name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  discovered_area_name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   discovered_playthroughs_ = 0u;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* DiscoveredAreaInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -6163,7 +6340,7 @@ const char* DiscoveredAreaInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
       // uint32 discovered_playthroughs = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          discovered_playthroughs_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          discovered_playthroughs_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -6173,7 +6350,9 @@ const char* DiscoveredAreaInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -6211,7 +6390,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.DiscoveredAreaInfo)
   return target;
@@ -6266,13 +6445,12 @@ void DiscoveredAreaInfo::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from)
 void DiscoveredAreaInfo::MergeFrom(const DiscoveredAreaInfo& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.DiscoveredAreaInfo)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.discovered_area_name().size() > 0) {
-
-    discovered_area_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.discovered_area_name_);
+    _internal_set_discovered_area_name(from._internal_discovered_area_name());
   }
   if (from.discovered_playthroughs() != 0) {
     _internal_set_discovered_playthroughs(from._internal_discovered_playthroughs());
@@ -6299,9 +6477,8 @@ bool DiscoveredAreaInfo::IsInitialized() const {
 
 void DiscoveredAreaInfo::InternalSwap(DiscoveredAreaInfo* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  discovered_area_name_.Swap(&other->discovered_area_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  discovered_area_name_.Swap(&other->discovered_area_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(discovered_playthroughs_, other->discovered_playthroughs_);
 }
 
@@ -6318,19 +6495,21 @@ class DiscoveredLevelInfo::_Internal {
  public:
 };
 
-DiscoveredLevelInfo::DiscoveredLevelInfo()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+DiscoveredLevelInfo::DiscoveredLevelInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  discovered_area_info_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.DiscoveredLevelInfo)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.DiscoveredLevelInfo)
 }
 DiscoveredLevelInfo::DiscoveredLevelInfo(const DiscoveredLevelInfo& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       discovered_area_info_(from.discovered_area_info_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   discovered_level_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_discovered_level_name().empty()) {
-    discovered_level_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.discovered_level_name_);
+    discovered_level_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_discovered_level_name(),
+      GetArena());
   }
   discovered_playthroughs_ = from.discovered_playthroughs_;
   // @@protoc_insertion_point(copy_constructor:OakSave.DiscoveredLevelInfo)
@@ -6345,12 +6524,20 @@ void DiscoveredLevelInfo::SharedCtor() {
 DiscoveredLevelInfo::~DiscoveredLevelInfo() {
   // @@protoc_insertion_point(destructor:OakSave.DiscoveredLevelInfo)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void DiscoveredLevelInfo::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   discovered_level_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void DiscoveredLevelInfo::ArenaDtor(void* object) {
+  DiscoveredLevelInfo* _this = reinterpret_cast< DiscoveredLevelInfo* >(object);
+  (void)_this;
+}
+void DiscoveredLevelInfo::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void DiscoveredLevelInfo::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -6367,13 +6554,14 @@ void DiscoveredLevelInfo::Clear() {
   (void) cached_has_bits;
 
   discovered_area_info_.Clear();
-  discovered_level_name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  discovered_level_name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   discovered_playthroughs_ = 0u;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* DiscoveredLevelInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -6391,7 +6579,7 @@ const char* DiscoveredLevelInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAME
       // uint32 discovered_playthroughs = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          discovered_playthroughs_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          discovered_playthroughs_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -6413,7 +6601,9 @@ const char* DiscoveredLevelInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAME
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -6459,7 +6649,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.DiscoveredLevelInfo)
   return target;
@@ -6521,14 +6711,13 @@ void DiscoveredLevelInfo::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from
 void DiscoveredLevelInfo::MergeFrom(const DiscoveredLevelInfo& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.DiscoveredLevelInfo)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   discovered_area_info_.MergeFrom(from.discovered_area_info_);
   if (from.discovered_level_name().size() > 0) {
-
-    discovered_level_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.discovered_level_name_);
+    _internal_set_discovered_level_name(from._internal_discovered_level_name());
   }
   if (from.discovered_playthroughs() != 0) {
     _internal_set_discovered_playthroughs(from._internal_discovered_playthroughs());
@@ -6555,10 +6744,9 @@ bool DiscoveredLevelInfo::IsInitialized() const {
 
 void DiscoveredLevelInfo::InternalSwap(DiscoveredLevelInfo* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   discovered_area_info_.InternalSwap(&other->discovered_area_info_);
-  discovered_level_name_.Swap(&other->discovered_level_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  discovered_level_name_.Swap(&other->discovered_level_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(discovered_playthroughs_, other->discovered_playthroughs_);
 }
 
@@ -6575,18 +6763,19 @@ class DiscoveredPlanetInfo::_Internal {
  public:
 };
 
-DiscoveredPlanetInfo::DiscoveredPlanetInfo()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+DiscoveredPlanetInfo::DiscoveredPlanetInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.DiscoveredPlanetInfo)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.DiscoveredPlanetInfo)
 }
 DiscoveredPlanetInfo::DiscoveredPlanetInfo(const DiscoveredPlanetInfo& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   discovered_planet_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_discovered_planet().empty()) {
-    discovered_planet_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.discovered_planet_);
+    discovered_planet_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_discovered_planet(),
+      GetArena());
   }
   is_new_planet_ = from.is_new_planet_;
   // @@protoc_insertion_point(copy_constructor:OakSave.DiscoveredPlanetInfo)
@@ -6601,12 +6790,20 @@ void DiscoveredPlanetInfo::SharedCtor() {
 DiscoveredPlanetInfo::~DiscoveredPlanetInfo() {
   // @@protoc_insertion_point(destructor:OakSave.DiscoveredPlanetInfo)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void DiscoveredPlanetInfo::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   discovered_planet_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void DiscoveredPlanetInfo::ArenaDtor(void* object) {
+  DiscoveredPlanetInfo* _this = reinterpret_cast< DiscoveredPlanetInfo* >(object);
+  (void)_this;
+}
+void DiscoveredPlanetInfo::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void DiscoveredPlanetInfo::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -6622,13 +6819,14 @@ void DiscoveredPlanetInfo::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  discovered_planet_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  discovered_planet_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   is_new_planet_ = false;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* DiscoveredPlanetInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -6646,7 +6844,7 @@ const char* DiscoveredPlanetInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAM
       // bool is_new_planet = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          is_new_planet_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          is_new_planet_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -6656,7 +6854,9 @@ const char* DiscoveredPlanetInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAM
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -6694,7 +6894,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.DiscoveredPlanetInfo)
   return target;
@@ -6747,13 +6947,12 @@ void DiscoveredPlanetInfo::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& fro
 void DiscoveredPlanetInfo::MergeFrom(const DiscoveredPlanetInfo& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.DiscoveredPlanetInfo)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.discovered_planet().size() > 0) {
-
-    discovered_planet_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.discovered_planet_);
+    _internal_set_discovered_planet(from._internal_discovered_planet());
   }
   if (from.is_new_planet() != 0) {
     _internal_set_is_new_planet(from._internal_is_new_planet());
@@ -6780,9 +6979,8 @@ bool DiscoveredPlanetInfo::IsInitialized() const {
 
 void DiscoveredPlanetInfo::InternalSwap(DiscoveredPlanetInfo* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  discovered_planet_.Swap(&other->discovered_planet_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  discovered_planet_.Swap(&other->discovered_planet_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(is_new_planet_, other->is_new_planet_);
 }
 
@@ -6799,16 +6997,17 @@ class DiscoverySaveData::_Internal {
  public:
 };
 
-DiscoverySaveData::DiscoverySaveData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+DiscoverySaveData::DiscoverySaveData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  discovered_level_info_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.DiscoverySaveData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.DiscoverySaveData)
 }
 DiscoverySaveData::DiscoverySaveData(const DiscoverySaveData& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       discovered_level_info_(from.discovered_level_info_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:OakSave.DiscoverySaveData)
 }
 
@@ -6819,11 +7018,19 @@ void DiscoverySaveData::SharedCtor() {
 DiscoverySaveData::~DiscoverySaveData() {
   // @@protoc_insertion_point(destructor:OakSave.DiscoverySaveData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void DiscoverySaveData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void DiscoverySaveData::ArenaDtor(void* object) {
+  DiscoverySaveData* _this = reinterpret_cast< DiscoverySaveData* >(object);
+  (void)_this;
+}
+void DiscoverySaveData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void DiscoverySaveData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -6840,11 +7047,12 @@ void DiscoverySaveData::Clear() {
   (void) cached_has_bits;
 
   discovered_level_info_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* DiscoverySaveData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -6868,7 +7076,9 @@ const char* DiscoverySaveData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -6898,7 +7108,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.DiscoverySaveData)
   return target;
@@ -6946,7 +7156,7 @@ void DiscoverySaveData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) 
 void DiscoverySaveData::MergeFrom(const DiscoverySaveData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.DiscoverySaveData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -6973,7 +7183,7 @@ bool DiscoverySaveData::IsInitialized() const {
 
 void DiscoverySaveData::InternalSwap(DiscoverySaveData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   discovered_level_info_.InternalSwap(&other->discovered_level_info_);
 }
 
@@ -6990,18 +7200,19 @@ class VehicleUnlockedSaveGameData::_Internal {
  public:
 };
 
-VehicleUnlockedSaveGameData::VehicleUnlockedSaveGameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+VehicleUnlockedSaveGameData::VehicleUnlockedSaveGameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.VehicleUnlockedSaveGameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.VehicleUnlockedSaveGameData)
 }
 VehicleUnlockedSaveGameData::VehicleUnlockedSaveGameData(const VehicleUnlockedSaveGameData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   asset_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_asset_path().empty()) {
-    asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.asset_path_);
+    asset_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_asset_path(),
+      GetArena());
   }
   just_unlocked_ = from.just_unlocked_;
   // @@protoc_insertion_point(copy_constructor:OakSave.VehicleUnlockedSaveGameData)
@@ -7016,12 +7227,20 @@ void VehicleUnlockedSaveGameData::SharedCtor() {
 VehicleUnlockedSaveGameData::~VehicleUnlockedSaveGameData() {
   // @@protoc_insertion_point(destructor:OakSave.VehicleUnlockedSaveGameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void VehicleUnlockedSaveGameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   asset_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void VehicleUnlockedSaveGameData::ArenaDtor(void* object) {
+  VehicleUnlockedSaveGameData* _this = reinterpret_cast< VehicleUnlockedSaveGameData* >(object);
+  (void)_this;
+}
+void VehicleUnlockedSaveGameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void VehicleUnlockedSaveGameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -7037,13 +7256,14 @@ void VehicleUnlockedSaveGameData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  asset_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  asset_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   just_unlocked_ = false;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* VehicleUnlockedSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -7061,7 +7281,7 @@ const char* VehicleUnlockedSaveGameData::_InternalParse(const char* ptr, ::PROTO
       // bool just_unlocked = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          just_unlocked_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          just_unlocked_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -7071,7 +7291,9 @@ const char* VehicleUnlockedSaveGameData::_InternalParse(const char* ptr, ::PROTO
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -7109,7 +7331,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.VehicleUnlockedSaveGameData)
   return target;
@@ -7162,13 +7384,12 @@ void VehicleUnlockedSaveGameData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Messa
 void VehicleUnlockedSaveGameData::MergeFrom(const VehicleUnlockedSaveGameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.VehicleUnlockedSaveGameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.asset_path().size() > 0) {
-
-    asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.asset_path_);
+    _internal_set_asset_path(from._internal_asset_path());
   }
   if (from.just_unlocked() != 0) {
     _internal_set_just_unlocked(from._internal_just_unlocked());
@@ -7195,9 +7416,8 @@ bool VehicleUnlockedSaveGameData::IsInitialized() const {
 
 void VehicleUnlockedSaveGameData::InternalSwap(VehicleUnlockedSaveGameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  asset_path_.Swap(&other->asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  asset_path_.Swap(&other->asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(just_unlocked_, other->just_unlocked_);
 }
 
@@ -7214,54 +7434,64 @@ class OakCARMenuVehicleConfigSaveData::_Internal {
  public:
 };
 
-OakCARMenuVehicleConfigSaveData::OakCARMenuVehicleConfigSaveData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+OakCARMenuVehicleConfigSaveData::OakCARMenuVehicleConfigSaveData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.OakCARMenuVehicleConfigSaveData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.OakCARMenuVehicleConfigSaveData)
 }
 OakCARMenuVehicleConfigSaveData::OakCARMenuVehicleConfigSaveData(const OakCARMenuVehicleConfigSaveData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   loadout_save_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_loadout_save_name().empty()) {
-    loadout_save_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.loadout_save_name_);
+    loadout_save_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_loadout_save_name(),
+      GetArena());
   }
   body_asset_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_body_asset_path().empty()) {
-    body_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.body_asset_path_);
+    body_asset_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_body_asset_path(),
+      GetArena());
   }
   wheel_asset_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_wheel_asset_path().empty()) {
-    wheel_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.wheel_asset_path_);
+    wheel_asset_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_wheel_asset_path(),
+      GetArena());
   }
   armor_asset_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_armor_asset_path().empty()) {
-    armor_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.armor_asset_path_);
+    armor_asset_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_armor_asset_path(),
+      GetArena());
   }
   core_mod_asset_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_core_mod_asset_path().empty()) {
-    core_mod_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.core_mod_asset_path_);
+    core_mod_asset_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_core_mod_asset_path(),
+      GetArena());
   }
   gunner_weapon_asset_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_gunner_weapon_asset_path().empty()) {
-    gunner_weapon_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.gunner_weapon_asset_path_);
+    gunner_weapon_asset_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_gunner_weapon_asset_path(),
+      GetArena());
   }
   driver_weapon_asset_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_driver_weapon_asset_path().empty()) {
-    driver_weapon_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.driver_weapon_asset_path_);
+    driver_weapon_asset_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_driver_weapon_asset_path(),
+      GetArena());
   }
   ornament_asset_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_ornament_asset_path().empty()) {
-    ornament_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.ornament_asset_path_);
+    ornament_asset_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_ornament_asset_path(),
+      GetArena());
   }
   material_decal_asset_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_material_decal_asset_path().empty()) {
-    material_decal_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.material_decal_asset_path_);
+    material_decal_asset_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_material_decal_asset_path(),
+      GetArena());
   }
   material_asset_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_material_asset_path().empty()) {
-    material_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.material_asset_path_);
+    material_asset_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_material_asset_path(),
+      GetArena());
   }
   ::memcpy(&color_index_1_, &from.color_index_1_,
     static_cast<size_t>(reinterpret_cast<char*>(&color_index_3_) -
@@ -7289,9 +7519,11 @@ void OakCARMenuVehicleConfigSaveData::SharedCtor() {
 OakCARMenuVehicleConfigSaveData::~OakCARMenuVehicleConfigSaveData() {
   // @@protoc_insertion_point(destructor:OakSave.OakCARMenuVehicleConfigSaveData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void OakCARMenuVehicleConfigSaveData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   loadout_save_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   body_asset_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   wheel_asset_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -7304,6 +7536,12 @@ void OakCARMenuVehicleConfigSaveData::SharedDtor() {
   material_asset_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void OakCARMenuVehicleConfigSaveData::ArenaDtor(void* object) {
+  OakCARMenuVehicleConfigSaveData* _this = reinterpret_cast< OakCARMenuVehicleConfigSaveData* >(object);
+  (void)_this;
+}
+void OakCARMenuVehicleConfigSaveData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void OakCARMenuVehicleConfigSaveData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -7319,24 +7557,25 @@ void OakCARMenuVehicleConfigSaveData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  loadout_save_name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  body_asset_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  wheel_asset_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  armor_asset_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  core_mod_asset_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  gunner_weapon_asset_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  driver_weapon_asset_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  ornament_asset_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  material_decal_asset_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  material_asset_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  loadout_save_name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  body_asset_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  wheel_asset_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  armor_asset_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  core_mod_asset_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  gunner_weapon_asset_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  driver_weapon_asset_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ornament_asset_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  material_decal_asset_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  material_asset_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::memset(&color_index_1_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&color_index_3_) -
       reinterpret_cast<char*>(&color_index_1_)) + sizeof(color_index_3_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* OakCARMenuVehicleConfigSaveData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -7435,21 +7674,21 @@ const char* OakCARMenuVehicleConfigSaveData::_InternalParse(const char* ptr, ::P
       // int32 color_index_1 = 11;
       case 11:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 88)) {
-          color_index_1_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          color_index_1_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // int32 color_index_2 = 12;
       case 12:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 96)) {
-          color_index_2_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          color_index_2_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // int32 color_index_3 = 13;
       case 13:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 104)) {
-          color_index_3_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          color_index_3_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -7459,7 +7698,9 @@ const char* OakCARMenuVehicleConfigSaveData::_InternalParse(const char* ptr, ::P
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -7599,7 +7840,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.OakCARMenuVehicleConfigSaveData)
   return target;
@@ -7731,49 +7972,39 @@ void OakCARMenuVehicleConfigSaveData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::M
 void OakCARMenuVehicleConfigSaveData::MergeFrom(const OakCARMenuVehicleConfigSaveData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.OakCARMenuVehicleConfigSaveData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.loadout_save_name().size() > 0) {
-
-    loadout_save_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.loadout_save_name_);
+    _internal_set_loadout_save_name(from._internal_loadout_save_name());
   }
   if (from.body_asset_path().size() > 0) {
-
-    body_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.body_asset_path_);
+    _internal_set_body_asset_path(from._internal_body_asset_path());
   }
   if (from.wheel_asset_path().size() > 0) {
-
-    wheel_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.wheel_asset_path_);
+    _internal_set_wheel_asset_path(from._internal_wheel_asset_path());
   }
   if (from.armor_asset_path().size() > 0) {
-
-    armor_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.armor_asset_path_);
+    _internal_set_armor_asset_path(from._internal_armor_asset_path());
   }
   if (from.core_mod_asset_path().size() > 0) {
-
-    core_mod_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.core_mod_asset_path_);
+    _internal_set_core_mod_asset_path(from._internal_core_mod_asset_path());
   }
   if (from.gunner_weapon_asset_path().size() > 0) {
-
-    gunner_weapon_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.gunner_weapon_asset_path_);
+    _internal_set_gunner_weapon_asset_path(from._internal_gunner_weapon_asset_path());
   }
   if (from.driver_weapon_asset_path().size() > 0) {
-
-    driver_weapon_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.driver_weapon_asset_path_);
+    _internal_set_driver_weapon_asset_path(from._internal_driver_weapon_asset_path());
   }
   if (from.ornament_asset_path().size() > 0) {
-
-    ornament_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.ornament_asset_path_);
+    _internal_set_ornament_asset_path(from._internal_ornament_asset_path());
   }
   if (from.material_decal_asset_path().size() > 0) {
-
-    material_decal_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.material_decal_asset_path_);
+    _internal_set_material_decal_asset_path(from._internal_material_decal_asset_path());
   }
   if (from.material_asset_path().size() > 0) {
-
-    material_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.material_asset_path_);
+    _internal_set_material_asset_path(from._internal_material_asset_path());
   }
   if (from.color_index_1() != 0) {
     _internal_set_color_index_1(from._internal_color_index_1());
@@ -7806,30 +8037,23 @@ bool OakCARMenuVehicleConfigSaveData::IsInitialized() const {
 
 void OakCARMenuVehicleConfigSaveData::InternalSwap(OakCARMenuVehicleConfigSaveData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  loadout_save_name_.Swap(&other->loadout_save_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  body_asset_path_.Swap(&other->body_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  wheel_asset_path_.Swap(&other->wheel_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  armor_asset_path_.Swap(&other->armor_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  core_mod_asset_path_.Swap(&other->core_mod_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  gunner_weapon_asset_path_.Swap(&other->gunner_weapon_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  driver_weapon_asset_path_.Swap(&other->driver_weapon_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  ornament_asset_path_.Swap(&other->ornament_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  material_decal_asset_path_.Swap(&other->material_decal_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  material_asset_path_.Swap(&other->material_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(color_index_1_, other->color_index_1_);
-  swap(color_index_2_, other->color_index_2_);
-  swap(color_index_3_, other->color_index_3_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  loadout_save_name_.Swap(&other->loadout_save_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  body_asset_path_.Swap(&other->body_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  wheel_asset_path_.Swap(&other->wheel_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  armor_asset_path_.Swap(&other->armor_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  core_mod_asset_path_.Swap(&other->core_mod_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  gunner_weapon_asset_path_.Swap(&other->gunner_weapon_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  driver_weapon_asset_path_.Swap(&other->driver_weapon_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ornament_asset_path_.Swap(&other->ornament_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  material_decal_asset_path_.Swap(&other->material_decal_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  material_asset_path_.Swap(&other->material_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(OakCARMenuVehicleConfigSaveData, color_index_3_)
+      + sizeof(OakCARMenuVehicleConfigSaveData::color_index_3_)
+      - PROTOBUF_FIELD_OFFSET(OakCARMenuVehicleConfigSaveData, color_index_1_)>(
+          reinterpret_cast<char*>(&color_index_1_),
+          reinterpret_cast<char*>(&other->color_index_1_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata OakCARMenuVehicleConfigSaveData::GetMetadata() const {
@@ -7860,29 +8084,30 @@ CustomPlayerColorSaveGameData::_Internal::split_color(const CustomPlayerColorSav
   return *msg->split_color_;
 }
 void CustomPlayerColorSaveGameData::clear_applied_color() {
-  if (GetArenaNoVirtual() == nullptr && applied_color_ != nullptr) {
+  if (GetArena() == nullptr && applied_color_ != nullptr) {
     delete applied_color_;
   }
   applied_color_ = nullptr;
 }
 void CustomPlayerColorSaveGameData::clear_split_color() {
-  if (GetArenaNoVirtual() == nullptr && split_color_ != nullptr) {
+  if (GetArena() == nullptr && split_color_ != nullptr) {
     delete split_color_;
   }
   split_color_ = nullptr;
 }
-CustomPlayerColorSaveGameData::CustomPlayerColorSaveGameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+CustomPlayerColorSaveGameData::CustomPlayerColorSaveGameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.CustomPlayerColorSaveGameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.CustomPlayerColorSaveGameData)
 }
 CustomPlayerColorSaveGameData::CustomPlayerColorSaveGameData(const CustomPlayerColorSaveGameData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   color_parameter_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_color_parameter().empty()) {
-    color_parameter_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.color_parameter_);
+    color_parameter_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_color_parameter(),
+      GetArena());
   }
   if (from._internal_has_applied_color()) {
     applied_color_ = new ::OakSave::Vec3(*from.applied_color_);
@@ -7911,14 +8136,22 @@ void CustomPlayerColorSaveGameData::SharedCtor() {
 CustomPlayerColorSaveGameData::~CustomPlayerColorSaveGameData() {
   // @@protoc_insertion_point(destructor:OakSave.CustomPlayerColorSaveGameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void CustomPlayerColorSaveGameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   color_parameter_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete applied_color_;
   if (this != internal_default_instance()) delete split_color_;
 }
 
+void CustomPlayerColorSaveGameData::ArenaDtor(void* object) {
+  CustomPlayerColorSaveGameData* _this = reinterpret_cast< CustomPlayerColorSaveGameData* >(object);
+  (void)_this;
+}
+void CustomPlayerColorSaveGameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void CustomPlayerColorSaveGameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -7934,23 +8167,24 @@ void CustomPlayerColorSaveGameData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  color_parameter_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == nullptr && applied_color_ != nullptr) {
+  color_parameter_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  if (GetArena() == nullptr && applied_color_ != nullptr) {
     delete applied_color_;
   }
   applied_color_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && split_color_ != nullptr) {
+  if (GetArena() == nullptr && split_color_ != nullptr) {
     delete split_color_;
   }
   split_color_ = nullptr;
   ::memset(&use_default_color_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&use_default_split_color_) -
       reinterpret_cast<char*>(&use_default_color_)) + sizeof(use_default_split_color_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* CustomPlayerColorSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -7982,14 +8216,14 @@ const char* CustomPlayerColorSaveGameData::_InternalParse(const char* ptr, ::PRO
       // bool use_default_color = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          use_default_color_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          use_default_color_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // bool use_default_split_color = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          use_default_split_color_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          use_default_split_color_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -7999,7 +8233,9 @@ const char* CustomPlayerColorSaveGameData::_InternalParse(const char* ptr, ::PRO
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -8059,7 +8295,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.CustomPlayerColorSaveGameData)
   return target;
@@ -8131,13 +8367,12 @@ void CustomPlayerColorSaveGameData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Mes
 void CustomPlayerColorSaveGameData::MergeFrom(const CustomPlayerColorSaveGameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.CustomPlayerColorSaveGameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.color_parameter().size() > 0) {
-
-    color_parameter_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.color_parameter_);
+    _internal_set_color_parameter(from._internal_color_parameter());
   }
   if (from.has_applied_color()) {
     _internal_mutable_applied_color()->::OakSave::Vec3::MergeFrom(from._internal_applied_color());
@@ -8173,13 +8408,14 @@ bool CustomPlayerColorSaveGameData::IsInitialized() const {
 
 void CustomPlayerColorSaveGameData::InternalSwap(CustomPlayerColorSaveGameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  color_parameter_.Swap(&other->color_parameter_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(applied_color_, other->applied_color_);
-  swap(split_color_, other->split_color_);
-  swap(use_default_color_, other->use_default_color_);
-  swap(use_default_split_color_, other->use_default_split_color_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  color_parameter_.Swap(&other->color_parameter_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(CustomPlayerColorSaveGameData, use_default_split_color_)
+      + sizeof(CustomPlayerColorSaveGameData::use_default_split_color_)
+      - PROTOBUF_FIELD_OFFSET(CustomPlayerColorSaveGameData, applied_color_)>(
+          reinterpret_cast<char*>(&applied_color_),
+          reinterpret_cast<char*>(&other->applied_color_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CustomPlayerColorSaveGameData::GetMetadata() const {
@@ -8195,15 +8431,15 @@ class GuardianRankSaveGameData::_Internal {
  public:
 };
 
-GuardianRankSaveGameData::GuardianRankSaveGameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GuardianRankSaveGameData::GuardianRankSaveGameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.GuardianRankSaveGameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.GuardianRankSaveGameData)
 }
 GuardianRankSaveGameData::GuardianRankSaveGameData(const GuardianRankSaveGameData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&guardian_rank_, &from.guardian_rank_,
     static_cast<size_t>(reinterpret_cast<char*>(&guardian_experience_) -
     reinterpret_cast<char*>(&guardian_rank_)) + sizeof(guardian_experience_));
@@ -8219,11 +8455,19 @@ void GuardianRankSaveGameData::SharedCtor() {
 GuardianRankSaveGameData::~GuardianRankSaveGameData() {
   // @@protoc_insertion_point(destructor:OakSave.GuardianRankSaveGameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void GuardianRankSaveGameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void GuardianRankSaveGameData::ArenaDtor(void* object) {
+  GuardianRankSaveGameData* _this = reinterpret_cast< GuardianRankSaveGameData* >(object);
+  (void)_this;
+}
+void GuardianRankSaveGameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GuardianRankSaveGameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -8242,11 +8486,12 @@ void GuardianRankSaveGameData::Clear() {
   ::memset(&guardian_rank_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&guardian_experience_) -
       reinterpret_cast<char*>(&guardian_rank_)) + sizeof(guardian_experience_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GuardianRankSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -8255,14 +8500,14 @@ const char* GuardianRankSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF
       // int32 guardian_rank = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          guardian_rank_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          guardian_rank_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // int32 guardian_experience = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          guardian_experience_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          guardian_experience_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -8272,7 +8517,9 @@ const char* GuardianRankSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -8306,7 +8553,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.GuardianRankSaveGameData)
   return target;
@@ -8361,7 +8608,7 @@ void GuardianRankSaveGameData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message&
 void GuardianRankSaveGameData::MergeFrom(const GuardianRankSaveGameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.GuardianRankSaveGameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -8393,9 +8640,13 @@ bool GuardianRankSaveGameData::IsInitialized() const {
 
 void GuardianRankSaveGameData::InternalSwap(GuardianRankSaveGameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(guardian_rank_, other->guardian_rank_);
-  swap(guardian_experience_, other->guardian_experience_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(GuardianRankSaveGameData, guardian_experience_)
+      + sizeof(GuardianRankSaveGameData::guardian_experience_)
+      - PROTOBUF_FIELD_OFFSET(GuardianRankSaveGameData, guardian_rank_)>(
+          reinterpret_cast<char*>(&guardian_rank_),
+          reinterpret_cast<char*>(&other->guardian_rank_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GuardianRankSaveGameData::GetMetadata() const {
@@ -8411,18 +8662,19 @@ class GuardianRankRewardCharacterSaveGameData::_Internal {
  public:
 };
 
-GuardianRankRewardCharacterSaveGameData::GuardianRankRewardCharacterSaveGameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GuardianRankRewardCharacterSaveGameData::GuardianRankRewardCharacterSaveGameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.GuardianRankRewardCharacterSaveGameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.GuardianRankRewardCharacterSaveGameData)
 }
 GuardianRankRewardCharacterSaveGameData::GuardianRankRewardCharacterSaveGameData(const GuardianRankRewardCharacterSaveGameData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   reward_data_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_reward_data_path().empty()) {
-    reward_data_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.reward_data_path_);
+    reward_data_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_reward_data_path(),
+      GetArena());
   }
   ::memcpy(&num_tokens_, &from.num_tokens_,
     static_cast<size_t>(reinterpret_cast<char*>(&is_enabled_) -
@@ -8441,12 +8693,20 @@ void GuardianRankRewardCharacterSaveGameData::SharedCtor() {
 GuardianRankRewardCharacterSaveGameData::~GuardianRankRewardCharacterSaveGameData() {
   // @@protoc_insertion_point(destructor:OakSave.GuardianRankRewardCharacterSaveGameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void GuardianRankRewardCharacterSaveGameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   reward_data_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void GuardianRankRewardCharacterSaveGameData::ArenaDtor(void* object) {
+  GuardianRankRewardCharacterSaveGameData* _this = reinterpret_cast< GuardianRankRewardCharacterSaveGameData* >(object);
+  (void)_this;
+}
+void GuardianRankRewardCharacterSaveGameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GuardianRankRewardCharacterSaveGameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -8462,15 +8722,16 @@ void GuardianRankRewardCharacterSaveGameData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  reward_data_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  reward_data_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::memset(&num_tokens_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&is_enabled_) -
       reinterpret_cast<char*>(&num_tokens_)) + sizeof(is_enabled_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GuardianRankRewardCharacterSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -8479,14 +8740,14 @@ const char* GuardianRankRewardCharacterSaveGameData::_InternalParse(const char* 
       // int32 num_tokens = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          num_tokens_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          num_tokens_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // bool is_enabled = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          is_enabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          is_enabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -8505,7 +8766,9 @@ const char* GuardianRankRewardCharacterSaveGameData::_InternalParse(const char* 
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -8549,7 +8812,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.GuardianRankRewardCharacterSaveGameData)
   return target;
@@ -8609,13 +8872,12 @@ void GuardianRankRewardCharacterSaveGameData::MergeFrom(const ::PROTOBUF_NAMESPA
 void GuardianRankRewardCharacterSaveGameData::MergeFrom(const GuardianRankRewardCharacterSaveGameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.GuardianRankRewardCharacterSaveGameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.reward_data_path().size() > 0) {
-
-    reward_data_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.reward_data_path_);
+    _internal_set_reward_data_path(from._internal_reward_data_path());
   }
   if (from.num_tokens() != 0) {
     _internal_set_num_tokens(from._internal_num_tokens());
@@ -8645,11 +8907,14 @@ bool GuardianRankRewardCharacterSaveGameData::IsInitialized() const {
 
 void GuardianRankRewardCharacterSaveGameData::InternalSwap(GuardianRankRewardCharacterSaveGameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  reward_data_path_.Swap(&other->reward_data_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(num_tokens_, other->num_tokens_);
-  swap(is_enabled_, other->is_enabled_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  reward_data_path_.Swap(&other->reward_data_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(GuardianRankRewardCharacterSaveGameData, is_enabled_)
+      + sizeof(GuardianRankRewardCharacterSaveGameData::is_enabled_)
+      - PROTOBUF_FIELD_OFFSET(GuardianRankRewardCharacterSaveGameData, num_tokens_)>(
+          reinterpret_cast<char*>(&num_tokens_),
+          reinterpret_cast<char*>(&other->num_tokens_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GuardianRankRewardCharacterSaveGameData::GetMetadata() const {
@@ -8665,18 +8930,19 @@ class GuardianRankPerkCharacterSaveGameData::_Internal {
  public:
 };
 
-GuardianRankPerkCharacterSaveGameData::GuardianRankPerkCharacterSaveGameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GuardianRankPerkCharacterSaveGameData::GuardianRankPerkCharacterSaveGameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.GuardianRankPerkCharacterSaveGameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.GuardianRankPerkCharacterSaveGameData)
 }
 GuardianRankPerkCharacterSaveGameData::GuardianRankPerkCharacterSaveGameData(const GuardianRankPerkCharacterSaveGameData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   perk_data_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_perk_data_path().empty()) {
-    perk_data_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.perk_data_path_);
+    perk_data_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_perk_data_path(),
+      GetArena());
   }
   is_enabled_ = from.is_enabled_;
   // @@protoc_insertion_point(copy_constructor:OakSave.GuardianRankPerkCharacterSaveGameData)
@@ -8691,12 +8957,20 @@ void GuardianRankPerkCharacterSaveGameData::SharedCtor() {
 GuardianRankPerkCharacterSaveGameData::~GuardianRankPerkCharacterSaveGameData() {
   // @@protoc_insertion_point(destructor:OakSave.GuardianRankPerkCharacterSaveGameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void GuardianRankPerkCharacterSaveGameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   perk_data_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void GuardianRankPerkCharacterSaveGameData::ArenaDtor(void* object) {
+  GuardianRankPerkCharacterSaveGameData* _this = reinterpret_cast< GuardianRankPerkCharacterSaveGameData* >(object);
+  (void)_this;
+}
+void GuardianRankPerkCharacterSaveGameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GuardianRankPerkCharacterSaveGameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -8712,13 +8986,14 @@ void GuardianRankPerkCharacterSaveGameData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  perk_data_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  perk_data_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   is_enabled_ = false;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GuardianRankPerkCharacterSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -8727,7 +9002,7 @@ const char* GuardianRankPerkCharacterSaveGameData::_InternalParse(const char* pt
       // bool is_enabled = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          is_enabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          is_enabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -8746,7 +9021,9 @@ const char* GuardianRankPerkCharacterSaveGameData::_InternalParse(const char* pt
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -8784,7 +9061,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.GuardianRankPerkCharacterSaveGameData)
   return target;
@@ -8837,13 +9114,12 @@ void GuardianRankPerkCharacterSaveGameData::MergeFrom(const ::PROTOBUF_NAMESPACE
 void GuardianRankPerkCharacterSaveGameData::MergeFrom(const GuardianRankPerkCharacterSaveGameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.GuardianRankPerkCharacterSaveGameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.perk_data_path().size() > 0) {
-
-    perk_data_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.perk_data_path_);
+    _internal_set_perk_data_path(from._internal_perk_data_path());
   }
   if (from.is_enabled() != 0) {
     _internal_set_is_enabled(from._internal_is_enabled());
@@ -8870,9 +9146,8 @@ bool GuardianRankPerkCharacterSaveGameData::IsInitialized() const {
 
 void GuardianRankPerkCharacterSaveGameData::InternalSwap(GuardianRankPerkCharacterSaveGameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  perk_data_path_.Swap(&other->perk_data_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  perk_data_path_.Swap(&other->perk_data_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(is_enabled_, other->is_enabled_);
 }
 
@@ -8889,17 +9164,19 @@ class GuardianRankCharacterSaveGameData::_Internal {
  public:
 };
 
-GuardianRankCharacterSaveGameData::GuardianRankCharacterSaveGameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GuardianRankCharacterSaveGameData::GuardianRankCharacterSaveGameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  rank_rewards_(arena),
+  rank_perks_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.GuardianRankCharacterSaveGameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.GuardianRankCharacterSaveGameData)
 }
 GuardianRankCharacterSaveGameData::GuardianRankCharacterSaveGameData(const GuardianRankCharacterSaveGameData& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       rank_rewards_(from.rank_rewards_),
       rank_perks_(from.rank_perks_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&guardian_available_tokens_, &from.guardian_available_tokens_,
     static_cast<size_t>(reinterpret_cast<char*>(&is_rank_system_enabled_) -
     reinterpret_cast<char*>(&guardian_available_tokens_)) + sizeof(is_rank_system_enabled_));
@@ -8916,11 +9193,19 @@ void GuardianRankCharacterSaveGameData::SharedCtor() {
 GuardianRankCharacterSaveGameData::~GuardianRankCharacterSaveGameData() {
   // @@protoc_insertion_point(destructor:OakSave.GuardianRankCharacterSaveGameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void GuardianRankCharacterSaveGameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void GuardianRankCharacterSaveGameData::ArenaDtor(void* object) {
+  GuardianRankCharacterSaveGameData* _this = reinterpret_cast< GuardianRankCharacterSaveGameData* >(object);
+  (void)_this;
+}
+void GuardianRankCharacterSaveGameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GuardianRankCharacterSaveGameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -8941,11 +9226,12 @@ void GuardianRankCharacterSaveGameData::Clear() {
   ::memset(&guardian_available_tokens_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&is_rank_system_enabled_) -
       reinterpret_cast<char*>(&guardian_available_tokens_)) + sizeof(is_rank_system_enabled_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GuardianRankCharacterSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -8954,21 +9240,21 @@ const char* GuardianRankCharacterSaveGameData::_InternalParse(const char* ptr, :
       // int32 guardian_available_tokens = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          guardian_available_tokens_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          guardian_available_tokens_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // int32 guardian_rank = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          guardian_rank_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          guardian_rank_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // int32 guardian_experience = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          guardian_experience_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          guardian_experience_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -8999,21 +9285,21 @@ const char* GuardianRankCharacterSaveGameData::_InternalParse(const char* ptr, :
       // int32 guardian_reward_random_seed = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
-          guardian_reward_random_seed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          guardian_reward_random_seed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // int64 new_guardian_experience = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
-          new_guardian_experience_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          new_guardian_experience_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // bool is_rank_system_enabled = 8;
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
-          is_rank_system_enabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          is_rank_system_enabled_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -9023,7 +9309,9 @@ const char* GuardianRankCharacterSaveGameData::_InternalParse(const char* ptr, :
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -9097,7 +9385,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.GuardianRankCharacterSaveGameData)
   return target;
@@ -9192,7 +9480,7 @@ void GuardianRankCharacterSaveGameData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID:
 void GuardianRankCharacterSaveGameData::MergeFrom(const GuardianRankCharacterSaveGameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.GuardianRankCharacterSaveGameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -9238,15 +9526,15 @@ bool GuardianRankCharacterSaveGameData::IsInitialized() const {
 
 void GuardianRankCharacterSaveGameData::InternalSwap(GuardianRankCharacterSaveGameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   rank_rewards_.InternalSwap(&other->rank_rewards_);
   rank_perks_.InternalSwap(&other->rank_perks_);
-  swap(guardian_available_tokens_, other->guardian_available_tokens_);
-  swap(guardian_rank_, other->guardian_rank_);
-  swap(guardian_experience_, other->guardian_experience_);
-  swap(guardian_reward_random_seed_, other->guardian_reward_random_seed_);
-  swap(new_guardian_experience_, other->new_guardian_experience_);
-  swap(is_rank_system_enabled_, other->is_rank_system_enabled_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(GuardianRankCharacterSaveGameData, is_rank_system_enabled_)
+      + sizeof(GuardianRankCharacterSaveGameData::is_rank_system_enabled_)
+      - PROTOBUF_FIELD_OFFSET(GuardianRankCharacterSaveGameData, guardian_available_tokens_)>(
+          reinterpret_cast<char*>(&guardian_available_tokens_),
+          reinterpret_cast<char*>(&other->guardian_available_tokens_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GuardianRankCharacterSaveGameData::GetMetadata() const {
@@ -9262,18 +9550,19 @@ class CrewQuartersDecorationSaveData::_Internal {
  public:
 };
 
-CrewQuartersDecorationSaveData::CrewQuartersDecorationSaveData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+CrewQuartersDecorationSaveData::CrewQuartersDecorationSaveData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.CrewQuartersDecorationSaveData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.CrewQuartersDecorationSaveData)
 }
 CrewQuartersDecorationSaveData::CrewQuartersDecorationSaveData(const CrewQuartersDecorationSaveData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   decoration_data_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_decoration_data_path().empty()) {
-    decoration_data_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.decoration_data_path_);
+    decoration_data_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_decoration_data_path(),
+      GetArena());
   }
   decoration_index_ = from.decoration_index_;
   // @@protoc_insertion_point(copy_constructor:OakSave.CrewQuartersDecorationSaveData)
@@ -9288,12 +9577,20 @@ void CrewQuartersDecorationSaveData::SharedCtor() {
 CrewQuartersDecorationSaveData::~CrewQuartersDecorationSaveData() {
   // @@protoc_insertion_point(destructor:OakSave.CrewQuartersDecorationSaveData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void CrewQuartersDecorationSaveData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   decoration_data_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void CrewQuartersDecorationSaveData::ArenaDtor(void* object) {
+  CrewQuartersDecorationSaveData* _this = reinterpret_cast< CrewQuartersDecorationSaveData* >(object);
+  (void)_this;
+}
+void CrewQuartersDecorationSaveData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void CrewQuartersDecorationSaveData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -9309,13 +9606,14 @@ void CrewQuartersDecorationSaveData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  decoration_data_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  decoration_data_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   decoration_index_ = 0;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* CrewQuartersDecorationSaveData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -9324,7 +9622,7 @@ const char* CrewQuartersDecorationSaveData::_InternalParse(const char* ptr, ::PR
       // int32 decoration_index = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          decoration_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          decoration_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -9343,7 +9641,9 @@ const char* CrewQuartersDecorationSaveData::_InternalParse(const char* ptr, ::PR
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -9381,7 +9681,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.CrewQuartersDecorationSaveData)
   return target;
@@ -9436,13 +9736,12 @@ void CrewQuartersDecorationSaveData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Me
 void CrewQuartersDecorationSaveData::MergeFrom(const CrewQuartersDecorationSaveData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.CrewQuartersDecorationSaveData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.decoration_data_path().size() > 0) {
-
-    decoration_data_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.decoration_data_path_);
+    _internal_set_decoration_data_path(from._internal_decoration_data_path());
   }
   if (from.decoration_index() != 0) {
     _internal_set_decoration_index(from._internal_decoration_index());
@@ -9469,9 +9768,8 @@ bool CrewQuartersDecorationSaveData::IsInitialized() const {
 
 void CrewQuartersDecorationSaveData::InternalSwap(CrewQuartersDecorationSaveData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  decoration_data_path_.Swap(&other->decoration_data_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  decoration_data_path_.Swap(&other->decoration_data_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(decoration_index_, other->decoration_index_);
 }
 
@@ -9488,19 +9786,21 @@ class CrewQuartersSaveData::_Internal {
  public:
 };
 
-CrewQuartersSaveData::CrewQuartersSaveData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+CrewQuartersSaveData::CrewQuartersSaveData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  decorations_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.CrewQuartersSaveData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.CrewQuartersSaveData)
 }
 CrewQuartersSaveData::CrewQuartersSaveData(const CrewQuartersSaveData& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       decorations_(from.decorations_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   room_data_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_room_data_path().empty()) {
-    room_data_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.room_data_path_);
+    room_data_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_room_data_path(),
+      GetArena());
   }
   preferred_room_assignment_ = from.preferred_room_assignment_;
   // @@protoc_insertion_point(copy_constructor:OakSave.CrewQuartersSaveData)
@@ -9515,12 +9815,20 @@ void CrewQuartersSaveData::SharedCtor() {
 CrewQuartersSaveData::~CrewQuartersSaveData() {
   // @@protoc_insertion_point(destructor:OakSave.CrewQuartersSaveData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void CrewQuartersSaveData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   room_data_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void CrewQuartersSaveData::ArenaDtor(void* object) {
+  CrewQuartersSaveData* _this = reinterpret_cast< CrewQuartersSaveData* >(object);
+  (void)_this;
+}
+void CrewQuartersSaveData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void CrewQuartersSaveData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -9537,13 +9845,14 @@ void CrewQuartersSaveData::Clear() {
   (void) cached_has_bits;
 
   decorations_.Clear();
-  room_data_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  room_data_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   preferred_room_assignment_ = 0;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* CrewQuartersSaveData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -9552,7 +9861,7 @@ const char* CrewQuartersSaveData::_InternalParse(const char* ptr, ::PROTOBUF_NAM
       // int32 preferred_room_assignment = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          preferred_room_assignment_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          preferred_room_assignment_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -9583,7 +9892,9 @@ const char* CrewQuartersSaveData::_InternalParse(const char* ptr, ::PROTOBUF_NAM
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -9629,7 +9940,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.CrewQuartersSaveData)
   return target;
@@ -9691,14 +10002,13 @@ void CrewQuartersSaveData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& fro
 void CrewQuartersSaveData::MergeFrom(const CrewQuartersSaveData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.CrewQuartersSaveData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   decorations_.MergeFrom(from.decorations_);
   if (from.room_data_path().size() > 0) {
-
-    room_data_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.room_data_path_);
+    _internal_set_room_data_path(from._internal_room_data_path());
   }
   if (from.preferred_room_assignment() != 0) {
     _internal_set_preferred_room_assignment(from._internal_preferred_room_assignment());
@@ -9725,10 +10035,9 @@ bool CrewQuartersSaveData::IsInitialized() const {
 
 void CrewQuartersSaveData::InternalSwap(CrewQuartersSaveData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   decorations_.InternalSwap(&other->decorations_);
-  room_data_path_.Swap(&other->room_data_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  room_data_path_.Swap(&other->room_data_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(preferred_room_assignment_, other->preferred_room_assignment_);
 }
 
@@ -9752,22 +10061,24 @@ const ::OakSave::InventoryBalanceStateInitializationData&
 CrewQuartersGunRackItemSaveData::_Internal::development_save_data(const CrewQuartersGunRackItemSaveData* msg) {
   return *msg->development_save_data_;
 }
-CrewQuartersGunRackItemSaveData::CrewQuartersGunRackItemSaveData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+CrewQuartersGunRackItemSaveData::CrewQuartersGunRackItemSaveData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.CrewQuartersGunRackItemSaveData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.CrewQuartersGunRackItemSaveData)
 }
 CrewQuartersGunRackItemSaveData::CrewQuartersGunRackItemSaveData(const CrewQuartersGunRackItemSaveData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   encrypted_serial_number_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_encrypted_serial_number().empty()) {
-    encrypted_serial_number_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.encrypted_serial_number_);
+    encrypted_serial_number_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_encrypted_serial_number(),
+      GetArena());
   }
   slot_asset_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_slot_asset_path().empty()) {
-    slot_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.slot_asset_path_);
+    slot_asset_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_slot_asset_path(),
+      GetArena());
   }
   if (from._internal_has_development_save_data()) {
     development_save_data_ = new ::OakSave::InventoryBalanceStateInitializationData(*from.development_save_data_);
@@ -9787,14 +10098,22 @@ void CrewQuartersGunRackItemSaveData::SharedCtor() {
 CrewQuartersGunRackItemSaveData::~CrewQuartersGunRackItemSaveData() {
   // @@protoc_insertion_point(destructor:OakSave.CrewQuartersGunRackItemSaveData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void CrewQuartersGunRackItemSaveData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   encrypted_serial_number_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   slot_asset_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (this != internal_default_instance()) delete development_save_data_;
 }
 
+void CrewQuartersGunRackItemSaveData::ArenaDtor(void* object) {
+  CrewQuartersGunRackItemSaveData* _this = reinterpret_cast< CrewQuartersGunRackItemSaveData* >(object);
+  (void)_this;
+}
+void CrewQuartersGunRackItemSaveData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void CrewQuartersGunRackItemSaveData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -9810,17 +10129,18 @@ void CrewQuartersGunRackItemSaveData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  encrypted_serial_number_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  slot_asset_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == nullptr && development_save_data_ != nullptr) {
+  encrypted_serial_number_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  slot_asset_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  if (GetArena() == nullptr && development_save_data_ != nullptr) {
     delete development_save_data_;
   }
   development_save_data_ = nullptr;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* CrewQuartersGunRackItemSaveData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -9856,7 +10176,9 @@ const char* CrewQuartersGunRackItemSaveData::_InternalParse(const char* ptr, ::P
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -9902,7 +10224,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.CrewQuartersGunRackItemSaveData)
   return target;
@@ -9964,17 +10286,15 @@ void CrewQuartersGunRackItemSaveData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::M
 void CrewQuartersGunRackItemSaveData::MergeFrom(const CrewQuartersGunRackItemSaveData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.CrewQuartersGunRackItemSaveData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.encrypted_serial_number().size() > 0) {
-
-    encrypted_serial_number_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.encrypted_serial_number_);
+    _internal_set_encrypted_serial_number(from._internal_encrypted_serial_number());
   }
   if (from.slot_asset_path().size() > 0) {
-
-    slot_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.slot_asset_path_);
+    _internal_set_slot_asset_path(from._internal_slot_asset_path());
   }
   if (from.has_development_save_data()) {
     _internal_mutable_development_save_data()->::OakSave::InventoryBalanceStateInitializationData::MergeFrom(from._internal_development_save_data());
@@ -10001,11 +10321,9 @@ bool CrewQuartersGunRackItemSaveData::IsInitialized() const {
 
 void CrewQuartersGunRackItemSaveData::InternalSwap(CrewQuartersGunRackItemSaveData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  encrypted_serial_number_.Swap(&other->encrypted_serial_number_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  slot_asset_path_.Swap(&other->slot_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  encrypted_serial_number_.Swap(&other->encrypted_serial_number_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  slot_asset_path_.Swap(&other->slot_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(development_save_data_, other->development_save_data_);
 }
 
@@ -10022,16 +10340,17 @@ class CrewQuartersGunRackSaveData::_Internal {
  public:
 };
 
-CrewQuartersGunRackSaveData::CrewQuartersGunRackSaveData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+CrewQuartersGunRackSaveData::CrewQuartersGunRackSaveData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  rack_save_data_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.CrewQuartersGunRackSaveData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.CrewQuartersGunRackSaveData)
 }
 CrewQuartersGunRackSaveData::CrewQuartersGunRackSaveData(const CrewQuartersGunRackSaveData& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       rack_save_data_(from.rack_save_data_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:OakSave.CrewQuartersGunRackSaveData)
 }
 
@@ -10042,11 +10361,19 @@ void CrewQuartersGunRackSaveData::SharedCtor() {
 CrewQuartersGunRackSaveData::~CrewQuartersGunRackSaveData() {
   // @@protoc_insertion_point(destructor:OakSave.CrewQuartersGunRackSaveData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void CrewQuartersGunRackSaveData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void CrewQuartersGunRackSaveData::ArenaDtor(void* object) {
+  CrewQuartersGunRackSaveData* _this = reinterpret_cast< CrewQuartersGunRackSaveData* >(object);
+  (void)_this;
+}
+void CrewQuartersGunRackSaveData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void CrewQuartersGunRackSaveData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -10063,11 +10390,12 @@ void CrewQuartersGunRackSaveData::Clear() {
   (void) cached_has_bits;
 
   rack_save_data_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* CrewQuartersGunRackSaveData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -10091,7 +10419,9 @@ const char* CrewQuartersGunRackSaveData::_InternalParse(const char* ptr, ::PROTO
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -10121,7 +10451,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.CrewQuartersGunRackSaveData)
   return target;
@@ -10169,7 +10499,7 @@ void CrewQuartersGunRackSaveData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Messa
 void CrewQuartersGunRackSaveData::MergeFrom(const CrewQuartersGunRackSaveData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.CrewQuartersGunRackSaveData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -10196,7 +10526,7 @@ bool CrewQuartersGunRackSaveData::IsInitialized() const {
 
 void CrewQuartersGunRackSaveData::InternalSwap(CrewQuartersGunRackSaveData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   rack_save_data_.InternalSwap(&other->rack_save_data_);
 }
 
@@ -10213,18 +10543,19 @@ class EchoLogSaveGameData::_Internal {
  public:
 };
 
-EchoLogSaveGameData::EchoLogSaveGameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+EchoLogSaveGameData::EchoLogSaveGameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.EchoLogSaveGameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.EchoLogSaveGameData)
 }
 EchoLogSaveGameData::EchoLogSaveGameData(const EchoLogSaveGameData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   echo_log_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_echo_log_path().empty()) {
-    echo_log_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.echo_log_path_);
+    echo_log_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_echo_log_path(),
+      GetArena());
   }
   has_been_seen_in_log_ = from.has_been_seen_in_log_;
   // @@protoc_insertion_point(copy_constructor:OakSave.EchoLogSaveGameData)
@@ -10239,12 +10570,20 @@ void EchoLogSaveGameData::SharedCtor() {
 EchoLogSaveGameData::~EchoLogSaveGameData() {
   // @@protoc_insertion_point(destructor:OakSave.EchoLogSaveGameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void EchoLogSaveGameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   echo_log_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void EchoLogSaveGameData::ArenaDtor(void* object) {
+  EchoLogSaveGameData* _this = reinterpret_cast< EchoLogSaveGameData* >(object);
+  (void)_this;
+}
+void EchoLogSaveGameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void EchoLogSaveGameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -10260,13 +10599,14 @@ void EchoLogSaveGameData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  echo_log_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  echo_log_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   has_been_seen_in_log_ = false;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* EchoLogSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -10275,7 +10615,7 @@ const char* EchoLogSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAME
       // bool has_been_seen_in_log = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          has_been_seen_in_log_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          has_been_seen_in_log_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -10294,7 +10634,9 @@ const char* EchoLogSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAME
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -10332,7 +10674,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.EchoLogSaveGameData)
   return target;
@@ -10385,13 +10727,12 @@ void EchoLogSaveGameData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from
 void EchoLogSaveGameData::MergeFrom(const EchoLogSaveGameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.EchoLogSaveGameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.echo_log_path().size() > 0) {
-
-    echo_log_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.echo_log_path_);
+    _internal_set_echo_log_path(from._internal_echo_log_path());
   }
   if (from.has_been_seen_in_log() != 0) {
     _internal_set_has_been_seen_in_log(from._internal_has_been_seen_in_log());
@@ -10418,9 +10759,8 @@ bool EchoLogSaveGameData::IsInitialized() const {
 
 void EchoLogSaveGameData::InternalSwap(EchoLogSaveGameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  echo_log_path_.Swap(&other->echo_log_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  echo_log_path_.Swap(&other->echo_log_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(has_been_seen_in_log_, other->has_been_seen_in_log_);
 }
 
@@ -10437,15 +10777,15 @@ class MapIDData::_Internal {
  public:
 };
 
-MapIDData::MapIDData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+MapIDData::MapIDData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.MapIDData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.MapIDData)
 }
 MapIDData::MapIDData(const MapIDData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&zone_name_id_, &from.zone_name_id_,
     static_cast<size_t>(reinterpret_cast<char*>(&map_name_id_) -
     reinterpret_cast<char*>(&zone_name_id_)) + sizeof(map_name_id_));
@@ -10461,11 +10801,19 @@ void MapIDData::SharedCtor() {
 MapIDData::~MapIDData() {
   // @@protoc_insertion_point(destructor:OakSave.MapIDData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void MapIDData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void MapIDData::ArenaDtor(void* object) {
+  MapIDData* _this = reinterpret_cast< MapIDData* >(object);
+  (void)_this;
+}
+void MapIDData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void MapIDData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -10484,11 +10832,12 @@ void MapIDData::Clear() {
   ::memset(&zone_name_id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&map_name_id_) -
       reinterpret_cast<char*>(&zone_name_id_)) + sizeof(map_name_id_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* MapIDData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -10497,14 +10846,14 @@ const char* MapIDData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       // uint32 zone_name_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          zone_name_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          zone_name_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // uint32 map_name_id = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          map_name_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          map_name_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -10514,7 +10863,9 @@ const char* MapIDData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -10548,7 +10899,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.MapIDData)
   return target;
@@ -10603,7 +10954,7 @@ void MapIDData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void MapIDData::MergeFrom(const MapIDData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.MapIDData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -10635,9 +10986,13 @@ bool MapIDData::IsInitialized() const {
 
 void MapIDData::InternalSwap(MapIDData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(zone_name_id_, other->zone_name_id_);
-  swap(map_name_id_, other->map_name_id_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(MapIDData, map_name_id_)
+      + sizeof(MapIDData::map_name_id_)
+      - PROTOBUF_FIELD_OFFSET(MapIDData, zone_name_id_)>(
+          reinterpret_cast<char*>(&zone_name_id_),
+          reinterpret_cast<char*>(&other->zone_name_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata MapIDData::GetMetadata() const {
@@ -10660,15 +11015,15 @@ const ::OakSave::MapIDData&
 GameStateSaveData::_Internal::last_traveled_map_id(const GameStateSaveData* msg) {
   return *msg->last_traveled_map_id_;
 }
-GameStateSaveData::GameStateSaveData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GameStateSaveData::GameStateSaveData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.GameStateSaveData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.GameStateSaveData)
 }
 GameStateSaveData::GameStateSaveData(const GameStateSaveData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_last_traveled_map_id()) {
     last_traveled_map_id_ = new ::OakSave::MapIDData(*from.last_traveled_map_id_);
   } else {
@@ -10690,12 +11045,20 @@ void GameStateSaveData::SharedCtor() {
 GameStateSaveData::~GameStateSaveData() {
   // @@protoc_insertion_point(destructor:OakSave.GameStateSaveData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void GameStateSaveData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   if (this != internal_default_instance()) delete last_traveled_map_id_;
 }
 
+void GameStateSaveData::ArenaDtor(void* object) {
+  GameStateSaveData* _this = reinterpret_cast< GameStateSaveData* >(object);
+  (void)_this;
+}
+void GameStateSaveData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GameStateSaveData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -10711,18 +11074,19 @@ void GameStateSaveData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaNoVirtual() == nullptr && last_traveled_map_id_ != nullptr) {
+  if (GetArena() == nullptr && last_traveled_map_id_ != nullptr) {
     delete last_traveled_map_id_;
   }
   last_traveled_map_id_ = nullptr;
   ::memset(&mayhem_level_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&mayhem_random_seed_) -
       reinterpret_cast<char*>(&mayhem_level_)) + sizeof(mayhem_random_seed_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GameStateSaveData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -10738,14 +11102,14 @@ const char* GameStateSaveData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
       // int32 mayhem_level = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          mayhem_level_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          mayhem_level_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // int32 mayhem_random_seed = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          mayhem_random_seed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          mayhem_random_seed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -10755,7 +11119,9 @@ const char* GameStateSaveData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESP
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -10797,7 +11163,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.GameStateSaveData)
   return target;
@@ -10859,7 +11225,7 @@ void GameStateSaveData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) 
 void GameStateSaveData::MergeFrom(const GameStateSaveData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.GameStateSaveData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -10894,10 +11260,13 @@ bool GameStateSaveData::IsInitialized() const {
 
 void GameStateSaveData::InternalSwap(GameStateSaveData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(last_traveled_map_id_, other->last_traveled_map_id_);
-  swap(mayhem_level_, other->mayhem_level_);
-  swap(mayhem_random_seed_, other->mayhem_random_seed_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(GameStateSaveData, mayhem_random_seed_)
+      + sizeof(GameStateSaveData::mayhem_random_seed_)
+      - PROTOBUF_FIELD_OFFSET(GameStateSaveData, last_traveled_map_id_)>(
+          reinterpret_cast<char*>(&last_traveled_map_id_),
+          reinterpret_cast<char*>(&other->last_traveled_map_id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GameStateSaveData::GetMetadata() const {
@@ -10913,18 +11282,19 @@ class ChallengeCategoryProgressSaveData::_Internal {
  public:
 };
 
-ChallengeCategoryProgressSaveData::ChallengeCategoryProgressSaveData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+ChallengeCategoryProgressSaveData::ChallengeCategoryProgressSaveData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.ChallengeCategoryProgressSaveData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.ChallengeCategoryProgressSaveData)
 }
 ChallengeCategoryProgressSaveData::ChallengeCategoryProgressSaveData(const ChallengeCategoryProgressSaveData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   category_progress_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_category_progress().empty()) {
-    category_progress_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.category_progress_);
+    category_progress_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_category_progress(),
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:OakSave.ChallengeCategoryProgressSaveData)
 }
@@ -10937,12 +11307,20 @@ void ChallengeCategoryProgressSaveData::SharedCtor() {
 ChallengeCategoryProgressSaveData::~ChallengeCategoryProgressSaveData() {
   // @@protoc_insertion_point(destructor:OakSave.ChallengeCategoryProgressSaveData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void ChallengeCategoryProgressSaveData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   category_progress_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void ChallengeCategoryProgressSaveData::ArenaDtor(void* object) {
+  ChallengeCategoryProgressSaveData* _this = reinterpret_cast< ChallengeCategoryProgressSaveData* >(object);
+  (void)_this;
+}
+void ChallengeCategoryProgressSaveData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ChallengeCategoryProgressSaveData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -10958,12 +11336,13 @@ void ChallengeCategoryProgressSaveData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  category_progress_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  _internal_metadata_.Clear();
+  category_progress_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* ChallengeCategoryProgressSaveData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -10983,7 +11362,9 @@ const char* ChallengeCategoryProgressSaveData::_InternalParse(const char* ptr, :
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -11011,7 +11392,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.ChallengeCategoryProgressSaveData)
   return target;
@@ -11059,13 +11440,12 @@ void ChallengeCategoryProgressSaveData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID:
 void ChallengeCategoryProgressSaveData::MergeFrom(const ChallengeCategoryProgressSaveData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.ChallengeCategoryProgressSaveData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.category_progress().size() > 0) {
-
-    category_progress_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.category_progress_);
+    _internal_set_category_progress(from._internal_category_progress());
   }
 }
 
@@ -11089,9 +11469,8 @@ bool ChallengeCategoryProgressSaveData::IsInitialized() const {
 
 void ChallengeCategoryProgressSaveData::InternalSwap(ChallengeCategoryProgressSaveData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  category_progress_.Swap(&other->category_progress_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  category_progress_.Swap(&other->category_progress_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ChallengeCategoryProgressSaveData::GetMetadata() const {
@@ -11107,22 +11486,24 @@ class OakPlayerCharacterAugmentSaveGameData::_Internal {
  public:
 };
 
-OakPlayerCharacterAugmentSaveGameData::OakPlayerCharacterAugmentSaveGameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+OakPlayerCharacterAugmentSaveGameData::OakPlayerCharacterAugmentSaveGameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.OakPlayerCharacterAugmentSaveGameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.OakPlayerCharacterAugmentSaveGameData)
 }
 OakPlayerCharacterAugmentSaveGameData::OakPlayerCharacterAugmentSaveGameData(const OakPlayerCharacterAugmentSaveGameData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   slot_asset_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_slot_asset_path().empty()) {
-    slot_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.slot_asset_path_);
+    slot_asset_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_slot_asset_path(),
+      GetArena());
   }
   augment_asset_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_augment_asset_path().empty()) {
-    augment_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.augment_asset_path_);
+    augment_asset_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_augment_asset_path(),
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:OakSave.OakPlayerCharacterAugmentSaveGameData)
 }
@@ -11136,13 +11517,21 @@ void OakPlayerCharacterAugmentSaveGameData::SharedCtor() {
 OakPlayerCharacterAugmentSaveGameData::~OakPlayerCharacterAugmentSaveGameData() {
   // @@protoc_insertion_point(destructor:OakSave.OakPlayerCharacterAugmentSaveGameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void OakPlayerCharacterAugmentSaveGameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   slot_asset_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   augment_asset_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void OakPlayerCharacterAugmentSaveGameData::ArenaDtor(void* object) {
+  OakPlayerCharacterAugmentSaveGameData* _this = reinterpret_cast< OakPlayerCharacterAugmentSaveGameData* >(object);
+  (void)_this;
+}
+void OakPlayerCharacterAugmentSaveGameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void OakPlayerCharacterAugmentSaveGameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -11158,13 +11547,14 @@ void OakPlayerCharacterAugmentSaveGameData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  slot_asset_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  augment_asset_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  _internal_metadata_.Clear();
+  slot_asset_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  augment_asset_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* OakPlayerCharacterAugmentSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -11194,7 +11584,9 @@ const char* OakPlayerCharacterAugmentSaveGameData::_InternalParse(const char* pt
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -11236,7 +11628,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.OakPlayerCharacterAugmentSaveGameData)
   return target;
@@ -11291,17 +11683,15 @@ void OakPlayerCharacterAugmentSaveGameData::MergeFrom(const ::PROTOBUF_NAMESPACE
 void OakPlayerCharacterAugmentSaveGameData::MergeFrom(const OakPlayerCharacterAugmentSaveGameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.OakPlayerCharacterAugmentSaveGameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.slot_asset_path().size() > 0) {
-
-    slot_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.slot_asset_path_);
+    _internal_set_slot_asset_path(from._internal_slot_asset_path());
   }
   if (from.augment_asset_path().size() > 0) {
-
-    augment_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.augment_asset_path_);
+    _internal_set_augment_asset_path(from._internal_augment_asset_path());
   }
 }
 
@@ -11325,11 +11715,9 @@ bool OakPlayerCharacterAugmentSaveGameData::IsInitialized() const {
 
 void OakPlayerCharacterAugmentSaveGameData::InternalSwap(OakPlayerCharacterAugmentSaveGameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  slot_asset_path_.Swap(&other->slot_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  augment_asset_path_.Swap(&other->augment_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  slot_asset_path_.Swap(&other->slot_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  augment_asset_path_.Swap(&other->augment_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata OakPlayerCharacterAugmentSaveGameData::GetMetadata() const {
@@ -11345,16 +11733,17 @@ class OakPlayerCharacterSlotSaveGameData::_Internal {
  public:
 };
 
-OakPlayerCharacterSlotSaveGameData::OakPlayerCharacterSlotSaveGameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+OakPlayerCharacterSlotSaveGameData::OakPlayerCharacterSlotSaveGameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  augment_slot_list_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.OakPlayerCharacterSlotSaveGameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.OakPlayerCharacterSlotSaveGameData)
 }
 OakPlayerCharacterSlotSaveGameData::OakPlayerCharacterSlotSaveGameData(const OakPlayerCharacterSlotSaveGameData& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       augment_slot_list_(from.augment_slot_list_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:OakSave.OakPlayerCharacterSlotSaveGameData)
 }
 
@@ -11365,11 +11754,19 @@ void OakPlayerCharacterSlotSaveGameData::SharedCtor() {
 OakPlayerCharacterSlotSaveGameData::~OakPlayerCharacterSlotSaveGameData() {
   // @@protoc_insertion_point(destructor:OakSave.OakPlayerCharacterSlotSaveGameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void OakPlayerCharacterSlotSaveGameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void OakPlayerCharacterSlotSaveGameData::ArenaDtor(void* object) {
+  OakPlayerCharacterSlotSaveGameData* _this = reinterpret_cast< OakPlayerCharacterSlotSaveGameData* >(object);
+  (void)_this;
+}
+void OakPlayerCharacterSlotSaveGameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void OakPlayerCharacterSlotSaveGameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -11386,11 +11783,12 @@ void OakPlayerCharacterSlotSaveGameData::Clear() {
   (void) cached_has_bits;
 
   augment_slot_list_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* OakPlayerCharacterSlotSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -11414,7 +11812,9 @@ const char* OakPlayerCharacterSlotSaveGameData::_InternalParse(const char* ptr, 
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -11444,7 +11844,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.OakPlayerCharacterSlotSaveGameData)
   return target;
@@ -11492,7 +11892,7 @@ void OakPlayerCharacterSlotSaveGameData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID
 void OakPlayerCharacterSlotSaveGameData::MergeFrom(const OakPlayerCharacterSlotSaveGameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.OakPlayerCharacterSlotSaveGameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -11519,7 +11919,7 @@ bool OakPlayerCharacterSlotSaveGameData::IsInitialized() const {
 
 void OakPlayerCharacterSlotSaveGameData::InternalSwap(OakPlayerCharacterSlotSaveGameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   augment_slot_list_.InternalSwap(&other->augment_slot_list_);
 }
 
@@ -11536,16 +11936,17 @@ class UITrackingSaveGameData::_Internal {
  public:
 };
 
-UITrackingSaveGameData::UITrackingSaveGameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+UITrackingSaveGameData::UITrackingSaveGameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  inventory_slot_unlocks_seen_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.UITrackingSaveGameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.UITrackingSaveGameData)
 }
 UITrackingSaveGameData::UITrackingSaveGameData(const UITrackingSaveGameData& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       inventory_slot_unlocks_seen_(from.inventory_slot_unlocks_seen_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&has_seen_skill_menu_unlock_, &from.has_seen_skill_menu_unlock_,
     static_cast<size_t>(reinterpret_cast<char*>(&saved_spin_offset_) -
     reinterpret_cast<char*>(&has_seen_skill_menu_unlock_)) + sizeof(saved_spin_offset_));
@@ -11562,11 +11963,19 @@ void UITrackingSaveGameData::SharedCtor() {
 UITrackingSaveGameData::~UITrackingSaveGameData() {
   // @@protoc_insertion_point(destructor:OakSave.UITrackingSaveGameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void UITrackingSaveGameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void UITrackingSaveGameData::ArenaDtor(void* object) {
+  UITrackingSaveGameData* _this = reinterpret_cast< UITrackingSaveGameData* >(object);
+  (void)_this;
+}
+void UITrackingSaveGameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void UITrackingSaveGameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -11586,11 +11995,12 @@ void UITrackingSaveGameData::Clear() {
   ::memset(&has_seen_skill_menu_unlock_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&saved_spin_offset_) -
       reinterpret_cast<char*>(&has_seen_skill_menu_unlock_)) + sizeof(saved_spin_offset_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* UITrackingSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -11599,42 +12009,42 @@ const char* UITrackingSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_N
       // bool has_seen_skill_menu_unlock = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          has_seen_skill_menu_unlock_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          has_seen_skill_menu_unlock_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // bool has_seen_guardian_rank_menu_unlock = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          has_seen_guardian_rank_menu_unlock_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          has_seen_guardian_rank_menu_unlock_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // bool has_seen_echo_boot_ammo_bar = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          has_seen_echo_boot_ammo_bar_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          has_seen_echo_boot_ammo_bar_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // bool has_seen_echo_boot_shield_bar = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          has_seen_echo_boot_shield_bar_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          has_seen_echo_boot_shield_bar_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // bool has_seen_echo_boot_grenades = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          has_seen_echo_boot_grenades_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          has_seen_echo_boot_grenades_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // int32 highest_thvm_breadcrumb_seen = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
-          highest_thvm_breadcrumb_seen_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          highest_thvm_breadcrumb_seen_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -11655,7 +12065,7 @@ const char* UITrackingSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_N
       // int32 saved_spin_offset = 8;
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 64)) {
-          saved_spin_offset_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          saved_spin_offset_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -11665,7 +12075,9 @@ const char* UITrackingSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_N
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -11739,7 +12151,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.UITrackingSaveGameData)
   return target;
@@ -11827,7 +12239,7 @@ void UITrackingSaveGameData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& f
 void UITrackingSaveGameData::MergeFrom(const UITrackingSaveGameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.UITrackingSaveGameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -11875,15 +12287,14 @@ bool UITrackingSaveGameData::IsInitialized() const {
 
 void UITrackingSaveGameData::InternalSwap(UITrackingSaveGameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   inventory_slot_unlocks_seen_.InternalSwap(&other->inventory_slot_unlocks_seen_);
-  swap(has_seen_skill_menu_unlock_, other->has_seen_skill_menu_unlock_);
-  swap(has_seen_guardian_rank_menu_unlock_, other->has_seen_guardian_rank_menu_unlock_);
-  swap(has_seen_echo_boot_ammo_bar_, other->has_seen_echo_boot_ammo_bar_);
-  swap(has_seen_echo_boot_shield_bar_, other->has_seen_echo_boot_shield_bar_);
-  swap(has_seen_echo_boot_grenades_, other->has_seen_echo_boot_grenades_);
-  swap(highest_thvm_breadcrumb_seen_, other->highest_thvm_breadcrumb_seen_);
-  swap(saved_spin_offset_, other->saved_spin_offset_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(UITrackingSaveGameData, saved_spin_offset_)
+      + sizeof(UITrackingSaveGameData::saved_spin_offset_)
+      - PROTOBUF_FIELD_OFFSET(UITrackingSaveGameData, has_seen_skill_menu_unlock_)>(
+          reinterpret_cast<char*>(&has_seen_skill_menu_unlock_),
+          reinterpret_cast<char*>(&other->has_seen_skill_menu_unlock_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata UITrackingSaveGameData::GetMetadata() const {
@@ -11899,18 +12310,19 @@ class PlanetCycleInfo::_Internal {
  public:
 };
 
-PlanetCycleInfo::PlanetCycleInfo()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+PlanetCycleInfo::PlanetCycleInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.PlanetCycleInfo)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.PlanetCycleInfo)
 }
 PlanetCycleInfo::PlanetCycleInfo(const PlanetCycleInfo& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   planet_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_planet_name().empty()) {
-    planet_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.planet_name_);
+    planet_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_planet_name(),
+      GetArena());
   }
   ::memcpy(&cycle_length_, &from.cycle_length_,
     static_cast<size_t>(reinterpret_cast<char*>(&last_cached_time_) -
@@ -11929,12 +12341,20 @@ void PlanetCycleInfo::SharedCtor() {
 PlanetCycleInfo::~PlanetCycleInfo() {
   // @@protoc_insertion_point(destructor:OakSave.PlanetCycleInfo)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void PlanetCycleInfo::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   planet_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void PlanetCycleInfo::ArenaDtor(void* object) {
+  PlanetCycleInfo* _this = reinterpret_cast< PlanetCycleInfo* >(object);
+  (void)_this;
+}
+void PlanetCycleInfo::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void PlanetCycleInfo::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -11950,15 +12370,16 @@ void PlanetCycleInfo::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  planet_name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  planet_name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::memset(&cycle_length_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&last_cached_time_) -
       reinterpret_cast<char*>(&cycle_length_)) + sizeof(last_cached_time_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* PlanetCycleInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -11993,7 +12414,9 @@ const char* PlanetCycleInfo::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPAC
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -12037,7 +12460,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.PlanetCycleInfo)
   return target;
@@ -12095,13 +12518,12 @@ void PlanetCycleInfo::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void PlanetCycleInfo::MergeFrom(const PlanetCycleInfo& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.PlanetCycleInfo)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.planet_name().size() > 0) {
-
-    planet_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.planet_name_);
+    _internal_set_planet_name(from._internal_planet_name());
   }
   if (!(from.cycle_length() <= 0 && from.cycle_length() >= 0)) {
     _internal_set_cycle_length(from._internal_cycle_length());
@@ -12131,11 +12553,14 @@ bool PlanetCycleInfo::IsInitialized() const {
 
 void PlanetCycleInfo::InternalSwap(PlanetCycleInfo* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  planet_name_.Swap(&other->planet_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(cycle_length_, other->cycle_length_);
-  swap(last_cached_time_, other->last_cached_time_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  planet_name_.Swap(&other->planet_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(PlanetCycleInfo, last_cached_time_)
+      + sizeof(PlanetCycleInfo::last_cached_time_)
+      - PROTOBUF_FIELD_OFFSET(PlanetCycleInfo, cycle_length_)>(
+          reinterpret_cast<char*>(&cycle_length_),
+          reinterpret_cast<char*>(&other->cycle_length_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata PlanetCycleInfo::GetMetadata() const {
@@ -12151,19 +12576,21 @@ class TimeOfDaySaveGameData::_Internal {
  public:
 };
 
-TimeOfDaySaveGameData::TimeOfDaySaveGameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+TimeOfDaySaveGameData::TimeOfDaySaveGameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  planet_cycle_info_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.TimeOfDaySaveGameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.TimeOfDaySaveGameData)
 }
 TimeOfDaySaveGameData::TimeOfDaySaveGameData(const TimeOfDaySaveGameData& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       planet_cycle_info_(from.planet_cycle_info_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   planet_cycle_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_planet_cycle().empty()) {
-    planet_cycle_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.planet_cycle_);
+    planet_cycle_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_planet_cycle(),
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:OakSave.TimeOfDaySaveGameData)
 }
@@ -12176,12 +12603,20 @@ void TimeOfDaySaveGameData::SharedCtor() {
 TimeOfDaySaveGameData::~TimeOfDaySaveGameData() {
   // @@protoc_insertion_point(destructor:OakSave.TimeOfDaySaveGameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void TimeOfDaySaveGameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   planet_cycle_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void TimeOfDaySaveGameData::ArenaDtor(void* object) {
+  TimeOfDaySaveGameData* _this = reinterpret_cast< TimeOfDaySaveGameData* >(object);
+  (void)_this;
+}
+void TimeOfDaySaveGameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void TimeOfDaySaveGameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -12198,12 +12633,13 @@ void TimeOfDaySaveGameData::Clear() {
   (void) cached_has_bits;
 
   planet_cycle_info_.Clear();
-  planet_cycle_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  _internal_metadata_.Clear();
+  planet_cycle_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* TimeOfDaySaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -12236,7 +12672,9 @@ const char* TimeOfDaySaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NA
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -12276,7 +12714,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.TimeOfDaySaveGameData)
   return target;
@@ -12331,14 +12769,13 @@ void TimeOfDaySaveGameData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& fr
 void TimeOfDaySaveGameData::MergeFrom(const TimeOfDaySaveGameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.TimeOfDaySaveGameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   planet_cycle_info_.MergeFrom(from.planet_cycle_info_);
   if (from.planet_cycle().size() > 0) {
-
-    planet_cycle_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.planet_cycle_);
+    _internal_set_planet_cycle(from._internal_planet_cycle());
   }
 }
 
@@ -12362,10 +12799,9 @@ bool TimeOfDaySaveGameData::IsInitialized() const {
 
 void TimeOfDaySaveGameData::InternalSwap(TimeOfDaySaveGameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   planet_cycle_info_.InternalSwap(&other->planet_cycle_info_);
-  planet_cycle_.Swap(&other->planet_cycle_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  planet_cycle_.Swap(&other->planet_cycle_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata TimeOfDaySaveGameData::GetMetadata() const {
@@ -12381,18 +12817,19 @@ class LevelPersistence_Actor_SaveGameData::_Internal {
  public:
 };
 
-LevelPersistence_Actor_SaveGameData::LevelPersistence_Actor_SaveGameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+LevelPersistence_Actor_SaveGameData::LevelPersistence_Actor_SaveGameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.LevelPersistence_Actor_SaveGameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.LevelPersistence_Actor_SaveGameData)
 }
 LevelPersistence_Actor_SaveGameData::LevelPersistence_Actor_SaveGameData(const LevelPersistence_Actor_SaveGameData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   actor_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_actor_name().empty()) {
-    actor_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.actor_name_);
+    actor_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_actor_name(),
+      GetArena());
   }
   timer_remaining_ = from.timer_remaining_;
   // @@protoc_insertion_point(copy_constructor:OakSave.LevelPersistence_Actor_SaveGameData)
@@ -12407,12 +12844,20 @@ void LevelPersistence_Actor_SaveGameData::SharedCtor() {
 LevelPersistence_Actor_SaveGameData::~LevelPersistence_Actor_SaveGameData() {
   // @@protoc_insertion_point(destructor:OakSave.LevelPersistence_Actor_SaveGameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void LevelPersistence_Actor_SaveGameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   actor_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void LevelPersistence_Actor_SaveGameData::ArenaDtor(void* object) {
+  LevelPersistence_Actor_SaveGameData* _this = reinterpret_cast< LevelPersistence_Actor_SaveGameData* >(object);
+  (void)_this;
+}
+void LevelPersistence_Actor_SaveGameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void LevelPersistence_Actor_SaveGameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -12428,13 +12873,14 @@ void LevelPersistence_Actor_SaveGameData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  actor_name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  actor_name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   timer_remaining_ = 0;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* LevelPersistence_Actor_SaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -12452,7 +12898,7 @@ const char* LevelPersistence_Actor_SaveGameData::_InternalParse(const char* ptr,
       // int32 timer_remaining = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          timer_remaining_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          timer_remaining_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -12462,7 +12908,9 @@ const char* LevelPersistence_Actor_SaveGameData::_InternalParse(const char* ptr,
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -12500,7 +12948,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.LevelPersistence_Actor_SaveGameData)
   return target;
@@ -12555,13 +13003,12 @@ void LevelPersistence_Actor_SaveGameData::MergeFrom(const ::PROTOBUF_NAMESPACE_I
 void LevelPersistence_Actor_SaveGameData::MergeFrom(const LevelPersistence_Actor_SaveGameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.LevelPersistence_Actor_SaveGameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.actor_name().size() > 0) {
-
-    actor_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.actor_name_);
+    _internal_set_actor_name(from._internal_actor_name());
   }
   if (from.timer_remaining() != 0) {
     _internal_set_timer_remaining(from._internal_timer_remaining());
@@ -12588,9 +13035,8 @@ bool LevelPersistence_Actor_SaveGameData::IsInitialized() const {
 
 void LevelPersistence_Actor_SaveGameData::InternalSwap(LevelPersistence_Actor_SaveGameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  actor_name_.Swap(&other->actor_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  actor_name_.Swap(&other->actor_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(timer_remaining_, other->timer_remaining_);
 }
 
@@ -12607,19 +13053,21 @@ class LevelPersistence_Level_SaveGameData::_Internal {
  public:
 };
 
-LevelPersistence_Level_SaveGameData::LevelPersistence_Level_SaveGameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+LevelPersistence_Level_SaveGameData::LevelPersistence_Level_SaveGameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  saved_actors_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.LevelPersistence_Level_SaveGameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.LevelPersistence_Level_SaveGameData)
 }
 LevelPersistence_Level_SaveGameData::LevelPersistence_Level_SaveGameData(const LevelPersistence_Level_SaveGameData& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       saved_actors_(from.saved_actors_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   level_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_level_name().empty()) {
-    level_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.level_name_);
+    level_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_level_name(),
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:OakSave.LevelPersistence_Level_SaveGameData)
 }
@@ -12632,12 +13080,20 @@ void LevelPersistence_Level_SaveGameData::SharedCtor() {
 LevelPersistence_Level_SaveGameData::~LevelPersistence_Level_SaveGameData() {
   // @@protoc_insertion_point(destructor:OakSave.LevelPersistence_Level_SaveGameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void LevelPersistence_Level_SaveGameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   level_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void LevelPersistence_Level_SaveGameData::ArenaDtor(void* object) {
+  LevelPersistence_Level_SaveGameData* _this = reinterpret_cast< LevelPersistence_Level_SaveGameData* >(object);
+  (void)_this;
+}
+void LevelPersistence_Level_SaveGameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void LevelPersistence_Level_SaveGameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -12654,12 +13110,13 @@ void LevelPersistence_Level_SaveGameData::Clear() {
   (void) cached_has_bits;
 
   saved_actors_.Clear();
-  level_name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  _internal_metadata_.Clear();
+  level_name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* LevelPersistence_Level_SaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -12692,7 +13149,9 @@ const char* LevelPersistence_Level_SaveGameData::_InternalParse(const char* ptr,
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -12732,7 +13191,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.LevelPersistence_Level_SaveGameData)
   return target;
@@ -12787,14 +13246,13 @@ void LevelPersistence_Level_SaveGameData::MergeFrom(const ::PROTOBUF_NAMESPACE_I
 void LevelPersistence_Level_SaveGameData::MergeFrom(const LevelPersistence_Level_SaveGameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.LevelPersistence_Level_SaveGameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   saved_actors_.MergeFrom(from.saved_actors_);
   if (from.level_name().size() > 0) {
-
-    level_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.level_name_);
+    _internal_set_level_name(from._internal_level_name());
   }
 }
 
@@ -12818,10 +13276,9 @@ bool LevelPersistence_Level_SaveGameData::IsInitialized() const {
 
 void LevelPersistence_Level_SaveGameData::InternalSwap(LevelPersistence_Level_SaveGameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   saved_actors_.InternalSwap(&other->saved_actors_);
-  level_name_.Swap(&other->level_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  level_name_.Swap(&other->level_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata LevelPersistence_Level_SaveGameData::GetMetadata() const {
@@ -12837,22 +13294,24 @@ class GbxZoneMapFODSavedLevelData::_Internal {
  public:
 };
 
-GbxZoneMapFODSavedLevelData::GbxZoneMapFODSavedLevelData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GbxZoneMapFODSavedLevelData::GbxZoneMapFODSavedLevelData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.GbxZoneMapFODSavedLevelData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.GbxZoneMapFODSavedLevelData)
 }
 GbxZoneMapFODSavedLevelData::GbxZoneMapFODSavedLevelData(const GbxZoneMapFODSavedLevelData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   level_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_level_name().empty()) {
-    level_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.level_name_);
+    level_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_level_name(),
+      GetArena());
   }
   fod_data_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_fod_data().empty()) {
-    fod_data_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.fod_data_);
+    fod_data_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_fod_data(),
+      GetArena());
   }
   ::memcpy(&fod_texture_size_, &from.fod_texture_size_,
     static_cast<size_t>(reinterpret_cast<char*>(&data_revision_) -
@@ -12872,13 +13331,21 @@ void GbxZoneMapFODSavedLevelData::SharedCtor() {
 GbxZoneMapFODSavedLevelData::~GbxZoneMapFODSavedLevelData() {
   // @@protoc_insertion_point(destructor:OakSave.GbxZoneMapFODSavedLevelData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void GbxZoneMapFODSavedLevelData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   level_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   fod_data_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void GbxZoneMapFODSavedLevelData::ArenaDtor(void* object) {
+  GbxZoneMapFODSavedLevelData* _this = reinterpret_cast< GbxZoneMapFODSavedLevelData* >(object);
+  (void)_this;
+}
+void GbxZoneMapFODSavedLevelData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GbxZoneMapFODSavedLevelData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -12894,16 +13361,17 @@ void GbxZoneMapFODSavedLevelData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  level_name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  fod_data_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  level_name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  fod_data_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::memset(&fod_texture_size_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&data_revision_) -
       reinterpret_cast<char*>(&fod_texture_size_)) + sizeof(data_revision_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GbxZoneMapFODSavedLevelData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -12921,14 +13389,14 @@ const char* GbxZoneMapFODSavedLevelData::_InternalParse(const char* ptr, ::PROTO
       // uint32 fod_texture_size = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          fod_texture_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          fod_texture_size_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // uint32 num_chunks = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          num_chunks_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          num_chunks_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -12942,14 +13410,14 @@ const char* GbxZoneMapFODSavedLevelData::_InternalParse(const char* ptr, ::PROTO
       // uint32 data_state = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          data_state_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          data_state_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // uint32 data_revision = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
-          data_revision_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          data_revision_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -12967,7 +13435,9 @@ const char* GbxZoneMapFODSavedLevelData::_InternalParse(const char* ptr, ::PROTO
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -13035,7 +13505,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.GbxZoneMapFODSavedLevelData)
   return target;
@@ -13123,17 +13593,15 @@ void GbxZoneMapFODSavedLevelData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Messa
 void GbxZoneMapFODSavedLevelData::MergeFrom(const GbxZoneMapFODSavedLevelData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.GbxZoneMapFODSavedLevelData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.level_name().size() > 0) {
-
-    level_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.level_name_);
+    _internal_set_level_name(from._internal_level_name());
   }
   if (from.fod_data().size() > 0) {
-
-    fod_data_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.fod_data_);
+    _internal_set_fod_data(from._internal_fod_data());
   }
   if (from.fod_texture_size() != 0) {
     _internal_set_fod_texture_size(from._internal_fod_texture_size());
@@ -13172,16 +13640,15 @@ bool GbxZoneMapFODSavedLevelData::IsInitialized() const {
 
 void GbxZoneMapFODSavedLevelData::InternalSwap(GbxZoneMapFODSavedLevelData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  level_name_.Swap(&other->level_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  fod_data_.Swap(&other->fod_data_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(fod_texture_size_, other->fod_texture_size_);
-  swap(num_chunks_, other->num_chunks_);
-  swap(discovery_percentage_, other->discovery_percentage_);
-  swap(data_state_, other->data_state_);
-  swap(data_revision_, other->data_revision_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  level_name_.Swap(&other->level_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  fod_data_.Swap(&other->fod_data_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(GbxZoneMapFODSavedLevelData, data_revision_)
+      + sizeof(GbxZoneMapFODSavedLevelData::data_revision_)
+      - PROTOBUF_FIELD_OFFSET(GbxZoneMapFODSavedLevelData, fod_texture_size_)>(
+          reinterpret_cast<char*>(&fod_texture_size_),
+          reinterpret_cast<char*>(&other->fod_texture_size_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata GbxZoneMapFODSavedLevelData::GetMetadata() const {
@@ -13197,16 +13664,17 @@ class GbxZoneMapFODSaveGameData::_Internal {
  public:
 };
 
-GbxZoneMapFODSaveGameData::GbxZoneMapFODSaveGameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GbxZoneMapFODSaveGameData::GbxZoneMapFODSaveGameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  level_data_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.GbxZoneMapFODSaveGameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.GbxZoneMapFODSaveGameData)
 }
 GbxZoneMapFODSaveGameData::GbxZoneMapFODSaveGameData(const GbxZoneMapFODSaveGameData& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       level_data_(from.level_data_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   // @@protoc_insertion_point(copy_constructor:OakSave.GbxZoneMapFODSaveGameData)
 }
 
@@ -13217,11 +13685,19 @@ void GbxZoneMapFODSaveGameData::SharedCtor() {
 GbxZoneMapFODSaveGameData::~GbxZoneMapFODSaveGameData() {
   // @@protoc_insertion_point(destructor:OakSave.GbxZoneMapFODSaveGameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void GbxZoneMapFODSaveGameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void GbxZoneMapFODSaveGameData::ArenaDtor(void* object) {
+  GbxZoneMapFODSaveGameData* _this = reinterpret_cast< GbxZoneMapFODSaveGameData* >(object);
+  (void)_this;
+}
+void GbxZoneMapFODSaveGameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GbxZoneMapFODSaveGameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -13238,11 +13714,12 @@ void GbxZoneMapFODSaveGameData::Clear() {
   (void) cached_has_bits;
 
   level_data_.Clear();
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GbxZoneMapFODSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -13266,7 +13743,9 @@ const char* GbxZoneMapFODSaveGameData::_InternalParse(const char* ptr, ::PROTOBU
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -13296,7 +13775,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.GbxZoneMapFODSaveGameData)
   return target;
@@ -13344,7 +13823,7 @@ void GbxZoneMapFODSaveGameData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message
 void GbxZoneMapFODSaveGameData::MergeFrom(const GbxZoneMapFODSaveGameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.GbxZoneMapFODSaveGameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -13371,7 +13850,7 @@ bool GbxZoneMapFODSaveGameData::IsInitialized() const {
 
 void GbxZoneMapFODSaveGameData::InternalSwap(GbxZoneMapFODSaveGameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   level_data_.InternalSwap(&other->level_data_);
 }
 
@@ -13388,22 +13867,24 @@ class Character_NicknameMappingsEntry::_Internal {
  public:
 };
 
-Character_NicknameMappingsEntry::Character_NicknameMappingsEntry()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+Character_NicknameMappingsEntry::Character_NicknameMappingsEntry(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.Character.NicknameMappingsEntry)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.Character.NicknameMappingsEntry)
 }
 Character_NicknameMappingsEntry::Character_NicknameMappingsEntry(const Character_NicknameMappingsEntry& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   key_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_key().empty()) {
-    key_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.key_);
+    key_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_key(),
+      GetArena());
   }
   value_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_value().empty()) {
-    value_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.value_);
+    value_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_value(),
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:OakSave.Character.NicknameMappingsEntry)
 }
@@ -13417,13 +13898,21 @@ void Character_NicknameMappingsEntry::SharedCtor() {
 Character_NicknameMappingsEntry::~Character_NicknameMappingsEntry() {
   // @@protoc_insertion_point(destructor:OakSave.Character.NicknameMappingsEntry)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void Character_NicknameMappingsEntry::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   key_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   value_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void Character_NicknameMappingsEntry::ArenaDtor(void* object) {
+  Character_NicknameMappingsEntry* _this = reinterpret_cast< Character_NicknameMappingsEntry* >(object);
+  (void)_this;
+}
+void Character_NicknameMappingsEntry::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Character_NicknameMappingsEntry::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -13439,13 +13928,14 @@ void Character_NicknameMappingsEntry::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  key_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  value_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  _internal_metadata_.Clear();
+  key_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  value_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* Character_NicknameMappingsEntry::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -13475,7 +13965,9 @@ const char* Character_NicknameMappingsEntry::_InternalParse(const char* ptr, ::P
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -13517,7 +14009,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.Character.NicknameMappingsEntry)
   return target;
@@ -13572,17 +14064,15 @@ void Character_NicknameMappingsEntry::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::M
 void Character_NicknameMappingsEntry::MergeFrom(const Character_NicknameMappingsEntry& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.Character.NicknameMappingsEntry)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.key().size() > 0) {
-
-    key_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.key_);
+    _internal_set_key(from._internal_key());
   }
   if (from.value().size() > 0) {
-
-    value_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.value_);
+    _internal_set_value(from._internal_value());
   }
 }
 
@@ -13606,11 +14096,9 @@ bool Character_NicknameMappingsEntry::IsInitialized() const {
 
 void Character_NicknameMappingsEntry::InternalSwap(Character_NicknameMappingsEntry* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  key_.Swap(&other->key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  value_.Swap(&other->value_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  key_.Swap(&other->key_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  value_.Swap(&other->value_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Character_NicknameMappingsEntry::GetMetadata() const {
@@ -13732,14 +14220,39 @@ void Character::clear_sdu_list() {
 void Character::clear_registered_downloadable_entitlements() {
   registered_downloadable_entitlements_.Clear();
 }
-Character::Character()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+Character::Character(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  resource_pools_(arena),
+  saved_regions_(arena),
+  game_stats_data_(arena),
+  inventory_category_list_(arena),
+  inventory_items_(arena),
+  equipped_inventory_list_(arena),
+  active_weapon_list_(arena),
+  mission_playthroughs_data_(arena),
+  active_travel_stations_(arena),
+  vehicles_unlocked_data_(arena),
+  vehicle_parts_unlocked_(arena),
+  vehicle_loadouts_(arena),
+  challenge_data_(arena),
+  sdu_list_(arena),
+  selected_customizations_(arena),
+  equipped_emote_customizations_(arena),
+  selected_color_customizations_(arena),
+  unlocked_echo_logs_(arena),
+  nickname_mappings_(arena),
+  level_persistence_data_(arena),
+  active_or_blacklisted_travel_stations_(arena),
+  last_active_travel_station_for_playthrough_(arena),
+  game_state_save_data_for_playthrough_(arena),
+  registered_downloadable_entitlements_(arena),
+  active_travel_stations_for_playthrough_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.Character)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.Character)
 }
 Character::Character(const Character& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       resource_pools_(from.resource_pools_),
       saved_regions_(from.saved_regions_),
       game_stats_data_(from.game_stats_data_),
@@ -13765,18 +14278,21 @@ Character::Character(const Character& from)
       game_state_save_data_for_playthrough_(from.game_state_save_data_for_playthrough_),
       registered_downloadable_entitlements_(from.registered_downloadable_entitlements_),
       active_travel_stations_for_playthrough_(from.active_travel_stations_for_playthrough_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   last_active_travel_station_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_last_active_travel_station().empty()) {
-    last_active_travel_station_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.last_active_travel_station_);
+    last_active_travel_station_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_last_active_travel_station(),
+      GetArena());
   }
   preferred_character_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_preferred_character_name().empty()) {
-    preferred_character_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.preferred_character_name_);
+    preferred_character_name_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_preferred_character_name(),
+      GetArena());
   }
   save_game_guid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_save_game_guid().empty()) {
-    save_game_guid_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.save_game_guid_);
+    save_game_guid_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_save_game_guid(),
+      GetArena());
   }
   if (from._internal_has_player_class_data()) {
     player_class_data_ = new ::OakSave::PlayerClassSaveGameData(*from.player_class_data_);
@@ -13862,9 +14378,11 @@ void Character::SharedCtor() {
 Character::~Character() {
   // @@protoc_insertion_point(destructor:OakSave.Character)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void Character::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   last_active_travel_station_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   preferred_character_name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   save_game_guid_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
@@ -13883,6 +14401,12 @@ void Character::SharedDtor() {
   if (this != internal_default_instance()) delete guardian_rank_character_data_;
 }
 
+void Character::ArenaDtor(void* object) {
+  Character* _this = reinterpret_cast< Character* >(object);
+  (void)_this;
+}
+void Character::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Character::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -13923,69 +14447,70 @@ void Character::Clear() {
   game_state_save_data_for_playthrough_.Clear();
   registered_downloadable_entitlements_.Clear();
   active_travel_stations_for_playthrough_.Clear();
-  last_active_travel_station_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  preferred_character_name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  save_game_guid_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  if (GetArenaNoVirtual() == nullptr && player_class_data_ != nullptr) {
+  last_active_travel_station_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  preferred_character_name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  save_game_guid_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  if (GetArena() == nullptr && player_class_data_ != nullptr) {
     delete player_class_data_;
   }
   player_class_data_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && ability_data_ != nullptr) {
+  if (GetArena() == nullptr && ability_data_ != nullptr) {
     delete ability_data_;
   }
   ability_data_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && discovery_data_ != nullptr) {
+  if (GetArena() == nullptr && discovery_data_ != nullptr) {
     delete discovery_data_;
   }
   discovery_data_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && guardian_rank_ != nullptr) {
+  if (GetArena() == nullptr && guardian_rank_ != nullptr) {
     delete guardian_rank_;
   }
   guardian_rank_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && crew_quarters_room_ != nullptr) {
+  if (GetArena() == nullptr && crew_quarters_room_ != nullptr) {
     delete crew_quarters_room_;
   }
   crew_quarters_room_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && crew_quarters_gun_rack_ != nullptr) {
+  if (GetArena() == nullptr && crew_quarters_gun_rack_ != nullptr) {
     delete crew_quarters_gun_rack_;
   }
   crew_quarters_gun_rack_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && last_traveled_map_id_ != nullptr) {
+  if (GetArena() == nullptr && last_traveled_map_id_ != nullptr) {
     delete last_traveled_map_id_;
   }
   last_traveled_map_id_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && challenge_category_completion_pcts_ != nullptr) {
+  if (GetArena() == nullptr && challenge_category_completion_pcts_ != nullptr) {
     delete challenge_category_completion_pcts_;
   }
   challenge_category_completion_pcts_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && character_slot_save_game_data_ != nullptr) {
+  if (GetArena() == nullptr && character_slot_save_game_data_ != nullptr) {
     delete character_slot_save_game_data_;
   }
   character_slot_save_game_data_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && ui_tracking_save_game_data_ != nullptr) {
+  if (GetArena() == nullptr && ui_tracking_save_game_data_ != nullptr) {
     delete ui_tracking_save_game_data_;
   }
   ui_tracking_save_game_data_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && time_of_day_save_game_data_ != nullptr) {
+  if (GetArena() == nullptr && time_of_day_save_game_data_ != nullptr) {
     delete time_of_day_save_game_data_;
   }
   time_of_day_save_game_data_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && gbx_zone_map_fod_save_game_data_ != nullptr) {
+  if (GetArena() == nullptr && gbx_zone_map_fod_save_game_data_ != nullptr) {
     delete gbx_zone_map_fod_save_game_data_;
   }
   gbx_zone_map_fod_save_game_data_ = nullptr;
-  if (GetArenaNoVirtual() == nullptr && guardian_rank_character_data_ != nullptr) {
+  if (GetArena() == nullptr && guardian_rank_character_data_ != nullptr) {
     delete guardian_rank_character_data_;
   }
   guardian_rank_character_data_ = nullptr;
   ::memset(&last_save_timestamp_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&mayhem_level_) -
       reinterpret_cast<char*>(&last_save_timestamp_)) + sizeof(mayhem_level_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* Character::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -13994,21 +14519,21 @@ const char* Character::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       // uint32 save_game_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          save_game_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          save_game_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // int64 last_save_timestamp = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          last_save_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          last_save_timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // uint32 time_played_seconds = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          time_played_seconds_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          time_played_seconds_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -14046,7 +14571,7 @@ const char* Character::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       // int32 experience_points = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 56)) {
-          experience_points_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          experience_points_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -14104,7 +14629,7 @@ const char* Character::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_active_weapon_list(), ptr, ctx);
           CHK_(ptr);
         } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 96) {
-          _internal_add_active_weapon_list(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr));
+          _internal_add_active_weapon_list(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -14118,21 +14643,21 @@ const char* Character::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       // int32 last_play_through_index = 14;
       case 14:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 112)) {
-          last_play_through_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          last_play_through_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // int32 playthroughs_completed = 15;
       case 15:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 120)) {
-          playthroughs_completed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          playthroughs_completed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // bool show_new_playthrough_notification = 16;
       case 16:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 128)) {
-          show_new_playthrough_notification_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          show_new_playthrough_notification_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -14219,7 +14744,7 @@ const char* Character::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       // int32 vehicle_last_loadout_index = 27;
       case 27:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 216)) {
-          vehicle_last_loadout_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          vehicle_last_loadout_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -14267,7 +14792,7 @@ const char* Character::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt32Parser(_internal_mutable_equipped_emote_customizations(), ptr, ctx);
           CHK_(ptr);
         } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 248) {
-          _internal_add_equipped_emote_customizations(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr));
+          _internal_add_equipped_emote_customizations(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -14319,7 +14844,7 @@ const char* Character::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       // bool has_played_special_echo_log_insert_already = 37;
       case 37:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          has_played_special_echo_log_insert_already_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          has_played_special_echo_log_insert_already_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -14375,14 +14900,14 @@ const char* Character::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       // int32 name_character_limit = 44;
       case 44:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 96)) {
-          name_character_limit_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          name_character_limit_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // uint32 preferred_group_mode = 45;
       case 45:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 104)) {
-          preferred_group_mode_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          preferred_group_mode_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -14408,14 +14933,14 @@ const char* Character::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       // uint32 accumulated_level_persistence_reset_timer_seconds = 48;
       case 48:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 128)) {
-          accumulated_level_persistence_reset_timer_seconds_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          accumulated_level_persistence_reset_timer_seconds_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // uint32 mayhem_level = 49;
       case 49:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 136)) {
-          mayhem_level_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          mayhem_level_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -14507,14 +15032,14 @@ const char* Character::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
       // bool optional_objective_reward_fixup_applied = 58;
       case 58:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 208)) {
-          optional_objective_reward_fixup_applied_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          optional_objective_reward_fixup_applied_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // bool vehicle_part_rewards_fixup_applied = 59;
       case 59:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 216)) {
-          vehicle_part_rewards_fixup_applied_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          vehicle_part_rewards_fixup_applied_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -14524,7 +15049,9 @@ const char* Character::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -14980,7 +15507,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.Character)
   return target;
@@ -15425,7 +15952,7 @@ void Character::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void Character::MergeFrom(const Character& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.Character)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -15455,16 +15982,13 @@ void Character::MergeFrom(const Character& from) {
   registered_downloadable_entitlements_.MergeFrom(from.registered_downloadable_entitlements_);
   active_travel_stations_for_playthrough_.MergeFrom(from.active_travel_stations_for_playthrough_);
   if (from.last_active_travel_station().size() > 0) {
-
-    last_active_travel_station_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.last_active_travel_station_);
+    _internal_set_last_active_travel_station(from._internal_last_active_travel_station());
   }
   if (from.preferred_character_name().size() > 0) {
-
-    preferred_character_name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.preferred_character_name_);
+    _internal_set_preferred_character_name(from._internal_preferred_character_name());
   }
   if (from.save_game_guid().size() > 0) {
-
-    save_game_guid_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.save_game_guid_);
+    _internal_set_save_game_guid(from._internal_save_game_guid());
   }
   if (from.has_player_class_data()) {
     _internal_mutable_player_class_data()->::OakSave::PlayerClassSaveGameData::MergeFrom(from._internal_player_class_data());
@@ -15572,7 +16096,7 @@ bool Character::IsInitialized() const {
 
 void Character::InternalSwap(Character* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   resource_pools_.InternalSwap(&other->resource_pools_);
   saved_regions_.InternalSwap(&other->saved_regions_);
   game_stats_data_.InternalSwap(&other->game_stats_data_);
@@ -15598,40 +16122,15 @@ void Character::InternalSwap(Character* other) {
   game_state_save_data_for_playthrough_.InternalSwap(&other->game_state_save_data_for_playthrough_);
   registered_downloadable_entitlements_.InternalSwap(&other->registered_downloadable_entitlements_);
   active_travel_stations_for_playthrough_.InternalSwap(&other->active_travel_stations_for_playthrough_);
-  last_active_travel_station_.Swap(&other->last_active_travel_station_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  preferred_character_name_.Swap(&other->preferred_character_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  save_game_guid_.Swap(&other->save_game_guid_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(player_class_data_, other->player_class_data_);
-  swap(ability_data_, other->ability_data_);
-  swap(discovery_data_, other->discovery_data_);
-  swap(guardian_rank_, other->guardian_rank_);
-  swap(crew_quarters_room_, other->crew_quarters_room_);
-  swap(crew_quarters_gun_rack_, other->crew_quarters_gun_rack_);
-  swap(last_traveled_map_id_, other->last_traveled_map_id_);
-  swap(challenge_category_completion_pcts_, other->challenge_category_completion_pcts_);
-  swap(character_slot_save_game_data_, other->character_slot_save_game_data_);
-  swap(ui_tracking_save_game_data_, other->ui_tracking_save_game_data_);
-  swap(time_of_day_save_game_data_, other->time_of_day_save_game_data_);
-  swap(gbx_zone_map_fod_save_game_data_, other->gbx_zone_map_fod_save_game_data_);
-  swap(guardian_rank_character_data_, other->guardian_rank_character_data_);
-  swap(last_save_timestamp_, other->last_save_timestamp_);
-  swap(save_game_id_, other->save_game_id_);
-  swap(time_played_seconds_, other->time_played_seconds_);
-  swap(experience_points_, other->experience_points_);
-  swap(last_play_through_index_, other->last_play_through_index_);
-  swap(playthroughs_completed_, other->playthroughs_completed_);
-  swap(vehicle_last_loadout_index_, other->vehicle_last_loadout_index_);
-  swap(show_new_playthrough_notification_, other->show_new_playthrough_notification_);
-  swap(has_played_special_echo_log_insert_already_, other->has_played_special_echo_log_insert_already_);
-  swap(optional_objective_reward_fixup_applied_, other->optional_objective_reward_fixup_applied_);
-  swap(vehicle_part_rewards_fixup_applied_, other->vehicle_part_rewards_fixup_applied_);
-  swap(name_character_limit_, other->name_character_limit_);
-  swap(preferred_group_mode_, other->preferred_group_mode_);
-  swap(accumulated_level_persistence_reset_timer_seconds_, other->accumulated_level_persistence_reset_timer_seconds_);
-  swap(mayhem_level_, other->mayhem_level_);
+  last_active_travel_station_.Swap(&other->last_active_travel_station_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  preferred_character_name_.Swap(&other->preferred_character_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  save_game_guid_.Swap(&other->save_game_guid_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Character, mayhem_level_)
+      + sizeof(Character::mayhem_level_)
+      - PROTOBUF_FIELD_OFFSET(Character, player_class_data_)>(
+          reinterpret_cast<char*>(&player_class_data_),
+          reinterpret_cast<char*>(&other->player_class_data_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Character::GetMetadata() const {
@@ -15643,139 +16142,139 @@ void Character::InternalSwap(Character* other) {
 }  // namespace OakSave
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::OakSave::PlayerClassSaveGameData* Arena::CreateMaybeMessage< ::OakSave::PlayerClassSaveGameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::PlayerClassSaveGameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::PlayerClassSaveGameData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::ResourcePoolSavegameData* Arena::CreateMaybeMessage< ::OakSave::ResourcePoolSavegameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::ResourcePoolSavegameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::ResourcePoolSavegameData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::RegionSaveGameData* Arena::CreateMaybeMessage< ::OakSave::RegionSaveGameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::RegionSaveGameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::RegionSaveGameData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::InventoryBalanceStateInitializationData* Arena::CreateMaybeMessage< ::OakSave::InventoryBalanceStateInitializationData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::InventoryBalanceStateInitializationData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::InventoryBalanceStateInitializationData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::OakInventoryItemSaveGameData* Arena::CreateMaybeMessage< ::OakSave::OakInventoryItemSaveGameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::OakInventoryItemSaveGameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::OakInventoryItemSaveGameData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::EquippedInventorySaveGameData* Arena::CreateMaybeMessage< ::OakSave::EquippedInventorySaveGameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::EquippedInventorySaveGameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::EquippedInventorySaveGameData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::OakAbilityTreeItemSaveGameData* Arena::CreateMaybeMessage< ::OakSave::OakAbilityTreeItemSaveGameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::OakAbilityTreeItemSaveGameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::OakAbilityTreeItemSaveGameData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::OakAbilitySlotSaveGameData* Arena::CreateMaybeMessage< ::OakSave::OakAbilitySlotSaveGameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::OakAbilitySlotSaveGameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::OakAbilitySlotSaveGameData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::OakActionAbilityAugmentSaveGameData* Arena::CreateMaybeMessage< ::OakSave::OakActionAbilityAugmentSaveGameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::OakActionAbilityAugmentSaveGameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::OakActionAbilityAugmentSaveGameData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::OakActionAbilityAugmentConfigurationSaveGameData* Arena::CreateMaybeMessage< ::OakSave::OakActionAbilityAugmentConfigurationSaveGameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::OakActionAbilityAugmentConfigurationSaveGameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::OakActionAbilityAugmentConfigurationSaveGameData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::OakPlayerAbilitySaveGameData* Arena::CreateMaybeMessage< ::OakSave::OakPlayerAbilitySaveGameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::OakPlayerAbilitySaveGameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::OakPlayerAbilitySaveGameData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::MissionStatusPlayerSaveGameData* Arena::CreateMaybeMessage< ::OakSave::MissionStatusPlayerSaveGameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::MissionStatusPlayerSaveGameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::MissionStatusPlayerSaveGameData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::MissionPlaythroughSaveGameData* Arena::CreateMaybeMessage< ::OakSave::MissionPlaythroughSaveGameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::MissionPlaythroughSaveGameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::MissionPlaythroughSaveGameData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::ActiveFastTravelSaveData* Arena::CreateMaybeMessage< ::OakSave::ActiveFastTravelSaveData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::ActiveFastTravelSaveData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::ActiveFastTravelSaveData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::PlaythroughActiveFastTravelSaveData* Arena::CreateMaybeMessage< ::OakSave::PlaythroughActiveFastTravelSaveData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::PlaythroughActiveFastTravelSaveData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::PlaythroughActiveFastTravelSaveData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::DiscoveredAreaInfo* Arena::CreateMaybeMessage< ::OakSave::DiscoveredAreaInfo >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::DiscoveredAreaInfo >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::DiscoveredAreaInfo >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::DiscoveredLevelInfo* Arena::CreateMaybeMessage< ::OakSave::DiscoveredLevelInfo >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::DiscoveredLevelInfo >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::DiscoveredLevelInfo >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::DiscoveredPlanetInfo* Arena::CreateMaybeMessage< ::OakSave::DiscoveredPlanetInfo >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::DiscoveredPlanetInfo >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::DiscoveredPlanetInfo >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::DiscoverySaveData* Arena::CreateMaybeMessage< ::OakSave::DiscoverySaveData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::DiscoverySaveData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::DiscoverySaveData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::VehicleUnlockedSaveGameData* Arena::CreateMaybeMessage< ::OakSave::VehicleUnlockedSaveGameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::VehicleUnlockedSaveGameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::VehicleUnlockedSaveGameData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::OakCARMenuVehicleConfigSaveData* Arena::CreateMaybeMessage< ::OakSave::OakCARMenuVehicleConfigSaveData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::OakCARMenuVehicleConfigSaveData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::OakCARMenuVehicleConfigSaveData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::CustomPlayerColorSaveGameData* Arena::CreateMaybeMessage< ::OakSave::CustomPlayerColorSaveGameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::CustomPlayerColorSaveGameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::CustomPlayerColorSaveGameData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::GuardianRankSaveGameData* Arena::CreateMaybeMessage< ::OakSave::GuardianRankSaveGameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::GuardianRankSaveGameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::GuardianRankSaveGameData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::GuardianRankRewardCharacterSaveGameData* Arena::CreateMaybeMessage< ::OakSave::GuardianRankRewardCharacterSaveGameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::GuardianRankRewardCharacterSaveGameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::GuardianRankRewardCharacterSaveGameData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::GuardianRankPerkCharacterSaveGameData* Arena::CreateMaybeMessage< ::OakSave::GuardianRankPerkCharacterSaveGameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::GuardianRankPerkCharacterSaveGameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::GuardianRankPerkCharacterSaveGameData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::GuardianRankCharacterSaveGameData* Arena::CreateMaybeMessage< ::OakSave::GuardianRankCharacterSaveGameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::GuardianRankCharacterSaveGameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::GuardianRankCharacterSaveGameData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::CrewQuartersDecorationSaveData* Arena::CreateMaybeMessage< ::OakSave::CrewQuartersDecorationSaveData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::CrewQuartersDecorationSaveData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::CrewQuartersDecorationSaveData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::CrewQuartersSaveData* Arena::CreateMaybeMessage< ::OakSave::CrewQuartersSaveData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::CrewQuartersSaveData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::CrewQuartersSaveData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::CrewQuartersGunRackItemSaveData* Arena::CreateMaybeMessage< ::OakSave::CrewQuartersGunRackItemSaveData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::CrewQuartersGunRackItemSaveData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::CrewQuartersGunRackItemSaveData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::CrewQuartersGunRackSaveData* Arena::CreateMaybeMessage< ::OakSave::CrewQuartersGunRackSaveData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::CrewQuartersGunRackSaveData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::CrewQuartersGunRackSaveData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::EchoLogSaveGameData* Arena::CreateMaybeMessage< ::OakSave::EchoLogSaveGameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::EchoLogSaveGameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::EchoLogSaveGameData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::MapIDData* Arena::CreateMaybeMessage< ::OakSave::MapIDData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::MapIDData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::MapIDData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::GameStateSaveData* Arena::CreateMaybeMessage< ::OakSave::GameStateSaveData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::GameStateSaveData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::GameStateSaveData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::ChallengeCategoryProgressSaveData* Arena::CreateMaybeMessage< ::OakSave::ChallengeCategoryProgressSaveData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::ChallengeCategoryProgressSaveData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::ChallengeCategoryProgressSaveData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::OakPlayerCharacterAugmentSaveGameData* Arena::CreateMaybeMessage< ::OakSave::OakPlayerCharacterAugmentSaveGameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::OakPlayerCharacterAugmentSaveGameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::OakPlayerCharacterAugmentSaveGameData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::OakPlayerCharacterSlotSaveGameData* Arena::CreateMaybeMessage< ::OakSave::OakPlayerCharacterSlotSaveGameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::OakPlayerCharacterSlotSaveGameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::OakPlayerCharacterSlotSaveGameData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::UITrackingSaveGameData* Arena::CreateMaybeMessage< ::OakSave::UITrackingSaveGameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::UITrackingSaveGameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::UITrackingSaveGameData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::PlanetCycleInfo* Arena::CreateMaybeMessage< ::OakSave::PlanetCycleInfo >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::PlanetCycleInfo >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::PlanetCycleInfo >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::TimeOfDaySaveGameData* Arena::CreateMaybeMessage< ::OakSave::TimeOfDaySaveGameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::TimeOfDaySaveGameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::TimeOfDaySaveGameData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::LevelPersistence_Actor_SaveGameData* Arena::CreateMaybeMessage< ::OakSave::LevelPersistence_Actor_SaveGameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::LevelPersistence_Actor_SaveGameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::LevelPersistence_Actor_SaveGameData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::LevelPersistence_Level_SaveGameData* Arena::CreateMaybeMessage< ::OakSave::LevelPersistence_Level_SaveGameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::LevelPersistence_Level_SaveGameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::LevelPersistence_Level_SaveGameData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::GbxZoneMapFODSavedLevelData* Arena::CreateMaybeMessage< ::OakSave::GbxZoneMapFODSavedLevelData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::GbxZoneMapFODSavedLevelData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::GbxZoneMapFODSavedLevelData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::GbxZoneMapFODSaveGameData* Arena::CreateMaybeMessage< ::OakSave::GbxZoneMapFODSaveGameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::GbxZoneMapFODSaveGameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::GbxZoneMapFODSaveGameData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::Character_NicknameMappingsEntry* Arena::CreateMaybeMessage< ::OakSave::Character_NicknameMappingsEntry >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::Character_NicknameMappingsEntry >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::Character_NicknameMappingsEntry >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::Character* Arena::CreateMaybeMessage< ::OakSave::Character >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::Character >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::Character >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

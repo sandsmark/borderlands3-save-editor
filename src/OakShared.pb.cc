@@ -328,16 +328,15 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Oak
   &scc_info_Vec3_OakShared_2eproto.base,
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_OakShared_2eproto_once;
-static bool descriptor_table_OakShared_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_OakShared_2eproto = {
-  &descriptor_table_OakShared_2eproto_initialized, descriptor_table_protodef_OakShared_2eproto, "OakShared.proto", 1038,
+  false, false, descriptor_table_protodef_OakShared_2eproto, "OakShared.proto", 1038,
   &descriptor_table_OakShared_2eproto_once, descriptor_table_OakShared_2eproto_sccs, descriptor_table_OakShared_2eproto_deps, 9, 0,
   schemas, file_default_instances, TableStruct_OakShared_2eproto::offsets,
   file_level_metadata_OakShared_2eproto, 9, file_level_enum_descriptors_OakShared_2eproto, file_level_service_descriptors_OakShared_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
-static bool dynamic_init_dummy_OakShared_2eproto = (  ::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_OakShared_2eproto), true);
+static bool dynamic_init_dummy_OakShared_2eproto = (static_cast<void>(::PROTOBUF_NAMESPACE_ID::internal::AddDescriptors(&descriptor_table_OakShared_2eproto)), true);
 namespace OakSave {
 
 // ===================================================================
@@ -348,15 +347,15 @@ class Vec3::_Internal {
  public:
 };
 
-Vec3::Vec3()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+Vec3::Vec3(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.Vec3)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.Vec3)
 }
 Vec3::Vec3(const Vec3& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&x_, &from.x_,
     static_cast<size_t>(reinterpret_cast<char*>(&z_) -
     reinterpret_cast<char*>(&x_)) + sizeof(z_));
@@ -372,11 +371,19 @@ void Vec3::SharedCtor() {
 Vec3::~Vec3() {
   // @@protoc_insertion_point(destructor:OakSave.Vec3)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void Vec3::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void Vec3::ArenaDtor(void* object) {
+  Vec3* _this = reinterpret_cast< Vec3* >(object);
+  (void)_this;
+}
+void Vec3::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void Vec3::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -395,11 +402,12 @@ void Vec3::Clear() {
   ::memset(&x_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&z_) -
       reinterpret_cast<char*>(&x_)) + sizeof(z_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* Vec3::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -432,7 +440,9 @@ const char* Vec3::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::inter
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -472,7 +482,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.Vec3)
   return target;
@@ -528,7 +538,7 @@ void Vec3::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
 void Vec3::MergeFrom(const Vec3& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.Vec3)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -563,10 +573,13 @@ bool Vec3::IsInitialized() const {
 
 void Vec3::InternalSwap(Vec3* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(x_, other->x_);
-  swap(y_, other->y_);
-  swap(z_, other->z_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Vec3, z_)
+      + sizeof(Vec3::z_)
+      - PROTOBUF_FIELD_OFFSET(Vec3, x_)>(
+          reinterpret_cast<char*>(&x_),
+          reinterpret_cast<char*>(&other->x_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Vec3::GetMetadata() const {
@@ -582,18 +595,19 @@ class GameStatSaveGameData::_Internal {
  public:
 };
 
-GameStatSaveGameData::GameStatSaveGameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+GameStatSaveGameData::GameStatSaveGameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.GameStatSaveGameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.GameStatSaveGameData)
 }
 GameStatSaveGameData::GameStatSaveGameData(const GameStatSaveGameData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   stat_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_stat_path().empty()) {
-    stat_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.stat_path_);
+    stat_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_stat_path(),
+      GetArena());
   }
   stat_value_ = from.stat_value_;
   // @@protoc_insertion_point(copy_constructor:OakSave.GameStatSaveGameData)
@@ -608,12 +622,20 @@ void GameStatSaveGameData::SharedCtor() {
 GameStatSaveGameData::~GameStatSaveGameData() {
   // @@protoc_insertion_point(destructor:OakSave.GameStatSaveGameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void GameStatSaveGameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   stat_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void GameStatSaveGameData::ArenaDtor(void* object) {
+  GameStatSaveGameData* _this = reinterpret_cast< GameStatSaveGameData* >(object);
+  (void)_this;
+}
+void GameStatSaveGameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void GameStatSaveGameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -629,13 +651,14 @@ void GameStatSaveGameData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  stat_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  stat_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   stat_value_ = 0;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* GameStatSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -644,7 +667,7 @@ const char* GameStatSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAM
       // int32 stat_value = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          stat_value_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          stat_value_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -663,7 +686,9 @@ const char* GameStatSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAM
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -701,7 +726,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.GameStatSaveGameData)
   return target;
@@ -756,13 +781,12 @@ void GameStatSaveGameData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& fro
 void GameStatSaveGameData::MergeFrom(const GameStatSaveGameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.GameStatSaveGameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.stat_path().size() > 0) {
-
-    stat_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.stat_path_);
+    _internal_set_stat_path(from._internal_stat_path());
   }
   if (from.stat_value() != 0) {
     _internal_set_stat_value(from._internal_stat_value());
@@ -789,9 +813,8 @@ bool GameStatSaveGameData::IsInitialized() const {
 
 void GameStatSaveGameData::InternalSwap(GameStatSaveGameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  stat_path_.Swap(&other->stat_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  stat_path_.Swap(&other->stat_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(stat_value_, other->stat_value_);
 }
 
@@ -808,15 +831,15 @@ class InventoryCategorySaveData::_Internal {
  public:
 };
 
-InventoryCategorySaveData::InventoryCategorySaveData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+InventoryCategorySaveData::InventoryCategorySaveData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.InventoryCategorySaveData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.InventoryCategorySaveData)
 }
 InventoryCategorySaveData::InventoryCategorySaveData(const InventoryCategorySaveData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&base_category_definition_hash_, &from.base_category_definition_hash_,
     static_cast<size_t>(reinterpret_cast<char*>(&quantity_) -
     reinterpret_cast<char*>(&base_category_definition_hash_)) + sizeof(quantity_));
@@ -832,11 +855,19 @@ void InventoryCategorySaveData::SharedCtor() {
 InventoryCategorySaveData::~InventoryCategorySaveData() {
   // @@protoc_insertion_point(destructor:OakSave.InventoryCategorySaveData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void InventoryCategorySaveData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void InventoryCategorySaveData::ArenaDtor(void* object) {
+  InventoryCategorySaveData* _this = reinterpret_cast< InventoryCategorySaveData* >(object);
+  (void)_this;
+}
+void InventoryCategorySaveData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void InventoryCategorySaveData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -855,11 +886,12 @@ void InventoryCategorySaveData::Clear() {
   ::memset(&base_category_definition_hash_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&quantity_) -
       reinterpret_cast<char*>(&base_category_definition_hash_)) + sizeof(quantity_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* InventoryCategorySaveData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -868,14 +900,14 @@ const char* InventoryCategorySaveData::_InternalParse(const char* ptr, ::PROTOBU
       // uint32 base_category_definition_hash = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          base_category_definition_hash_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          base_category_definition_hash_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // int32 quantity = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          quantity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          quantity_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -885,7 +917,9 @@ const char* InventoryCategorySaveData::_InternalParse(const char* ptr, ::PROTOBU
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -919,7 +953,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.InventoryCategorySaveData)
   return target;
@@ -974,7 +1008,7 @@ void InventoryCategorySaveData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message
 void InventoryCategorySaveData::MergeFrom(const InventoryCategorySaveData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.InventoryCategorySaveData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1006,9 +1040,13 @@ bool InventoryCategorySaveData::IsInitialized() const {
 
 void InventoryCategorySaveData::InternalSwap(InventoryCategorySaveData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(base_category_definition_hash_, other->base_category_definition_hash_);
-  swap(quantity_, other->quantity_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(InventoryCategorySaveData, quantity_)
+      + sizeof(InventoryCategorySaveData::quantity_)
+      - PROTOBUF_FIELD_OFFSET(InventoryCategorySaveData, base_category_definition_hash_)>(
+          reinterpret_cast<char*>(&base_category_definition_hash_),
+          reinterpret_cast<char*>(&other->base_category_definition_hash_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata InventoryCategorySaveData::GetMetadata() const {
@@ -1024,18 +1062,19 @@ class OakSDUSaveGameData::_Internal {
  public:
 };
 
-OakSDUSaveGameData::OakSDUSaveGameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+OakSDUSaveGameData::OakSDUSaveGameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.OakSDUSaveGameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.OakSDUSaveGameData)
 }
 OakSDUSaveGameData::OakSDUSaveGameData(const OakSDUSaveGameData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   sdu_data_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_sdu_data_path().empty()) {
-    sdu_data_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.sdu_data_path_);
+    sdu_data_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_sdu_data_path(),
+      GetArena());
   }
   sdu_level_ = from.sdu_level_;
   // @@protoc_insertion_point(copy_constructor:OakSave.OakSDUSaveGameData)
@@ -1050,12 +1089,20 @@ void OakSDUSaveGameData::SharedCtor() {
 OakSDUSaveGameData::~OakSDUSaveGameData() {
   // @@protoc_insertion_point(destructor:OakSave.OakSDUSaveGameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void OakSDUSaveGameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   sdu_data_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void OakSDUSaveGameData::ArenaDtor(void* object) {
+  OakSDUSaveGameData* _this = reinterpret_cast< OakSDUSaveGameData* >(object);
+  (void)_this;
+}
+void OakSDUSaveGameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void OakSDUSaveGameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -1071,13 +1118,14 @@ void OakSDUSaveGameData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  sdu_data_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  sdu_data_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   sdu_level_ = 0;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* OakSDUSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -1086,7 +1134,7 @@ const char* OakSDUSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
       // int32 sdu_level = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          sdu_level_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          sdu_level_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1105,7 +1153,9 @@ const char* OakSDUSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMES
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -1143,7 +1193,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.OakSDUSaveGameData)
   return target;
@@ -1198,13 +1248,12 @@ void OakSDUSaveGameData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from)
 void OakSDUSaveGameData::MergeFrom(const OakSDUSaveGameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.OakSDUSaveGameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.sdu_data_path().size() > 0) {
-
-    sdu_data_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.sdu_data_path_);
+    _internal_set_sdu_data_path(from._internal_sdu_data_path());
   }
   if (from.sdu_level() != 0) {
     _internal_set_sdu_level(from._internal_sdu_level());
@@ -1231,9 +1280,8 @@ bool OakSDUSaveGameData::IsInitialized() const {
 
 void OakSDUSaveGameData::InternalSwap(OakSDUSaveGameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  sdu_data_path_.Swap(&other->sdu_data_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  sdu_data_path_.Swap(&other->sdu_data_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(sdu_level_, other->sdu_level_);
 }
 
@@ -1250,15 +1298,15 @@ class RegisteredDownloadableEntitlement::_Internal {
  public:
 };
 
-RegisteredDownloadableEntitlement::RegisteredDownloadableEntitlement()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+RegisteredDownloadableEntitlement::RegisteredDownloadableEntitlement(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.RegisteredDownloadableEntitlement)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.RegisteredDownloadableEntitlement)
 }
 RegisteredDownloadableEntitlement::RegisteredDownloadableEntitlement(const RegisteredDownloadableEntitlement& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&id_, &from.id_,
     static_cast<size_t>(reinterpret_cast<char*>(&seen_) -
     reinterpret_cast<char*>(&id_)) + sizeof(seen_));
@@ -1274,11 +1322,19 @@ void RegisteredDownloadableEntitlement::SharedCtor() {
 RegisteredDownloadableEntitlement::~RegisteredDownloadableEntitlement() {
   // @@protoc_insertion_point(destructor:OakSave.RegisteredDownloadableEntitlement)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void RegisteredDownloadableEntitlement::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void RegisteredDownloadableEntitlement::ArenaDtor(void* object) {
+  RegisteredDownloadableEntitlement* _this = reinterpret_cast< RegisteredDownloadableEntitlement* >(object);
+  (void)_this;
+}
+void RegisteredDownloadableEntitlement::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void RegisteredDownloadableEntitlement::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -1297,11 +1353,12 @@ void RegisteredDownloadableEntitlement::Clear() {
   ::memset(&id_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&seen_) -
       reinterpret_cast<char*>(&id_)) + sizeof(seen_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* RegisteredDownloadableEntitlement::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -1310,28 +1367,28 @@ const char* RegisteredDownloadableEntitlement::_InternalParse(const char* ptr, :
       // int32 id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // uint32 consumed = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          consumed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          consumed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // bool registered = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          registered_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          registered_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // bool seen = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          seen_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          seen_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1341,7 +1398,9 @@ const char* RegisteredDownloadableEntitlement::_InternalParse(const char* ptr, :
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -1387,7 +1446,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.RegisteredDownloadableEntitlement)
   return target;
@@ -1452,7 +1511,7 @@ void RegisteredDownloadableEntitlement::MergeFrom(const ::PROTOBUF_NAMESPACE_ID:
 void RegisteredDownloadableEntitlement::MergeFrom(const RegisteredDownloadableEntitlement& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.RegisteredDownloadableEntitlement)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1490,11 +1549,13 @@ bool RegisteredDownloadableEntitlement::IsInitialized() const {
 
 void RegisteredDownloadableEntitlement::InternalSwap(RegisteredDownloadableEntitlement* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  swap(id_, other->id_);
-  swap(consumed_, other->consumed_);
-  swap(registered_, other->registered_);
-  swap(seen_, other->seen_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(RegisteredDownloadableEntitlement, seen_)
+      + sizeof(RegisteredDownloadableEntitlement::seen_)
+      - PROTOBUF_FIELD_OFFSET(RegisteredDownloadableEntitlement, id_)>(
+          reinterpret_cast<char*>(&id_),
+          reinterpret_cast<char*>(&other->id_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RegisteredDownloadableEntitlement::GetMetadata() const {
@@ -1510,20 +1571,23 @@ class RegisteredDownloadableEntitlements::_Internal {
  public:
 };
 
-RegisteredDownloadableEntitlements::RegisteredDownloadableEntitlements()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+RegisteredDownloadableEntitlements::RegisteredDownloadableEntitlements(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  entitlement_ids_(arena),
+  entitlements_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.RegisteredDownloadableEntitlements)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.RegisteredDownloadableEntitlements)
 }
 RegisteredDownloadableEntitlements::RegisteredDownloadableEntitlements(const RegisteredDownloadableEntitlements& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       entitlement_ids_(from.entitlement_ids_),
       entitlements_(from.entitlements_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   entitlement_source_asset_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_entitlement_source_asset_path().empty()) {
-    entitlement_source_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.entitlement_source_asset_path_);
+    entitlement_source_asset_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_entitlement_source_asset_path(),
+      GetArena());
   }
   // @@protoc_insertion_point(copy_constructor:OakSave.RegisteredDownloadableEntitlements)
 }
@@ -1536,12 +1600,20 @@ void RegisteredDownloadableEntitlements::SharedCtor() {
 RegisteredDownloadableEntitlements::~RegisteredDownloadableEntitlements() {
   // @@protoc_insertion_point(destructor:OakSave.RegisteredDownloadableEntitlements)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void RegisteredDownloadableEntitlements::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   entitlement_source_asset_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void RegisteredDownloadableEntitlements::ArenaDtor(void* object) {
+  RegisteredDownloadableEntitlements* _this = reinterpret_cast< RegisteredDownloadableEntitlements* >(object);
+  (void)_this;
+}
+void RegisteredDownloadableEntitlements::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void RegisteredDownloadableEntitlements::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -1559,12 +1631,13 @@ void RegisteredDownloadableEntitlements::Clear() {
 
   entitlement_ids_.Clear();
   entitlements_.Clear();
-  entitlement_source_asset_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-  _internal_metadata_.Clear();
+  entitlement_source_asset_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* RegisteredDownloadableEntitlements::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -1585,7 +1658,7 @@ const char* RegisteredDownloadableEntitlements::_InternalParse(const char* ptr, 
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedInt64Parser(_internal_mutable_entitlement_ids(), ptr, ctx);
           CHK_(ptr);
         } else if (static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16) {
-          _internal_add_entitlement_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr));
+          _internal_add_entitlement_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1607,7 +1680,9 @@ const char* RegisteredDownloadableEntitlements::_InternalParse(const char* ptr, 
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -1656,7 +1731,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.RegisteredDownloadableEntitlements)
   return target;
@@ -1726,15 +1801,14 @@ void RegisteredDownloadableEntitlements::MergeFrom(const ::PROTOBUF_NAMESPACE_ID
 void RegisteredDownloadableEntitlements::MergeFrom(const RegisteredDownloadableEntitlements& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.RegisteredDownloadableEntitlements)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   entitlement_ids_.MergeFrom(from.entitlement_ids_);
   entitlements_.MergeFrom(from.entitlements_);
   if (from.entitlement_source_asset_path().size() > 0) {
-
-    entitlement_source_asset_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.entitlement_source_asset_path_);
+    _internal_set_entitlement_source_asset_path(from._internal_entitlement_source_asset_path());
   }
 }
 
@@ -1758,11 +1832,10 @@ bool RegisteredDownloadableEntitlements::IsInitialized() const {
 
 void RegisteredDownloadableEntitlements::InternalSwap(RegisteredDownloadableEntitlements* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   entitlement_ids_.InternalSwap(&other->entitlement_ids_);
   entitlements_.InternalSwap(&other->entitlements_);
-  entitlement_source_asset_path_.Swap(&other->entitlement_source_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  entitlement_source_asset_path_.Swap(&other->entitlement_source_asset_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata RegisteredDownloadableEntitlements::GetMetadata() const {
@@ -1778,18 +1851,19 @@ class ChallengeStatSaveGameData::_Internal {
  public:
 };
 
-ChallengeStatSaveGameData::ChallengeStatSaveGameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+ChallengeStatSaveGameData::ChallengeStatSaveGameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.ChallengeStatSaveGameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.ChallengeStatSaveGameData)
 }
 ChallengeStatSaveGameData::ChallengeStatSaveGameData(const ChallengeStatSaveGameData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   challenge_stat_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_challenge_stat_path().empty()) {
-    challenge_stat_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.challenge_stat_path_);
+    challenge_stat_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_challenge_stat_path(),
+      GetArena());
   }
   current_stat_value_ = from.current_stat_value_;
   // @@protoc_insertion_point(copy_constructor:OakSave.ChallengeStatSaveGameData)
@@ -1804,12 +1878,20 @@ void ChallengeStatSaveGameData::SharedCtor() {
 ChallengeStatSaveGameData::~ChallengeStatSaveGameData() {
   // @@protoc_insertion_point(destructor:OakSave.ChallengeStatSaveGameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void ChallengeStatSaveGameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   challenge_stat_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void ChallengeStatSaveGameData::ArenaDtor(void* object) {
+  ChallengeStatSaveGameData* _this = reinterpret_cast< ChallengeStatSaveGameData* >(object);
+  (void)_this;
+}
+void ChallengeStatSaveGameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ChallengeStatSaveGameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -1825,13 +1907,14 @@ void ChallengeStatSaveGameData::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  challenge_stat_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  challenge_stat_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   current_stat_value_ = 0;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* ChallengeStatSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -1840,7 +1923,7 @@ const char* ChallengeStatSaveGameData::_InternalParse(const char* ptr, ::PROTOBU
       // int32 current_stat_value = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          current_stat_value_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          current_stat_value_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -1859,7 +1942,9 @@ const char* ChallengeStatSaveGameData::_InternalParse(const char* ptr, ::PROTOBU
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -1897,7 +1982,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.ChallengeStatSaveGameData)
   return target;
@@ -1952,13 +2037,12 @@ void ChallengeStatSaveGameData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message
 void ChallengeStatSaveGameData::MergeFrom(const ChallengeStatSaveGameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.ChallengeStatSaveGameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   if (from.challenge_stat_path().size() > 0) {
-
-    challenge_stat_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.challenge_stat_path_);
+    _internal_set_challenge_stat_path(from._internal_challenge_stat_path());
   }
   if (from.current_stat_value() != 0) {
     _internal_set_current_stat_value(from._internal_current_stat_value());
@@ -1985,9 +2069,8 @@ bool ChallengeStatSaveGameData::IsInitialized() const {
 
 void ChallengeStatSaveGameData::InternalSwap(ChallengeStatSaveGameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
-  challenge_stat_path_.Swap(&other->challenge_stat_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  challenge_stat_path_.Swap(&other->challenge_stat_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(current_stat_value_, other->current_stat_value_);
 }
 
@@ -2004,15 +2087,15 @@ class OakChallengeRewardSaveGameData::_Internal {
  public:
 };
 
-OakChallengeRewardSaveGameData::OakChallengeRewardSaveGameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+OakChallengeRewardSaveGameData::OakChallengeRewardSaveGameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.OakChallengeRewardSaveGameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.OakChallengeRewardSaveGameData)
 }
 OakChallengeRewardSaveGameData::OakChallengeRewardSaveGameData(const OakChallengeRewardSaveGameData& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   challenge_reward_claimed_ = from.challenge_reward_claimed_;
   // @@protoc_insertion_point(copy_constructor:OakSave.OakChallengeRewardSaveGameData)
 }
@@ -2024,11 +2107,19 @@ void OakChallengeRewardSaveGameData::SharedCtor() {
 OakChallengeRewardSaveGameData::~OakChallengeRewardSaveGameData() {
   // @@protoc_insertion_point(destructor:OakSave.OakChallengeRewardSaveGameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void OakChallengeRewardSaveGameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
 }
 
+void OakChallengeRewardSaveGameData::ArenaDtor(void* object) {
+  OakChallengeRewardSaveGameData* _this = reinterpret_cast< OakChallengeRewardSaveGameData* >(object);
+  (void)_this;
+}
+void OakChallengeRewardSaveGameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void OakChallengeRewardSaveGameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -2045,11 +2136,12 @@ void OakChallengeRewardSaveGameData::Clear() {
   (void) cached_has_bits;
 
   challenge_reward_claimed_ = false;
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* OakChallengeRewardSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -2058,7 +2150,7 @@ const char* OakChallengeRewardSaveGameData::_InternalParse(const char* ptr, ::PR
       // bool challenge_reward_claimed = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          challenge_reward_claimed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          challenge_reward_claimed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2068,7 +2160,9 @@ const char* OakChallengeRewardSaveGameData::_InternalParse(const char* ptr, ::PR
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -2096,7 +2190,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.OakChallengeRewardSaveGameData)
   return target;
@@ -2142,7 +2236,7 @@ void OakChallengeRewardSaveGameData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Me
 void OakChallengeRewardSaveGameData::MergeFrom(const OakChallengeRewardSaveGameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.OakChallengeRewardSaveGameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -2171,7 +2265,7 @@ bool OakChallengeRewardSaveGameData::IsInitialized() const {
 
 void OakChallengeRewardSaveGameData::InternalSwap(OakChallengeRewardSaveGameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   swap(challenge_reward_claimed_, other->challenge_reward_claimed_);
 }
 
@@ -2188,20 +2282,23 @@ class ChallengeSaveGameData::_Internal {
  public:
 };
 
-ChallengeSaveGameData::ChallengeSaveGameData()
-  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+ChallengeSaveGameData::ChallengeSaveGameData(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena),
+  stat_instance_state_(arena),
+  challenge_reward_info_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(constructor:OakSave.ChallengeSaveGameData)
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.ChallengeSaveGameData)
 }
 ChallengeSaveGameData::ChallengeSaveGameData(const ChallengeSaveGameData& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
-      _internal_metadata_(nullptr),
       stat_instance_state_(from.stat_instance_state_),
       challenge_reward_info_(from.challenge_reward_info_) {
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   challenge_class_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_challenge_class_path().empty()) {
-    challenge_class_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.challenge_class_path_);
+    challenge_class_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_challenge_class_path(),
+      GetArena());
   }
   ::memcpy(&completed_count_, &from.completed_count_,
     static_cast<size_t>(reinterpret_cast<char*>(&progress_counter_) -
@@ -2220,12 +2317,20 @@ void ChallengeSaveGameData::SharedCtor() {
 ChallengeSaveGameData::~ChallengeSaveGameData() {
   // @@protoc_insertion_point(destructor:OakSave.ChallengeSaveGameData)
   SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 void ChallengeSaveGameData::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
   challenge_class_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
+void ChallengeSaveGameData::ArenaDtor(void* object) {
+  ChallengeSaveGameData* _this = reinterpret_cast< ChallengeSaveGameData* >(object);
+  (void)_this;
+}
+void ChallengeSaveGameData::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
 void ChallengeSaveGameData::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
@@ -2243,15 +2348,16 @@ void ChallengeSaveGameData::Clear() {
 
   stat_instance_state_.Clear();
   challenge_reward_info_.Clear();
-  challenge_class_path_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  challenge_class_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::memset(&completed_count_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&progress_counter_) -
       reinterpret_cast<char*>(&completed_count_)) + sizeof(progress_counter_));
-  _internal_metadata_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* ChallengeSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
   while (!ctx->Done(&ptr)) {
     ::PROTOBUF_NAMESPACE_ID::uint32 tag;
     ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
@@ -2260,35 +2366,35 @@ const char* ChallengeSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NA
       // int32 completed_count = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
-          completed_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          completed_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // bool is_active = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
-          is_active_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          is_active_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // bool currently_completed = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
-          currently_completed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          currently_completed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // int32 completed_progress_level = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 32)) {
-          completed_progress_level_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          completed_progress_level_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
       // int32 progress_counter = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 40)) {
-          progress_counter_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          progress_counter_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -2331,7 +2437,9 @@ const char* ChallengeSaveGameData::_InternalParse(const char* ptr, ::PROTOBUF_NA
           ctx->SetLastTag(tag);
           goto success;
         }
-        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
         CHK_(ptr != nullptr);
         continue;
       }
@@ -2409,7 +2517,7 @@ failure:
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields(), target, stream);
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
   // @@protoc_insertion_point(serialize_to_array_end:OakSave.ChallengeSaveGameData)
   return target;
@@ -2502,15 +2610,14 @@ void ChallengeSaveGameData::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& fr
 void ChallengeSaveGameData::MergeFrom(const ChallengeSaveGameData& from) {
 // @@protoc_insertion_point(class_specific_merge_from_start:OakSave.ChallengeSaveGameData)
   GOOGLE_DCHECK_NE(&from, this);
-  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
   stat_instance_state_.MergeFrom(from.stat_instance_state_);
   challenge_reward_info_.MergeFrom(from.challenge_reward_info_);
   if (from.challenge_class_path().size() > 0) {
-
-    challenge_class_path_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.challenge_class_path_);
+    _internal_set_challenge_class_path(from._internal_challenge_class_path());
   }
   if (from.completed_count() != 0) {
     _internal_set_completed_count(from._internal_completed_count());
@@ -2549,16 +2656,16 @@ bool ChallengeSaveGameData::IsInitialized() const {
 
 void ChallengeSaveGameData::InternalSwap(ChallengeSaveGameData* other) {
   using std::swap;
-  _internal_metadata_.Swap(&other->_internal_metadata_);
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
   stat_instance_state_.InternalSwap(&other->stat_instance_state_);
   challenge_reward_info_.InternalSwap(&other->challenge_reward_info_);
-  challenge_class_path_.Swap(&other->challenge_class_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-    GetArenaNoVirtual());
-  swap(completed_count_, other->completed_count_);
-  swap(is_active_, other->is_active_);
-  swap(currently_completed_, other->currently_completed_);
-  swap(completed_progress_level_, other->completed_progress_level_);
-  swap(progress_counter_, other->progress_counter_);
+  challenge_class_path_.Swap(&other->challenge_class_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(ChallengeSaveGameData, progress_counter_)
+      + sizeof(ChallengeSaveGameData::progress_counter_)
+      - PROTOBUF_FIELD_OFFSET(ChallengeSaveGameData, completed_count_)>(
+          reinterpret_cast<char*>(&completed_count_),
+          reinterpret_cast<char*>(&other->completed_count_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata ChallengeSaveGameData::GetMetadata() const {
@@ -2570,31 +2677,31 @@ void ChallengeSaveGameData::InternalSwap(ChallengeSaveGameData* other) {
 }  // namespace OakSave
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::OakSave::Vec3* Arena::CreateMaybeMessage< ::OakSave::Vec3 >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::Vec3 >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::Vec3 >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::GameStatSaveGameData* Arena::CreateMaybeMessage< ::OakSave::GameStatSaveGameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::GameStatSaveGameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::GameStatSaveGameData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::InventoryCategorySaveData* Arena::CreateMaybeMessage< ::OakSave::InventoryCategorySaveData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::InventoryCategorySaveData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::InventoryCategorySaveData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::OakSDUSaveGameData* Arena::CreateMaybeMessage< ::OakSave::OakSDUSaveGameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::OakSDUSaveGameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::OakSDUSaveGameData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::RegisteredDownloadableEntitlement* Arena::CreateMaybeMessage< ::OakSave::RegisteredDownloadableEntitlement >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::RegisteredDownloadableEntitlement >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::RegisteredDownloadableEntitlement >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::RegisteredDownloadableEntitlements* Arena::CreateMaybeMessage< ::OakSave::RegisteredDownloadableEntitlements >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::RegisteredDownloadableEntitlements >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::RegisteredDownloadableEntitlements >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::ChallengeStatSaveGameData* Arena::CreateMaybeMessage< ::OakSave::ChallengeStatSaveGameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::ChallengeStatSaveGameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::ChallengeStatSaveGameData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::OakChallengeRewardSaveGameData* Arena::CreateMaybeMessage< ::OakSave::OakChallengeRewardSaveGameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::OakChallengeRewardSaveGameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::OakChallengeRewardSaveGameData >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::ChallengeSaveGameData* Arena::CreateMaybeMessage< ::OakSave::ChallengeSaveGameData >(Arena* arena) {
-  return Arena::CreateInternal< ::OakSave::ChallengeSaveGameData >(arena);
+  return Arena::CreateMessageInternal< ::OakSave::ChallengeSaveGameData >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 
