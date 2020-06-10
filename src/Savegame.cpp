@@ -599,6 +599,7 @@ bool Savegame::save(const QString filePath) const
 void Savegame::addInventoryItemPart(const int index, const InventoryItem::Aspect &part)
 {
     qDebug() << "Adding" << part.val;
+
     m_items[index].parts.append(part);
     m_character->mutable_inventory_items(index)->set_item_serial_number(serializeItem(m_items[index]));
 }
@@ -628,6 +629,7 @@ void Savegame::setItemLevel(const int index, const int newLevel)
         return;
     }
     m_items[index].level = newLevel;
+
     m_character->mutable_inventory_items(index)->set_item_serial_number(serializeItem(m_items[index]));
 }
 
