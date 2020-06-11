@@ -733,6 +733,11 @@ QVector<bool> Savegame::objectivesCompleted(const QString &missionID)
                 case 1:
                     ret.append(true);
                     break;
+
+                    // dunno what these are
+                case 30:
+                case 512:
+                case 17408:
                 default:
                     qWarning() << "Unknown objective state" << objectiveState << "for mission" << missionID;
                     break;

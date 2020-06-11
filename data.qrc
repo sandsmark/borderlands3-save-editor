@@ -48,5 +48,7 @@
         <file>data/descriptions/weapons/sr-jak.tsv</file>
         <file>data/descriptions/weapons/sr-mal.tsv</file>
         <file>data/descriptions/weapons/sr-vla.tsv</file>
+        <file>data/mission-names.json</file>
+        <file>data/mission-objectives.json</file>
     </qresource>
 </RCC>
