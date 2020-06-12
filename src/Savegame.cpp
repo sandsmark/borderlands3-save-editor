@@ -740,14 +740,43 @@ QVector<bool> Savegame::objectivesCompleted(const QString &missionID)
                 case 17408:
                 default:
                     qWarning() << "Unknown objective state" << objectiveState << "for mission" << missionID;
-                    break;
+                    return {};
                 }
-
             }
+
+            break;
         }
     }
 
     return ret;
+}
+
+void Savegame::setObjectiveCompleted(const QString &missionID, const int objectiveIndex, const bool active)
+{
+    const std::string protobufSucks = missionID.toStdString();
+    for (OakSave::MissionPlaythroughSaveGameData &playthrough : *m_character->mutable_mission_playthroughs_data()) {
+        for (OakSave::MissionStatusPlayerSaveGameData &mission : *playthrough.mutable_mission_list()) {
+            if (mission.mission_class_path() != protobufSucks) {
+                continue;
+            }
+            const uint32_t current = mission.objectives_progress(objectiveIndex);
+            if (active) {
+                if (current != 0) {
+                    qWarning() << "Current objective state is" << current << "not 0, refusing to change";
+                    return;
+                }
+                mission.set_objectives_progress(objectiveIndex, 1);
+            } else {
+                if (current != 1) {
+                    qWarning() << "Current objective state is" << current << "not 1, refusing to change";
+                    return;
+                }
+                mission.set_objectives_progress(objectiveIndex, 0);
+            }
+
+            break;
+        }
+    }
 }
 
 QString Savegame::characterName() const

@@ -5,6 +5,7 @@
 
 class Savegame;
 class QListWidget;
+class QListWidgetItem;
 
 class MissionsTab : public QWidget
 {
@@ -17,6 +18,7 @@ signals:
 private slots:
     void load();
     void onMissionSelected();
+    void onObjectiveChanged(QListWidgetItem *item);
 
 private:
     void loadObjectives();

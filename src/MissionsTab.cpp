@@ -10,6 +10,7 @@
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
+#include <QTimer>
 
 MissionsTab::MissionsTab(Savegame *savegame) : m_savegame(savegame)
 {
@@ -26,6 +27,7 @@ MissionsTab::MissionsTab(Savegame *savegame) : m_savegame(savegame)
 
     connect(savegame, &Savegame::itemsChanged, this, &MissionsTab::load);
     connect(m_missionsList, &QListWidget::itemSelectionChanged, this, &MissionsTab::onMissionSelected);
+    connect(m_progressList, &QListWidget::itemChanged, this, &MissionsTab::onObjectiveChanged);
 }
 
 void MissionsTab::load()
@@ -57,7 +59,20 @@ void MissionsTab::onMissionSelected()
     }
 
     // TODO
-    m_progressList->setEnabled(false);
+//    m_progressList->setEnabled(false);
+}
+
+void MissionsTab::onObjectiveChanged(QListWidgetItem *item)
+{
+    Q_ASSERT(item);
+
+    int index = m_progressList->row(item);
+    Q_ASSERT(index >= 0);
+
+    const QString missionId = m_missionsList->currentItem()->text();
+    m_savegame->setObjectiveCompleted(missionId, index, item->checkState() == Qt::Checked ? true : false);
+
+    QTimer::singleShot(100, this, &MissionsTab::onMissionSelected);
 }
 
 void MissionsTab::loadObjectives()

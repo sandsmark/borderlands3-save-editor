@@ -70,6 +70,7 @@ public:
 
     QStringList activeMissions() const;
     QVector<bool> objectivesCompleted(const QString &missionName);
+    void setObjectiveCompleted(const QString &missionID, const int objectiveIndex, const bool active);
 
 public slots:
     //////////////////////////
