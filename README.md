@@ -27,9 +27,8 @@ set up appveyor I tested it in Wine (on Linux) and it worked.
 
 I. e. what it can edit. And will probably break.
 
- - Name
- - Level
- - Experience points
+ - Basics (name, level, experience points)
+ - Mission objectives progress (so you can bypass bugs making the main story line not progress).
  - Edit items/weapons in the inventory, also tries to validate your changes (can't create new from scratch yet though)
  - Amount of ammo, SDUs, eridium and money
  - View active missions and progress (have everything for editing, but can't be bothered to do the last 5% of the work)
@@ -48,3 +47,4 @@ https://www.patreon.com/gibbed
 # Some more screenshots
 ![screenshot](/doc/screenshot-inventory.png)
 ![screenshot](/doc/screenshot-consumables.png)
+![screenshot](/doc/screenshot-missions.png)
