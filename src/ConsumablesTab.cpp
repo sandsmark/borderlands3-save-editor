@@ -10,6 +10,24 @@ ConsumablesTab::ConsumablesTab(Savegame *savegame) :
 {
     setLayout(new QVBoxLayout);
 
+
+    //////////////////////////
+    // Economy
+    QGroupBox *economyBox = new QGroupBox(tr("Economy"));
+    QFormLayout *economyLayout = new QFormLayout;
+    economyLayout->setFieldGrowthPolicy(QFormLayout::FieldsStayAtSizeHint);
+    economyBox->setLayout(economyLayout);
+
+    m_moneyEditor = new QSpinBox;
+    m_moneyEditor->setRange(0, 99999999);
+    economyLayout->addRow(tr("Money"), m_moneyEditor);
+
+    m_eridiumEditor = new QSpinBox;
+    m_eridiumEditor->setRange(0, 99999999);
+    economyLayout->addRow(tr("Eridium"), m_eridiumEditor);
+
+    layout()->addWidget(economyBox);
+
     QGroupBox *ammoBox = new QGroupBox(tr("Ammo"));
     layout()->addWidget(ammoBox);
 
@@ -112,6 +130,9 @@ void ConsumablesTab::load()
     m_grenadeSdu->setValue(m_savegame->sduAmount("Grenade"));
     m_backpackSdu->setValue(m_savegame->sduAmount("Backpack"));
 
+    m_moneyEditor->setValue(m_savegame->money());
+    m_eridiumEditor->setValue(m_savegame->eridium());
+
     connectSpinBoxes();
 }
 
@@ -178,10 +199,16 @@ void ConsumablesTab::connectSpinBoxes()
     connect(m_backpackSdu, QOverload<int>::of(&QSpinBox::valueChanged), this, [this](int amount) {
         m_savegame->setSduAmount("Backpack", amount);
     });
+
+    connect(m_moneyEditor, SIGNAL(valueChanged(int)), m_savegame, SLOT(setMoney(int))); // old style connect because fuck qOverload
+    connect(m_eridiumEditor, SIGNAL(valueChanged(int)), m_savegame, SLOT(setEridium(int))); // old style connect because fuck qOverload
 }
 
 void ConsumablesTab::disconnectSpinBoxes()
 {
+    disconnect(m_eridiumEditor, nullptr, m_savegame, nullptr);
+    disconnect(m_moneyEditor, nullptr, m_savegame, nullptr);
+
     // fuckings qspinbox........................
     disconnect(m_pistolAmmo, nullptr, this, nullptr);
     disconnect(m_smgAmmo, nullptr, this, nullptr);

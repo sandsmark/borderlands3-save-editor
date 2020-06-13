@@ -46,6 +46,7 @@ Lol::Lol(QWidget *parent) : QWidget(parent)
     };
 
     m_repaintTimer.start(16, this);
+    setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
 }
 
 void Lol::paintEvent(QPaintEvent *)

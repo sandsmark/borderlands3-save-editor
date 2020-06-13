@@ -47,23 +47,6 @@ GeneralTab::GeneralTab(Savegame *savegame, QWidget *parent) :
     connect(m_levelEdit, SIGNAL(valueChanged(int)), savegame, SLOT(setLevel(int))); // old style connect because fuck qOverload
     connect(m_xpEdit, SIGNAL(valueChanged(int)), savegame, SLOT(setXp(int))); // old style connect because fuck qOverload
 
-    //////////////////////////
-    // Economy
-    QGroupBox *economyBox = new QGroupBox(tr("Economy"));
-    QFormLayout *economyLayout = new QFormLayout;
-    economyLayout->setFieldGrowthPolicy(QFormLayout::FieldsStayAtSizeHint);
-    economyBox->setLayout(economyLayout);
-
-    m_moneyEditor = new QSpinBox;
-    m_moneyEditor->setRange(0, 99999999);
-    economyLayout->addRow(tr("Money"), m_moneyEditor);
-
-    m_eridiumEditor = new QSpinBox;
-    m_eridiumEditor->setRange(0, 99999999);
-    economyLayout->addRow(tr("Eridium"), m_eridiumEditor);
-
-    layout()->addWidget(economyBox);
-
     // Advanced shit
     QGroupBox *advancedBox = new QGroupBox(tr("Advanced"));
     QFormLayout *advancedLayout = new QFormLayout;
@@ -83,12 +66,8 @@ GeneralTab::GeneralTab(Savegame *savegame, QWidget *parent) :
 
     layout()->addWidget(new Lol);
 
-    connect(savegame, &Savegame::moneyChanged, m_moneyEditor, &QSpinBox::setValue);
-    connect(savegame, &Savegame::eridiumChanged, m_eridiumEditor, &QSpinBox::setValue);
     connect(savegame, &Savegame::saveSlotChanged, m_saveSlot, &QSpinBox::setValue);
     connect(savegame, &Savegame::uuidChanged, m_uuid, &QLabel::setText);
-    connect(m_moneyEditor, SIGNAL(valueChanged(int)), savegame, SLOT(setMoney(int))); // old style connect because fuck qOverload
-    connect(m_eridiumEditor, SIGNAL(valueChanged(int)), savegame, SLOT(setEridium(int))); // old style connect because fuck qOverload
     connect(m_saveSlot, SIGNAL(valueChanged(int)), savegame, SLOT(setSaveSlot(int))); // old style connect because fuck qOverload
     connect(generateUuidButton, &QPushButton::clicked, savegame, &Savegame::regenerateUuid);
 }

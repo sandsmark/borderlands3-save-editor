@@ -26,9 +26,6 @@ private:
     QSpinBox *m_xpEdit;
     Savegame *m_savegame;
 
-    QSpinBox *m_moneyEditor;
-    QSpinBox *m_eridiumEditor;
-
     QSpinBox *m_saveSlot;
     QLabel *m_uuid;
 };
