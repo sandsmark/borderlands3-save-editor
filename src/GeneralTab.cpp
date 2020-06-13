@@ -2,6 +2,7 @@
 
 #include "Savegame.h"
 #include "Constants.h"
+#include "Lol.h"
 
 #include <QSpinBox>
 #include <QGroupBox>
@@ -79,6 +80,8 @@ GeneralTab::GeneralTab(Savegame *savegame, QWidget *parent) :
     advancedLayout->addWidget(generateUuidButton);
 
     layout()->addWidget(advancedBox);
+
+    layout()->addWidget(new Lol);
 
     connect(savegame, &Savegame::moneyChanged, m_moneyEditor, &QSpinBox::setValue);
     connect(savegame, &Savegame::eridiumChanged, m_eridiumEditor, &QSpinBox::setValue);

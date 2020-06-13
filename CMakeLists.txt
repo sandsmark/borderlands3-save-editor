@@ -21,6 +21,9 @@ endif()
 
 find_package(ZLIB)
 
+# wtf cmake... automoc?
+qt5_wrap_cpp(moc_sources src/Lol.h)
+
 add_executable(borderlands3-save-editor
     src/main.cpp
     src/MainWindow.cpp
@@ -33,11 +36,15 @@ add_executable(borderlands3-save-editor
     src/ItemData.cpp
     src/MissionsTab.cpp
 
+    src/Lol.cpp
+
     src/OakProfile.pb.cc
     src/OakSave.pb.cc
     src/OakShared.pb.cc
+    ${moc_sources}
 
     data.qrc
     )
+
 
 target_link_libraries(borderlands3-save-editor PRIVATE Qt5::Widgets protobuf::libprotobuf)
