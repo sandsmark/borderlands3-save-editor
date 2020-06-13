@@ -38,19 +38,19 @@ MainWindow::MainWindow(QWidget *parent)
 
     m_generalTab = new GeneralTab(m_savegame);
     m_generalTab->setEnabled(false);
-    m_tabWidget->addTab(m_generalTab, tr("General"));
+    m_tabWidget->addTab(m_generalTab, tr("&General"));
 
     m_inventoryTab = new InventoryTab(m_savegame);
     m_inventoryTab->setEnabled(false);
-    m_tabWidget->addTab(m_inventoryTab, tr("Inventory"));
+    m_tabWidget->addTab(m_inventoryTab, tr("&Inventory"));
 
     m_consumablesTab = new ConsumablesTab(m_savegame);
     m_consumablesTab->setEnabled(false);
-    m_tabWidget->addTab(m_consumablesTab, "Consumables");
+    m_tabWidget->addTab(m_consumablesTab, "&Consumables");
 
     m_missionsTab = new MissionsTab(m_savegame);
     m_missionsTab->setEnabled(false);
-    m_tabWidget->addTab(m_missionsTab, tr("Missions"));
+    m_tabWidget->addTab(m_missionsTab, tr("Active &Missions"));
 
     resize(900, 500);
 

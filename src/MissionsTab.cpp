@@ -11,18 +11,29 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QTimer>
+#include <QLabel>
 
 MissionsTab::MissionsTab(Savegame *savegame) : m_savegame(savegame)
 {
     loadData();
 
-    setLayout(new QHBoxLayout);
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
+    QLabel *warningLabel = new QLabel(tr("WARNING: This does not update the current \"objective set\", so if you progress too far the game might not like it. "
+                                        "I haven't tested that, I only needed to get past the stuck \"Talk to Lilith\".\n\n"
+                                        "Editing is disabled for missions I don't have data for (i. e. JohnWickParse failed to grok the game files), "
+                                        "and for missions which have objective statuses that are unknown (it looks like objectives which consists of collecting things)."));
+    warningLabel->setWordWrap(true);
+    mainLayout->addWidget(warningLabel);
+
+
+    QHBoxLayout *layout = new QHBoxLayout;
+    mainLayout->addLayout(layout);
 
     m_missionsList = new QListWidget;
     m_progressList = new QListWidget;
 
-    layout()->addWidget(m_missionsList);
-    layout()->addWidget(m_progressList);
+    layout->addWidget(m_missionsList);
+    layout->addWidget(m_progressList);
 
     connect(savegame, &Savegame::itemsChanged, this, &MissionsTab::load);
     connect(m_missionsList, &QListWidget::itemSelectionChanged, this, &MissionsTab::onMissionSelected);
