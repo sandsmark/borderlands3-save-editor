@@ -21,15 +21,17 @@ private slots:
     void onObjectiveChanged(QListWidgetItem *item);
 
 private:
-    void loadObjectives();
-    void loadNames();
+    void loadData();
 
     Savegame *m_savegame;
 
     QListWidget *m_missionsList;
     QListWidget *m_progressList;
+
     QHash<QString, QStringList> m_objectives;
+    QHash<QString, QHash<QString, QString>> m_objectiveNames;
     QHash<QString, QString> m_missionNames;
+    QHash<QString, QStringList> m_objectiveSets;
 };
 
 #endif // MISSIONSTAB_H

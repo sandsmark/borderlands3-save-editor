@@ -713,17 +713,21 @@ QStringList Savegame::activeMissions() const
 }
 
 // not horribly efficient, but I don't want to expose the rest to the crappy protobuf API, it's bad enough as it is
-QVector<bool> Savegame::objectivesCompleted(const QString &missionID)
+QVector<bool> Savegame::objectivesCompleted(const QString &missionID, bool *failed)
 {
     const std::string protobufSucks = missionID.toStdString();
 
     QVector<bool> ret;
+    if (failed) {
+        *failed = false;
+    }
 
     for (const OakSave::MissionPlaythroughSaveGameData &playthrough : m_character->mission_playthroughs_data()) {
         for (const OakSave::MissionStatusPlayerSaveGameData &mission : playthrough.mission_list()) {
             if (mission.mission_class_path() != protobufSucks) {
                 continue;
             }
+
 
             for (const int32_t objectiveState : mission.objectives_progress()) {
                 switch(objectiveState) {
@@ -739,8 +743,12 @@ QVector<bool> Savegame::objectivesCompleted(const QString &missionID)
                 case 512:
                 case 17408:
                 default:
+                    qDebug() << QString::fromStdString(mission.active_objective_set_path());
                     qWarning() << "Unknown objective state" << objectiveState << "for mission" << missionID;
-                    return {};
+                    if (failed) {
+                        *failed = true;
+                    }
+                    break;
                 }
             }
 

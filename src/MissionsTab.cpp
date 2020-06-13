@@ -14,8 +14,7 @@
 
 MissionsTab::MissionsTab(Savegame *savegame) : m_savegame(savegame)
 {
-    loadObjectives();
-    loadNames();
+    loadData();
 
     setLayout(new QHBoxLayout);
 
@@ -33,7 +32,18 @@ MissionsTab::MissionsTab(Savegame *savegame) : m_savegame(savegame)
 void MissionsTab::load()
 {
     m_missionsList->clear();
-    m_missionsList->addItems(m_savegame->activeMissions());
+    for (const QString &missionPath : m_savegame->activeMissions()) {
+        const QString mission = missionPath.split('.').first(); // forgot to fetch the full name from the pak, so just skip the thing after the .
+        QListWidgetItem *item;
+        if (m_missionNames.contains(mission)) {
+            item = new QListWidgetItem(m_missionNames[mission]);
+        } else {
+            item = new QListWidgetItem(mission);
+        }
+        item->setData(Qt::UserRole, missionPath);
+
+        m_missionsList->addItem(item);
+    }
 }
 
 void MissionsTab::onMissionSelected()
@@ -42,24 +52,36 @@ void MissionsTab::onMissionSelected()
         return;
     }
 
-    const QString missionId = m_missionsList->currentItem()->text();
+    const QString missionId = m_missionsList->currentItem()->data(Qt::UserRole).toString();
+    qDebug() << missionId;
 
     m_progressList->clear();
-    const QVector<bool> objectiveStatus = m_savegame->objectivesCompleted(missionId);
-    const QStringList &names = m_objectives[missionId.split('.').first()]; // forgot to fetch the full name from the pak, so just skip the thing after the .
+    bool failed;
+
+    const QVector<bool> objectiveStatus = m_savegame->objectivesCompleted(missionId, &failed);
+    const QString missionLookupName = missionId.split('.').first();
+    const QStringList &objectivePaths = m_objectives[missionLookupName];
+    const QHash<QString, QString> &objectiveNames = m_objectiveNames[missionLookupName];
+
     for (int i=0; i<objectiveStatus.count(); i++) {
         QListWidgetItem *objective{};
-        if (i < names.count()) {
-            objective = new QListWidgetItem(names[i]);
+        if (i < objectivePaths.count()) {
+            if (objectiveNames.contains(objectivePaths[i])) {
+                objective = new QListWidgetItem(objectiveNames[objectivePaths[i]]);
+            } else {
+                objective = new QListWidgetItem(objectivePaths[i]);
+            }
+            objective->setData(Qt::UserRole, objectivePaths[i]);
         } else {
             objective = new QListWidgetItem(QStringLiteral("Unknown objective %1").arg(i + 1));
+            failed = true;
         }
+
         objective->setCheckState(objectiveStatus[i] ? Qt::Checked : Qt::Unchecked);
         m_progressList->addItem(objective);
     }
 
-    // TODO
-//    m_progressList->setEnabled(false);
+    m_progressList->setEnabled(!failed);
 }
 
 void MissionsTab::onObjectiveChanged(QListWidgetItem *item)
@@ -75,33 +97,23 @@ void MissionsTab::onObjectiveChanged(QListWidgetItem *item)
     QTimer::singleShot(100, this, &MissionsTab::onMissionSelected);
 }
 
-void MissionsTab::loadObjectives()
+void MissionsTab::loadData()
 {
-    QFile objectivesFile(":/data/mission-objectives.json");
-    if (!objectivesFile.open(QIODevice::ReadOnly)) {
-        qWarning() << "Failed to open" << objectivesFile.fileName() << objectivesFile.fileName();
-        return;
-    }
-    const QJsonObject rootObject = QJsonDocument::fromJson(objectivesFile.readAll()).object();
-    for (const QString &id : rootObject.keys()) {
-        QStringList objectives;
-        for (const QJsonValue &objective : rootObject[id].toArray()) {
-            objectives.append(objective.toString());
-        }
-
-        m_objectives[id] = std::move(objectives);
-    }
-}
-
-void MissionsTab::loadNames()
-{
-    QFile namesFile(":/data/mission-names.json");
+    QFile namesFile(":/data/missions.json");
     if (!namesFile.open(QIODevice::ReadOnly)) {
         qWarning() << "Failed to open" << namesFile.fileName() << namesFile.fileName();
         return;
     }
     const QJsonObject rootObject = QJsonDocument::fromJson(namesFile.readAll()).object();
-    for (const QString &id : rootObject.keys()) {
-        m_missionNames[id] = rootObject[id].toString();
+    for (const QString &missionPath : rootObject.keys()) {
+        const QJsonObject mission = rootObject[missionPath].toObject();
+        m_missionNames[missionPath] = mission["Title"].toString();
+        for (const QJsonValue &val : mission["ObjectivesList"].toArray()) {
+            m_objectives[missionPath].append(val.toString());
+        }
+        const QJsonObject objectiveTitles = mission["ObjectiveTitles"].toObject();
+        for (const QString &objectivePath : objectiveTitles.keys()) {
+            m_objectiveNames[missionPath][objectivePath] = objectiveTitles[objectivePath].toString();
+        }
     }
 }

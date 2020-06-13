@@ -69,7 +69,7 @@ public:
     void setSduAmount(const QString &name, const int amount);
 
     QStringList activeMissions() const;
-    QVector<bool> objectivesCompleted(const QString &missionName);
+    QVector<bool> objectivesCompleted(const QString &missionName, bool *failed = nullptr);
     void setObjectiveCompleted(const QString &missionID, const int objectiveIndex, const bool active);
 
 public slots:
