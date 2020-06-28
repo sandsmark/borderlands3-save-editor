@@ -4,6 +4,8 @@ Borderlands 3 Savegame Editor
 ![screenshot](/doc/screenshot.png)
 
 
+### Probably won't get updated anymore, I've played through the game. Though this should at least help others solve the same game-breaking bugs I had to get past.
+
 Work in progress, whenever I encounter a game-breaking bug and need to get past
 it. Because they don't provide a console in game.
 
