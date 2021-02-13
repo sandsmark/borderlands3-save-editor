@@ -24,6 +24,12 @@ find_package(ZLIB)
 # wtf cmake... automoc?
 qt5_wrap_cpp(moc_sources src/Lol.h)
 
+protobuf_generate_cpp(protobufs_SRC protobufs_HDR
+    src/protobufs/OakProfile.proto
+    src/protobufs/OakSave.proto
+    src/protobufs/OakShared.proto
+    )
+
 add_executable(borderlands3-save-editor
     src/main.cpp
     src/MainWindow.cpp
@@ -38,9 +44,7 @@ add_executable(borderlands3-save-editor
 
     src/Lol.cpp
 
-    src/OakProfile.pb.cc
-    src/OakSave.pb.cc
-    src/OakShared.pb.cc
+    ${protobufs_SRC}
     ${moc_sources}
 
     data.qrc
