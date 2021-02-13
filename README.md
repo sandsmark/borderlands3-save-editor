@@ -29,6 +29,10 @@ https://ci.appveyor.com/project/sandsmark/borderlands3-save-editor/build/artifac
 NB: I don't run windows nor do I have a windows machine to test on, but when I
 set up appveyor I tested it in Wine (on Linux) and it worked.
 
+A snapshot is here, because appveyor doesn't keep artifacts around for that long:
+
+https://github.com/sandsmark/borderlands3-save-editor/releases/download/arbitrary-release-because-github-is-dumb/borderlands3-save-editor-1.0.132.2880e4a1.zip
+
 
 ## Functionality
 
