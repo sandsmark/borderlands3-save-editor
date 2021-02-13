@@ -2,6 +2,8 @@
 
 ## Be warned that since it hasn't been updated in a while it might break things badly.
 
+https://github.com/apocalyptech/bl3-cli-saveedit is still in active development, as an alternative.
+
 Borderlands 3 Savegame Editor
 =============================
 
@@ -36,7 +38,7 @@ I. e. what it can edit. And will probably break.
  - Mission objectives progress (so you can bypass bugs making the main story line not progress).
  - Edit items/weapons in the inventory, also tries to validate your changes (can't create new from scratch yet though)
  - Amount of ammo, SDUs, eridium and money
- - View active missions and progress (have everything for editing, but can't be bothered to do the last 5% of the work)
+ - View and edit active missions and progress
  - UUID (not very interesting, but we can generate valid ones)
  - Save slot ID (not very interesting either)
 
