@@ -63,11 +63,26 @@ This is pulled from my bash history, so probably not complete or accurate, but m
 
 Dependencies are JohnWickParse (I used the version from here: https://github.com/apocalyptech/JohnWickParse.git) and jq.
 
+First extract the pak files to get the uexp files, I think this is how I did it (with quickbms):
+
+```
+# First enter the game data folder
+
+# Figure out which pak files contains mission data:
+for p in *.pak; do quickbms -l ~/path-to-this-repo/data/bl3.bms "$p" >> "$p-files.txt"; done
+# Look through the -files.txt files to see which contains useful files
+
+# Then extract the relevant files
+quickbms -f  "Missions/*" ~/path-to-this-repo/data/bl3.bms pakchunk4-WindowsNoEditor.pak
+quickbms -f  "Missions/*" ~/path-to-this-repo/data/bl3.bms pakchunk7-WindowsNoEditor.pak
+# etc.
+```
 
 Create json:
 
 ```
 # Paths to stuff needs to be adjusted, obviously
+cd Missions
 
 pushd ProvingGrounds1/ # Enter first folder
 for file in *.uexp; do john-wick-parse serialize $(basename "$file" .uexp); done
