@@ -55,3 +55,31 @@ https://www.patreon.com/gibbed
 ![screenshot](/doc/screenshot-inventory.png)
 ![screenshot](/doc/screenshot-consumables.png)
 ![screenshot](/doc/screenshot-missions.png)
+
+
+### How to update missions and objectives for latest game version
+
+This is pulled from my bash history, so probably not complete or accurate, but might give you an idea at least.
+
+Dependencies are JohnWickParse (I used the version from here: https://github.com/apocalyptech/JohnWickParse.git) and jq.
+
+
+Create json:
+
+```
+# Paths to stuff needs to be adjusted, obviously
+
+pushd ProvingGrounds1/ # Enter first folder
+for file in *.uexp; do john-wick-parse serialize $(basename "$file" .uexp); done
+popd
+
+pushd ProvingGrounds2/ # Enter second folder
+for file in *.uexp; do john-wick-parse serialize $(basename "$file" .uexp); done
+popd
+
+# ... and repeat for all the relevant folders
+```
+
+Then run the following tool in the same dir, it should recursively find all the json files and put them together in a nice, usable format:
+
+https://github.com/sandsmark/borderlands3-john-wick-grokker
