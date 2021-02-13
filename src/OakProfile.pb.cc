@@ -756,6 +756,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_OakProfile_2eproto::offsets[] 
   PROTOBUF_FIELD_OFFSET(::OakSave::Profile, citizensciencecsbucksamount_),
   PROTOBUF_FIELD_OFFSET(::OakSave::Profile, bcitizensciencehasseenintrovideo_),
   PROTOBUF_FIELD_OFFSET(::OakSave::Profile, bcitizensciencetutorialdone_),
+  PROTOBUF_FIELD_OFFSET(::OakSave::Profile, fixed_initial_zonemap_rotation_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::OakSave::PlayerInputBinding_Button)},
@@ -852,7 +853,7 @@ const char descriptor_table_protodef_OakProfile_2eproto[] PROTOBUF_SECTION_VARIA
   "_asset_path\030\002 \001(\t\"l\n\021RecentlyMetPlayer\022\027"
   "\n\017shift_player_id\030\001 \001(\t\022\035\n\025first_party_p"
   "layer_id\030\002 \001(\t\022\037\n\027show_shift_player_entr"
-  "y\030\003 \001(\010\"\2029\n\007Profile\022\031\n\021enable_aim_assist"
+  "y\030\003 \001(\010\"\2539\n\007Profile\022\031\n\021enable_aim_assist"
   "\030\001 \001(\010\022\033\n\023gamepad_invert_look\030\002 \001(\010\022\033\n\023g"
   "amepad_invert_turn\030\003 \001(\010\022\033\n\023gamepad_inve"
   "rt_move\030\004 \001(\010\022\035\n\025gamepad_invert_strafe\030\005"
@@ -1032,9 +1033,10 @@ const char descriptor_table_protodef_OakProfile_2eproto[] PROTOBUF_SECTION_VARIA
   "eamerBoosterTier\030\340\001 \001(\005\022$\n\033CitizenScienc"
   "eCSBucksAmount\030\342\001 \001(\005\022)\n bCitizenScience"
   "HasSeenIntroVideo\030\343\001 \001(\010\022$\n\033bCitizenScie"
-  "nceTutorialDone\030\344\001 \001(\010\032T\n\025FriendEncounte"
-  "rsEntry\022\013\n\003key\030\001 \001(\t\022.\n\005value\030\002 \001(\0132\037.Oa"
-  "kSave.OakFriendEncounterDatab\006proto3"
+  "nceTutorialDone\030\344\001 \001(\010\022\'\n\036fixed_initial_"
+  "zonemap_rotation\030\346\001 \001(\010\032T\n\025FriendEncount"
+  "ersEntry\022\013\n\003key\030\001 \001(\t\022.\n\005value\030\002 \001(\0132\037.O"
+  "akSave.OakFriendEncounterDatab\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_OakProfile_2eproto_deps[1] = {
   &::descriptor_table_OakShared_2eproto,
@@ -1062,7 +1064,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Oak
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_OakProfile_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_OakProfile_2eproto = {
-  false, false, descriptor_table_protodef_OakProfile_2eproto, "OakProfile.proto", 9316,
+  false, false, descriptor_table_protodef_OakProfile_2eproto, "OakProfile.proto", 9357,
   &descriptor_table_OakProfile_2eproto_once, descriptor_table_OakProfile_2eproto_sccs, descriptor_table_OakProfile_2eproto_deps, 19, 1,
   schemas, file_default_instances, TableStruct_OakProfile_2eproto::offsets,
   file_level_metadata_OakProfile_2eproto, 19, file_level_enum_descriptors_OakProfile_2eproto, file_level_service_descriptors_OakProfile_2eproto,
@@ -7606,6 +7608,13 @@ const char* Profile::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::in
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
+      // bool fixed_initial_zonemap_rotation = 230;
+      case 230:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 48)) {
+          fixed_initial_zonemap_rotation_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
@@ -8890,6 +8899,12 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(228, this->_internal_bcitizensciencetutorialdone(), target);
   }
 
+  // bool fixed_initial_zonemap_rotation = 230;
+  if (this->fixed_initial_zonemap_rotation() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(230, this->_internal_fixed_initial_zonemap_rotation(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -9943,6 +9958,11 @@ size_t Profile::ByteSizeLong() const {
     total_size += 2 + 1;
   }
 
+  // bool fixed_initial_zonemap_rotation = 230;
+  if (this->fixed_initial_zonemap_rotation() != 0) {
+    total_size += 2 + 1;
+  }
+
   // bool rare_chest_event_enabled = 199;
   if (this->rare_chest_event_enabled() != 0) {
     total_size += 2 + 1;
@@ -10587,6 +10607,9 @@ void Profile::MergeFrom(const Profile& from) {
   }
   if (from.bcitizensciencetutorialdone() != 0) {
     _internal_set_bcitizensciencetutorialdone(from._internal_bcitizensciencetutorialdone());
+  }
+  if (from.fixed_initial_zonemap_rotation() != 0) {
+    _internal_set_fixed_initial_zonemap_rotation(from._internal_fixed_initial_zonemap_rotation());
   }
   if (from.rare_chest_event_enabled() != 0) {
     _internal_set_rare_chest_event_enabled(from._internal_rare_chest_event_enabled());

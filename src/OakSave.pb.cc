@@ -17,6 +17,7 @@
 extern PROTOBUF_INTERNAL_EXPORT_OakSave_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ActiveFastTravelSaveData_OakSave_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_OakSave_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_ChallengeCategoryProgressSaveData_OakSave_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_OakShared_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_ChallengeSaveGameData_OakShared_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_OakSave_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Character_ActiveLeagueInstanceForEventEntry_OakSave_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_OakSave_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Character_NicknameMappingsEntry_OakSave_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_OakSave_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CrewQuartersDecorationSaveData_OakSave_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_OakSave_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<1> scc_info_CrewQuartersGunRackItemSaveData_OakSave_2eproto;
@@ -240,6 +241,10 @@ class Character_NicknameMappingsEntryDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Character_NicknameMappingsEntry> _instance;
 } _Character_NicknameMappingsEntry_default_instance_;
+class Character_ActiveLeagueInstanceForEventEntryDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Character_ActiveLeagueInstanceForEventEntry> _instance;
+} _Character_ActiveLeagueInstanceForEventEntry_default_instance_;
 class CharacterDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Character> _instance;
@@ -284,8 +289,8 @@ static void InitDefaultsscc_info_Character_OakSave_2eproto() {
   ::OakSave::Character::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<32> scc_info_Character_OakSave_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 32, 0, InitDefaultsscc_info_Character_OakSave_2eproto}, {
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<33> scc_info_Character_OakSave_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 33, 0, InitDefaultsscc_info_Character_OakSave_2eproto}, {
       &scc_info_PlayerClassSaveGameData_OakSave_2eproto.base,
       &scc_info_ResourcePoolSavegameData_OakSave_2eproto.base,
       &scc_info_RegionSaveGameData_OakSave_2eproto.base,
@@ -317,7 +322,22 @@ static void InitDefaultsscc_info_Character_OakSave_2eproto() {
       &scc_info_GameStateSaveData_OakSave_2eproto.base,
       &scc_info_RegisteredDownloadableEntitlements_OakShared_2eproto.base,
       &scc_info_PlaythroughActiveFastTravelSaveData_OakSave_2eproto.base,
-      &scc_info_GuardianRankCharacterSaveGameData_OakSave_2eproto.base,}};
+      &scc_info_GuardianRankCharacterSaveGameData_OakSave_2eproto.base,
+      &scc_info_Character_ActiveLeagueInstanceForEventEntry_OakSave_2eproto.base,}};
+
+static void InitDefaultsscc_info_Character_ActiveLeagueInstanceForEventEntry_OakSave_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::OakSave::_Character_ActiveLeagueInstanceForEventEntry_default_instance_;
+    new (ptr) ::OakSave::Character_ActiveLeagueInstanceForEventEntry();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::OakSave::Character_ActiveLeagueInstanceForEventEntry::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_Character_ActiveLeagueInstanceForEventEntry_OakSave_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_Character_ActiveLeagueInstanceForEventEntry_OakSave_2eproto}, {}};
 
 static void InitDefaultsscc_info_Character_NicknameMappingsEntry_OakSave_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -927,7 +947,7 @@ static void InitDefaultsscc_info_VehicleUnlockedSaveGameData_OakSave_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_VehicleUnlockedSaveGameData_OakSave_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, 0, InitDefaultsscc_info_VehicleUnlockedSaveGameData_OakSave_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_OakSave_2eproto[45];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_OakSave_2eproto[46];
 static const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* file_level_enum_descriptors_OakSave_2eproto[1];
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_OakSave_2eproto = nullptr;
 
@@ -1300,6 +1320,13 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_OakSave_2eproto::offsets[] PRO
   PROTOBUF_FIELD_OFFSET(::OakSave::Character_NicknameMappingsEntry, key_),
   PROTOBUF_FIELD_OFFSET(::OakSave::Character_NicknameMappingsEntry, value_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::OakSave::Character_ActiveLeagueInstanceForEventEntry, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::OakSave::Character_ActiveLeagueInstanceForEventEntry, key_),
+  PROTOBUF_FIELD_OFFSET(::OakSave::Character_ActiveLeagueInstanceForEventEntry, value_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::OakSave::Character, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
@@ -1360,6 +1387,10 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_OakSave_2eproto::offsets[] PRO
   PROTOBUF_FIELD_OFFSET(::OakSave::Character, guardian_rank_character_data_),
   PROTOBUF_FIELD_OFFSET(::OakSave::Character, optional_objective_reward_fixup_applied_),
   PROTOBUF_FIELD_OFFSET(::OakSave::Character, vehicle_part_rewards_fixup_applied_),
+  PROTOBUF_FIELD_OFFSET(::OakSave::Character, last_active_league_),
+  PROTOBUF_FIELD_OFFSET(::OakSave::Character, last_active_league_instance_),
+  PROTOBUF_FIELD_OFFSET(::OakSave::Character, active_league_instance_for_event_),
+  PROTOBUF_FIELD_OFFSET(::OakSave::Character, levelled_save_vehicle_part_rewards_fixup_applied_),
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::OakSave::PlayerClassSaveGameData)},
@@ -1406,7 +1437,8 @@ static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOB
   { 342, -1, sizeof(::OakSave::GbxZoneMapFODSavedLevelData)},
   { 354, -1, sizeof(::OakSave::GbxZoneMapFODSaveGameData)},
   { 360, -1, sizeof(::OakSave::Character_NicknameMappingsEntry)},
-  { 367, -1, sizeof(::OakSave::Character)},
+  { 367, -1, sizeof(::OakSave::Character_ActiveLeagueInstanceForEventEntry)},
+  { 374, -1, sizeof(::OakSave::Character)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -1454,6 +1486,7 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::OakSave::_GbxZoneMapFODSavedLevelData_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::OakSave::_GbxZoneMapFODSaveGameData_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::OakSave::_Character_NicknameMappingsEntry_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::OakSave::_Character_ActiveLeagueInstanceForEventEntry_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::OakSave::_Character_default_instance_),
 };
 
@@ -1613,7 +1646,7 @@ const char descriptor_table_protodef_OakSave_2eproto[] PROTOBUF_SECTION_VARIABLE
   "\001(\r\022\025\n\rdata_revision\030\006 \001(\r\022\020\n\010fod_data\030\007"
   " \001(\014\"U\n\031GbxZoneMapFODSaveGameData\0228\n\nlev"
   "el_data\030\001 \003(\0132$.OakSave.GbxZoneMapFODSav"
-  "edLevelData\"\241\030\n\tCharacter\022\024\n\014save_game_i"
+  "edLevelData\"\275\032\n\tCharacter\022\024\n\014save_game_i"
   "d\030\001 \001(\r\022\033\n\023last_save_timestamp\030\002 \001(\003\022\033\n\023"
   "time_played_seconds\030\003 \001(\r\022;\n\021player_clas"
   "s_data\030\004 \001(\0132 .OakSave.PlayerClassSaveGa"
@@ -1689,17 +1722,25 @@ const char descriptor_table_protodef_OakSave_2eproto[] PROTOBUF_SECTION_VARIABLE
   "ata\0309 \001(\0132*.OakSave.GuardianRankCharacte"
   "rSaveGameData\022/\n\'optional_objective_rewa"
   "rd_fixup_applied\030: \001(\010\022*\n\"vehicle_part_r"
-  "ewards_fixup_applied\030; \001(\010\0323\n\025NicknameMa"
-  "ppingsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\tb"
-  "\006proto3"
+  "ewards_fixup_applied\030; \001(\010\022\032\n\022last_activ"
+  "e_league\030< \001(\r\022#\n\033last_active_league_ins"
+  "tance\030= \001(\r\022^\n active_league_instance_fo"
+  "r_event\030> \003(\01324.OakSave.Character.Active"
+  "LeagueInstanceForEventEntry\0228\n0levelled_"
+  "save_vehicle_part_rewards_fixup_applied\030"
+  "\? \001(\010\0323\n\025NicknameMappingsEntry\022\013\n\003key\030\001 "
+  "\001(\t\022\r\n\005value\030\002 \001(\t\032\?\n!ActiveLeagueInstan"
+  "ceForEventEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 "
+  "\001(\rb\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_OakSave_2eproto_deps[1] = {
   &::descriptor_table_OakShared_2eproto,
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_OakSave_2eproto_sccs[45] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_OakSave_2eproto_sccs[46] = {
   &scc_info_ActiveFastTravelSaveData_OakSave_2eproto.base,
   &scc_info_ChallengeCategoryProgressSaveData_OakSave_2eproto.base,
   &scc_info_Character_OakSave_2eproto.base,
+  &scc_info_Character_ActiveLeagueInstanceForEventEntry_OakSave_2eproto.base,
   &scc_info_Character_NicknameMappingsEntry_OakSave_2eproto.base,
   &scc_info_CrewQuartersDecorationSaveData_OakSave_2eproto.base,
   &scc_info_CrewQuartersGunRackItemSaveData_OakSave_2eproto.base,
@@ -1745,10 +1786,10 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_Oak
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_OakSave_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_OakSave_2eproto = {
-  false, false, descriptor_table_protodef_OakSave_2eproto, "OakSave.proto", 9327,
-  &descriptor_table_OakSave_2eproto_once, descriptor_table_OakSave_2eproto_sccs, descriptor_table_OakSave_2eproto_deps, 45, 1,
+  false, false, descriptor_table_protodef_OakSave_2eproto, "OakSave.proto", 9611,
+  &descriptor_table_OakSave_2eproto_once, descriptor_table_OakSave_2eproto_sccs, descriptor_table_OakSave_2eproto_deps, 46, 1,
   schemas, file_default_instances, TableStruct_OakSave_2eproto::offsets,
-  file_level_metadata_OakSave_2eproto, 45, file_level_enum_descriptors_OakSave_2eproto, file_level_service_descriptors_OakSave_2eproto,
+  file_level_metadata_OakSave_2eproto, 46, file_level_enum_descriptors_OakSave_2eproto, file_level_service_descriptors_OakSave_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -14108,6 +14149,237 @@ void Character_NicknameMappingsEntry::InternalSwap(Character_NicknameMappingsEnt
 
 // ===================================================================
 
+void Character_ActiveLeagueInstanceForEventEntry::InitAsDefaultInstance() {
+}
+class Character_ActiveLeagueInstanceForEventEntry::_Internal {
+ public:
+};
+
+Character_ActiveLeagueInstanceForEventEntry::Character_ActiveLeagueInstanceForEventEntry(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena) {
+  SharedCtor();
+  RegisterArenaDtor(arena);
+  // @@protoc_insertion_point(arena_constructor:OakSave.Character.ActiveLeagueInstanceForEventEntry)
+}
+Character_ActiveLeagueInstanceForEventEntry::Character_ActiveLeagueInstanceForEventEntry(const Character_ActiveLeagueInstanceForEventEntry& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&key_, &from.key_,
+    static_cast<size_t>(reinterpret_cast<char*>(&value_) -
+    reinterpret_cast<char*>(&key_)) + sizeof(value_));
+  // @@protoc_insertion_point(copy_constructor:OakSave.Character.ActiveLeagueInstanceForEventEntry)
+}
+
+void Character_ActiveLeagueInstanceForEventEntry::SharedCtor() {
+  ::memset(&key_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&value_) -
+      reinterpret_cast<char*>(&key_)) + sizeof(value_));
+}
+
+Character_ActiveLeagueInstanceForEventEntry::~Character_ActiveLeagueInstanceForEventEntry() {
+  // @@protoc_insertion_point(destructor:OakSave.Character.ActiveLeagueInstanceForEventEntry)
+  SharedDtor();
+  _internal_metadata_.Delete<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+void Character_ActiveLeagueInstanceForEventEntry::SharedDtor() {
+  GOOGLE_DCHECK(GetArena() == nullptr);
+}
+
+void Character_ActiveLeagueInstanceForEventEntry::ArenaDtor(void* object) {
+  Character_ActiveLeagueInstanceForEventEntry* _this = reinterpret_cast< Character_ActiveLeagueInstanceForEventEntry* >(object);
+  (void)_this;
+}
+void Character_ActiveLeagueInstanceForEventEntry::RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena*) {
+}
+void Character_ActiveLeagueInstanceForEventEntry::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const Character_ActiveLeagueInstanceForEventEntry& Character_ActiveLeagueInstanceForEventEntry::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_Character_ActiveLeagueInstanceForEventEntry_OakSave_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void Character_ActiveLeagueInstanceForEventEntry::Clear() {
+// @@protoc_insertion_point(message_clear_start:OakSave.Character.ActiveLeagueInstanceForEventEntry)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&key_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&value_) -
+      reinterpret_cast<char*>(&key_)) + sizeof(value_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* Character_ActiveLeagueInstanceForEventEntry::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  ::PROTOBUF_NAMESPACE_ID::Arena* arena = GetArena(); (void)arena;
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // uint32 key = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 8)) {
+          key_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 value = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 16)) {
+          value_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag,
+            _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+            ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* Character_ActiveLeagueInstanceForEventEntry::_InternalSerialize(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:OakSave.Character.ActiveLeagueInstanceForEventEntry)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 key = 1;
+  if (this->key() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(1, this->_internal_key(), target);
+  }
+
+  // uint32 value = 2;
+  if (this->value() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(2, this->_internal_value(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:OakSave.Character.ActiveLeagueInstanceForEventEntry)
+  return target;
+}
+
+size_t Character_ActiveLeagueInstanceForEventEntry::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:OakSave.Character.ActiveLeagueInstanceForEventEntry)
+  size_t total_size = 0;
+
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 key = 1;
+  if (this->key() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_key());
+  }
+
+  // uint32 value = 2;
+  if (this->value() != 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_value());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
+        _internal_metadata_, total_size, &_cached_size_);
+  }
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void Character_ActiveLeagueInstanceForEventEntry::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:OakSave.Character.ActiveLeagueInstanceForEventEntry)
+  GOOGLE_DCHECK_NE(&from, this);
+  const Character_ActiveLeagueInstanceForEventEntry* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<Character_ActiveLeagueInstanceForEventEntry>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:OakSave.Character.ActiveLeagueInstanceForEventEntry)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:OakSave.Character.ActiveLeagueInstanceForEventEntry)
+    MergeFrom(*source);
+  }
+}
+
+void Character_ActiveLeagueInstanceForEventEntry::MergeFrom(const Character_ActiveLeagueInstanceForEventEntry& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:OakSave.Character.ActiveLeagueInstanceForEventEntry)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.key() != 0) {
+    _internal_set_key(from._internal_key());
+  }
+  if (from.value() != 0) {
+    _internal_set_value(from._internal_value());
+  }
+}
+
+void Character_ActiveLeagueInstanceForEventEntry::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:OakSave.Character.ActiveLeagueInstanceForEventEntry)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void Character_ActiveLeagueInstanceForEventEntry::CopyFrom(const Character_ActiveLeagueInstanceForEventEntry& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:OakSave.Character.ActiveLeagueInstanceForEventEntry)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Character_ActiveLeagueInstanceForEventEntry::IsInitialized() const {
+  return true;
+}
+
+void Character_ActiveLeagueInstanceForEventEntry::InternalSwap(Character_ActiveLeagueInstanceForEventEntry* other) {
+  using std::swap;
+  _internal_metadata_.Swap<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Character_ActiveLeagueInstanceForEventEntry, value_)
+      + sizeof(Character_ActiveLeagueInstanceForEventEntry::value_)
+      - PROTOBUF_FIELD_OFFSET(Character_ActiveLeagueInstanceForEventEntry, key_)>(
+          reinterpret_cast<char*>(&key_),
+          reinterpret_cast<char*>(&other->key_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Character_ActiveLeagueInstanceForEventEntry::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
 void Character::InitAsDefaultInstance() {
   ::OakSave::_Character_default_instance_._instance.get_mutable()->player_class_data_ = const_cast< ::OakSave::PlayerClassSaveGameData*>(
       ::OakSave::PlayerClassSaveGameData::internal_default_instance());
@@ -14246,7 +14518,8 @@ Character::Character(::PROTOBUF_NAMESPACE_ID::Arena* arena)
   last_active_travel_station_for_playthrough_(arena),
   game_state_save_data_for_playthrough_(arena),
   registered_downloadable_entitlements_(arena),
-  active_travel_stations_for_playthrough_(arena) {
+  active_travel_stations_for_playthrough_(arena),
+  active_league_instance_for_event_(arena) {
   SharedCtor();
   RegisterArenaDtor(arena);
   // @@protoc_insertion_point(arena_constructor:OakSave.Character)
@@ -14277,7 +14550,8 @@ Character::Character(const Character& from)
       last_active_travel_station_for_playthrough_(from.last_active_travel_station_for_playthrough_),
       game_state_save_data_for_playthrough_(from.game_state_save_data_for_playthrough_),
       registered_downloadable_entitlements_(from.registered_downloadable_entitlements_),
-      active_travel_stations_for_playthrough_(from.active_travel_stations_for_playthrough_) {
+      active_travel_stations_for_playthrough_(from.active_travel_stations_for_playthrough_),
+      active_league_instance_for_event_(from.active_league_instance_for_event_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   last_active_travel_station_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   if (!from._internal_last_active_travel_station().empty()) {
@@ -14360,8 +14634,8 @@ Character::Character(const Character& from)
     guardian_rank_character_data_ = nullptr;
   }
   ::memcpy(&last_save_timestamp_, &from.last_save_timestamp_,
-    static_cast<size_t>(reinterpret_cast<char*>(&mayhem_level_) -
-    reinterpret_cast<char*>(&last_save_timestamp_)) + sizeof(mayhem_level_));
+    static_cast<size_t>(reinterpret_cast<char*>(&levelled_save_vehicle_part_rewards_fixup_applied_) -
+    reinterpret_cast<char*>(&last_save_timestamp_)) + sizeof(levelled_save_vehicle_part_rewards_fixup_applied_));
   // @@protoc_insertion_point(copy_constructor:OakSave.Character)
 }
 
@@ -14371,8 +14645,8 @@ void Character::SharedCtor() {
   preferred_character_name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   save_game_guid_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   ::memset(&player_class_data_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&mayhem_level_) -
-      reinterpret_cast<char*>(&player_class_data_)) + sizeof(mayhem_level_));
+      reinterpret_cast<char*>(&levelled_save_vehicle_part_rewards_fixup_applied_) -
+      reinterpret_cast<char*>(&player_class_data_)) + sizeof(levelled_save_vehicle_part_rewards_fixup_applied_));
 }
 
 Character::~Character() {
@@ -14447,6 +14721,7 @@ void Character::Clear() {
   game_state_save_data_for_playthrough_.Clear();
   registered_downloadable_entitlements_.Clear();
   active_travel_stations_for_playthrough_.Clear();
+  active_league_instance_for_event_.Clear();
   last_active_travel_station_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   preferred_character_name_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   save_game_guid_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
@@ -14503,8 +14778,8 @@ void Character::Clear() {
   }
   guardian_rank_character_data_ = nullptr;
   ::memset(&last_save_timestamp_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&mayhem_level_) -
-      reinterpret_cast<char*>(&last_save_timestamp_)) + sizeof(mayhem_level_));
+      reinterpret_cast<char*>(&levelled_save_vehicle_part_rewards_fixup_applied_) -
+      reinterpret_cast<char*>(&last_save_timestamp_)) + sizeof(levelled_save_vehicle_part_rewards_fixup_applied_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -15043,6 +15318,39 @@ const char* Character::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
+      // uint32 last_active_league = 60;
+      case 60:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 224)) {
+          last_active_league_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // uint32 last_active_league_instance = 61;
+      case 61:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 232)) {
+          last_active_league_instance_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // repeated .OakSave.Character.ActiveLeagueInstanceForEventEntry active_league_instance_for_event = 62;
+      case 62:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 242)) {
+          ptr -= 2;
+          do {
+            ptr += 2;
+            ptr = ctx->ParseMessage(_internal_add_active_league_instance_for_event(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<498>(ptr));
+        } else goto handle_unusual;
+        continue;
+      // bool levelled_save_vehicle_part_rewards_fixup_applied = 63;
+      case 63:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 248)) {
+          levelled_save_vehicle_part_rewards_fixup_applied_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
       default: {
       handle_unusual:
         if ((tag & 7) == 4 || tag == 0) {
@@ -15505,6 +15813,32 @@ failure:
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(59, this->_internal_vehicle_part_rewards_fixup_applied(), target);
   }
 
+  // uint32 last_active_league = 60;
+  if (this->last_active_league() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(60, this->_internal_last_active_league(), target);
+  }
+
+  // uint32 last_active_league_instance = 61;
+  if (this->last_active_league_instance() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteUInt32ToArray(61, this->_internal_last_active_league_instance(), target);
+  }
+
+  // repeated .OakSave.Character.ActiveLeagueInstanceForEventEntry active_league_instance_for_event = 62;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->_internal_active_league_instance_for_event_size()); i < n; i++) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(62, this->_internal_active_league_instance_for_event(i), target, stream);
+  }
+
+  // bool levelled_save_vehicle_part_rewards_fixup_applied = 63;
+  if (this->levelled_save_vehicle_part_rewards_fixup_applied() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(63, this->_internal_levelled_save_vehicle_part_rewards_fixup_applied(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -15712,6 +16046,13 @@ size_t Character::ByteSizeLong() const {
   // repeated .OakSave.PlaythroughActiveFastTravelSaveData active_travel_stations_for_playthrough = 55;
   total_size += 2UL * this->_internal_active_travel_stations_for_playthrough_size();
   for (const auto& msg : this->active_travel_stations_for_playthrough_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .OakSave.Character.ActiveLeagueInstanceForEventEntry active_league_instance_for_event = 62;
+  total_size += 2UL * this->_internal_active_league_instance_for_event_size();
+  for (const auto& msg : this->active_league_instance_for_event_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
@@ -15925,6 +16266,25 @@ size_t Character::ByteSizeLong() const {
         this->_internal_mayhem_level());
   }
 
+  // uint32 last_active_league = 60;
+  if (this->last_active_league() != 0) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_last_active_league());
+  }
+
+  // uint32 last_active_league_instance = 61;
+  if (this->last_active_league_instance() != 0) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::UInt32Size(
+        this->_internal_last_active_league_instance());
+  }
+
+  // bool levelled_save_vehicle_part_rewards_fixup_applied = 63;
+  if (this->levelled_save_vehicle_part_rewards_fixup_applied() != 0) {
+    total_size += 2 + 1;
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     return ::PROTOBUF_NAMESPACE_ID::internal::ComputeUnknownFieldsSize(
         _internal_metadata_, total_size, &_cached_size_);
@@ -15981,6 +16341,7 @@ void Character::MergeFrom(const Character& from) {
   game_state_save_data_for_playthrough_.MergeFrom(from.game_state_save_data_for_playthrough_);
   registered_downloadable_entitlements_.MergeFrom(from.registered_downloadable_entitlements_);
   active_travel_stations_for_playthrough_.MergeFrom(from.active_travel_stations_for_playthrough_);
+  active_league_instance_for_event_.MergeFrom(from.active_league_instance_for_event_);
   if (from.last_active_travel_station().size() > 0) {
     _internal_set_last_active_travel_station(from._internal_last_active_travel_station());
   }
@@ -16074,6 +16435,15 @@ void Character::MergeFrom(const Character& from) {
   if (from.mayhem_level() != 0) {
     _internal_set_mayhem_level(from._internal_mayhem_level());
   }
+  if (from.last_active_league() != 0) {
+    _internal_set_last_active_league(from._internal_last_active_league());
+  }
+  if (from.last_active_league_instance() != 0) {
+    _internal_set_last_active_league_instance(from._internal_last_active_league_instance());
+  }
+  if (from.levelled_save_vehicle_part_rewards_fixup_applied() != 0) {
+    _internal_set_levelled_save_vehicle_part_rewards_fixup_applied(from._internal_levelled_save_vehicle_part_rewards_fixup_applied());
+  }
 }
 
 void Character::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
@@ -16122,12 +16492,13 @@ void Character::InternalSwap(Character* other) {
   game_state_save_data_for_playthrough_.InternalSwap(&other->game_state_save_data_for_playthrough_);
   registered_downloadable_entitlements_.InternalSwap(&other->registered_downloadable_entitlements_);
   active_travel_stations_for_playthrough_.InternalSwap(&other->active_travel_stations_for_playthrough_);
+  active_league_instance_for_event_.InternalSwap(&other->active_league_instance_for_event_);
   last_active_travel_station_.Swap(&other->last_active_travel_station_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   preferred_character_name_.Swap(&other->preferred_character_name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   save_game_guid_.Swap(&other->save_game_guid_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(Character, mayhem_level_)
-      + sizeof(Character::mayhem_level_)
+      PROTOBUF_FIELD_OFFSET(Character, levelled_save_vehicle_part_rewards_fixup_applied_)
+      + sizeof(Character::levelled_save_vehicle_part_rewards_fixup_applied_)
       - PROTOBUF_FIELD_OFFSET(Character, player_class_data_)>(
           reinterpret_cast<char*>(&player_class_data_),
           reinterpret_cast<char*>(&other->player_class_data_));
@@ -16272,6 +16643,9 @@ template<> PROTOBUF_NOINLINE ::OakSave::GbxZoneMapFODSaveGameData* Arena::Create
 }
 template<> PROTOBUF_NOINLINE ::OakSave::Character_NicknameMappingsEntry* Arena::CreateMaybeMessage< ::OakSave::Character_NicknameMappingsEntry >(Arena* arena) {
   return Arena::CreateMessageInternal< ::OakSave::Character_NicknameMappingsEntry >(arena);
+}
+template<> PROTOBUF_NOINLINE ::OakSave::Character_ActiveLeagueInstanceForEventEntry* Arena::CreateMaybeMessage< ::OakSave::Character_ActiveLeagueInstanceForEventEntry >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::OakSave::Character_ActiveLeagueInstanceForEventEntry >(arena);
 }
 template<> PROTOBUF_NOINLINE ::OakSave::Character* Arena::CreateMaybeMessage< ::OakSave::Character >(Arena* arena) {
   return Arena::CreateMessageInternal< ::OakSave::Character >(arena);
