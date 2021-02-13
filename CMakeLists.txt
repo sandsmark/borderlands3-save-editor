@@ -13,9 +13,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
-find_package(Protobuf CONFIG REQUIRED)
-
-find_package(ZLIB)
+find_package(Protobuf REQUIRED)
 
 # wtf cmake... automoc?
 qt5_wrap_cpp(moc_sources src/Lol.h)
